@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700');
+
+@import "mixins";
+@import "variables";
+
+body {
+  margin:0; font-family: $lato;
+  width:100%;
+	line-height: 1.5em;
+  // width:100%; overflow-x:hidden; font-size: 1em; text-align: center;
+
+  h1, h2, h3, h4, h5, p, li, a {color: $black; line-height: 1.5em;
+    &.bmargin0 {margin-bottom: 0;}
+  }
+  h1{font-size: 2rem;}
+}
+
+.text-center {text-align: center;}
+
+.visually-hidden {
+  @include visuallyHidden();
+}
+
+.img-responsive {max-width: 100%; height: auto; display:block;}
+ul{margin:0;}
+li {list-style-type: none;}
+
+a {
+  &:focus,
+  &:hover {
+    opacity: .7;
+    text-decoration: none;
+  }
+}
+

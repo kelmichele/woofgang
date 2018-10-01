@@ -1,0 +1,29 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
+@import "variables";
+
+.inside{width: 85%; @include center-block();
+  &.medi {width:75%;}
+  &.med2 {width:65%;}
+  &.narrow {width:55%;}
+}
+
+hr{
+	&.hlf {width: 50%;}
+	&.less {width: 25%;}
+}
+
+.woof-link {@include link(30%, $white); background-color: $pink;}
+
+
+.full-sec{@include sec-default(); text-align: center; padding: 40px 0;
+  .inline-img {display: inline-block; float: none; width: 30%;}
+}
+
+
+//*********************************//
+//*********** home ***********//
+//*********************************//
+.home {}

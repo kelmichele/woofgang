@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixins";
+
+
+//*********** UK navbar ***********//
+.header-full {@include sec-default();
+	.hlogo {width: 30%; @include center-block();}
+
+	.uk-navbar-container:not(.uk-navbar-transparent){background-color: transparent;}
+	.uk-navbar-nav {
+	  li a {display: block; text-transform: none; min-height: auto;
+	    padding: 0; font-family: $lato;
+	  }
+
+	  .uk-navbar-dropdown { width: auto; padding: 5px;
+	    li {@include sec-default(); text-align: left;}
+	    li a {color: $black; font-size: 16px;}
+	  }
+	}
+}
