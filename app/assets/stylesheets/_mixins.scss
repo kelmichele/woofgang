@@ -7,9 +7,10 @@
 
 @mixin sec-default() {
   width: 100%;
-  max-width: 100%;
   float: left;
   display: block;
+  // margin-right: auto;
+  // margin-left: auto;
 }
 
 @mixin sec-grid($float, $size) {

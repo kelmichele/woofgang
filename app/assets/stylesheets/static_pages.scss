@@ -8,6 +8,17 @@
   &.medi {width:75%;}
   &.med2 {width:65%;}
   &.narrow {width:55%;}
+
+  @include bp(tb) {
+  	&.medi {width:80%;}
+	  &.med2 {width:75%;}
+	  &.narrow {width:70%;}
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
 hr{
@@ -16,12 +27,18 @@ hr{
 }
 
 .woof-link {@include link(30%, $white); background-color: $pink;}
-
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 .full-sec{@include sec-default(); text-align: center; padding: 40px 0;
   .inline-img {display: inline-block; float: none; width: 30%;}
+  &.short {padding: 0;}
 }
 
+.page-body { @include sec-default(); }
 
 //*********************************//
 //*********** home ***********//
