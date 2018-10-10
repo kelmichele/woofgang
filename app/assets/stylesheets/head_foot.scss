@@ -2,14 +2,19 @@
 @import "mixins";
 
 
-//*********** UK navbar ***********//
+//*********************************//
+//************ header ************//
+//*********************************//
 .header-full {@include sec-default();
-	.hlogo {width: 30%; @include center-block();}
+	.hd-logo {width: 27%; @include center-block(); padding: 10px;}
 
-	.uk-navbar-container:not(.uk-navbar-transparent){background-color: transparent;}
-	.uk-navbar-nav {
-	  li a {display: block; text-transform: none; min-height: auto;
-	    padding: 0; font-family: $lato;
+	.uk-navbar-container{background-color: $white; @include sec-default(); text-align: center; }
+	// .full-navrow {@include sec-default(); text-align: center;}
+	.uk-navbar-nav {@include sec-default();
+		li {display: inline-block; margin: 5px 15px; float: none; }
+	  li a {display: block;
+	  	text-transform: none; min-height: auto;
+	    padding: 0; font-family: $lato; color: $brown; font-size: 17px;
 	  }
 
 	  .uk-navbar-dropdown { width: auto; padding: 5px;
@@ -18,3 +23,66 @@
 	  }
 	}
 }
+
+//*********************************//
+//********** header inline *********//
+//*********************************//
+.header-inline {@include sec-default();
+	// .hd-logo {width: 27%; @include center-block(); padding: 10px;}
+
+	.uk-navbar-container{background-color: $white;  text-align: center; }
+	.uk-navbar-nav, .hd-logo {display: inline-block; float: left; width: 27%; padding:10px;}
+	.uk-navbar-nav {width: 70%; float: right; margin-top: 6.5%;
+		li {display: inline-block; margin: 5px 15px; float: none; }
+	  li a {display: block;
+	  	text-transform: none; min-height: auto;
+	    padding: 0; font-family: $lato; color: $brown; font-size: 17px;
+	  }
+
+	  .uk-navbar-dropdown { width: auto; padding: 5px;
+	    li {@include sec-default(); text-align: left;}
+	    li a {color: $black; font-size: 16px;}
+	  }
+	}
+}
+
+
+
+
+
+
+//*********************************//
+//*********** footer ***********//
+//*********************************//
+
+.footer {
+	@include sec-default(); background-color: $pink;
+	color: $white; padding: 30px 0;
+	.inside {width:90%;}
+	p{color: $white;}
+
+	.fbs {display: inline-block; float: left; width: 28%; margin:0 1.4%; padding: 10px 15px;
+
+		&.fb1 { border-right: 1px solid rgba($white, .4);}
+		&.fb2 { }
+		&.fb3 {border-left: 1px solid rgba($white, .4);float:right; text-align: center; }
+	}
+
+	ul.ft-menu, ul.social {
+		li {display: inline-block; margin-left: 1%;
+			a{color: $white;}
+		}
+	}
+
+	ul.ft-menu li {margin: 10px 7px 5px;}
+	ul.social {text-align: center;
+		li {width: 35px; height: 35px; border-radius: 50%; background-color: $white;}
+		span {color: $pink; width:23px; height:23px;margin-top:6px;}
+	}
+}
+
+
+
+
+
+
