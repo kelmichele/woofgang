@@ -34,6 +34,7 @@ hr{
 }
 
 .full-sec{@include sec-default(); padding: 40px 0;
+  &.less {padding:15px 0;}
   .inline-img {display: inline-block; float: none; width: 30%;}
 }
 .full{@include sec-default(); }
@@ -115,8 +116,12 @@ hr{
 }
 
 
-
-
+//*********************************//
+//*********** users ***********//
+//*********************************//
+.registrations, .sessions {
+  .page-body {@include center-block(); width:85%; padding-bottom: 50px;}
+}
 
 
 
