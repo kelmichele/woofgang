@@ -26,7 +26,7 @@ hr{
 	&.less {width: 25%;}
 }
 
-.woof-link {@include link(30%, $white); background-color: $pink;}
+.woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3));}
 .clearfix::after {
   content: "";
   clear: both;
@@ -69,7 +69,6 @@ hr{
       h1, h2{color: $white; @include tshadowl(rgba($black, .2));}
     }
   }
-
 }
 
 
@@ -119,10 +118,22 @@ hr{
 //*********************************//
 //*********** users ***********//
 //*********************************//
-.registrations, .sessions {
+.registrations, .sessions, .blogs {
   .page-body {@include center-block(); width:85%; padding-bottom: 50px;}
 }
 
+.blogs {
+  .form-group {@include sec-default(); margin-bottom: 30px;
+    textarea {height:200px;@include sec-default(); padding: 10px; margin-top: 5px; font-size: 14px;}
 
+    &.title textarea {height:75px;}
+  }
+
+  .action.woof-link {display: inline-block; float: left; width:auto; padding: 10px 20px; margin-bottom: 30px; font-weight: 600;}
+  .action.danger {float: right; background-color: $red;}
+  .action.edit {background-color: $compt;}
+  .action.back {background-color: $compg;}
+
+}
 
 

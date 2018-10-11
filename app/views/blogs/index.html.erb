@@ -1,0 +1,16 @@
+<% @page_title = "Latest News" %>
+<% @page_description = "" %>
+
+
+<h1>Blog</h1>
+<%= link_to 'New blog', new_blog_path %>
+
+<% @blogs.each do |blog| %>
+    <h4 class="bmargin0"><%= blog.title %></h4>
+    <p><%= blog.text %></p>
+    <p><%= link_to 'View', blog_path(blog) %><br>
+    <%= link_to 'Edit', edit_blog_path(blog) %><br>
+    <%= link_to 'Destroy', blog_path(blog),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></p>
+<% end %>
