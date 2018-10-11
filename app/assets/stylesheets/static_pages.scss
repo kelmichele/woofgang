@@ -102,6 +102,16 @@ hr{
     h4{margin-bottom: 5px; font-size:1.1rem;}
     .actions a {color: $red; font-weight: bold;}
   }
+
+  .form-group {@include sec-default();}
+  .forminfo {width: 30%; display: inline-block; float: none; margin:5px 1.5% 20px;}
+  .form-control, .btn-outline-secondary.search {height: 45px; border-radius: 0;}
+  .form-control {width:88%; font-size: 14px; color: $compg; padding-left: 7px; }
+  .btn.woof-link {float:right; width:20%;}
+  .btn.btn-outline-secondary.search {background-color: lighten($pink, 10%); color: white; width: 12%; letter-spacing: 1px;
+    @include sec-bgimage('search.png'); background-position: center center; background-size: 45%;
+  }
+  .btn-danger {display: inline-block; float: right; padding: 5px 15px; margin-left:10px;}
 }
 
 
