@@ -1,0 +1,26 @@
+<% @page_title = "Our Locations" %>
+<% @page_description = "New Description" %>
+
+<div class="full-sec">
+	<div class="inside">
+		<div class="loclist">
+			<table>
+			<% @locations.each do |location| %>
+				<div class="townlisting-bx">
+					<h4>
+						<!-- <%= simple_format(location.full_address)%>-->
+						<%= location.street.titleize %><br>
+						<% if location.suite %><%= location.suite.titleize %><br><% end %>
+						<%= location.city %>, <%= location.state %> <%= location.zip %>
+						<br>
+						<% if location.phone %>
+							<%= number_to_phone(location.phone, delimiter: '.', area_code: true) %>
+						<% end %>
+					</h4>
+					<!-- <div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div> -->
+				</div>
+			<% end %>
+			</table>
+		</div>
+	</div>
+</div>
