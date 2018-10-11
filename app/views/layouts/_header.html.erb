@@ -1,36 +1,100 @@
-<!-- <div class="header-full">
-	<header>
-		<nav class="uk-navbar-container" uk-navbar>
-	  	<div class="full-navrow">
+<!-- <header class="il-header">
+	<nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-center">
+      <div class="uk-navbar-center-left"><div>
+        <ul class="uk-navbar-nav">
+      		<li><%= link_to "Home", root_path %></li>
+      		<li><%= link_to "About Us", about_us_path %></li>
+      		<li><%= link_to "Franchise", franchise_path %></li>
+      		<li><%= link_to "Services", services_path %></li>
+      	</ul>
+      </div></div>
 
-		    <div class="hd-logo">
-	    	  <%= link_to(image_tag('wg-logo1.png', class: 'img-responsive hlogo'), root_path )%>
-				</div>
+    	  <%= link_to(image_tag('wg-logo1.png', class: 'uk-navbar-item uk-logo'), root_path )%>
+      <div class="uk-navbar-center-right"><div>
+        <ul class="uk-navbar-nav">
+					<li><%= link_to "Locations", root_path %></li>
+					<li><%= link_to "Blog", root_path %></li>
+					<li><%= link_to "Press", root_path %></li>
+					<li><%= link_to "Contact Us", contact_path %></li>
+				</ul>
+      </div></div>
+    </div>
+	</nav>
+</header> -->
 
-		    <ul id="main-nav" class="uk-navbar-nav">
-					<%= render 'layouts/nav' %>
-		    </ul>
-
-		  </div>
-		</nav>
-	</header>
-</div>
- -->
 
 
-<header class="header-inline">
-	<div class="inside">
-		<nav class="uk-navbar-container" uk-navbar>
+<header class="il-header2" uk-sticky="sel-target: .il-header2; cls-active: uk-navbar-sticky">
+	<nav class="inside inside-stick" uk-navbar>
+    <div class="navbar-center">
+      <div class="navbar-center-left">
+        <ul class="navbar-nav">
+        <!-- -- uk-navbar-nav -- -->
+      		<li><%= link_to "Home", root_path %></li>
+      		<li><%= link_to "About Us", about_us_path %></li>
+      		<li><%= link_to "Franchise", franchise_path %>
+	      		<div class="uk-navbar-dropdown">
+	            <ul class="uk-nav uk-navbar-dropdown-nav">
+	            	<li><%= link_to "Franchise Process", franchise_process_path %></li>
+	            	<li><%= link_to "Franchise FAQ's", franchise_faq_path %></li>
+	            	<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
+	            </ul>
+		        </div>
+	      	</li>
 
-	    <div class="hd-logo">
-    	  <%= link_to(image_tag('wg-logo1.png', class: 'img-responsive hlogo'), root_path )%>
-    	  <!-- <%= link_to(image_tag('wg-logo-long.png', class: 'img-responsive hlogo'), root_path )%>   -->
+      		<li><%= link_to "Services", services_path %></li>
+      	</ul>
+      </div>
+
+  	  <div class="nb-logo">
+	  	  <%= link_to(image_tag('wg-logo1.png', class: 'navbar-item logo'), root_path )%>
+	  	</div>
+
+      <div class="navbar-center-right">
+        <ul class="navbar-nav">
+					<li><%= link_to "Locations", root_path %></li>
+					<li><%= link_to "Blog", root_path %></li>
+					<li><%= link_to "Press", root_path %></li>
+					<li><%= link_to "Contact Us", contact_path %></li>
+				</ul>
+      </div>
+    </div>
+	</nav>
+</header>
+
+
+<!-- <header class="stacked">
+	<div class="top">
+		<div class="inside">
+			<div class="hcontact">
+				<a class="tel">407-355-9210</p>
 			</div>
 
-	    <ul id="main-nav" class="uk-navbar-nav">
-				<%= render 'layouts/nav' %>
-	    </ul>
+	    <div class="blk-logo">
+    	  <%= link_to(image_tag('wg-logo1.png', class: 'img-responsive hlogo'), root_path )%>
+			</div>
 
-		</nav>
+			<div class="social">
+				<ul>
+				<%= render 'shared/social' %>
+				</ul>
+			</div>
+		</div>
 	</div>
-</header>
+	<div class="clearfix"></div>
+
+	<nav class="uk-navbar-container" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+		<div class="inside">
+	    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+					<%= render 'layouts/nav' %>
+        </ul>
+	    </div>
+
+	    <div class="uk-navbar-right">
+				<%= link_to "Contact Us", contact_path %>
+	    </div>
+	  </div>
+	</nav>
+</header> -->

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600,700|Poppins:300,400,500,600|Quicksand:400,500,700');
 @import "mixins";
 @import "variables";
 
@@ -50,15 +50,25 @@ html {
 
 
 body {
-  margin:0; font-family: $lato;
-  width:100%;
+  margin:0;
 	line-height: 1.5em;
-  // width:100%; overflow-x:hidden; font-size: 1em; text-align: center;
+  font-family: $muli;
+  @include sec-default();
+  // background-color: $white;border:30px solid $pink;
 
-  h1, h2, h3, h4, h5, p, li, a {color: $black; line-height: 1.5em;
+  h1, h2, h3, h4, h5, p, li, a {color: $tbrown; line-height: 1.5em;font-family: $muli;
     &.bmargin0 {margin-bottom: 0;}
+    &.pop{font-family: $pop;}
+    &.quick {font-family: $quick;}
+    &.pink {color: $pink;}
+    &.brown {color: $brown;}
+    &.compb {color: $compb;}
+    &.compt {color: $compt;}
+    &.compg {color: $compg;}
+    &.strong {font-weight: bold;}
   }
-  h1{font-size: 2rem;}
+  h1{font-size: 2rem; font-weight: bold;}
+  h2{font-size: 1.75rem;}
 }
 
 .text-center {text-align: center;}

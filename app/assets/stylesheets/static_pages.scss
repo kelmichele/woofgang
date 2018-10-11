@@ -5,12 +5,12 @@
 @import "variables";
 
 .inside{width: 85%; @include center-block();
-  &.medi {width:75%;}
+  &.med {width:75%;}
   &.med2 {width:65%;}
   &.narrow {width:55%;}
 
   @include bp(tb) {
-  	&.medi {width:80%;}
+  	&.med {width:80%;}
 	  &.med2 {width:75%;}
 	  &.narrow {width:70%;}
   }
@@ -33,14 +33,64 @@ hr{
   display: table;
 }
 
-.full-sec{@include sec-default(); text-align: center; padding: 40px 0;
+.full-sec{@include sec-default(); padding: 40px 0;
   .inline-img {display: inline-block; float: none; width: 30%;}
-  &.short {padding: 0;}
 }
+.full{@include sec-default(); }
 
 .page-body { @include sec-default(); }
 
+.ipage-header { @include sec-default(); text-align: center;
+  padding:40px 0;
+  &.xtra {padding: 60px 0;}
+  &.left{text-align: left;}
+  &.cream { background-color: $f9;}
+  &.pink { background-color: $pink;}
+  &.opink { background-color: $opink;}
+  &.simple{padding:15px 0 0px;
+    h1 {font-size: 1.8rem;}
+  }
+}
+
 //*********************************//
-//*********** home ***********//
+  //*********** home ***********//
 //*********************************//
-.home {}
+.home {
+  .hs1-hero {@include sec-default();
+    margin-bottom: 50px;
+    // .inside {@include sec-default();height:600px; @include sec-bgimage('woof14.jpg');}
+    .hero-img {position: relative; z-index: 0;}
+    .text-over{position: relative; z-index: 1;
+      width:90%; @include center-block(); background-color: $pink;
+      text-align: center; padding:10px 0 1px;
+      margin-top:-80px;
+      h1, h2{color: $white; @include tshadowl(rgba($black, .2));}
+    }
+  }
+
+}
+
+
+//*********************************//
+//*********** franchise ***********//
+//*********************************//
+.franchise {
+  h1, h2, h3{margin:0;}
+
+  .il-left, .il-right {display: inline-block; float: left; width: 48%;}
+  .il-right {float: right;}
+
+  .details {
+    .fran-blk {display: inline-block; float: left; width: 30%; margin:10px 1.5%;}
+    p {margin-top: 0;}
+    p.tag{margin-bottom: 10px; font-weight: bold;}
+  }
+}
+
+
+
+
+
+//*********************************//
+  //***********  ***********//
+//*********************************//

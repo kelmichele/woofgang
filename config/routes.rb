@@ -9,10 +9,13 @@ Rails.application.routes.draw do
   get 'franchise', to: 'static_pages#franchise'
   get 'retail', to: 'static_pages#retail'
   get 'services', to: 'static_pages#services'
+  get 'press', to: 'static_pages#press'
 
   get '/fb', to: 'social#fb'
   get '/insta', to: 'social#insta'
   get '/twitter', to: 'social#twitter'
   get '/pin', to: 'social#pin'
   get '/in', to: 'social#in'
+
+  resources :locations, except: [:show]
 end
