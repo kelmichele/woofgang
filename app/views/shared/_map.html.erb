@@ -1,0 +1,2 @@
+<%= tag.div nil, id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:state] } %>
+<%= link_to "Redo search in this area", "#", id: "redo-search" %>

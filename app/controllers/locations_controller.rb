@@ -51,5 +51,3 @@ class LocationsController < ApplicationController
       params.require(:location).permit(:street, :suite, :city, :state, :zip, :phone, :latitude, :longitude)
     end
 end
-
-

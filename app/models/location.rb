@@ -31,3 +31,4 @@ end
 
 # rake geocode:all CLASS=Location SLEEP=0.25 BATCH=100
 # Location.near("")
+# l = Location.new(street: "", suite: "", city: "", state: "", zip: "", phone: "")

@@ -3,24 +3,34 @@
 
 <div class="full-sec">
 	<div class="inside">
-		<div class="loclist">
-			<table>
-			<% @locations.each do |location| %>
-				<div class="townlisting-bx">
-					<h4>
-						<!-- <%= simple_format(location.full_address)%>-->
-						<%= location.street.titleize %><br>
-						<% if location.suite %><%= location.suite.titleize %><br><% end %>
-						<%= location.city %>, <%= location.state %> <%= location.zip %>
-						<br>
-						<% if location.phone %>
-							<%= number_to_phone(location.phone, delimiter: '.', area_code: true) %>
-						<% end %>
-					</h4>
-					<!-- <div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div> -->
-				</div>
-			<% end %>
-			</table>
+		<h1><%= @page_title %></h1>
+		<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
+
+		<div class="full listings">
+			<div class="loclist">
+				<table>
+				<% @locations.each do |location| %>
+					<div class="location-bx">
+						<h4>
+							<!-- = simple_format(location.full_address)%> -->
+							<%= location.street.titleize %><br>
+							<% if location.suite != '' %><%= location.suite.titleize %><br><% end %>
+							<%= location.city %>, <%= location.state %> <%= location.zip %>
+							<br>
+							<% if location.phone %>
+								<%= number_to_phone(location.phone, delimiter: '.', area_code: true) %>
+							<% end %>
+						</h4>
+						<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
+					</div>
+				<% end %>
+				</table>
+			</div>
+
+			<div class="map">
+				<%= render 'shared/map' %>
+			</div>
 		</div>
+
 	</div>
 </div>

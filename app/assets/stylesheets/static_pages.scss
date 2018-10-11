@@ -52,6 +52,7 @@ hr{
   }
 }
 
+#map {height:500px;}
 //*********************************//
   //*********** home ***********//
 //*********************************//
@@ -88,9 +89,25 @@ hr{
 }
 
 
-
-
-
 //*********************************//
-  //***********  ***********//
+//*********** locations ***********//
 //*********************************//
+.locations {
+  .full.listings {margin-top: 50px;}
+  .map, .loclist {display: inline-block; width: 40%; float: left;}
+  .map {width:57%; float: right;}
+
+  .location-bx {
+    @include sec-default(); margin-bottom: 30px;
+    h4{margin-bottom: 5px; font-size:1.1rem;}
+    .actions a {color: $red; font-weight: bold;}
+  }
+}
+
+
+
+
+
+
+
+
