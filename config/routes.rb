@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   get '/in', to: 'social#in'
 
   resources :locations, except: [:show]
+  resources :posts
   resources :blogs
 end

@@ -1,0 +1,26 @@
+<% @page_title = "Woof Gang Blog Post" %>
+<% @page_description = "" %>
+
+
+
+<div class="ipage-header left opink">
+	<div class="inside">
+		<h1><%= @post.title %></h1>
+		<%= link_to 'Back to all posts', posts_path, class: 'woof-link' %>
+	</div>
+</div>
+
+<div class="full-sec">
+	<div class="inside">
+
+		<% if @post.image.attached? %>
+		  <%= image_tag @post.image %>
+		<% end %>
+
+		<p><%= @post.content %></p>
+
+		<div class="full">
+			<%= render 'actions' %>
+		</div>
+	</div>
+</div>

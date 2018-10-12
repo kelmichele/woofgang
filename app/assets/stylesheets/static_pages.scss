@@ -122,7 +122,7 @@ hr{
   .page-body {@include center-block(); width:85%; padding-bottom: 50px;}
 }
 
-.blogs {
+.blogs, .posts {
   .form-group {@include sec-default(); margin-bottom: 30px;
     textarea {height:200px;@include sec-default(); padding: 10px; margin-top: 5px; font-size: 14px;}
 
@@ -135,7 +135,7 @@ hr{
   .action.back {background-color: $compg;}
 }
 
-.blogs.index {
+.blogs.index, .posts.index  {
   h1, .woof-link {display: inline-block; width:80%; float: left;}
   .woof-link {float:right; width: 15%;}
 

@@ -1,0 +1,9 @@
+<div class="blog-actions">
+	<% if current_user.admin? %>
+	  <%= link_to("Edit Blog Post", edit_post_path(@post), class: 'action woof-link edit') %>
+		<%= link_to "Delete Blog Post", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete post?" }, class: "action woof-link danger" %>
+	<% end %>
+
+	<div class="clearfix"></div>
+	<%= link_to("<< All Blog Posts", posts_path, :class => 'action woof-link back') %>
+</div>

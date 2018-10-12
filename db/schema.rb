@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_154130) do
+ActiveRecord::Schema.define(version: 2018_10_12_183006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 2018_10_12_154130) do
     t.index ["city"], name: "index_locations_on_city"
     t.index ["state"], name: "index_locations_on_state"
     t.index ["zip"], name: "index_locations_on_zip"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

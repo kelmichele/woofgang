@@ -1,0 +1,29 @@
+<% @page_title = "Latest News" %>
+<% @page_description = "" %>
+
+
+
+<div class="ipage-header left opink">
+	<div class="inside">
+		<h1>All Posts</h1>
+		<%= link_to 'New post', new_post_path, class: 'woof-link' %>
+	</div>
+</div>
+
+<div class="full-sec blog-posts">
+	<div class="inside med">
+		<% @posts.each do |post| %>
+			<style type="text/css">
+				.post-gi {
+					background-image: url(<%= rails_blob_url(post.image) %>);
+				}
+			</style>
+
+			<%= link_to post_path(post), class: 'post-gi' do %>
+	      <!-- <%= image_tag post.image, class: 'img-bg' %> -->
+		    <h3 class="title"><%= post.title %></h3>
+			<% end %>
+		<% end %>
+
+	</div>
+</div>
