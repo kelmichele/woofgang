@@ -3,6 +3,10 @@
 
 
 <h1><%= @blog.title %></h1>
+<% if @blog.image.attached? %>
+  <%= image_tag @blog.image %>
+<% end %>
+
 <p><%= @blog.text %></p>
 
 <div class="full">

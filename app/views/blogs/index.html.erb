@@ -7,6 +7,11 @@
 
 <% @blogs.each do |blog| %>
     <h4 class="bmargin0"><%= blog.title %></h4>
+
+    <% if blog.image.attached? %>
+      <%= image_tag blog.image %>
+    <% end %>
+
     <p><%= blog.text %></p>
     <p><%= link_to 'View', blog_path(blog) %><br>
     <%= link_to 'Edit', edit_blog_path(blog) %><br>
