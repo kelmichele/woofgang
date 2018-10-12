@@ -2,20 +2,30 @@
 <% @page_description = "" %>
 
 
-<h1>Blog</h1>
-<%= link_to 'New blog', new_blog_path %>
 
-<% @blogs.each do |blog| %>
-    <h4 class="bmargin0"><%= blog.title %></h4>
+<div class="ipage-header left opink">
+	<div class="inside">
+		<h1>Blog</h1>
+		<%= link_to 'New blog', new_blog_path, class: 'woof-link' %>
+	</div>
+</div>
 
-    <% if blog.image.attached? %>
-      <%= image_tag blog.image %>
-    <% end %>
+<div class="full-sec blog-posts">
+	<div class="inside med">
+		<% @blogs.each do |blog| %>
+			<style type="text/css">
+				.post-gi {
+					background-image: url(<%= rails_blob_url(blog.image) %>);
+				}
+			</style>
 
-    <p><%= blog.text %></p>
-    <p><%= link_to 'View', blog_path(blog) %><br>
-    <%= link_to 'Edit', edit_blog_path(blog) %><br>
-    <%= link_to 'Destroy', blog_path(blog),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %></p>
-<% end %>
+			<%= link_to blog_path(blog), class: 'post-gi' do %>
+	      <!-- <%= image_tag blog.image, class: 'img-bg' %> -->
+		    <h3 class="title"><%= blog.title %></h3>
+
+		    <!-- <p><%= blog.text %></p> -->
+			<% end %>
+		<% end %>
+
+	</div>
+</div>

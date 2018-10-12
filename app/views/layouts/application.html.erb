@@ -22,13 +22,13 @@
 
   <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'layouts/header' %>
-    <div class="full-sec less"><div class="inside">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div></div>
-
     <div class="page-body">
-        <%= yield %>
+      <div class="full"><div class="inside">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div></div>
+
+      <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
   </body>

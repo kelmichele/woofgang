@@ -118,7 +118,7 @@ hr{
 //*********************************//
 //*********** users ***********//
 //*********************************//
-.registrations, .sessions, .blogs {
+.registrations, .sessions {
   .page-body {@include center-block(); width:85%; padding-bottom: 50px;}
 }
 
@@ -133,7 +133,26 @@ hr{
   .action.danger {float: right; background-color: $red;}
   .action.edit {background-color: $compt;}
   .action.back {background-color: $compg;}
+}
 
+.blogs.index {
+  h1, .woof-link {display: inline-block; width:80%; float: left;}
+  .woof-link {float:right; width: 15%;}
+
+  .blog-posts {
+    h3.title {font-size: 1.3rem;}
+    .post-gi {display: inline-block; float: left; width:45%; margin: 0 auto 15px;
+      padding:100px 30px 30px; text-align: center;
+      background-position: center center; background-size: cover; background-repeat: no-repeat;
+      position: relative;z-index: 0;
+      height:350px;
+      &::before {@include before(); background-color: rgba($black, .1);}
+      &:nth-child(2n+2) {float: right;}
+
+      // .img-bg {position: absolute; z-index: 0; }
+    }
+
+  }
 }
 
 
