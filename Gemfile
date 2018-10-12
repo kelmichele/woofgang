@@ -21,7 +21,7 @@ gem 'devise'
 # gem 'roo', '~> 2.7', '>= 2.7.1'
 
 
-gem "aws-sdk-s3", require: false
+gem "aws-sdk-s3"
 
 gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
