@@ -2,12 +2,15 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  validates :street_address_one, presence: true
+  # validates :street_address_one, presence: true
+  validates :street_address_one, presence: true, uniqueness: { scope: :city, case_sensitive: false }
   validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true
   validates :phone, presence: true
   validates :email_address, presence: true
+
+
 
   default_scope -> { order(city: :asc)}
 
