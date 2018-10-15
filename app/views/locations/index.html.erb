@@ -42,29 +42,32 @@
 				<table>
 				<% @locations.each do |location| %>
 					<div class="location-bx">
-						<h4>
 							<!-- = simple_format(location.full_address)%> -->
 							<% if location.store_name %>
-								<%= location.store_name.titleize %><br>
+								<div class="cat name">
+								<%= location.store_name.titleize %></div>
 							<% else %>
-								Woof Gang Bakery & Grooming <%= location.city.titleize %><br>
+								<div class="cat name">Woof Gang Bakery & Grooming <%= location.city.titleize %></div>
 							<% end %>
 
-							<%= location.street_address_one.titleize %><br>
+							<div class="cat address">
+								<%= location.street_address_one.titleize %><br>
+								<% if location.street_address_two %>
+									<span class="addr2"><%= location.street_address_two.titleize %></span>
+								<% end %>
+								<%= location.city %>, <%= location.state %> <%= location.zip %>
+							</div>
 
-							<% if location.street_address_two %><%= location.street_address_two.titleize %><br><% end %>
+							<div class="cat phone"><%= number_to_phone(location.phone, delimiter: '-') %></div>
 
-							<%= location.city %>, <%= location.state %> <%= location.zip %>
-							<br>
-
-							<%= number_to_phone(location.phone, delimiter: '.', area_code: true) %><br>
-
-							<% if location.email_address != '' %><%= location.email_address %><br><% end %>
+							<div class="cat email"><%= location.email_address %></div>
 
 							<% if location.hours %>
-								<%= location.hours %>
+								<div class="cat hours">
+									<%= location.hours %>
+								</div>
 							<% end %>
-						</h4>
+
 						<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
 						<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
 					</div>
