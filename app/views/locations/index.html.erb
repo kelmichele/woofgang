@@ -1,44 +1,78 @@
 <% @page_title = "Our Locations" %>
 <% @page_description = "New Description" %>
 
+<div class="ipage-header opink">
+	<div class="inside">
+		<div class="pagetitle">
+			<h1><%= @page_title %></h1>
+		</div>
+
+		<div class="admin-btns">
+			<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
+			<%= link_to "Download CSV", locations_path(format: "csv"), class: 'woof-link dl' %>
+			<div class="full-sec">
+				<p class="bmargin0">Import Locations</p>
+				<%= form_tag import_locations_path, multipart: true do %>
+				  <%= file_field_tag :file %>
+				  <br>
+				  <%= submit_tag "Import" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="full-sec">
 	<div class="inside">
-		<h1><%= @page_title %></h1>
-		<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
-
 		<div class="full listings">
-			<div class="loclist">
-				<div class="search-sec">
-					<div class="searcher">
-						<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
-						  <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
-						  <%= f.submit "", class: "btn btn-outline-secondary search" %>
-						<% end %>
-					</div>
+			<div class="search-sec">
+				<div class="searcher">
+					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
+					  <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
+					  <%= f.submit "", class: "btn btn-outline-secondary search" %>
+					<% end %>
 				</div>
-
-				<table>
-				<% @locations.each do |location| %>
-					<div class="location-bx">
-						<h4>
-							<!-- = simple_format(location.full_address)%> -->
-							<%= location.street.titleize %><br>
-							<% if location.suite != '' %><%= location.suite.titleize %><br><% end %>
-							<%= location.city %>, <%= location.state %> <%= location.zip %>
-							<br>
-							<% if location.phone %>
-								<%= number_to_phone(location.phone, delimiter: '.', area_code: true) %>
-							<% end %>
-						</h4>
-						<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
-					</div>
-				<% end %>
-				</table>
 			</div>
 
 			<div class="map">
 				<%= render 'shared/map' %>
 			</div>
+
+			<div class="loclist">
+				<table>
+				<% @locations.each do |location| %>
+					<div class="location-bx">
+						<h4>
+							<!-- = simple_format(location.full_address)%> -->
+							<% if location.store_name %>
+								<%= location.store_name.titleize %><br>
+							<% else %>
+								Woof Gang Bakery & Grooming <%= location.city.titleize %><br>
+							<% end %>
+
+							<%= location.street_address_one.titleize %><br>
+
+							<% if location.street_address_two %><%= location.street_address_two.titleize %><br><% end %>
+
+							<%= location.city %>, <%= location.state %> <%= location.zip %>
+							<br>
+
+							<%= number_to_phone(location.phone, delimiter: '.', area_code: true) %><br>
+
+							<% if location.email_address != '' %><%= location.email_address %><br><% end %>
+
+							<% if location.hours %>
+								<%= location.hours %>
+							<% end %>
+						</h4>
+						<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
+						<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
+					</div>
+				<% end %>
+				</table>
+			</div>
+
+
 		</div>
 
 	</div>

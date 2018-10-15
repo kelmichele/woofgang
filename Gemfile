@@ -18,8 +18,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
-# gem 'roo', '~> 2.7', '>= 2.7.1'
-
+gem 'roo', '~> 2.7', '>= 2.7.1'
 
 
 gem 'will_paginate', '3.1.6'

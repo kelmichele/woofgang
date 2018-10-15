@@ -27,7 +27,12 @@ Rails.application.routes.draw do
   get '/pin', to: 'social#pin'
   get '/in', to: 'social#in'
 
-  resources :locations, except: [:show]
+  resources :locations, except: [:show] do
+    collection do
+      post :import
+    end
+  end
+
   resources :posts
   resources :blogs
 end
