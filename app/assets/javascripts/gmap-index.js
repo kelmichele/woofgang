@@ -16,8 +16,9 @@ document.addEventListener("turbolinks:load", function() {
         lng: location.longitude,
         title: location.address,
         infoWindow: {
-          content: '<p>' + location.street_address_one + '<br>' + location.city + ', ' + location.state + ' ' + location.zip + '<br>' + '<a href="tel:' + location.phone + '">' + location.phone + '</a></p>'
-          // content: '<p><a href="/locations/' + location.id + '" >' + location.address + '</a></p>'
+          content: '<p>' + location.street_address_one + '<br>' + location.city + ', ' + location.state + ' ' + location.zip + '<br>' + '<a href="tel:' + location.phone + '">' + location.phone +
+          '</a></p> <p><a href="https://www.google.com/maps/dir//' +
+          location.street_address_one + '+' + location.city + '+' + location.state + '+' + location.zip + '" target="_blank">Get Directions</a></p>'
         }
       });
     }
