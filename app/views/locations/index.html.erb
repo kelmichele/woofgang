@@ -39,6 +39,7 @@
 			</div>
 
 			<div class="loclist">
+
 				<table>
 				<% @locations.each do |location| %>
 					<div class="location-bx">
@@ -67,6 +68,8 @@
 									<%= location.hours %>
 								</div>
 							<% end %>
+
+							<p><small>Tags: <%= raw location.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
 
 						<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
 						<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>

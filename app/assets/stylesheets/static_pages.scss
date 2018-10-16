@@ -181,3 +181,13 @@ hr{
 }
 
 
+.posts.show {
+  .feat-img, .feat-content {display: inline-block; float: left; width:49.5%;
+    position: relative; z-index: 1;
+  }
+  .feat-content {margin-left: -8%; width:55%; margin-top:5%; background-color: $f8; padding: 20px; z-index: 2;}
+
+}
+
+
+

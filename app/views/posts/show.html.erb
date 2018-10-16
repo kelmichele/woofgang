@@ -12,14 +12,17 @@
 
 <div class="full-sec">
 	<div class="inside">
+		<div class="feat-img">
+			<% if @post.image.attached? %>
+			  <%= image_tag @post.image %>
+			<% end %>
+		</div>
 
-		<% if @post.image.attached? %>
-		  <%= image_tag @post.image %>
-		<% end %>
+		<div class="feat-content">
+			<p><%= @post.content %></p>
+		</div>
 
-		<p><%= @post.content %></p>
-
-		<div class="full">
+		<div class="full-sec">
 			<%= render 'actions' %>
 		</div>
 	</div>

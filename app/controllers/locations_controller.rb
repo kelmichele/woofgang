@@ -1,28 +1,25 @@
 class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
-	# def index
-	# 	@locations = Location.all
-
-	# 	respond_to do |format|
-	# 	  format.html
-	# 	  format.csv { send_data @locations.to_csv }
-	# 	end
-	# end
-
 	def index
 		@locations = if params[:l]
 	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
 	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
 	    distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
 	    box      = Geocoder::Calculations.bounding_box(center, distance)
-	    Location.within_bounding_box(box)
+	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 10)
+
 	  elsif params[:near]
-	    Location.near(params[:near], 50)
+	    Location.near(params[:near], 50).paginate(:page => params[:page], :per_page => 10)
+
+	  elsif params[:tag]
+	  	Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
+
 	  else
-	    Location.all
+	    Location.all.paginate(:page => params[:page], :per_page => 10)
 		end
-		@locations = @locations.paginate(:page => params[:page], :per_page => 10)
+		# @locations = @locations.paginate(:page => params[:page], :per_page => 10)
+		# params[:tag] ? @locations = Location.tagged_with(params[:tag]) : @locations = Location.all.paginate(:page => params[:page], :per_page => 10)
 
 		respond_to do |format|
 		  format.html
@@ -62,7 +59,7 @@ class LocationsController < ApplicationController
 		  flash[:success] = "Location was updated successfully. You may close this tab."
 	    redirect_to locations_path
 		else
-		  render 'edit'
+		  redirect_to locations_path(@location)
 		end
 	end
 
@@ -78,6 +75,6 @@ class LocationsController < ApplicationController
 		end
 
 		def location_params
-      params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude)
+      params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
 end
