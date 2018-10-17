@@ -57,12 +57,10 @@
         <%= f.text_field :longitude, class: "form-control", placeholder: "Longitude", autofocus: true %>
       </div>
 
-      <div class="forminfo">
-        <%= f.label :tags, "Tags (separated by commas)" %><br />
-        <%= f.text_field :tag_ids, class: "form-control",  as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>
-        <!-- = f.label :tags %><br> -->
-        <!-- = f.text_field :tag_ids, class: "form-control", placeholder: "Tags", as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %> -->
-      </div>
+      <!-- <div class="forminfo">
+        = f.label :tags, "Tags (separated by commas)" %><br />
+        = f.text_field :tag_ids, class: "form-control",  as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>
+      </div> -->
     </div>
 
     <div class="form-group btns">

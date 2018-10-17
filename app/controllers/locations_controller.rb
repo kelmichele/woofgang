@@ -12,8 +12,8 @@ class LocationsController < ApplicationController
 	  elsif params[:near]
 	    Location.near(params[:near], 50).paginate(:page => params[:page], :per_page => 10)
 
-	  elsif params[:tag]
-	  	Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
+	  # elsif params[:tag]
+	  # 	Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
 
 	  else
 	    Location.all.paginate(:page => params[:page], :per_page => 10)
@@ -44,7 +44,7 @@ class LocationsController < ApplicationController
 		@location = Location.new(location_params)
 		if @location.save
 		  flash[:success] = "Location was successfully created"
-	    redirect_to locations_path(location)
+	    redirect_to locations_path(@location)
 		else
 		  render 'new'
 		  flash[:danger] = "Some Locations were not saved."
@@ -56,7 +56,7 @@ class LocationsController < ApplicationController
 
 	def update
 		if @location.update(location_params)
-		  flash[:success] = "Location was updated successfully. You may close this tab."
+		  flash[:success] = "Location was updated successfully."
 	    redirect_to locations_path(@location)
 		else
 		  render 'edit'
@@ -75,6 +75,7 @@ class LocationsController < ApplicationController
 		end
 
 		def location_params
-      params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+      params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude)
+      # , :tag_list, :tag, { tag_ids: [] }, :tag_ids
     end
 end

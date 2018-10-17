@@ -36,5 +36,5 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :blogs
-  get 'tags/:tag', to: 'locations#index', as: :tag
+  # get 'tags/:tag', to: 'locations#index', as: :tag
 end
