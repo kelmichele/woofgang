@@ -45,10 +45,13 @@
 					<div class="location-bx">
 							<!-- = simple_format(location.full_address)%> -->
 							<% if location.store_name %>
-								<div class="cat name">
-								<%= location.store_name.titleize %></div>
+								<%= link_to location_path(location) do %>
+									<div class="cat name"><%= location.store_name.titleize %></div>
+								<% end %>
 							<% else %>
-								<div class="cat name">Woof Gang Bakery & Grooming <%= location.city.titleize %></div>
+								<%= link_to location_path(location) do %>
+									<div class="cat name">Woof Gang Bakery & Grooming <%= location.city.titleize %></div>
+									<% end %>
 							<% end %>
 
 							<div class="cat address">

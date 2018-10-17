@@ -21,10 +21,10 @@ class LocationsController < ApplicationController
 		# @locations = @locations.paginate(:page => params[:page], :per_page => 10)
 		# params[:tag] ? @locations = Location.tagged_with(params[:tag]) : @locations = Location.all.paginate(:page => params[:page], :per_page => 10)
 
-		respond_to do |format|
-		  format.html
-		  format.csv { send_data @locations.to_csv }
-		end
+		# respond_to do |format|
+		#   format.html
+		#   format.csv { send_data @locations.to_csv }
+		# end
 	end
 
 
@@ -44,7 +44,7 @@ class LocationsController < ApplicationController
 		@location = Location.new(location_params)
 		if @location.save
 		  flash[:success] = "Location was successfully created"
-	    redirect_to locations_path
+	    redirect_to locations_path(location)
 		else
 		  render 'new'
 		  flash[:danger] = "Some Locations were not saved."
@@ -57,9 +57,9 @@ class LocationsController < ApplicationController
 	def update
 		if @location.update(location_params)
 		  flash[:success] = "Location was updated successfully. You may close this tab."
-	    redirect_to locations_path
+	    redirect_to locations_path(@location)
 		else
-		  redirect_to locations_path(@location)
+		  render 'edit'
 		end
 	end
 
