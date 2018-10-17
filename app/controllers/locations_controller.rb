@@ -12,14 +12,10 @@ class LocationsController < ApplicationController
 	  elsif params[:near]
 	    Location.near(params[:near], 50).paginate(:page => params[:page], :per_page => 10)
 
-	  # elsif params[:tag]
-	  # 	Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
-
 	  else
 	    Location.all.paginate(:page => params[:page], :per_page => 10)
 		end
 		# @locations = @locations.paginate(:page => params[:page], :per_page => 10)
-		# params[:tag] ? @locations = Location.tagged_with(params[:tag]) : @locations = Location.all.paginate(:page => params[:page], :per_page => 10)
 
 		# respond_to do |format|
 		#   format.html
@@ -76,6 +72,5 @@ class LocationsController < ApplicationController
 
 		def location_params
       params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude)
-      # , :tag_list, :tag, { tag_ids: [] }, :tag_ids
     end
 end
