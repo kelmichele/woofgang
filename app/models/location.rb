@@ -10,6 +10,8 @@ class Location < ApplicationRecord
   validates :phone, presence: true
   validates :email_address, presence: true
 
+  default_scope -> { order(state: :asc)}
+
   def address
     [street_address_one, city_state, zip].compact.join(" , ")
   end

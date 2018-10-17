@@ -9,7 +9,7 @@ Geocoder.configure(
   # https_proxy: nil,           # HTTPS proxy server (user:pass@host:port)
   # api_key: nil,               # API key for geocoding service
   api_key: Rails.application.credentials.google[:gmaps_key],
-  # cache: Redis.new,                 # cache object (must respond to #[], #[]=, and #del)
+  cache: Redis.new,                 # cache object (must respond to #[], #[]=, and #del)
   # cache_prefix: 'geocoder:',  # prefix (string) to use for all cache keys
 
   # Exceptions that should not be rescued by default

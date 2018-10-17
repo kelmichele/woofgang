@@ -23,6 +23,7 @@
 /public/assets
 .byebug_history
 
+/config/storage.yml
 /config/database.yml
 /config/secret_token.rb
 
