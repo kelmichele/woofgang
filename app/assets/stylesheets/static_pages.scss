@@ -93,8 +93,15 @@ hr{
 //*********** locations ***********//
 //*********************************//
 .locations {
-  .pagetitle, .admin-btns {display: inline-block; width: 40%; float:left;}
-  .admin-btns {float:right;}
+  .ipage-header {
+    .pagetitle {display: inline-block; width: 40%; float:left;}
+    .wl-uk{width:20%;}
+    .admin-btns {
+      .woof-link, .import {display: inline-block; width:30%;}
+    }
+
+    // .uk-dropdown.uk-open.uk-dropdown-boundary.uk-dropdown-bottom-center {top:90px;}
+  }
 
   .search-sec{width:35%; float: left; margin-bottom:30px;
     .form-control, .btn.btn-outline-secondary.search {display: inline-block; float: left;}
@@ -176,17 +183,18 @@ hr{
 
       // .img-bg {position: absolute; z-index: 0; }
     }
-
   }
-}
 
-
-.posts.show {
+  .post-li {width:49%; display: inline-block; float: left;}
   .feat-img, .feat-content {display: inline-block; float: left; width:49.5%;
     position: relative; z-index: 1;
   }
   .feat-content {margin-left: -8%; width:55%; margin-top:5%; background-color: $f8; padding: 20px; z-index: 2;}
+}
 
+
+.posts.show {
+  .feat-img {width:50%; @include center-block();}
 }
 
 

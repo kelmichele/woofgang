@@ -6,23 +6,35 @@
 <div class="ipage-header left opink">
 	<div class="inside">
 		<h1>All Posts</h1>
-		<%= link_to 'New post', new_post_path, class: 'woof-link' %>
+		<% if user_signed_in? && current_user.admin? %>
+			<%= link_to 'Create New Post', new_post_path, class: 'woof-link' %>
+			<% end %>
 	</div>
 </div>
 
 <div class="full-sec blog-posts">
-	<div class="inside med">
+	<div class="inside medi">
 		<% @posts.each do |post| %>
-			<style type="text/css">
+			<!-- <style type="text/css">
 				.post-gi {
 					background-image: url(<%= rails_blob_url(post.image) %>);
 				}
 			</style>
 
-			<%= link_to post_path(post), class: 'post-gi' do %>
-	      <!-- <%= image_tag post.image, class: 'img-bg' %> -->
+			<= link_to post_path(post), class: 'post-gi' do %>
 		    <h3 class="title"><%= post.title %></h3>
-			<% end %>
+			< end %> -->
+			<div class="post-li">
+				<div class="feat-img">
+					<% if post.image.attached? %>
+					  <%= image_tag post.image %>
+					<% end %>
+				</div>
+
+				<div class="feat-content">
+					<%= link_to post.title, post_path(post) %>
+				</div>
+			</div>
 		<% end %>
 
 	</div>

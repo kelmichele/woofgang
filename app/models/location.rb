@@ -29,6 +29,11 @@ class Location < ApplicationRecord
     street_address_one_changed? || street_address_two_changed? || city_changed? || state_changed? || zip_changed?
   end
 
+  def op_hours
+    ph_time = "pm" + "\n"
+    op_hours = hours.gsub(",", "\\n" )
+  end
+
   def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)
     header = spreadsheet.row(1)

@@ -1,9 +1,21 @@
-<header class="il-header2" uk-sticky="sel-target: .il-header2; cls-active: uk-navbar-sticky">
+<div class="uptop">
+	<div class="inside">
+		<div class="contact">
+			<%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %>
+		</div>
+
+		<ul class="social">
+			<%= render 'shared/social' %>
+		</ul>
+	</div>
+</div>
+<div class="clearfix"></div>
+
+<!-- <header class="il-header2" uk-sticky="sel-target: .il-header2; cls-active: uk-navbar-sticky">
 	<nav class="inside inside-stick" uk-navbar>
     <div class="navbar-center">
       <div class="navbar-center-left">
         <ul class="navbar-nav">
-        <!-- -- uk-navbar-nav -- -->
       		<li><%= link_to "Home", root_path %></li>
       		<li><%= link_to "About Us", about_us_path %></li>
       		<li><%= link_to "Franchise", franchise_path %>
@@ -32,6 +44,44 @@
 					<li><%= link_to "Contact Us", contact_path %></li>
 				</ul>
       </div>
+    </div>
+
+    <div class="mobile-nav">
+		  <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">MENU</button>
+    	<%= render 'layouts/mobile-nav' %>
+    </div>
+	</nav>
+</header>
+ -->
+ <header class="inline-header" uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
+	<nav class="inside inside-stick" uk-navbar>
+    <div class="navbar-center">
+  	  <div class="nb-logo">
+	  	  <%= link_to(image_tag('wg-logo1.png', class: 'navbar-item logo'), root_path )%>
+	  	</div>
+
+      <ul class="navbar-nav">
+    		<li><%= link_to "Home", root_path %></li>
+    		<li><%= link_to "About Us", about_us_path %></li>
+    		<li><%= link_to "Franchise", franchise_path %>
+      		<div class="uk-navbar-dropdown">
+            <ul class="uk-nav uk-navbar-dropdown-nav">
+            	<li><%= link_to "Franchise Process", franchise_process_path %></li>
+            	<li><%= link_to "Franchise FAQ's", franchise_faq_path %></li>
+            	<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
+            </ul>
+	        </div>
+      	</li>
+    		<li><%= link_to "Services", services_path %></li>
+				<li><%= link_to "Locations", locations_path %></li>
+				<li><%= link_to "Blog", posts_path %></li>
+				<li><%= link_to "Press", press_path %></li>
+				<li><%= link_to "Contact Us", contact_path %></li>
+			</ul>
+
+    <div class="mobile-nav">
+		  <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">MENU</button>
+    	<%= render 'layouts/mobile-nav' %>
     </div>
 	</nav>
 </header>

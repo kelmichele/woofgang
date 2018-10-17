@@ -2,25 +2,26 @@
 @import "mixins";
 
 
+
+
+.uptop {@include sec-default();
+	padding: 10px 0; background-color: $pink;
+	margin-bottom: 8px;
+
+	.social, .contact, .sm-nav {display: inline-block; float: left; }
+	.social {float: right; text-align: right; width:30%;
+		li {display:inline-block; float:none; margin: 0 1%;
+			width: 20px; height: 20px;
+		}
+	}
+	&, a {color: $white;font-size: 16px; font-weight: 600;letter-spacing: .5px;}
+}
+
+
+
 //*********************************//
 //********** header inline *********//
 //*********************************//
-
-// .il-header {@include sec-default();
-// 	.uk-navbar-container {background-color: transparent;}
-// 	.uk-logo {width:320px; padding:10px;}
-
-// 	.uk-navbar-center-left {margin-right: 10%; }
-// 	.uk-navbar-center-right {margin-left: 10%; }
-
-// 	.uk-navbar-nav{margin-top: 20%;
-// 		border-top: 1px solid rgba($brown, .3);
-// 		border-bottom: 1px solid rgba($brown, .3);
-// 		li {vertical-align: middle;
-// 			a {font-family: $quick; color: $brown; text-transform: none; }
-// 		}
-// 	}
-// }
 
 .il-header2 {@include sec-default();background-color: $white;
 	// padding:10px 0 15px;
@@ -46,30 +47,26 @@
 	// &::before {@include before(); background-color: $pink; height:60px; top:45%;}
 }
 
-.stacked {@include sec-default();
-	.uk-navbar-container {background-color: $white;}
-	.top {@include sec-default(); padding: 10px 0; border-bottom: 1px solid rgba($brown, .08);}
-	.blk-logo, .social, .hcontact {display: inline-block; float: none;width:30%;}
-	.blk-logo {width:40%; text-align: center;}
-	.hlogo {width:280px; @include center-block();}
-	.hcontact{float:left; margin-top: 15px;
-		a{color:$pink}
-	}
-	.social {float: right;width:29.5%;
-		ul{float: right; margin-top:15px;}
-		li {display: inline-block; float: none; margin:3px 5px; text-align: right;}
-		span{width:20px; height:20px; color: $pink}
-	}
+.inline-header {@include sec-default();background-color: $white;
+	&.uk-navbar-sticky.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);padding-bottom:10px;}
+	.nb-logo, .navbar-nav{display: inline-block; float: left; width: 30%;}
+	.nb-logo {margin-left: 1%; background-color: $white; padding:10px 0 0;}
+	.navbar-nav {float: right; width:68%; text-align: center;}
+	li {display: inline-block; float: none;
+			margin: 15% 1.5% 0px;
 
-	.uk-navbar-left {display: inline-block;}
-	.uk-navbar-right {float: right; display: inline-block;margin-top:15px; width:10%;}
-	.uk-navbar-nav,.uk-navbar-right {
-		li {margin-top:15px;margin-bottom:15px;}
-		a {font-family: $quick; color: $brown; text-transform: none; min-height:auto; font-size: 16px; font-weight: 500;}
+			a {font-family: $muli; color: $brown; text-transform: none;
+				font-size: 16px; font-weight: 600;
+			 	// color:$white;
+			}
+		}
 
-	}
-	.uk-navbar-dropdown {padding:0px 5px 5px 20px;}
-	.uk-navbar-container.uk-navbar.uk-sticky.uk-navbar-sticky.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);}
+}
+
+.mobile-nav {display: none;}
+@include bp(tb) {
+	.il-header2 .navbar-center, .inline-header .navbar-nav {display: none;}
+	.mobile-nav { @include sec-default(); padding: 30px 0;}
 }
 
 //*********************************//
