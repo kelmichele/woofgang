@@ -148,6 +148,51 @@ hr{
 
 
 //*********************************//
+//*********** services ***********//
+//*********************************//
+.services-list {@include sec-default(); padding: 80px 0;
+  .serve-box {@include sec-default(); margin-bottom:50px;
+    h3{margin-bottom: 10px;}
+    p{margin-top: 0;}
+
+    .img-box, .text {display: inline-block; float: left; width: 49.5%;}
+    .text {margin-top: 7%; float:right; width:46%}
+      // margin-left:5%; }
+
+    &:nth-child(2n+2) {
+      .text {float: left;}
+      .img-box {float:right;}
+    }
+  }
+}
+
+.retail {
+  .page-header {@include sec-default(); background-color: $opink; padding: 40px 0 20px;
+    .tbox, .hd-img {width:60%; @include center-block(); text-align: center;}
+    .hd-img{width:30%;margin-top:10px;width:50%;}
+    h1{margin-bottom: 10px; font-size: 1.7rem;}
+    h2{margin-top:0; font-size:1.3rem;}
+  }
+  .il-img {display: inline; float: left;
+    width:48%;
+    &.tall {float: right; width:45%;}
+  }
+
+  .services-list {
+    // @include sec-bgimage('paws.png'); background-size: 30%; background-position: bottom left;
+    // .serve-box .text{width:35%;}
+    p {font-size: 17px;}
+  }
+}
+
+
+
+
+
+
+
+
+//*********************************//
 //*********** users ***********//
 //*********************************//
 .registrations {
@@ -196,6 +241,11 @@ hr{
 .posts.show {
   .feat-img {width:50%; @include center-block();}
 }
+
+
+
+
+
 
 
 

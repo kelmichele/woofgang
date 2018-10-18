@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   get 'retail', to: 'static_pages#retail'
   get 'services', to: 'static_pages#services'
   get 'press', to: 'static_pages#press'
+  get 'grooming', to: 'static_pages#grooming'
+  get 'self-service-grooming', to: 'static_pages#self-service-grooming'
+  get 'doggie-daycare', to: 'static_pages#doggie-daycare'
+  get 'vet-clinic', to: 'static_pages#vet-clinic'
+
 
   get '/fb', to: 'social#fb'
   get '/insta', to: 'social#insta'
