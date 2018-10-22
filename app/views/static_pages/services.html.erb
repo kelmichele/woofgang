@@ -1,21 +1,51 @@
 <% @page_title = "Services" %>
 <% @page_description = "New Description" %>
 
-<div class="ipage-header opink simple left">
+<!-- <div class="ipage-header opink simple left">
 	<div class="inside">
 		<h1>Our Services</h1>
 	</div>
-</div>
+</div> -->
+
+<div class="services-full">
+	<div class="pup-header inline">
+		<div class="inside narrow">
+			<div class="full">
+				<div class="tbox">
+					<h1>Our Services</h1>
+					<h2>Check with your local Woof Gang Bakery to make sure a specific service is offered at that location.</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="full submenu">
+		<div class="inside">
+	    <!-- <ul class="uk-tab-bottom" uk-tab> -->
+	    	<ul>
+				<li><%= link_to "Retail", retail_path %></li>
+				<li><%= link_to "Grooming", grooming_path %></li>
+				<li><%= link_to "Self Service Grooming", self_service_grooming_path %></li>
+				<li><%= link_to "Doggie Daycare", doggie_daycare_path %></li>
+				<li><%= link_to "Veterinary Clinic", vet_clinic_path %></li>
+	    </ul>
+
+	    <ul class="uk-switcher">
+	    	<li>
+	    		<h2>Woof Gang Bakery is committed to providing outstanding service and quality products to the local community. We are the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America, with more than 100 locations across the U.S.</h2>
+	    	</li>
+
+	    	<li>groom</li>
+	    	<li>ss groom</li>
+	    	<li>daycare</li>
+	    	<li>vet</li>
+	    </ul>
+	  </div>
+	</div>
 
 
-<div class="services-list">
-	<div class="inside">
-    <ul class="uk-nav uk-navbar-dropdown-nav">
-			<li><%= link_to "Retail", retail_path %></li>
-			<li><%= link_to "Grooming", grooming_path %></li>
-			<li><%= link_to "Self Service Grooming", self_service_grooming_path %></li>
-			<li><%= link_to "Doggie Daycare", doggie_daycare_path %></li>
-			<li><%= link_to "Veterinary Clinic", vet_clinic_path %></li>
-    </ul>
+	<div class="services-desc">
+		<div class="inside">
+
+		</div>
 	</div>
 </div>

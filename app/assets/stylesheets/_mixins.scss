@@ -34,6 +34,13 @@
   transform: rotate($deg);
 }
 
+@mixin grayscale() {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
 @mixin ease() {
   -webkit-transition: 0.1s;
   -moz-transition: 0.1s;
@@ -69,6 +76,16 @@
   left: 0;
   position: absolute;
   top: 0;
+  width: 100%;
+  height:100%;
+  z-index: -1;
+}
+
+@mixin after() {
+  content: "";
+  left: 0;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height:100%;
   z-index: -1;

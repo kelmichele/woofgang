@@ -2,7 +2,8 @@
 @import "mixins";
 
 .uptop {@include sec-default();
-	padding: 10px 0; background-color: $pink;
+	padding: 10px 0;
+	background-color: $opink;
 	margin-bottom: 8px;
 
 	.social, .contact, .sm-nav {display: inline-block; float: left; }
@@ -11,7 +12,11 @@
 			width: 20px; height: 20px;
 		}
 	}
-	&, a {color: $white;font-size: 16px; font-weight: 600;letter-spacing: .5px;}
+	&, a {color: $pink;font-size: 16px; font-weight: 600;letter-spacing: .5px;}
+
+	&.pink {background-color: $pink;
+		&, a {color: $white;}
+	}
 }
 
 .uk-navbar-nav {}
