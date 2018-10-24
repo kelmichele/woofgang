@@ -1,0 +1,117 @@
+@import "mixins";
+@import "variables";
+
+.franchise-header {@include sec-default(); background-color: rgba($compt, .6); padding: 60px 0 90px;
+  position: relative; z-index: 0;
+  &::before{@include after(); background-color: $compt; height:40px;}
+
+  h1{margin:10px 0px 0; color:$white; @include tshadowl(rgba($black, .2));}
+  h2{margin: 0; font-size:1.5rem; line-height: 1.3em;}
+  .tbox {@include sec-default(); text-align: center; }
+}
+.abs-franch {width:230px; right:10%; position: absolute; z-index: 2; margin-top:70px;}
+
+.page-body{min-height: 500px;}
+
+
+
+
+
+
+//*********************************//
+//****** franchise faq *******//
+//*********************************//
+.franchise-faq{
+  // .franchise-header {
+  //   h2 {line-height: 1.5em; margin-bottom: 0;}
+  //   h1 {margin-top: 5px;}
+  // }
+
+  h3.intro {width:75%;}
+}
+
+//*********************************//
+//*********** franchise ***********//
+//*********************************//
+.franchise {
+  h1, h2, h3{margin:0;}
+
+  .franchise-header {
+    h2{font-weight: 600;}
+  }
+  .abs-franch {width:250px; right:12%; margin-top:100px;}
+
+
+  .full.franch-tabs{position: relative; z-index: 0;}
+  .uk-tab-bottom.uk-tab { @include sec-default(); position: relative; z-index: 0;
+    background-color: $compt;
+    a{color: $white;}
+  }
+  .uk-tab>* {float:none; margin:0 3%; display: inline-block; margin: 0 1.5%; }
+  .uk-tab>.uk-active>a {color:$compb;}
+  .uk-switcher {padding: 100px 0;}
+
+
+  .full-sec.story {padding:100px 0 30px;}
+  .il-left, .il-right {display: inline-block; float: left; width: 48%;}
+  .il-right {float: right;}
+
+  .details {
+    .fran-blk {display: inline-block; float: left; width: 30%; margin:10px 1.5%;}
+    p {margin-top: 0;}
+    p.tag{margin-bottom: 10px; font-weight: bold;}
+  }
+
+  .collage-sec{@include sec-default(); padding-bottom: 60px;}
+  .block {display: inline-block; float: left; width: 32%;
+    height: 300px; background-color: $f8;
+    background-size: 30%; background-repeat: no-repeat; background-position: bottom right;
+    padding: 50px 20px;
+    &.b2 {margin:0 2%;}
+    &.b3 {float:right;}
+  }
+}
+
+//*********************************//
+//****** franchise process *******//
+//*********************************//
+.franchise-process{
+  .franchise-header {padding: 60px 0 90px;
+    h2 {line-height: 1.5em; margin-bottom: 0;}
+    h1 {margin-top: 5px;}
+  }
+
+  .uk-tab-bottom.uk-tab, .process-img {display:inline-block; width: 45%; margin-left: 3%; float:left;}
+  .uk-tab-bottom.uk-tab { padding-top:40px; float:right;
+    a{text-align: left; color:$tbrown;}
+  }
+  .uk-tab>* {
+    // @include sec-default();
+    display: block;
+    padding-top:8px; line-height: 1.6em;
+  }
+  .uk-tab>.uk-active{
+    a {border:0; position: relative; color: $pink;
+      &::before {@include before(); width: 40px; height: 40px; @include sec-bgimage('favicon.png');background-size: 40%; margin-top: 10px; left:-12px;}
+    }
+  }
+
+  .uk-switcher {@include sec-default(); padding: 50px 0;
+    h3{font-weight: bold; font-size: 1.3rem; border-bottom: 1px solid rgba($tbrown, .3); padding-bottom: 2px; margin-bottom: 10px}
+    ul {padding-left:10px;
+      p {margin-bottom: 10px; font-weight: 600; margin-left: -10px;}
+    }
+    li {margin-bottom: 8px;}
+  }
+}
+
+//*********************************//
+//****** franchise inquiries *******//
+//*********************************//
+.franchise-inquiries {
+  h2{margin-bottom: 0;}
+  h1{margin-top: 10px;}
+  .abs-franch {width:230px; right:12%; margin-top:100px;}
+
+  .full-sec.inq {padding: 100px 0;}
+}

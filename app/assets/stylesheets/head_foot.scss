@@ -63,6 +63,7 @@
 	}
 
 	.uk-navbar-dropdown{ padding: 10px 5px 15px 10px;
+		background-color: $f8;
 		.uk-nav.uk-navbar-dropdown-nav {text-align: left;}
 		li {@include sec-default();}
 	}

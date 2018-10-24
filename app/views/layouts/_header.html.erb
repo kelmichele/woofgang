@@ -54,7 +54,7 @@
 </header>-->
 
 <header class="inline-header" uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
-	<nav class="uk-navbar-container inside inside-stick" uk-navbar="mode: click">
+	<nav class="uk-navbar-container inside inside-stick" uk-navbar>
     <div class="navbar-center">
   	  <div class="nb-logo">
 	  	  <%= link_to(image_tag('wg-logo1.png', class: 'navbar-item logo'), root_path )%>
@@ -67,8 +67,16 @@
     			<a href="#">Franchising</a>
       		<div class="uk-navbar-dropdown">
             <ul class="uk-nav uk-navbar-dropdown-nav">
-            	<li><%= link_to "Franchise Process", franchise_process_path %></li>
+            	<li><%= link_to "Franchise Opportunity", franchise_opportunity_path %></li>
+            	<li><%= link_to "Franchisees", franchisees_path %></li>
+            	<li><%= link_to "Training & Support", training_support_path %></li>
+            	<li><%= link_to "Investment Details", investment_details_path %></li>
+            	<li><%= link_to "The Next Steps", next_steps_path %></li>
+            	<li><%= link_to "Real Estate", real_estate_path %></li>
             	<li><%= link_to "Franchise FAQ's", franchise_faq_path %></li>
+							<div style="width:100%; float:left; height:1px; background-color: #000; opacity: .2"></div>
+            	<li><%= link_to "Franchise", franchise_path %></li>
+            	<li><%= link_to "Franchise Process", franchise_process_path %></li>
             	<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
             </ul>
 	        </div>

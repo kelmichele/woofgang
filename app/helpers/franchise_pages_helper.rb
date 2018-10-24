@@ -1,0 +1,2 @@
+module FranchisePagesHelper
+end
