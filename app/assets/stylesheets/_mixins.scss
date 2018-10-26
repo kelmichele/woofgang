@@ -48,7 +48,7 @@
 }
 
 @mixin link($size, $color) {
-  width: $size; padding: 10px 15px; text-align: center;
+  width: $size; padding: 10px 20px; text-align: center;
   font-size: 16px; color: $color; font-weight: 500;
 
   &:hover {text-decoration: none; @include ease(); opacity: .7; color: $color;}

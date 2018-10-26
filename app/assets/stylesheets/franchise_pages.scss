@@ -1,43 +1,168 @@
 @import "mixins";
 @import "variables";
 
-.franchise-header {@include sec-default(); background-color: rgba($compt, .6); padding: 60px 0 90px;
+.franchise-header {@include sec-default(); background-color: rgba($compt, .6); padding: 50px 0 75px;
   position: relative; z-index: 0;
   &::before{@include after(); background-color: $compt; height:40px;}
 
-  h1{margin:10px 0px 0; color:$white; @include tshadowl(rgba($black, .2));}
-  h2{margin: 0; font-size:1.5rem; line-height: 1.3em;}
+	h1 {color:$white; @include tshadowl(rgba($black, .2));}
+  h1{margin:0px 0px 0;
+  	text-transform: uppercase; letter-spacing: 1.5px; font-size: 2.1rem;
+  }
+  h2{margin: 0; font-size:1.5rem; line-height: 1.3em; font-weight: bold; color: $compg}
   .tbox {@include sec-default(); text-align: center; }
 }
-.abs-franch {width:230px; right:10%; position: absolute; z-index: 2; margin-top:70px;}
-
-.page-body{min-height: 500px;}
+.abs-franch {width:210px; right:10%; position: absolute; z-index: 2; margin-top:50px;}
 
 
+.franchise_pages .page-body {
+	ul, ul.paw {
+    p {margin-bottom: 10px; font-weight: $semi; }
+    li {margin-left:10px; font-size:17px;}
+  }
+}
+
+.intro {width:77%;
+	&.center {@include center-block();}
+	&.sm{width:65%;}
+}
 
 
 
+//****** franchise op *******//
+.franchise-opportunity {
+	.abs-franch {width:200px; right:14%; margin-top:45px;}
+	.intro{width:75%;}
+	h3{font-size: 1.35rem;}
+	h3 span {color: $pink;}
 
-//*********************************//
+	.fran-op {@include sec-default(); padding: 60px 0 0;
+	}
+
+
+	.full.top { padding: 40px 0 60px;
+		@include sec-bgimage('fluff.png'); background-size: 15%; background-position: bottom left;
+		.big, ul { display: inline-block; float: left; width: 35%; margin-left: 3%;}
+		.big { margin-top:4%; text-align: center;
+			p{font-size: 25px;@include sec-default(); margin-bottom:40px;}
+		}
+		ul.paw {float:right; width:55%;
+			li::before{left:-3px; top:4px;}
+		}
+	}
+
+		.banner {@include sec-default(); background-color: $compt; padding: 30px 0 15px; text-align: center;
+			h3{color: $white; @include tshadowl(rgba($black, .3)); font-weight: bold; font-size:1.5rem;}
+		}
+	.full.btm {padding:50px 0;
+		.tbox, .image {display: inline-block; float: left; width: 60%;}
+		.image{float: right;width:35%;}
+		.tbox {margin-top: 5%;}
+
+	}
+}
+
+//****** franchisees *******//
+.franchisees {
+	h3 {font-size: 1.15rem;}
+	h4 {color: $compb; font-weight: $semi; margin-bottom: 10px;}
+
+	.profile {padding-left: 0;
+		li{margin-bottom: 15px;
+			span {font-weight: bold;}
+		}
+	}
+}
+
+//****** real estate *******//
+.real-estate {
+	h3{font-size: 1.35rem; width:80%; @include center-block(); text-align: center; margin: 15px auto 40px}
+
+	.full.mid { padding: 30px 0;
+		.ext, .content {display: inline-block; width: 45%; float: left;}
+		.content{width:52%; float:right; margin-top: 1%; }
+		li {margin-bottom: 12px;}
+	}
+}
+
+//****** invest details *******//
+.investment-details {
+	.idets {padding: 100px 0 ;}
+	.intro	{display: inline-block; width:45%; float:left; text-align: center;}
+	ul.inv {
+		display: inline-block; width:53%; float:right;
+		li {margin-bottom:18px;
+			&.left {float: left;}
+			span{font-weight: $semi; color: $compb; font-size: 20px; }
+			span.print {font-weight: normal; color: $tbrown; font-size:15px;}
+		}
+	}
+}
+
 //****** franchise faq *******//
-//*********************************//
-.franchise-faq{
-  // .franchise-header {
-  //   h2 {line-height: 1.5em; margin-bottom: 0;}
-  //   h1 {margin-top: 5px;}
-  // }
-
+.franchise-faq {
   h3.intro {width:75%;}
 }
 
-//*********************************//
+//******** training **********//
+.training-support {
+	.ts1 {@include sec-default(); padding: 80px 0 60px;}
+	p.top{font-size: 18px;}
+	ul.paw.one, ul.paw.two {display: inline-block; float: left; width: 45%;}
+	ul.paw.two{margin-left: 3%;}
+
+	.support-list{@include sec-default(); padding:60px 0 40px; background-color: $fa;
+
+		.left, .right {display: inline-block; float: left; width:35%;}
+		.left{ margin-top:3%; padding:0 2%;}
+		.right {width:62%; float: right;}
+
+		h4{font-weight: bold; color: $compt; font-size: 20px; }
+		p{font-size:18px;}
+		ul{padding-left: 0;}
+		li {display: inline-block; float: left;
+			width: 47%; margin-bottom: 30px;
+			&:nth-child(2n+2){float: right;}
+			// &.tli {margin-bottom: 40px;}
+
+			span{font-size: 18px; color:$compt; font-weight: bold; @include sec-default(); margin-bottom: 6px;}
+		}
+	}
+
+	.ts-last {@include sec-default(); padding: 60px 0;
+		.left, .right {display: inline-block; float: left; width:45%;}
+		.right {width:50%; float: right; margin-top:2%;}
+		li {font-weight: $semi; margin-bottom: 7px;}
+	}
+}
+
+//******** steps **********//
+.next-steps {
+	h3{font-size: 1.1rem; font-weight: $semi;}
+
+	.overview{@include sec-default(); padding: 90px 0 40px;}
+	.list-intro, .process-img {display:inline-block; width: 48%; margin-left: 3%; float:left;}
+	.list-intro{padding-top:40px; float:right; width: 45%; margin-left: 0;
+		li{font-size: 1em; margin-bottom: 10px; font-weight: $semi;}
+	}
+
+	.steps-desc{@include sec-default(); padding: 40px 0;}
+	.step {width: 97%; float:right; display:block; margin-bottom:20px;
+		&:nth-child(2n+2){float:left;}
+
+
+		h4{font-weight: $semi; margin-bottom: 0; color: $compt;}
+		p{margin-top: 5px;}
+	}
+}
+
+
 //*********** franchise ***********//
-//*********************************//
 .franchise {
   h1, h2, h3{margin:0;}
 
   .franchise-header {
-    h2{font-weight: 600;}
+    h2{font-weight: $semi;}
   }
   .abs-franch {width:250px; right:12%; margin-top:100px;}
 
@@ -72,9 +197,7 @@
   }
 }
 
-//*********************************//
 //****** franchise process *******//
-//*********************************//
 .franchise-process{
   .franchise-header {padding: 60px 0 90px;
     h2 {line-height: 1.5em; margin-bottom: 0;}
@@ -99,15 +222,13 @@
   .uk-switcher {@include sec-default(); padding: 50px 0;
     h3{font-weight: bold; font-size: 1.3rem; border-bottom: 1px solid rgba($tbrown, .3); padding-bottom: 2px; margin-bottom: 10px}
     ul {padding-left:10px;
-      p {margin-bottom: 10px; font-weight: 600; margin-left: -10px;}
+      p {margin-bottom: 10px; font-weight: $semi; margin-left: -10px;}
     }
     li {margin-bottom: 8px;}
   }
 }
 
-//*********************************//
 //****** franchise inquiries *******//
-//*********************************//
 .franchise-inquiries {
   h2{margin-bottom: 0;}
   h1{margin-top: 10px;}
@@ -115,3 +236,21 @@
 
   .full-sec.inq {padding: 100px 0;}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
