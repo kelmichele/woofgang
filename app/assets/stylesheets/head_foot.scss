@@ -2,9 +2,7 @@
 @import "mixins";
 
 .uptop {@include sec-default();
-	padding: 10px 0;
-	background-color: $opink;
-	margin-bottom: 8px;
+	padding: 10px 0;background-color: $opink;margin-bottom: 8px;
 
 	.social, .contact, .sm-nav {display: inline-block; float: left; }
 	.social {float: right; text-align: right; width:30%;
@@ -12,11 +10,13 @@
 			width: 20px; height: 20px;
 		}
 	}
-	&, a {color: $pink;font-size: 16px; font-weight: 600;letter-spacing: .5px;}
+	&, a {color: $pink;font-size: 16px; font-weight: $semi;letter-spacing: .5px;}
 
 	&.pink {background-color: $pink;
 		&, a {color: $white;}
 	}
+
+	&.plain {background-color: $white;}
 }
 
 .uk-navbar-nav {}
@@ -27,28 +27,44 @@
 //********** header inline *********//
 //*********************************//
 
-.il-header2 {@include sec-default();background-color: $white;
-	// padding:10px 0 15px;
+.il-header2 {@include sec-default();background-color: $white; padding:10px 0;
 	&.uk-navbar-sticky.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);}
 
 	.navbar-center-left, .navbar-center-right, .nb-logo {display: inline-block; float: none; width: 33%; text-align: center;}
 	.nb-logo {margin-left: 1%; background-color: $white; padding:10px 0 0;}
 	.logo {width:300px; @include center-block(); }
-	.navbar-center-left { float:left; }
-	.navbar-center-right { float: right; }
+	.navbar-center-left { float:left; text-align: left;}
+	.navbar-center-right { float: right; text-align: right;}
 
-	.navbar-nav{padding:0; margin-top: 16%; @include sec-default();
+	.navbar-nav{padding:0; margin-top: 20%; @include sec-default();
 		// border-top: 1px solid rgba($brown, .6); border-bottom: 1px solid rgba($brown, .6);
 		li {display: inline-block; float: none;
-			margin: 15px 3%;
+			margin: 15px 3% 6px;
 			a {font-family: $muli; color: $brown; text-transform: none;
-				font-size: 16px; font-weight: 600;
-			 	// color:$white;
+				font-size: 17px; font-weight: $semi;
 			}
 		}
 	}
 
-	// &::before {@include before(); background-color: $pink; height:60px; top:45%;}
+
+
+
+
+	.social li {display:inline-block; float:none; margin: 0 .7%; width: 17px; height: 17px;}
+	.contact {font-weight: $semi; font-size: 15px;
+		span{height:16px; width:16px;}
+	}
+	.navtop{width:100%;position: absolute; padding: 8px 15px 0; display: none;}
+	.contact,.social{margin-top: 0px; width:40%; float: left;color:$tbrown;
+		span {color:$tbrown; }
+	}
+	.social{float: right; text-align: right;}
+
+	&.uk-sticky.uk-sticky-fixed.uk-navbar-sticky {
+		padding:5px 0;
+		// .nb-logo .logo {width:280px; }
+		// .navbar-nav{ margin-top: 18%; }
+	}
 }
 
 .inline-header {@include sec-default();background-color: $white;
@@ -58,7 +74,7 @@
 
 	li {display: inline-block; float: none; margin: 1% 0 0px 3%;
 		a {font-family: $muli; color: $brown; text-transform: none;
-			font-size: 16px; font-weight: 600;
+			font-size: 16px; font-weight: $semi;
 		}
 	}
 
@@ -73,10 +89,34 @@
 		.nb-logo {padding-bottom: 15px; }
 	}
 
+
+	.above{width:25%; float:right; margin-right: 9%; padding: 5px 10px; background-color: $pink;}
+	.contact,.social{display:inline-block; float: left; color:$white;width:50%;
+		span {color:$white; }
+	}
+
+	.social {padding-left: 0; float:right; text-align: right;
+		li {display:inline-block; float:none; margin: 0 .7%; width: 16px; height: 16px;}
+	}
+	.contact {font-size: 14px;
+		span{height:15px; width:15px;}
+	}
+
+	.navbar-nav,.uk-navbar-nav {margin-top: 5%;}
+
 }
 
 .mobile-nav {display: none;}
+
+@include bp(dt) {
+	.inline-header .above{width:22%;}
+}
+
 @include bp(tb) {
+	.inline-header .above{width:30%;}
+}
+
+@include bp(md) {
 	.il-header2 .navbar-center, .inline-header .navbar-nav {display: none;}
 	.mobile-nav { @include sec-default(); padding: 30px 0;}
 }
@@ -85,28 +125,69 @@
 //*********** footer ***********//
 //*********************************//
 
-.footer {
-	@include sec-default(); background-color: $pink;
-	color: $white; padding: 30px 0;
-	.inside {width:90%;}
-	p{color: $white;}
+// .footer {
+// 	@include sec-default(); background-color: $pink;
+// 	color: $white; padding: 30px 0;
+// 	.inside {width:90%;}
+// 	p{color: $white;}
 
-	.fbs {display: inline-block; float: left; width: 28%; margin:0 1.4%; padding: 10px 15px;
+// 	.fbs {display: inline-block; float: left; width: 28%; margin:0 1.4%; padding: 10px 15px;
 
-		&.fb1 { border-right: 1px solid rgba($white, .4);}
-		&.fb2 { }
-		&.fb3 {border-left: 1px solid rgba($white, .4);float:right; text-align: center; }
+// 		&.fb1 { border-right: 1px solid rgba($white, .4);}
+// 		&.fb2 { }
+// 		&.fb3 {border-left: 1px solid rgba($white, .4);float:right; text-align: center; }
+// 	}
+
+// 	ul.ft-menu, ul.social {
+// 		li {display: inline-block; margin-left: 1%;
+// 			a{color: $white;}
+// 		}
+// 	}
+
+// 	ul.ft-menu li {margin: 10px 7px 5px;}
+// 	ul.social {text-align: center;
+// 		li {float:none; margin: 0 1%; width: 35px; height: 35px; border-radius: 50%; background-color: $white;}
+// 		span {color: $pink; width:23px; height:23px;margin-top:6px;}
+// 	}
+// }
+
+
+.pre-foot{@include sec-default(); background-color: $pink; padding:20px 0 0; text-align: center;
+	a, span,p{color: $white; font-size: 16px;}
+	.contact-box {display: inline-block; float: none;
+		margin:0 2%; width:30%; margin:0 1%;
+		&.social{float: right;}
 	}
-
-	ul.ft-menu, ul.social {
-		li {display: inline-block; margin-left: 1%;
-			a{color: $white;}
-		}
-	}
-
-	ul.ft-menu li {margin: 10px 7px 5px;}
-	ul.social {text-align: center;
-		li {float:none; margin: 0 1%; width: 35px; height: 35px; border-radius: 50%; background-color: $white;}
-		span {color: $pink; width:23px; height:23px;margin-top:6px;}
+	ul.social {padding-left:0;
+		li {display: inline-block; float:none; margin: 0 1%; }
+		span {color: $white; width:19px; height:19px;margin-top:6px;}
 	}
 }
+
+.footer-level {
+	@include sec-default(); padding: 30px 0 0;
+	// .inside {width:90%;}
+
+	.fbs {display: inline-block; float: left; padding: 10px 5px 10px 30px;
+		width: 24%; margin:0 0 0 1%;
+		border-right: 1px solid rgba($tbrown, .1);
+		h5{font-weight: bold; margin-bottom: 0;}
+		ul{padding-left: 0;}
+		li, a, p{font-size: 16px;}
+		li{margin-bottom: 5px;}
+
+		&.fb4 {border-right: 0;}
+	}
+
+	.btm {@include sec-default(); border-top: $border; padding:15px 0 8px; margin-top:15px;
+		.copy, .hs {display: inline-block; float:left; width: 45%;}
+		.hs {float: right; text-align: right;}
+		p, a {font-size:13px; margin-bottom:0;}
+	}
+}
+
+
+
+
+
+

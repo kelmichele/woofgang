@@ -1,4 +1,4 @@
-<div class="uptop">
+<!-- <div class="uptop plain">
 	<div class="inside">
 		<div class="contact">
 			<%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %>
@@ -9,9 +9,21 @@
 		</ul>
 	</div>
 </div>
-<div class="clearfix"></div>
+<div class="clearfix"></div> -->
 
 <!-- <header class="il-header2" uk-sticky="sel-target: .il-header2; cls-active: uk-navbar-sticky">
+  <div class="navtop">
+    <div class="inside">
+      <div class="contact">
+        <span class="" uk-icon="icon: receiver;"></span> <%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %>
+      </div>
+
+      <ul class="social">
+        <%= render 'shared/social' %>
+      </ul>
+    </div>
+  </div>
+
 	<nav class="inside inside-stick" uk-navbar>
     <div class="navbar-center">
       <div class="navbar-center-left">
@@ -51,9 +63,19 @@
     	<%= render 'layouts/mobile-nav' %>
     </div>
 	</nav>
-</header>-->
+</header> -->
 
 <header class="inline-header" uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
+  <div class="above">
+    <div class="contact">
+      <span class="" uk-icon="icon: receiver;"></span> <%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %>
+    </div>
+
+    <ul class="social">
+      <%= render 'shared/social' %>
+    </ul>
+  </div>
+
 	<nav class="uk-navbar-container inside inside-stick" uk-navbar>
     <div class="navbar-center">
   	  <div class="nb-logo">
@@ -63,7 +85,6 @@
       <ul class="uk-navbar-nav">
     		<li><%= link_to "Home", root_path %></li>
     		<li>
-    			<!-- <%= link_to "Franchise", franchise_path %>  -->
     			<a href="#">Franchising</a>
       		<div class="uk-navbar-dropdown">
             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -83,7 +104,6 @@
       	</li>
 
 				<li><%= link_to "Locations", locations_path %></li>
-    		<!-- <li><%= link_to "Services", services_path %></li> -->
     		<li>
     			<a href="#">Services</a>
 					<div class="uk-navbar-dropdown">

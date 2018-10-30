@@ -41,6 +41,15 @@ hr{
 }
 .full{@include sec-default(); }
 
+.title-line {
+  width:50%; height:2px; background-color: $pink;
+  margin:4px 0 20px;
+
+  &.center{margin-left: auto; margin-right: auto;}
+  &.less{width:25%;}
+  &.sm{width:40px;}
+}
+
 .page-body { @include sec-default(); }
 
 .ipage-header { @include sec-default(); text-align: center;

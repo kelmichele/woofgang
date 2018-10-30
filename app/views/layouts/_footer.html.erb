@@ -1,4 +1,88 @@
-<div class="footer">
+<div class="pre-foot">
+	<div class="inside med2">
+		<div class="contact-box phone">
+			<p><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></p>
+		</div>
+
+		<div class="contact-box email">
+			<a href="">email@woofgangbakery.com</a>
+		</div>
+
+		<div class="contact-box social">
+			<ul class="social">
+				<%= render 'shared/social' %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="footer-level">
+	<div class="inside">
+		<div class="fbs fb1">
+			<h5>Franchise</h5>
+			<div class="title-line sm"></div><div class="clearfix"></div>
+      <ul class="ft-list franch">
+      	<li><%= link_to "Franchise Opportunity", franchise_opportunity_path %></li>
+      	<li><%= link_to "Franchisees", franchisees_path %></li>
+      	<li><%= link_to "Training & Support", training_support_path %></li>
+      	<li><%= link_to "Investment Details", investment_details_path %></li>
+      	<li><%= link_to "The Next Steps", next_steps_path %></li>
+      	<li><%= link_to "Real Estate", real_estate_path %></li>
+      	<li><%= link_to "Franchise FAQ's", franchise_faq_path %></li>
+      </ul>
+
+			<!-- 			<% if user_signed_in? && current_user.admin? %>
+				<li><%= link_to "Admin Account", account_path %> </li>
+			<% end %>   -->
+		</div>
+
+		<div class="fbs fb2">
+			<h5>Services</h5>
+			<div class="title-line sm"></div><div class="clearfix"></div>
+      <ul class="ft-list serv">
+				<li><%= link_to "Retail", retail_path %></li>
+				<li><%= link_to "Grooming", grooming_path %></li>
+				<li><%= link_to "Self Service Grooming", self_service_grooming_path %></li>
+				<li><%= link_to "Doggie Daycare", doggie_daycare_path %></li>
+				<li><%= link_to "Veterinary Clinic", vet_clinic_path %></li>
+      </ul>
+		</div>
+
+		<div class="fbs fb3">
+			<h5>Info</h5>
+			<div class="title-line sm"></div><div class="clearfix"></div>
+      <ul class="ft-list info">
+    		<li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Locations", locations_path %></li>
+				<li><%= link_to "About Us", about_us_path %></li>
+				<li><%= link_to "Blog", posts_path %></li>
+				<li><%= link_to "Contact Us", contact_path %></li>
+				<li><%= link_to "Press", press_path %></li>
+      </ul>
+		</div>
+
+		<div class="fbs fb4">
+			<h5>Location</h5>
+			<div class="title-line sm"></div><div class="clearfix"></div>
+			<p class="tmargin0">7575 Dr. Phillips Blvd<br> Suite 275<br>Orlando, FL 32819</p>
+			<p>Monday - Friday:<br> 8am - 5pm</p>
+		</div>
+
+
+		<!-- <div class="fbs fb2">
+			<ul class="social">
+				<%= render 'shared/social' %>
+			</ul>
+		</div> -->
+
+		<div class="btm">
+			<div class="copy"><p>Copyright <%= Time.now.year %> Woof Gang Bakery. All rights reserved. </p></div>
+			<div class="hs"><p>Design by <%= link_to "High Seas Design House.", 'https://hsdesignhouse.com', target: '_blank' %> </p></div>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="footer">
 	<div class="inside">
 		<div class="fbs fb1">
 			<ul class="ft-menu">
@@ -19,10 +103,6 @@
 		<div class="fbs fb3">
 			<p>7575 Dr. Phillips Blvd<br> Suite 275<br>
 			Orlando, FL 32819</p>
-
-			<!-- <p>407-355-9210</p> -->
-			<!-- F: 877-554-1020 -->
-			<!-- <p>Monday-Friday: 8am-5pm</p> -->
 		</div>
 	</div>
-</div>
+</div> -->
