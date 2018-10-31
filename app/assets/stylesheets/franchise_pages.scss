@@ -76,11 +76,13 @@
 
 //****** real estate *******//
 .real-estate {
-	h3{font-size: 1.35rem; width:80%; @include center-block(); text-align: center; margin: 15px auto 40px}
+	h3, h4{font-size: 1.35rem; width:80%; @include center-block(); text-align: center; margin: 15px auto 40px}
+	h4{font-size: 1.1rem;margin: 15px auto 0; width:75%; }
 
-	.full.mid { padding: 30px 0;
+	.full-sec.xtr{padding-bottom: 50px;}
+	.full.mid { padding: 30px 0 70px;
 		.ext, .content {display: inline-block; width: 45%; float: left;}
-		.content{width:52%; float:right; margin-top: 1%; }
+		.content{width:52%; float:right; margin-top: 5%; }
 		li {margin-bottom: 12px;}
 	}
 }
@@ -101,7 +103,18 @@
 
 //****** franchise faq *******//
 .franchise-faq {
-  h3.intro {width:75%;}
+	.page-body .full-faq p{font-weight: normal;}
+  // h3.intro {width:75%;}
+  .top-row {@include sec-default(); padding: 80px 0 50px;
+  	.top-img, .ttext {display: inline-block; float: left; width: 50%;}
+  	.ttext {float:right; width:44%; margin-top: 7.5%;}
+		h3 {font-size: 1.2rem; }
+  }
+  .full-faq {@include sec-default(); padding: 30px 0 60px; background-color: $f8;
+  	.uk-accordion{}
+		.uk-accordion-title {color: $pink;}
+		.uk-accordion-content {width: 90%; margin-top:15px; padding: 20px 20px; border-top:$border;}
+  }
 }
 
 //******** training **********//
@@ -147,10 +160,11 @@
 	}
 
 	.steps-desc{@include sec-default(); padding: 40px 0;}
-	.step {width: 97%; float:right; display:block; margin-bottom:20px;
-		&:nth-child(2n+2){float:left;}
-
-
+	.step {width: 97%; float:left; display:block; margin-bottom:20px;
+		&.fr{float: right;}
+		span,.dets{display: inline-block; float: left; }
+		span{width:4%; font-size: 50px; margin-top: 4%;}
+		.dets {width:93%; float: right;}
 		h4{font-weight: $semi; margin-bottom: 0; color: $compt;}
 		p{margin-top: 5px;}
 	}

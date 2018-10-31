@@ -90,7 +90,7 @@
 	}
 
 
-	.above{width:25%; float:right; margin-right: 9%; padding: 5px 10px; background-color: $pink;}
+	.above{width:25%; float:right; margin-right: 9%; padding: 5px 10px; background-color: $pink; border-bottom-right-radius: 14px; border-bottom-left-radius: 14px; }
 	.contact,.social{display:inline-block; float: left; color:$white;width:50%;
 		span {color:$white; }
 	}

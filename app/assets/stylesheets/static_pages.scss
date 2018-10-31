@@ -28,6 +28,9 @@ hr{
 }
 
 .woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3));}
+.text-link{font-weight: $semi; color: $pink;
+  &.blue{color: $compb;}
+}
 .clearfix::after {
   content: "";
   clear: both;
@@ -261,7 +264,7 @@ ul.paw {padding-left: 0;
   }
 
   .cols-sec{@include sec-default(); padding:30px 0 0px; margin-bottom: 60px;
-    @include sec-bgimage('adobe-mud.jpg'); background-size: 22%; background-position: center bottom;
+    @include sec-bgimage('basset-mud.jpg'); background-size: 24%; background-position: center bottom;
 
     .left, .right {display: inline-block; width: 33%; float: left;}
     .right {float:right; width:30%;}
@@ -347,7 +350,7 @@ ul.paw {padding-left: 0;
 
   .acc{@include sec-default(); background-color: $compb;
     .acc-text, .acc-img {display: inline-block; float: left;}
-    .acc-text {padding: 30px; margin-top: 3%; width: 35%;}
+    .acc-text {padding: 30px; margin-top: 2%; width: 35%;}
     .acc-img{width:45%;
       &.one{width:20%}
     }
@@ -355,6 +358,7 @@ ul.paw {padding-left: 0;
   }
 
   .story{@include sec-default(); padding: 80px 0;
+    @include sec-bgimage('wrinkles.png'); background-position: bottom right; background-size: 25%;
     h3{font-weight: bold;}
     .os-text {width:70%;}
   }
