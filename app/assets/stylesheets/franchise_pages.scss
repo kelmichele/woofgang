@@ -204,23 +204,24 @@
 //****** franchise inquiries *******//
 .inquiries {@include sec-default();padding: 100px 0;
 
-	.over, .form-side {display: inline-block; float: left; width:25%;}
+	.over, .form-side {display: inline-block; float: left; width:25%;position: relative;z-index: 1;}
+	.over {	z-index: 0; padding-right:20px;
+		&::before {@include before(); background-color: rgba($compt, .8); height:120%; width:180%; left:-18%; top:-10%;}
+	}
+
 	.form-side{width: 74%; float:right;}
 	h3{font-size: 1.3rem; margin-bottom: 0;}
 	p.disclose{margin-top: 5px;}
-	p.print {font-size: .9rem; margin-top: 7px; color: $red;}
 
-	form{@include sec-default();
-		background-color: #f9f9f9;
-		fieldset{border:0;}
+	form{@include sec-default(); background-color: #f9f9f9;
 		.top{width:95%; @include center-block();}
 
-		input, textarea,select {width:100%; height:30px;margin-top:3px; font-size: 15px; padding-left: 5px;}
-		textarea{height: 100px;padding-top:3px;}
-		label{font-size: 15px; color: $tbrown; font-weight: $semi}
+		// input, textarea,select {width:100%; height:30px;margin-top:3px; font-size: 15px; padding-left: 5px;}
+		// textarea{height: 100px;padding-top:3px;}
+		// label{font-size: 15px; color: $tbrown; font-weight: $semi}
 		.form-group {@include sec-default(); width:45%; display: inline-block; float: left; margin: 0 2.5% 25px;
 			&.submit{@include sec-default;}
-			input.send-message {width:15%; height:auto; background-color: $pink; font-size: 16px; color: $white; font-weight: $semi; padding: 8px 10px;}
+			// input.send-message {width:15%; height:auto; background-color: $pink; font-size: 16px; color: $white; font-weight: $semi; padding: 8px 10px;}
 
 			&.terms{
 				input#candidate_terms,label{display: inline-block; float: left; width:5%;}
@@ -229,22 +230,6 @@
 		}
 	}
 }
-
-.msg-bx {@include sec-default();
-	.alert{font-weight: bold; padding: 7px 20px;
-		&.alert-notice { background-color: rgba(0,146,13, .2); color: $black;}
-		&.alert-alert {background-color: $red; color: $white; }
-	}
-}
-.notice {color: $red;}
-
-.panel.panel-danger.err {width:90%; @include center-block();
-	h4.panel-title {background-color: rgba($red, .8); color: $white; @include tshadowl(rgba($black, .7)); margin-bottom:10px;padding-left: 10px;}
-	li {color: $red; margin-bottom:5px; list-style-type: disc;}
-}
-.alert.alert-success {background-color: rgba(0,146,13, .2); color: $black;}
-
-
 
 
 //*********** franchise ***********//

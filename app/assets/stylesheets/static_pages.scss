@@ -418,8 +418,16 @@ ul.paw {padding-left: 0;
 
 
 
+//*********************************//
+//*********** contact  ***********//
+//*********************************//
+.contacts {
+  h1{margin-bottom: 10px}
+  h3{font-size: 1.3rem; margin-top: 0;}
 
-
+  .full-contact {@include sec-default(); padding: 80px 0;}
+  .form-group{margin-bottom: 25px;}
+}
 
 
 

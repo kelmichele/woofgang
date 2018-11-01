@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
   get 'about-us', to: 'static_pages#about-us'
-  get 'contact', to: 'static_pages#contact'
+  get 'contact-us', to: 'static_pages#contact-us'
   get 'retail', to: 'static_pages#retail'
   get 'services', to: 'static_pages#services'
   get 'press', to: 'static_pages#press'
@@ -41,6 +41,9 @@ Rails.application.routes.draw do
 
   get '/franchise-inquiries', to: 'candidates#new', as: 'franchise-inquiries'
   post '/franchise-inquiries', to: 'candidates#create'
+
+  get '/contact', to: 'contacts#new', as: 'contact'
+  post '/contact', to: 'contacts#create'
 
   resources :locations do
     collection do
