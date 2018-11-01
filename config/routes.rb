@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get 'franchise-faq', to: 'franchise_pages#franchise-faq'
   get 'franchise-process', to: 'franchise_pages#franchise-process'
-  get 'franchise-inquiries', to: 'franchise_pages#franchise-inquiries'
+  get 'franchise-inquiry', to: 'franchise_pages#franchise-inquiry'
   get 'franchise', to: 'franchise_pages#franchise'
   get 'franchise-opportunity', to: 'franchise_pages#franchise-opportunity'
   get 'training-support', to: 'franchise_pages#training-support'
@@ -38,6 +38,9 @@ Rails.application.routes.draw do
   get '/twitter', to: 'social#twitter'
   get '/pin', to: 'social#pin'
   get '/in', to: 'social#in'
+
+  get '/franchise-inquiries', to: 'candidates#new', as: 'franchise-inquiries'
+  post '/franchise-inquiries', to: 'candidates#create'
 
   resources :locations do
     collection do

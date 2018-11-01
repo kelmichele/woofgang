@@ -4,6 +4,8 @@
 @import "mixins";
 @import "variables";
 
+.honey {position: absolute;left: -9999px;}
+
 .inside{width: 85%; @include center-block();
   &.alt {width: 80%;}
   &.med {width:75%;}

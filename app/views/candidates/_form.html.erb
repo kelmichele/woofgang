@@ -1,0 +1,119 @@
+<%= render 'shared/errors', obj: @candidate %>
+
+<%= form_for @candidate, url: franchise_inquiries_path do |candidate| %>
+  <fieldset>
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="notice"><%= flash[:alert] %></div>
+    <% end %>
+
+    <div class="top">
+      <h3>Franchise Inquiry Form</h3>
+      <!-- <hr> -->
+      <!-- <p class="disclose">The submission of this application does not obligate the applicant to become a franchisee of Woof Gang Bakery, nor does it obligate us to offer you a franchise.</p> -->
+      <p class="print">* indicates required field</p>
+      <hr>
+    </div>
+
+
+    <div class="form-group name">
+      <label>*Full Name:</label><br>
+      <%= candidate.text_field :name %>
+    </div>
+
+    <div class="form-group phone">
+      <label>*Phone: </label><br>
+      <%= candidate.text_field :phone %>
+    </div>
+
+    <div class="form-group email">
+      <label>*Email: </label><br>
+      <%= candidate.email_field :email %>
+    </div>
+
+    <div class="form-group address">
+      <label>*Street Address:</label><br>
+      <%= candidate.text_field :address %>
+    </div>
+
+    <div class="form-group city">
+      <label>*City:</label><br>
+      <%= candidate.text_field :city %>
+    </div>
+
+    <div class="form-group state">
+      <label>*State:</label><br>
+      <%= candidate.text_field :state %>
+    </div>
+
+    <div class="form-group zip">
+      <label>*Zipcode:</label><br>
+      <%= candidate.text_field :zip %>
+    </div>
+
+    <div class="form-group exp">
+      <label>*Do you have retail experience? </label><br>
+
+      <%= candidate.select(:experience) do %>
+        <% [['Select Answer', ''], ['Yes', 'yes'], ['No', 'no']].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="form-group background">
+      <label>*Please provide a few details about your background. </label><br>
+      <%= candidate.text_area :background %>
+    </div>
+
+    <div class="form-group pstate">
+      <label>*What state do you want to open your store in?</label><br>
+      <%= candidate.text_field :preferred_state %>
+    </div>
+
+    <div class="form-group pcity">
+      <label>*What city do you wish to open your store in?</label><br>
+      <%= candidate.text_field :preferred_city %>
+    </div>
+
+    <div class="form-group cash">
+      <label>*Cash available to invest:</label><br>
+      <%= candidate.text_field :cash %>
+    </div>
+
+    <div class="form-group time">
+      <label>*If you are awarded a franchise when will you be able to sign an agreement?</label><br>
+      <%= candidate.select(:time_frame) do %>
+        <% [['Select Time Frame', ''], ['Less than 3 months', 'Less than 3 months'], ['3 to 6 months', '3 to 6 months'], ['Up to 12 months', 'Up to 12 months']].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- <div class="form-group address">
+      <label>How did you hear about us?</label>
+      = candidate.text_field :grapevine %>
+    </div>  -->
+    <div class="form-group terms">
+      <%= candidate.check_box :terms %> <label>*I agree that all of the above information is true.</label>
+    </div>
+
+    <div class="form-group honey">
+      <%= label_tag :honey %>
+      <%= candidate.text_field :honey %>
+      <span class="help">Do not fill in this field. It is an anti-spam measure.</span>
+    </div>
+
+
+    <div class="form-group submit">
+      <%= candidate.submit "Submit", :class=> "send-message" %>
+    </div>
+
+    <!-- <div class="clearfix"></div> -->
+    <!-- <p>*I agree that all of the above information is true.</p> -->
+  </fieldset>
+<% end %>
+
