@@ -11,7 +11,7 @@
     <% end %>
 
     <div class="top">
-      <h3>Franchise Inquiry Form</h3>
+      <!-- <h3>Franchise Inquiry Form</h3> -->
       <!-- <hr> -->
       <!-- <p class="disclose">The submission of this application does not obligate the applicant to become a franchisee of Woof Gang Bakery, nor does it obligate us to offer you a franchise.</p> -->
       <p class="print">* indicates required field</p>
@@ -34,22 +34,22 @@
       <%= contact.email_field :email %>
     </div>
 
-    <div class="form-group address">
+    <div class="form-group location">
       <label>*Nearest Location:</label><br>
       <%= contact.text_field :location %>
     </div>
 
-    <div class="form-group city">
+    <!-- <div class="form-group city">
       <label>*Sign up for our newsletter?</label><br>
       <%= contact.text_field :singup %>
-    </div>
+    </div> -->
 
-    <div class="form-group state">
+    <div class="form-group grapevine">
       <label>*How did you hear about us?</label><br>
       <%= contact.text_field :grapevine %>
     </div>
 
-    <div class="form-group zip">
+    <div class="form-group content">
       <label>*Questions/Comments:</label><br>
       <%= contact.text_area :content %>
     </div>

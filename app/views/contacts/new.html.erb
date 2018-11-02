@@ -2,33 +2,65 @@
 <% @page_description = "New Description" %>
 
 <div class="pup-header inline">
-	<div class="inside ">
+	<div class="inside narrow">
 		<div class="full">
 			<div class="tbox">
 				<h1>Contact Us</h1>
-				<!-- <h2>Check with your local Woof Gang Bakery to make sure a specific service is offered at that location.</h2> -->
-				<h3>If you need to contact the store regarding a grooming appointment, please visit our locations page to contact the store directly for an immediate response.</h3>
+				<!-- <h3>If you need to contact the store regarding a grooming appointment, please visit our locations page to contact the store directly for an immediate response.</h3> -->
 			</div>
 		</div>
 	</div>
 </div>
 
+<div class="intro-sec">
+	<div class="inside narrow">
+		<p>If you need to contact a store regarding a grooming appointment, please visit <%= link_to 'our locations page', locations_path, class: 'text-link' %> to contact the store directly.
+		For general inquires, comments, and questions, please fill out the form below, or contact our corporate office directly.</p>
+	</div>
+</div>
+
 <div class="full-contact">
 	<div class="inside">
-		For general inquires, comments and questions, please contact our corporate office:
+		<div class="over">
+			<div class="is-box one">
+				<h3>Contact Information</h3>
+				<p>Woof Gang Bakery Corporate Office<br>
+				7575 Dr. Phillips Blvd<br>
+				Suite 275<br>
+				Orlando, FL 32819</p>
 
-		Woof Gang Bakery Corporate Office
-		7575 Dr. Phillips Blvd, Suite 275
-		Orlando, FL 32819
-		407-355-9210
-		F: 877-554-1020
+				<p>info@woofgangbakery.com</p>
 
-		Monday-Friday: 8am-5pm
+				<p>P: 407-355-9210<br>
+				F: 877-554-1020</p>
 
-		Got a great product?
-		Contact our Vendor Relations
+				<p>Monday-Friday: 8am-5pm</p>
+			</div>
 
-		<%= render 'form' %>
+			<hr>
+
+			<div class="is-box two">
+				<!-- <p>If you are a member of the news media and have an inquiry, please contact:</p> -->
+				<h3>Media and News Inquiries:</h3>
+
+				<p>Woof Gang Bakery, Inc.<br>
+				Cara Allen<br>
+				cara@woofgangbakery.com<br>
+				407.355.9210 ext 104</p>
+			</div>
+
+			<hr>
+
+			<div class="is-box three">
+				<h3>Got a Great Product?<br>
+				Contact our Vendor Relations</h3>
+				<p>sam@woofgangbakery.com</p>
+			</div>
+		</div>
+
+		<div class="form-side">
+	    <%= render 'form' %>
+	  </div>
 
 	</div>
 </div>
