@@ -199,7 +199,6 @@ ul.paw {padding-left: 0;
 
     .img-box, .text {display: inline-block; float: left; width: 49.5%;}
     .text {margin-top: 7%; float:right; width:46%}
-      // margin-left:5%; }
 
     &:nth-child(2n+2) {
       .text {float: left;}
@@ -208,22 +207,27 @@ ul.paw {padding-left: 0;
   }
 }
 
-.retail {
-  .page-header {@include sec-default(); background-color: $opink; padding: 40px 0 20px;
+.retail, .pet-stores {
+  .page-header {
+    @include sec-default(); position: relative; z-index: 0; padding: 60px 0 20px;
+    &::before{@include before(); height: 80%; background-color: rgba($compt, .7); border-bottom: 40px solid $compt;}
     .tbox, .hd-img {width:60%; @include center-block(); text-align: center;}
-    .hd-img{width:30%;margin-top:10px;width:50%;}
-    h1{margin-bottom: 10px; font-size: 1.7rem;}
-    h2{margin-top:0; font-size:1.3rem;}
-  }
-  .il-img {display: inline; float: left;
-    width:48%;
-    &.tall {float: right; width:45%;}
+    .hd-img{width:45%;}
+    h1{margin-bottom: 10px; font-size: 1.7rem;color:$white; @include tshadowl(rgba($black, .2));}
+    h2{margin:0 0 10px; font-size:1.1rem;}
   }
 
-  .services-list {
-    // @include sec-bgimage('paws.png'); background-size: 30%; background-position: bottom left;
-    // .serve-box .text{width:35%;}
-    p {font-size: 17px;}
+  .services-list {padding-bottom: 20px;
+    .serve-box {
+      p {font-size: 17px; width:85%; float: left; }
+      &:nth-child(2n+2) p{float: right;}
+      .sm-img{width:30%; float: right; }
+
+      .gimg {display: inline-block; float: left; width: 49%;
+        &.top2 {float: right;}
+        &.btm {@include sec-default(); margin-top: 15px; display: none;}
+      }
+    }
   }
 }
 

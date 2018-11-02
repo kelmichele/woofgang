@@ -85,7 +85,9 @@
 	}
 
 
-	&.uk-navbar-sticky.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);
+	&.uk-navbar-sticky.uk-sticky-fixed {
+		box-shadow: 0px 1px 1px rgba($black, .1);
+		// border-bottom: 2px inset rgba($black, .1);
 		// .nb-logo {padding-bottom: 15px; }
 	}
 

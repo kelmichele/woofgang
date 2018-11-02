@@ -54,7 +54,9 @@ body {
 	line-height: 1.5em;
   font-family: $muli;
   @include sec-default();
-  // background-color: $white;border:30px solid $pink;
+  // padding:0 50px;
+  // .page-body {background-color: $f9;}
+
 
   h1, h2, h3, h4, h5, p, li, a {color: $tbrown; line-height: 1.5em;font-family: $muli;
     &.bmargin0 {margin-bottom: 0;}
@@ -71,6 +73,7 @@ body {
   p{font-size: 17px;}
   h1{font-size: 2rem; font-weight: bold;}
   h2{font-size: 1.75rem;}
+
 }
 .bmargin0 {margin-bottom: 0;}
 .tmargin0 {margin-top: 0;}

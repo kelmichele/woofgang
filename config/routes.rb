@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'about-us', to: 'static_pages#about-us'
   get 'contact-us', to: 'static_pages#contact-us'
-  get 'retail', to: 'static_pages#retail'
+  get 'pet-stores', to: 'static_pages#pet-stores'
   get 'services', to: 'static_pages#services'
   get 'press', to: 'static_pages#press'
   get 'grooming', to: 'static_pages#grooming'
