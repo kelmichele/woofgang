@@ -35,7 +35,7 @@
 			<h4>Franchise Process</h4>
 		<% end %>
 
-		<%= link_to '/franchise-faq', class: 'block b2' do %>
+		<%= link_to '/home', class: 'block b2' do %>
 			<h4>Franchise FAQ's</h4>
 			<p>Want to become a franchisee? Check out these common questions for answers.</p>
 		<% end %>
@@ -49,10 +49,10 @@
 
 <!--<div class="full franch-tabs">
 	<ul class="uk-tab-bottom" uk-tab>
-		<li><%= link_to "Franchise Information", franchise_process_path %></li>
-		<li><%= link_to "Franchise Process", franchise_process_path %></li>
-		<li><%= link_to "Franchise FAQ's", franchise_faq_path %></li>
-		<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
+		<li><%= link_to "Franchise Information", root_path %></li>
+		<li><%= link_to "Franchise Process", root_path %></li>
+		<li><%= link_to "Franchise FAQ's", root_path %></li>
+		<li><%= link_to "Franchise Inquiries", root_path %></li>
 	</ul>
 
 	<ul class="uk-switcher">
@@ -88,7 +88,7 @@
 							FAQ's
 							Have questions? We’ve got answers.
 						</p>
-						<%= link_to "Franchise FAQ's", franchise_faq_path, class: 'woof-link' %>
+						<%= link_to "Franchise FAQ's", root, class: 'woof-link' %>
 					</div>
 
 					<div class="fran-blk">

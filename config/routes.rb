@@ -21,8 +21,9 @@ Rails.application.routes.draw do
   get 'self-service-grooming', to: 'static_pages#self-service-grooming'
   get 'doggie-daycare', to: 'static_pages#doggie-daycare'
   get 'vet-clinic', to: 'static_pages#vet-clinic'
+  get 'retail', to: 'static_pages#retail'
 
-  get 'franchise-faq', to: 'franchise_pages#franchise-faq'
+  get 'franchise-faqs', to: 'franchise_pages#franchise-faqs'
   get 'franchise-process', to: 'franchise_pages#franchise-process'
   get 'franchise-inquiry', to: 'franchise_pages#franchise-inquiry'
   get 'franchise', to: 'franchise_pages#franchise'

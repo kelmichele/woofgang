@@ -7,6 +7,7 @@
 .honey {position: absolute;left: -9999px;}
 
 .inside{width: 85%; @include center-block();
+  &.lg {width: 90%;}
   &.alt {width: 80%;}
   &.med {width:75%;}
   &.med2 {width:65%;}
@@ -77,7 +78,7 @@ hr{
   }
   .tbox {width:50%;text-align: center; @include center-block();}
 
-  h1{margin-bottom: 0px; color:$white; @include tshadowl(rgba($black, .2));}
+  h1{margin-bottom: 0px; color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px;}
   h2{margin-top:0; font-size:1.5rem; line-height: 1.1em;}
 
   &.inline {
@@ -207,36 +208,46 @@ ul.paw {padding-left: 0;
   }
 }
 
-.retail, .pet-stores {
+.pet-stores {
   .page-header {
     @include sec-default(); position: relative; z-index: 0; padding: 60px 0 20px;
     &::before{@include before(); height: 80%; background-color: rgba($compt, .7); border-bottom: 40px solid $compt;}
     .tbox, .hd-img {width:60%; @include center-block(); text-align: center;}
-    .hd-img{width:45%;}
-    h1{margin-bottom: 10px; font-size: 1.7rem;color:$white; @include tshadowl(rgba($black, .2));}
+    .hd-img{width:42%;}
+    h1{margin-bottom: 10px; font-size: 1.7rem;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px;}
     h2{margin:0 0 10px; font-size:1.1rem;}
   }
 
-  .services-list {padding-bottom: 20px;
+  .services-list {padding: 80px 0 0px;
     .serve-box {
-      p {font-size: 17px; width:85%; float: left; }
+      .text {margin-top: 3%;}
       &:nth-child(2n+2) p{float: right;}
-      .sm-img{width:30%; float: right; }
+      li {margin-bottom: 20px;}
 
-      .gimg {display: inline-block; float: left; width: 49%;
-        &.top2 {float: right;}
-        &.btm {@include sec-default(); margin-top: 15px; display: none;}
+      &.two {
+        // width:90%; @include center-block();
+        //   .img-box {width:56%; }
+        //   .text{width:40%; margin-top: 6%}
+        .text{float: left; margin-top:4%;}
+        .img-box {float: right;}
       }
     }
+  }
+
+  .banner {@include sec-default(); padding:30px 5% 10px; margin:30px 0 100px;
+    background-color: $f8; position: relative; z-index: 0;
+
+    p{float: left; width: 70%}
+    &::before {@include after(); z-index: 1; width:16%; left: 75%; @include sec-bgimage('party-pups.png'); background-position: bottom right; height:180%; }
   }
 }
 
 .grooming {
-  .pup-header {background-color: rgba($compb, .4);
+  .pup-header {background-color: rgba($pink, .5);
     .inside.med2 {width:70%;}
-    .full{@include sec-bgimage('lab.png'); background-size: 33%;
+    .full{@include sec-bgimage('lab.png'); background-size: 25%;
       background-position: bottom right; padding:80px 0 40px;
-      &::before{background-color: rgba($compb, .4);}
+      &::before{background-color: rgba($pink, .5);}
     }
     .tbox { width:65%; text-align: left;}
 
@@ -244,21 +255,48 @@ ul.paw {padding-left: 0;
     p{margin-top: 8px; font-size: 17px;}
   }
 
-  .services-list {padding:100px 0 50px;
-    .serve-box.one {margin-bottom:85px;
-      .text {margin-top:4%;}
+  .services-list {padding:80px 0 50px; padding:40px 0;
+    background-color: $f9;
+      @include sec-bgimage('woof13.jpg');
+      background-size: 45%;
+      background-position: center left;
+
+    .serve-box {margin-bottom:0;
+      .img-box, .text {width:50%; float:left; }
+      .img-box {width:45%;}
+      .text {margin-top:2%; float:right;}
+      li{margin-bottom:20px;}
     }
+  }
+
+  .top-box {@include sec-default(); padding: 100px 0;
+    .tb-box {display: inline-block; float: left; width: 48%;
+      &.two{float:right;}
+
+      .img-box, .text {display: inline-block; float: right; }
+      .text {margin-top: 25px;width: 69%; margin-left: -6%;
+        position: relative;z-index: 0;
+        &::before {@include before(); width:200px; height:200px; background-color: rgba($compb, .8); border-radius: 50%; left:-25%; top:-12%;}
+      }
+      .img-box{width:31%; float: left; position: relative; z-index:2;}
+      h4{margin-bottom: 6px; font-weight: bold; font-size:1.2rem;}
+      p{margin-top: 0px; font-size: 16px}
+
+      &.three {@include center-block(); width: 60%;
+        .text {
+          &::before {left:-15%;}
+        }
+      }
+    }
+    .clearfix.space {margin-top: 50px; @include sec-default();}
   }
 }
 
 .self-service-grooming {
   .pup-header {
     .inside.med2 {width:70%;}
-    .full{
-      background-image: url(image_path('dal.png'));
-      background-size: 35%;
-      // background-position: top right;
-    }
+    .full{background-image: url(image_path('dal.png'));background-size: 35%;}
+    .tbox{width:70%;}
 
     h1{@include tshadowl(rgba($black, .4));}
   }
@@ -271,9 +309,10 @@ ul.paw {padding-left: 0;
 
   .cols-sec{@include sec-default(); padding:30px 0 0px; margin-bottom: 60px;
     @include sec-bgimage('basset-mud.jpg'); background-size: 24%; background-position: center bottom;
-
-    .left, .right {display: inline-block; width: 33%; float: left;}
-    .right {float:right; width:30%;}
+    // .inside{width:80%;}
+    .left, .right {display: inline-block; width: 30%; float: left;}
+    .left{margin-left: 2%;}
+    .right {float:right; width:28%;}
     h2{font-size: 1.1rem; font-weight:$semi;}
     ul{padding-left:0;}
     h4{margin:0 0 7px; font-weight: $semi; font-size: 1.1rem; color:$pink}
@@ -313,54 +352,107 @@ ul.paw {padding-left: 0;
 .vet-clinic {
   .pup-header {
     // background-color: rgba($compb, .4);
-    .full {padding:70px 0 40px;
-      background-image: url(image_path('bordeaux.png'));
-      // &::before{ background-color: rgba($compb, .4);}
+    .full {padding:55px 0 40px;
+      background-image: url(image_path('bordeaux.png')); background-size: 44%; background-position: right center;
     }
   }
 
-  .services-list .serve-box{
-    .img-box {width:30%;}
-    .text {margin-top: 0; width:70%; width:60%}
+  .services-list {padding-bottom: 0;
+    .serve-box{ margin-bottom: 40px;
+      .img-box {width:30%;}
+      .text {margin-top: 0; width:70%; width:60%}
 
-    ul {padding-left: 0;padding-top:15px; border-top:1px solid #ddd}
-    li {margin-bottom:10px; font-size:17px; display: inline-block;float: left;
-      width:48%; &:nth-child(2n+2) {float: right;}
-      //  width:32%;  &:nth-child(3n+3) {float: right;}
-    }
+      ul {padding-left: 0;padding-top:15px; border-top:1px solid #ddd}
+      li {margin-bottom:10px; font-size:17px; display: inline-block;float: left;
+        width:48%; &:nth-child(2n+2) {float: right;}
+        //  width:32%;  &:nth-child(3n+3) {float: right;}
+      }
 
-    &.tonly {margin-bottom: 0;
-      .inner{width:80%; text-align: center; @include center-block();}
-      h3{font-weight: bold; color: $pink}
+      &.tonly {margin-bottom: 0; padding: 50px 0 40px; position: relative; z-index: 0; background-color: $f9;
+        &::before{@include before(); width:30%; background-color: $compb;}
+        .inner{width:69%; text-align: center; @include center-block(); float:right;}
+        h3{font-weight: bold; color: $pink}
+      }
     }
   }
 }
 
 
+
+.retail{
+  .page-header {
+    @include sec-default(); position: relative; z-index: 0; padding: 60px 0 20px;
+    &::before{@include before(); height: 75%; background-color: rgba($compt, .7); border-bottom: 40px solid $compt;}
+    .tbox, .hd-img {width:55%;float:left; text-align: center;}
+    .hd-img{width:45%; float: right;}
+    h1{margin-bottom: 10px; font-size: 1.7rem;color:$white; @include tshadowl(rgba($black, .2));}
+    h2{margin:0 0 10px; font-size:1.1rem;}
+  }
+
+  .pup-header {background-color: rgba($compt, .7);
+    .inside.med2{width:60%;}
+    .full {background-size: 20%; height:160px; background-image: url(image_path('catdog.png')); background-position: bottom right;
+      &::before {background-color:rgba($compt, .7); }
+    }
+    .tbox{width:75%; margin-top: 5%;}
+  }
+
+  .intro-sec {padding:20px 0 40px;
+    @include sec-default();text-align: center;
+    // .img-box, h3{display: inline-block; float: left; width:40%;}
+    h3{font-size: 1.2rem; }
+      // float: right;width: 59%;
+
+    // .img-box, h3{ width:80%; @include center-block();}
+    // .img-box {width:40%;}
+
+  }
+
+  .services-list {padding-bottom: 20px;
+    .serve-box {
+      p {font-size: 17px; width:85%; float: left; }
+      &:nth-child(2n+2) p{float: right;}
+      .sm-img{width:30%; float: right; }
+
+      .gimg {display: inline-block; float: left; width: 49%;
+        &.top2 {float: right;}
+        &.btm {@include sec-default(); margin-top: 15px; display: none;}
+      }
+    }
+  }
+}
+
 //*********************************//
 //*********** about  ***********//
 //*********************************//
 .about-us {
-  .pup-header {
+  .pup-header {background-color: rgba($compb, .7);
+    .full::before{background-color: rgba($compb, .7); }
     .inside.narrow{width:60%;}
   }
   .dets{@include sec-default();
-    .full{@include sec-bgimage('costume.png'); background-size: 25%; background-position: bottom left;padding:110px 0 0;}
+    .full{@include sec-bgimage('costume.png'); background-size: 26%; background-position: bottom left;padding:125px 0 0;}
     .il-text, .il-img {display: inline-block; float: left; }
     .il-text {margin-bottom:80px;
       &.one {margin-left: 25%; width: 28%;}
       &.two {float:right; width: 44%;}
-      &.long {float:right;width: 70%; }
+      &.long {float:right;width: 67%; margin-right: 2%;}
+      p{font-size: 18px;}
     }
   }
 
   .acc{@include sec-default(); background-color: $compb;
     .acc-text, .acc-img {display: inline-block; float: left;}
-    .acc-text {padding: 30px; margin-top: 2%; width: 35%;}
+    .acc-text {padding: 30px; margin-top: 1.5%; width: 35%;}
     .acc-img{width:45%;
       &.one{width:20%}
     }
     p{color: $white}
+
+    position: relative; z-index: 0;
+    &::before {@include before(); width: 20%; @include sec-bgimage('woof6.jpg'); background-size: cover;}
+    &::after {@include before(); width: 45%; left:55%; @include sec-bgimage('woof9.jpg'); background-size: cover;}
+    .acc-text{margin-left: 20%;}
   }
 
   .story{@include sec-default(); padding: 80px 0;
