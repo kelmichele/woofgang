@@ -257,19 +257,25 @@ ul.paw {padding-left: 0;
 
   .services-list {padding:80px 0 50px; padding:40px 0;
     background-color: $f9;
-      @include sec-bgimage('woof13.jpg');
-      background-size: 45%;
-      background-position: center left;
+    @include sec-bgimage('woof13.jpg');background-size: 25%;background-position: bottom left;
+    // height:300px;
+    .inside{float: right; width:75%;}
 
-    .serve-box {margin-bottom:0;
-      .img-box, .text {width:50%; float:left; }
-      .img-box {width:45%;}
-      .text {margin-top:2%; float:right;}
-      li{margin-bottom:20px;}
+    .serve-box {margin-bottom:0; padding: 30px 0;
+      // .img-box, .text {width:50%; float:left; }
+      // .img-box {width:45%;}
+      // .text {margin-top:2%; float:right; width:60%;}
+      // width:50%; float:right; margin-right: 1%;
+      width:85%; @include center-block();
+      li{margin-bottom:20px; display: inline-block; float: left; width: 30%;}
+      li:nth-child(2) {margin-left:5%;}
+      li.last {float:right;
+        // width:100%; margin-top: 20px;
+      }
     }
   }
 
-  .top-box {@include sec-default(); padding: 100px 0;
+  .top-box {@include sec-default(); padding: 100px 0 90px;
     .tb-box {display: inline-block; float: left; width: 48%;
       &.two{float:right;}
 
@@ -295,7 +301,7 @@ ul.paw {padding-left: 0;
 .self-service-grooming {
   .pup-header {
     .inside.med2 {width:70%;}
-    .full{background-image: url(image_path('dal.png'));background-size: 35%;}
+    .full{background-image: url(image_path('blacklab.png'));background-size: 25%; background-position: bottom right;}
     .tbox{width:70%;}
 
     h1{@include tshadowl(rgba($black, .4));}
@@ -324,11 +330,11 @@ ul.paw {padding-left: 0;
 .doggie-daycare{
   .pup-header {
     background-color: rgba($compt, .5);
-    .full {
-      background-position: bottom left;background-size: 40%;
+    .full {background-image: url(image_path('kelpie.png')); background-position: top left;
+      background-position: bottom left;background-size: 24%; padding-top: 60px;
 
       &::before{ background-color: rgba($compt, .5);}
-      .tbox {width:55%; float:right; margin-right:5%}
+      .tbox {width:55%; float:right; margin-right:8%}
     }
     h2{font-size: 1.2rem; line-height: 1.4em;}
   }
@@ -353,7 +359,7 @@ ul.paw {padding-left: 0;
   .pup-header {
     // background-color: rgba($compb, .4);
     .full {padding:55px 0 40px;
-      background-image: url(image_path('bordeaux.png')); background-size: 44%; background-position: right center;
+      background-image: url(image_path('sad-face.png')); background-size: 45%; background-position: right bottom;
     }
   }
 
@@ -426,10 +432,12 @@ ul.paw {padding-left: 0;
 //*********** about  ***********//
 //*********************************//
 .about-us {
-  .pup-header {background-color: rgba($compb, .7);
-    .full::before{background-color: rgba($compb, .7); }
+  .pup-header {
+    .full {background-image: url(image_path('gshep.png')); background-position: bottom right; background-size: 22%; padding-top:60px;}
     .inside.narrow{width:60%;}
+    .tbox{width:70%;}
   }
+
   .dets{@include sec-default();
     .full{@include sec-bgimage('costume.png'); background-size: 26%; background-position: bottom left;padding:125px 0 0;}
     .il-text, .il-img {display: inline-block; float: left; }
@@ -441,7 +449,7 @@ ul.paw {padding-left: 0;
     }
   }
 
-  .acc{@include sec-default(); background-color: $compb;
+  .acc{@include sec-default(); background-color: $dpink;
     .acc-text, .acc-img {display: inline-block; float: left;}
     .acc-text {padding: 30px; margin-top: 1.5%; width: 35%;}
     .acc-img{width:45%;
@@ -459,6 +467,45 @@ ul.paw {padding-left: 0;
     @include sec-bgimage('wrinkles.png'); background-position: bottom right; background-size: 25%;
     h3{font-weight: bold;}
     .os-text {width:70%;}
+  }
+
+
+
+  .as1{@include sec-default();padding: 80px 0 50px;
+    position: relative;z-index: 0;
+    &::after {@include after(); background-color: $fa; height: 40%;}
+    .as1-intro {text-align: center; width:95%; @include center-block();}
+
+    .full.content {margin-top:20px;
+      .left, .right {display: inline-block; float: left; width:61%;}
+      .right {width: 36%; float: right; }
+      .snip {width:90%; @include center-block(); margin-top: 45px;}
+    }
+  }
+
+  .acc-story {@include sec-default(); padding: 80px 0;
+    .os-text, .acc-text {display:inline-block; float:left; }
+    .os-text {width:38%;
+      h3{margin-bottom: 0; font-weight: $semi; border-bottom: 1px solid rgba($tbrown, .1); padding-bottom:7px;}
+      // p{margin-top: 10px;}
+    }
+
+    .acc-text {float:right; width: 58%; margin-top:3%;
+      .clearfix {@include sec-default(); margin-bottom: 40px;}
+
+      .as2-box {display: inline-block; float: left; width: 49%; margin-top:20px;
+        &.two, &.four{float:right;}
+
+        .img-box, .text {display: inline-block; float: right; }
+        .text {margin-top: 25px;width: 69%; margin-left: -6%;
+          position: relative;z-index: 0;
+          &::before {@include before(); width:150px; height:150px; background-color: rgba($compb, .8); border-radius: 50%; left:-25%; top:-15%;}
+        }
+        .img-box{width:31%; float: left; position: relative; z-index:2;}
+        h4{margin-bottom: 6px; font-weight: bold; font-size:1.2rem;}
+        p{margin-top: 0px; font-size: 16px}
+      }
+    }
   }
 }
 
@@ -563,6 +610,10 @@ ul.paw {padding-left: 0;
       p{padding-left: 7px; margin-top: 5px; font-weight: $semi;}
     }
     .form-side{width: 67%; margin-top: 5%;}
+
+    form{
+      // @include sec-bgimage('gsheps.png'); background-position: bottom left; background-size: 35%;
+    }
   }
 
 }
