@@ -25,6 +25,7 @@
 .intro {width:77%;
 	&.center {@include center-block();}
 	&.sm{width:65%;}
+	.woof-link{@include center-block();}
 }
 
 
@@ -33,31 +34,44 @@
 .franchise-opportunity {
 	.abs-franch {width:200px; right:14%; margin-top:45px;}
 	.intro{width:75%;}
+
 	h3{font-size: 1.35rem;}
 	h3 span {color: $pink;}
 
-	.fran-op {@include sec-default(); padding: 100px 0 0;
-	}
+	.fran-op {@include sec-default(); padding: 100px 0 0;}
 
 
 	.full.top { padding: 40px 0 60px;
 		@include sec-bgimage('fluff.png'); background-size: 15%; background-position: bottom left;
 		.big, ul { display: inline-block; float: left; width: 35%; margin-left: 3%;}
 		.big { margin-top:4%; text-align: center;
-			p{font-size: 25px;@include sec-default(); margin-bottom:40px;}
+			p{font-size: 25px;@include sec-default();}
 		}
+
 		ul.paw {float:right; width:55%;
+			li{margin-bottom: 10px;}
 			li::before{left:-3px; top:4px;}
+		}
+
+
+		.woof-link{@include sec-default(); background-color: $compb; margin-top:15%;}
+		.btn{@include sec-default();
+			background-color: $compb; color: $white; @include tshadowl(rgba($black, .3));padding: 14px 8px; margin-top: 20%;
+
+			&.alt {margin-top: 0; background-color: transparent; color: $compb; text-shadow: none; font-weight: bold; font-size: 1.1rem;}
 		}
 	}
 
-		.banner {@include sec-default(); background-color: $compt; padding: 30px 0 15px; text-align: center;
-			h3{color: $white; @include tshadowl(rgba($black, .3)); font-weight: bold; font-size:1.5rem;}
-		}
+	.banner {@include sec-default(); background-color: $compt; padding: 30px 0 15px; text-align: center;
+		h3{color: $white; @include tshadowl(rgba($black, .3)); font-weight: bold; font-size:1.5rem;}
+	}
+
 	.full.btm {padding:50px 0;
+		.inside {width:80%;}
 		.tbox, .image {display: inline-block; float: left; width: 60%;}
-		.image{float: right;width:35%;}
-		.tbox {margin-top: 5%;}
+		.image{float: right;width:37%;}
+		.tbox {margin-top: 3%;}
+		li{margin-bottom: 10px;}
 
 	}
 }
@@ -65,33 +79,33 @@
 //****** franchisees *******//
 .franchisees {
 
-	.intro-row{@include sec-default(); padding: 80px 0 0;text-align: center;
+	.intro-row{@include sec-default(); padding: 100px 0 0;text-align: center;
 		h3 {font-size: 1.15rem;}
 		span{ color: $pink; font-weight: $semi;}
+
+		ul{width:50%; @include center-block(); text-align: left;}
+		li {list-style-type: disc; color: $pink}
 	}
 
-	.fr-details{@include sec-default(); padding:40px 0 ;
+	.fr-details{@include sec-default(); padding:30px 0 ;
 		.image, .text {display: inline-block; float: left; width:30%;}
 		.text{float: right; width:67%; margin-top: 8%;}
 		h4 {color: $compb; font-weight: $semi; font-size: 1.1rem; margin-bottom: 10px;}
 
-		&.one {
-			// position: relative; z-index: 0;
-			// &::before {@include before(); height: 65%; margin-top:6%; background-color: rgba($compt, .7);}
-			h4{color: $white; }
+		&.one {overflow-x: hidden;
+			h4{color: $white; margin-top:10px;}
 			.image{position: relative; z-index: 2;}
 			.text{position: relative; z-index: 0; padding-top:20px;
-				&::before {@include before(); width:234%; left:-93%; height:106%; background-color: rgba($compt, .7);}
+				&::before {@include before(); width:231%; left:-90%; height:106%; background-color: rgba($compt, .7); }
 			}
 		}
 
 		&.two{
-			padding:20px 0 80px;
-			.image{width:25%; }
-			.text{width:75%;float: left;padding-top:0; margin-top: 3%;}
-
-			// padding-bottom: 60px; text-align: center;
-			// .text{margin-top: 0; padding-top: 0; @include center-block();}
+			padding:40px 0 50px;
+			h4{font-size: 1.5rem; font-weight: bold;}
+			.image{width:30%; float:right;}
+			.text{width:60%;float: left;padding-top:0; margin-top: 3%; margin-left: 5%;}
+			ul.paw li{font-size: 18px; margin-bottom: 15px;}
 		}
 	}
 
@@ -104,8 +118,9 @@
 
 //****** real estate *******//
 .real-estate {
-	h3, h4{font-size: 1.35rem; width:80%; @include center-block(); text-align: center; margin: 15px auto 40px}
-	h4{font-size: 1.1rem;margin: 15px auto 0; width:75%; }
+	h3{font-size: 1.35rem; width:80%; @include center-block();  margin: 15px auto 40px}
+	// h4{margin: 15px auto 0; width:75%; }
+	h3{text-align: center;}
 
 	.full-sec.xtr{padding-bottom: 50px;}
 	.full.mid { padding: 30px 0 70px;
@@ -113,6 +128,16 @@
 		.content{width:52%; float:right; margin-top: 5%; }
 		li {margin-bottom: 12px;}
 	}
+
+	.banner {@include sec-default(); padding:30px 5% 20px; margin:50px 0 35px;
+    background-color: $fa; position: relative; z-index: 0;
+		.text{float: left; width: 70%;margin-left: 3%}
+    h4{font-size: 1.1rem; margin: 0; font-weight: $semi; }
+    p{margin-top: 10px;}
+    &::before {@include after(); z-index: 1; width:16%; left: 72%; @include sec-bgimage('bernie-flip.png'); background-position: bottom right; height:180%; }
+    &::after {@include before(); border:1px solid rgba($pink, .1); top:-8%; left:1%; height:98%}
+    // &::after {@include before();@include sec-bgimage('favicon.png'); background-size: 3%; background-position: bottom left; left:1%; margin-top:-1%;}
+  }
 }
 
 //****** invest details *******//
@@ -132,16 +157,52 @@
 //****** franchise faq *******//
 .franchise-faqs {
 	.page-body .full-faq p{font-weight: normal;}
-  // h3.intro {width:75%;}
   .top-row {@include sec-default(); padding: 80px 0 50px;
-  	.top-img, .ttext {display: inline-block; float: left; width: 50%;}
-  	.ttext {float:right; width:44%; margin-top: 7.5%;}
+  	// .top-img, .ttext {display: inline-block; float: left; width: 50%;}
+  	// .ttext {width:40%; margin-top: 7.5%; margin-left: 5%;}
 		h3 {font-size: 1.2rem; }
+
+
+  	padding-top:100px;
+  	.ttext{@include center-block();width:65%; text-align: center;}
   }
-  .full-faq {@include sec-default(); padding: 30px 0 60px; background-color: $f8;
+  .full-faq {@include sec-default(); padding: 30px 0 60px; display: none;
   	.uk-accordion{}
 		.uk-accordion-title {color: $pink;}
 		.uk-accordion-content {width: 90%; margin-top:15px; padding: 20px 20px; border-top:$border;}
+
+		.faq-acc {@include sec-default();
+			margin-bottom:90px;
+			position: relative;z-index: 0;
+			// @include sec-bgimage('pets.jpg'); background-size: 50%; background-position: bottom left; min-height:400px;padding-top: 7%;
+			&::before{@include before(); width:50%; @include sec-bgimage('collie.png'); background-size: 45%; }
+			&::after {@include before(); width:350px; height:350px; background-color: $compb; border-radius: 50%; z-index:-2}
+
+			li{width:70%; float: right; padding:0 3%;}
+			&.three{background-position: right center;
+				li{float: left;}
+				&::before{left:50%; background-position: top right;}
+				&::after{left:75%;}
+			}
+		}
+
+		// li{width:90%; float: left;
+			// &:nth-child(2n+2) {float: right;}
+		// }
+  }
+
+
+  .faq-tabs{@include sec-default(); padding: 50px 0;
+		.uk-tab-bottom, .uk-switcher {display: inline-block; float: left; width:40%;}
+		.uk-tab-bottom {
+			li{margin-bottom: 10px;}
+			a{text-align: left; font-family: $body; font-weight: normal; color: $tbrown; font-size: 1rem;}
+		}
+		.uk-switcher {width:55%; float: right;
+
+
+		}
+
   }
 }
 
@@ -170,10 +231,41 @@
 		}
 	}
 
-	.ts-last {@include sec-default(); padding: 60px 0;
-		.left, .right {display: inline-block; float: left; width:45%;}
-		.right {width:50%; float: right; margin-top:2%;}
-		li {font-weight: $semi; margin-bottom: 7px;}
+	.ts-last {@include sec-default(); padding: 60px 0 40px;
+		.left, .right {display: inline-block; float: left; width:28%;}
+		.right {width:62%; margin-top:5%; float: right;}
+		li {font-weight: $semi; margin-bottom: 7px; color:$pink}
+
+		.text, .image {display: inline-block; float: left;}
+		.text {width:60%;margin-top:5%; margin-left: 5%}
+		ul{margin-left:10%;}
+		.image{width:25%; float: right; margin-right: 7%;}
+	}
+
+
+	.support-boxes{@include sec-default(); padding:60px 0; background-color: $f9;
+
+		.left, .right {display: inline-block; float: left; width:30%;}
+		.left{ margin-top:6%; margin-left: 2%;
+			h4{font-weight: bold; color: $compt; font-size: 19px; }
+		}
+		.right {width:67%; float: right;}
+
+		.clearfix{@include sec-default(); margin-bottom: 40px;}
+		.tli {display: inline-block; float: left; width: 48%;
+		  &.two, &.four{float:right;}
+
+		  .img-box, .text {display: inline-block; float: right; }
+		  .text {margin-top: 25px;width: 69%; margin-left: -6%;
+		    position: relative;z-index: 0;
+		    &::before {@include before(); width:160px; height:160px; background-color: rgba($compb, .8); border-radius: 50%; left:-25%; top:-15%;}
+		  }
+		  .img-box{width:31%; float: left; position: relative; z-index:2;}
+		  h4{margin-bottom: 6px; font-weight: bold; font-size:1.2rem;}
+		  p{margin-top: 0px; font-size: 16px}
+			span{font-size: 18px; font-weight: bold; @include sec-default(); margin-bottom: 6px;}
+
+		}
 	}
 }
 

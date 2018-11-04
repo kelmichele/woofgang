@@ -52,13 +52,13 @@ html {
 body {
   margin:0;
 	line-height: 1.5em;
-  font-family: $muli;
+  font-family: $body;
   @include sec-default();
   // padding:0 50px;
   // .page-body {background-color: $f9;}
 
 
-  h1, h2, h3, h4, h5, p, li, a {color: $tbrown; line-height: 1.5em;font-family: $muli;
+  h1, h2, h3, h4, h5, p, li, a {color: $tbrown; line-height: 1.5em;font-family: $body;
     &.bmargin0 {margin-bottom: 0;}
     &.pop{font-family: $pop;}
     &.quick {font-family: $quick;}

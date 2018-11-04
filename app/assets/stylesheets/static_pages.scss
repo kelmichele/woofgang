@@ -30,6 +30,8 @@ hr{
 	&.less {width: 25%;}
 }
 
+.clearfix.btn {@include sec-default(); margin-top:20px;}
+
 .woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3));}
 .text-link{font-weight: $semi; color: $pink;
   &.blue{color: $compb;}
@@ -105,7 +107,7 @@ ul.paw {padding-left: 0;
 
 .uk-tab-bottom.uk-tab {margin-left:0;
   &::before {border-bottom:0;}
-  a{font-family: $muli; text-transform: none; font-size: 17px; font-weight: $semi;}
+  a{font-family: $body; text-transform: none; font-size: 17px; font-weight: $semi;}
 }
 
 //*********************************//
@@ -130,15 +132,17 @@ ul.paw {padding-left: 0;
 //*********** locations ***********//
 //*********************************//
 .locations {
-  .ipage-header {
-    .pagetitle {display: inline-block; width: 40%; float:left;}
-    .wl-uk{width:20%;}
-    .admin-btns {
-      .woof-link, .import {display: inline-block; width:30%;}
+ .pup-header {
+  .full {background-image: url(image_path('fluffy.png')); background-size: 23%; padding-top: 60px;}
+    button{@include center-block(); margin-top:20px;}
+    .uk-dropdown {width:85%; min-width: auto;
+      .manu, .import {display: inline-block; width:45%; float:left;}
+      .woof-link {@include sec-default(); margin: 6px 0;}
+      .import {float: right;}
     }
-
-    // .uk-dropdown.uk-open.uk-dropdown-boundary.uk-dropdown-bottom-center {top:90px;}
-  }
+    .tbox{width:90%;}
+    h2{font-size: 1.4rem;}
+ }
 
   .search-sec{width:35%; float: left; margin-bottom:30px;
     .form-control, .btn.btn-outline-secondary.search {display: inline-block; float: left;}

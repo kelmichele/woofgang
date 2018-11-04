@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'vet-clinic', to: 'static_pages#vet-clinic'
   get 'retail', to: 'static_pages#retail'
 
-  get 'franchise-faqs', to: 'franchise_pages#franchise-faqs'
+  get '/franchise-faqs', to: 'franchise_pages#franchise-faqs'
   get 'franchise-process', to: 'franchise_pages#franchise-process'
   get 'franchise-inquiry', to: 'franchise_pages#franchise-inquiry'
   get 'franchise', to: 'franchise_pages#franchise'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get 'training-support', to: 'franchise_pages#training-support'
   get 'franchisees', to: 'franchise_pages#franchisees'
   get 'investment-details', to: 'franchise_pages#investment-details'
-  get 'next-steps', to: 'franchise_pages#next-steps'
+  get '/next-steps', to: 'franchise_pages#next-steps'
   get 'real-estate', to: 'franchise_pages#real-estate'
 
   get '/fb', to: 'social#fb'
