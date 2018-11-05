@@ -118,18 +118,17 @@
 
 //****** real estate *******//
 .real-estate {
-	h3{font-size: 1.35rem; width:80%; @include center-block();  margin: 15px auto 40px}
-	// h4{margin: 15px auto 0; width:75%; }
+	h3{font-size: 1.35rem; margin: 15px auto; width:80%; @include center-block(); }
 	h3{text-align: center;}
 
-	.full-sec.xtr{padding-bottom: 50px;}
+	.full-sec.xtr{padding-bottom: 50px; padding-top:100px;}
 	.full.mid { padding: 30px 0 70px;
 		.ext, .content {display: inline-block; width: 45%; float: left;}
 		.content{width:52%; float:right; margin-top: 5%; }
 		li {margin-bottom: 12px;}
 	}
 
-	.banner {@include sec-default(); padding:30px 5% 20px; margin:50px 0 35px;
+	.banner {@include sec-default(); padding:30px 5% 20px; margin:30px 0 35px;
     background-color: $fa; position: relative; z-index: 0;
 		.text{float: left; width: 70%;margin-left: 3%}
     h4{font-size: 1.1rem; margin: 0; font-weight: $semi; }
@@ -143,7 +142,9 @@
 //****** invest details *******//
 .investment-details {
 	.idets {padding: 100px 0 ;}
-	.intro	{display: inline-block; width:45%; float:left; text-align: center;}
+	.intro	{display: inline-block; width:45%; float:left; text-align: center;
+		span {font-weight: bold;}
+	}
 	ul.inv {
 		display: inline-block; width:53%; float:right;
 		li {margin-bottom:18px;
@@ -166,6 +167,7 @@
   	padding-top:100px;
   	.ttext{@include center-block();width:65%; text-align: center;}
   }
+
   .full-faq {@include sec-default(); padding: 30px 0 60px; display: none;
   	.uk-accordion{}
 		.uk-accordion-title {color: $pink;}
@@ -185,22 +187,32 @@
 				&::after{left:75%;}
 			}
 		}
-
-		// li{width:90%; float: left;
-			// &:nth-child(2n+2) {float: right;}
-		// }
   }
 
 
   .faq-tabs{@include sec-default(); padding: 50px 0;
+  	// position: relative;z-index: 0;
+  	// &::before{@include after(); width:47%; height: 25%; left:45%; margin-bottom: 50px; background-color: $pink;}
+
 		.uk-tab-bottom, .uk-switcher {display: inline-block; float: left; width:40%;}
 		.uk-tab-bottom {
-			li{margin-bottom: 10px;}
-			a{text-align: left; font-family: $body; font-weight: normal; color: $tbrown; font-size: 1rem;}
+			li{margin-bottom: 10px; margin-left: 0; padding-left: 0;}
+			a{text-align: left; font-family: $body; font-weight: normal; color: $tbrown; font-size: 1rem; padding:0;}
 		}
-		.uk-switcher {width:55%; float: right;
+		// .uk-tab::before {
+	 //    content: "";
+	 //    position: absolute;
+	 //    bottom: 0;
+	 //    left: 20px;
+	 //    right: 0;
+	 //  }
+		.uk-tab>.uk-active::before {@include before(); width: 20px; height: 20px; left:-25px; @include sec-bgimage('comp-paw.png'); margin-top:3px;}
+	  .uk-tab>.uk-active>a {border-top: 0; color: $compb; font-weight: $semi;}
 
-
+		.uk-switcher {width:57%; float: right; background-color: $white;
+			h4{border-bottom: 1px solid rgba($tbrown, .1); padding-bottom:4px; font-weight: $semi; font-size: 1.1rem;}
+			p{font-weight: normal;}
+			li{margin-left: 0;}
 		}
 
   }
@@ -237,9 +249,9 @@
 		li {font-weight: $semi; margin-bottom: 7px; color:$pink}
 
 		.text, .image {display: inline-block; float: left;}
-		.text {width:60%;margin-top:5%; margin-left: 5%}
-		ul{margin-left:10%;}
-		.image{width:25%; float: right; margin-right: 7%;}
+		.text {width:60%;margin-top:2%; margin-left: 5%}
+		// ul{margin-left:10%;}
+		.image{width:20%; float: right; margin-right: 12%;}
 	}
 
 
@@ -270,7 +282,7 @@
 }
 
 //******** steps **********//
-.next-steps {
+.next-steps, .franchise-steps {
 	h3{font-size: 1.1rem; font-weight: $semi;}
 
 	.overview{@include sec-default(); padding: 90px 0 40px;}
