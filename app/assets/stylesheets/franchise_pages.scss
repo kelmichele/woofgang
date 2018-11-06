@@ -287,7 +287,7 @@
 	h3{font-size: 1.1rem; font-weight: $semi;}
 
 	.overview{@include sec-default(); padding: 90px 0 40px;}
-	.list-intro, .process-img {display:inline-block; width: 48%; margin-left: 3%; float:left;}
+	.list-intro, .x-img {display:inline-block; width: 48%; margin-left: 3%; float:left;}
 	.list-intro{padding-top:40px; float:right; width: 45%; margin-left: 0;
 		li{font-size: 1em; margin-bottom: 10px; font-weight: $semi;}
 	}
