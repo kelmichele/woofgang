@@ -233,7 +233,7 @@ ul.paw {padding-left: 0;
     }
 
   #redo-search {display: inline-block; float: right; width:30%; }
-    button.wl-uk{display: inline-block; width: 15%; float: right;}
+    button.wl-uk{display: inline-block; width: 15%; float: right; display: none;}
     .uk-dropdown {width:50%; min-width: auto; background-color: $f9;
       .manu, .import {display: inline-block; width:45%; float:left;}
       .woof-link {@include sec-default(); margin: 6px 0;}
