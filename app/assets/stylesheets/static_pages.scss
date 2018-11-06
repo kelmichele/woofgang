@@ -232,6 +232,7 @@ ul.paw {padding-left: 0;
       @include sec-bgimage('search.png'); background-position: center center; background-size: 45%;
     }
 
+  #redo-search {display: inline-block; float: right; width:30%; }
     button.wl-uk{display: inline-block; width: 15%; float: right;}
     .uk-dropdown {width:50%; min-width: auto; background-color: $f9;
       .manu, .import {display: inline-block; width:45%; float:left;}
