@@ -23,7 +23,6 @@ class LocationsController < ApplicationController
 		# end
 	end
 
-
 	def import
 	  Location.import(params[:file])
 	  redirect_to locations_path, notice: 'Locations imported.'
@@ -67,7 +66,8 @@ class LocationsController < ApplicationController
 
 	private
 		def set_location
-			@location = Location.find(params[:id])
+			@location = Location.friendly.find(params[:id])
+			# @location = Location.find(params[:id])
 		end
 
 		def location_params

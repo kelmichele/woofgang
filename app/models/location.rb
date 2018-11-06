@@ -1,4 +1,7 @@
 class Location < ApplicationRecord
+  extend FriendlyId
+  friendly_id :store_name, use: :slugged
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
@@ -32,14 +35,18 @@ class Location < ApplicationRecord
     "#{street_address_one}" + "\n" + "#{city}, #{state} #{zip}" + "\n"
   end
 
-  def direct_link
-    "https://www.google.com/maps/dir//" + "#{store_name}" + "," + "#{street_address_one}" + "+" + "#{city}" + "+" + "#{state}" + "+" + "#{zip}"
-    # "https://www.google.com/maps/dir//" + "#{latitude}" + "+" + "#{longitude}" + "/" + "#{store_name}" + "#{street_address_one}" + "+" + "#{city}" + "+" + "#{state}" + "+" + "#{zip}"
-  end
-
   def address_changed?
     street_address_one_changed? || street_address_two_changed? || city_changed? || state_changed? || zip_changed?
   end
+
+  def direct_link
+    "https://www.google.com/maps/dir//" + "#{store_name}" + "," + "#{street_address_one}" + "+" + "#{city}" + "+" + "#{state}" + "+" + "#{zip}"
+  end
+
+  def pug
+    "#{store_name}".parameterize
+  end
+
 
   def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)
