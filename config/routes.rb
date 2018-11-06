@@ -34,11 +34,9 @@ Rails.application.routes.draw do
   get 'real-estate', to: 'franchise_pages#real-estate'
 
   get 'franchise-steps', to: 'franchise_pages#franchise-steps'
-  get 'steps', to: 'franchise_pages#steps'
   get 'info', to: 'franchise_pages#info'
 
   get 'faq', to: 'franchise_pages#faq'
-  get 'questions', to: 'franchise_pages#questions'
   get 'page', to: 'franchise_pages#page'
 
 
