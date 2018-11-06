@@ -9,11 +9,11 @@
 				<h1><%= @page_title %></h1>
 				<h2>Use the map below to find a location near you!</h2>
 
-		  	<div class="boundary-align uk-panel">
-			    <button class="woof-link wl-uk uk-float-right" type="button">Admin Options</button>
-			    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .boundary-align; boundary-align: true">
-		      	<div class="admin-btns">
-		      		<% if user_signed_in? && current_user.admin? %>
+    		<% if user_signed_in? && current_user.admin? %>
+			  	<div class="boundary-align uk-panel">
+				    <button class="woof-link wl-uk uk-float-right" type="button">Admin Options</button>
+				    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .boundary-align; boundary-align: true">
+			      	<div class="admin-btns">
 			      		<div class="manu">
 			      			<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
 			      			<%= link_to "Download CSV", locations_path(format: "csv"), class: 'woof-link dl' %>
@@ -26,10 +26,10 @@
 		      				  <%= submit_tag "Import" %>
 		      				<% end %>
 		      			</div>
-		      		<% end %>
-		      	</div>
-		    	</div>
-		    </div>
+			      	</div>
+			    	</div>
+			    </div>
+    		<% end %>
 			</div>
 		</div>
 	</div>

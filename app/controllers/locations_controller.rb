@@ -7,13 +7,13 @@ class LocationsController < ApplicationController
 	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
 	    distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
 	    box      = Geocoder::Calculations.bounding_box(center, distance)
-	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 10)
+	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 5)
 
 	  elsif params[:near]
-	    Location.near(params[:near], 50).paginate(:page => params[:page], :per_page => 10)
+	    Location.near(params[:near], 50).paginate(:page => params[:page], :per_page => 5)
 
 	  else
-	    Location.all.paginate(:page => params[:page], :per_page => 10)
+	    Location.all.paginate(:page => params[:page], :per_page => 5)
 		end
 		# @locations = @locations.paginate(:page => params[:page], :per_page => 10)
 
