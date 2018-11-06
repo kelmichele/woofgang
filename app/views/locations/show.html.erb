@@ -1,36 +1,67 @@
 <% @page_title = @location.store_name.titleize %>
 <% @page_description = "New Description" %>
 
-
-<div class="ipage-header opink left">
-	<div class="inside">
-		<h1><%= @page_title %></h1>
+<div class="pup-header inline">
+	<div class="inside narrow">
+		<div class="full">
+			<div class="tbox">
+				<h2>Woof Gang Bakery & Grooming </h2>
+				<h1><%= @location.ntitle %></h1>
+			</div>
+		</div>
 	</div>
 </div>
 
-<div class="full-sec">
-	<div class="inside">
-			<div class="location-dets">
-				<div class="cat address">
-					<%= @location.street_address_one.titleize %><br>
-					<% if @location.street_address_two %>
-						<span class="addr2"><%= @location.street_address_two.titleize %></span>
-					<% end %>
-					<%= @location.city %>, <%= @location.state %> <%= @location.zip %>
-				</div>
-
-				<div class="cat phone"><%= number_to_phone(@location.phone, delimiter: '-') %></div>
-
-				<div class="cat email"><%= @location.email_address %></div>
-
-				<% if @location.hours %>
-					<div class="cat hours">
-						<%= @location.hours %>
-					</div>
-				<% end %>
-
+<div class="location-page">
+	<% if user_signed_in? && current_user.admin? %>
+		<div class="admin-side">
 			<div class="actions"><small><%= link_to("Edit Location (#{@location.id})", edit_location_path(@location)) %></small></div>
 			<% if @location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
+		</div>
+	<% end %>
+
+	<div class="inside med">
+		<div class="image">
+			<%= image_tag('location-img.jpg', class: 'img-responsive', alt: '')%>
+		</div>
+
+		<div class="location-dets">
+			<!-- <h2>Woof Gang Bakery & Grooming </h2> -->
+			<h3><%= @location.ntitle %> Location Information</h3>
+			<div class="title-line"></div>
+			<div class="clearfix"></div>
+
+			<div class="cat address">
+				<p><%= @location.street_address_one.titleize %><br>
+				<% if @location.street_address_two %>
+					<span class="addr2"><%= @location.street_address_two.titleize %></span>
+				<% end %>
+				<%= @location.city %>, <%= @location.state %> <%= @location.zip %></p>
+
+				<div class="btn-row">
+					<a href="<%= @location.direct_link %>" target="_blank" class="woof-link">Get Directions </a>
+				</div>
+			</div>
+
+			<div class="cat phone">
+				<!-- <p><a href="tel: <%= @location.phone %>"><%= @location.phone %></a></p> -->
+				<p><a href="tel:<%= @location.phone %>"><%= number_to_phone(@location.phone, delimiter: '-') %></a></p>
+			</div>
+
+			<div class="cat email">
+				<p><%= @location.email_address %></p>
+			</div>
+
+			<% if @location.hours %>
+				<div class="cat hours">
+					<p class="hd">Hours of Operation:</p>
+					<p>
+						<% @location.c_hours.each do |c_hours| %>
+							<%= c_hours %><br>
+						<% end %>
+					</p>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>

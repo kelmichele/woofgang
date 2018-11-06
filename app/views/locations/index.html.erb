@@ -10,7 +10,7 @@
 				<h2>Use the map below to find a location near you!</h2>
 
     		<% if user_signed_in? && current_user.admin? %>
-			  	<div class="boundary-align uk-panel">
+			  	<!-- <div class="boundary-align uk-panel">
 				    <button class="woof-link wl-uk uk-float-right" type="button">Admin Options</button>
 				    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .boundary-align; boundary-align: true">
 			      	<div class="admin-btns">
@@ -28,15 +28,15 @@
 		      			</div>
 			      	</div>
 			    	</div>
-			    </div>
+			    </div> -->
     		<% end %>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="full-sec">
-	<div class="inside">
+<div class="full-search">
+	<div class="inside lg">
 		<div class="full listings">
 			<div class="search-sec">
 				<div class="searcher">
@@ -45,6 +45,29 @@
 					  <%= f.submit "", class: "btn btn-outline-secondary search" %>
 					<% end %>
 				</div>
+
+    		<% if user_signed_in? && current_user.admin? %>
+			  	<div class="boundary-align uk-panel">
+				    <button class="woof-link wl-uk uk-float-right" type="button">Admin Options</button>
+				    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk; boundary-align: true">
+			      	<div class="admin-btns">
+			      		<div class="manu">
+			      			<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
+			      			<%= link_to "Download CSV", locations_path(format: "csv"), class: 'woof-link dl' %>
+			      		</div>
+		      			<div class="import">
+		      				<p class="bmargin0">Import Locations</p>
+		      				<hr>
+		      				<%= form_tag import_locations_path, multipart: true do %>
+		      				  <%= file_field_tag :file %>
+		      				  <hr>
+		      				  <%= submit_tag "Import" %>
+		      				<% end %>
+		      			</div>
+			      	</div>
+			    	</div>
+			    </div>
+    		<% end %>
 			</div>
 
 			<div class="map">
@@ -52,11 +75,11 @@
 			</div>
 
 			<div class="loclist">
-
 				<table>
-				<% @locations.each do |location| %>
-					<div class="location-bx">
-							<!-- = simple_format(location.full_address)%> -->
+					<% @locations.each do |location| %>
+						<div class="location-bx">
+
+
 							<% if location.store_name %>
 								<%= link_to location_path(location) do %>
 									<div class="cat name"><%= location.store_name.titleize %></div>
@@ -75,22 +98,31 @@
 								<%= location.city %>, <%= location.state %> <%= location.zip %>
 							</div>
 
-							<div class="cat phone"><%= number_to_phone(location.phone, delimiter: '-') %></div>
+							<div class="cat phone"><a href="tel:<%= location.phone %>"><%= number_to_phone(location.phone, delimiter: '-') %></a></div>
+							<!-- <div class="cat phone"><%= number_to_phone(location.phone, delimiter: '-') %></div> -->
 
 							<div class="cat email"><%= location.email_address %></div>
 
 							<% if location.hours %>
-								<div class="cat hours">
+								<!-- <div class="cat hours">
 									<%= location.hours %>
-								</div>
+								</div> -->
 							<% end %>
 
-						<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
-						<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
-					</div>
-				<% end %>
+							<div class="btn-row">
+								<%= link_to "Store Details", location_path(location), class: 'woof-link' %>
+							</div>
+
+
+			    		<% if user_signed_in? && current_user.admin? %>
+								<!-- <div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div> -->
+								<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
+							<% end %>
+						</div>
+					<% end %>
 				</table>
-			<%= will_paginate @locations, remote: true %>
+
+				<%= will_paginate @locations, remote: true %>
 			</div>
 
 

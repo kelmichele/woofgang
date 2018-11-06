@@ -12,6 +12,14 @@ class Location < ApplicationRecord
 
   default_scope -> { order(state: :asc)}
 
+  def ntitle
+    store_name.remove("Woof Gang Bakery & Grooming")
+  end
+
+  def c_hours
+    hours.split(",")
+  end
+
   def address
     [street_address_one, city_state, zip].compact.join(" , ")
   end
@@ -22,16 +30,15 @@ class Location < ApplicationRecord
 
   def full_address
     "#{street_address_one}" + "\n" + "#{city}, #{state} #{zip}" + "\n"
-    # + "(#{latitude}, #{longitude})"
+  end
+
+  def direct_link
+    "https://www.google.com/maps/dir//" + "#{store_name}" + "," + "#{street_address_one}" + "+" + "#{city}" + "+" + "#{state}" + "+" + "#{zip}"
+    # "https://www.google.com/maps/dir//" + "#{latitude}" + "+" + "#{longitude}" + "/" + "#{store_name}" + "#{street_address_one}" + "+" + "#{city}" + "+" + "#{state}" + "+" + "#{zip}"
   end
 
   def address_changed?
     street_address_one_changed? || street_address_two_changed? || city_changed? || state_changed? || zip_changed?
-  end
-
-  def op_hours
-    ph_time = "pm" + "\n"
-    op_hours = hours.gsub(",", "\\n" )
   end
 
   def self.import(file)

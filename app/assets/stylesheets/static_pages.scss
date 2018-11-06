@@ -204,7 +204,12 @@ ul.paw {padding-left: 0;
 //*********************************//
 .locations {
  .pup-header {
-  .full {background-image: url(image_path('fluffy.png')); background-size: 23%; padding-top: 60px;}
+    background-color: rgba($compb,.7);
+    .full {background-image: url(image_path('loc-pup.png')); background-size: 30%; padding-top: 60px;
+      background-position: top right;
+    }
+    .full::before {background-color: rgba($compb,.7);}
+
     button{@include center-block(); margin-top:20px;}
     .uk-dropdown {width:85%; min-width: auto;
       .manu, .import {display: inline-block; width:45%; float:left;}
@@ -213,43 +218,63 @@ ul.paw {padding-left: 0;
     }
     .tbox{width:90%;}
     h2{font-size: 1.4rem;}
- }
+  }
 
-  .search-sec{width:35%; float: left; margin-bottom:30px;
+  .full-search {@include sec-default(); padding: 40px 0; background-color: $f9;}
+
+  .search-sec{
+    @include sec-default(); margin-bottom: 20px;
+
+    .searcher {display: inline-block; width:40%; float: left;}
     .form-control, .btn.btn-outline-secondary.search {display: inline-block; float: left;}
     .btn.btn-outline-secondary.search {float: right; width: 12%;
       background-color: lighten($pink, 10%); color: white; letter-spacing: 1px;
       @include sec-bgimage('search.png'); background-position: center center; background-size: 45%;
     }
+
+    button.wl-uk{display: inline-block; width: 15%; float: right;}
+    .uk-dropdown {width:50%; min-width: auto; background-color: $f9;
+      .manu, .import {display: inline-block; width:45%; float:left;}
+      .woof-link {@include sec-default(); margin: 6px 0;}
+      .import {float: right; background-color: $white; padding:15px 20px; border:$border;
+        p{font-size: 16px; font-weight: $semi;}
+        input[type="submit"] {background-color: $compb; height:auto; width:auto; padding:4px 25px;
+          color: $white; @include tshadowl(rgba($black, .1)); float: right; font-size: 14px;
+        }
+        hr{margin-top: 10px;}
+      }
+    }
   }
 
   .full.listings {margin-top: 50px;}
-  .map {@include sec-default(); margin-bottom: 30px;}
-  #map {height:300px;}
+  .map {@include sec-default(); margin-bottom: 20px;}
+  #map {height:400px;margin-bottom: 6px;}
+  #redo-search {font-weight: bold; }
 
-  .loclist{@include sec-default();}
-
+  .loclist{@include center-block(); width:90%;}
   .location-bx {
-    display: inline-block; width: 30%; float: left;
-    margin:10px 1.5% 40px;
-    color:$black;
+    display: inline-block; width: 30%; float: none;
+    margin:10px 1% 40px;
+    color:$black; background-color: $white; padding: 15px 10px 10px 20px;
+    box-shadow: 0px 4px 8px rgba($black, .1);
 
     .cat {@include sec-default(); margin-bottom: 10px;
       &.name {font-weight: bold;}
       &.hours {margin-bottom: 0;}
     }
-    span.addr2{@include sec-default();}
-    .actions a {color: $red; font-weight: bold;}
 
+    .woof-link{font-size: 15px; padding: 6px 30px;}
   }
 
+  span.addr2{@include sec-default();}
+  .actions a {color: $red; font-weight: bold;}
+  .btn-row {@include sec-default(); margin:15px 0 20px;}
 
   .form-group {@include sec-default();}
   .forminfo {width: 30%; display: inline-block; float: none; margin:5px 1.5% 20px;}
   .form-control, .btn-outline-secondary.search {height: 45px; border-radius: 0;}
   .form-control {width:88%; font-size: 14px; color: $compg; padding-left: 7px; }
   .btn.woof-link {float:right; width:20%;}
-
   .btn-danger {display: inline-block; float: right; padding: 5px 15px; margin-left:10px;}
 }
 
@@ -257,6 +282,33 @@ ul.paw {padding-left: 0;
   li {display: inline-block; float: none; margin: 0 6px;}
   li.active {font-weight: bold; text-decoration: underline;}
 }
+
+.locations.show {
+  h2{margin-bottom: 0;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: $semi;}
+  h1{margin-top: 5px;}
+  h3{font-size: 1.3rem;padding-bottom: 6px; border-bottom: 1px solid rgba($tbrown, .15); font-weight: bold;}
+  .title-line {width:60px; display: none;}
+
+  .location-page {@include sec-default(); padding:80px 0;}
+  .admin-side{width:15%; position: absolute; left: 85%; margin-top:-50px; text-align: center;
+    .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px;}
+  }
+
+  .image, .location-dets {display: inline-block; float: left; width:55%;}
+  .location-dets {width:40%; float: right; margin-top:20px;}
+
+  .cat {@include sec-default(); margin-bottom:15px;
+    p{margin:0 0 10px;}
+
+    &.hours p.hd{font-weight: bold; margin-bottom: 5px;}
+    &.address{
+      .btn-row{margin-top: 5px;}
+      .woof-link {padding:6px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 15px;}
+    }
+  }
+}
+
+
 
 
 //*********************************//
