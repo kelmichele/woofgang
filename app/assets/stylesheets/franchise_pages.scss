@@ -213,6 +213,7 @@
 			h4{border-bottom: 1px solid rgba($tbrown, .1); padding-bottom:4px; font-weight: $semi; font-size: 1.1rem;}
 			p{font-weight: normal;}
 			li{margin-left: 0;}
+			.tab-img1{width:70%; @include center-block(); margin-top: 30px;}
 		}
 
   }
@@ -282,7 +283,7 @@
 }
 
 //******** steps **********//
-.next-steps, .franchise-steps {
+.steps, .franchise-steps {
 	h3{font-size: 1.1rem; font-weight: $semi;}
 
 	.overview{@include sec-default(); padding: 90px 0 40px;}

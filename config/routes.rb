@@ -14,27 +14,32 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'about-us', to: 'static_pages#about-us'
   get 'contact-us', to: 'static_pages#contact-us'
-  get 'pet-stores', to: 'static_pages#pet-stores'
   get 'services', to: 'static_pages#services'
   get 'press', to: 'static_pages#press'
   get 'grooming', to: 'static_pages#grooming'
   get 'self-service-grooming', to: 'static_pages#self-service-grooming'
   get 'doggie-daycare', to: 'static_pages#doggie-daycare'
   get 'vet-clinic', to: 'static_pages#vet-clinic'
-  get 'retail', to: 'static_pages#retail'
 
-  get '/franchise-faqs', to: 'franchise_pages#franchise-faqs'
-  get 'faq', to: 'franchise_pages#faq'
+  get 'retail', to: 'static_pages#retail'
+  get 'pet-stores', to: 'static_pages#pet-stores'
+
+
   get 'franchise-process', to: 'franchise_pages#franchise-process'
-  get 'franchise-inquiry', to: 'franchise_pages#franchise-inquiry'
   get 'franchise', to: 'franchise_pages#franchise'
   get 'franchise-opportunity', to: 'franchise_pages#franchise-opportunity'
   get 'training-support', to: 'franchise_pages#training-support'
   get 'franchisees', to: 'franchise_pages#franchisees'
   get 'investment-details', to: 'franchise_pages#investment-details'
-  get 'next-steps', to: 'franchise_pages#next-steps'
-  get 'franchise-steps', to: 'franchise_pages#franchise-steps'
   get 'real-estate', to: 'franchise_pages#real-estate'
+
+  get 'franchise-steps', to: 'franchise_pages#franchise-steps'
+  get 'steps', to: 'franchise_pages#steps'
+
+  get 'faq', to: 'franchise_pages#faq'
+  get 'questions', to: 'franchise_pages#questions'
+
+
 
   get '/fb', to: 'social#fb'
   get '/insta', to: 'social#insta'
