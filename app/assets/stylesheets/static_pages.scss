@@ -203,7 +203,7 @@ ul.paw {padding-left: 0;
 //*********** locations ***********//
 //*********************************//
 .locations {
- .pup-header {
+  .pup-header {
     background-color: rgba($compb,.7);
     .full {background-image: url(image_path('loc-pup.png')); background-size: 25%; padding-top: 60px;
       // background-position: top right;
@@ -294,8 +294,9 @@ ul.paw {padding-left: 0;
     @include sec-bgimage('playful.png'); background-size: 15%; background-position: bottom right;
   }
 
-  .admin-side{width:15%; position: absolute; left: 85%; margin-top:-50px; text-align: center;
-    .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px;}
+  .admin-side{width:15%; position: absolute; left: 85%; margin-top:-60px; text-align: center;
+    .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px; font-weight: $semi;}
+    .actions.coords{color:$red; font-weight: $semi; margin-top: 10px;}
   }
 
   .image, .location-dets {display: inline-block; float: left; width:55%;}

@@ -16,7 +16,7 @@
 	<% if user_signed_in? && current_user.admin? %>
 		<div class="admin-side">
 			<div class="actions"><small><%= link_to("Edit Location (#{@location.id})", edit_location_path(@location)) %></small></div>
-			<% if @location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
+			<% if @location.longitude == nil %><div class="actions coords">**<small>Coordinates Missing**</small></div><% end %>
 		</div>
 	<% end %>
 
