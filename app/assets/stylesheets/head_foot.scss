@@ -127,33 +127,6 @@
 //*********** footer ***********//
 //*********************************//
 
-// .footer {
-// 	@include sec-default(); background-color: $pink;
-// 	color: $white; padding: 30px 0;
-// 	.inside {width:90%;}
-// 	p{color: $white;}
-
-// 	.fbs {display: inline-block; float: left; width: 28%; margin:0 1.4%; padding: 10px 15px;
-
-// 		&.fb1 { border-right: 1px solid rgba($white, .4);}
-// 		&.fb2 { }
-// 		&.fb3 {border-left: 1px solid rgba($white, .4);float:right; text-align: center; }
-// 	}
-
-// 	ul.ft-menu, ul.social {
-// 		li {display: inline-block; margin-left: 1%;
-// 			a{color: $white;}
-// 		}
-// 	}
-
-// 	ul.ft-menu li {margin: 10px 7px 5px;}
-// 	ul.social {text-align: center;
-// 		li {float:none; margin: 0 1%; width: 35px; height: 35px; border-radius: 50%; background-color: $white;}
-// 		span {color: $pink; width:23px; height:23px;margin-top:6px;}
-// 	}
-// }
-
-
 .pre-foot{@include sec-default(); background-color: $pink; padding:20px 0 0; text-align: center;
 	a, span,p{color: $white; font-size: 16px;}
 	.contact-box {display: inline-block; float: none;
@@ -168,14 +141,13 @@
 
 .footer-level {
 	@include sec-default(); padding: 30px 0 0;
-	// .inside {width:90%;}
-
 	.fbs {display: inline-block; float: left; padding: 10px 5px 10px 30px;
 		width: 24%; margin:0 0 0 1%;
 		border-right: 1px solid rgba($tbrown, .1);
 		h5{font-weight: bold; margin-bottom: 0;}
 		ul{padding-left: 0;}
 		li, a, p{font-size: 16px;}
+		p span {font-weight: bold;}
 		li{margin-bottom: 5px;}
 
 		&.fb4 {border-right: 0;}
