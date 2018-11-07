@@ -1,43 +1,70 @@
 <% @page_title = @post.title.titleize %>
 <% @page_description = "" %>
 
-
-
 <div class="ipage-header">
 	<div class="inside med2">
 		<h1><%= @post.title %></h1>
-		<!-- <%= link_to 'Back to all posts', posts_path, class: 'woof-link' %>  -->
 	</div>
 </div>
 
-
 <div class="full-post">
-	<div class="back-link">
-		<%= link_to "/posts", class: 'text-link back' do %>
-			<span class="" uk-icon="icon: arrow-left;"></span> Back to All Posts
-		<% end %>
+	<!-- <div class="inside"> -->
+		<div class="back-link">
+			<%= link_to "/posts", class: 'text-link back' do %>
+				<span class="" uk-icon="icon: arrow-left;"></span> Back to All Posts
+			<% end %>
 
-		<% if user_signed_in? && current_user.admin? %>
-			<div class="admin-box">
-				<%= render 'actions' %>
-			</div>
-		<% end %>
-	</div>
-
-
-	<div class="inside">
-		<div class="feat-img">
-			<% if @post.image.attached? %>
-			  <%= image_tag @post.image %>
+			<% if user_signed_in? && current_user.admin? %>
+				<div class="admin-box">
+					<%= render 'actions' %>
+				</div>
 			<% end %>
 		</div>
 
-		<div class="feat-content">
-			<p><%= @post.content %></p>
+	<div class="inside med">
+		<div class="post-dets">
+			<div class="feat-img">
+				<% if @post.image.attached? %>
+				  <%= image_tag @post.image %>
+				<% end %>
+			</div>
+
+			<div class="feat-content">
+				<!-- <p><%= @post.this_post %></p> -->
+				<p><%= simple_format(@post.content) %></p>
+			</div>
 		</div>
 
-		<div class="full-sec">
-
-		</div>
+		<div class="sidebar"></div>
 	</div>
 </div>
+
+<div class="recent-posts">
+	<div class="inside">
+		<h3>Recent Posts</h3>
+		<% recent.each do |recent| %>
+			<%= link_to recent.slug, class: 'rpost' do %>
+				<% if recent.image.attached? %>
+				  <div class="image"><%= image_tag recent.image %></div>
+				<% end %>
+
+				<div class="rtitle">
+					<!-- <%= truncate(recent.title, length:150) %>  -->
+					<%= recent.title %>
+				</div>
+
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+
+<!--
+ 	<% if @post.prev %>
+   	<%= link_to "< Previous", @post.prev %>
+ 	<% end %>
+
+	<% if @post.next_post %>
+    <%= link_to "Next >", @post.next_post %>
+ 	<% end %>
+-->

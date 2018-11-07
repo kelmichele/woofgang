@@ -748,7 +748,7 @@ ul.paw {padding-left: 0;
     }
   }
 
-  .post-li {width:49%; display: inline-block; float: left;}
+  .post-li {width:48%; display: inline-block; float: left; margin-bottom: 15px; margin: 5px 1% 15px;}
   .feat-img, .feat-content {display: inline-block; float: left; width:49.5%;
     position: relative; z-index: 1;
   }
@@ -756,8 +756,7 @@ ul.paw {padding-left: 0;
 }
 
 .posts.show {
-  .full-post {@include sec-default(); padding: 100px 0 70px;}
-  .back-link {@include sec-default(); padding:0 5%; margin-top: -80px;
+  .back-link {@include sec-default(); padding:0 3% 70px;
     .text-link.back {color: $tbrown; font-weight: $semi; display: inline-block; float: left;}
     .admin-box {display: inline-block; float: right; }
     .action.woof-link {display: inline-block; float: none; width:auto; padding: 6px 15px; font-weight: $semi; font-size: 15px;}
@@ -765,7 +764,25 @@ ul.paw {padding-left: 0;
     .action.edit {background-color: $compt; margin-right: 10px;}
   }
 
-  .feat-img {width:50%; @include center-block();}
+  .full-post {@include sec-default(); padding: 15px 0 50px;
+    .feat-img, .feat-content {display: inline; width:45%;}
+    .feat-img {float: left; padding-right: 30px;}
+    .feat-content { width:55%;}
+    p{font-size: 16px;}
+  }
+
+  .recent-posts {@include sec-default(); padding: 40px 0; background-color: $f9;
+    h3{border-bottom: 1px solid rgba($tbrown, .1); padding-bottom: 4px; font-size: 1.3rem; font-weight: $semi;}
+
+    .rpost {display: inline-block; float: left;
+      width:30%; margin: 0 1.5% 20px;
+      &:nth-child(2) { margin-right:2%;}
+      &:nth-child(3) {float: right; margin-left: 0;}
+    }
+    .rtitle, .image { @include sec-default(); font-size: 15px; color:$tbrown;}
+    .rtitle{margin-top: 15px; text-align: center;}
+    .image { height:250px; overflow: hidden;}
+  }
 }
 
 

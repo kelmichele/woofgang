@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	before_action :set_post, only: [:edit, :show, :update, :destroy]
+	helper_method :recent
 
 	def index
     @posts = Post.all
@@ -40,12 +41,16 @@ class PostsController < ApplicationController
   end
 
   private
-	  def set_post
-			@post = Post.friendly.find(params[:id])
-	    # @post = Post.find(params[:id])
-	  end
+  def set_post
+		@post = Post.friendly.find(params[:id])
+    # @post = Post.find(params[:id])
+  end
 
-    def post_params
-      params.require(:post).permit(:title, :image, :content, :url)
-    end
+  def post_params
+    params.require(:post).permit(:title, :image, :content, :url)
+  end
+
+  def recent
+  	recent = Post.last(3)
+  end
 end
