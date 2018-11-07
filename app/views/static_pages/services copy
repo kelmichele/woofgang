@@ -8,6 +8,11 @@ dir//Woof+Gang+Bakery+Bull+Street,+137+Bull+St,+Savannah,+GA+31401/@32.0775519,-
 -->
 
 
+heroku config:set  REDISTOGO_URL=redis://redistogo:f60167df7479ead015249116b05ac2f4@spinyfin.redistogo.com:11064/
+heroku config:set  REDIS_URL=redis://redistogo:f60167df7479ead015249116b05ac2f4@spinyfin.redistogo.com:11064/
+unset.   get
+
+
 
 
 GROOMING
