@@ -707,16 +707,32 @@ ul.paw {padding-left: 0;
 //*********** blogs ***********//
 //*********************************//
 .blogs, .posts {
-  .form-group {@include sec-default(); margin-bottom: 30px;
-    textarea {height:200px;@include sec-default(); padding: 10px; margin-top: 5px; font-size: 14px;}
+  .ipage-header {padding:30px 0 15px;
+    background-color: rgba($pink, .7);
+    h1{color:$white; @include tshadowl(rgba($black, .2)); font-size: 1.7rem;}
+  }
 
+  .blog-form {width:60%; @include center-block();}
+
+  .form-group {
+    @include sec-default(); margin-bottom: 30px;
+    textarea {height:200px;@include sec-default(); padding: 10px; margin-top: 5px; }
+    input, textarea {line-height: 1.4em; font-size: 14px;}
     &.title textarea {height:75px;}
+    &.image{border: 1px solid rgba($tbrown, .2); padding: 15px;
+      input[type="file"] {font-size: 14px; padding-left: 0;}
+    }
+    .actions, p.rule{@include sec-default();}
+
+    .woof-link, input.submit {display: inline-block; float: left; min-height: auto; height:auto; font-family: $body; padding: 6px 15px; font-size: 15px; font-weight: $semi;}
+    .woof-link.danger {float: right; background-color: $red;}
+    .woof-link.cancel {float: right; background-color: transparent; color: $red; text-align: right; font-weight: bold; @include tshadowl(rgba($black, .1));}
+    input.submit {background-color: $compb;}
   }
 }
 
 .blogs.index, .posts.index  {
-  h1, .woof-link {display: inline-block; width:80%; float: left;}
-  .woof-link {float:right; width: 15%;}
+  .woof-link {float:right; width: 200px; background-color: $tbrown; position: absolute; left: 75%; margin-top: -60px; }
 
   .blog-posts {
     h3.title {font-size: 1.3rem;}
@@ -740,10 +756,6 @@ ul.paw {padding-left: 0;
 }
 
 .posts.show {
-  .ipage-header {padding:30px 0 15px;
-    background-color: rgba($pink, .7);
-    h1{color:$white; @include tshadowl(rgba($black, .2)); font-size: 1.7rem;}
-  }
   .full-post {@include sec-default(); padding: 100px 0 70px;}
   .back-link {@include sec-default(); padding:0 5%; margin-top: -80px;
     .text-link.back {color: $tbrown; font-weight: $semi; display: inline-block; float: left;}

@@ -7,6 +7,11 @@
 	    <%= f.text_area :title %>
 		</div>
 
+		<div class="form-group url">
+			<label>Post URL</label><br>
+	    <%= f.text_field :url %>
+		</div>
+
 		<div class="form-group image">
 			<%= f.label :image %>
 		  <%= f.file_field :image %>
@@ -26,7 +31,7 @@
 		      <%= link_to "Delete This Post", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "action woof-link danger" %>
 		    <% end %>
 		  </div>
-		  <p><small>*Required Fields</small></p>
+		  <p class="rule"><small>*Required Fields</small></p>
 		</div>
   <% end %>
 </div>

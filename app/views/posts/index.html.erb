@@ -3,9 +3,9 @@
 
 
 
-<div class="ipage-header left opink">
-	<div class="inside">
-		<h1>All Posts</h1>
+<div class="ipage-header">
+	<div class="inside med2">
+		<h1>Woof Gang Bakery Blog</h1>
 		<% if user_signed_in? && current_user.admin? %>
 			<%= link_to 'Create New Post', new_post_path, class: 'woof-link' %>
 			<% end %>
