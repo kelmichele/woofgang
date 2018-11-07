@@ -43,11 +43,6 @@ class Location < ApplicationRecord
     "https://www.google.com/maps/dir//" + "#{store_name}" + "," + "#{street_address_one}" + "+" + "#{city}" + "+" + "#{state}" + "+" + "#{zip}"
   end
 
-  def pug
-    "#{store_name}".parameterize
-  end
-
-
   def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)
     header = spreadsheet.row(1)
