@@ -1,3 +1,46 @@
+<% @ft_franch = capture do %>
+  <ul class="ft-list franch">
+  	<li><%= link_to "Franchise Opportunity", franchise_opportunity_path %></li>
+  	<li><%= link_to "Franchisees", franchisees_path %></li>
+  	<li><%= link_to "Training & Support", training_support_path %></li>
+  	<li><%= link_to "Investment Details", investment_details_path %></li>
+  	<li><%= link_to "The Next Steps", franchise_steps_path %></li>
+  	<li><%= link_to "Real Estate", real_estate_path %></li>
+  	<li><%= link_to "Franchise FAQ's", faq_path %></li>
+  	<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
+  </ul>
+<% end %>
+
+<% @ft_serve = capture do %>
+	<ul class="ft-list serv">
+		<li><%= link_to "Retail", pet_stores_path %></li>
+		<li><%= link_to "Grooming", grooming_path %></li>
+		<li><%= link_to "Self Service Grooming", self_service_grooming_path %></li>
+		<li><%= link_to "Doggie Daycare", doggie_daycare_path %></li>
+		<li><%= link_to "Veterinary Clinic", vet_clinic_path %></li>
+	</ul>
+<% end %>
+
+<% @ft_info = capture do %>
+  <ul class="ft-list info">
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "Locations", locations_path %></li>
+		<li><%= link_to "About Us", about_us_path %></li>
+		<li><%= link_to "Blog", posts_path %></li>
+		<li><%= link_to "Contact Us", contact_path %></li>
+		<% if user_signed_in? && current_user.admin? %>
+			<li class="account"><%= link_to "Admin Account", account_path %> </li>
+		<% end %>
+  </ul>
+<% end %>
+
+<% @ft_contact = capture do %>
+	<p class="tmargin0">7575 Dr. Phillips Blvd<br> Suite 275<br>Orlando, FL 32819</p>
+	<p><span>Corporate Office Hours:</span><br>Monday - Friday: 8am - 5pm</p>
+<% end %>
+
+
+
 <div class="pre-foot">
 	<div class="inside med2">
 		<div class="contact-box phone">
@@ -18,57 +61,57 @@
 
 <div class="footer-level">
 	<div class="inside">
-		<div class="fbs fb1">
-			<h5>Franchise</h5>
-			<div class="title-line sm"></div><div class="clearfix"></div>
-      <ul class="ft-list franch">
-      	<li><%= link_to "Franchise Opportunity", franchise_opportunity_path %></li>
-      	<li><%= link_to "Franchisees", franchisees_path %></li>
-      	<li><%= link_to "Training & Support", training_support_path %></li>
-      	<li><%= link_to "Investment Details", investment_details_path %></li>
-      	<li><%= link_to "The Next Steps", franchise_steps_path %></li>
-      	<li><%= link_to "Real Estate", real_estate_path %></li>
-      	<li><%= link_to "Franchise FAQ's", faq_path %></li>
-      	<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
-      </ul>
+		<div class="full-ft">
+			<div class="fbs fb1">
+				<h5>Franchise</h5>
+				<div class="title-line sm"></div><div class="clearfix"></div>
+				<%= @ft_franch %>
+			</div>
+
+			<div class="fbs fb2">
+				<h5>Services</h5>
+				<div class="title-line sm"></div><div class="clearfix"></div>
+				<%= @ft_serve %>
+			</div>
+
+			<div class="fbs fb3">
+				<h5>Info</h5>
+				<div class="title-line sm"></div><div class="clearfix"></div>
+				<%= @ft_info %>
+			</div>
+
+			<div class="fbs fb4">
+				<!-- <h5>Location</h5> -->
+				<h5>Woof Gang Corporate:</h5>
+				<div class="title-line sm"></div><div class="clearfix"></div>
+				<%= @ft_contact %>
+			</div>
 		</div>
 
-		<div class="fbs fb2">
-			<h5>Services</h5>
-			<div class="title-line sm"></div><div class="clearfix"></div>
-      <ul class="ft-list serv">
-				<li><%= link_to "Retail", pet_stores_path %></li>
-				<li><%= link_to "Grooming", grooming_path %></li>
-				<li><%= link_to "Self Service Grooming", self_service_grooming_path %></li>
-				<li><%= link_to "Doggie Daycare", doggie_daycare_path %></li>
-				<li><%= link_to "Veterinary Clinic", vet_clinic_path %></li>
-      </ul>
+		<div class="sm-ft">
+			<ul uk-accordion="multiple: true">
+		    <li class="acc-li">
+	        <a class="uk-accordion-title" href="#"><h5>Franchise</h5></a>
+	        <div class="uk-accordion-content"><%= @ft_franch %></div>
+		    </li>
+
+		    <li class="acc-li">
+	        <a class="uk-accordion-title" href="#"><h5>Services</h5></a>
+	        <div class="uk-accordion-content"><%= @ft_serve %></div>
+		    </li>
+
+		    <li class="acc-li">
+	        <a class="uk-accordion-title" href="#"><h5>Info</h5></a>
+	        <div class="uk-accordion-content"><%= @ft_info %></div>
+		    </li>
+
+		    <li class="acc-li">
+	        <a class="uk-accordion-title" href="#"><h5>Contact</h5></a>
+	        <div class="uk-accordion-content"><%= @ft_contact %></div>
+		    </li>
+			</ul>
 		</div>
 
-		<div class="fbs fb3">
-			<h5>Info</h5>
-			<div class="title-line sm"></div><div class="clearfix"></div>
-      <ul class="ft-list info">
-    		<li><%= link_to "Home", root_path %></li>
-				<li><%= link_to "Locations", locations_path %></li>
-				<li><%= link_to "About Us", about_us_path %></li>
-				<li><%= link_to "Blog", posts_path %></li>
-				<li><%= link_to "Contact Us", contact_path %></li>
-				<% if user_signed_in? && current_user.admin? %>
-					<li class="account"><%= link_to "Admin Account", account_path %> </li>
-				<% end %>
-      </ul>
-		</div>
-
-		<div class="fbs fb4">
-			<!-- <h5>Location</h5> -->
-			<h5>Woof Gang Corporate:</h5>
-			<div class="title-line sm"></div><div class="clearfix"></div>
-			<p class="tmargin0">7575 Dr. Phillips Blvd<br> Suite 275<br>Orlando, FL 32819</p>
-
-			<p><span>Corporate Office Hours:</span><br>
-			Monday - Friday: 8am - 5pm</p>
-		</div>
 
 		<div class="btm">
 			<div class="copy"><p>Copyright <%= Time.now.year %> Woof Gang Bakery. All rights reserved. </p></div>

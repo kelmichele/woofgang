@@ -1,9 +1,10 @@
 <header class="inline-header" uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
   <div class="above">
     <div class="contact">
-      <!-- <span class="" uk-icon="icon: receiver;"></span>  -->
-      <%= image_tag 'phone1.png', class: 'uk-icon', alt: 'phone icon' %>
-      <%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %>
+      <!-- <span class="" uk-icon="icon: receiver;"></span> -->
+      <%= image_tag 'phone.png', class: 'uk-icon', alt: 'phone icon' %>
+      <a href="tel:4073559210"><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></a>
+
     </div>
 
     <ul class="social">
@@ -55,9 +56,12 @@
 				<li><%= link_to "Contact Us", contact_path %></li>
 			</ul>
 
-    <div class="mobile-nav">
-		  <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">MENU</button>
-    	<%= render 'layouts/mobile-nav' %>
+      <div class="mobile-nav">
+  		  <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
+          <span class="mmenu" uk-icon="menu"></span>
+        </button>
+      	<%= render 'layouts/mobile-nav' %>
+      </div>
     </div>
 	</nav>
 </header>
