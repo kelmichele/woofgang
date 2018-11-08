@@ -97,20 +97,19 @@
 
 @include bp(tn) {
 	.inline-header {
-		// .above{width:40%;}
 	}
 }
 
 @include bp(mb) {
 	.inline-header {
-		// .above{width:50%;}
 	}
 }
 
 @include bp(ph) {
 	.inline-header {
-		.nb-logo {width:250px; margin-left: 5%;}
-		.mobile-nav{margin-top: 10%; margin-right: 5%;}
+		.above {padding: 5px 15px;}
+		// .nb-logo {width:250px; margin-left: 5%;}
+		// .mobile-nav{margin-top: 10%; margin-right: 5%;}
 	}
 }
 
