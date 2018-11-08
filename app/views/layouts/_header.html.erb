@@ -1,7 +1,9 @@
 <header class="inline-header" uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
   <div class="above">
     <div class="contact">
-      <span class="" uk-icon="icon: receiver;"></span> <%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %>
+      <!-- <span class="" uk-icon="icon: receiver;"></span>  -->
+      <%= image_tag 'phone1.png', class: 'uk-icon', alt: 'phone icon' %>
+      <%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %>
     </div>
 
     <ul class="social">

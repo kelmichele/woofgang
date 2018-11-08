@@ -95,6 +95,7 @@
 	.above{width:25%; float:right; margin-right: 9%; padding: 5px 10px; background-color: $pink; border-bottom-right-radius: 14px; border-bottom-left-radius: 14px; }
 	.contact,.social{display:inline-block; float: left; color:$white;width:50%;
 		span {color:$white; }
+		img {height:15px; margin-right: 1px;margin-top: -4px;}
 	}
 
 	.social {padding-left: 0; float:right; text-align: right;
@@ -157,6 +158,26 @@
 		.copy, .hs {display: inline-block; float:left; width: 45%;}
 		.hs {float: right; text-align: right;}
 		p, a {font-size:13px; margin-bottom:0;}
+	}
+}
+
+@media (max-width:1100px){
+	.footer-level {
+		.inside {width:90%;}
+		.fbs{padding-left: 15px;
+			&.fb1 {margin-left: 0; }
+		}
+	}
+}
+@include bp(tb) {
+	.footer-level {
+		padding-top:20px;
+		.fbs {
+			width: 24%; margin:0 0 0 1%;
+			li, a, p{font-size: 15px;}
+
+			&.fb1 {padding-left:0;}
+		}
 	}
 }
 

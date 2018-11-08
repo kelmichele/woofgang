@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   get 'info', to: 'franchise_pages#info'
 
   get 'faq', to: 'franchise_pages#faq'
-  get 'page', to: 'franchise_pages#page'
+  get 'page', to: 'static_pages#page'
 
 
 
