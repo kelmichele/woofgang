@@ -10,6 +10,13 @@
     <ul class="social">
       <%= render 'shared/social' %>
     </ul>
+
+    <div class="mobile-nav">
+      <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
+        <span class="mmenu" uk-icon="menu"></span>
+      </button>
+      <%= render 'layouts/mobile-nav' %>
+    </div>
   </div>
 
 	<nav class="uk-navbar-container inside inside-stick" uk-navbar>
@@ -55,13 +62,6 @@
 
 				<li><%= link_to "Contact Us", contact_path %></li>
 			</ul>
-
-      <div class="mobile-nav">
-  		  <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
-          <span class="mmenu" uk-icon="menu"></span>
-        </button>
-      	<%= render 'layouts/mobile-nav' %>
-      </div>
     </div>
 	</nav>
 </header>

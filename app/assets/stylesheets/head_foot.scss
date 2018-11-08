@@ -76,37 +76,39 @@
 
 @media (max-width:1024px) {
 	.inline-header {
+		.above{@include sec-default(); border-radius:0; margin-bottom: 20px; padding: 5px 30px; }
+		.contact, .social, .mobile-nav {width: 30%; margin-top:3px;}
 		.contact a {font-size: 13px;}
-		.social {margin-top: 0;
+		.social { float:none; text-align: center; margin-left: 6%; margin-top: 2px;
 			li{width:15px; height:15px;}
+		}
+		.mobile-nav { display: inline-block; float: right; margin-top: 0;
+			.uk-button {padding: 5px 7px; float: right; line-height: 1em;}
+			span {color:$white; }
 		}
 
 		.uk-navbar-nav {display: none;}
 		.navbar-center{@include sec-default();}
-		.nb-logo {padding: 0; margin-top: 0; width:230px;}
-		.mobile-nav { display: inline-block;
-			float: right; margin-top: 5%;
+		.nb-logo {padding: 0 0 10px; margin: 0; @include sec-default();}
+		.logo {width:230px; @include center-block();}
 
-			.uk-button {padding: 0 10px; float: right;}
-		}
 	}
 }
 
 @include bp(tn) {
 	.inline-header {
-		.above{width:40%;}
+		// .above{width:40%;}
 	}
 }
 
 @include bp(mb) {
 	.inline-header {
-		.above{width:50%; margin-bottom: 20px;}
+		// .above{width:50%;}
 	}
 }
 
 @include bp(ph) {
 	.inline-header {
-		.above{@include sec-default(); border-radius:0; }
 		.nb-logo {width:250px; margin-left: 5%;}
 		.mobile-nav{margin-top: 10%; margin-right: 5%;}
 	}
@@ -175,7 +177,7 @@
 @include bp(tn) {
 	.footer-level {
 		.full-ft {display: none;}
-		.sm-ft {@include center-block(); width:70%; margin-top: 20px;
+		.sm-ft {@include center-block(); width:55%; margin-top: 20px;
 			.acc-li {border-bottom: $border; padding-bottom: 10px;}
 			.uk-accordion-title h5 {font-weight: $semi;}
 			.uk-accordion-content {border-top:1px solid rgba($pink, .3); padding-top:10px;
