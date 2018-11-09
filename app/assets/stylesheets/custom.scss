@@ -122,6 +122,6 @@ form{
   textarea{height: 100px;padding-top:3px;}
   label{font-size: 15px; color: $tbrown; font-weight: $semi}
   .form-group.submit{@include sec-default();
-    input.send-message {width:15%; height:auto; background-color: $pink; font-size: 16px; color: $white; font-weight: $semi; padding: 8px 10px;}
+    input.send-message, input[type=submit] {width:15%; height:auto; background-color: $pink; font-size: 16px; color: $white; font-weight: $semi; padding: 8px 10px;}
   }
 }

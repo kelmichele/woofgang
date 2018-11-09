@@ -292,11 +292,17 @@ ul.paw {padding-left: 0;
     }
     .full::before {background-color: rgba($compb,.7);}
 
-    button{@include center-block(); margin-top:20px;}
-    .uk-dropdown {width:85%; min-width: auto;
-      .manu, .import {display: inline-block; width:45%; float:left;}
+    button.wl-uk{position:absolute; left: 80%; width:15%; margin-top: 80px; border:0;}
+    .uk-dropdown {width:45%; min-width: auto;background-color: $f9;
+      .manu, .import {display: inline-block; width:40%; float:left;}
       .woof-link {@include sec-default(); margin: 6px 0;}
-      .import {float: right;}
+      .import {float: right; width:55%; background-color: $white; padding:15px 20px; border:$border;
+        p{font-size: 16px; font-weight: $semi;}
+        input[type="submit"] {background-color: $compb; height:auto; width:auto; padding:4px 25px;
+          color: $white; @include tshadowl(rgba($black, .1)); float: right; font-size: 14px;
+        }
+        hr{margin-top: 10px;}
+      }
     }
     .tbox{width:90%;}
     h2{font-size: 1.4rem;}
@@ -305,35 +311,27 @@ ul.paw {padding-left: 0;
   .full-search {@include sec-default(); padding: 40px 0; background-color: $f9;}
 
   .search-sec{
-    @include sec-default(); margin-bottom: 20px;
+    @include sec-default(); margin-bottom: 20px; text-align: center;
 
-    .searcher {display: inline-block; width:40%; float: left;}
+    .searcher,#redo-search {display: inline-block; width:45%; float: left;box-shadow: 0px 1px 2px rgba($black, .1);
+      // margin-left: 3%;
+   }
     .form-control, .btn.btn-outline-secondary.search {display: inline-block; float: left;}
-    .btn.btn-outline-secondary.search {float: right; width: 12%;
+    .form-control {width:90%; border:0; padding-left: 15px;}
+    .btn.btn-outline-secondary.search {width: 10%;
       background-color: lighten($pink, 10%); color: white; letter-spacing: 1px;
-      @include sec-bgimage('search.png'); background-position: center center; background-size: 45%;
+      @include sec-bgimage('search.png'); background-position: center center; background-size: 42%;
     }
 
-    #redo-search {display: inline-block; float: right; width:30%; }
-    .boundary-align.uk-panel {display: inline-block; width: 15%; float: right;}
-    button.wl-uk{@include sec-default();}
-    .uk-dropdown {width:300%; min-width: auto; background-color: $f9;
-      .manu, .import {display: inline-block; width:45%; float:left;}
-      .woof-link {@include sec-default(); margin: 6px 0;}
-      .import {float: right; background-color: $white; padding:15px 20px; border:$border;
-        p{font-size: 16px; font-weight: $semi;}
-        input[type="submit"] {background-color: $compb; height:auto; width:auto; padding:4px 25px;
-          color: $white; @include tshadowl(rgba($black, .1)); float: right; font-size: 14px;
-        }
-        hr{margin-top: 10px;}
-      }
+    #redo-search {padding: 10px; background-color: $white; margin-top: 3px;font-size:15px; font-weight: $semi;
+       // margin-left:4%;
+       float:right;
     }
   }
 
   .full.listings {margin-top: 50px;}
   .map {@include sec-default(); margin-bottom: 20px;}
   #map {height:400px;margin-bottom: 6px;}
-  #redo-search {font-weight: bold; }
 
   .loclist{@include center-block(); width:90%;}
   .location-bx {
@@ -359,16 +357,22 @@ ul.paw {padding-left: 0;
   .form-control, .btn-outline-secondary.search {height: 45px; border-radius: 0;}
   .form-control {width:88%; font-size: 14px; color: $compg; padding-left: 7px; }
   .btn.woof-link {float:right; width:20%;}
-  .btn-danger {display: inline-block; float: right; padding: 5px 15px; margin-left:10px;}
-}
+  .btn-danger {display: inline-block; float: right; padding: 5px 15px; margin-left:10px; background-color: $red;}
 
-.pagination {@include sec-default(); text-align: center; margin-top: 10px;
-  li {display: inline-block; float: none; margin: 0 6px;}
-  li.active {font-weight: bold; text-decoration: underline;}
+  .loc-form input[type=submit] {height:auto; background-color: $compb;}
+
+  &.show, &.edit, &.new {
+    .pup-header .full {background-image: none; padding:40px 0 25px; text-align: center;}
+  }
+
+  &.edit, &.new {
+    .loc-form {margin-top:40px;}
+    .btn-danger {width:auto; padding: 5px 25px;}
+    .back-link.inline {color: $red; font-weight: bold;}
+  }
 }
 
 .locations.show {
-  .pup-header .full {background-image: none; padding:40px 0 25px; text-align: center;}
   h2{margin-bottom: 0;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: $semi;}
   h1{margin-top: 5px;}
   h3{font-size: 1.2rem;padding-bottom: 6px; border-bottom: 1px solid rgba($tbrown, .15); font-weight: bold;}
@@ -400,6 +404,11 @@ ul.paw {padding-left: 0;
       .woof-link {padding:5px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 14px;}
     }
   }
+}
+
+.pagination {@include sec-default(); text-align: center; margin-top: 10px;
+  li {display: inline-block; float: none; margin: 0 6px;}
+  li.active {font-weight: bold; text-decoration: underline;}
 }
 
 

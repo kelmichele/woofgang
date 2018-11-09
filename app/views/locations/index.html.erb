@@ -11,7 +11,32 @@
 			</div>
 		</div>
 	</div>
+
+	<% if user_signed_in? && current_user.admin? %>
+  	<div class="boundary-align uk-panel">
+	    <button class="woof-link wl-uk uk-float-right" type="button">Admin Options</button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+      	<div class="admin-btns">
+      		<div class="manu">
+      			<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
+      			<%= link_to "Download CSV", locations_path(format: "csv"), class: 'woof-link dl' %>
+      		</div>
+
+    			<div class="import">
+    				<p class="bmargin0">Import Locations</p>
+    				<hr>
+    				<%= form_tag import_locations_path, multipart: true do %>
+    				  <%= file_field_tag :file %>
+    				  <hr>
+    				  <%= submit_tag "Import" %>
+    				<% end %>
+    			</div>
+      	</div>
+    	</div>
+    </div>
+	<% end %>
 </div>
+
 
 <div class="full-search">
 	<div class="inside lg">
@@ -19,34 +44,11 @@
 			<div class="search-sec">
 				<div class="searcher">
 					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
-					  <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
+					  <%= f.text_field :near, class: "form-control", placeholder: "Search for Locations" %>
 					  <%= f.submit "", class: "btn btn-outline-secondary search" %>
 					<% end %>
 				</div>
-
-    		<% if user_signed_in? && current_user.admin? %>
-			  	<div class="boundary-align uk-panel">
-				    <button class="woof-link wl-uk uk-float-right" type="button">Admin Options</button>
-				    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk; boundary-align: true">
-			      	<div class="admin-btns">
-			      		<div class="manu">
-			      			<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
-			      			<%= link_to "Download CSV", locations_path(format: "csv"), class: 'woof-link dl' %>
-			      		</div>
-
-		      			<div class="import">
-		      				<p class="bmargin0">Import Locations</p>
-		      				<hr>
-		      				<%= form_tag import_locations_path, multipart: true do %>
-		      				  <%= file_field_tag :file %>
-		      				  <hr>
-		      				  <%= submit_tag "Import" %>
-		      				<% end %>
-		      			</div>
-			      	</div>
-			    	</div>
-			    </div>
-    		<% end %>
+				<%= link_to "Move map and click here to redo search in this area", "#", id: "redo-search" %>
 			</div>
 
 			<div class="map">

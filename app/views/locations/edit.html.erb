@@ -1,10 +1,19 @@
 <% @page_title = "Edit Location" %>
 
+<div class="pup-header inline">
+	<div class="inside narrow">
+		<div class="full">
+			<h1><%= @page_title %></h1>
+		</div>
+	</div>
+</div>
+
+
 <div class="full-sec">
 	<div class="inside">
-		<h1><%= @page_title %></h1>
+		<%= link_to "Delete This Location", location_path(@location), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "woof-link btn-danger" %>
+		<%= link_to("[ Cancel and Return ]", locations_path, :class => 'back-link inline') %>
+		<hr>
 		<%= render 'form' %>
-    <%= link_to "Delete This Location", location_path(@location), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-primary btn-danger" %>
-		<%= link_to("[ Cancel ]", locations_path, :class => 'back-link inline') %>
 	</div>
 </div>
