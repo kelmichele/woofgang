@@ -798,7 +798,9 @@ ul.paw {padding-left: 0;
     @include sec-default(); margin-bottom: 30px;
     textarea {height:200px;@include sec-default(); padding: 10px; margin-top: 5px; }
     input, textarea {line-height: 1.4em; font-size: 14px;}
-    &.title textarea {height:75px;}
+    &.title textarea {height:55px;}
+    &.url, &.date {display: inline-block; float: left; width:35%; }
+    &.url {width:63%; float: right;}
     &.image{border: 1px solid rgba($tbrown, .2); padding: 15px;
       input[type="file"] {font-size: 14px; padding-left: 0;}
     }

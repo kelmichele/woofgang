@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :image, :content, :url)
+    params.require(:post).permit(:title, :image, :content, :url, :date)
   end
 
   def recent

@@ -31,6 +31,9 @@
 
 			<div class="feat-content">
 				<!-- <p><%= @post.this_post %></p> -->
+				<% if @post.date %>
+					<%= @post.date.strftime("%m/%d/%Y")  %>
+				<% end %>
 				<p><%= simple_format(@post.content) %></p>
 			</div>
 		</div>
