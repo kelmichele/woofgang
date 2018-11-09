@@ -56,6 +56,18 @@
         <%= f.label :longitude %><br>
         <%= f.text_field :longitude, class: "form-control", placeholder: "Longitude", autofocus: true %>
       </div>
+
+      <div class="forminfo tags">
+        <%= f.label :tags %><br>
+        <!-- = f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %> -->
+
+        <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {:multiple => true}) %>
+
+<!--         vet
+        self-serve
+        daycare
+        grooming -->
+      </div>
     </div>
 
     <div class="form-group btns">

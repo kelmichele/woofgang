@@ -5,7 +5,6 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  # validates :street_address_one, presence: true
   validates :street_address_one, presence: true, uniqueness: { scope: :city, case_sensitive: false }
   validates :city, presence: true
   validates :state, presence: true
@@ -14,6 +13,27 @@ class Location < ApplicationRecord
   validates :email_address, presence: true
 
   default_scope -> { order(state: :asc)}
+
+  has_many :taggings
+  has_many :tags, through: :taggings
+
+  def self.tagged_with(name)
+    Tag.find_by!(name: name).locations
+  end
+
+  def self.tag_counts
+    Tag.select('tags.*, count(taggings.tag_id) as count').joins(:taggings).group('taggings.tag_id')
+  end
+
+  def tag_list
+    tags.map(&:name).join(', ')
+  end
+
+  def tag_list=(names)
+    self.tags = names.split(',').map do |n|
+      Tag.where(name: n.strip).first_or_create!
+    end
+  end
 
   def ntitle
     store_name.remove("Woof Gang Bakery & Grooming")

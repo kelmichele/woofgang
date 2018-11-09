@@ -53,6 +53,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'contacts#new', as: 'contact'
   post '/contact', to: 'contacts#create'
 
+  get 'tags/:tag', to: 'locations#index', as: :tag
+
   resources :locations do
     collection do
       post :import

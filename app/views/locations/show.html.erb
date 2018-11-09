@@ -37,6 +37,10 @@
 			<div class="title-line"></div>
 			<div class="clearfix"></div>
 
+			<div class="cat tags">
+				<p><small>Tags: <%= raw @location.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
+			</div>
+
 			<div class="cat address">
 				<p><%= @location.street_address_one.titleize %><br>
 				<% if @location.street_address_two %>

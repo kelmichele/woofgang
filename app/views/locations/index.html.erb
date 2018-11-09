@@ -82,6 +82,10 @@
 
 							<div class="cat email"><%= location.email_address %></div>
 
+							<div class="cat tags">
+								<small>Tags: <%= raw location.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small>
+							</div>
+
 							<% if location.hours %>
 								<!-- <div class="cat hours">
 									<%= location.hours %>

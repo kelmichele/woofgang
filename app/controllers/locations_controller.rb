@@ -7,13 +7,16 @@ class LocationsController < ApplicationController
 	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
 	    distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
 	    box      = Geocoder::Calculations.bounding_box(center, distance)
-	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 5)
+	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 6)
 
 	  elsif params[:near]
-	    Location.near(params[:near], 50).paginate(:page => params[:page], :per_page => 5)
+	    Location.near(params[:near], 50).paginate(:page => params[:page], :per_page => 6)
+
+	  elsif params[:tag]
+	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    Location.all.paginate(:page => params[:page], :per_page => 5)
+	    Location.all.paginate(:page => params[:page], :per_page => 6)
 		end
 		# @locations = @locations.paginate(:page => params[:page], :per_page => 10)
 
@@ -71,6 +74,6 @@ class LocationsController < ApplicationController
 		end
 
 		def location_params
-      params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude)
+      params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
 end
