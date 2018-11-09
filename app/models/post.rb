@@ -8,7 +8,8 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validates :url, presence: true
 
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> { order(date: :desc) }
+  # default_scope -> { order(created_at: :desc) }
 
   def pug
     "#{url}".downcase.parameterize

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	helper_method :recent
 
 	def index
-    @posts = Post.all
+    @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
   end
 
   def show

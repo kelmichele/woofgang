@@ -6,34 +6,41 @@
 		<h1>Woof Gang Bakery Blog</h1>
 		<% if user_signed_in? && current_user.admin? %>
 			<%= link_to 'Create New Post', new_post_path, class: 'woof-link' %>
-			<% end %>
+		<% end %>
 	</div>
 </div>
 
-<div class="full-sec blog-posts">
-	<div class="inside medi">
+<div class="full-sec">
+	<div class="inside">
+		<ul class="blog-posts">
 		<% @posts.each do |post| %>
-			<!-- <style type="text/css">
-				.post-gi {
-					background-image: url(<%= rails_blob_url(post.image) %>);
+			<style type="text/css">
+				.post-li.post-<%= post.id %> {
+					<% if post.image.attached? %>
+						background-image: url(<%= rails_blob_url(post.image) %>);
+						<% else %>
+						background-image: url(/assets/woof-bone.jpg);
+					<% end %>
 				}
 			</style>
 
-			<= link_to post_path(post), class: 'post-gi' do %>
-		    <h3 class="title"><%= post.title %></h3>
-			< end %> -->
-			<div class="post-li">
+			<%= link_to post_path(post), class: "post-li post-#{post.id}" do %>
+			  <h3 class="title"><%= post.title %></h3>
+			<% end %>
+
+			<!-- <li class="post-li">
 				<div class="feat-img">
 					<% if post.image.attached? %>
-					  <%= image_tag post.image %>
+					  <%= image_tag post.image, class: 'img-responsive' %>
 					<% end %>
 				</div>
 
 				<div class="feat-content">
 					<%= link_to post.title, post_path(post) %>
 				</div>
-			</div>
+			</li> -->
 		<% end %>
-
+		</ul>
 	</div>
+	<%= will_paginate @posts, remote: true %>
 </div>
