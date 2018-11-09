@@ -20,6 +20,8 @@ class LocationsController < ApplicationController
 		end
 		# @locations = @locations.paginate(:page => params[:page], :per_page => 10)
 
+		@tags = Tag.all
+
 		# respond_to do |format|
 		#   format.html
 		#   format.csv { send_data @locations.to_csv }
@@ -68,12 +70,12 @@ class LocationsController < ApplicationController
 	end
 
 	private
-		def set_location
-			@location = Location.friendly.find(params[:id])
-			# @location = Location.find(params[:id])
-		end
+	def set_location
+		@location = Location.friendly.find(params[:id])
+		# @location = Location.find(params[:id])
+	end
 
-		def location_params
-      params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
-    end
+	def location_params
+    params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+  end
 end

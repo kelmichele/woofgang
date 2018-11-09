@@ -44,15 +44,24 @@
 			<div class="search-sec">
 				<div class="searcher">
 					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
-					  <%= f.text_field :near, class: "form-control", placeholder: "Search for Locations" %>
+					  <%= f.text_field :near, class: "form-control", placeholder: "Search by Location" %>
 					  <%= f.submit "", class: "btn btn-outline-secondary search" %>
 					<% end %>
 				</div>
-				<%= link_to "Move map and click here to redo search in this area", "#", id: "redo-search" %>
+
+		  	<div class="boundary-align uk-panel filter-box">
+			    <div class="filter-uk">Search by Service <span  uk-icon="icon: chevron-down;"></span></div>
+			    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
+			    	<% @tags.each do |tag| %>
+							<div class="filter-tag"><%= link_to "#{tag.display_name}", tag_path(tag.name) %></div>
+						<% end %>
+		    	</div>
+		    </div>
 			</div>
 
 			<div class="map">
-				<%= render 'shared/map' %>
+				<!-- = render 'shared/map' %> -->
+				<%= link_to "Click here to redo search in this area", "#", id: "redo-search" %>
 			</div>
 
 			<div class="loclist">
