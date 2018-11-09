@@ -20,9 +20,12 @@
 	}
 
 	.uk-navbar-dropdown{ padding: 10px 5px 15px 10px;
+		width:250px;
 		background-color: $f8;
 		.uk-nav.uk-navbar-dropdown-nav {text-align: left;}
-		li {@include sec-default();}
+		li {@include sec-default();
+			a{font-weight: normal;}
+		}
 	}
 
 
@@ -56,6 +59,15 @@
 }
 
 .mobile-nav {display: none;}
+.uk-nav-header{border-bottom: 1px solid rgba($tbrown, .1); font-weight: bold; margin-bottom: 10px}
+.uk-offcanvas-bar.mobile {background: $fa; padding: 30px 10px 10px 30px;
+	hr{@include sec-default();border-top: 1px solid rgba($tbrown, .1);}
+	.uk-offcanvas-close.uk-close {color: $tbrown; top:10px;}
+	.uk-nav, .uk-sub-nav{
+		*>a {color:$tbrown;}
+	}
+	.uk-sub-nav li{padding-left: 15px;}
+}
 
 @include bp(dt) {
 	.inline-header .above{width:22%;}
@@ -76,20 +88,23 @@
 
 @media (max-width:1024px) {
 	.inline-header {
-		.above{@include sec-default(); border-radius:0; margin-bottom: 20px; padding: 5px 30px; }
+		position: relative !important;
+		.above{@include sec-default(); border-radius:0; margin-bottom: 20px; padding: 5px 30px;
+			position: fixed; z-index: 99;
+		}
 		.contact, .social, .mobile-nav {width: 30%; margin-top:3px;}
 		.contact a {font-size: 13px;}
 		.social { float:none; text-align: center; margin-left: 6%; margin-top: 2px;
 			li{width:15px; height:15px;}
 		}
 		.mobile-nav { display: inline-block; float: right; margin-top: 0;
-			.uk-button {padding: 5px 7px; float: right; line-height: 1em;}
+			.uk-button {padding: 5px 7px; float: right; line-height: 1em; }
 			span {color:$white; }
 		}
 
 		.uk-navbar-nav {display: none;}
 		.navbar-center{@include sec-default();}
-		.nb-logo {padding: 0 0 10px; margin: 0; @include sec-default();}
+		.nb-logo {padding: 0 0 10px; margin: 0; @include sec-default(); margin-top: 60px;}
 		.logo {width:230px; @include center-block();}
 
 	}
