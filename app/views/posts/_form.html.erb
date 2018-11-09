@@ -31,12 +31,17 @@
 		  <div class="actions">
 		    <%= f.submit(@post.new_record? ? "Create new post" : "Update post", class: "action woof-link submit") %>
 		    <%= link_to("[ Cancel ]", posts_path, :class => 'action woof-link cancel') %>
+		  </div>
+		  <p class="rule"><small>*Required Fields</small></p>
+		</div>
 
+		<div class="sub-actions">
+			<div class="actions">
 		    <% unless @post.new_record? %>
 		      <%= link_to "Delete This Post", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "action woof-link danger" %>
 		    <% end %>
 		  </div>
-		  <p class="rule"><small>*Required Fields</small></p>
 		</div>
+
   <% end %>
 </div>

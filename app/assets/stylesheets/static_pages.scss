@@ -792,7 +792,7 @@ ul.paw {padding-left: 0;
     h1{color:$white; @include tshadowl(rgba($black, .2)); font-size: 1.7rem;}
   }
 
-  .blog-form {width:60%; @include center-block();}
+  .blog-form {width:65%; @include center-block();}
 
   .form-group {
     @include sec-default(); margin-bottom: 30px;
@@ -805,11 +805,18 @@ ul.paw {padding-left: 0;
       input[type="file"] {font-size: 14px; padding-left: 0;}
     }
     .actions, p.rule{@include sec-default();}
+  }
+  .woof-link, input.submit {display: inline-block; float: left; min-height: auto; height:auto; font-family: $body; padding: 6px 15px; font-size: 15px; font-weight: $semi;}
+  .woof-link.danger {float: right; background-color: $red;}
+  .woof-link.cancel {float: right; background-color: transparent; color: $red; text-align: right; font-weight: bold; @include tshadowl(rgba($black, .1));}
+  input.submit {background-color: $compb;}
 
-    .woof-link, input.submit {display: inline-block; float: left; min-height: auto; height:auto; font-family: $body; padding: 6px 15px; font-size: 15px; font-weight: $semi;}
-    .woof-link.danger {float: right; background-color: $red;}
-    .woof-link.cancel {float: right; background-color: transparent; color: $red; text-align: right; font-weight: bold; @include tshadowl(rgba($black, .1));}
-    input.submit {background-color: $compb;}
+}
+
+.posts.edit {
+  .form-group.title {margin-top: 30px;}
+  .sub-actions {position: absolute; width: 15%; left:83%;
+    .woof-link {@include sec-default(); margin-bottom:20px;}
   }
 }
 
