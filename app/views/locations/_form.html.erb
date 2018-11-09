@@ -59,14 +59,7 @@
 
       <div class="forminfo tags">
         <%= f.label :tags %><br>
-        <!-- = f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %> -->
-
-        <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {:multiple => true}) %>
-
-<!--         vet
-        self-serve
-        daycare
-        grooming -->
+        <%= f.collection_select(:tag_ids, Tag.all, :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %>
       </div>
     </div>
 
