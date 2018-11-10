@@ -5,6 +5,7 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+  validates :store_name, presence: true
   validates :street_address_one, presence: true, uniqueness: { scope: :city, case_sensitive: false }
   validates :city, presence: true
   validates :state, presence: true
@@ -61,6 +62,10 @@ class Location < ApplicationRecord
     self.tags = names.split(',').map do |n|
       Tag.where(name: n.strip).first_or_create!
     end
+  end
+
+  def tag_split
+    tag_list.split(',')
   end
 
 

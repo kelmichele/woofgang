@@ -70,12 +70,12 @@
 						<div class="location-bx">
 							<% if location.store_name %>
 								<%= link_to location_path(location) do %>
-									<div class="cat name"><%= location.store_name.titleize %></div>
+									<!-- <div class="cat name"><%= location.store_name.titleize %></div> -->
 								<% end %>
 							<% else %>
 								<%= link_to location_path(location) do %>
-									<div class="cat name">Woof Gang Bakery & Grooming <%= location.city.titleize %></div>
-									<% end %>
+									<!-- <div class="cat name">Woof Gang Bakery & Grooming <%= location.city.titleize %></div> -->
+								<% end %>
 							<% end %>
 
 							<div class="cat address">
@@ -92,14 +92,14 @@
 							<div class="cat email"><%= location.email_address %></div>
 
 							<div class="cat tags">
-								<small>Tags: <%= raw location.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small>
+								<% location.tag_split.each do |tag| %>
+									<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+										<span class="tag-img"></span>
+										<!-- <%= image_tag('tag-groom.png', class: 'tag-img', alt: '')%>  -->
+										<!-- <%= image_tag('tag-vet.png', class: 'tag-img', alt: '')%>  -->
+									</button>
+								<% end %>
 							</div>
-
-							<% if location.hours %>
-								<!-- <div class="cat hours">
-									<%= location.hours %>
-								</div> -->
-							<% end %>
 
 							<div class="btn-row">
 								<%= link_to "Store Details", location_path(location), class: 'woof-link' %>
@@ -107,7 +107,6 @@
 
 
 			    		<% if user_signed_in? && current_user.admin? %>
-								<!-- <div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div> -->
 								<% if location.longitude == nil %><div class="actions">**<small>Coordinates Missing**</small></div><% end %>
 							<% end %>
 						</div>
