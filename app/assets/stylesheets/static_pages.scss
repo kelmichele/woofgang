@@ -195,21 +195,22 @@ ul.paw {padding-left: 0;
 
       &.groom {
         text-align: center; padding:20px 10px 15px;
-        p{color: $compt;@include sec-default(); margin:0 0 7px; }
+        p{color: $compb;@include sec-default(); margin:0 0 7px; }
         .image {width:65%; @include center-block();}
       }
 
       &.retail {
         width:49%; float: right; height:140px;
         text-align: center; padding: 20px 10px 10px;
-        p{color: $compb; @include sec-default();}
+        p{color: $pink; @include sec-default();}
         .image{@include center-block(); width:95%;}
       }
 
       &.ss-groom {
         @include sec-default(); height:100px;
         text-align: right; padding: 0px 15%;
-        p{color: #fdca53;}
+        p{color: lighten($brown, 10%);}
+        // p{color: #fdca53;}
       }
 
       &.daycare {
@@ -221,7 +222,7 @@ ul.paw {padding-left: 0;
       &.vet {
         width:49%; height:140px;
         padding-right: 0;
-        p{color: $pink;}
+        p{color: lighten($compg, 15%);}
         .image{margin-top: 10px; float: right;}
       }
 
@@ -309,10 +310,10 @@ ul.paw {padding-left: 0;
 //*********************************//
 .locations {
   .pup-header {
-    background-color: rgba($compb,.5);
-    .full {background-image: url(image_path('loc-pup.png')); background-size: 23%; padding-top: 60px;
+    background-color: rgba($compb,.9);
+    .full {background-image: url(image_path('loc-pup.png')); background-size: 23%; padding-top: 60px; background-image: none;
     }
-    .full::before {background-color: rgba($compb,.5);}
+    .full::before {background-color: rgba($compb,.9);}
 
     button.wl-uk{position:absolute; left: 80%; width:15%; margin-top: 80px; border:0;}
     .uk-dropdown {width:45%; min-width: auto;background-color: $f9;
@@ -339,25 +340,27 @@ ul.paw {padding-left: 0;
     .form-control, .btn.btn-outline-secondary.search {display: inline-block; float: left;}
     .form-control {width:90%; border:0; padding-left: 15px;font-family: $body;}
     .btn.btn-outline-secondary.search {width: 10%;margin-top:0;
-      background-color: lighten($compb, 10%); color: white; letter-spacing: 1px;
-      @include sec-bgimage('search.png'); background-position: center center; background-size: 42%;
+      background-color: $pink; color: white; letter-spacing: 1px;
+      @include sec-bgimage('search.png'); background-position: center center; background-size: 40%;
     }
 
-    // .searcher,.filter-box {display: inline-block; width:45%; float: left;box-shadow: 0px 2px 15px rgba($black, .1);}
-
-    // background-color: $white; padding:15px;
     .searcher,.filter-box,.text {display: inline-block; width:35%; float: left;box-shadow: 0px 1px 4px rgba($black, .2);}
     .searcher .form-control{height:auto; padding-top:10px;}
-    .text {padding:10px 15px; text-align: center;float: right;
+    .text {padding:10px 15px;float: right;
+      position: relative;z-index: 0;
+      &::after{@include after(); background-color: $pink; width:10%; left:90%;}
       p,a{font-size: 15px;margin-bottom: 0; font-weight: $semi;}
+      span{float: right; color: $white; font-weight: bold;}
     }
 
     .filter-box {
       width: 25%; margin-left: 2.5%;
-      // width:30%;float: right;
-      .filter-uk {@include sec-default(); background-color: $white; color: $tbrown; cursor: pointer; padding: 10px 20px;
+      .filter-uk {@include sec-default(); background-color: $white; color: $tbrown; cursor: pointer; padding: 10px 10px 10px 20px;
         text-align: left;font-weight: $semi; font-size: 15px;
-        span{float: right; margin-top: 2px;}
+        position: relative;z-index: 0;
+        &::after{@include after(); background-color: $pink; width:45px; left:87%;}
+
+        span{float: right; margin-top: 2px; color:$white;}
       }
       .uk-dropdown{width:100%;text-align: left; margin-top: 0; border-top:1px solid rgba($tbrown, .1); padding:10px 12px;}
       .filter-tag{margin:5px 0;}
@@ -367,16 +370,17 @@ ul.paw {padding-left: 0;
   .full.listings {margin-top: 50px;}
   .map {@include sec-default(); margin-bottom: 20px;}
   #map {height:370px;margin-bottom: 6px;}
+  .gm-style-iw {
+    p{font-size: 14px; margin:8px 0;}
+    p.email{margin-bottom: 12px;}
+    .woof-link {font-size: 13px; padding: 7px 20px;}
+  }
 
   .redo {@include sec-default();background-color: $compb; padding: 5px 25px;background-color: darken($compb, 20%);}
-  // #redo-search {
-    // position: relative; z-index: 2; float:right; width:30%; text-align: right;
-    // font-weight: $semi; color:$white;font-size: 15px;
-  // }
 
   .loclist{
-    // @include center-block(); width:80%;
-    position: relative; z-index: 1; @include sec-default(); margin-top: -70px;
+    position: relative; z-index: 1; @include sec-default();
+    margin-top: -60px;
 
     .inside {width:72%;@include center-block();}
   }
@@ -689,7 +693,7 @@ ul.paw {padding-left: 0;
     p {font-size: 1.1rem;}
   }
 
-  .cols-sec{@include sec-default(); padding:30px 0 0px; margin-bottom: 60px;
+  .cols-sec{@include sec-default(); padding:30px 0 0px; margin-bottom: 50px;
     @include sec-bgimage('basset-mud.jpg'); background-size: 24%; background-position: center bottom;
     // .inside{width:80%;}
     .left, .right {display: inline-block; width: 30%; float: left;}
@@ -702,13 +706,22 @@ ul.paw {padding-left: 0;
     li {margin-bottom: 10px;}
   }
 
-  .disc-banner {padding: 20px 2%; text-align: center;
+  // .disc-banner {
+    // padding: 20px 2%; text-align: center;
+    // &::after {border:1px solid rgba($compb, .15); top:-6%; }
+    // &::before {left:77%; width:13%;}
+    // .text {width:80%;}
+  // }
+
+  .disc-banner {margin-bottom: 50px;
+    padding: 20px 10px 20px 10px; text-align: center;
     &::after {border:1px solid rgba($compb, .15); top:-6%; }
-    &::before {left:77%; width:13%;}
-    .text {width:80%;}
-
-    // p{display: inline-block; float: none; width:45%;}
-
+    &::before {left:84%; width:13%;}
+    .text {width:83%; margin-left: 0;}
+    h4{margin-bottom: 20px;}
+    p { color: $compb; display: inline-block; float: none; width:32%; font-weight: bold; margin: 0 .5% 12px;
+      span {font-size: 17px; line-height: 1.8em; }
+    }
   }
 }
 
@@ -956,7 +969,6 @@ ul.paw {padding-left: 0;
   .woof-link.danger {float: right; background-color: $red;}
   .woof-link.cancel {float: right; background-color: transparent; color: $red; text-align: right; font-weight: bold; @include tshadowl(rgba($black, .1));}
   input.submit {background-color: $compb;}
-
 }
 
 .posts.edit {

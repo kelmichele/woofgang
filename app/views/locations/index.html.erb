@@ -7,7 +7,7 @@
 		<div class="full">
 			<div class="tbox">
 				<h1><%= @page_title %></h1>
-				<h2>Use the map below to find a location near you</h2>
+				<h2>Use the map below to find a location near you.</h2>
 			</div>
 		</div>
 	</div>
@@ -43,10 +43,6 @@
 	<div class="full listings">
 		<div class="search-sec">
 			<div class="inside lg">
-				<div class="text">
-					<%= link_to "Move Map & click here to redo search within bounds", "#", id: "redo-search" %>
-				</div>
-
 				<div class="searcher">
 					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
 					  <%= f.text_field :near, class: "form-control", placeholder: "Search by Location" %>
@@ -62,14 +58,18 @@
 						<% end %>
 		    	</div>
 		    </div>
+
+		    <div class="text">
+		    	<!-- <%= link_to "Move Map & click here to redo search within bounds", "#", id: "redo-search" %>  -->
+		    	<%= link_to "#", id: "redo-search" do %>
+		    		Move Map & click here to redo search within bounds <span uk-icon="icon: refresh;"></span>
+	    		<% end %>
+		    </div>
 		  </div>
 		</div>
 
 		<div class="map">
 			<%= render 'shared/map' %>
-			<!-- <div class="redo">
-				<%= link_to "Click here to redo search in this area", "#", id: "redo-search" %>
-			</div> -->
 		</div>
 
 		<div class="loclist">
