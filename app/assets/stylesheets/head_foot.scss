@@ -24,7 +24,7 @@
 		background-color: $f8;
 		.uk-nav.uk-navbar-dropdown-nav {text-align: left;}
 		li {@include sec-default();
-			a{font-weight: normal;}
+			a{font-weight: normal; font-size: 15px;}
 		}
 	}
 

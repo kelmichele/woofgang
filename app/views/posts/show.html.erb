@@ -1,45 +1,52 @@
 <% @page_title = @post.title.titleize %>
 <% @page_description = "" %>
 
-<div class="ipage-header">
+<!-- <div class="ipage-header">
 	<div class="inside med2">
 		<h1><%= @post.title %></h1>
 	</div>
-</div>
+</div> -->
 
 <div class="full-post">
-	<!-- <div class="inside"> -->
-		<div class="back-link">
-			<%= link_to "/posts", class: 'text-link back' do %>
-				<span class="" uk-icon="icon: arrow-left;"></span> Back to All Posts
-			<% end %>
-
-			<% if user_signed_in? && current_user.admin? %>
-				<div class="admin-box">
-					<%= render 'actions' %>
-				</div>
-			<% end %>
+	<div class="title">
+		<div class="inside med2">
+			<!-- <h2>Woof Gang Bakery News</h2> -->
+			<h1><%= @post.title %></h1>
 		</div>
+	</div>
 
-	<div class="inside med">
-		<div class="post-dets">
-			<div class="feat-img">
+	<!-- <div class="inside"> -->
+	<div class="back-link">
+		<%= link_to "/posts", class: 'text-link back' do %>
+			<span class="" uk-icon="icon: arrow-left;"></span> Back to All Posts
+		<% end %>
+	</div>
+
+	<div class="dets">
+		<div class="post-body">
+			<div class="image">
 				<% if @post.image.attached? %>
 				  <%= image_tag @post.image %>
 				<% end %>
 			</div>
 
-			<div class="feat-content">
+			<div class="post-content">
 				<!-- <p><%= @post.this_post %></p> -->
 				<% if @post.date %>
-					<%= @post.date.strftime("%m/%d/%Y")  %>
+					<p class="date"><%= @post.date.strftime("%m/%d/%Y")  %></p>
 				<% end %>
-				<p><%= simple_format(@post.content) %></p>
+				<%= simple_format(@post.content) %>
 			</div>
-		</div>
 
-		<div class="sidebar"></div>
+			<div class="sidebar"></div>
+		</div>
 	</div>
+
+	<% if user_signed_in? && current_user.admin? %>
+		<div class="admin-side">
+			<%= render 'actions' %>
+		</div>
+	<% end %>
 </div>
 
 <div class="recent-posts">

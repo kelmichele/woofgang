@@ -7,7 +7,7 @@
 		<div class="full">
 			<div class="tbox">
 				<h1><%= @page_title %></h1>
-				<h2>Use the map below to find a location near you!</h2>
+				<h2>Use the map below to find a location near you</h2>
 			</div>
 		</div>
 	</div>
@@ -39,9 +39,14 @@
 
 
 <div class="full-search">
-	<div class="inside lg">
-		<div class="full listings">
-			<div class="search-sec">
+	<!-- <div class="inside lg"> -->
+	<div class="full listings">
+		<div class="search-sec">
+			<div class="inside lg">
+				<div class="text">
+					<%= link_to "Move Map & click here to redo search within bounds", "#", id: "redo-search" %>
+				</div>
+
 				<div class="searcher">
 					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
 					  <%= f.text_field :near, class: "form-control", placeholder: "Search by Location" %>
@@ -57,72 +62,73 @@
 						<% end %>
 		    	</div>
 		    </div>
-			</div>
+		  </div>
+		</div>
 
-			<div class="map">
-				<%= render 'shared/map' %>
-				<div class="redo">
-					<%= link_to "Click here to redo search in this area", "#", id: "redo-search" %>
-				</div>
-			</div>
+		<div class="map">
+			<%= render 'shared/map' %>
+			<!-- <div class="redo">
+				<%= link_to "Click here to redo search in this area", "#", id: "redo-search" %>
+			</div> -->
+		</div>
 
-			<div class="loclist">
-				<div class="inside">
-					<table>
-						<% @locations.each do |location| %>
-							<div class="location-bx">
-								<% if location.store_name %>
-									<%= link_to location_path(location) do %>
-										<div class="cat name"><%= location.ntitle.titleize %> Location</div>
-									<% end %>
-								<% else %>
-									<%= link_to location_path(location) do %>
-										<div class="cat name">
-											<!-- Woof Gang Bakery & Grooming  -->
-											<%= location.city.titleize %> Location</div>
-									<% end %>
+		<div class="loclist">
+			<div class="inside">
+				<table>
+					<% @locations.each do |location| %>
+						<div class="location-bx">
+							<% if location.store_name %>
+								<%= link_to location_path(location) do %>
+									<div class="cat name"><%= location.ntitle.titleize %> Location</div>
 								<% end %>
+							<% else %>
+								<%= link_to location_path(location) do %>
+									<div class="cat name">
+										<!-- Woof Gang Bakery & Grooming  -->
+										<%= location.city.titleize %> Location</div>
+								<% end %>
+							<% end %>
 
-								<div class="cat address">
-									<%= location.street_address_one.titleize %><br>
-									<% if location.street_address_two %>
-										<span class="addr2"><%= location.street_address_two.titleize %></span>
-									<% end %>
-									<%= location.city %>, <%= location.state %> <%= location.zip %>
-								</div>
+							<div class="cat address">
+								<%= location.street_address_one.titleize %>
+								<% if location.street_address_two %>
+									<!-- <span class="addr2"><%= location.street_address_two.titleize %></span> -->
+									, <span class="addr"><%= location.street_address_two.titleize %></span>
+								<% end %>
+								<br><%= location.city %>, <%= location.state %> <%= location.zip %>
+							</div>
 
-								<div class="cat phone"><a href="tel:<%= location.phone %>"><%= number_to_phone(location.phone, delimiter: '-') %></a></div>
-								<!-- <div class="cat phone"><%= number_to_phone(location.phone, delimiter: '-') %></div> -->
+							<div class="cat phone"><a href="tel:<%= location.phone %>"><%= number_to_phone(location.phone, delimiter: '-') %></a></div>
+							<!-- <div class="cat phone"><%= number_to_phone(location.phone, delimiter: '-') %></div> -->
 
-								<div class="cat email"><%= location.email_address %></div>
+							<div class="cat email"><%= location.email_address %></div>
 
-								<div class="cat tags">
-									<span>Store Services:</span><br>
-									<% location.tag_split.each do |tag| %>
-										<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
-											<span class="tag-img"></span>
-										</button>
-									<% end %>
-								</div>
-
-								<div class="btn-row">
-									<%= link_to "Store Details", location_path(location), class: 'woof-link' %>
-									<a href="<%= location.direct_link %>" target="_blank" class="woof-link dir">Directions </a>
-								</div>
-
-
-				    		<% if user_signed_in? && current_user.admin? %>
-									<% if location.longitude == nil %><div class="actions">**<small>Coordinates Missing**</small></div><% end %>
+							<div class="cat tags">
+								<span>Store Services:</span><br>
+								<% location.tag_split.each do |tag| %>
+									<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+										<span class="tag-img"></span>
+									</button>
 								<% end %>
 							</div>
-						<% end %>
-					</table>
 
-					<%= will_paginate @locations, remote: true %>
-				</div>
+							<div class="btn-row">
+								<%= link_to "Store Details", location_path(location), class: 'woof-link' %>
+								<a href="<%= location.direct_link %>" target="_blank" class="woof-link dir">Directions </a>
+							</div>
+
+
+			    		<% if user_signed_in? && current_user.admin? %>
+								<% if location.longitude == nil %><div class="actions">**<small>Coordinates Missing**</small></div><% end %>
+							<% end %>
+						</div>
+					<% end %>
+				</table>
+
+				<%= will_paginate @locations, remote: true %>
 			</div>
-
 		</div>
+
 	</div>
 </div>
 

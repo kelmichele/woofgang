@@ -309,11 +309,10 @@ ul.paw {padding-left: 0;
 //*********************************//
 .locations {
   .pup-header {
-    background-color: rgba($compb,.7);
-    .full {background-image: url(image_path('loc-pup.png')); background-size: 25%; padding-top: 60px;
-      // background-position: top right;
+    background-color: rgba($compb,.5);
+    .full {background-image: url(image_path('loc-pup.png')); background-size: 23%; padding-top: 60px;
     }
-    .full::before {background-color: rgba($compb,.7);}
+    .full::before {background-color: rgba($compb,.5);}
 
     button.wl-uk{position:absolute; left: 80%; width:15%; margin-top: 80px; border:0;}
     .uk-dropdown {width:45%; min-width: auto;background-color: $f9;
@@ -328,26 +327,34 @@ ul.paw {padding-left: 0;
       }
     }
     .tbox{width:90%;}
-    h2{font-size: 1.4rem;}
+    h2{font-size: 1.3rem;}
   }
 
-  .full-search {@include sec-default(); padding: 40px 0; background-color: $f9;}
+  .full-search {@include sec-default(); padding: 40px 0; background-color: $f9; padding-top:0;}
 
   .search-sec{
-    @include sec-default(); margin-bottom: 20px;
-
-    // .searcher,#redo-search {display: inline-block; width:45%; float: left;box-shadow: 0px 1px 2px rgba($black, .1);}
-    // #redo-search {padding: 10px; background-color: $white; margin-top: 3px;font-size:15px; font-weight: $semi;float:right;}
+    @include sec-default();
+    margin-bottom: 20px;
 
     .form-control, .btn.btn-outline-secondary.search {display: inline-block; float: left;}
-    .form-control {width:90%; border:0; padding-left: 15px;}
-    .btn.btn-outline-secondary.search {width: 10%;
+    .form-control {width:90%; border:0; padding-left: 15px;font-family: $body;}
+    .btn.btn-outline-secondary.search {width: 10%;margin-top:0;
       background-color: lighten($compb, 10%); color: white; letter-spacing: 1px;
       @include sec-bgimage('search.png'); background-position: center center; background-size: 42%;
     }
 
-    .searcher,.filter-box {display: inline-block; width:45%; float: left;box-shadow: 0px 1px 1px rgba($black, .1);}
-    .filter-box {float: right; width:30%;
+    // .searcher,.filter-box {display: inline-block; width:45%; float: left;box-shadow: 0px 2px 15px rgba($black, .1);}
+
+    // background-color: $white; padding:15px;
+    .searcher,.filter-box,.text {display: inline-block; width:35%; float: left;box-shadow: 0px 1px 4px rgba($black, .2);}
+    .searcher .form-control{height:auto; padding-top:10px;}
+    .text {padding:10px 15px; text-align: center;float: right;
+      p,a{font-size: 15px;margin-bottom: 0; font-weight: $semi;}
+    }
+
+    .filter-box {
+      width: 25%; margin-left: 2.5%;
+      // width:30%;float: right;
       .filter-uk {@include sec-default(); background-color: $white; color: $tbrown; cursor: pointer; padding: 10px 20px;
         text-align: left;font-weight: $semi; font-size: 15px;
         span{float: right; margin-top: 2px;}
@@ -359,27 +366,23 @@ ul.paw {padding-left: 0;
 
   .full.listings {margin-top: 50px;}
   .map {@include sec-default(); margin-bottom: 20px;}
-  #map {height:400px;margin-bottom: 6px;}
+  #map {height:370px;margin-bottom: 6px;}
 
   .redo {@include sec-default();background-color: $compb; padding: 5px 25px;background-color: darken($compb, 20%);}
-  #redo-search {
-    // @include sec-default(); background-color: $compb; padding: 5px 25px;
-    position: relative; z-index: 2; float:right; width:30%; text-align: right;
-    font-weight: $semi; color:$white;font-size: 15px;
-  }
+  // #redo-search {
+    // position: relative; z-index: 2; float:right; width:30%; text-align: right;
+    // font-weight: $semi; color:$white;font-size: 15px;
+  // }
 
   .loclist{
     // @include center-block(); width:80%;
-    // position: relative; z-index: 1; @include sec-default(); margin-top: -50px;
+    position: relative; z-index: 1; @include sec-default(); margin-top: -70px;
 
-    .inside {width:80%;
-      @include center-block();
-      // float: left;
-    }
+    .inside {width:72%;@include center-block();}
   }
   .location-bx {
     display: inline-block; width: 30%; float: left;
-    min-height: 310px;
+    min-height: 290px;
     margin:10px 1% 40px;
     color:$brown; background-color: $white;
     padding: 15px 20px 0px 20px;
@@ -396,10 +399,9 @@ ul.paw {padding-left: 0;
       }
     }
 
-    // .woof-link{font-size: 14px; padding: 6px 30px; color:$white;}
     .woof-link {display: inline-block; width:auto; padding:6px 20px; margin-bottom: 5px; font-size: 13px; color:$white;
       width:48.5%; margin:0 .5% 5px;
-      &.dir {background-color: $compb; float: right;}
+      &.dir {background-color: $tbrown; float: right;}
 
       // @media (min-width: 1375px) {
       // or 1300
@@ -449,42 +451,60 @@ ul.paw {padding-left: 0;
 }
 
 .locations.show {
-  h2{margin-bottom: 0;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: $semi;}
-  h1{margin-top: 5px;}
-  h3{font-size: 1.2rem;padding-bottom: 6px; border-bottom: 1px solid rgba($tbrown, .15); font-weight: bold; color:$compb}
-  .title-line {width:60px; display: none;}
-
-  .location-page {@include sec-default(); padding:120px 0 80px;
-    @include sec-bgimage('playful.png'); background-size: 15%; background-position: bottom right;
-  }
-
-  .back-link {@include sec-default(); padding-left:5%; margin-top: -90px;}
-  .admin-side{width:15%; position: absolute; left: 85%; margin-top:-90px; text-align: center;
-    .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px 15px; font-weight: $semi;}
-    .actions.coords{color:$red; font-weight: $semi; margin-top: 10px;}
-  }
-
-  .image, .location-dets {display: inline-block; float: left; width:55%;}
-  .location-dets {width:40%; float: right; margin-top:0px;}
+  h2{margin-bottom: 0;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: $semi; font-size: 1.6rem;}
+  h1{margin-top: 0px;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: bold;}
+  h3{font-size: 1.2rem; font-weight: bold; color:$pink; }
   .text-link{ color: $tbrown;}
 
   .cat {@include sec-default(); margin-bottom:10px;
     p{margin:0 0 5px; font-size:15px;}
 
     &.hours {
-      p.hd{font-weight: bold; margin-bottom: 0px; color:$compb}
+      p.hd{font-weight: bold; margin-bottom: 0px; color:$pink}
       p{line-height: 1.65em;}
-    }
-    &.address{
-      .woof-link {padding:5px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 14px; }
-      p.addr, .btn-row {display: inline-block; float: left; width:60%; }
-      .btn-row{float: right;width: 37%; margin-top: 20px;}
     }
 
     &.tags {
       hr {width:85%}
-      p.hd{font-weight: bold; margin-bottom: 10px; color: $compb}
+      p.hd{font-weight: bold; margin-bottom: 10px; color: $pink}
       .tag-icon { width:30px;height:30px; margin-top: 0;}
+    }
+  }
+
+  .location-page {@include sec-default();
+    @include sec-bgimage('adobe-sneak.png'); background-size: 12%; background-position: bottom right; padding-bottom:80px;
+    position: relative; z-index: 0; &::before {@include before(); background-color: $compb; height: 395px;}
+
+    .title {@include sec-default(); text-align: center; padding: 50px 0 0px;}
+
+    .back-link, .dets, .admin-side {display: inline-block; float: left; width: 25%;}
+    .dets {width:50%;}
+
+    .back-link {padding-left: 20px;margin-top: 250px;
+      .text-link {font-size: 16px;}
+    }
+    .admin-side{margin-top: 260px; padding-right: 20px;
+      .actions {float: right;}
+      .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px 15px; font-weight: $semi;}
+      .actions.coords{color:$red; font-weight: $semi; margin-top: 10px;}
+    }
+
+    .location-body {@include sec-default(); background-color: $white; box-shadow: 0px 1px 10px rgba($black, .2); padding-bottom: 20px;}
+    .image{@include sec-default(); background-color: $f8; margin-bottom:20px;
+      img{width:50%; @include center-block();}
+    }
+    .location-dets {width:75%;@include center-block();
+      hr.one{margin-top: 5px;}
+      hr.two{margin-top: 15px;}
+      .full.top {
+        // margin-bottom: 10px; border-bottom: 1px solid rgba($tbrown, .15);
+        h3, .btn-row{display: inline-block; width:60%; float: left; padding-bottom: 0; margin-bottom: 0;}
+        h3{margin-top: 12px;}
+        .btn-row{width:25%; float: right;}
+        .woof-link {width:auto;padding:5px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 13px; background-color: $compb; float: right;}
+      }
+      .left, .right {display: inline-block; float: left; width:50%; margin-left: 3%; }
+      .right {float: right;width:43%;margin-left:0; }
     }
   }
 }
@@ -984,20 +1004,62 @@ ul.paw {padding-left: 0;
 }
 
 .posts.show {
-  .back-link {@include sec-default(); padding:0 3% 70px;
-    .text-link.back {color: $tbrown; font-weight: $semi; display: inline-block; float: left;}
-    .admin-box {display: inline-block; float: right; }
-    .action.woof-link {display: inline-block; float: none; width:auto; padding: 6px 15px; font-weight: $semi; font-size: 15px;}
-    .action.danger {float: right; background-color: $red;}
-    .action.edit {background-color: $compt; margin-right: 10px;}
+  // .back-link {@include sec-default(); padding:0 3% 70px;
+  //   .text-link.back {color: $tbrown; font-weight: $semi; display: inline-block; float: left;}
+  //   .admin-box {display: inline-block; float: right; }
+  //   .action.woof-link {display: inline-block; float: none; width:auto; padding: 6px 15px; font-weight: $semi; font-size: 15px;}
+  //   .action.danger {float: right; background-color: $red;}
+  //   .action.edit {background-color: $compt; margin-right: 10px;}
+  // }
+
+  // .full-post {@include sec-default(); padding: 15px 0 50px;
+  //   .feat-img, .feat-content {display: inline; width:45%;}
+  //   .feat-img {float: left; padding-right: 30px;}
+  //   .feat-content { width:55%;}
+  //   p{font-size: 16px;}
+  // }
+
+
+  .full-post {@include sec-default();padding:40px 0 60px;
+    position: relative; z-index: 0; &::before {@include before(); background-color: $compb;background-color: rgba($pink, .7); height: 375px;}
+    h2{margin-bottom: 0;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: $semi; font-size: 1.3rem;}
+    h1{margin-top:0;color:$white; @include tshadowl(rgba($black, .2)); font-weight: bold; line-height: 1.4em; font-size: 1.7rem;}
+
+    .title {@include sec-default(); text-align: center; margin-bottom: 15px;}
+
+    .back-link, .dets, .admin-side {display: inline-block; float: left; width: 15%;}
+    .dets {width:70%;}
+
+    .back-link {padding-left: 15px;margin-top: 250px;
+      .text-link {font-size: 16px; color:$tbrown;}
+    }
+    .admin-side{margin-top: 260px; padding-right: 15px;
+      .actions {float: right; }
+      .woof-link{width:auto; display: block; float: right; margin-bottom: 8px;}
+      .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px 15px; font-weight: $semi;}
+    }
+
+    .post-body {@include sec-default(); background-color: $white; box-shadow: 0px 1px 10px rgba($black, .2); padding: 20px;}
+    .image, .post-content {display: inline;width:45%; }
+    .image{
+      float: left;
+      padding-right: 30px;
+      // @include sec-default();text-align:center;
+      // img{@include center-block(); max-height: 400px;}
+    }
+    .post-content {
+      // @include sec-default();padding: 20px; background-color: $f9;
+      width:55%;
+      p {font-size: 15px; margin:10px 0;}
+      p.date{font-size: 14px; color: #666; margin:0px;}
+    }
+
   }
 
-  .full-post {@include sec-default(); padding: 15px 0 50px;
-    .feat-img, .feat-content {display: inline; width:45%;}
-    .feat-img {float: left; padding-right: 30px;}
-    .feat-content { width:55%;}
-    p{font-size: 16px;}
-  }
+
+
+
+
 
   .recent-posts {@include sec-default(); padding: 40px 0; background-color: $f9;
     h3{border-bottom: 1px solid rgba($tbrown, .1); padding-bottom: 4px; font-size: 1.3rem; font-weight: $semi;}
