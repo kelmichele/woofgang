@@ -29,6 +29,7 @@
 	<div class="inside med">
 		<div class="image">
 			<%= image_tag('location-img.jpg', class: 'img-responsive', alt: '')%>
+			<!-- <%= image_tag('party-pups.png', class: 'img-responsive', alt: '')%>  -->
 		</div>
 
 		<div class="location-dets">
@@ -37,12 +38,8 @@
 			<div class="title-line"></div>
 			<div class="clearfix"></div>
 
-			<div class="cat tags">
-				<p><small>Tags: <%= raw @location.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
-			</div>
-
 			<div class="cat address">
-				<p><%= @location.street_address_one.titleize %><br>
+				<p class="addr"><%= @location.street_address_one.titleize %><br>
 				<% if @location.street_address_two %>
 					<span class="addr2"><%= @location.street_address_two.titleize %></span>
 				<% end %>
@@ -72,6 +69,16 @@
 					</p>
 				</div>
 			<% end %>
+
+			<div class="full cat tags">
+				<hr>
+				<p class="hd">Store Services:</p>
+				<% @location.tag_split.each do |tag| %>
+					<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+						<span class="tag-img"></span>
+					</button>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
