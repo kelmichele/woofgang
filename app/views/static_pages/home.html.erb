@@ -4,8 +4,8 @@
 <div class="hs1-hero">
 	<div class="inside">
 		<div class="full">
-			<!-- <%= image_tag('pets-2.jpg', class: 'img-fluid') %>  -->
-			<%= image_tag('adobe-hands.png', class: 'img-responsive hero') %>
+			<%= image_tag('adobe-hero0.jpg', class: 'img-full') %>
+			<!-- <%= image_tag('adobe-hands.png', class: 'img-responsive hero') %>  -->
 
 			<div class="text-over">
 				<h1>Woof Gang Bakery &amp; Grooming</h1>
@@ -38,19 +38,23 @@
 
 		<div class="blocks">
 			<div class="fblock opp">
-				<p>Franchise Opportunity</p>
+				<p><%= link_to "Franchise Opportunity", franchise_opportunity_path %></p>
+				<!-- <p>Franchise Opportunity</p> -->
 			</div>
 
 			<div class="fblock inq">
-				<p>Franchise Inquiries</p>
+				<p><%= link_to "Franchise Inquiries", franchise_inquiries_path %></p>
+				<!-- <p>Franchise Inquiries</p> -->
 			</div>
 
 			<div class="fblock invest">
-				<p>Investment Details</p>
+				<p><%= link_to "Investment Details", investment_details_path %></p>
+				<!-- <p>Investment Details</p> -->
 			</div>
 
 			<div class="fblock faq">
-				<p>Franchise FAQ's</p>
+				<p><%= link_to "Franchise FAQ's", faq_path %></p>
+				<!-- <p>Franchise FAQ's</p> -->
 			</div>
 		</div>
 

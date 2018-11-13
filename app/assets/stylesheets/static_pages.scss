@@ -117,7 +117,9 @@ ul.paw {padding-left: 0;
 //*********************************//
 .home {
   .hs1-hero {@include sec-default();text-align: center;
-    .full{background-color: #f1eee7;background-color: $fa; }
+
+    // .full{background-color: #f1eee7;background-color: $fa;}
+    .img-full{width:100%;}
     .hero {@include center-block(); width:65%;}
     .text-over{
       position: relative; z-index: 1;
@@ -173,7 +175,7 @@ ul.paw {padding-left: 0;
       margin-bottom: 10px; padding: 10px;
       background-size: cover;background-position: bottom right; background-repeat: no-repeat;
 
-      p{color: $white; @include tshadowl(rgba($black, .3)); font-size: 1.3rem; font-weight: $semi; text-transform: uppercase;}
+      p,a{color: $white; @include tshadowl(rgba($black, .3)); font-size: 1.3rem; font-weight: $semi; text-transform: uppercase;}
 
       &.opp {width:35%; height: 360px; background-image:url(image_path('ride.jpg')); text-align: center; }
 
@@ -189,7 +191,7 @@ ul.paw {padding-left: 0;
       }
 
       &.inq {width:64%; height:150px; float: right;
-        background-image:url(image_path('pex-inq2.jpg'));background-position: center right;
+        background-image:url(image_path('woof8.jpg'));background-position: center right;
         p{margin-top:10%; text-align: right}
       }
     }
@@ -298,7 +300,8 @@ ul.paw {padding-left: 0;
 .locations {
   .pup-header {
     background-color: rgba($compb,.9);
-    .full {background-image: url(image_path('loc-pup.png')); background-size: 23%; padding-top: 60px; background-image: none;
+    .full {background-image: url(image_path('loc-pup.png')); background-size: 23%; padding-top: 60px;
+      background-image: none;padding: 20px 0 15px;
     }
     .full::before {background-color: rgba($compb,.9);}
 
@@ -390,9 +393,11 @@ ul.paw {padding-left: 0;
       }
     }
 
-    .woof-link {display: inline-block; width:auto; padding:6px 20px; margin-bottom: 5px; font-size: 13px; color:$white;
+    .woof-link {display: inline-block; width:auto; padding:6px 20px; margin-bottom: 5px; font-size: 13.5px; color:$white;
       width:48.5%; margin:0 .5% 5px;
-      &.dir {background-color: $tbrown; float: right;}
+      background-color: rgba($pink, .9);
+      letter-spacing: .4px;
+      &.dir {background-color: #3d0a00; float: right;}
 
       // @media (min-width: 1375px) {
       // or 1300
@@ -505,9 +510,6 @@ ul.paw {padding-left: 0;
   li.active {font-weight: bold; text-decoration: underline;}
   a{font-size: 14px;}
 }
-
-
-
 
 //*********************************//
 //*********** services ***********//
@@ -629,7 +631,6 @@ ul.paw {padding-left: 0;
       &::after {@include before(); border:1px solid rgba($pink, .3); top:-8%; left:1%; height:98%}
     }
   }
-
 
 
   .info-sec {@include sec-default(); padding:80px 0;
