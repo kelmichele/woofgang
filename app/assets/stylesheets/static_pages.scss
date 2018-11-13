@@ -149,37 +149,22 @@ ul.paw {padding-left: 0;
     }
   }
 
-  .hs2-franchise {@include sec-default(); padding: 40px 0;
-    h3{font-size: 1.3rem;}
-    @include sec-bgimage('adobe-sneak.png'); background-position: right bottom; background-size: 10%;
-    .image, .text {display: inline-block; float: left; width:33%; }
-    .text { width:65%;  margin-top: 5%;
-      p { margin-top: 0; width:95%; font-size: 16px;}
-    }
-  }
-
-  .hs4-locations{@include sec-default(); padding: 20px 0;
-    background-color: $compb; text-align: center;
-    h4,.btn-hlf {display: inline-block; float: left; width:70%;}
-    h4{font-size: 1.8rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .4)); margin-bottom: 0;}
-    .btn-hlf {float: right; width:30%;margin-top: 10px;}
-    .woof-link {background-color: $compt; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: $semi; font-size: 1rem;}
-  }
-
   .hs-franchise{@include sec-default(); padding: 50px 0 50px;
     position: relative;z-index: 0;
     &::before{@include before(); height: 60%; background-color: $f8;}
 
     .text, .text2{@include sec-default(); text-align: center; margin-bottom: 15px;
-      p{font-size: 17px;margin-top: 5px;
-        // @include tshadowl(rgba($black,.1));
-      }
+      p{font-size: 17px;margin-top: 5px;}
       p.span {font-weight: bold; font-size: 18px; margin-bottom: 0; }
       h2{font-size: 1.6rem; font-weight: bold;;}
     }
 
-    .text2 {@include center-block(); text-align: center; width:90%;
+    .text2 {@include sec-default(); text-align: center; padding:50px 5% 0;
+      position: relative; z-index: 0;
+      &::before{@include before();z-index: -2; @include sec-bgimage('favicon.png'); background-size:15%; background-position: bottom center; opacity: .2;}
+      &::after{@include after();background-color: rgba($white,.6)}
       p.span{text-transform: uppercase;}
+
     }
 
 
@@ -209,82 +194,19 @@ ul.paw {padding-left: 0;
       }
     }
 
-
-
-
-    .blocks{@include sec-default();margin-bottom: 50px;}
     &::before{ background-color: rgba($compb, .85); height:44%;}
     .text{margin-bottom: 10px;
       p, h2 {color:$white;}
       h2{@include tshadowl(rgba($black,.2));}
     }
-
-    .fblock {
-      &.invest, &.inq{
-        img {display: none;}
-        // overflow: hidden; border:1px solid rgba($df,.3);
-    //     position: relative; z-index: 0;
-    //     background-color: #efede8; background-color: $fa;
-    //     background-image: none;
-    //     &::before{@include before(); width:185px; height:185px; background-color: rgba($compb, .6); border-radius: 50%;}
-
-    //     p{color:$tbrown;}
-    //     img {width:50%; position: absolute; bottom:0;}
-    //   }
-
-    //   &.invest{background-color: #e8f7f6;
-    //     &::before{left:33%; top:5%; background-color: $compt;}
-    //     p{color:$tbrown; font-weight: bold; margin-top: 0;}
-    //     img{left:25%; width:55%; bottom:0px;}
-    //   }
-
-    //   &.inq {background-color: rgba($compb,.1);
-    //     &::before{width:230px; height:230px; top:-30px;left:57%;}
-    //     p{margin-top: 17%; float: left;padding-right: 10px;}
-    //     img {width:48%;left:60%;}
-      }
-    }
   }
 
-  .franchise-tall {
-    @include sec-default();
-    h2{text-align: center;}
-    .fblock{display: inline-block; float: left; width:25%;
-      height:300px; background-size: cover; background-repeat: no-repeat;
-      padding: 2% 0 0 2%;
-      position: relative; z-index: 0; &::before {@include before(); background-color: rgba($black, .4);}
-
-      p{color:$white; font-weight: bold; font-size: 21px; @include tshadowl(rgba($black, .2));}
-
-      &.opp {background-image:url(image_path('woof8.jpg'));}
-      &.faq {background-image:url(image_path('dog-paint.jpg'));}
-      &.invest {background-image:url(image_path('princess.jpg'));}
-      &.inq {background-image:url(image_path('woof12.jpg')); background-position: bottom right;}
-    }
-  }
-
-  .services-tall {
-    @include sec-default(); padding:60px 0 0;
-    .intro {@include sec-default(); text-align: center; margin-bottom: 30px;
-      h3 {margin-bottom: 0; font-weight: $semi; text-transform: capitalize;font-weight: bold;}
-      p{font-size: 18px; margin-top: 10px; width:55%; @include center-block();}
-    }
-
-    .fblock{display: inline-block; float: left; width:20%;
-      height:300px; background-size: cover; background-repeat: no-repeat;
-      padding: 2% 0 0 2%;border-right:4px solid $white;
-
-      position: relative; z-index: 0; &::before {@include before(); background-color: rgba($black, .3);}
-
-
-      p{color:$white; font-weight: bold; font-size: 21px; @include tshadowl(rgba($black, .2));}
-
-      &.groom {background-image:url(image_path('woof8.jpg'));}
-      &.retail {background-image:url(image_path('dog-paint.jpg'));}
-      &.ss {background-image:url(image_path('princess.jpg'));}
-      &.daycare {background-image:url(image_path('woof12.jpg')); background-position: bottom right;}
-      &.vet {background-image:url(image_path('pets.jpg')); border-right: 0;}
-    }
+  .hs4-locations{@include sec-default(); padding: 20px 0;
+    background-color: $compb; text-align: center;
+    h4,.btn-hlf {display: inline-block; float: left; width:70%;}
+    h4{font-size: 1.8rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .4)); margin-bottom: 0;}
+    .btn-hlf {float: right; width:30%;margin-top: 10px;}
+    .woof-link {background-color: $compt; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: $semi; font-size: 1rem;}
   }
 
   .hs-services{@include sec-default(); padding: 50px 0 70px;
@@ -334,69 +256,27 @@ ul.paw {padding-left: 0;
   }
 
   .hs-serve{@include sec-default(); padding: 50px 0 70px;
-    .intro {width:80%; @include center-block();text-align: center;
+    .intro {width:75%; @include center-block();text-align: center;
       h3 {margin-bottom: 0; font-weight: $semi; text-transform: capitalize; font-weight: bold;}
       p{ margin-top: 10px; width:80%; @include center-block();}
     }
     .blocks{@include sec-default(); margin-top: 20px;}
 
     .left, .right{display: inline-block; float: left; width:72%;}
-    .right {width:25%; float: right; margin-top:20px;
-      .serve-tl {@include sec-default();
-        &.vet img {opacity: .4;}
-
-        // margin-bottom:20px;position: relative;z-index: 0;
-        // &::before{@include before(); width:45px; height: 45px; border-radius: 50%; background-color: $pink; left: -10px; top:10px;}
-
-        // margin-top: 20px;
-        // .sq-img {width:100px; height:100px; opacity: 1; margin-right: 5px;}
-        // &.vet img{opacity: 1;}
-      }
+    .right {width:25%; float: right; margin-top: 15px;}
+    .serve-tl {@include sec-default(); margin:15px 0; position: relative;z-index: 0;
+      p, .icon {display: inline-block; margin:0; font-weight: $semi; float: left;}
+      // p{margin-left:12px;}
+      p{float: none; }
+      .icon {margin-right: 10px;}
+      img {width:20px; opacity: .6;}
 
 
-      p, img {display: inline-block; margin-bottom:0; font-weight: $semi;}
-      img {width:20px; opacity: .2;}
+      // &::before{@include before(); width:40px; height: 40px; border-radius: 50%; background-color: rgba($pink, .6); left: -10px; top:-8px;}
+      // &.ss p, &.vet p{margin-left: 0; padding-right: 12px;}
+      // &.ss::before{left: 57%;}
+      // &.vet::before{left: 42%; top:-6px;}
     }
-
-    .fblock {display: inline-block; float: left;
-      margin-bottom: 5px;
-      background-size: cover;background-position: bottom right;
-      position: relative;z-index: 0;
-      &::before{@include before(); background-color: rgba($black, 0);}
-
-      p{color: $white; @include tshadowl(rgba($black, .2)); font-weight: bold; letter-spacing: .5px; text-transform: uppercase; padding: 5px 15px; margin:0;}
-
-      &.one, &.two, &.three { margin-right: .5%;}
-      &.one{width:45%;}
-      &.two{width:33%;}
-      &.three {width:20%;}
-      &.full {width:100%; margin-right: 0;}
-
-      &.retail{
-        @include sec-default(); height: 100px;
-        background-image:url(image_path('packaged-treats.jpg')); text-align: center;
-        p{position: absolute; bottom:0;width:100%;}
-      }
-
-      &.groom {width:59%; height:208px;
-        background-image:url(image_path('grm1.jpg')); background-position: top right;
-        p{position: absolute; bottom:0;width:100%;}
-      }
-
-      &.daycare { width: 59%; float: right; height:208px;
-        background-image:url(image_path('pets-2.jpg')); background-position: center right;
-      }
-
-      &.ss { width: 40.5%; float:right; height:208px;
-        background-image:url(image_path('bear.jpg'));background-position: top left; text-align: center;
-      }
-
-      &.vet {width:40.5%; height:208px;text-align: center;
-        background-image:url(image_path('dog-stare.jpg'));background-position: top left;
-        p{position: absolute; bottom:0;width:100%;}
-      }
-    }
-
 
     .wgb-slides {
       li {margin-right:5px;
@@ -523,7 +403,7 @@ ul.paw {padding-left: 0;
     border: 0; background-color: none; margin-top:5px;
     height:30px;@include sec-bgimage('tag-groom.png'); background-size: 75%;
 
-    &.veterinary-clinic {background-image: url(image_path('tag-vet.png'));}
+    &.veterinary-clinic {background-image: url(image_path('tag-vet2.png'));}
     &.self-service-grooming {background-image: url(image_path('tag-ss.png'));}
     &.doggie-daycare {background-image: url(image_path('tag-daycare.png')); background-size: 67%;}
   }

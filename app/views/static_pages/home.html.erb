@@ -31,13 +31,9 @@
 </div>
 
 <div class="hs-franchise">
-
 	<div class="inside med2">
 		<div class="text">
 			<h2>Join The Fluffiest, Friendliest Franchise</h2>
-			<!-- <p class="span">Our approach to franchising is very simple:</p>
-			<p>Successful franchising is totally built upon successful franchisees.
-			Our leadership philosophy is based upon the belief that we should direct, not dominate the franchise system, and that our franchisees should have a voice and participate in that direction.</p> -->
 		</div>
 
 		<div class="blocks">
@@ -46,12 +42,10 @@
 			</div>
 
 			<div class="fblock inq">
-				<%= image_tag('hang.png', class: 'img-responsive') %>
 				<p>Franchise Inquiries</p>
 			</div>
 
 			<div class="fblock invest">
-				<%= image_tag('adobe-work2.png', class: 'img-responsive') %>
 				<p>Investment Details</p>
 			</div>
 
@@ -68,7 +62,6 @@
 	</div>
 </div>
 
-
 <div class="hs4-locations">
 	<div class="inside med2">
 		<h4>Over 100 Locations Nationwide</h4>
@@ -78,43 +71,12 @@
 	</div>
 </div>
 
-
-<!--
-<div class="hs-services">
-	<div class="inside med">
-		<div class="intro">
-			<h3>Woof Gang does it all</h3>
-			<p>We offer a number of services to help keep your pets healthy and spoiled!
-			 Contact your local Woof Gang Bakery to find out which services are available in your area.</p>
-		</div>
-
-		<div class="blocks">
-
-			<div class="left">
-				<div class="fblock groom"><p>Grooming</p></div>
-
-				<div class="fblock ss"><p>Self-Service Grooming</p></div>
-
-				<div class="fblock vet"><p>Veterinary Clinic</p></div>
-				<div class="fblock daycare"><p>Doggie Daycare</p></div>
-			</div>
-		</div>
-
-		<div class="right">
-			<div class="fblock retail"><p>Retail</p></div>
-		</div>
-	</div>
-</div>
- -->
-
-
-
-
 <div class="hs-serve">
 	<div class="intro">
 		<h3>Woof Gang does it all</h3>
-		<p>We offer a number of services to help keep your pets healthy and spoiled!
-		 Contact your local Woof Gang Bakery to find out which services are available in your area.</p>
+		<p>We offer a number of services to help keep your pets healthy and spoiled! Contact your local Woof Gang Bakery to find out which services are available in your area.
+			Select any service from the list below to visit the page, and learn more.
+		</p>
 	</div>
 
 	<div class="blocks">
@@ -132,41 +94,31 @@
 
         <ul class="uk-slider-nav uk-dotnav uk-flex-center"></ul>
 			</div>
-
-
-			<!-- <div class="fblock one"><%= image_tag('location-img.jpg', class: 'img-responsive') %></div> -->
-			<!-- <div class="fblock two"><%= image_tag('woof8.jpg', class: 'img-responsive') %></div> -->
-			<!-- <div class="fblock three"><%= image_tag('trim.jpg', class: 'img-responsive') %></div> -->
 		</div>
 
 		<div class="right">
 			<%= link_to grooming_path, class: 'serve-tl' do %>
-				<!-- <%= image_tag('bath.jpg', class: 'sq-img') %>  -->
-				<%= image_tag('tag-groom.png', class: 'img-responsive') %>
+				<div class="icon"><%= image_tag('ptag-groom.png', class: 'img-responsive') %></div>
 				<p>Grooming </p>
 			<% end %>
 
-			<%= link_to self_service_grooming_path, class: 'serve-tl' do %>
-				<!-- <%= image_tag('self.jpg', class: 'sq-img') %>  -->
-				<%= image_tag('tag-ss.png', class: 'img-responsive') %>
+			<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
 				<p>Self-Service Grooming </p>
+				<div class="icon"><%= image_tag('ptag-ss.png', class: 'img-responsive') %></div>
 			<% end %>
 
 			<%= link_to retail_path, class: 'serve-tl' do %>
-				<!-- <%= image_tag('packaged-treats.jpg', class: 'sq-img') %>  -->
-				<%= image_tag('tag-retail.png', class: 'img-responsive') %>
+				<div class="icon"><%= image_tag('ptag-retail.png', class: 'img-responsive') %></div>
 				<p>Retail </p>
 			<% end %>
 
 			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
-				<!-- <%= image_tag('dog-stare.jpg', class: 'sq-img') %>  -->
-				<%= image_tag('tag-vet.png', class: 'img-responsive') %>
 				<p>Veterinary Clinic </p>
+				<div class="icon"><%= image_tag('ptag-vet.png', class: 'img-responsive') %></div>
 			<% end %>
 
 			<%= link_to doggie_daycare_path, class: 'serve-tl' do %>
-				<!-- <%= image_tag('princess.jpg', class: 'sq-img') %>  -->
-				<%= image_tag('tag-daycare.png', class: 'img-responsive') %>
+				<div class="icon"><%= image_tag('ptag-daycare.png', class: 'img-responsive') %></div>
 				<p>Doggie Daycare </p>
 			<% end %>
 
