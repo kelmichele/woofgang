@@ -458,43 +458,14 @@
 
 //******** training **********//
 .training-support {
-	.ts1 {@include sec-default(); padding: 80px 0 60px;}
-	p.top{font-size: 18px;}
+	.ts1 {@include sec-default(); padding: 80px 0 40px;}
+	p.top{font-size: 18px;
+		br {display: none;}
+	}
 	ul.paw.one, ul.paw.two {display: inline-block; float: left; width: 45%;}
 	ul.paw.two{margin-left: 3%;}
 
-	.support-list{@include sec-default(); padding:60px 0 40px; background-color: $fa;
-
-		.left, .right {display: inline-block; float: left; width:35%;}
-		.left{ margin-top:3%; padding:0 2%;}
-		.right {width:62%; float: right;}
-
-		h4{font-weight: bold; color: $compt; font-size: 20px; }
-		p{font-size:18px;}
-		ul{padding-left: 0;}
-		li {display: inline-block; float: left;
-			width: 47%; margin-bottom: 30px;
-			&:nth-child(2n+2){float: right;}
-			// &.tli {margin-bottom: 40px;}
-
-			span{font-size: 18px; color:$compt; font-weight: bold; @include sec-default(); margin-bottom: 6px;}
-		}
-	}
-
-	.ts-last {@include sec-default(); padding: 60px 0 40px;
-		.left, .right {display: inline-block; float: left; width:28%;}
-		.right {width:62%; margin-top:5%; float: right;}
-		li {font-weight: $semi; margin-bottom: 7px; color:$pink}
-
-		.text, .image {display: inline-block; float: left;}
-		.text {width:60%;margin-top:2%; margin-left: 5%}
-		// ul{margin-left:10%;}
-		.image{width:20%; float: right; margin-right: 12%;}
-	}
-
-
 	.support-boxes{@include sec-default(); padding:60px 0; background-color: $f9;
-
 		.left, .right {display: inline-block; float: left; width:30%;}
 		.left{ margin-top:6%; margin-left: 2%;
 			h4{font-weight: bold; color: $compt; font-size: 19px; }
@@ -514,8 +485,118 @@
 		  h4{margin-bottom: 6px; font-weight: bold; font-size:1.2rem;}
 		  p{margin-top: 0px; font-size: 16px}
 			span{font-size: 18px; font-weight: bold; @include sec-default(); margin-bottom: 6px;}
+		}
+	}
+
+	.ts-last {@include sec-default(); padding: 60px 0 40px;
+		li {font-weight: $semi; margin-bottom: 7px; color:$pink}
+
+		.text, .image {display: inline-block; float: left;}
+		.text {width:60%;margin-top:2%; margin-left: 5%}
+		.image{width:20%; float: right; margin-right: 12%;}
+	}
+
+	@include bp(dt) {
+		p.top	br {display: block;}
+	}
+
+	@include bp(tb) {
+		.ts1 {@include sec-default(); padding: 65px 0 20px;}
+		p.top {font-size: 17px;}
+
+		.support-boxes{padding:30px 0;
+			.left {width:65%;@include center-block();margin-top:0; margin-left: auto; text-align: center;
+				h4{font-size: 18px; margin-bottom: 0;}
+				p{margin-top: 7px; font-size: 16px;}
+			}
+			.right { @include sec-default(); padding-top: 20px;}
+		}
+
+		.ts-last { padding: 40px 0 25px;
+			p{font-size: 16px;}
+			.text {width:74%;margin-top:2%; margin-left:0;}
+			.image{width:23%; float: right; margin-right: 0;}
+		}
+	}
+
+	@include bp(tn) {
+		.ts1 {padding: 55px 0 20px;
+			.inside.med2 {width:85%;}
+			ul.paw.one, ul.paw.two {width: 48%;}
+			ul.paw.two{margin-left: 0; float: right;}
 
 		}
+		p.top {font-size: 16px;}
+
+		.support-boxes{padding:30px 0 15px;
+			.left {width:80%;
+				h4{font-size: 17px;}
+				p{ font-size: 15px;}
+			}
+			.right {
+				p{font-size: 15px;
+					span {font-size: 16.5px;}
+				}
+			}
+		}
+
+		.ts-last { padding: 40px 0 25px;
+			.inside.med2 {width:80%;}
+			p{font-size: 15px;}
+			.text {width:80%;margin-top:0;margin-left:0;}
+			.image{width:19%; margin-top:0;}
+		}
+	}
+
+	@include bp(oc) {
+		.ts1 {padding: 45px 0 20px;
+			.inside.med2 {width:90%;}
+			ul.paw.one, ul.paw.two {width: 80%; @include center-block();
+				li {margin-left: 0;}
+			}
+		}
+		p.top {font-size: 15px; padding: 0 5%;}
+
+		.support-boxes{padding:20px 0;
+			.left {width:99%;
+				h4{font-size: 17px;}
+				p{ font-size: 15px;}
+			}
+			.right {
+				.clearfix{margin-bottom: 0;}
+				.tli {width: 75%; display: block; margin-bottom: 30px;
+				  &.two, &.four{float:right;}
+
+				  .text {margin-top: 25px;width: 74%; margin-left: -6%;}
+				  .img-box{width:25%;}
+				}
+			}
+		}
+
+		.ts-last { padding: 30px 0 25px;
+			@include sec-bgimage('lab-lick.jpg'); background-position: bottom right; background-size:15%;
+			.inside.med2 {width:85%;}
+			.text {@include sec-default();}
+			.image{ display: none;}
+		}
+	}
+
+	@include bp(sm) {
+		.ts1 {padding: 30px 0 20px;}
+
+		.support-boxes{
+			.left h4{font-size: 16px;}
+			.right {padding-top:0;
+				.tli {width: 98%; margin-bottom: 20px;
+				  .text {margin-top: 25px; width: 79%; margin-left: 0;
+				    &::before {width:130px; height:130px; left:-30%; top:-15%;}
+				  }
+				  .img-box{width:20%; margin-top: 5%}
+				}
+			}
+		}
+
+		.ts-last {background-size:20%;}
 	}
 }
 
