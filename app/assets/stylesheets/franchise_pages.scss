@@ -5,20 +5,68 @@
   position: relative; z-index: 0;
   &::before{@include after(); background-color: $compt; height:40px;}
 
-	h1 {color:$white; @include tshadowl(rgba($black, .2));}
-  h1{margin:0px 0px 0;
+	h1 {color:$white; @include tshadowl(rgba($black, .2)); margin:0px 0px 0;
   	text-transform: uppercase; letter-spacing: 1.5px; font-size: 2.1rem;
   }
   h2{margin: 0; font-size:1.5rem; line-height: 1.3em; font-weight: bold; color: $compg}
   .tbox {@include sec-default(); text-align: center; }
 }
-.abs-franch {width:210px; right:10%; position: absolute; z-index: 2; margin-top:50px;}
+.abs-franch {width:210px; right:10%; position: absolute; z-index: 2; margin-top:40px;}
 
+@include bp(tb) {
+	.franchise-header {padding: 30px 0 50px;
+		h1{font-size: 1.8rem}
+	}
+	.abs-franch {width:160px; margin-top:20px;}
+}
+
+@include bp(tn) {
+	.franchise-header {padding: 20px 0 30px;
+		&::before{height: 20px;}
+		h1{font-size: 1.6rem}
+		h2{font-size: 1.3rem;}
+	}
+	.abs-franch {width:110px;}
+}
+
+@include bp(oc) {
+	.franchise-header {padding: 20px 0 25px;
+		&::before{height: 15px;}
+		h1{font-size: 1.45rem}
+		h2{font-size: 1.15rem;}
+	}
+	.abs-franch {width:100px; right:8%; }
+}
+
+@include bp(ph) {
+	.franchise-header {padding: 15px 0 15px;
+		&::before{height: 15px;}
+		h1{font-size: 1.3rem}
+		h2{font-size: 1.1rem;}
+	}
+	.abs-franch {width:90px; right:5%; margin-top:10px;}
+}
+
+@include bp(sm) {
+	.franchise-header{padding-bottom: 20px;
+		h2{font-size: 16px;}
+		h1{font-size: 1.2rem; margin-top: 5px; }
+	}
+	.abs-franch {display: none;}
+}
 
 .franchise_pages .page-body {
 	ul, ul.paw {
     p {margin-bottom: 10px; font-weight: $semi; }
     li {margin-left:10px; font-size:17px;}
+
+    @include bp(tb) {
+			li {font-size: 16px;}
+    }
+
+    @include bp(tn) {
+			li {font-size: 15px;}
+    }
   }
 }
 
@@ -32,20 +80,19 @@
 
 //****** franchise op *******//
 .franchise-opportunity {
-	.abs-franch {width:200px; right:14%; margin-top:45px;}
 	.intro{width:75%;}
 
 	h3{font-size: 1.35rem;}
 	h3 span {color: $pink;}
 
-	.fran-op {@include sec-default(); padding: 100px 0 0;}
-
+	.fran-op {@include sec-default(); padding: 85px 0 0;}
 
 	.full.top { padding: 40px 0 60px;
 		@include sec-bgimage('fluff.png'); background-size: 15%; background-position: bottom left;
 		.big, ul { display: inline-block; float: left; width: 35%; margin-left: 3%;}
 		.big { margin-top:4%; text-align: center;
 			p{font-size: 25px;@include sec-default();}
+			hr{display: none;}
 		}
 
 		ul.paw {float:right; width:55%;
@@ -55,6 +102,7 @@
 
 
 		.woof-link{@include sec-default(); background-color: $compb; margin-top:15%;}
+		.woof-link.xs-show{display: none;}
 		.btn{@include sec-default();
 			background-color: $compb; color: $white; @include tshadowl(rgba($black, .3));padding: 14px 8px; margin-top: 20%;
 
@@ -72,14 +120,115 @@
 		.image{float: right;width:37%;}
 		.tbox {margin-top: 3%;}
 		li{margin-bottom: 10px;}
+	}
 
+
+	@include bp(tb) {
+		h3{font-size: 1.2rem;}
+		.fran-op {padding-top: 70px;}
+		.intro{width:95%;}
+
+		.full.top {padding: 10px 0 35px; background-size:12%;
+			.inside.med2{width:80%;}
+			.big { width: 35%; margin-left: 0;
+				p{font-size: 20px;}
+				.woof-link {font-size: 14px; padding: 10px 15px;}
+			}
+
+			ul.paw {width:60%; margin-left: 0; float: right;}
+		}
+
+		.banner {padding: 15px 0 0px;
+			h3{font-size:1.35rem;}
+		}
+
+		.full.btm {padding:50px 0 20px;
+			.inside {width:90%;}
+			p{font-size: 16px;}
+			.image{width:40%; }
+			.tbox {width: 60%; margin-top: 0; padding-right: 20px;}
+		}
+	}
+
+	@include bp(tn) {
+		h3{font-size: 1.1rem;}
+		.fran-op {padding-top: 55px;}
+
+		.full.top {padding: 15px 0 25px; background-image:none;
+			.inside.med2{width:85%;}
+			.big { width: 35%; margin-top:7%;
+				p{font-size: 18px;}
+				.woof-link{margin-top:5%;}
+			}
+
+			ul.paw {width:60%;}
+		}
+
+		.banner {padding: 10px 0;
+			h3{font-size:1.15rem;margin-bottom: 0px;}
+		}
+
+		.full.btm {padding:30px 0 20px;
+			.inside {width:90%;}
+			p{font-size: 15px; margin-bottom: 10px}
+			.image{display: none; }
+			.tbox {@include sec-default();padding-right: 0px;}
+		}
+	}
+
+	@include bp(oc) {
+		.fran-op {padding-top: 50px;}
+		.intro{@include sec-default();}
+		h3{font-size: 1rem; margin-bottom: 0;}
+
+		.full.top {padding: 15px 0 25px; background-image:none;
+			.inside.med2{width:85%;}
+			.big {@include center-block(); width:90%; margin-top:0; border-top: 1px solid rgba($tbrown, .1); padding-top: 15px;
+				p{font-size: 16px;}
+				.woof-link{display: none; }
+			}
+
+			ul.paw {@include sec-default();margin-bottom: 15px;
+				li{width: 85%; @include center-block();}
+			}
+
+			.woof-link.xs-show{display: block; margin-top: 0; width:50%; margin-left: 25%; font-size: 14px; padding:8px 20px;}
+		}
+
+		.banner h3{font-size:1rem;}
+
+		.full.btm {padding:20px 0 10px;
+			.inside {width:90%;}
+			p{font-size: 15px; margin-bottom: 10px}
+			.image{display: none; }
+			.tbox {@include sec-default();padding-right: 0px;}
+		}
+	}
+
+	@media (max-width:500px) {
+		.abs-franch {display: none;}
+		.fran-op {padding-top: 20px;}
+	}
+
+	@include bp(sm) {
+		.full.top {
+			.inside.med2{width:90%;}
+			.big { width:97%;
+				p{font-size: 15px;}
+			}
+
+			ul.paw li{width: 95%;}
+
+			.woof-link.xs-show{width:70%; margin-left: 15%; }
+		}
 	}
 }
 
 //****** franchisees *******//
 .franchisees {
 
-	.intro-row{@include sec-default(); padding: 100px 0 0;text-align: center;
+	.intro-row{@include sec-default(); padding: 100px 0;text-align: center;
+
 		h3 {font-size: 1.15rem;}
 		span{ color: $pink; font-weight: $semi;}
 
@@ -87,21 +236,27 @@
 		li {list-style-type: disc; color: $pink}
 	}
 
-	.fr-details{@include sec-default(); padding:30px 0 ;
+	.fr-details{@include sec-default();
 		.image, .text {display: inline-block; float: left; width:30%;}
 		.text{float: right; width:67%; margin-top: 8%;}
 		h4 {color: $compb; font-weight: $semi; font-size: 1.1rem; margin-bottom: 10px;}
 
-		&.one {overflow-x: hidden;
+		&.one {
+			position: relative; z-index: 0; padding: 15px 0;
+			&::before {@include after(); background-color: rgba($compt, .7);  bottom:0;}
 			h4{color: $white; margin-top:10px;}
-			.image{position: relative; z-index: 2;}
-			.text{position: relative; z-index: 0; padding-top:20px;
-				&::before {@include before(); width:231%; left:-90%; height:106%; background-color: rgba($compt, .7); }
-			}
+			// .image{position: relative; z-index: 2;}
+			// .text{position: relative; z-index: 0; padding-top:5px;
+				// &::before {@include before(); width:231%; left:-90%; height:106%; background-color: rgba($compt, .7); }
+			// }
+
+			.image {position: absolute; width:20%; top:-26%;}
+			.text{width:70%; margin-top: 0; padding-top:0;}
+
 		}
 
 		&.two{
-			padding:10px 0 55px;
+			padding:50px 0 55px;
 			h4{font-size: 1.5rem; font-weight: bold;}
 			.image{width:30%; float:right; margin-top: 2%;}
 			.text{width:60%;float: left;padding-top:0; margin-top: 3%; margin-left: 5%;}
@@ -113,6 +268,88 @@
 		li{margin-bottom: 15px;
 			span {font-weight: bold;}
 		}
+	}
+
+	@media (max-width: 1310px) {
+		.intro-row {padding-bottom: 40px;}
+		.fr-details{
+			&.one{
+				.text{width:85%;}
+				.image{margin-left:-10%; top:-15%;}
+			}
+			&.two {padding-top: 30px;}
+		}
+	}
+
+	@include bp(tb) {
+		.intro-row {padding:65px 0 40px;
+			.inside.med2{width:85%;}
+		}
+
+		.fr-details{
+			h4 {font-size: 1rem;}
+
+			&.one {padding-top:0;
+				.image{top:-12%; width:22%;}
+				.text{width:83%;
+					li {margin-bottom: 10px;}
+					li:last-child{margin-bottom: 0;}
+				}
+			}
+
+			&.two{
+				padding:50px 0 35px;
+				h4{font-size: 1.3rem;margin-bottom: 5px }
+				.image{width:25%; margin-top: 9%;}
+				.text{width:65%;margin-top: 3%; margin-left: 0;}
+				ul.paw li{font-size: 16px; margin-bottom: 10px;}
+				hr{margin-bottom: 12px;}
+			}
+		}
+	}
+
+	@include bp(tn) {
+		.intro-row {padding:50px 0 10px;
+			.inside.med2{width:90%;}
+			h3{font-size: 1rem;}
+		}
+
+		.fr-details{
+			&.one {padding:10px 0 20px;
+				.inside.med2{width:85%;}
+				.image{display: none;}
+				.text{@include sec-default();
+					li {font-size: 15px;}
+				}
+			}
+
+			&.two{
+				padding:20px 0 35px;
+				.inside.med{width:85%;}
+				h4{font-size: 1.1rem; }
+				.image{width:27%; margin-top: 9%;}
+				.text{width:70%;margin-top: 3%;}
+				ul.paw li{font-size: 15px; }
+			}
+		}
+	}
+
+	@include bp(oc) {
+		.fr-details {
+			&.two{
+				padding:30px 0 20px;
+				background-image: url(image_path('playful.png')); background-position: bottom right; background-repeat: no-repeat; background-size: 20%;
+				.inside.med{width:90%;}
+				h4{font-size: 1.1rem; }
+				.image{display: none;}
+				.text{width:85%;margin-top: 0;}
+				ul.paw li{font-size: 15px; }
+			}
+		}
+	}
+
+	@include bp(sm) {
+		.intro-row {padding:30px 0 0px;}
 	}
 }
 
