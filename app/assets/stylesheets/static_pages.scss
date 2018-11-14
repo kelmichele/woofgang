@@ -1095,9 +1095,9 @@ ul.paw {padding-left: 0;
     h3{font-size: 1.3rem; margin-bottom: 0;}
     p.disclose{margin-top: 5px;}
 
-    form{@include sec-default(); background-color: #f9f9f9; border: $border; box-shadow: 0px 3px 5px rgba($black, .1);
+    form{@include sec-default(); border: $border; box-shadow: 0px 3px 5px rgba($black, .1);
       position: relative;z-index: 0;
-      &::before {@include before(); background-color: rgba($f9, .93); width:150%; }
+      &::before {@include before(); background-color: rgba($f9, .93);}
       &::after {@include before(); z-index: -2; @include sec-bgimage('bday-treats.jpg'); background-size: cover; background-position: top center;}
 
       .top{width:95%; @include center-block();}
@@ -1110,6 +1110,14 @@ ul.paw {padding-left: 0;
           label {width:93%; margin-top: 6px;}
         }
       }
+    }
+  }
+
+
+  @include bp(tb) {
+    .inquiries, .full-contact {
+      h3{font-size: 1.1rem;}
+      p{font-size: 16px;}
     }
   }
 }
@@ -1126,13 +1134,15 @@ ul.paw {padding-left: 0;
     .over, .form-side { width:33%;}
     .over { padding:30px 20px 30px 45px;
       &::before {@include before(); background-color: rgba($compt, .7); width:150%; }
-      // &::after {@include before(); z-index: -2; width:150%; @include sec-bgimage('bday-treats.jpg'); background-size: cover; background-position: center center;}
-
       h3{color: $white; font-weight: bold; @include tshadowl(rgba($black, .3)); margin-bottom: 6px;}
       p{padding-left: 7px; margin-top: 5px; font-weight: $semi;}
     }
     .form-side{width: 67%; margin-top: 5%;}
+  }
 
+  @include bp(tb) {
+    .full-contact {padding-top:20px;
+    }
   }
 }
 
