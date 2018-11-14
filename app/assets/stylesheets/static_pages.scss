@@ -1102,7 +1102,7 @@ ul.paw {padding-left: 0;
 
       .top{width:95%; @include center-block();}
 
-      .form-group {@include sec-default(); width:45%; display: inline-block; float: left; margin: 0 2.5% 25px;
+      .form-group {width:45%; display: inline-block; float: left; margin: 0 2.5% 25px;
         &.submit{@include sec-default;}
 
         &.terms{
@@ -1117,7 +1117,7 @@ ul.paw {padding-left: 0;
   @include bp(tb) {
     .inquiries, .full-contact {
       h3{font-size: 1.1rem;}
-      p{font-size: 16px;}
+      p{font-size: 15px;}
     }
   }
 }
@@ -1141,18 +1141,126 @@ ul.paw {padding-left: 0;
   }
 
   @include bp(tb) {
-    .full-contact {padding-top:20px;
+    .intro-sec {padding-top: 30px;}
+    .full-contact {padding-top:10px;
+      .inside{width:90%;}
+      .over { padding: 20px 20px 20px 30px;}
+    }
+  }
+
+  @include bp(tn) {
+    .intro-sec .inside.narrow{width:85%;}
+    .full-contact {padding-top:10px;
+      .over, .form-side {@include sec-default();}
+      .over { padding: 20px 20px 20px 30px;
+        background-color: $fa;
+        &::before{display: none;}
+
+        h3{color: $compt; text-shadow: none; font-size: 1rem;}
+        hr{display: none;}
+
+        .is-box {display: inline-block; float: left; width:45%;
+          &.one{margin-left: 7%;}
+          &.two, &.three {float: right; }
+        }
+      }
+    }
+  }
+
+  @include bp(oc) {
+    .intro-sec {width:95%;
+      p{font-size: 15px;}
+    }
+    .full-contact {
+      .over { padding: 20px 20px 15px;
+        .is-box {width:50%;
+          &.one{margin-left: 0;}
+          &.two, &.three {text-align: right;}
+        }
+      }
+      form {padding-right:30px;
+        .form-group {@include sec-default(); margin-bottom: 15px;
+          &.submit {margin-bottom: 0;}
+          input[type=submit] {width:auto; font-size: 15px; padding:7px 20px;}
+        }
+      }
+    }
+  }
+
+  @include bp(ph) {
+    .full-contact {
+      .over { padding: 20px 20px 15px;
+        hr{display: block;}
+        .is-box {
+          &.one, &.two, &.three {width:80%; @include center-block();text-align: left;}
+        }
+      }
+      form {padding-right:15px;}
+    }
+  }
+
+  @include bp(sm) {
+    .full-contact {
+      .over {
+        .is-box {
+          &.one, &.two, &.three {width:95%;}
+        }
+      }
     }
   }
 }
 
 .candidates {
-
   .inquiries .over {
     hr{opacity: .6;}
     .text-link {color: $white;}
     .contact-info {padding-left: 20px;
       p {color: $white;@include tshadowl(rgba($black, .2));}
+    }
+  }
+
+  @include bp(tb) {
+    .inquiries {
+      .over {text-align: center; width:75%; @include center-block(); margin-bottom: 20px;
+        &::before {display: none;}
+        hr {width:50%; @include center-block();}
+        .text-link{color: $compt;}
+        .contact-info p{display: inline-block; float: none; width:45%; color: $tbrown; text-shadow:none;}
+      }
+
+      .form-side {@include sec-default();}
+      form {
+        .form-group{
+          &.terms{
+            input#candidate_terms,label{width:3%;}
+            label {width:93%;}
+          }
+
+          &.submit {margin-bottom: 0;}
+        }
+      }
+    }
+  }
+
+  @include bp(tn) {
+    .inquiries {padding-bottom: 30px;
+      // .inside {width:90%;}
+      .over {width:95%; margin-bottom: 10px;
+        hr {width:50%; @include center-block();}
+        .text-link{color: $compt;}
+        .contact-info p{display: inline-block; float: none; width:45%; color: $tbrown; text-shadow:none;}
+      }
+
+      .form-side {@include sec-default();}
+      form {
+        .form-group{
+          width: 90%; @include center-block(); margin-bottom: 15px;
+
+          &.submit {width: 90%; @include center-block();
+            input{font-size: 15px; margin-top: 20px; width:auto; padding:7px 20px;}
+          }
+        }
+      }
     }
   }
 }

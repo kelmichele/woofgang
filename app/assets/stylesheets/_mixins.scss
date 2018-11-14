@@ -132,6 +132,10 @@
     @media (max-width: 670px)  { @content ; }
   }
 
+  @else if $point == oc {
+    @media (max-width: 639px)  { @content ; }
+  }
+
   @else if $point == ph {
     @media (max-width: 570px)  { @content ; }
   }
