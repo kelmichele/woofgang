@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'vet-clinic', to: 'static_pages#vet-clinic'
 
   get 'pet-stores', to: 'static_pages#pet-stores'
-
+  get 'retail', to: 'static_pages#retail'
 
   get 'franchise-process', to: 'franchise_pages#franchise-process'
   get 'franchise', to: 'franchise_pages#franchise'

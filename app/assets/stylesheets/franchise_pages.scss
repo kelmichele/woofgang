@@ -489,11 +489,6 @@
   	.ttext{@include center-block();width:65%; text-align: center;}
   }
 
-  .bone-border {@include sec-default(); position: relative; z-index: 0; margin:30px auto 20px;
-  	&::before{@include before(); height:20%; border-top:1px solid rgba($compt, .3); border-bottom: 1px solid rgba($compt, .3); top:40%;}
-		.icon {width:40px; @include center-block();}
-  }
-
   .faq-tabs{@include sec-default(); padding: 50px 0;
 		.uk-tab-bottom, .uk-switcher {display: inline-block; float: left; width:40%;}
 		.uk-tab-bottom {
