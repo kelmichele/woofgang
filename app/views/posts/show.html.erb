@@ -1,26 +1,24 @@
 <% @page_title = @post.title.titleize %>
 <% @page_description = "" %>
 
-<!-- <div class="ipage-header">
-	<div class="inside med2">
-		<h1><%= @post.title %></h1>
-	</div>
-</div> -->
-
 <div class="full-post">
 	<div class="title">
 		<div class="inside med2">
-			<!-- <h2>Woof Gang Bakery News</h2> -->
 			<h1><%= @post.title %></h1>
 		</div>
 	</div>
 
-	<!-- <div class="inside"> -->
 	<div class="back-link">
 		<%= link_to "/posts", class: 'text-link back' do %>
 			<span class="" uk-icon="icon: arrow-left;"></span> Back to All Posts
 		<% end %>
 	</div>
+
+	<% if user_signed_in? && current_user.admin? %>
+		<div class="admin-side">
+			<%= render 'actions' %>
+		</div>
+	<% end %>
 
 	<div class="dets">
 		<div class="post-body">
@@ -37,16 +35,10 @@
 				<% end %>
 				<%= simple_format(@post.content) %>
 			</div>
-
-			<div class="sidebar"></div>
 		</div>
 	</div>
 
-	<% if user_signed_in? && current_user.admin? %>
-		<div class="admin-side">
-			<%= render 'actions' %>
-		</div>
-	<% end %>
+
 </div>
 
 <div class="recent-posts">

@@ -27,18 +27,6 @@
 			<%= link_to post_path(post), class: "post-li post-#{post.id}" do %>
 			  <h3 class="title"><%= post.title %></h3>
 			<% end %>
-
-			<!-- <li class="post-li">
-				<div class="feat-img">
-					<% if post.image.attached? %>
-					  <%= image_tag post.image, class: 'img-responsive' %>
-					<% end %>
-				</div>
-
-				<div class="feat-content">
-					<%= link_to post.title, post_path(post) %>
-				</div>
-			</li> -->
 		<% end %>
 		</ul>
 	</div>
