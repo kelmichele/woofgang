@@ -355,8 +355,7 @@
 
 //****** real estate *******//
 .real-estate {
-	h3{font-size: 1.35rem; margin: 15px auto; width:80%; @include center-block(); }
-	h3{text-align: center;}
+	h3{font-size: 1.35rem; margin: 15px auto; width:80%; @include center-block(); text-align: center;}
 
 	.full-sec.xtr{padding-bottom: 50px; padding-top:100px;}
 	.full.mid { padding: 30px 0 70px;
@@ -372,7 +371,40 @@
     p{margin-top: 10px;}
     &::before {@include after(); z-index: 1; width:16%; left: 72%; @include sec-bgimage('bernie-flip.png'); background-position: bottom right; height:180%; }
     &::after {@include before(); border:1px solid rgba($pink, .1); top:-8%; left:1%; height:98%}
-    // &::after {@include before();@include sec-bgimage('favicon.png'); background-size: 3%; background-position: bottom left; left:1%; margin-top:-1%;}
+  }
+
+  @include bp(tb) {
+		h3 {font-size: 1.1rem; width:95%;}
+		.full-sec.xtr{padding:55px 0 0px;
+			.inside.one {width:90%;}
+		}
+		.full.mid { padding: 20px 0 10px;
+			.ext {width: 40%; }
+			.content{width:57%;margin-top: 0; }
+			ul.paw li {margin-left: 0; font-size:14px;}
+		}
+
+		.banner { padding:20px 5% 20px;
+			.text{width: 75%;margin-left: 0;}
+	    h4{font-size: 1rem; }
+	    p{font-size: 15px;}
+	  }
+  }
+
+  @include bp(tn) {
+		h3 {font-size: 1rem;}
+		.full-sec.xtr{padding:35px 0 0px;}
+		.full.mid { padding: 20px 0 10px;
+			.ext {display: none;}
+			.content{width:80%; @include center-block();}
+			ul.paw p{font-size: 15px;}
+		}
+
+		.banner { padding:20px 0 20px 4%;
+			h3{font-size: 15px;}
+			.text{width: 90%;margin-left: 0;}
+			&::before {left:85%; width:14%; }
+	  }
   }
 }
 
@@ -381,6 +413,7 @@
 	.idets {padding: 100px 0 ;}
 	.intro	{display: inline-block; width:45%; float:left; text-align: center;
 		span {font-weight: bold;}
+		img.mobile{display: none;}
 	}
 	ul.inv {
 		display: inline-block; width:53%; float:right;
@@ -389,6 +422,43 @@
 			span{font-weight: $semi; color: $compb; font-size: 20px; }
 			span.print {font-weight: normal; color: $tbrown; font-size:15px;}
 		}
+	}
+
+	@include bp(tb) {
+		.idets {padding: 70px 0 20px;}
+	}
+
+	@include bp(tn) {
+		.idets {padding: 50px 0 20px;}
+		.inside.med{width:90%;}
+		.intro	{width:50%;
+			p {font-size: 15px}
+		}
+		ul.inv {width:50%;
+			li {margin-bottom:13px; margin-left: 0;
+				span{font-size: 16px; }
+				span.print {font-size:14px;}
+			}
+		}
+	}
+
+	@include bp(oc) {
+		.idets {padding: 50px 0 20px;}
+		.inside.med{width:90%;}
+		.intro	{width:90%; @include center-block();
+			img{ @include center-block(); display: none;}
+			img.mobile{@include sec-default();}
+		}
+		ul.inv {@include sec-default(); padding-top:20px;
+			li {margin-bottom:13px; margin-left: 0;
+				span{font-size: 16px; }
+				span.print {font-size:14px;}
+			}
+		}
+	}
+
+	@include bp(sm) {
+		.idets {padding: 30px 0 20px;}
 	}
 }
 
@@ -621,6 +691,71 @@
 		.dets {width:93%; float: right;}
 		h4{font-weight: $semi; margin-bottom: 0; color: $compt;}
 		p{margin-top: 5px;}
+	}
+
+	@include bp(tb) {
+		h3{font-size: 1rem; margin-bottom: 7px}
+
+		.overview{ padding: 80px 0 20px;
+			.inside {width:90%;}
+		}
+		.x-img {width: 50%; margin-left: 0; padding-right: 10px;}
+		.list-intro{padding-top:0px; width: 48%;
+			li a{font-size: 15px;}
+		}
+
+		.steps-desc{padding: 30px 0; background-size: 15%;
+			.inside.narrow {width: 80%;}
+		}
+	}
+
+	@include bp(tn) {
+		h3{font-size: 15px;}
+		.overview{ padding: 60px 0 20px;
+			.inside {width:90%;}
+			ul{padding-left:15px;}
+		}
+		.x-img {width: 45%; margin-top: 7%;}
+		.list-intro{width: 54%;}
+
+		.steps-desc{padding: 10px 0;
+			background-image: none;
+			.inside.narrow {width: 85%;}
+		}
+
+		.step {margin-bottom:0px;
+			span{font-size: 45px; }
+			h4{font-size: 1.1rem;}
+			p{font-size: 15px;}
+		}
+	}
+
+	@include bp(md) {
+		.overview {padding: 60px 5% 20px;
+			.inside {@include sec-default(); @include sec-bgimage('woof6.jpg'); background-size:32%; background-position: top left;}
+		}
+		.x-img {display: none;}
+		.list-intro{width:65%; float: right;}
+	}
+
+	@include bp(oc) {
+		.overview {padding: 50px 0 0px;
+			.inside {@include sec-default(); background-image: none;}
+		}
+		.list-intro{width:85%; @include center-block();}
+
+		.step {
+			span{margin-left: -10px;}
+		}
+	}
+
+	@include bp(sm) {
+		.steps-desc	.inside.narrow {width:90%;}
+		.step {margin-bottom:10px;
+			span{font-size: 40px; margin-top: 4%; margin-left: 0; }
+			.dets{padding-left:14px; float:right;}
+		}
+
 	}
 }
 
