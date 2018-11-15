@@ -685,17 +685,14 @@ ul.paw {padding-left: 0;
 
 .grooming {
   .pup-header {background-color: rgba($pink, .5);
-    .full{@include sec-bgimage('lab.png'); background-size: 30%; background-position: bottom right; padding:80px 0 40px;
+    .full{@include sec-bgimage('lab.png'); background-size: 27%; background-position: bottom right; padding:65px 0 40px;
       &::before{background-color: rgba($pink, .5);}
-
-    padding:65px 0 40px;
     }
-    .tbox { width:55%; text-align: left; margin-left: 15%;}
+    .tbox { width:60%; text-align: left; margin-left: 15%;}
 
     h1{@include tshadowl(rgba($black, .4));}
     p{margin-top: 8px; font-size: 17px;}
     h2{margin-top: 8px; font-size:1.1rem; line-height: 1.4em;}
-    // color:#eae6e5;
   }
 
   .top-box {@include sec-default(); padding: 100px 0 50px;
@@ -709,7 +706,6 @@ ul.paw {padding-left: 0;
       .text {margin-top: 25px;width: 69%; margin-left: -6%;
         position: relative;z-index: 0;
         &::before {@include before(); width:200px; height:200px;  border-radius: 50%; left:-25%; top:-12%;
-          // background-color: rgba($compb, .8);
           background-color: rgba($compb, .8);
         }
       }
@@ -734,26 +730,6 @@ ul.paw {padding-left: 0;
     }
   }
 
-
-  .info-sec {@include sec-default(); padding:80px 0;
-    background-color: $fa;
-    .left, .right {display: inline-block; float: left; width: 60%; }
-    .right {float: right;width:35%; text-align: center;
-      p{width:95%; @include center-block(); margin-top: 30px;}
-    }
-
-    .left{
-      .image, .text {display: inline-block; width:48%; float: left;}
-      // .image{height:460px; @include sec-bgimage('woof13.jpg'); background-size: cover; background-position: bottom right;}
-      .image{height:400px; @include sec-bgimage('woof13.jpg'); background-size: cover; background-position: bottom right;}
-      .text {width: 50%; padding-left: 4%;
-        .full{margin:40px 0 30px;}
-      }
-    }
-  }
-
-
-
   .layer-sec {@include sec-default();
     padding:50px 0; background-color: $white;
     position: relative; z-index: 0; &::before {@include before(); height:50%; background-color: $f8;}
@@ -765,6 +741,91 @@ ul.paw {padding-left: 0;
     .left img{margin-bottom: 30px;}
     .text {width: 95%; @include center-block();
       p {margin-bottom: 25px;}
+    }
+  }
+
+  @include bp(tb) {
+    .pup-header {
+      .full{padding:25px 0 15px; background-size:22%;}
+      .tbox { width:65%; margin-left: 5%;}
+      h1{font-size: 1.6rem;}
+      h2{ font-size:16px; line-height: 1.4em;}
+    }
+
+    .top-box {padding: 65px 0 35px;
+      .inside.med{width:90%;}
+      .tb-box {width: 50%;
+        .text {margin-top: 15px; width: 74%; margin-left: -6%;
+          &::before {width:185px; height:185px;  border-radius: 50%; left:-25%; top:-12%;}
+        }
+        .img-box{width:25%; }
+        h4{font-size:1.1rem;}
+        p{font-size: 15px}
+
+        &.three {width: 60%;
+          .text {
+            &::before {left:-15%;}
+          }
+        }
+      }
+    }
+
+    .banner {padding:30px 0 50px;
+      .inside{width:90%;}
+      .full{padding:27px 0 20px;
+        p{ width: 77%; font-size: 16px;}
+        .woof-link{font-size:15px;}
+      }
+    }
+
+    .layer-sec {
+      padding:35px 0;
+      .intro {width:80%;}
+      .full{margin-top: 10px;}
+      .left, .right {width: 48.5%;}
+      .right { margin-top: 5%;}
+      .left img{margin-bottom: 15px;}
+      .text p {font-size: 15px;}
+    }
+  }
+
+  @include bp(tn) {
+    .pup-header {
+      .inside.med2 {width:85%;}
+      .tbox { width:75%; margin-left: 0;}
+      h1{font-size: 1.4rem;}
+      h2{ font-size:15px;}
+    }
+
+    .top-box {padding: 50px 0 35px;
+      .inside.med{width:90%;}
+      .clearfix {margin-bottom: 0;}
+      .tb-box {
+        &.one, &.three, &.two {float: left; width: 85%;}
+        &.two {float: right;}
+
+        .img-box{width:20%; }
+        .text{margin-top: 15px; width: 80%; margin-left: 0px;
+          &::before {width:160px; height:160px; left:-15%; top:-12%;}
+        }
+      }
+    }
+
+    .banner {padding:30px 0 50px;
+      .full{
+        p{ @include sec-default(); font-size: 15px; margin-bottom: 0;}
+        .link{margin:15px 0; @include sec-default(); text-align: center;}
+        .woof-link {padding:7px 20px; float: none;}
+      }
+    }
+
+    .layer-sec {
+      .inside.med2 {width:80%;}
+      .intro {@include sec-default();
+        p {font-size: 16px;}
+      }
+      .left p {margin-bottom: 16px;}
+      .woof-link {font-size:15px; padding:7px 20px;}
     }
   }
 }
@@ -784,8 +845,7 @@ ul.paw {padding-left: 0;
   }
 
   .cols-sec{@include sec-default(); padding:30px 0 0px; margin-bottom: 50px;
-    @include sec-bgimage('basset-mud.jpg'); background-size: 24%; background-position: center bottom;
-    // .inside{width:80%;}
+    .fw{@include sec-default();@include sec-bgimage('basset-mud.jpg'); background-size: 24%; background-position: center bottom;}
     .left, .right {display: inline-block; width: 30%; float: left;}
     .left{margin-left: 2%;}
     .right {float:right; width:28%;}
@@ -796,21 +856,114 @@ ul.paw {padding-left: 0;
     li {margin-bottom: 10px;}
   }
 
-  // .disc-banner {
-    // padding: 20px 2%; text-align: center;
-    // &::after {border:1px solid rgba($compb, .15); top:-6%; }
-    // &::before {left:77%; width:13%;}
-    // .text {width:80%;}
-  // }
-
   .disc-banner {margin-bottom: 50px;
     padding: 20px 10px 20px 10px; text-align: center;
     &::after {border:1px solid rgba($compb, .15); top:-6%; }
     &::before {left:84%; width:13%;}
     .text {width:83%; margin-left: 0;}
     h4{margin-bottom: 20px;}
-    p { color: $compb; display: inline-block; float: none; width:32%; font-weight: bold; margin: 0 .5% 12px;
-      span {font-size: 17px; line-height: 1.8em; }
+    p { color: $brown; display: inline-block; float: none; width:32%; font-weight: bold; margin: 0 .5% 12px;
+      span {font-size: 17px; line-height: 1.8em; color: $pink;}
+    }
+  }
+
+  @include bp(tb) {
+    .pup-header {
+      .full{background-size: 17%; padding:30px 0 ;}
+      .tbox{width:100%;}
+      h1{font-size: 1.75rem;}
+    }
+
+    .intro {width: 85%; margin-top:0px;
+      p {font-size: 1.1rem;}
+      .bone-border{margin:15px 0 0px;}
+    }
+
+    .cols-sec{padding:20px 3% 0px; margin-bottom: 45px;
+      .inside {width:92%;}
+      .fw { background-size: 25%;background-position: bottom left; background-image: url(image_path('basset-mud-mobile.jpg'));}
+
+      li {display: inline-block; float: left; width:50%;}
+      h4{margin:0 0 5px; }
+      p{margin-bottom: 20px; font-size: 16px;}
+
+      .left{margin-left: 0;@include sec-default(); margin-bottom: 40px;
+        .cs-bx {display: inline-block; float: left; width:47%;
+          &.one{margin-left: 2%;}
+          &.two {float: right;}
+        }
+      }
+      .right {width:70%; margin-left:0;
+        h4{padding-bottom: 6px; border-bottom: 1px solid rgba($tbrown,.1); margin-bottom: 15px;}
+      }
+    }
+
+    .disc-banner {
+      padding: 20px 10px 20px 10px;
+      &::before {left:84%; width:13%;}
+      .text {width:95%;}
+      p { width:40%;
+        span {font-size: 16px; }
+      }
+    }
+  }
+
+  @include bp(tn) {
+    .pup-header {
+      .full{background-size: 15%; padding:20px 0;}
+      h1{font-size: 1.5rem;}
+    }
+
+    .full-sec {padding-top: 25px;}
+
+    .intro {width: 85%; margin-top: 0;
+      p {font-size: 1rem;}
+      .bone-border{margin:15px 0 0px;}
+    }
+
+    .cols-sec{padding:0px 3% 0px; margin-bottom: 20px;
+      .inside {width:92%;}
+      .fw{background-position: bottom right;}
+
+      li {@include sec-default();}
+      h4{margin:0 0 5px; }
+      p,li {font-size: 15px;}
+
+      .left{
+        .cs-bx {display: inline-block; float: left; width:48%;
+          &.one{margin-left: 0;}
+        }
+      }
+      .right {width:60%; @include center-block();}
+    }
+
+    .disc-banner {padding:20px 30px;
+      &::before {display: none;}
+      .text {@include sec-default();}
+      p { width:48%;
+        span {font-size: 16px; }
+      }
+    }
+  }
+
+  @include bp(mb) {
+    .disc-banner {padding:20px 30px;
+      &::after{top:-4%;}
+      p {  font-size:15px;@include sec-default();}
+    }
+  }
+
+  @include bp(oc) {
+    .pup-header {
+      .full{background-image:none;padding:10px 0;}
+      h1{font-size: 1.3rem;}
+    }
+
+    .cols-sec{padding:0px 3% 0px; margin-bottom: 20px;
+      .left{margin-bottom:10px;
+        .cs-bx {@include sec-default();}
+      }
+      .right {width:85%;}
     }
   }
 }
@@ -818,12 +971,15 @@ ul.paw {padding-left: 0;
 .doggie-daycare{
   .bone-border{display: none;}
   .pup-header {
-    background-color: rgba($compt, .5);
+    background-color: rgba($compt, .7);
     .full {background-image: url(image_path('kelpie.png')); background-position: top left;
-      background-position: bottom left;background-size: 24%; padding-top: 60px;
+      background-position: bottom left;background-size: 20%; padding-top: 60px;
 
-      &::before{ background-color: rgba($compt, .5);}
-      .tbox {width:55%; float:right; margin-right:8%}
+      &::before{ background-color: rgba($compt, .7);}
+      .tbox {width:55%;
+        @include center-block();
+        // float:right; margin-right:8%
+      }
     }
     h2{font-size: 1.2rem; line-height: 1.4em;}
   }
@@ -837,7 +993,7 @@ ul.paw {padding-left: 0;
       }
 
       &.two {margin:0px 0 75px;
-        .img-box {float: left; width:55%; margin-top:4%}
+        .img-box {float: left; width:53%; margin-top:4%}
         .text {float: right; width:42%; margin-top:0;}
       }
     }
@@ -936,9 +1092,9 @@ ul.paw {padding-left: 0;
       .inside.med{width:90%;}
       .serve-box.dc1 {
         .text{@include sec-default();}
-        .img-box {width:50%; @include center-block(); margin-top: 0px;}
+        .img-box {width:55%; @include center-block(); margin-top: 0px;}
       }
-      .serve-box.two .img-box {width:60%;}
+      .serve-box.two .img-box {width:75%;}
     }
     .disc-banner .text{width:95%; @include center-block();}
   }
