@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get 'doggie-daycare', to: 'static_pages#doggie-daycare'
   get 'vet-clinic', to: 'static_pages#vet-clinic'
 
-  get 'retail', to: 'static_pages#retail'
   get 'pet-stores', to: 'static_pages#pet-stores'
 
 

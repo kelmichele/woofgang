@@ -849,39 +849,6 @@ ul.paw {padding-left: 0;
     .tbox{width:70%;}
   }
 
-  .dets{@include sec-default();
-    .full{@include sec-bgimage('costume.png'); background-size: 26%; background-position: bottom left;padding:125px 0 0;}
-    .il-text, .il-img {display: inline-block; float: left; }
-    .il-text {margin-bottom:80px;
-      &.one {margin-left: 25%; width: 28%;}
-      &.two {float:right; width: 44%;}
-      &.long {float:right;width: 67%; margin-right: 2%;}
-      p{font-size: 18px;}
-    }
-  }
-
-  .acc{@include sec-default(); background-color: $dpink;
-    .acc-text, .acc-img {display: inline-block; float: left;}
-    .acc-text {padding: 30px; margin-top: 1.5%; width: 35%;}
-    .acc-img{width:45%;
-      &.one{width:20%}
-    }
-    p{color: $white}
-
-    position: relative; z-index: 0;
-    &::before {@include before(); width: 20%; @include sec-bgimage('woof6.jpg'); background-size: cover;}
-    &::after {@include before(); width: 45%; left:55%; @include sec-bgimage('woof9.jpg'); background-size: cover;}
-    .acc-text{margin-left: 20%;}
-  }
-
-  .story{@include sec-default(); padding: 80px 0;
-    @include sec-bgimage('wrinkles.png'); background-position: bottom right; background-size: 25%;
-    h3{font-weight: bold;}
-    .os-text {width:70%;}
-  }
-
-
-
   .as1{@include sec-default();padding: 60px 0 50px;
     position: relative;z-index: 0;
     &::after {@include after(); background-color: $fa; height: 40%;}
@@ -898,7 +865,6 @@ ul.paw {padding-left: 0;
     .os-text, .acc-text {display:inline-block; float:left; }
     .os-text {width:38%;
       h3{margin-bottom: 0; font-weight: $semi; border-bottom: 1px solid rgba($tbrown, .1); padding-bottom:7px;}
-      // p{margin-top: 10px;}
     }
 
     .acc-text {float:right; width: 58%; margin-top:3%;
@@ -918,8 +884,123 @@ ul.paw {padding-left: 0;
       }
     }
   }
-}
 
+  @include bp(tb) {
+    .pup-header {
+      .full {background-size: 20%; padding:30px 0 15px;}
+      .tbox{width:100%;}
+      h1{font-size: 1.7rem;}
+      h2{font-size:1.35rem;}
+    }
+
+    .as1{padding:40px 0 30px;
+      .as1-intro {@include sec-default(); }
+      p {font-size: 16px; margin-bottom: 0px;}
+
+      .full.content {margin-top:30px;
+        .snip {margin-top: 30px;}
+      }
+    }
+
+    .acc-story {padding: 30px 0 15px;
+      .os-text {width:85%; @include center-block();
+        h3{font-size:1.3rem;}
+        p{font-size: 16px;}
+      }
+      .acc-text { @include sec-default(); margin-top:0; padding:15px 2.5%;
+        .clearfix {margin-bottom: 30px;}
+        .as2-box { width: 48%;}
+      }
+    }
+  }
+
+  @include bp(tn) {
+    .pup-header {
+      .full { padding:20px 0 6px;}
+      h1{font-size: 1.5rem;}
+      h2{font-size:1.2rem;}
+    }
+
+    .as1{padding:30px 0 30px;
+      p {font-size: 15px; }
+
+      .full.content {margin-top:20px;
+        .left, .right {width:61%;}
+        .right {width: 36%; }
+        .snip {width:98%;margin-top: 15px;}
+      }
+    }
+
+    .acc-story {padding: 20px 0 15px;
+      .os-text {@include sec-default();
+        h3{font-size:1.15rem;}
+        p{font-size: 15px;}
+      }
+      .acc-text { padding:0px 2.5% 10px;
+        .clearfix {margin-bottom: 30px;}
+        .as2-box { width: 48%;
+          p {font-size: 15px;}
+        }
+      }
+    }
+  }
+
+  @include bp(pl) {
+    .pup-header {
+      .inside.med {width:90%;}
+      h1{font-size: 1.5rem;}
+      h2{font-size:1.2rem;}
+    }
+  }
+
+  @include bp(oc) {
+    .pup-header {
+      .inside.med {width:95%;}
+      h1{font-size: 1.35rem;}
+      h2{font-size:1rem;}
+    }
+
+    .as1 .inside.med2 {width: 90%;}
+    .acc-story {
+      .acc-text {padding: 0;
+        .clearfix {margin-bottom: 15px;}
+        .as2-box { width: 80%; margin: 5px 0;
+          .text {margin-top: 45px;
+            &::before {width:130px; height:130px;left:-25%; top:-20%;}
+          }
+          p{margin-top:10px;}
+        }
+      }
+    }
+  }
+
+  @include bp(sm) {
+    .pup-header .full{background-image: none;}
+
+    .as1{padding:20px 0 30px;
+      .full.content {margin-top:20px;
+        .left{width:73%;
+          img{padding: 0 6px 6px 0;}
+        }
+        .right {width: 27%; }
+        .snip {@include sec-default();margin-top: 5px;}
+      }
+    }
+
+    .acc-story {
+      .acc-text {
+        .clearfix {margin-bottom: 0px;}
+        .as2-box { @include sec-default(); margin: 10px 0;
+          .img-box{width:26%;}
+          .text {margin-top: 25px; width:73%;
+            &::before {width:110px; height:110px;left:-20%; top:-10%;}
+          }
+          p{margin-top:5px;}
+        }
+      }
+    }
+  }
+}
 
 //*********************************//
 //*********** users ***********//
@@ -1161,8 +1242,6 @@ ul.paw {padding-left: 0;
     }
   }
 }
-
-
 
 //*********************************//
 //***** contact and inquiries *****//
