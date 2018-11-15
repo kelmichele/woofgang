@@ -1219,7 +1219,7 @@ ul.paw {padding-left: 0;
   }
 
   @include bp(tb) {
-    .inquiries {
+    .inquiries {padding-top: 50px;
       .over {text-align: center; width:75%; @include center-block(); margin-bottom: 20px;
         &::before {display: none;}
         hr {width:50%; @include center-block();}
@@ -1242,7 +1242,7 @@ ul.paw {padding-left: 0;
   }
 
   @include bp(tn) {
-    .inquiries {padding-bottom: 30px;
+    .inquiries {padding: 40px 0 30px;
       .over {width:95%; margin-bottom: 10px;}
 
       .form-side {@include sec-default();}
@@ -1259,16 +1259,12 @@ ul.paw {padding-left: 0;
   }
 
   @include bp(ph) {
-    .inquiries {
+    .inquiries { padding-top: 25px;
       .over {width:98%;
         .contact-info p{@include sec-default(); margin: 0px 0 20px;}
       }
 
       .form-side {@include sec-default();}
-      form {
-        .form-group{
-        }
-      }
     }
   }
 }

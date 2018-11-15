@@ -392,7 +392,7 @@
   }
 
   @include bp(tn) {
-		h3 {font-size: 1rem;}
+		h3 {font-size: 1rem; margin-bottom: 0;}
 		.full-sec.xtr{padding:35px 0 0px;}
 		.full.mid { padding: 20px 0 10px;
 			.ext {display: none;}
@@ -404,6 +404,26 @@
 			h3{font-size: 15px;}
 			.text{width: 90%;margin-left: 0;}
 			&::before {left:85%; width:14%; }
+	  }
+  }
+
+  @include bp(mb) {
+		.full.mid {
+			.content {width:95%;}
+		}
+
+		.banner { padding:20px 0; margin-top:20px;
+			.text{width: 85%; @include center-block(); text-align: center;}
+			&::before {display: none; }
+	  }
+  }
+
+  @include bp(sm) {
+		.full-sec.xtr{padding:10px 0 0px;}
+
+		.banner { padding:15px 0; margin-top:20px;
+			&::after {top:-5%; left:2%;}
+			.text{width: 90%;}
 	  }
   }
 }
@@ -464,55 +484,23 @@
 
 //****** franchise faq *******//
 .franchise-faqs {
-	.page-body .full-faq p{font-weight: normal;}
-  .top-row {@include sec-default(); padding: 80px 0 50px;
-  	// .top-img, .ttext {display: inline-block; float: left; width: 50%;}
-  	// .ttext {width:40%; margin-top: 7.5%; margin-left: 5%;}
+  .top-row {@include sec-default(); padding: 100px 0 0px;
 		h3 {font-size: 1.2rem; }
-
-
-  	padding-top:100px;
   	.ttext{@include center-block();width:65%; text-align: center;}
   }
 
-  .full-faq {@include sec-default(); padding: 30px 0 60px; display: none;
-  	.uk-accordion{}
-		.uk-accordion-title {color: $pink;}
-		.uk-accordion-content {width: 90%; margin-top:15px; padding: 20px 20px; border-top:$border;}
-
-		.faq-acc {@include sec-default();
-			margin-bottom:90px;
-			position: relative;z-index: 0;
-			// @include sec-bgimage('pets.jpg'); background-size: 50%; background-position: bottom left; min-height:400px;padding-top: 7%;
-			&::before{@include before(); width:50%; @include sec-bgimage('collie.png'); background-size: 45%; }
-			&::after {@include before(); width:350px; height:350px; background-color: $compb; border-radius: 50%; z-index:-2}
-
-			li{width:70%; float: right; padding:0 3%;}
-			&.three{background-position: right center;
-				li{float: left;}
-				&::before{left:50%; background-position: top right;}
-				&::after{left:75%;}
-			}
-		}
+  .bone-border {@include sec-default(); position: relative; z-index: 0; margin:30px auto 20px;
+  	&::before{@include before(); height:20%; border-top:1px solid rgba($compt, .3); border-bottom: 1px solid rgba($compt, .3); top:40%;}
+		.icon {width:40px; @include center-block();}
   }
 
-
   .faq-tabs{@include sec-default(); padding: 50px 0;
-  	// position: relative;z-index: 0;
-  	// &::before{@include after(); width:47%; height: 25%; left:45%; margin-bottom: 50px; background-color: $pink;}
-
 		.uk-tab-bottom, .uk-switcher {display: inline-block; float: left; width:40%;}
 		.uk-tab-bottom {
 			li{margin-bottom: 10px; margin-left: 0; padding-left: 0;}
 			a{text-align: left; font-family: $body; font-weight: normal; color: $tbrown; font-size: 1rem; padding:0;}
 		}
-		// .uk-tab::before {
-	 //    content: "";
-	 //    position: absolute;
-	 //    bottom: 0;
-	 //    left: 20px;
-	 //    right: 0;
-	 //  }
+
 		.uk-tab>.uk-active::before {@include before(); width: 20px; height: 20px; left:-25px; @include sec-bgimage('comp-paw.png'); margin-top:3px;}
 	  .uk-tab>.uk-active>a {border-top: 0; color: $compb; font-weight: $semi;}
 
@@ -522,8 +510,68 @@
 			li{margin-left: 0;}
 			.tab-img1{width:70%; @include center-block(); margin-top: 30px;}
 		}
-
   }
+
+  .faq-acc{@include sec-default(); display: none;
+		h4{font-size: 16px; margin-bottom: 0;}
+		.uk-accordion-content{border-top:1px solid rgba($tbrown,.1); margin-top:10px; padding-top: 10px;
+		p{font-weight: normal; font-size: 15px;}
+		}
+  }
+
+  @media (max-width:1200px) {
+  	.top-row {
+	  	.ttext{width:80%;}
+	  }
+
+	  .faq-tabs {
+	  	.inside{width:90%;}
+	  	.uk-tab-bottom{width:43%;}
+	  	.uk-switcher{width:55%;}
+	  }
+  }
+
+  @include bp(tb) {
+  	.top-row {padding: 70px 0 0px;
+	  	.ttext{width:85%;}
+	  	h3{font-size: 1.1rem}
+	  }
+
+	  .faq-tabs{
+			.uk-tab-bottom{
+				li a {font-size: 15px;}
+			}
+
+			.uk-switcher {
+				h4{font-size:1rem;}
+				p {font-size: 15px;}
+			}
+	  }
+  }
+
+  @include bp(tn) {
+  	.top-row {padding: 50px 0 0px;
+  		h3{font-size: 1rem;}
+  	}
+
+  	.bone-border {margin: 10px auto 30px;}
+
+		.faq-tabs{display: none;}
+		.faq-acc {display:block; padding-bottom: 30px;}
+  }
+
+  @include bp(pl) {
+  	.top-row .ttext{@include sec-default();}
+	}
+
+	@include bp(oc) {
+  	.faq-acc .inside.med{width: 85%;}
+	}
+
+	@include bp(sm) {
+		.top-row {padding-top:20px;}
+  	.faq-acc .inside.med{width: 94%;}
+	}
 }
 
 //******** training **********//
@@ -761,94 +809,3 @@
 
 //****** franchise inquiries *******//
 	// LOCATED IN STATIC_PAGES.SCSS WITH CONTACT PAGE
-
-
-//*********** franchise ***********//
-.franchise {
-  h1, h2, h3{margin:0;}
-
-  .franchise-header {
-    h2{font-weight: $semi;}
-  }
-  .abs-franch {width:250px; right:12%; margin-top:100px;}
-
-
-  .full.franch-tabs{position: relative; z-index: 0;}
-  .uk-tab-bottom.uk-tab { @include sec-default(); position: relative; z-index: 0;
-    background-color: $compt;
-    a{color: $white;}
-  }
-  .uk-tab>* {float:none; margin:0 3%; display: inline-block; margin: 0 1.5%; }
-  .uk-tab>.uk-active>a {color:$compb;}
-  .uk-switcher {padding: 100px 0;}
-
-
-  .full-sec.story {padding:100px 0 30px;}
-  .il-left, .il-right {display: inline-block; float: left; width: 48%;}
-  .il-right {float: right;}
-
-  .details {
-    .fran-blk {display: inline-block; float: left; width: 30%; margin:10px 1.5%;}
-    p {margin-top: 0;}
-    p.tag{margin-bottom: 10px; font-weight: bold;}
-  }
-
-  .collage-sec{@include sec-default(); padding-bottom: 60px;}
-  .block {display: inline-block; float: left; width: 32%;
-    height: 300px; background-color: $f8;
-    background-size: 30%; background-repeat: no-repeat; background-position: bottom right;
-    padding: 50px 20px;
-    &.b2 {margin:0 2%;}
-    &.b3 {float:right;}
-  }
-}
-
-//****** franchise process *******//
-.franchise-process{
-  .franchise-header {padding: 60px 0 90px;
-    h2 {line-height: 1.5em; margin-bottom: 0;}
-    h1 {margin-top: 5px;}
-  }
-
-  .uk-tab-bottom.uk-tab, .process-img {display:inline-block; width: 45%; margin-left: 3%; float:left;}
-  .uk-tab-bottom.uk-tab { padding-top:40px; float:right;
-    a{text-align: left; color:$tbrown;}
-  }
-  .uk-tab>* {
-    // @include sec-default();
-    display: block;
-    padding-top:8px; line-height: 1.6em;
-  }
-  .uk-tab>.uk-active{
-    a {border:0; position: relative; color: $pink;
-      &::before {@include before(); width: 40px; height: 40px; @include sec-bgimage('favicon.png');background-size: 40%; margin-top: 10px; left:-12px;}
-    }
-  }
-
-  .uk-switcher {@include sec-default(); padding: 50px 0;
-    h3{font-weight: bold; font-size: 1.3rem; border-bottom: 1px solid rgba($tbrown, .3); padding-bottom: 2px; margin-bottom: 10px}
-    ul {padding-left:10px;
-      p {margin-bottom: 10px; font-weight: $semi; margin-left: -10px;}
-    }
-    li {margin-bottom: 8px;}
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
