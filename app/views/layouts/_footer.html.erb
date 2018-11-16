@@ -36,7 +36,7 @@
 
 <% @ft_contact = capture do %>
 	<p class="tmargin0">7575 Dr. Phillips Blvd<br> Suite 275<br>Orlando, FL 32819</p>
-	<p><span>Corporate Office Hours:</span><br>Monday - Friday: 8am - 5pm</p>
+	<p class="two"><span>Corporate Office Hours:</span><br>Monday - Friday: 8am - 5pm</p>
 <% end %>
 
 
@@ -44,12 +44,10 @@
 <div class="pre-foot">
 	<div class="inside med2">
 		<div class="contact-box phone">
-			<p><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></p>
+			<p><a href="tel:4073559210"><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></a></p>
 		</div>
 
-		<div class="contact-box email">
-			<!-- <a href="">email@woofgangbakery.com</a> -->
-		</div>
+		<!-- <div class="contact-box email"></div> -->
 
 		<div class="contact-box social">
 			<ul class="social">
@@ -81,10 +79,11 @@
 			</div>
 
 			<div class="fbs fb4">
-				<!-- <h5>Location</h5> -->
 				<h5>Woof Gang Corporate:</h5>
 				<div class="title-line sm"></div><div class="clearfix"></div>
 				<%= @ft_contact %>
+				<p class="mod-link"><a uk-toggle="target: #modal-media">Media Inquiries</a></p>
+				<p class="mod-link"><a uk-toggle="target: #modal-vendor">Vendor Relations</a></p>
 			</div>
 		</div>
 
@@ -107,7 +106,19 @@
 
 		    <li class="acc-li">
 	        <a class="uk-accordion-title" href="#"><h5>Contact</h5></a>
-	        <div class="uk-accordion-content"><%= @ft_contact %></div>
+	        <div class="uk-accordion-content"><%= @ft_contact %>
+
+		        <p><span>Media Inquiries</span><br>
+		        	Woof Gang Bakery, Inc.<br>
+	      	    Cara Allen<br>
+	      	    cara@woofgangbakery.com<br>
+	      	    <a href="tel:4073559210">407-355-9210</a> ext: 104
+		        </p>
+
+	        	<p><span>Got a Great Product? Contact Our Vendor Relations:</span><br>
+	    				sam@woofgangbakery.com
+	        	</p>
+	        </div>
 		    </li>
 			</ul>
 		</div>
@@ -118,4 +129,25 @@
 			<div class="hs"><p>Design by <%= link_to "High Seas Design House.", 'https://hsdesignhouse.com', target: '_blank' %> </p></div>
 		</div>
 	</div>
+</div>
+
+
+<div id="modal-media" class="ft-modal" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <div class="uk-modal-header"><h3>Media and News Inquiries:</h3></div>
+
+    <p>Woof Gang Bakery, Inc.<br>
+    Cara Allen<br>
+    cara@woofgangbakery.com<br>
+    <a href="tel:4073559210">407-355-9210</a> ext: 104</p>
+  </div>
+</div>
+
+<div id="modal-vendor" class="ft-modal" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <div class="uk-modal-header"><h3>Got a Great Product?<br>Contact our Vendor Relations:</h3></div>
+    <p>sam@woofgangbakery.com</p>
+  </div>
 </div>
