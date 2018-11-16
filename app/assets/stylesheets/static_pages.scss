@@ -477,37 +477,122 @@ ul.paw {padding-left: 0;
 
     .title {@include sec-default(); text-align: center; padding: 50px 0 0px;}
 
-    .back-link, .dets, .admin-side {display: inline-block; float: left; width: 25%;}
-    .dets {width:50%;}
+    // .back-link, .dets, .admin-side {display: inline-block; float: left; width: 25%;}
+    // .dets {width:50%;}
+    .back-link, .dets, .admin-side {display: inline-block; float: left; width: 20%;}
+    .dets {width:60%;}
 
     .back-link {padding-left: 20px;margin-top: 250px;
       .text-link {font-size: 16px;}
     }
-    .admin-side{margin-top: 260px; padding-right: 20px;
+    .admin-side{float:right;margin-top: 260px; padding-right: 20px;
       .actions {float: right;}
       .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px 15px; font-weight: $semi;}
       .actions.coords{color:$red; font-weight: $semi; margin-top: 10px;}
     }
 
     .location-body {@include sec-default(); background-color: $white; box-shadow: 0px 1px 10px rgba($black, .2); padding-bottom: 20px;}
-    // .image{@include sec-default(); background-color: $f8; margin-bottom:20px;
-    //   img{width:50%; @include center-block();}
-    // }
-    .image{@include sec-default(); background-color: $f8; margin-bottom:20px;
-      // img{width:50%; @include center-block();}
+    .image{@include sec-default(); background-color: $f8;
+      //img{width:50%; @include center-block();}
     }
-    .location-dets {width:75%;@include center-block();
+
+    .location-dets {
+      // width:75%;@include center-block();
+      @include sec-default(); padding-top:20px;
+      .inside.med{margin-left:11%;}
+
       hr.one{margin-top: 5px;}
       hr.two{margin-top: 15px;}
       .full.top {
-        // margin-bottom: 10px; border-bottom: 1px solid rgba($tbrown, .15);
         h3, .btn-row{display: inline-block; width:60%; float: left; padding-bottom: 0; margin-bottom: 0;}
         h3{margin-top: 12px;}
         .btn-row{width:25%; float: right;}
         .woof-link {width:auto;padding:5px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 13px; background-color: $compb; float: right;}
       }
-      .left, .right {display: inline-block; float: left; width:50%; margin-left: 3%; }
-      .right {float: right;width:43%;margin-left:0; }
+      .left, .right {display: inline-block; float: left; width:50%; }
+      .right {float: right;width:50%; text-align: right;
+        .tag-icon {float: right;}
+      }
+    }
+  }
+
+  @media (max-width:1200px) {
+    .location-page .location-dets {
+      .inside.med{ width:80%;margin-left:8%;}
+    }
+  }
+
+  @include bp(tb) {
+    h2{font-size:1.4rem;}
+    h1{font-size: 1.7rem;}
+
+    .location-page{
+      &::before {height:385px;}
+      .back-link {padding-left: 10px;
+        .text-link {font-size: 14px;}
+      }
+      .admin-side{padding-right: 10px;
+        .actions a{font-size: 13px; padding:7px 20px;}
+      }
+
+      .location-dets{
+        .inside.med{ width:85%;margin-left:6%;}
+        .full.top {
+          h3{width:65%; font-size: 1.1rem;}
+          .btn-row{width:35%;}
+        }
+
+        .left.one, .right.one {@include sec-default(); text-align: left;}
+
+        .left, .right {width:50%; }
+        .right {float: right;width:50%; text-align: right;
+          .tag-icon {float: right;}
+        }
+      }
+    }
+  }
+
+  @include bp(tn) {
+    h2{font-size: 1.25rem;}
+    h1{font-size: 1.5rem;}
+
+    .location-page {
+      .title {padding:25px 0 0;}
+      .back-link, .admin-side {width: 35%; margin:0px 0 10px; padding: 0;}
+      .back-link {margin-left:7%;}
+      .admin-side {margin-right: 7%;}
+
+      .dets {width:85%; @include center-block();}
+    }
+  }
+
+  @include bp(oc) {
+    h2{font-size: 1.1rem;}
+    h1{font-size: 1.35rem;}
+
+    .location-page {
+      .title {padding:15px 0 0;}
+      .back-link, .admin-side {width: 40%; margin:0px 0 10px; padding: 0;}
+      .back-link {margin-left:5%;}
+      .admin-side {margin-right: 5%;}
+
+      .dets {width:90%;}
+      .location-dets{
+        .full.top h3{font-size: 1rem;}
+      }
+    }
+  }
+
+  @include bp(sm) {
+    .location-page{
+      .location-dets{padding-top:10px;
+        .full.top{text-align: center;
+          h3, .btn-row{@include sec-default();
+            .woof-link {float:none;}
+          }
+          hr.one {margin-top: 15px;}
+        }
+      }
     }
   }
 }

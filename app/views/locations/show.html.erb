@@ -14,6 +14,13 @@
  			<% end %>
  		</div>
 
+ 		<% if user_signed_in? && current_user.admin? %>
+ 			<div class="admin-side">
+ 				<div class="actions"><small><%= link_to("Edit Location (#{@location.id})", edit_location_path(@location)) %></small></div>
+ 				<% if @location.longitude == nil %><div class="actions coords">**<small>Coordinates Missing**</small></div><% end %>
+ 			</div>
+ 		<% end %>
+
 		<div class="dets">
 		 	<div class="location-body">
 				<div class="image">
@@ -21,69 +28,64 @@
 				</div>
 
 				<div class="location-dets">
-					<div class="full top">
-						<h3><%= @location.ntitle %> Location Details</h3>
+					<div class="inside med">
+						<div class="full top">
+							<h3><%= @location.ntitle %> Location Details</h3>
 
-						<div class="btn-row">
-							<a href="<%= @location.direct_link %>" target="_blank" class="woof-link">Get Directions </a>
-						</div>
-						<div class="clearfix"></div><hr class="one">
-					</div>
-
-					<div class="left">
-						<div class="cat address">
-							<p class="addr"><%= @location.street_address_one.titleize %><br>
-							<% if @location.street_address_two %>
-								<span class="addr2"><%= @location.street_address_two.titleize %></span>
-							<% end %>
-							<%= @location.city %>, <%= @location.state %> <%= @location.zip %></p>
-						</div>
-					</div>
-
-					<div class="right">
-						<div class="cat phone">
-							<!-- <p><a href="tel: <%= @location.phone %>"><%= @location.phone %></a></p> -->
-							<p><a href="tel:<%= @location.phone %>"><%= number_to_phone(@location.phone, delimiter: '-') %></a></p>
-						</div>
-
-						<div class="cat email">
-							<p><%= @location.email_address %></p>
-						</div>
-					</div>
-					<div class="clearfix"></div><hr class="two">
-
-					<div class="left two">
-						<% if @location.hours %>
-							<div class="cat hours">
-								<p class="hd">Hours of Operation:</p>
-								<p>
-									<% @location.c_hours.each do |c_hours| %>
-										<%= c_hours %><br>
-									<% end %>
-								</p>
+							<div class="btn-row">
+								<a href="<%= @location.direct_link %>" target="_blank" class="woof-link">Get Directions </a>
 							</div>
-						<% end %>
-					</div>
+							<div class="clearfix"></div><hr class="one">
+						</div>
 
-					<div class="right two">
-						<div class="full cat tags">
-							<p class="hd">Store Services:</p>
-							<% @location.tag_split.each do |tag| %>
-								<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
-									<span class="tag-img"></span>
-								</button>
+						<div class="left one">
+							<div class="cat address">
+								<p class="addr"><%= @location.street_address_one.titleize %><br>
+								<% if @location.street_address_two %>
+									<span class="addr2"><%= @location.street_address_two.titleize %></span>
+								<% end %>
+								<%= @location.city %>, <%= @location.state %> <%= @location.zip %></p>
+							</div>
+						</div>
+
+						<div class="right one">
+							<div class="cat phone">
+								<!-- <p><a href="tel: <%= @location.phone %>"><%= @location.phone %></a></p> -->
+								<p><a href="tel:<%= @location.phone %>"><%= number_to_phone(@location.phone, delimiter: '-') %></a></p>
+							</div>
+
+							<div class="cat email">
+								<p><%= @location.email_address %></p>
+							</div>
+						</div>
+						<div class="clearfix"></div><hr class="two">
+
+						<div class="left two">
+							<% if @location.hours %>
+								<div class="cat hours">
+									<p class="hd">Hours of Operation:</p>
+									<p>
+										<% @location.c_hours.each do |c_hours| %>
+											<%= c_hours %><br>
+										<% end %>
+									</p>
+								</div>
 							<% end %>
+						</div>
+
+						<div class="right two">
+							<div class="full cat tags">
+								<p class="hd">Store Services:</p>
+								<% @location.tag_split.each do |tag| %>
+									<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+										<span class="tag-img"></span>
+									</button>
+								<% end %>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<% if user_signed_in? && current_user.admin? %>
-			<div class="admin-side">
-				<div class="actions"><small><%= link_to("Edit Location (#{@location.id})", edit_location_path(@location)) %></small></div>
-				<% if @location.longitude == nil %><div class="actions coords">**<small>Coordinates Missing**</small></div><% end %>
-			</div>
-		<% end %>
 	</div>
 </div>
