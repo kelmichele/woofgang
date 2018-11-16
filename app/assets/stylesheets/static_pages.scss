@@ -696,6 +696,7 @@ ul.paw {padding-left: 0;
   }
 
   .top-box {@include sec-default(); padding: 100px 0 50px;
+    .bone-border{display: none;}
     .intro{@include sec-default(); padding: 0 8% 40px; text-align: center;}
     h3{font-size: 1.4rem; }
 
@@ -799,16 +800,17 @@ ul.paw {padding-left: 0;
 
     .top-box {padding: 50px 0 35px;
       .inside.med{width:90%;}
-      .clearfix {margin-bottom: 0;}
-      .tb-box {
-        &.one, &.three, &.two {float: left; width: 85%;}
+      .tb-box {margin-bottom: 0;
+        &.one, &.three, &.two {float: left; width: 90%;}
         &.two {float: right;}
 
         .img-box{width:20%; }
         .text{margin-top: 15px; width: 80%; margin-left: 0px;
-          &::before {width:160px; height:160px; left:-15%; top:-12%;}
+          &::before {width:160px; height:160px; left:-15%; top:-10%;}
+          h4{padding-top:10px; font-size: 17px;}
         }
       }
+      .clearfix.space {margin-top: 35px;}
     }
 
     .banner {padding:30px 0 50px;
@@ -826,6 +828,59 @@ ul.paw {padding-left: 0;
       }
       .left p {margin-bottom: 16px;}
       .woof-link {font-size:15px; padding:7px 20px;}
+    }
+  }
+
+  @include bp(mb) {
+    .top-box {padding: 50px 0 0px;
+      .tb-box {margin-bottom: 30px;
+        .text::before { top:-5%;}
+        .text h4{font-size: 16px;}
+      }
+      .clearfix.space {margin-top:10px;}
+    }
+
+    .banner {padding:20px 0 35px;}
+    .layer-sec {
+      .inside.med2 {width: 90%;}
+      .intro p{font-size: 15px; margin-bottom: 10px;}
+    }
+  }
+
+  @include bp(sm) {
+    .pup-header {
+      .full{background-image: none; padding:15px 0 5px;}
+      .inside.med2 {width:90%;}
+      .tbox { @include sec-default();text-align: center;}
+      h1{font-size: 1.25rem;}
+      h2{ font-size:15px;}
+    }
+
+    .top-box {padding: 15px 0 0px;
+      .bone-border{display: block; margin:6px 0 20px;}
+
+      .tb-box {margin-bottom: 0px;
+        &.one, &.three, &.two {@include sec-default();}
+        .img-box{display: none;}
+        .text{@include sec-default();
+          margin-top:0;
+          &::before{left:-15px;top:0;width:130px; height:130px; display: none;}
+        }
+      }
+      .clearfix.space {margin-top:0px;}
+    }
+
+    .banner .full{text-align: center; padding:20px 0;
+      &::after {top:-4%; left:2%;}
+    }
+
+    .layer-sec {
+      .inside.med2 {width: 90%;}
+      .left {@include sec-default(); text-align: center;
+        img{width:75%; @include center-block(); margin-bottom: 20px;}
+        .text{@include sec-default();}
+      }
+      .right{display: none;}
     }
   }
 }
