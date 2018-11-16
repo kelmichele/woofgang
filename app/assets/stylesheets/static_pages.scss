@@ -117,6 +117,13 @@ ul.paw {padding-left: 0;
   a{font-family: $body; text-transform: none; font-size: 17px; font-weight: $semi;}
 }
 
+.pagination {@include sec-default(); text-align: center; margin-top: 0px;
+  ul {padding-left: 0;}
+  li {display: inline-block; float: none; margin: 0 6px;}
+  li.active {font-weight: bold; text-decoration: underline;}
+  a{font-size: 14px;}
+}
+
 //*********************************//
 //************* home **************//
 //*********************************//
@@ -308,7 +315,9 @@ ul.paw {padding-left: 0;
     .full::before {background-color: rgba($compb,.9);}
     .tbox {@include sec-default();}
 
-    button.wl-uk{position:absolute; left: 80%; width:15%; margin-top: 60px; border:1px solid rgba($white, .3);}
+    button.wl-uk{position:absolute; left: 80%; width:15%; margin-top: 60px;
+      background-color: $white; color:$pink; border:1px solid rgba($pink, .3); text-shadow: none;
+    }
     .uk-dropdown {width:45%; min-width: auto;background-color: $f9;
       .manu, .import {display: inline-block; width:40%; float:left;}
       .woof-link {@include sec-default(); margin: 6px 0;}
@@ -408,7 +417,6 @@ ul.paw {padding-left: 0;
   .loclist{
     position: relative; z-index: 1; @include sec-default();
     margin-top: -60px;
-    // .inside {width:72%;@include center-block();}
     .inside {width:72%;@include center-block();}
   }
 
@@ -471,6 +479,9 @@ ul.paw {padding-left: 0;
       h1{font-size: 1.7rem;}
       h2 {font-size: 1.2rem;}
       button.wl-uk{width:18%; margin-top: 40px; font-size: 15px;}
+      .uk-dropdown{width:60%;
+        .woof-link {padding:6px 15px; font-size:14px;}
+      }
     }
 
     .search-sec{
@@ -504,10 +515,10 @@ ul.paw {padding-left: 0;
       h1{font-size: 1.5rem;}
       h2 {font-size: 1rem;}
       button.wl-uk{position:relative; width: 25%; margin-top: 0px; margin-bottom: 15px; font-size: 14px; left:0; @include center-block();}
-      .uk-dropdown {width:60%;
-        .woof-link {font-size: 14px;}
-      }
+      .uk-dropdown {width:60%;}
     }
+    .full-search {padding-bottom: 20px;}
+
     .search-sec{
       .inside.lg{width:98%;}
       .form-control {width:87%;}
@@ -527,8 +538,9 @@ ul.paw {padding-left: 0;
     .location-bx {
       min-height: 335px;
       width:48%; margin:10px 1% 20px;
-
     }
+
+    .pagination { margin-top: 10px;}
   }
 
   @media (max-width: 767px) {
@@ -563,6 +575,7 @@ ul.paw {padding-left: 0;
     .pup-header {
       .inside.narrow{width:85%;}
       button.wl-uk{ width: 40%; }
+      .uk-dropdown {width:95%; left:5% !important; padding:15px;}
     }
 
     .search-sec{
@@ -596,8 +609,17 @@ ul.paw {padding-left: 0;
   }
 
   @include bp(sm) {
-    .pup-header .inside.narrow{width:95%;}
+    .pup-header {
+      .inside.narrow{width:95%;}
+      .uk-dropdown {
+        .manu, .import {@include sec-default();
+          p{font-size: 15px; }
+        }
+        .manu{margin-bottom:15px;}
+      }
+    }
 
+    .location-bx{@include sec-default(); min-height: auto;}
   }
 }
 
@@ -748,11 +770,7 @@ ul.paw {padding-left: 0;
   }
 }
 
-.pagination {@include sec-default(); text-align: center; margin-top: 10px;
-  li {display: inline-block; float: none; margin: 0 6px;}
-  li.active {font-weight: bold; text-decoration: underline;}
-  a{font-size: 14px;}
-}
+
 
 //*********************************//
 //*********** services ***********//
