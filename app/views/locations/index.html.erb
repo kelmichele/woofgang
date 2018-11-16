@@ -62,7 +62,7 @@
 		    <div class="text">
 		    	<!-- <%= link_to "Move Map & click here to redo search within bounds", "#", id: "redo-search" %>  -->
 		    	<%= link_to "#", id: "redo-search" do %>
-		    		Move Map & click here to redo search within bounds <span uk-icon="icon: refresh;"></span>
+		    		Refresh Search Within Map Bounds <span uk-icon="icon: refresh;"></span>
 	    		<% end %>
 		    </div>
 		  </div>
@@ -90,27 +90,29 @@
 							<% end %>
 
 							<div class="cat address">
-								<%= location.street_address_one.titleize %>
-								<% if location.street_address_two %>
-									<!-- <span class="addr2"><%= location.street_address_two.titleize %></span> -->
-									, <span class="addr"><%= location.street_address_two.titleize %></span>
+								<%= location.street_address_one.titleize %><% if location.street_address_two %>,
+								<span class="addr"><%= location.street_address_two.titleize %></span>
 								<% end %>
 								<br><%= location.city %>, <%= location.state %> <%= location.zip %>
 							</div>
 
 							<div class="cat phone"><a href="tel:<%= location.phone %>"><%= number_to_phone(location.phone, delimiter: '-') %></a></div>
-							<!-- <div class="cat phone"><%= number_to_phone(location.phone, delimiter: '-') %></div> -->
 
-							<div class="cat email"><%= location.email_address %></div>
-
-							<div class="cat tags">
-								<span>Store Services:</span><br>
-								<% location.tag_split.each do |tag| %>
-									<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
-										<span class="tag-img"></span>
-									</button>
-								<% end %>
+							<div class="cat email">
+								<a class="fw-mail" href="mailto:<%= location.email_address %>"><%= location.email_address %></a>
+								<a class="sm-mail" href="mailto:<%= location.email_address %>"><span  uk-icon="icon: mail;"></span></a>
 							</div>
+
+							<% if location.tags.count > 0 %>
+								<div class="cat tags">
+									<span>Store Services:</span><br>
+									<% location.tag_split.each do |tag| %>
+										<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+											<span class="tag-img"></span>
+										</button>
+									<% end %>
+								</div>
+							<% end %>
 
 							<div class="btn-row">
 								<%= link_to "Store Details", location_path(location), class: 'woof-link' %>
