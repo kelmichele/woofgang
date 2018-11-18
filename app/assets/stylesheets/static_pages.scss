@@ -186,7 +186,7 @@ ul.paw {padding-left: 0;
       margin-bottom: 10px; padding: 10px;
       background-size: cover;background-position: bottom right; background-repeat: no-repeat;
 
-      p,a{color: $white; @include tshadowl(rgba($black, .3)); font-size: 1.3rem; font-weight: $semi; text-transform: uppercase;}
+      p,a{color: $white; @include tshadowl(rgba($black, .5)); font-size: 1.3rem; font-weight: $semi; text-transform: uppercase;}
 
       &.opp {width:35%; height: 380px; text-align: center;
         // background-image:url(image_path('ride.jpg'));
@@ -196,7 +196,7 @@ ul.paw {padding-left: 0;
       &.faq {width:31.5%; height:200px; height:170px;margin: 0 1% 10px;
         // background-image:url(image_path('shower.jpg')); background-position: center right;
         background-image:url(image_path('us2.jpg')); background-position: center right;
-        p{position: absolute; bottom: 5px; margin-bottom: 0;}
+        p{position: absolute; bottom: 0px; margin-bottom: 0; }
       }
 
       &.invest {width:31.5%; height:200px; height:170px; text-align: center;
@@ -209,7 +209,7 @@ ul.paw {padding-left: 0;
         background-image:url(image_path('us-new2.jpg'));background-position: center left;
         // background-image:url(image_path('us-new3.jpg'));background-position: center left;
         // background-image:url(image_path('uss1.jpg'));background-position: center left;
-        p{margin-top:26%; }
+        p{position: absolute; bottom: 5px; margin-bottom: 0; }
       }
     }
 
@@ -239,16 +239,9 @@ ul.paw {padding-left: 0;
     .right {width:25%; float: right; margin-top: 15px;}
     .serve-tl {@include sec-default(); margin:15px 0; position: relative;z-index: 0;
       p, .icon {display: inline-block; margin:0; font-weight: $semi; float: left;}
-      // p{margin-left:12px;}
       p{float: none; }
       .icon {margin-right: 10px;}
       img {width:20px; opacity: .6;}
-
-
-      // &::before{@include before(); width:40px; height: 40px; border-radius: 50%; background-color: rgba($pink, .6); left: -10px; top:-8px;}
-      // &.ss p, &.vet p{margin-left: 0; padding-right: 12px;}
-      // &.ss::before{left: 57%;}
-      // &.vet::before{left: 42%; top:-6px;}
     }
 
     .wgb-slides {
@@ -294,12 +287,70 @@ ul.paw {padding-left: 0;
   }
 
   @include bp(nn) {
-    .hs-intro {
-      background-image:url(image_path('adobe-sneak-flip.png')); background-position: left bottom;
-    }
+    .hs-intro {background-image:url(image_path('adobe-sneak-flip.png')); background-position: left bottom;}
     .hs-franchise {
       .inside.med2 {width:80%;}
+      .fblock {
+        p,a{font-size: 1.2rem;}
+      }
     }
+  }
+
+  @include bp(tn) {
+    .hs1-hero .inside {width:90%;
+      h1 {font-size: 1.7rem;}
+    }
+
+    .hs-intro {padding:40px 0 40px;
+      .inside.med {width:90%;}
+      .left {margin-top:0; @include sec-default(); text-align: center; position: relative; z-index: 1;}
+      .right{width:85%;@include center-block();
+        &::before{background-size: 25%; background-position: bottom center;}
+      }
+      h3{font-size: 1.2rem;}
+      p{font-size: 15px;}
+    }
+
+    .hs-franchise {padding:30px 0 15px;
+      .inside.med2 {width:90%;}
+      .fblock {z-index: 0;
+        &::before{@include before(); background-color: rgba($black,.3);}
+        p,a{font-size: 1rem;}
+      }
+
+      .text, .text2{
+        p{font-size: 16px;margin-top: 5px;}
+        p.span {font-size: 17px;}
+        h2{font-size: 1.4rem; margin-bottom: 10px;}
+      }
+
+      .text2 { padding:30px 5% 0;}
+    }
+
+    .hs4-locations{
+      h4{font-size: 1.4rem;width:70%;}
+      .btn-hlf {width:30%;margin-top: 6px;}
+      .woof-link {font-size: 14px;}
+    }
+
+    .hs-serve{padding: 25px 0 30px;
+      h3{font-size: 1.3rem;}
+      .intro {@include sec-default();
+        p{font-size: 15px;}
+      }
+
+      .left{width:67%;}
+      .right {width:31%; margin-top: 15px;}
+      .serve-tl {margin:15px 0;
+        .icon {margin-right: 10px;}
+        img {width:15px; margin-top:5px;}
+        p{font-size: 16px;}
+      }
+    }
+  }
+
+  @include bp(pl) {
+
   }
 }
 
