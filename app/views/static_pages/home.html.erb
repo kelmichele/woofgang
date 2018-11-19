@@ -81,22 +81,6 @@
 	</div>
 
 	<div class="blocks">
-		<div class="left">
-			<div class="wgb-slides" uk-slider="autoplay: true">
-		    <ul class="uk-slider-items">
-					<li><%= image_tag('location-img.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('packaged-treats.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('trim.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('toy-sec.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('grooming.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('treat-sec.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('wilmington-exterior.jpg', class: 'img-responsive') %></li>
-		    </ul>
-
-        <ul class="uk-slider-nav uk-dotnav uk-flex-center"></ul>
-			</div>
-		</div>
-
 		<div class="right">
 			<%= link_to grooming_path, class: 'serve-tl' do %>
 				<div class="icon"><%= image_tag('ptag-groom.png', class: 'img-responsive') %></div>
@@ -122,7 +106,22 @@
 				<div class="icon"><%= image_tag('ptag-daycare.png', class: 'img-responsive') %></div>
 				<p>Doggie Daycare </p>
 			<% end %>
+		</div>
 
+		<div class="left">
+			<div class="wgb-slides" uk-slider="autoplay: true">
+		    <ul class="uk-slider-items">
+					<li><%= image_tag('location-img.jpg', class: 'img-responsive') %></li>
+					<li><%= image_tag('packaged-treats.jpg', class: 'img-responsive') %></li>
+					<li><%= image_tag('trim.jpg', class: 'img-responsive') %></li>
+					<li><%= image_tag('toy-sec.jpg', class: 'img-responsive') %></li>
+					<li><%= image_tag('grooming.jpg', class: 'img-responsive') %></li>
+					<li><%= image_tag('treat-sec.jpg', class: 'img-responsive') %></li>
+					<li><%= image_tag('wilmington-exterior.jpg', class: 'img-responsive') %></li>
+		    </ul>
+
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center"></ul>
+			</div>
 		</div>
 	</div>
 </div>

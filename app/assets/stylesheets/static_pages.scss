@@ -350,7 +350,95 @@ ul.paw {padding-left: 0;
   }
 
   @include bp(pl) {
+    .hs-intro {padding:25px 0 40px;
+      .inside.med {width:90%;}
+      .right{width:90%; text-align: center;
+        &::before{background-size: 25%; background-position: bottom center;}
+      }
+      h3{font-size: 1.1rem;}
+      p{margin-bottom: 0; margin-top:8px;}
+    }
 
+    .hs-franchise {padding:20px 0 0px;
+      .inside.med2 {width:90%;}
+      .fblock {
+        p,a{font-size: 15px;}
+      }
+
+      .text, .text2{
+        p{font-size: 15px;}
+        p.span {font-size: 16px;}
+        h2{font-size: 1.2rem; }
+      }
+      .text2 { padding:20px 5% 0;}
+    }
+
+    .hs4-locations{
+      .inside.med2{width:85%;}
+      h4{font-size: 1.2rem;width:70%; }
+      .btn-hlf {width:30%;margin-top: 0px; }
+    }
+
+    .hs-serve{
+      h3{font-size: 1.2rem;}
+
+      .left{width:67%;}
+      .right {width:31%; margin-top: 15px;}
+      .serve-tl {margin:8px 0;
+        .icon {margin-right: 10px;}
+        img {width:15px; margin-top:5px;}
+        p{font-size: 15px;}
+      }
+
+      .wgb-slides {
+        li {
+          img {height:280px;}
+        }
+      }
+    }
+  }
+
+  @include bp(oc) {
+    .hs-intro {padding:20px 0 35px;
+      background-image: none;
+      .right{@include sec-default();}
+      h3{margin-bottom: 7px;}
+      p{margin-bottom: 0; margin-top:8px;}
+    }
+
+    .hs-franchise {padding:20px 0 0px;
+      .inside.med2 {width:90%;}
+      .fblock {
+        &.opp, &.invest, &.faq, &.inq{height:150px; float:left; margin:5px 0;}
+        &.opp, &.inq {width:44%; }
+        &.faq, &.invest{width:55%;}
+        &.inq, &.faq {float: right;}
+      }
+
+      .text, .text2{
+        p.span {font-size: 15px;}
+      }
+      .text2 { padding:20px 3% 0;}
+    }
+
+    .hs4-locations{
+      .inside.med2{width:90%;}
+      h4{font-size: 1.1rem;width:70%;}
+      .btn-hlf {width:auto;}
+    }
+
+    .hs-serve {
+      h3{font-size: 1.1rem;}
+      .intro p{margin-bottom: 0;}
+      .right{width:50%;@include center-block(); padding: 0 10%;}
+      .left{@include sec-default(); margin-top: 30px;padding: 0 5%;}
+      .blocks{margin-top:0;}
+      .serve-tl {
+        .icon {margin-right: 10px;}
+        img {width:15px; margin-top:5px;}
+        p{font-size: 15px;}
+      }
+    }
   }
 }
 
