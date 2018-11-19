@@ -27,7 +27,7 @@
 	    <%= f.text_area :content %>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group final">
 		  <div class="actions">
 		    <%= f.submit(@post.new_record? ? "Create new post" : "Update post", class: "action woof-link submit") %>
 		    <%= link_to("[ Cancel ]", posts_path, :class => 'action woof-link cancel') %>

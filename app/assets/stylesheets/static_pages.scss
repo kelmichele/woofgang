@@ -511,6 +511,15 @@ ul.paw {padding-left: 0;
       select {height:130px; padding: 5px 0;}
       option {margin-bottom: 3px;padding: 1px 7px;}
     }
+
+    @include bp(tb) {
+      .pup-header .full {padding:20px 0;}
+      h1 {font-size: 1.5rem;}
+      .full-sec {padding:15px 0 30px;}
+
+      .forminfo {@include sec-default(); margin:5px 0 20px;
+      }
+    }
   }
 }
 
@@ -1977,12 +1986,12 @@ ul.paw {padding-left: 0;
 //*********** users ***********//
 //*********************************//
 .registrations, .sessions, .passwords {
-  .ipage-header {background-color: rgba($pink, .8); text-align: left; padding:15px 0;}
+  .ipage-header {background-color: rgba($pink, .8); text-align: left; padding:15px 0 0px;}
   h1{color: $white; @include tshadowl(rgba($black,.2)); margin:0;}
-  .inside {width:50%;}
+  .page-body .inside {width:50%;}
 
   form {
-    .field {@include sec-default();margin-bottom: 15px;}
+    .field {@include sec-default();margin-bottom: 25px;}
 
     .field.check {
       input[type="checkbox"], label {display: inline-block; float: left; width:auto;}
@@ -1992,7 +2001,26 @@ ul.paw {padding-left: 0;
     input[type="submit"] {padding:7px 25px; background-color: $pink; text-align: center; color: $white; margin:5px 0 15px;
       @include tshadowl(rgba($black,.2));font-size: 15px; height:auto; font-weight: $semi; font-family: $body; width:auto;
     }
+
+    .cancel {font-weight: $semi; color: $red; float: right;}
   }
+
+  @include bp(tb) {
+    h1{font-size: 1.5rem;}
+    h2{font-size: 1.2rem;}
+    .full-sec{padding:15px 0 30px;}
+    .page-body .inside {width:80%;}
+  }
+
+  @include bp(tn) {
+    h1{font-size: 1.3rem;}
+    h2{font-size: 1rem;}
+  }
+}
+
+.sessions.show {
+  h4{margin-bottom: 0; font-weight: bold; border-bottom: $border; padding-bottom:6px; color:$brown;}
+  h3{margin:5px 0 10px; font-size: 1.3rem; font-weight: $semi;}
 }
 
 
@@ -2025,10 +2053,26 @@ ul.paw {padding-left: 0;
   input.submit {background-color: $compb;}
 }
 
-.posts.edit {
+.posts.edit, .posts.new {
   .form-group.title {margin-top: 30px;}
   .sub-actions {position: absolute; width: 15%; left:83%;
     .woof-link {@include sec-default(); margin-bottom:20px;}
+  }
+
+  @include bp(tb) {
+    .full-sec {padding: 0;
+      .inside.med{width:85%;}
+    }
+    .blog-form {@include sec-default();}
+
+    .form-group.final {margin-bottom: 0px;}
+    .sub-actions { position:relative; @include sec-default(); left:0;
+      .woof-link{font-size: 14px; float: right; width:auto;}
+    }
+  }
+
+  @include bp(tn) {
+    .full-sec .inside.med{width:90%;}
   }
 }
 
@@ -2229,6 +2273,7 @@ ul.paw {padding-left: 0;
     }
   }
 }
+
 
 //*********************************//
 //***** contact and inquiries *****//
