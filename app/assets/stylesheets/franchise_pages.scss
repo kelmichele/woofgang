@@ -226,9 +226,7 @@
 
 //****** franchisees *******//
 .franchisees {
-
 	.intro-row{@include sec-default(); padding: 100px 0;text-align: center;
-
 		h3 {font-size: 1.15rem;}
 		span{ color: $pink; font-weight: $semi;}
 
@@ -245,14 +243,8 @@
 			position: relative; z-index: 0; padding: 15px 0;
 			&::before {@include after(); background-color: rgba($compt, .7);  bottom:0;}
 			h4{color: $white; margin-top:10px;}
-			// .image{position: relative; z-index: 2;}
-			// .text{position: relative; z-index: 0; padding-top:5px;
-				// &::before {@include before(); width:231%; left:-90%; height:106%; background-color: rgba($compt, .7); }
-			// }
-
 			.image {position: absolute; width:20%; top:-26%;}
 			.text{width:70%; margin-top: 0; padding-top:0;}
-
 		}
 
 		&.two{
@@ -267,6 +259,22 @@
 	.profile {padding-left: 0;
 		li{margin-bottom: 15px;
 			span {font-weight: bold;}
+		}
+	}
+
+	@include bp(su) {
+		.fr-details{
+			&.one {
+				&::before {@include after(); background-color: rgba($compt, .7);  bottom:0;}
+				.image {position: absolute; width:20%; top:-20%;
+					img{position: relative; height: 450px;}
+				}
+				.text{width:70%; margin-top: 0; padding-top:0;}
+			}
+
+			&.two{padding:70px 0 35px;
+				.image{width:25%;  margin-top: 0;}
+			}
 		}
 	}
 
@@ -373,6 +381,11 @@
     &::after {@include before(); border:1px solid rgba($pink, .1); top:-8%; left:1%; height:98%}
   }
 
+  @include bp(su) {
+  	h3{width:90%;}
+  	.full-sec.xtr .inside.one{width:1240px;}
+  }
+
   @include bp(tb) {
 		h3 {font-size: 1.1rem; width:95%;}
 		.full-sec.xtr{padding:55px 0 0px;
@@ -444,6 +457,12 @@
 		}
 	}
 
+	@include bp(su) {
+		.idets .inside.med{width:1155px;}
+		.intro {width: 48%; margin-left: 5%;}
+		ul.inv{width:46%;}
+	}
+
 	@include bp(tb) {
 		.idets {padding: 70px 0 20px;}
 	}
@@ -512,6 +531,10 @@
 		.uk-accordion-content{border-top:1px solid rgba($tbrown,.1); margin-top:10px; padding-top: 10px;
 		p{font-weight: normal; font-size: 15px;}
 		}
+  }
+
+  @media (min-width:1600px) {
+  	.faq-tabs .inside {width:70%;}
   }
 
   @media (max-width:1200px) {
@@ -607,6 +630,21 @@
 		.text, .image {display: inline-block; float: left;}
 		.text {width:60%;margin-top:2%; margin-left: 5%}
 		.image{width:20%; float: right; margin-right: 12%;}
+	}
+
+	@include bp(su) {
+		.ts1{text-align: center;}
+		ul.paw.one, ul.paw.two{text-align: left; float: none; width:auto;}
+
+		.support-boxes {
+			.inside.lg{width:80%;}
+			.left{margin-left: 0;}
+		}
+
+		.ts-last{
+			.inside.med2 {width:60%;}
+			.image{width:17%;}
+		}
 	}
 
 	@include bp(dt) {
@@ -734,6 +772,10 @@
 		.dets {width:93%; float: right;}
 		h4{font-weight: $semi; margin-bottom: 0; color: $compt;}
 		p{margin-top: 5px;}
+	}
+
+	@include bp(su) {
+		.overview .inside {width:1230px;}
 	}
 
 	@include bp(tb) {
