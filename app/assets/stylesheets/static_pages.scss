@@ -399,6 +399,7 @@ ul.paw {padding-left: 0;
   }
 
   @include bp(oc) {
+    .hs1-hero .text-over h1{font-size: 1.4rem;}
     .hs-intro {padding:20px 0 35px;
       background-image: none;
       .right{@include sec-default();}
@@ -423,14 +424,14 @@ ul.paw {padding-left: 0;
 
     .hs4-locations{
       .inside.med2{width:90%;}
-      h4{font-size: 1.1rem;width:70%;}
-      .btn-hlf {width:auto;}
+      .btn-hlf, h4 {@include sec-default();}
+      h4{font-size: 1.1rem; margin-bottom: 15px;}
     }
 
     .hs-serve {
       h3{font-size: 1.1rem;}
-      .intro p{margin-bottom: 0;}
-      .right{width:50%;@include center-block(); padding: 0 10%;}
+      .intro p{margin-bottom: 0; width:90%;}
+      .right{width:70%;@include center-block();}
       .left{@include sec-default(); margin-top: 30px;padding: 0 5%;}
       .blocks{margin-top:0;}
       .serve-tl {
@@ -439,6 +440,10 @@ ul.paw {padding-left: 0;
         p{font-size: 15px;}
       }
     }
+  }
+
+  @include bp(sm) {
+    .hs1-hero .text-over h1{font-size: 1.2rem;}
   }
 }
 
