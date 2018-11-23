@@ -57,7 +57,8 @@ class LocationsController < ApplicationController
 	def update
 		if @location.update(location_params)
 		  flash[:success] = "Location was updated successfully."
-	    redirect_to locations_path(@location)
+	    redirect_to location_path(@location)
+	    # redirect_to locations_path(@location)
 		else
 		  render 'edit'
 		end
@@ -76,6 +77,6 @@ class LocationsController < ApplicationController
 	end
 
 	def location_params
-    params.require(:location).permit(:store_name, :email_address, :phone, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+    params.require(:location).permit(:store_name, :email_address, :phone, :fb, :twitter, :insta, :site, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
   end
 end

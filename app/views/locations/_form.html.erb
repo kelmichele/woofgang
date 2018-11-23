@@ -2,66 +2,101 @@
 <div class="loc-form">
   <%= form_for(@location, :html => {class: "form-horizontal", role: "form" }) do |f| %>
     <div class="form-group">
-      <div class="forminfo">
+
+      <h3>Contact</h3>
+      <div class="forminfo name">
         <%= f.label :store_name %><br>
         <%= f.text_field :store_name, class: "form-control", placeholder: "Woof Gang Bakery & Grooming", autofocus: true %>
       </div>
 
-      <div class="forminfo">
+      <div class="forminfo email">
         <%= f.label :email_address %><br>
         <%= f.text_field :email_address, class: "form-control", placeholder: "Email Address", autofocus: true %>
       </div>
 
-      <div class="forminfo">
+      <div class="forminfo phone">
         <%= f.label :phone %><br>
         <%= f.text_field :phone, class: "form-control", placeholder: "Phone", autofocus: true %>
       </div>
 
-      <div class="forminfo">
+      <div class="forminfo street">
         <%= f.label :street_address %><br>
         <%= f.text_field :street_address_one, class: "form-control", placeholder: "Enter Address", autofocus: true %>
       </div>
 
-      <div class="forminfo">
+      <div class="forminfo street2">
         <%= f.label :street_address_2 %><br>
         <%= f.text_field :street_address_two, class: "form-control", placeholder: "Additional Address", autofocus: true %>
       </div>
+      <div class="clearfix"></div>
 
-      <div class="forminfo">
+      <div class="forminfo city">
         <%= f.label :city %><br>
         <%= f.text_field :city, class: "form-control", placeholder: "City", autofocus: true %>
       </div>
 
-      <div class="forminfo">
+      <div class="forminfo state">
         <%= f.label :state %><br>
         <%= f.text_field :state, class: "form-control", placeholder: "State", autofocus: true %>
       </div>
 
-      <div class="forminfo">
+      <div class="forminfo zip">
         <%= f.label :zip %><br>
         <%= f.text_field :zip, class: "form-control", placeholder: "Zipcode", autofocus: true %>
       </div>
 
-      <div class="forminfo">
+
+      <div class="clearfix"></div>
+      <h3>Social</h3>
+      <div class="forminfo link fb">
+        <%= f.label :facebook %><br>
+        <%= f.text_field :fb, class: "form-control", placeholder: "https://", autofocus: true %>
+      </div>
+
+      <div class="forminfo link insta">
+        <%= f.label :instagram %><br>
+        <%= f.text_field :insta, class: "form-control", placeholder: "https://", autofocus: true %>
+      </div>
+
+      <div class="forminfo link twitter">
+        <%= f.label :twitter %><br>
+        <%= f.text_field :twitter, class: "form-control", placeholder: "https://", autofocus: true %>
+      </div>
+
+      <div class="forminfo link site">
+        <%= f.label :website %><br>
+        <%= f.text_field :site, class: "form-control", placeholder: "https://", autofocus: true %>
+      </div>
+
+
+
+      <div class="clearfix"></div>
+      <h3>Additional</h3>
+
+      <div class="forminfo hours">
         <%= f.label :hours %><br>
         <%= f.text_area :hours, class: "form-control", placeholder: "Store Hours", autofocus: true %>
-      </div>
-
-      <div class="forminfo">
-        <%= f.label :latitude %><br>
-        <%= f.text_field :latitude, class: "form-control", placeholder: "Latitude", autofocus: true %>
-      </div>
-
-      <div class="forminfo">
-        <%= f.label :longitude %><br>
-        <%= f.text_field :longitude, class: "form-control", placeholder: "Longitude", autofocus: true %>
       </div>
 
       <div class="forminfo tags">
         <%= f.label :tags %><br>
         <%= f.collection_select(:tag_ids, Tag.all, :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %>
       </div>
+
+      <div class="forminfo lat">
+        <%= f.label :latitude %><br>
+        <%= f.text_field :latitude, class: "form-control", placeholder: "Latitude", autofocus: true %>
+      </div>
+
+      <div class="forminfo long">
+        <%= f.label :longitude %><br>
+        <%= f.text_field :longitude, class: "form-control", placeholder: "Longitude", autofocus: true %>
+      </div>
     </div>
+
+    <div class="clearfix"></div>
+    <hr>
+
 
     <div class="form-group btns">
       <%= f.submit(@location.new_record? ? "Add Location" : "Update Location", class: "btn woof-link") %>

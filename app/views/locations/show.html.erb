@@ -57,6 +57,26 @@
 							<div class="cat email">
 								<p><a href="mailto:<%= @location.email_address %>"><%= @location.email_address %></a></p>
 							</div>
+
+							<div class="cat soc">
+<% if @location.list_links.count > 0 %>
+								<% if @location.fb != '' %>
+									<a href="<%= @location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
+								<% end %>
+
+								<% if @location.insta != '' %>
+									<a href="<%= @location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
+								<% end %>
+
+								<% if @location.twitter != '' %>
+									<a href="<%= @location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
+								<% end %>
+
+								<% if @location.site != '' %>
+									<a href="<%= @location.site %>" target="_blank"><span class="linkcon" uk-icon="icon: link;"></span></a>
+								<% end %>
+<% end %>
+							</div>
 						</div>
 						<div class="clearfix"></div><hr class="two">
 

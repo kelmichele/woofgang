@@ -69,6 +69,15 @@ class Location < ApplicationRecord
   end
 
 
+  def soc_links
+    [fb, insta, twitter, site].compact.join(" , ")
+  end
+
+  def list_links
+    soc_links.split(',')
+  end
+
+
   def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)
     header = spreadsheet.row(1)
