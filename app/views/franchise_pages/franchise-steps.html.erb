@@ -1,97 +1,59 @@
-<% @page_title = "Next Steps" %>
+<% @page_title = "Franchise Approval Process" %>
 <% @page_description = "New Description" %>
 
 <%= render 'franchise_pages/franch-header' %>
 
-<div class="overview">
-	<div class="inside">
-		<div class="x-img">
-			<%= image_tag('dog-bowls.jpg', class: 'img-responsive', alt: '') %>
-		</div>
-
-		<div class="list-intro">
-			<h3>If you are interested in becoming a member of the Woof Gang Bakery pack, read through the steps listed below.</h3>
-			<ul>
-				<li><a href="#form" uk-scroll>1. Complete Franchise Inquiry Form</a></li>
-				<li><a href="#call" uk-scroll>2. Introductory Call</a></li>
-				<li><a href="#apply" uk-scroll>3. Complete Franchise Application</a></li>
-				<li><a href="#fdd" uk-scroll>4. Review Franchise Disclosure Document</a></li>
-				<li><a href="#follow" uk-scroll>5. FDD Follow-Up</a></li>
-				<li><a href="#day" uk-scroll>6. Discovery Day</a></li>
-				<li><a href="#sign" uk-scroll>7. Signing the Agreement</a></li>
-
-			</ul>
+<div class="franchise-layout">
+	<div class="statement">
+		<div class="inside med2">
+			<!-- Franchise Approval Process -->
+			<h3>We’ve broken the approval process down into five simple steps.</h3>
 		</div>
 	</div>
-</div>
 
-<div class="steps-desc">
-	<div class="inside narrow">
-		<hr>
-		<div id="form"></div>
-		<div class="step">
-			<span>1.</span>
-			<div class="dets">
-				<h4>Complete Franchise Inquiry Form</h4>
-				<p><%= link_to "Click here", franchise_inquiries_path %> to view and complete our Franchise Inquiry Form.
-				One of our representatives will contact you within one business day of receiving your form.</p>
+	<div class="franch-body">
+		<div class="inside">
+			<div class="left">
+				<ul class="paw">
+					<h4>Step 1: Your Inquiry</h4>
+					<li>Complete online application via the <%= link_to 'franchise inquiry form', franchise_inquiries_path, class: 'text-link' %></li>
+					<li>Invitation to complete a full application</li>
+				</ul>
 			</div>
-		</div>
 
-		<div id="call"></div>
-		<div class="step fr">
-			<span>2.</span>
-			<div class="dets">
-				<h4>Introductory Call</h4>
-				<p>
-				This is our chance to learn more about each other.
-				We will go deeper into the Woof Gang Bakery opportunity, and answer any questions you may have.
-				We will also discuss your business background, motivation and interest, and location considerations.</p>
+			<div class="right">
+				<ul class="paw">
+					<h4>Step 2: Your Application</h4>
+					<li>First telephone interview</li>
+					<li>Do your homework</li>
+					<li>Financials submitted</li>
+					<li>Executive interview</li>
+				</ul>
 			</div>
-		</div>
 
-		<div id="apply"></div>
-		<div class="step">
-			<span>3.</span>
-			<div class="dets">
-				<h4>Complete Franchise Application</h4>
-				<p>This is your first serious step for moving forward. It also gives us a more expansive view into your financials and background.</p>
+			<div class="clearfix"></div><br>
+
+
+			<div class="left">
+				<ul class="paw">
+					<h4>Step 3: Discovery Day</h4>
+					<li>Spend the day at Woof Gang Bakery HQ in Orlando, Florida</li>
+					<li>Understand what your responsibilities are as a franchisee</li>
+					<li>Meeting and interacting with staff who will train and support your franchise</li>
+					<li>A full understanding of the Woof Gang Bakery brand and culture</li>
+					<li>Receive and review Franchise Disclosure Documents</li>
+				</ul>
 			</div>
-		</div>
 
-		<div id="fdd"></div>
-		<div class="step fr">
-			<span>4.</span>
-			<div class="dets">
-				<h4>Review Franchise Disclosure Document</h4>
-				<p>Once we receive your Franchise Application, we will send you our Franchise Disclosure Document (FDD), which you will sign to become a Franchisee. Essentially, the FDD explains your legal responsibilities as Woof Gang Bakery owner, and the relationship between the Franchisor (Woof Gang Bakery), and the Franchisee (you).</p>
-			</div>
-		</div>
-
-		<div id="follow"></div>
-		<div class="step">
-			<span>5.</span>
-			<div class="dets">
-				<h4>FDD Follow-Up</h4>
-				<p>Your Woof Gang Bakery representative will contact you to schedule a time to discuss any questions you may have after reviewing your FDD.</p>
-			</div>
-		</div>
-
-		<div id="day"></div>
-		<div class="step fr">
-			<span>6.</span>
-			<div class="dets">
-				<h4>Discovery Day</h4>
-				<p>You will spend the day with our franchise support team, at our office in Orlando, FL, having a paws on learning experience!</p>
-			</div>
-		</div>
-
-		<div id="sign"></div>
-		<div class="step">
-			<span>7.</span>
-			<div class="dets">
-				<h4>Signing the Agreement</h4>
-				<p>If we decide you make a great Woof Gang Bakery Franchisee candidate, we will send you a formal written offer, which will include your assigned territory.</p>
+			<div class="right">
+				<ul class="paw">
+					<h4>Step 4: Final Steps</h4>
+					<li>Franchise agreement signed</li>
+					<li>Site approved and lease signed</li>
+					<li>Financing secured</li>
+					<li>Training completed</li>
+					<li>Open your store</li>
+				</ul>
 			</div>
 		</div>
 	</div>

@@ -1,53 +1,56 @@
 <% @page_title = "Real Estate" %>
 <% @page_description = "New Description" %>
 
-<%= render 'franchise_pages/franch-header' %>
+<%= render 'franchise_pages/franch-header3' %>
 
-<div class="full-sec xtr">
-	<div class="inside one">
-		<h3>
-			Since opening our first store in 2007, Woof Gang Bakery has expanded our pack to more than 100 locations nationwide.
-			A prime location is one of the most important components of any Woof Gang Bakery store, so we have developed guidelines to help with site selection.
-		</h3>
-
-		<div class="full mid">
-			<%= image_tag('wilmington-exterior.jpg', class: 'img-responsive ext', alt: 'Woof Gang Bakery, store exterior')%>
-			<div class="content">
-				<ul class="paw small">
-					<p>Use the following criteria to help you find the perfect location for your Woof Gang Bakery store.</p>
-
-					<li>
-						<b>Square Footage:</b>
-						1,200 – 2,500 square feet</li>
-
-					<li>
-						<b>Retail Space:</b>
-						Free standing, end cap, or in-line units</li>
-
-					<li>
-						<b>Ideal Co-Tenants:</b>
-						High-end retail, service-oriented businesses, and grocery stores or other daily needs </li>
-
-					<li>
-						<b>Sources for Strong Foot Traffic:</b>
-						Trade area mix of offices and retail, with close proximity to upscale residential areas (average household income above $70,000)</li>
-
-					<li>
-						<b>Surrounding Residential Areas:</b>
-						Population density of 15,000+ households</li>
-
-					<li>
-						<b>Grooming Permissions:</b>
-						Grooming permitted, or allowed with special permit</li>
-				</ul>
-				<!-- <p>Think you've sniffed out the perfect site for the next Woof Gang Bakery location? Tell us about it!<br>Send all the details you can get your paws on (including: square footage, other tenants, zoning classification, photos, etc...) to: <a class="text-link">Cara@woofgangbakery.com</a></p> -->
-			</div>
+<div class="franchise-layout">
+	<div class="statement">
+		<div class="inside med2">
+			<h3>A prime location is one of the most important components of any Woof Gang Bakery store, so we have developed guidelines to help with site selection. <span>Use the following criteria to find the perfect location for your Woof Gang Bakery store.</span></h3>
+			<!-- <%= image_tag('wilmington-exterior.jpg', class: 'img-responsive ext', alt: 'Woof Gang Bakery, store exterior')%>  -->
 		</div>
+	</div>
 
-		<div class="banner">
-			<div class="text">
-				<h4>Think you've sniffed out the perfect site for the next Woof Gang Bakery location?</h4>
-				<p>Send all the details you can get your paws on (including: square footage, other tenants, zoning classification, photos, etc...) to: <a class="text-link">Cara@woofgangbakery.com</a></p>
+	<div class="franch-body">
+		<div class="inside med">
+			<div class="left">
+				<ul class="paw small">
+					<h4>Ideal Space:</h4>
+					<li>1,200 to 4,000 square feet</li>
+					<li>Free standing, end cap, or in-line units</li>
+					<li>Glass frontage 60 square feet minimum</li>
+					<li>Rear door delivery</li>
+					<li>Grooming permitted, or allowed with special permit</li>
+				</ul>
+			</div>
+
+			<div class="right">
+				<ul class="paw small">
+					<h4>Typical Lease Terms:</h4>
+					<li>Minimum 5+5 year lease term, to match franchise terms</li>
+					<li>Standard vanilla shell delivery</li>
+					<li>Tenant improvement allowance</li>
+					<li>Free rent period during construction</li>
+					<li>Exclusive use protection</li>
+					<li>Assignability provision to support long-term viability</li>
+				</ul>
+			</div>
+
+			<div class="clearfix"></div><br>
+
+			<div class="left">
+				<ul class="paw small">
+					<h4>Demographics:</h4>
+					<li>Co-tenants: High-end retail, service-oriented businesses, grocery stores and other daily needs</li>
+					<li>Sources for strong foot traffic: Trade area mix of office and retail, with surrounding residential</li>
+					<li>Average household income: $70,000+</li>
+					<li>Surrounding Residential Areas: Population density of 15,000+ households</li>
+				</ul>
+			</div>
+
+			<div class="right">
+				<p>Do you have available property that may be a perfect fit for a Woof Gang Bakery? Submit a site for consideration:</p>
+				<%= link_to 'Real Estate Submissions', franchise_inquiries_path, class: 'woof-link' %>
 			</div>
 		</div>
 	</div>

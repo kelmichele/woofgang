@@ -1,59 +1,82 @@
 @import "mixins";
 @import "variables";
 
-.franchise-header {@include sec-default(); background-color: rgba($compt, .6); padding: 50px 0 75px;
-  position: relative; z-index: 0;
-  &::before{@include after(); background-color: $compt; height:40px;}
 
-	h1 {color:$white; @include tshadowl(rgba($black, .2)); margin:0px 0px 0;
-  	text-transform: uppercase; letter-spacing: 1.5px; font-size: 2.1rem;
-  }
-  h2{margin: 0; font-size:1.5rem; line-height: 1.3em; font-weight: bold; color: $compg}
-  .tbox {@include sec-default(); text-align: center; }
-}
-.abs-franch {width:210px; right:10%; position: absolute; z-index: 2; margin-top:40px;}
 
-@include bp(tb) {
-	.franchise-header {padding: 30px 0 50px;
-		h1{font-size: 1.8rem}
+//****** franchise headers *******//
+	// V1 -- static or parallax?
+	// V2 -- tbox justify or hang off?
+	// V2:V3 -- tbox white or opink?
+
+// V1
+.franch-header {@include sec-default(); text-align: center;
+	.full{height:550px;@include sec-bgimage('bull-st.jpg'); background-position: center center;
+		position: relative; z-index: 0;
+		&::before{@include before(); background-color: rgba($black,.3);}
+
+		.text {@include sec-default();margin-top:20%;}
 	}
-	.abs-franch {width:160px; margin-top:20px;}
+
+	.tbox {@include sec-default(); margin:auto !important;}
+
+  h1,h2 {color:$white; @include tshadowl(rgba($black, .5)); margin:0px; font-weight: bold;}
+  h1{text-transform: uppercase; letter-spacing: 1.5px;}
+  h2{ font-size:1.5rem; line-height: 1.5em;}
 }
 
-@include bp(tn) {
-	.franchise-header {padding: 20px 0 30px;
-		&::before{height: 20px;}
-		h1{font-size: 1.6rem}
-		h2{font-size: 1.3rem;}
+// V2
+.franchise-intro {@include sec-default();
+	.full{@include sec-bgimage('bull-st-narrow.jpg'); background-position: bottom center; height:600px; position: relative;
+		background-size: 95%;
+		// box-shadow: 0px 4px 18px rgba($black, .2);
+		h1{text-transform: uppercase;}
 	}
-	.abs-franch {width:110px;}
+	// position: relative; z-index: 0;
+	// &::before{@include after(); width:40%; left:55%; height:100%; background-color: $pink; bottom:0;}
+	// .image, .text {display: inline-block; float: left; width:85%; }
+
+	.text {
+		width:38%; padding:20px; text-align: center;
+		// position: absolute; margin-left: -20%; text-align: right; margin-top:10%;
+		position: absolute; bottom: 0; right:0; background-color: $opink;
+		h2{font-size:1.2rem; margin:0;}
+		h1{margin:0; }
+	}
+
+	.image{max-height:500px; overflow: hidden;}
 }
 
-@include bp(oc) {
-	.franchise-header {padding: 20px 0 25px;
-		&::before{height: 15px;}
-		h1{font-size: 1.45rem}
-		h2{font-size: 1.15rem;}
-	}
-	.abs-franch {width:100px; right:8%; }
+// V3
+.franchise-hfull{@include sec-default(); text-align: center;
+	padding-bottom: 30px;
+	.text, .image{position: relative; z-index: 1;}
+	.image{height: 550px; overflow: hidden;}
+	.text{width: 60%; @include center-block(); z-index: 2;}
+	.full{background-color: $white; padding:15px 20px; margin-top:-107px;}
+	h1,h2 {margin:0px; font-weight: bold;}
+  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em;}
+  h2{ font-size:1.4rem; }
 }
 
-@include bp(ph) {
-	.franchise-header {padding: 15px 0 15px;
-		&::before{height: 15px;}
-		h1{font-size: 1.3rem}
-		h2{font-size: 1.1rem;}
+
+
+
+
+.franchise-layout {@include sec-default(); padding: 50px 0;
+	.statement {@include sec-default(); padding-bottom: 50px;
+		h3{font-size: 1.35rem;text-align: center;
+		 	span {color: $pink;}
+		}
 	}
-	.abs-franch {width:90px; right:5%; margin-top:10px;}
+
+	.franch-body {@include sec-default();
+		h4{font-weight: $semi; margin-bottom: 5px; font-family: $pop; }
+		p{margin-top:0;}
+		.left, .right {display: inline-block; float: left; width:45%;}
+		.right{float: right;}
+	}
 }
 
-@include bp(sm) {
-	.franchise-header{padding-bottom: 20px;
-		h2{font-size: 16px;}
-		h1{font-size: 1.2rem; margin-top: 5px; }
-	}
-	.abs-franch {display: none;}
-}
 
 .franchise_pages .page-body {
 	ul, ul.paw {
@@ -79,16 +102,9 @@
 
 
 //****** franchise op *******//
-.franchise-opportunity {
-	.intro{width:75%;}
-
-	h3{font-size: 1.35rem;}
-	h3 span {color: $pink;}
-
-	.fran-op {@include sec-default(); padding: 85px 0 0;}
+.franchise-opportunity, .franchising {
 
 	.full.top { padding: 40px 0 60px;
-		@include sec-bgimage('fluff.png'); background-size: 15%; background-position: bottom left;
 		.big, ul { display: inline-block; float: left; width: 35%; margin-left: 3%;}
 		.big { margin-top:4%; text-align: center;
 			p{font-size: 25px;@include sec-default();}
@@ -100,17 +116,12 @@
 			li::before{left:-3px; top:4px;}
 		}
 
-
-		.woof-link{@include sec-default(); background-color: $compb; margin-top:15%;}
+		.woof-link{@include sec-default(); margin-top:15%;}
 		.woof-link.xs-show{display: none;}
-		.btn{@include sec-default();
-			background-color: $compb; color: $white; @include tshadowl(rgba($black, .3));padding: 14px 8px; margin-top: 20%;
-
-			&.alt {margin-top: 0; background-color: transparent; color: $compb; text-shadow: none; font-weight: bold; font-size: 1.1rem;}
-		}
+		.btn{@include sec-default(); color: $white; @include tshadowl(rgba($black, .3));padding: 14px 8px; margin-top: 20%;}
 	}
 
-	.banner {@include sec-default(); background-color: $compt; padding: 30px 0 15px; text-align: center;
+	.banner {@include sec-default(); background-color: $pink; padding: 30px 0 15px; text-align: center;
 		h3{color: $white; @include tshadowl(rgba($black, .3)); font-weight: bold; font-size:1.5rem;}
 	}
 
@@ -124,7 +135,6 @@
 
 
 	@include bp(tb) {
-		h3{font-size: 1.2rem;}
 		.fran-op {padding-top: 70px;}
 		.intro{width:95%;}
 
@@ -362,84 +372,7 @@
 }
 
 //****** real estate *******//
-.real-estate {
-	h3{font-size: 1.35rem; margin: 15px auto; width:80%; @include center-block(); text-align: center;}
-
-	.full-sec.xtr{padding-bottom: 50px; padding-top:100px;}
-	.full.mid { padding: 30px 0 70px;
-		.ext, .content {display: inline-block; width: 45%; float: left;}
-		.content{width:52%; float:right; margin-top: 5%; }
-		li {margin-bottom: 12px;}
-	}
-
-	.banner {@include sec-default(); padding:30px 5% 20px; margin:30px 0 35px;
-    background-color: $fa; position: relative; z-index: 0;
-		.text{float: left; width: 70%;margin-left: 3%}
-    h4{font-size: 1.1rem; margin: 0; font-weight: $semi; }
-    p{margin-top: 10px;}
-    &::before {@include after(); z-index: 1; width:16%; left: 72%; @include sec-bgimage('bernie-flip.png'); background-position: bottom right; height:180%; }
-    &::after {@include before(); border:1px solid rgba($pink, .1); top:-8%; left:1%; height:98%}
-  }
-
-  @include bp(su) {
-  	h3{width:90%;}
-  	.full-sec.xtr .inside.one{width:1240px;}
-  }
-
-  @include bp(tb) {
-		h3 {font-size: 1.1rem; width:95%;}
-		.full-sec.xtr{padding:55px 0 0px;
-			.inside.one {width:90%;}
-		}
-		.full.mid { padding: 20px 0 10px;
-			.ext {width: 40%; }
-			.content{width:57%;margin-top: 0; }
-			ul.paw li {margin-left: 0; font-size:14px;}
-		}
-
-		.banner { padding:20px 5% 20px;
-			.text{width: 75%;margin-left: 0;}
-	    h4{font-size: 1rem; }
-	    p{font-size: 15px;}
-	  }
-  }
-
-  @include bp(tn) {
-		h3 {font-size: 1rem; margin-bottom: 0;}
-		.full-sec.xtr{padding:35px 0 0px;}
-		.full.mid { padding: 20px 0 10px;
-			.ext {display: none;}
-			.content{width:80%; @include center-block();}
-			ul.paw p{font-size: 15px;}
-		}
-
-		.banner { padding:20px 0 20px 4%;
-			h3{font-size: 15px;}
-			.text{width: 90%;margin-left: 0;}
-			&::before {left:85%; width:14%; }
-	  }
-  }
-
-  @include bp(mb) {
-		.full.mid {
-			.content {width:95%;}
-		}
-
-		.banner { padding:20px 0; margin-top:20px;
-			.text{width: 85%; @include center-block(); text-align: center;}
-			&::before {display: none; }
-	  }
-  }
-
-  @include bp(sm) {
-		.full-sec.xtr{padding:10px 0 0px;}
-
-		.banner { padding:15px 0; margin-top:20px;
-			&::after {top:-5%; left:2%;}
-			.text{width: 90%;}
-	  }
-  }
-}
+.real-estate {}
 
 //****** invest details *******//
 .investment-details {
@@ -593,163 +526,7 @@
 }
 
 //******** training **********//
-.training-support {
-	.ts1 {@include sec-default(); padding: 80px 0 40px;}
-	p.top{font-size: 18px;
-		br {display: none;}
-	}
-	ul.paw.one, ul.paw.two {display: inline-block; float: left; width: 45%;}
-	ul.paw.two{margin-left: 3%;}
-
-	.support-boxes{@include sec-default(); padding:60px 0; background-color: $f9;
-		.left, .right {display: inline-block; float: left; width:30%;}
-		.left{ margin-top:6%; margin-left: 2%;
-			h4{font-weight: bold; color: $compt; font-size: 19px; }
-		}
-		.right {width:67%; float: right;}
-
-		.clearfix{@include sec-default(); margin-bottom: 40px;}
-		.tli {display: inline-block; float: left; width: 48%;
-		  &.two, &.four{float:right;}
-
-		  .img-box, .text {display: inline-block; float: right; }
-		  .text {margin-top: 25px;width: 69%; margin-left: -6%;
-		    position: relative;z-index: 0;
-		    &::before {@include before(); width:160px; height:160px; background-color: rgba($compb, .8); border-radius: 50%; left:-25%; top:-15%;}
-		  }
-		  .img-box{width:31%; float: left; position: relative; z-index:2;}
-		  h4{margin-bottom: 6px; font-weight: bold; font-size:1.2rem;}
-		  p{margin-top: 0px; font-size: 16px}
-			span{font-size: 18px; font-weight: bold; @include sec-default(); margin-bottom: 6px;}
-		}
-	}
-
-	.ts-last {@include sec-default(); padding: 60px 0 40px;
-		li {font-weight: $semi; margin-bottom: 7px; color:$pink}
-
-		.text, .image {display: inline-block; float: left;}
-		.text {width:60%;margin-top:2%; margin-left: 5%}
-		.image{width:20%; float: right; margin-right: 12%;}
-	}
-
-	@include bp(su) {
-		.ts1{text-align: center;}
-		ul.paw.one, ul.paw.two{text-align: left; float: none; width:auto;}
-
-		.support-boxes {
-			.inside.lg{width:80%;}
-			.left{margin-left: 0;}
-		}
-
-		.ts-last{
-			.inside.med2 {width:60%;}
-			.image{width:17%;}
-		}
-	}
-
-	@include bp(dt) {
-		p.top	br {display: block;}
-	}
-
-	@include bp(tb) {
-		.ts1 {@include sec-default(); padding: 65px 0 20px;}
-		p.top {font-size: 17px;}
-
-		.support-boxes{padding:30px 0;
-			.left {width:65%;@include center-block();margin-top:0; margin-left: auto; text-align: center;
-				h4{font-size: 18px; margin-bottom: 0;}
-				p{margin-top: 7px; font-size: 16px;}
-			}
-			.right { @include sec-default(); padding-top: 20px;}
-		}
-
-		.ts-last { padding: 40px 0 25px;
-			p{font-size: 16px;}
-			.text {width:74%;margin-top:2%; margin-left:0;}
-			.image{width:23%; float: right; margin-right: 0;}
-		}
-	}
-
-	@include bp(tn) {
-		.ts1 {padding: 55px 0 20px;
-			.inside.med2 {width:85%;}
-			ul.paw.one, ul.paw.two {width: 48%;}
-			ul.paw.two{margin-left: 0; float: right;}
-
-		}
-		p.top {font-size: 16px;}
-
-		.support-boxes{padding:30px 0 15px;
-			.left {width:80%;
-				h4{font-size: 17px;}
-				p{ font-size: 15px;}
-			}
-			.right {
-				p{font-size: 15px;
-					span {font-size: 16.5px;}
-				}
-			}
-		}
-
-		.ts-last { padding: 40px 0 25px;
-			.inside.med2 {width:80%;}
-			p{font-size: 15px;}
-			.text {width:80%;margin-top:0;margin-left:0;}
-			.image{width:19%; margin-top:0;}
-		}
-	}
-
-	@include bp(oc) {
-		.ts1 {padding: 45px 0 20px;
-			.inside.med2 {width:90%;}
-			ul.paw.one, ul.paw.two {width: 80%; @include center-block();
-				li {margin-left: 0;}
-			}
-		}
-		p.top {font-size: 15px; padding: 0 5%;}
-
-		.support-boxes{padding:20px 0;
-			.left {width:99%;
-				h4{font-size: 17px;}
-				p{ font-size: 15px;}
-			}
-			.right {
-				.clearfix{margin-bottom: 0;}
-				.tli {width: 75%; display: block; margin-bottom: 30px;
-				  &.two, &.four{float:right;}
-
-				  .text {margin-top: 25px;width: 74%; margin-left: -6%;}
-				  .img-box{width:25%;}
-				}
-			}
-		}
-
-		.ts-last { padding: 30px 0 25px;
-			@include sec-bgimage('lab-lick.jpg'); background-position: bottom right; background-size:15%;
-			.inside.med2 {width:85%;}
-			.text {@include sec-default();}
-			.image{ display: none;}
-		}
-	}
-
-	@include bp(sm) {
-		.ts1 {padding: 30px 0 20px;}
-
-		.support-boxes{
-			.left h4{font-size: 16px;}
-			.right {padding-top:0;
-				.tli {width: 98%; margin-bottom: 20px;
-				  .text {margin-top: 25px; width: 79%; margin-left: 0;
-				    &::before {width:130px; height:130px; left:-30%; top:-15%;}
-				  }
-				  .img-box{width:20%; margin-top: 5%}
-				}
-			}
-		}
-
-		.ts-last {background-size:20%;}
-	}
-}
+.training-support {}
 
 //******** steps **********//
 .steps, .franchise-steps {
