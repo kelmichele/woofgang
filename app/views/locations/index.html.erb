@@ -69,7 +69,7 @@
 		</div>
 
 		<div class="map">
-			<!-- = render 'shared/map' %> -->
+			<%= render 'shared/map' %>
 		</div>
 
 		<div class="loclist">
@@ -79,7 +79,7 @@
 						<div class="location-bx">
 							<% if location.store_name %>
 								<%= link_to location_path(location) do %>
-									<div class="cat name"><%= location.ntitle.titleize %> Location</div>
+									<div class="cat name"><%= location.ntitle.titleize %></div>
 								<% end %>
 							<% else %>
 								<%= link_to location_path(location) do %>
