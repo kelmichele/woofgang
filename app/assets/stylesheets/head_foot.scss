@@ -13,10 +13,14 @@
 	.nb-logo {margin-left: 1%; background-color: $white; padding:10px 0 5px; margin-top:5px;}
 	.navbar-nav,.uk-navbar-nav {float: right; width:70%; text-align: right; margin-top: 8%; margin-right: 2%;}
 
+	// box-shadow: 0px 1px 1px rgba($black, .1);
+	&.uk-navbar-sticky.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);}
+
 	li {display: inline-block; float: none; margin: 1% 0 0px 3%;
-		a {font-family: $body; color: $tbrown; text-transform: none;
-			color:$brown;
-			font-size: 16px; font-weight: $semi;
+		a { color:$brown;
+			// font-size: 16px; font-family: $body; font-weight: $semi;
+			text-transform: none;
+			letter-spacing: .2px; font-size: 15px;
 		}
 	}
 
@@ -25,17 +29,11 @@
 		background-color: $f8;
 		.uk-nav.uk-navbar-dropdown-nav {text-align: left;}
 		li {@include sec-default();
-			a{font-weight: normal; font-size: 15px;}
+			a{font-weight: normal; font-size: 14px;}
 		}
 	}
 
-
-	&.uk-navbar-sticky.uk-sticky-fixed {
-		box-shadow: 0px 1px 1px rgba($black, .1);
-		// border-bottom: 2px inset rgba($black, .1);
-	}
-
-	.above{width:25%; float:right; margin-right: 9%; padding: 5px 15px 7px; background-color: $pink;
+	.above,.below{width:25%; float:right; margin-right: 9%; padding: 5px 15px 7px; background-color: $pink;
 		border-bottom-right-radius: 18px; border-bottom-left-radius: 18px;
 	}
 	.contact,.social{display:inline-block; float: left; color:$white; width:50%;
@@ -50,13 +48,21 @@
 
 	.navbar-nav,.uk-navbar-nav {margin-top: 5%;}
 
-	&.centered {background-color: $f8;padding-bottom: 20px;
+	&.centered {background-color: $white;padding-bottom: 0px;
 		.navbar-center{ position: relative; z-index: 0;}
+		.uk-navbar-container.inside{width:90%;background-color: $white}
 		.nb-logo{@include center-block(); background-color: transparent;}
-		.uk-navbar-nav{@include sec-default(); text-align: center; margin-top: 20px; background-color: $white; padding:5px 0 10px;}
+		.uk-navbar-nav{@include sec-default(); text-align: center; margin-top: 20px; background-color: $pink; padding:5px 0 10px;}
+		a {color:$white;}
 
 		.above {position: absolute; z-index: 1; left:70%;}
 	}
+
+
+
+	// padding-bottom:0;
+	// .above{display: none;}
+	// .below {@include sec-default(); border-radius: 0;}
 }
 
 .mobile-nav {display: none;}
@@ -151,6 +157,7 @@
 }
 
 .footer-level {
+	border-top:10px solid $pink;
 	@include sec-default(); padding: 30px 0 0;
 	.sm-ft {display: none;}
 

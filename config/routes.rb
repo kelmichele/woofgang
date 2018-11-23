@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get 'retail', to: 'static_pages#retail'
 
   get 'franchise-process', to: 'franchise_pages#franchise-process'
-  get 'franchise', to: 'franchise_pages#franchise'
+  get 'franchising', to: 'franchise_pages#franchising'
   get 'franchise-opportunity', to: 'franchise_pages#franchise-opportunity'
   get 'training-support', to: 'franchise_pages#training-support'
   get 'franchisees', to: 'franchise_pages#franchisees'

@@ -2498,3 +2498,70 @@ ul.paw {padding-left: 0;
 
 
 
+.services-layout {@include sec-default();
+  .full-show {@include sec-default();}
+
+  .inline-show {@include sec-default();
+    position: relative; z-index: 0;
+    &::before{@include before(); background-color: $opink; width:24%; left: 76%;}
+    .il-slideshow, .title {display: inline-block; float: left; width: 75%;}
+    .title {width:24%; float: right; padding: 200px 10px 0; text-align: center; }
+
+    &::before{width:21%; left:79%;}
+    .title {width:21%;}
+    .il-slideshow{width:78%;}
+
+    h1{color:$brown; text-transform: uppercase; letter-spacing: .5px; font-size: 1.75rem;}
+  }
+
+  .srv-slides {@include sec-default();
+    .uk-slider-items li{margin-right: 7px}
+    img{height:615px;}
+
+    .uk-slider-nav.uk-dotnav {margin-top: 15px;
+      li {padding-left:5px;}
+    }
+  }
+
+  .statement {@include sec-default(); padding:50px 0;
+    .inside{text-align: center;}
+    .srv-logo{width:300px; @include center-block(); margin-bottom: 25px;}
+    h1, h2{font-size: 1.6rem; margin-bottom: 7px; font-family: $pop;}
+    h2{font-weight: bold; }
+    p{margin-top:0;}
+  }
+
+  .gallery-sec {@include sec-default(); padding:50px 0;
+    position: relative; z-index: 0;
+    &::before{@include before(); height:40%; background-color: $opink;}
+
+    &.uniform{
+      .gall-img {display: inline-block; float: left; width:50%; padding:10px;
+        &:nth-child(2n+2) {float: right;}
+      }
+    }
+
+    &.stagg{
+      .left,.right {display: inline-block; float: left; width:49%;}
+      .right{float: right; margin-top:50px;}
+      .gall-img {@include sec-default(); margin-bottom: 20px;}
+    }
+
+    &.tres{
+      .left, .mid, .right {display: inline-block; width:32%; float: left; }
+      .mid {margin-left: 2%; margin-top: 40px;}
+      .right {float: right;}
+
+      .gall-img {margin-bottom: 15px;}
+    }
+  }
+}
+
+.services-layout.daycare {
+  .statement {
+    // .srv-logo{display:inline-block; float: none; }
+    .left, .right {display: inline-block; width: 45%; float: left;}
+    .right {float: right;}
+  }
+}
+.services-layout.vet {border-top:1px solid $f0;}
