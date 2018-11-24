@@ -7,5 +7,6 @@ class VendorMailer < ApplicationMailer
 
 	  mail subject: "Vendor Relations Form from Website"
 	  mail to: "kelli@hsdesignhouse.com"
+	  # mail to: "sam@woofgangbakery.com"
 	end
 end

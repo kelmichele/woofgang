@@ -7,5 +7,6 @@ class ReporterMailer < ApplicationMailer
 
 	  mail subject: "Media Inquiry from Website"
 	  mail to: "kelli@hsdesignhouse.com"
+	  # mail to: "cara@woofgangbakery.com"
 	end
 end

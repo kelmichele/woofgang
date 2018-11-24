@@ -56,6 +56,8 @@ Rails.application.routes.draw do
   get '/media-inquiries', to: 'reporters#new', as: 'media-inquiries'
   post '/media-inquiries', to: 'reporters#create'
 
+  get '/real-estate-submissions', to: 'estates#new', as: 'real-estate-submissions'
+  post '/real-estate-submissions', to: 'estates#create'
 
   get 'tags/:tag', to: 'locations#index', as: :tag
 

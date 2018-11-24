@@ -77,8 +77,8 @@
 				<h5>Woof Gang Bakery Corporate:</h5>
 				<div class="title-line sm"></div><div class="clearfix"></div>
 				<%= @ft_contact %>
-				<p class="mod-link"><a uk-toggle="target: #modal-media">Media Inquiries</a></p>
-				<p class="mod-link"><a uk-toggle="target: #modal-vendor">Vendor Relations</a></p>
+				<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'text-link' %>
+				<%= link_to 'Contact Vendor Relations', vendor_path, class: 'text-link' %>
 			</div>
 		</div>
 
@@ -102,17 +102,8 @@
 		    <li class="acc-li">
 	        <a class="uk-accordion-title" href="#"><h5>Contact</h5></a>
 	        <div class="uk-accordion-content"><%= @ft_contact %>
-
-		        <p><span>Media Inquiries</span><br>
-		        	Woof Gang Bakery, Inc.<br>
-	      	    Cara Allen<br>
-	      	    cara@woofgangbakery.com<br>
-	      	    <a href="tel:4073559210">407-355-9210</a> ext: 104
-		        </p>
-
-	        	<p><span>Got a Great Product? Contact Our Vendor Relations:</span><br>
-	    				sam@woofgangbakery.com
-	        	</p>
+					<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'text-link' %>
+					<%= link_to 'Contact Vendor Relations', vendor_path, class: 'text-link' %>
 	        </div>
 		    </li>
 			</ul>

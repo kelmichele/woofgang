@@ -2059,10 +2059,10 @@ ul.paw {padding-left: 0;
 .contacts, .candidates {
   h1{margin-bottom: 10px}
   h3{font-size: 1.3rem; margin-top: 0;}
-  .woof-link{background-color: $white; color:$pink; display: block; width:80%; margin-bottom: 20px;}
 
   .inquiries, .full-contact {@include sec-default();padding: 100px 0;
 
+    .woof-link{background-color: $white; color:$pink; display: block; width:80%; margin-bottom: 20px;}
     .over, .form-side {display: inline-block; float: left; width:25%;position: relative;z-index: 1;}
     .over { z-index: 0; padding-right:20px;
       &::before {@include before(); background-color: rgba($compt, .8); height:120%; width:180%; left:-18%; top:-10%;}
@@ -2275,8 +2275,6 @@ ul.paw {padding-left: 0;
   .l1{display: inline-block; float: left; width:30%; margin-left: 3%;}
 }
 
-
-
 .services-layout {@include sec-default();
   .full-show {@include sec-default();}
 
@@ -2344,3 +2342,16 @@ ul.paw {padding-left: 0;
   }
 }
 .services-layout.vet {border-top:1px solid $f0;}
+
+
+.estates,.vendors,.reporters{
+  .form-group {margin-bottom: 15px; width:50%;}
+  label {color: $black; font-weight: normal; font-size: 14px;}
+}
+.estates{
+  // .form-group {width:45%; display: inline-block; float: left;
+  //   &:nth-child(2n+2){float: right;}
+  // }
+  hr{@include sec-default();}
+  h3 {@include sec-default();margin-bottom: 15px; font-size: 1.2rem; font-weight: bold; color:$black; text-transform: uppercase; letter-spacing: .7px; background-color:$f2; padding:15px;}
+}

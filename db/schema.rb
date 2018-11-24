@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_24_152131) do
+ActiveRecord::Schema.define(version: 2018_11_24_163124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,34 @@ ActiveRecord::Schema.define(version: 2018_11_24_152131) do
     t.string "honey"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "estates", force: :cascade do |t|
+    t.string "company"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "address2"
+    t.string "city"
+    t.string "county"
+    t.string "state"
+    t.string "zip"
+    t.string "email"
+    t.string "phone"
+    t.string "est_address"
+    t.string "est_address2"
+    t.string "est_city"
+    t.string "est_county"
+    t.string "est_state"
+    t.string "est_zip"
+    t.string "est_develop"
+    t.string "est_footage"
+    t.string "est_type"
+    t.string "est_timeframe"
+    t.string "grapevine"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "honey"
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
