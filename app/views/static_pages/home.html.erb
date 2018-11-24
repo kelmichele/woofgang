@@ -1,71 +1,48 @@
 <% @page_title = "Your Neighborhood Pet Store" %>
 <% @page_description = "New Description" %>
 
-<div class="hs1-hero">
-	<div class="inside">
-		<div class="full">
-			<%= image_tag('adobe-bday.jpg', class: 'img-full') %>
 
-			<div class="text-over">
-				<h1>Woof Gang Bakery &amp; Grooming</h1>
-			</div>
-		</div>
+
+<!-- Lead photo should become a photo rotator. Ideally with six of our very best WGB very best shots:
+	store exterior, store interior, franchise owner in store, WGB bone treat, grooming in a stainless tub (not bathtub), private label pink product bag display -->
+
+
+<div class="full-show">
+	<div class="inside lg">
+		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
+	    <ul class="uk-slideshow-items">
+				<li><%= image_tag('home-slide-exterior2.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-interior.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-owner.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-bone.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-bath.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-treats.jpg', class: 'img-responsive uk-cover') %></li>
+	    </ul>
+	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+	  </div>
 	</div>
 </div>
 
 <div class="hs-intro">
-	<div class="inside med">
-		<div class="left">
-			<h3>Shouldn't every day be <br><b>"Bring Your Dog to Work Day?"</b></h3>
-		</div>
+	<div class="inside">
+		<h1><span>Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America,</span> with more than 110 locations across the U.S.</h1>
 
-		<div class="right">
-			<p>
-				Woof Gang Bakery was founded in 2007, and has since grown into a multi-state franchise with national expansion opportunities.
-				With more than 100 locations across the U.S., we are the leading specialty retailer of pet food, pet supplies, and professional pet grooming in North America.
-			</p>
-			<p>Our commitment to providing outstanding service and quality products to the local community, combined with our great management team and passionate franchisees has given Woof Gang Bakery the right recipe for success.</p>
-		</div>
+		<p>Woof Gang Bakery offers the very best in pet care by providing quality products and grooming with a service-oriented approach. Each location is a neighborhood store committed to the well-being, health and happiness of pets.</p>
 	</div>
 </div>
 
 <div class="hs-franchise">
 	<div class="inside med2">
-		<div class="text">
-			<h2>Join The Fluffiest, Friendliest Franchise</h2>
-		</div>
-
-		<div class="blocks">
-			<div class="fblock opp">
-				<p><%= link_to "Franchise Opportunity", franchise_opportunity_path %></p>
-			</div>
-
-			<div class="fblock faq">
-				<p><%= link_to "Franchise FAQ's", faq_path %></p>
-			</div>
-
-			<div class="fblock invest">
-				<p><%= link_to "Investment Details", investment_details_path %></p>
-			</div>
-
-
-
-			<div class="fblock inq">
-				<p><%= link_to "Franchise Inquiries", franchise_inquiries_path %></p>
-			</div>
-		</div>
-
-		<div class="text2">
-			<p class="span">Our approach to franchising is very simple:</p>
-			<p>Successful franchising is totally built upon successful franchisees.
-			Our leadership philosophy is based upon the belief that we should direct, not dominate the franchise system, and that our franchisees should have a voice and participate in that direction.</p>
-		</div>
+		<p class="one">Our approach to franchising is very simple:</p>
+		<p class="two">Successful franchising is built upon successful franchisees.
+		Our leadership philosophy is based upon the belief that we should direct, not dominate the franchise system, and that our franchisees should have a voice and participate in that direction.</p>
 	</div>
 </div>
 
 <div class="hs4-locations">
 	<div class="inside med2">
-		<h4>Over 100 Locations Nationwide</h4>
+		<h4>More Than 110 Locations Nationwide</h4>
 		<div class="btn-hlf">
 			<%= link_to "Find One Near You", locations_path, class: 'woof-link' %>
 		</div>
@@ -74,54 +51,40 @@
 
 <div class="hs-serve">
 	<div class="intro">
-		<h3>Woof Gang does it all</h3>
-		<p>We offer a number of services to help keep your pets healthy and spoiled! Contact your local Woof Gang Bakery to find out which services are available in your area.
-			Select any service from the list below to visit the page, and learn more.
+		<h3>Woof Gang Bakery does it all</h3>
+		<p>We offer a number of services to help keep your pets healthy and spoiled!<br>
+		 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
+			Select a service from the logos below to visit the page, and learn more.
 		</p>
 	</div>
 
 	<div class="blocks">
-		<div class="right">
+		<div class="inside">
+			<%= link_to retail_path, class: 'serve-tl' do %>
+        <%= image_tag('wg-logo1.png', class: 'navbar-item logo')%>
+				<p>Retail </p>
+			<% end %>
+
 			<%= link_to grooming_path, class: 'serve-tl' do %>
-				<div class="icon"><%= image_tag('ptag-groom.png', class: 'img-responsive') %></div>
+        <%= image_tag('wg-logo1.png', class: 'navbar-item logo')%>
 				<p>Grooming </p>
 			<% end %>
 
 			<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
+        <%= image_tag('wg-logo1.png', class: 'navbar-item logo')%>
 				<p>Self-Service Grooming </p>
-				<div class="icon"><%= image_tag('ptag-ss.png', class: 'img-responsive') %></div>
-			<% end %>
-
-			<%= link_to retail_path, class: 'serve-tl' do %>
-				<div class="icon"><%= image_tag('ptag-retail.png', class: 'img-responsive') %></div>
-				<p>Retail </p>
-			<% end %>
-
-			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
-				<p>Veterinary Clinic </p>
-				<div class="icon"><%= image_tag('ptag-vet.png', class: 'img-responsive') %></div>
 			<% end %>
 
 			<%= link_to doggie_daycare_path, class: 'serve-tl' do %>
-				<div class="icon"><%= image_tag('ptag-daycare.png', class: 'img-responsive') %></div>
-				<p>Doggie Daycare </p>
+        <%= image_tag('wg-logo1.png', class: 'navbar-item logo')%>
+				<p>Day Care &amp; Pet Resort </p>
 			<% end %>
-		</div>
 
-		<div class="left">
-			<div class="wgb-slides" uk-slider="autoplay: true">
-		    <ul class="uk-slider-items">
-					<li><%= image_tag('location-img.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('packaged-treats.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('trim.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('toy-sec.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('grooming.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('treat-sec.jpg', class: 'img-responsive') %></li>
-					<li><%= image_tag('wilmington-exterior.jpg', class: 'img-responsive') %></li>
-		    </ul>
+			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
+        <%= image_tag('wg-logo1.png', class: 'navbar-item logo')%>
+				<p>Wellness Clinic </p>
+			<% end %>
 
-        <ul class="uk-slider-nav uk-dotnav uk-flex-center"></ul>
-			</div>
 		</div>
 	</div>
 </div>

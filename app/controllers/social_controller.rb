@@ -4,7 +4,7 @@ class SocialController < ApplicationController
 	end
 
 	def fb
-		redirect_to('https://www.facebook.com/woofgangbakery?v=wall&#038;mid=20b6a56G2a7f6d23G0G66')
+		redirect_to('https://www.facebook.com/woofgangbakery')
 	end
 
 	def twitter

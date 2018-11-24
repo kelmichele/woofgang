@@ -19,8 +19,7 @@
 	li {display: inline-block; float: none; margin: 1% 0 0px 3%;
 		a { color:$brown;
 			// font-size: 16px; font-family: $body; font-weight: $semi;
-			text-transform: none;
-			letter-spacing: .2px; font-size: 15px;
+			text-transform: none;font-size: 15px;
 		}
 	}
 
@@ -171,7 +170,7 @@
 		&.fb4 p{margin: 0px 0 15px;}
 		p.two{margin-bottom:0;}
 		p.mod-link{margin:10px 0 0;
-			a{color: $compb; font-weight: $semi;}
+			a{color: $pink; font-weight: $semi;}
 		}
 	}
 
