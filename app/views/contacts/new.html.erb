@@ -1,13 +1,9 @@
 <% @page_title = "Contact Us" %>
 <% @page_description = "New Description" %>
 
-<div class="pup-header inline">
-	<div class="inside narrow">
-		<div class="full">
-			<div class="tbox">
-				<h1>Contact Us</h1>
-			</div>
-		</div>
+<div class="ipage-header opink simple">
+	<div class="inside">
+		<h1>Contact Us</h1>
 	</div>
 </div>
 
@@ -34,25 +30,10 @@
 				<p>Monday-Friday: 8am-5pm</p>
 			</div>
 
-			<hr>
+			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
+			<!-- <div class="clearfix"></div><br> -->
 
-			<div class="is-box two">
-				<!-- <p>If you are a member of the news media and have an inquiry, please contact:</p> -->
-				<h3>Media and News Inquiries:</h3>
-
-				<p>Woof Gang Bakery, Inc.<br>
-				Cara Allen<br>
-				cara@woofgangbakery.com<br>
-				<a href="tel:4073559210">407-355-9210</a> ext: 104</p>
-			</div>
-
-			<hr>
-
-			<div class="is-box three">
-				<h3>Got a Great Product?<br>
-				Contact our Vendor Relations:</h3>
-				<p>sam@woofgangbakery.com</p>
-			</div>
+			<%= link_to 'Contact Vendor Relations', vendor_path, class: 'woof-link' %>
 		</div>
 
 		<div class="form-side">
@@ -61,3 +42,13 @@
 
 	</div>
 </div>
+
+
+
+
+<!-- git add app/assets/stylesheets/franchise_pages.scss -->
+<!-- git add app/views/contacts/new.html.erb -->
+<!-- git add app/views/franchise_pages/real-estate.html.erb -->
+
+
+

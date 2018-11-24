@@ -2059,6 +2059,7 @@ ul.paw {padding-left: 0;
 .contacts, .candidates {
   h1{margin-bottom: 10px}
   h3{font-size: 1.3rem; margin-top: 0;}
+  .woof-link{background-color: $white; color:$pink; display: block; width:80%; margin-bottom: 20px;}
 
   .inquiries, .full-contact {@include sec-default();padding: 100px 0;
 

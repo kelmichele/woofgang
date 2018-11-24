@@ -75,6 +75,17 @@
 		.left, .right {display: inline-block; float: left; width:45%;}
 		.right{float: right;}
 	}
+
+	.fb-tabs {
+		@include sec-default(); background-color: $f8; padding:30px 0;
+		.uk-tab li {
+			a {font-size: 16px;  text-transform: none; color:$black;}
+
+			&.uk-active a {border-color:$pink; font-weight: $semi;}
+		}
+
+		.uk-switcher{@include sec-default(); padding-top:25px;}
+	}
 }
 
 

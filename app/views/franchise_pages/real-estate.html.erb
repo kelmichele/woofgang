@@ -1,7 +1,7 @@
 <% @page_title = "Real Estate" %>
 <% @page_description = "New Description" %>
 
-<%= render 'franchise_pages/franch-header3' %>
+<%= render 'franchise_pages/franch-header2' %>
 
 <div class="franchise-layout">
 	<div class="statement">
@@ -11,7 +11,7 @@
 		</div>
 	</div>
 
-	<div class="franch-body">
+	<!-- <div class="franch-body">
 		<div class="inside med">
 			<div class="left">
 				<ul class="paw small">
@@ -53,5 +53,62 @@
 				<%= link_to 'Real Estate Submissions', franchise_inquiries_path, class: 'woof-link' %>
 			</div>
 		</div>
+	</div> -->
+
+
+
+	<div class="fb-tabs">
+		<div class="inside med">
+			<ul class="uk-tab" uk-tab>
+				<li><a>Ideal Space:</a></li>
+				<li><a>Typical Lease Terms:</a></li>
+				<li><a>Demographics:</a></li>
+			</ul>
+
+			<ul class="uk-switcher">
+				<li>
+					<ul class="paw xsmall">
+						<!-- <h4>Ideal Space:</h4> -->
+						<li>1,200 to 4,000 square feet</li>
+						<li>Free standing, end cap, or in-line units</li>
+						<li>Glass frontage 60 square feet minimum</li>
+						<li>Rear door delivery</li>
+						<li>Grooming permitted, or allowed with special permit</li>
+					</ul>
+				</li>
+
+				<li>
+					<ul class="paw xsmall">
+						<!-- <h4>Typical Lease Terms:</h4> -->
+						<li>Minimum 5+5 year lease term, to match franchise terms</li>
+						<li>Standard vanilla shell delivery</li>
+						<li>Tenant improvement allowance</li>
+						<li>Free rent period during construction</li>
+						<li>Exclusive use protection</li>
+						<li>Assignability provision to support long-term viability</li>
+					</ul>
+				</li>
+
+				<li>
+					<ul class="paw xsmall">
+						<!-- <h4>Demographics:</h4> -->
+						<li>Co-tenants: High-end retail, service-oriented businesses, grocery stores and other daily needs</li>
+						<li>Sources for strong foot traffic: Trade area mix of office and retail, with surrounding residential</li>
+						<li>Average household income: $70,000+</li>
+						<li>Surrounding Residential Areas: Population density of 15,000+ households</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="full-sec">
+		<div class="inside med2">
+			<p>Do you have available property that may be a perfect fit for a Woof Gang Bakery? Submit a site for consideration:</p>
+			<%= link_to 'Real Estate Submissions', franchise_inquiries_path, class: 'woof-link' %>
+		</div>
 	</div>
 </div>
+
+
+

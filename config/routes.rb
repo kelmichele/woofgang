@@ -38,8 +38,6 @@ Rails.application.routes.draw do
   get 'faq', to: 'franchise_pages#faq'
   get 'page', to: 'static_pages#page'
 
-
-
   get '/fb', to: 'social#fb'
   get '/insta', to: 'social#insta'
   get '/twitter', to: 'social#twitter'
@@ -49,8 +47,15 @@ Rails.application.routes.draw do
   get '/franchise-inquiries', to: 'candidates#new', as: 'franchise-inquiries'
   post '/franchise-inquiries', to: 'candidates#create'
 
+  get '/vendor', to: 'vendors#new', as: 'vendor'
+  post '/vendor', to: 'vendors#create'
+
   get '/contact', to: 'contacts#new', as: 'contact'
   post '/contact', to: 'contacts#create'
+
+  get '/media-inquiries', to: 'reporters#new', as: 'media-inquiries'
+  post '/media-inquiries', to: 'reporters#create'
+
 
   get 'tags/:tag', to: 'locations#index', as: :tag
 

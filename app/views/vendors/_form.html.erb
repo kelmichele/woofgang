@@ -1,0 +1,62 @@
+<%= render 'shared/errors', obj: @vendor %>
+
+<%= form_for @vendor, url: vendor_path do |vendor| %>
+  <fieldset>
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="notice"><%= flash[:alert] %></div>
+    <% end %>
+
+    <div class="top">
+      <!-- <h3>Franchise Inquiry Form</h3> -->
+      <!-- <hr> -->
+      <!-- <p class="disclose">The submission of this application does not obligate the applicant to become a franchisee of Woof Gang Bakery, nor does it obligate us to offer you a franchise.</p> -->
+      <p class="print">* indicates required field</p>
+      <hr>
+    </div>
+
+
+    <div class="form-group name">
+      <label>*Full Name:</label><br>
+      <%= vendor.text_field :name %>
+    </div>
+
+    <div class="form-group phone">
+      <label>*Phone: </label><br>
+      <%= vendor.text_field :phone %>
+    </div>
+
+    <div class="form-group email">
+      <label>*Email: </label><br>
+      <%= vendor.email_field :email %>
+    </div>
+
+    <div class="form-group location">
+      <label>*Company:</label><br>
+      <%= vendor.text_field :company %>
+    </div>
+
+    <div class="form-group grapevine">
+      <label>*Product</label><br>
+      <%= vendor.text_field :product %>
+    </div>
+
+    <div class="form-group honey">
+      <%= label_tag :honey %>
+      <%= vendor.text_field :honey %>
+      <span class="help">Do not fill in this field. It is an anti-spam measure.</span>
+    </div>
+
+
+    <div class="form-group submit">
+      <%= vendor.submit "Submit", :class=> "send-message" %>
+    </div>
+
+    <!-- <div class="clearfix"></div> -->
+    <!-- <p>*I agree that all of the above information is true.</p> -->
+  </fieldset>
+<% end %>
+
