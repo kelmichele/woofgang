@@ -1,4 +1,4 @@
-<% @page_title = "Your Neighborhood Pet Store" %>
+<% @page_title = "Page" %>
 <% @page_description = "New Description" %>
 
 
@@ -7,10 +7,10 @@
 		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
 	    <ul class="uk-slideshow-items">
 				<!-- <li><%= image_tag('home-slide-exterior2.jpg', class: 'img-responsive uk-cover') %></li> -->
-				<!-- <li><%= image_tag('home-slide-interior.jpg', class: 'img-responsive uk-cover') %></li> -->
-				<!-- <li><%= image_tag('home-slide-owner.jpg', class: 'img-responsive uk-cover') %></li> -->
-				<!-- <li><%= image_tag('home-slide-bone.jpg', class: 'img-responsive uk-cover') %></li> -->
-				<!-- <li><%= image_tag('home-slide-bath.jpg', class: 'img-responsive uk-cover') %></li> -->
+				<li><%= image_tag('home-slide-interior.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-owner.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-bone.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-bath.jpg', class: 'img-responsive uk-cover') %></li>
 				<li><%= image_tag('home-slide-treats.jpg', class: 'img-responsive uk-cover') %></li>
 	    </ul>
 	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
@@ -19,27 +19,41 @@
 	</div>
 </div>
 
-<div class="simple-intro">
-	<div class="inside">
-		<div class="text">
+<div class="hs1">
+	<div class="inside med">
+		<div class="as1-intro">
 			<h1> Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America,<span> with more than 110 locations across the U.S.</span></h1>
 		</div>
+
+		<div class="full content">
+			<div class="left images">
+				<%= image_tag('bowls.jpg', class: 'img-responsive img1', alt: '') %>
+
+				<div class="snip">
+					<p>Woof Gang Bakery offers the very best in pet care by providing quality products and grooming with a service-oriented approach. Each location is a neighborhood store committed to the well-being, health and happiness of pets.</p>
+				</div>
+			</div>
+
+			<div class="right">
+				<%= image_tag('woof6.jpg', class: 'img-responsive img2', alt: '') %>
+			</div>
+		</div>
 	</div>
 </div>
 
-<div class="intro2">
-	<div class="inside med">
-		<div class="image">
-			<%=image_tag('treat-table.jpg', class: 'img-responsive', alt: '') %>
-		</div>
 
-		<div class="text">
-			<p>Woof Gang Bakery offers the very best in pet care by providing quality products and grooming with a service-oriented approach. Each location is a neighborhood store committed to the well-being, health and happiness of pets.</p>
+<div class="banner-locations">
+	<div class="inside alt">
+		<h4>More Than 110 Locations Nationwide</h4>
+		<div class="btn-hlf">
+			<%= link_to "Find One Near You", locations_path, class: 'woof-link' %>
 		</div>
 	</div>
 </div>
 
-<div class="franchise-hs flip">
+<div class="clearfix"></div><br><br>
+
+<div class="franchise-hs">
 	<div class="inside med">
 		<div class="image">
 			<%=image_tag('ebba.jpg', class: 'img-responsive', alt: '') %>
@@ -54,14 +68,14 @@
 </div>
 
 
-<div class="banner-locations">
+<!-- <div class="hs4-locations">
 	<div class="inside med2">
 		<h4>More Than 110 Locations Nationwide</h4>
 		<div class="btn-hlf">
 			<%= link_to "Find One Near You", locations_path, class: 'woof-link' %>
 		</div>
 	</div>
-</div>
+</div> -->
 
 
 <div class="hs-serve">

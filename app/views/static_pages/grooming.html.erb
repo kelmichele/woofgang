@@ -1,88 +1,62 @@
 <% @page_title = "Grooming" %>
 <% @page_description = "New Description" %>
 
-<div class="pup-header inline">
-	<div class="inside med2">
-		<div class="full">
-			<div class="tbox">
-				<h1>Woof Gang Grooming</h1>
-				<h2>We believe that regular, thorough grooming is an essential element in every dog’s health and well-being. <b>That's why we offer:</b></h2>
+<div class="services-layout groom">
+	<div class="serv-slider inline-show">
+		<div class="inside lg">
+			<div class="il-slideshow" uk-slideshow="autoplay: true;max-height: 600; animation: push">
+				<div>
+			    <ul class="uk-slideshow-items">
+						<li><%= image_tag('retail7.jpg', class: 'img-responsive uk-cover') %></li>
+						<li><%= image_tag('retail9.jpg', class: 'img-responsive uk-cover') %></li>
+						<li><%= image_tag('retail13.jpg', class: 'img-responsive uk-cover') %></li>
+			    </ul>
+			    <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> -->
+			    <!-- <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> -->
+			  </div>
+			  <!-- <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul> -->
+			</div>
+
+
+			<div class="title">
+	  	  <%= image_tag('wgb-groom.png', class: 'img-responsive srv-logo', alt: '')%>
 			</div>
 		</div>
 	</div>
-</div>
 
-<div class="top-box">
-	<div class="inside med">
-		<div class="tb-box one">
-			<div class="text">
-				<h4>Luxurious TREATments</h4>
-				<p>Our spa menu includes a great selection of healthy and luxurious treatments that will leave your dog or cat’s coat, skin, teeth, and nails will looking, smelling and feeling incredible.</p>
-			</div>
-			<div class="img-box"><%= image_tag('adobe-grm1.png', class: 'img-responsive sb-img') %></div>
-		</div>
-
-
-		<div class="tb-box two">
-			<div class="text">
-				<h4>Tail-Wagging Products</h4>
-				<p>
-					Our spa products will help soothe and restore even the "ruffest" coat to its natural beauty.
-					We also offer a wide range of special products to accommodate your pet’s needs, including hypo-allergenic and medicated options.
-				</p>
-			</div>
-			<div class="img-box"><%= image_tag('curlers.png', class: 'img-responsive sb-img') %></div>
-		</div>
-
-
-		<div class="clearfix space"></div>
-		<div class="tb-box three">
-			<div class="img-box"><%= image_tag('brindle.png', class: 'img-responsive sb-img') %></div>
-			<div class="text">
-				<h4>Certified, Experienced Groomers</h4>
-				<p>
-					Woof Gang groomers are among the best in the industry. They always go out of their way to make your pet feel comfortable and safe.
-					Our groomers treat your furry family members like their own, helping to keep them in optimal hygiene and looking fabulous.
-				</p>
+	<div class="statement text-center">
+		<div class="inside med">
+	  	<div class="text">
+				<h1 class="pink">Woof Gang Grooming is the ultimate retreat for the pampered pet</h1>
+				<p>The Woof Gang Grooming spa atmosphere and experienced groomers provide a calm experience for pets to be groomed, indulged and revitalized. With our state-of-the-art grooming equipment and premium products we provide exceptional care to your pet in a safe and friendly environment. We have the skills and knowledge to handle any breed and any size dog.</p>
 			</div>
 		</div>
 	</div>
-</div>
 
-<div class="banner">
-	<div class="inside">
-		<div class="full">
-			<div class="inside">
-				<p>Contact your local store today to set up a grooming consultation, or stop by and meet with one of our groomers. We know you will see the difference.</p>
-
-				<div class="link">
-					<%= link_to "View Locations", locations_path, class: 'woof-link' %>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="layer-sec">
-	<div class="inside med2">
-		<div class="intro">
-			<p>Prices vary for full grooms, and depend on your dog's size, breed, and condition. Additional services are available for an extra fee.</p>
-		</div>
-
-		<div class="full">
+	<div class="gallery-sec tres">
+		<div class="inside med">
 			<div class="left">
-				<%= image_tag('woof14.jpg', class: 'img-responsive', alt: '')%>
+				<%= image_tag('groom1.jpg', class: 'img-responsive gall-img') %> <!-- 642x960 -->
+				<%= image_tag('groom9.jpg', class: 'img-responsive gall-img') %> <!-- 480x640 -->
+			</div>
 
-				<div class="text">
-					<p>Feel free to contact us for more information about how our dog spas can benefit both you and your dog.</p>
-					<%= link_to "Contact Us", contact_path, class: 'woof-link two' %>
-				</div>
+			<div class="mid">
+				<%= image_tag('groom5.jpg', class: 'img-responsive gall-img') %> <!-- 9x12 -->
+				<!-- <%= image_tag('groom11.jpg', class: 'img-responsive gall-img') %>  -->
+				<%= image_tag('groom10.jpg', class: 'img-responsive gall-img') %> <!-- 940x12 -->
 			</div>
 
 			<div class="right">
-				<%= image_tag('woof13.jpg', class: 'img-responsive', alt: '')%>
+				<%= image_tag('groom10.jpg', class: 'img-responsive gall-img') %> <!-- 940x12 -->
+				<%= image_tag('groom1.jpg', class: 'img-responsive gall-img') %> <!-- 642x960 -->
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<!-- instructions -->
+	<!-- At the top, add a photo rotator showing wide shots of different stores --6 . These can be during grooming (NOT bath tubs, but professional stainless tubs, during groom and maybe just one post-groom. -->
+	<!-- Woof Gang Grooming logo. -->
+	<!-- Below the rotator: Positioning statement:Woof Gang Grooming is the ultimate retreat for the pampered pet. Designed to provide a calm and experience in which your pets can be groomed, indulged and revitalized. With our state-of-the-art grooming equipment and premium products we provide exceptional care to your pet in a safe and friendly environment. We have the skills and knowledge to handle any breed and any size dog. -->
+	<!-- Below this, a small variety of excellent photos showing dogs post groom. -->

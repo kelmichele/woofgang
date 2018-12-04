@@ -10,10 +10,10 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <div class="top">
+    <!-- <div class="top">
       <p class="print">* indicates required field</p>
       <hr>
-    </div>
+    </div> -->
 
 
     <div class="form-group name">
@@ -62,6 +62,7 @@
 
     <div class="form-group submit">
       <%= reporter.submit "Submit", :class=> "send-message" %>
+      <p class="print">* indicates required field</p>
     </div>
   </fieldset>
 <% end %>

@@ -10,13 +10,13 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <div class="top">
+    <!-- <div class="top"> -->
       <!-- <h3>Franchise Inquiry Form</h3> -->
       <!-- <hr> -->
       <!-- <p class="disclose">The submission of this application does not obligate the applicant to become a franchisee of Woof Gang Bakery, nor does it obligate us to offer you a franchise.</p> -->
-      <p class="print">* indicates required field</p>
-      <hr>
-    </div>
+      <!-- <p class="print">* indicates required field</p> -->
+      <!-- <hr> -->
+    <!-- </div> -->
 
 
     <div class="form-group name">
@@ -41,7 +41,7 @@
 
     <div class="form-group grapevine">
       <label>*Product</label><br>
-      <%= vendor.text_field :product %>
+      <%= vendor.text_area :product %>
     </div>
 
     <div class="form-group honey">
@@ -53,6 +53,7 @@
 
     <div class="form-group submit">
       <%= vendor.submit "Submit", :class=> "send-message" %>
+      <p class="print">* indicates required field</p>
     </div>
 
     <!-- <div class="clearfix"></div> -->

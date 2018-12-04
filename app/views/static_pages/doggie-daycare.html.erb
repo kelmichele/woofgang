@@ -1,59 +1,62 @@
-<% @page_title = "Doggie Daycare" %>
+<% @page_title = "Day Care & Pet Resort" %>
 <% @page_description = "New Description" %>
 
-<div class="pup-header inline">
-	<div class="inside med2">
-		<div class="full">
-			<div class="tbox">
-				<h1>Doggie Day Care</h1>
-				<h2>Woof Gang Doggie Day Care offers a clean, safe, and fun environment for monitored interaction with other dogs.</h2>
+
+<div class="services-layout daycare">
+	<div class="inside lg">
+		<div class="serv-slider srv-slides" uk-slider="autoplay: true">
+		  <ul class="uk-slider-items">
+				<li><%= image_tag('placehold.jpg', class: 'img-responsive') %></li>
+				<li><%= image_tag('placehold.jpg', class: 'img-responsive') %></li>
+				<li><%= image_tag('placehold.jpg', class: 'img-responsive') %></li>
+		  </ul>
+
+		  <!-- <ul class="uk-slider-nav uk-dotnav uk-flex-center"></ul> -->
+		</div>
+	</div>
+
+	<div class="statement">
+		<div class="inside med2">
+			<div class="full one">
+		  	<div class="logo-bg"><%= image_tag('wgb-daycare.png', class: 'img-responsive srv-logo', alt: '')%></div>
+				<div class="text"><p>Woof Gang Doggie Day Care offers a clean, safe and fun environment for monitored interaction with other dogs.</p></div>
+			</div>
+
+			<div class="full two">
+		  	<div class="logo-bg"><%= image_tag('wgb-walking.png', class: 'img-responsive srv-logo', alt: '')%></div>
+				<div class="text"><p>Woof Gang Pet Resort is a boutique boarding facility that provides caring, convenient luxury dog boarding.</p></div>
+		  </div>
+	  </div>
+	</div>
+
+	<!-- <div class="disclaim"><h4>Doggie Day Care and Pet Resort services are offered only at select locations.</h4></div> -->
+	<div class="locations-disc">
+		<div class="inside med">
+			<h4>Doggie Day Care and Pet Resort services are offered only at select locations.</h4>
+			<div class="btn-hlf">
+				<%= link_to "View Locations", "/tags/doggie-daycare", class: 'woof-link' %>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="services-list">
-	<div class="inside med">
-		<div class="serve-box dc1">
-			<div class="text">
-				<h4>You'll Love Woof Gang Doggie Day Care!</h4>
-				<p>Our day care programs are staffed with well-trained, dog-lovers who put your pet’s safety above all else.
-					We have plenty of room to run around, lots of human attention, and endless canine companionship.
-				</p>
 
-				<h4>Dogs Love Woof Gang Doggie Day Care!</h4>
-				<p>If you work long hours, Woof Gang Doggie Day Care benefits both you and your pet. Our focus is keeping your dog safe, well, and spoiled!</p>
-			</div>
 
-			<div class="img-box">
-				<%= image_tag('bully-school.jpg', class: 'img-responsive sb-img') %>
-			</div>
-			<div class="bone-border"><%= image_tag('bone.png', class: 'img-responsive icon', alt: '') %></div>
-		</div>
 
-		<div class="serve-box two">
-			<div class="text">
-				<p>
-					Woof Gang Doggie Day Care requires an initial screening process to ensure that your dog is fit to join our program.
-					Each dog must be spayed or neutered, with up-to-date vaccinations for parvo, bordatella, rabies, and DHLP.
-				</p>
-				<p>
-					During your dog’s initial visit, he/she will be closely watched.
-					If your dog meets socialization requirements, and enjoys mixing with other dogs, then chances are they will thrive at doggie daycare.
-				</p>
-			</div>
-			<div class="img-box"><%= image_tag('pup-group.png', class: 'img-responsive sb-img') %></div>
-		</div>
-	</div>
-</div>
 
-<div class="full">
-	<div class="inside">
-		<div class="disc-banner">
-			<div class="text">
-				<h4>Doggie Day Care is not offered at all of our locations. Stores offering Doggie Daycare:</h4>
-				<p><%= link_to "Woof Gang Bakery & Grooming Boynton Beach", "/locations/woof-gang-bakery-grooming-boynton-beach" %></p>
-			</div>
-		</div>
-	</div>
-</div>
+
+<!-- instructions -->
+	<!--
+	Rotator:
+	This is the only page on the site where we need to purchase stock photos. Paul will select these photos.
+
+	Logos (2):
+	Woof Gang Doggie Day Care
+	Woof Gang Pet Resort
+
+	Positioning Statement:
+	Woof Gang Doggie Day Care offers a clean, safe and fun environment for monitored interaction with other dogs. Woof Gang Pet Resort is a boutique boarding facility that provides caring, convenient luxury dog boarding.
+
+	Remove all copy and cut outs.
+	Doggie Day Care and Pet Resort services offered ONLY AT SELECT locations.
+	-->

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
+  get 'page', to: 'static_pages#page'
   get 'about-us', to: 'static_pages#about-us'
   get 'contact-us', to: 'static_pages#contact-us'
   get 'services', to: 'static_pages#services'
@@ -36,7 +37,6 @@ Rails.application.routes.draw do
   get 'info', to: 'franchise_pages#info'
 
   get 'faq', to: 'franchise_pages#faq'
-  get 'page', to: 'static_pages#page'
 
   get '/fb', to: 'social#fb'
   get '/insta', to: 'social#insta'

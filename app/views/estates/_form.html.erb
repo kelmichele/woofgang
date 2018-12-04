@@ -10,10 +10,10 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <div class="top">
+    <!-- <div class="top">
       <p class="print">* indicates required field</p>
       <hr>
-    </div>
+    </div> -->
 
     <h3>Your Information</h3>
     <div class="form-group fname">
@@ -113,33 +113,41 @@
     </div>
 
     <div class="form-group est_type">
-      <label>*Type of Property:</label><br>
+      <!-- <label>*Type of Property:</label><br> -->
       <%= estate.select(:est_type) do %>
         <!--other-->
-        <% [['Select Answer', ''], ['Downtown', 'Downtown'], ['Freestanding', 'Freestanding'], ['Mall', 'Mall'], ['Shopping Center End Cap', 'Shopping Center End Cap'], ['Shopping Center In-Line', 'Shopping Center In-Line'], ['Other', 'Other']].each do |c| -%>
+        <% [['*Type of Property:', ''], ['Downtown', 'Downtown'], ['Freestanding', 'Freestanding'], ['Mall', 'Mall'], ['Shopping Center End Cap', 'Shopping Center End Cap'], ['Shopping Center In-Line', 'Shopping Center In-Line'], ['Other', 'Other']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
+    </div>
+
+    <div class="form-group other">
+      <label><b>If other</b>, what type of property?</label><br>
+      <%= estate.text_field :other %>
     </div>
 
     <div class="form-group est_timeframe">
-      <label>*When will property be available?</label><br>
+      <!-- <label>*When will property be available?</label><br> -->
       <%= estate.select(:est_timeframe) do %>
-        <% [['Select Answer', ''], ['Immediately', 'Immediately'], ['Within 1 Month', 'Within 1 Month'], ['2-5 months', '2-5 months'], ['More than 6 months', 'More than 6 months']].each do |c| -%>
+        <% [['*When will property be available?', ''], ['Immediately', 'Immediately'], ['Within 1 Month', 'Within 1 Month'], ['2-5 months', '2-5 months'], ['More than 6 months', 'More than 6 months']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
     </div>
 
-    <hr>
+    <h3>Additional</h3>
     <div class="form-group grapevine">
-      <label>Where did you find our web address?</label><br>
-      <!--Name of Source -->
+      <!-- <label>Where did you find our web address?</label><br> -->
       <%= estate.select(:grapevine) do %>
-        <% [['Select Answer', ''], ['Business Journal', 'Business Journal'], ['Newspaper', 'Newspaper'], ['Magazine', 'Magazine'], ['Online', 'Online'], ['Social Media', 'Social Media'], ['Other', 'Other']].each do |c| -%>
+        <% [['Where did you find our web address?', ''], ['Business Journal', 'Business Journal'], ['Newspaper', 'Newspaper'], ['Magazine', 'Magazine'], ['Online', 'Online'], ['Social Media', 'Social Media'], ['Other', 'Other']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
+    </div>
+    <div class="form-group other">
+      <label><b>If other</b>, what source?</label><br>
+      <%= estate.text_field :source %>
     </div>
 
     <div class="form-group honey">
@@ -151,6 +159,7 @@
 
     <div class="form-group submit">
       <%= estate.submit "Submit", :class=> "send-message" %>
+      <p class="print">* indicates required field</p>
     </div>
   </fieldset>
 <% end %>
