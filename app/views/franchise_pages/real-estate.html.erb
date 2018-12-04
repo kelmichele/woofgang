@@ -1,21 +1,22 @@
 <% @page_title = "Real Estate" %>
 <% @page_description = "New Description" %>
 
-<%= render 'franchise_pages/franch-header2' %>
+<!-- 2, 4 = X -->
+<%= render 'franchise_pages/franch-header3' %>
 
-<div class="franchise-layout">
+<div class="franchise-layout real-estate">
 	<div class="statement">
 		<div class="inside med2">
-			<h3>A prime location is one of the most important components of any Woof Gang Bakery store, so we have developed guidelines to help with site selection. <span>Use the following criteria to find the perfect location for your Woof Gang Bakery store.</span></h3>
-			<!-- <%= image_tag('wilmington-exterior.jpg', class: 'img-responsive ext', alt: 'Woof Gang Bakery, store exterior')%>  -->
+			<h3 >A prime location is one of the most important components of any Woof Gang Bakery store, so we have developed guidelines to help with site selection. <span>Use the following criteria to find the perfect location for your Woof Gang Bakery store.</span></h3>
 		</div>
 	</div>
 
-	<!-- <div class="franch-body">
+
+	<div class="col">
 		<div class="inside med">
-			<div class="left">
-				<ul class="paw small">
-					<h4>Ideal Space:</h4>
+			<div class="full one">
+				<h4>Ideal Space:</h4>
+				<ul class="">
 					<li>1,200 to 4,000 square feet</li>
 					<li>Free standing, end cap, or in-line units</li>
 					<li>Glass frontage 60 square feet minimum</li>
@@ -24,9 +25,9 @@
 				</ul>
 			</div>
 
-			<div class="right">
-				<ul class="paw small">
-					<h4>Typical Lease Terms:</h4>
+			<div class="full two">
+				<h4>Typical Lease Terms:</h4>
+				<ul class="">
 					<li>Minimum 5+5 year lease term, to match franchise terms</li>
 					<li>Standard vanilla shell delivery</li>
 					<li>Tenant improvement allowance</li>
@@ -36,11 +37,9 @@
 				</ul>
 			</div>
 
-			<div class="clearfix"></div><br>
-
-			<div class="left">
-				<ul class="paw small">
-					<h4>Demographics:</h4>
+			<div class="full three">
+				<h4>Demographics:</h4>
+				<ul class="">
 					<li>Co-tenants: High-end retail, service-oriented businesses, grocery stores and other daily needs</li>
 					<li>Sources for strong foot traffic: Trade area mix of office and retail, with surrounding residential</li>
 					<li>Average household income: $70,000+</li>
@@ -48,38 +47,32 @@
 				</ul>
 			</div>
 
-			<div class="right">
-				<p>Do you have available property that may be a perfect fit for a Woof Gang Bakery? Submit a site for consideration:</p>
-				<%= link_to 'Real Estate Submissions', franchise_inquiries_path, class: 'woof-link' %>
-			</div>
+			<div class="image-nrw"><%= image_tag('corner-img.jpg', class: 'img-responsive', alt: '') %></div>
 		</div>
-	</div> -->
+	</div>
 
 
+		<!-- STYLE INLINE -->
+	<!-- 	<div class="franch-body inline-info">
+			<div class="full one">
+				<div class="content">
+					<h4>Ideal Space:</h4>
 
-	<div class="fb-tabs">
-		<div class="inside med">
-			<ul class="uk-tab" uk-tab>
-				<li><a>Ideal Space:</a></li>
-				<li><a>Typical Lease Terms:</a></li>
-				<li><a>Demographics:</a></li>
-			</ul>
-
-			<ul class="uk-switcher">
-				<li>
 					<ul class="paw xsmall">
-						<!-- <h4>Ideal Space:</h4> -->
 						<li>1,200 to 4,000 square feet</li>
 						<li>Free standing, end cap, or in-line units</li>
 						<li>Glass frontage 60 square feet minimum</li>
 						<li>Rear door delivery</li>
 						<li>Grooming permitted, or allowed with special permit</li>
 					</ul>
-				</li>
+				</div>
+			</div>
 
-				<li>
+			<div class="full two">
+				<div class="content">
+					<h4>Typical Lease Terms:</h4>
+
 					<ul class="paw xsmall">
-						<!-- <h4>Typical Lease Terms:</h4> -->
 						<li>Minimum 5+5 year lease term, to match franchise terms</li>
 						<li>Standard vanilla shell delivery</li>
 						<li>Tenant improvement allowance</li>
@@ -87,28 +80,34 @@
 						<li>Exclusive use protection</li>
 						<li>Assignability provision to support long-term viability</li>
 					</ul>
-				</li>
+				</div>
+			</div>
 
-				<li>
+			<div class="full three">
+				<div class="content">
+					<h4>Demographics:</h4>
+
 					<ul class="paw xsmall">
-						<!-- <h4>Demographics:</h4> -->
 						<li>Co-tenants: High-end retail, service-oriented businesses, grocery stores and other daily needs</li>
 						<li>Sources for strong foot traffic: Trade area mix of office and retail, with surrounding residential</li>
 						<li>Average household income: $70,000+</li>
 						<li>Surrounding Residential Areas: Population density of 15,000+ households</li>
 					</ul>
-				</li>
-			</ul>
-		</div>
-	</div>
+				</div>
+			</div>
+		</div> -->
 
+
+
+
+<!-- <div class="clearfix"></div><br><br><br>
 	<div class="full-sec">
 		<div class="inside med2">
-			<p>Do you have available property that may be a perfect fit for a Woof Gang Bakery? Submit a site for consideration:</p>
-			<%= link_to 'Real Estate Submissions', franchise_inquiries_path, class: 'woof-link' %>
+			<p>Do you have available property that may be a perfect fit for a Woof Gang Bakery? <br>Submit a site for consideration:</p>
+			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
 		</div>
 	</div>
 </div>
 
-
+ -->
 

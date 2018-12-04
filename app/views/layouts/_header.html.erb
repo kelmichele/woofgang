@@ -1,8 +1,7 @@
-<header class="inline-header" uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
-  <div class="above">
+<!-- <header class="inline-header" uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
+  <div class="above"><div class="full">
     <div class="contact">
       <a href="tel:4073559210"><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></a>
-
     </div>
 
     <ul class="social">
@@ -15,7 +14,7 @@
       </button>
       <%= render 'layouts/mobile-nav' %>
     </div>
-  </div>
+  </div></div>
 
   <nav class="uk-navbar-container inside inside-stick" uk-navbar>
     <div class="navbar-center">
@@ -53,7 +52,73 @@
           </div>
         </li>
 
-        <!-- <li><%= link_to "About Us", about_us_path %></li> -->
+        <li><%= link_to "Blog", posts_path %></li>
+
+        <li><%= link_to "Contact Us", contact_path %></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+ -->
+
+
+<div class="above">
+  <div class="full">
+    <div class="contact">
+      <a href="tel:4073559210"><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></a>
+    </div>
+
+    <ul class="social">
+      <%= render 'shared/social' %>
+    </ul>
+
+    <div class="mobile-nav">
+      <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
+        <span class="mmenu" uk-icon="menu"></span>
+      </button>
+      <%= render 'layouts/mobile-nav' %>
+    </div>
+  </div>
+</div>
+
+<header class="inline-header centered">
+<!-- <header class="inline-header centered" uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky"> -->
+  <nav class="uk-navbar-container inside inside-stick" uk-navbar>
+    <div class="navbar-center">
+      <div class="nb-logo">
+        <%= link_to(image_tag('wg-logo1.png', class: 'navbar-item logo'), root_path )%>
+      </div>
+
+      <ul class="uk-navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li>
+          <a href="#">Franchising</a>
+          <div class="uk-navbar-dropdown">
+            <ul class="uk-nav uk-navbar-dropdown-nav">
+              <li><%= link_to "Franchising", franchising_path %></li>
+              <li><%= link_to "Training & Support", training_support_path %></li>
+              <li><%= link_to "The Next Steps", franchise_steps_path %></li>
+              <li><%= link_to "Real Estate", real_estate_path %></li>
+              <li><%= link_to "Franchise FAQs", faq_path %></li>
+              <li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
+            </ul>
+          </div>
+        </li>
+
+        <li><%= link_to "Locations", locations_path %></li>
+        <li>
+          <a href="#">Services</a>
+          <div class="uk-navbar-dropdown">
+            <ul class="uk-nav uk-navbar-dropdown-nav">
+              <li><%= link_to "Retail", retail_path %></li>
+              <li><%= link_to "Grooming", grooming_path %></li>
+              <li><%= link_to "Self-Service Grooming", self_service_grooming_path %></li>
+              <li><%= link_to "Day Care & Pet Resort", doggie_daycare_path %></li>
+              <li><%= link_to "Wellness Clinic", vet_clinic_path %></li>
+            </ul>
+          </div>
+        </li>
+
         <li><%= link_to "Blog", posts_path %></li>
 
         <li><%= link_to "Contact Us", contact_path %></li>

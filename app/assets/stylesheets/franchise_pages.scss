@@ -10,7 +10,7 @@
 
 // V1
 .franch-header {@include sec-default(); text-align: center;
-	.full{height:550px;@include sec-bgimage('bull-st.jpg'); background-position: center center;
+	.full{height:550px;@include sec-bgimage('fp-placeholder.jpg'); background-position: center center;
 		position: relative; z-index: 0;
 		&::before{@include before(); background-color: rgba($black,.3);}
 
@@ -25,47 +25,126 @@
 }
 
 // V2
-.franchise-intro {@include sec-default();
-	.full{@include sec-bgimage('bull-st-narrow.jpg'); background-position: bottom center; height:600px; position: relative;
-		background-size: 95%;
-		// box-shadow: 0px 4px 18px rgba($black, .2);
-		h1{text-transform: uppercase;}
-	}
-	// position: relative; z-index: 0;
-	// &::before{@include after(); width:40%; left:55%; height:100%; background-color: $pink; bottom:0;}
-	// .image, .text {display: inline-block; float: left; width:85%; }
+.franchise-head.v2 {@include sec-default(); position: relative; z-index: -1;
+	padding: 40px 3% 0 3%; text-align: center;
+  &::before{@include after(); height: 50%;
+  	background-color: darken($opink, 1%);
+  	// background-color: rgba($pink,.9);
+  }
+	.inside.lg {width:95%; }
 
-	.text {
-		width:38%; padding:20px; text-align: center;
-		// position: absolute; margin-left: -20%; text-align: right; margin-top:10%;
-		position: absolute; bottom: 0; right:0; background-color: $opink;
-		h2{font-size:1.2rem; margin:0;}
-		h1{margin:0; }
-	}
+  img {
+  	height: 500px; @include center-block();
+  	// width:67%;
+  	// @include sec-bgimage('fp-placeholder-nrw.jpg'); background-size: cover; background-position: center center;
+  }
 
-	.image{max-height:500px; overflow: hidden;}
+  .text {@include sec-default(); text-align: center; padding:30px 0 30px;}
+  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em; font-size: 1.8rem; margin:0;
+  	font-family: $pop; letter-spacing: 1px;
+  }
+  h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: $semi; font-family: $pop; font-weight: 300}
 }
 
 // V3
-.franchise-hfull{@include sec-default(); text-align: center;
-	padding-bottom: 30px;
-	.text, .image{position: relative; z-index: 1;}
-	.image{height: 550px; overflow: hidden;}
-	.text{width: 60%; @include center-block(); z-index: 2;}
-	.full{background-color: $white; padding:15px 20px; margin-top:-107px;}
-	h1,h2 {margin:0px; font-weight: bold;}
-  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em;}
-  h2{ font-size:1.4rem; }
+.franchise-hfull {@include sec-default(); position: relative; z-index: -1;
+	@include sec-bgimage('hero-bg.jpg'); background-size: 40%; background-position: right bottom;
+	padding: 40px 3% 0 3%;
+	&::before{@include before(); height: 420px;background-color: rgba(darken($opink, 2%),.98);}
+	.inside.lg {width:95%; }
+
+  .image, .title {display: inline-block; float: left; width: 70%;}
+  .image { height: 480px;
+  	width:67%; margin-left: 3%;
+  	@include sec-bgimage('fp-placeholder-long.jpg'); background-size: cover; background-position: center center;
+  }
+  .title {width:30%; float: right; padding: 80px 0 0;
+   text-align: center;
+ 	}
+  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em; font-size: 2rem; margin:0;
+		font-family: $pop; letter-spacing: 1px;
+  }
+  h2{ font-size:1.15rem; margin-bottom: 8px; font-family: $pop; font-weight: 400;}
+
+	//img full height
+	// padding-top:0;
+	// &::before {height:70%; top:15%;}
+	// .title {margin-top:100px;}
+
+	// before full height
+	padding:60px 3%;
+	&::before {width:40%; left:60%; height:100%;}
+	.title {margin-top:100px; margin-right: -10px;}
+}
+
+// V4
+.franchise-head.v4 {@include sec-default(); position: relative; z-index: 0;
+	padding: 40px 3% 0 3%; text-align: center;
+  &::before{@include before(); height: 50%;
+  	background-color: darken($opink, 4%);
+  }
+	.inside.lg {width:95%; }
+
+  img {width: 60%; float:right; display: inline-block; margin-right: 2%;}
+
+  .text { text-align: justify; float:left; padding:30px 0 30px; display: inline-block; width:34%; margin-top: 10%; margin-left: 2%;}
+  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em; font-size: 2rem; margin:0;
+  	font-family: $pop; letter-spacing: 1px;
+  }
+  h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: $semi; font-family: $pop; font-weight: 300; text-align: left;}
+  h3{ font-size:1.2rem;  font-family: $pop; font-weight: 300; padding-right: 20px; margin-top: 100px;
+  	width:87%; line-height: 1.7em;
+  	// margin-left: -3%;
+		span{color:$pink;}
+  }
+}
+
+.title-block{@include sec-default(); @include sec-bgimage('treat-table.jpg'); background-position: center center; padding:30px 0;
+	position: relative; z-index: 0;
+	&::before{@include before(); background-color: rgba($pink7, .8);}
+
+	h1, h2 {margin:0; color:$white;}
+  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em; font-size: 1.5rem;}
+  h2{ font-size:1.1rem; margin-bottom: 8px; }
+}
+
+.franch-head-layer {@include sec-default(); text-align: center;
+	position: relative; z-index: -1;
+	 // padding: 50px 0 25px;
+	@include sec-bgimage('fplaceholder.jpg');
+	&::before{@include after(); background-color: rgba($f8,.9); }
+	// &::before{@include after(); background-color: darken($opink, 3%); height:40%;}
+
+	img {@include center-block(); height:530px; border-left:10px solid $white; border-right: 10px solid $white;}
+}
+.fhl-text {@include sec-default();margin-top: 15px;
+	text-align: center;
+	// position: absolute; width:70%; left:15%;
+	// background-color: rgba($black,.2);
+	h1,h2 { @include tshadowl(rgba($black, 0)); margin:0px; font-weight: bold; }
+	h1{text-transform: uppercase; letter-spacing: .5px;font-family: $pop; }
+	h2{ font-size:1.5rem; line-height: 1.5em; font-size: 1.25rem; font-family: $pop; font-weight: 300;}
+
+	&.top {display: none;}
 }
 
 
-
-
-
+/////
 .franchise-layout {@include sec-default(); padding: 50px 0;
 	.statement {@include sec-default(); padding-bottom: 50px;
 		h3{font-size: 1.35rem;text-align: center;
+			// font-family: $pop; text-transform: uppercase;  font-size: 1.1rem; letter-spacing: .5px;
 		 	span {color: $pink;}
+		 	&.thin {font-family: $pop;font-weight: 300; }
+		}
+
+		&.less {
+			h3 {font-size: 1.2rem;}
+			// h3, img {display: inline-block; float: left; }
+			// img{width:35%; margin-left: 3%; }
+			// h3 {float:none; font-size: 1.2rem; text-align: left; width: 67%; margin-top:8%;
+			// 	background-color: $white; padding: 20px 0 20px 20px; margin-left: -5%;
+			// }
 		}
 	}
 
@@ -74,6 +153,11 @@
 		p{margin-top:0;}
 		.left, .right {display: inline-block; float: left; width:45%;}
 		.right{float: right;}
+
+		&.alt {
+			.right, .left{width: 48%;}
+			li{font-size: 17px;}
+		}
 	}
 
 	.fb-tabs {
@@ -86,13 +170,159 @@
 
 		.uk-switcher{@include sec-default(); padding-top:25px;}
 	}
+
+	// h4 vertical
+	.inline-info {
+		.bod {width: 60%; float:right; margin-right: 5%}
+
+		.full{padding:40px 0;}
+
+		ul.paw li {
+			// &::before {width: 30px; top:12px; left:15px; height:2px; background-color: rgba($pink, .6); background-image: none; }
+			&::before {width: 6px; height:6px; top:18px; left:0; background-color: rgba($pink, .6); background-image: none;
+				top:8px;
+			}
+		}
+
+		.full {
+			position: relative; z-index: 0;
+			@include sec-default(); padding: 60px 10%;
+
+			p{margin-bottom: 30px;}
+			p.text-right {text-align: right;}
+			h4 {font-weight: normal;
+				position: absolute; @include rotate(-90deg); width:220px; z-index: 1; bottom:140px;
+			}
+			&.one,&.three{background-color: rgba($f8, .5); }
+			&.one h4 {bottom: 175px;}
+
+			.content {width:80%; float: right;}
+			h4{left:0;}
+			&.one h4{bottom:200px}
+			&.two h4{bottom:190px}
+		  &.three h4{bottom:165px;}
+			li{
+				// border-bottom: $border; padding-bottom: 5px; margin-bottom: 15px;
+				// text-align: right; font-size: 17px;
+				font-family: $pop; font-weight: 300; font-size: 16px;
+			}
+
+
+
+			padding: 60px 5% 60px 18%;
+			h4{left:18%; font-family: $pop; text-transform: uppercase; font-size: 1.2rem;}
+			&.one h4{bottom:165px}
+			&.two h4{bottom:145px}
+		  &.three h4{bottom:135px;}
+		}
+
+		// .content {position: relative; z-index: 0;&::before{@include before(); background-color: $opink; width: 60px; height:60px; left:-30px; top:-20px;}}
+	}
+
+	// fw
+	.col {@include sec-default();
+		p, li, a, h3, h4 {font-family: $pop;}
+		h4{font-weight: 500;  text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
+		p{font-weight: 300;}
+
+		.full, .image-nrw {margin-bottom: 70px;
+			width:47%; display: inline-block;
+			width:45%;
+			float: left;
+			&:nth-child(2n+2){float: right;}
+			&.three {margin-top: 30px;}
+			&.one, &.three {margin-left:3%; }
+			&.two {margin-right: -2%;}
+		}
+		ul {padding-left: 20px;}
+		li {margin-bottom: 7px; font-size: 16px; font-weight: 300; line-height: 1.7em;
+			position: relative; z-index: 0;
+			margin-bottom: 5px;
+			padding-left: 14px;
+			&::before {@include before(); width:20px; height:1px; left: -20px; background-color: rgba($black, .2); top:14px;}
+		}
+
+		// .left, .right{display: inline-block; float: left; width:48%;}
+		// .right {float: right; width:50%;}
+
+		.image-nrw  {width:45%;
+			position:absolute; margin-top:22%; right:0;
+			height:270px; overflow: hidden;
+		}
+	}
+
+
+	.lay-new {padding:50px 0 40px;
+		hr {margin-top: 0; width:90%;}
+
+		.full.dbl {
+			h4{ font-family: $pop; font-weight: 500;text-transform: uppercase; letter-spacing: .3px; margin-bottom:5px;}
+			li {font-size: 16px; font-family: $pop; font-weight: 300; margin-bottom: 5px; line-height: 1.7em;
+				position: relative; z-index: 0;padding-left: 5px;
+				&::before {@include before(); width:15px; height:1px; left: -20px; background-color: rgba($black, .2); top:12px;}
+			}
+			// ul {padding-left: 15px;}
+			.content, .image {display: inline-block; float: left;}
+			.content {
+				background-color: $white;
+				width:45%;
+				float: right;
+			}
+			.image{ width:45%;}
+
+
+			&.one {margin-bottom: 100px;
+				// .content{float: left;  margin-left: 4%}
+				// .image{float: none; margin-left: 2%;}
+				.content{float: none;  margin-left: 4%; margin-top: 5%;}
+				.image{float: left; margin-left: 2%;}
+			}
+
+			&.two {
+				// .image {margin-left: 1%}
+				// .content {width:50%; margin-right: -2%; }
+				p{width:90%;}
+
+				.image {float: none; }
+				.content {width:50%; float: left; margin-left: 2%; padding-left: 20px; margin-top:1%;}
+			}
+		}
+
+
+		.left, .right {display: inline-block; float: left; width:49%;
+			.full {padding-left: 20px;}
+			// .full.two {width:90%; float: right;}
+			li {font-size: 16px; font-family: $pop; font-weight: 300; margin-bottom: 5px; line-height: 1.7em;}
+			ul {padding-left: 15px; margin-bottom: 30px; }
+			h4{ font-family: $pop; font-weight: 500; color: $pink; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
+			.image {margin-bottom: 20px;}
+		}
+		.right {float: right; margin-top: 5%;}
+	}
+
 }
+
+
+.training-support {
+	.franch-head-layer {margin-bottom: 60px;}
+	.fhl-text, .statement {display: inline-block; float: left; width:30%;}
+	.fhl-text {margin-left: 13%; padding-right: 20px; border-right: $border;}
+	.statement {float: none; margin-left: 1%; width:45%; text-align: left;
+		padding-left: 15px;
+		// margin-top:3%;
+		h3{font-size: 1.1rem;
+		 	span {color: $pink;}
+		}
+	}
+}
+
 
 
 .franchise_pages .page-body {
 	ul, ul.paw {
     p {margin-bottom: 10px; font-weight: $semi; }
-    li {margin-left:10px; font-size:17px;}
+    // li { font-size:17px;}
+    // margin-left:10px;
 
     @include bp(tb) {
 			li {font-size: 16px;}
@@ -117,17 +347,17 @@
 
 	.full.top { padding: 40px 0 60px;
 		.big, ul { display: inline-block; float: left; width: 35%; margin-left: 3%;}
-		.big { margin-top:4%; text-align: center;
+		.big { margin-top:2%; text-align: center;
 			p{font-size: 25px;@include sec-default();}
 			hr{display: none;}
 		}
 
 		ul.paw {float:right; width:55%;
 			li{margin-bottom: 10px;}
-			li::before{left:-3px; top:4px;}
+			li::before{left:-3px; top:4px; display: none;}
 		}
 
-		.woof-link{@include sec-default(); margin-top:15%;}
+		.woof-link{@include sec-default(); background-color: rgba($pink,.3);}
 		.woof-link.xs-show{display: none;}
 		.btn{@include sec-default(); color: $white; @include tshadowl(rgba($black, .3));padding: 14px 8px; margin-top: 20%;}
 	}
@@ -540,8 +770,9 @@
 .training-support {}
 
 //******** steps **********//
-.steps, .franchise-steps {
+.info {
 	h3{font-size: 1.1rem; font-weight: $semi;}
+	.franch-body .inside {float: right;}
 
 	.overview{@include sec-default(); padding: 90px 0 40px;}
 	.list-intro, .x-img {display:inline-block; width: 48%; margin-left: 3%; float:left;}

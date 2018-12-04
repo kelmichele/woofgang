@@ -1,42 +1,53 @@
 <% @page_title = "Franchise Approval Process" %>
 <% @page_description = "New Description" %>
 
-<%= render 'franchise_pages/franch-header' %>
+<!-- <div class="title-block">
+	<div class="inside">
+		<h2>Become a Woof Gang Bakery Franchisee</h2>
+		<h1><%= @page_title %></h1>
+	</div>
+</div> -->
+<!-- 3 -->
+<%= render 'franchise_pages/franch-header2' %>
 
 <div class="franchise-layout">
 	<div class="statement">
 		<div class="inside med2">
 			<!-- Franchise Approval Process -->
-			<h3>We’ve broken the approval process down into five simple steps.</h3>
+			<h3>We’ve broken the approval process down into <span>four simple steps.</span></h3>
 		</div>
 	</div>
 
-	<div class="franch-body">
-		<div class="inside">
-			<div class="left">
+
+
+
+	<div class="franch-body inline-info">
+		<div class="full one">
+			<div class="content">
 				<ul class="paw">
-					<h4>Step 1: Your Inquiry</h4>
+					<h4>Step 1:<br> Your Inquiry</h4>
 					<li>Complete online application via the <%= link_to 'franchise inquiry form', franchise_inquiries_path, class: 'text-link' %></li>
 					<li>Invitation to complete a full application</li>
 				</ul>
 			</div>
+		</div>
 
-			<div class="right">
+		<div class="full two">
+			<div class="content">
 				<ul class="paw">
-					<h4>Step 2: Your Application</h4>
+					<h4>Step 2:<br> Your Application</h4>
 					<li>First telephone interview</li>
 					<li>Do your homework</li>
 					<li>Financials submitted</li>
 					<li>Executive interview</li>
 				</ul>
 			</div>
+		</div>
 
-			<div class="clearfix"></div><br>
-
-
-			<div class="left">
+		<div class="full three">
+			<div class="content">
 				<ul class="paw">
-					<h4>Step 3: Discovery Day</h4>
+					<h4>Step 3:<br> Discovery Day</h4>
 					<li>Spend the day at Woof Gang Bakery HQ in Orlando, Florida</li>
 					<li>Understand what your responsibilities are as a franchisee</li>
 					<li>Meeting and interacting with staff who will train and support your franchise</li>
@@ -44,10 +55,12 @@
 					<li>Receive and review Franchise Disclosure Documents</li>
 				</ul>
 			</div>
+		</div>
 
-			<div class="right">
+		<div class="full four">
+			<div class="content">
 				<ul class="paw">
-					<h4>Step 4: Final Steps</h4>
+					<h4>Step 4:<br> Final Steps</h4>
 					<li>Franchise agreement signed</li>
 					<li>Site approved and lease signed</li>
 					<li>Financing secured</li>
@@ -57,4 +70,43 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- <div class="franch-body">
+		<div class="inside">
+			<ul class="paw">
+				<h4>Step 1: Your Inquiry</h4>
+				<li>Complete online application via the <%= link_to 'franchise inquiry form', franchise_inquiries_path, class: 'text-link' %></li>
+				<li>Invitation to complete a full application</li>
+			</ul>
+			<div class="clearfix"></div><br>
+
+			<ul class="paw">
+				<h4>Step 2: Your Application</h4>
+				<li>First telephone interview</li>
+				<li>Do your homework</li>
+				<li>Financials submitted</li>
+				<li>Executive interview</li>
+			</ul>
+			<div class="clearfix"></div><br>
+
+			<ul class="paw">
+				<h4>Step 3: Discovery Day</h4>
+				<li>Spend the day at Woof Gang Bakery HQ in Orlando, Florida</li>
+				<li>Understand what your responsibilities are as a franchisee</li>
+				<li>Meeting and interacting with staff who will train and support your franchise</li>
+				<li>A full understanding of the Woof Gang Bakery brand and culture</li>
+				<li>Receive and review Franchise Disclosure Documents</li>
+			</ul>
+			<div class="clearfix"></div><br>
+
+			<ul class="paw">
+				<h4>Step 4: Final Steps</h4>
+				<li>Franchise agreement signed</li>
+				<li>Site approved and lease signed</li>
+				<li>Financing secured</li>
+				<li>Training completed</li>
+				<li>Open your store</li>
+			</ul>
+		</div>
+	</div> -->
 </div>
