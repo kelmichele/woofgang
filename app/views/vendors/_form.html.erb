@@ -10,7 +10,6 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <!-- <p class="print">* indicates required field</p> -->
     <h3>Contact Information</h3>
     <div class="form-group name">
       <label>*Contact Name:</label><br>
@@ -46,9 +45,6 @@
 
     <div class="form-group category">
       <label class="full">*Category: </label><br>
-      <!-- <%= vendor.text_field :category %>  -->
-
-
 
       <%= vendor.select(:category) do %>
         <% [['Select Answer', ''], ['Food', 'Food'], ['Treats', 'Treats'], ['Grooming Products', 'Grooming Products'], ['Toys', 'Toys'], ['Clothing', 'Clothing'], ['Collars/Leads/Poop Bags', 'Collars/Leads/Poop Bags'], ['Boutique Items', 'Boutique Items'], ['Supplements', 'Supplements'],

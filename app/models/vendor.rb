@@ -5,7 +5,7 @@ class Vendor < ApplicationRecord
   validates :address, presence: true
   validates :company, presence: true
 	validates :website, presence: true
-	# validates :category, presence: true
+	validates :category, presence: true
   validates :product, presence: true
 	validates :big_box, presence: true
 	validates :order_min, presence: true
