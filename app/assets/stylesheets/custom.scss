@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:400,600,700|Poppins:300,400,500,600|Quicksand:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700|Poppins:300,400,500,600|Quicksand:400,500,700|Helvetica Neue,Helvetica,Arial,sans-serif; ');
 @import "mixins";
 @import "variables";
 
@@ -60,6 +60,7 @@ body {
 
 
   h1, h2, h3, h4, h5, p, li, a {color: $black; line-height: 1.5em;font-family: $body;
+      // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     &.bmargin0 {margin-bottom: 0;}
     &.pop{font-family: $pop;}
     &.quick {font-family: $quick;}
