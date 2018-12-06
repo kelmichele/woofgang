@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+
+  <body>
+    <h1>Website Contact</h1>
+    <hr>
+    <p><b>Full Name:</b> <%= @contact.name %></p>
+    <p><b>Email:</b> <%= @contact.email %></p>
+    <p><b>Phone Number:</b> <%= @contact.phone %></p>
+    <p><b>Nearest Location:</b> <%= @contact.location %></p>
+    <p><b>How did you hear about us?</b> <%= @contact.grapevine %></p>
+    <p>
+      <b>Question/Comment:</b> <%= @contact.content %>
+    </p>
+  </body>
+</html>

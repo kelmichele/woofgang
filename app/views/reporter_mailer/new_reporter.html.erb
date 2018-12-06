@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+
+  <body>
+    <h1>Media Inquiry</h1>
+    <hr>
+    <p><b>Full Name: </b><br>
+    <%= @reporter.first_name %> <%= @reporter.last_name %></p>
+
+    <p><b>Email: </b><br>
+    <%= @reporter.email %></p>
+
+    <p><b>Phone Number: </b><br>
+    <%= @reporter.phone %></p>
+
+    <p><b>Media Outlet: </b><br>
+    <%= @reporter.outlet %></p>
+
+    <p><b>Deadline: </b><br>
+    <%= @reporter.deadline %></p>
+
+    <p><b>Question: </b><br>
+    <%= @reporter.question %></p>
+  </body>
+</html>

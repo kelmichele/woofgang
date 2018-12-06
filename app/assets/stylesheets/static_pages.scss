@@ -2736,9 +2736,18 @@ ul.paw {padding-left: 0;
   }
 }
 
-.estates{
+.estates, .vendors{
   hr{@include sec-default();}
   h3 {@include sec-default();margin-bottom: 15px; font-size: 1.2rem; font-weight: bold; color:$black; text-transform: uppercase; letter-spacing: .7px; background-color:$f2; padding:15px;}
+}
+
+.vendors{
+  .form-group.big_box, .form-group.category {padding-bottom:5px;
+    label, input {display: inline-block; }
+    input {width: 25px; margin:0 0px 0 30px; height:20px;}
+    label.full{@include sec-default(); margin-top: 0; margin-bottom: 20px;}
+  }
+  .form-group.category br{line-height: 2.2em;}
 }
 
 .reporters{

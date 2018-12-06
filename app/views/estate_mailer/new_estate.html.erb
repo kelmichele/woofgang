@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+
+  <body>
+    <h1>Real Estate Submission</h1>
+    <hr>
+
+    <h3>Personal Information:</h3>
+		<hr>
+		<p><b>Name:</b><br>
+		<%= @estate.first_name %> <%= @estate.last_name %></p>
+
+		<p><b>Email:</b><br>
+		<%= @estate.email %></p>
+
+		<p><b>Phone Number:</b><br>
+		<%= @estate.phone %></p>
+
+		<p><b>Landlord/Company Info:</b><br>
+		<%= @estate.company %></p>
+
+		<p><b>Address:</b><br>
+		<%= @estate.address %> <%= @estate.address2 %><br>
+		<%= @estate.city %>, <%= @estate.state %> <%= @estate.zip %></p>
+
+		<p><b>County:</b><br>
+		<%= @estate.county %></p>
+
+		<hr>
+		<h3>Property Information:</h3>
+		<hr>
+		<p><b>Address:</b><br>
+		<%= @estate.est_address %> <%= @estate.est_address2 %><br>
+		<%= @estate.est_city %>, <%= @estate.est_state %> <%= @estate.est_zip %></p>
+
+		<p><b>County:</b><br>
+		<%= @estate.est_county %></p>
+
+		<p><b>Located In:</b><br>
+		<%= @estate.est_develop %></p>
+
+		<p><b>Site Square Footage:</b><br>
+		<%= @estate.est_footage %></p>
+
+		<p><b>Type of Property:</b><br>
+		<%= @estate.est_type %><%= @estate.other %></p>
+
+		<p><b>When will property be available?</b><br>
+		<%= @estate.est_timeframe %></p>
+
+
+		<p><b>How did you get our web address?</b><br>
+		<%= @estate.grapevine %><%= @estate.source %></p>
+	</body>
+</html>

@@ -5,8 +5,10 @@ class ReporterMailer < ApplicationMailer
 	def new_reporter(reporter)
 	  @reporter = reporter
 
-	  mail subject: "Media Inquiry from Website"
-	  mail to: "kelli@hsdesignhouse.com"
+	  mail(to: "kelli@hsdesignhouse.com", subject: "Media Inquiry from Website") do |format|
+  	  format.html
+  	  format.text
+    end
 	  # mail to: "cara@woofgangbakery.com"
 	end
 end

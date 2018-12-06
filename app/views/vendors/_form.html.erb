@@ -10,38 +10,91 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <!-- <div class="top"> -->
-      <!-- <h3>Franchise Inquiry Form</h3> -->
-      <!-- <hr> -->
-      <!-- <p class="disclose">The submission of this application does not obligate the applicant to become a franchisee of Woof Gang Bakery, nor does it obligate us to offer you a franchise.</p> -->
-      <!-- <p class="print">* indicates required field</p> -->
-      <!-- <hr> -->
-    <!-- </div> -->
-
-
+    <!-- <p class="print">* indicates required field</p> -->
+    <h3>Contact Information</h3>
     <div class="form-group name">
-      <label>*Full Name:</label><br>
+      <label>*Contact Name:</label><br>
       <%= vendor.text_field :name %>
     </div>
 
-    <div class="form-group phone">
-      <label>*Phone: </label><br>
-      <%= vendor.text_field :phone %>
-    </div>
-
     <div class="form-group email">
-      <label>*Email: </label><br>
+      <label>*Contact Email: </label><br>
       <%= vendor.email_field :email %>
     </div>
 
-    <div class="form-group location">
-      <label>*Company:</label><br>
+    <div class="form-group phone">
+      <label>*Contact Phone: </label><br>
+      <%= vendor.text_field :phone %>
+    </div>
+
+    <div class="form-group address">
+      <label>*Address: </label><br>
+      <%= vendor.text_field :address %>
+    </div>
+
+
+    <h3>Product Information</h3>
+    <div class="form-group company">
+      <label>*Vendor/Brand Name:</label><br>
       <%= vendor.text_field :company %>
     </div>
 
-    <div class="form-group grapevine">
-      <label>*Product</label><br>
+    <div class="form-group website">
+      <label>*Website: </label><br>
+      <%= vendor.text_field :website %>
+    </div>
+
+    <div class="form-group category">
+      <label class="full">*Category: </label><br>
+      <!-- <%= vendor.text_field :category %>  -->
+
+
+
+      <%= vendor.select(:category) do %>
+        <% [['Select Answer', ''], ['Food', 'Food'], ['Treats', 'Treats'], ['Grooming Products', 'Grooming Products'], ['Toys', 'Toys'], ['Clothing', 'Clothing'], ['Collars/Leads/Poop Bags', 'Collars/Leads/Poop Bags'], ['Boutique Items', 'Boutique Items'], ['Supplements', 'Supplements'],
+['Other', 'Other']].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="form-group product">
+      <label>*Give a brief description of your product(s):</label><br>
       <%= vendor.text_area :product %>
+    </div>
+
+    <div class="form-group big_box">
+      <label class="full">*Are your products available in Big Box Stores? </label><br>
+      <%= vendor.radio_button(:big_box, "yes") %>
+      <%= label_tag(:big_box_yes, "Yes") %>
+      <%= vendor.radio_button(:big_box, "no") %>
+      <%= label_tag(:big_box_no, "No") %>
+
+    </div>
+
+    <div class="form-group order">
+      <label>*What is your order minimum? </label><br>
+      <%= vendor.text_field :order_min %>
+    </div>
+
+    <div class="form-group wholesale">
+      <label>*Product Price Range Wholesale: </label><br>
+      <%= vendor.text_field :wholesale_price %>
+    </div>
+
+    <div class="form-group source">
+      <label>*Where are your products manufactured or sourced from? </label><br>
+      <%= vendor.text_field :source %>
+    </div>
+
+    <div class="form-group shipping">
+      <label>*What are your shipping terms? </label><br>
+      <%= vendor.text_field :shipping %>
+    </div>
+
+    <div class="form-group msrp">
+      <label>*Product Price Range MSRP: </label><br>
+      <%= vendor.text_field :msrp %>
     </div>
 
     <div class="form-group honey">
@@ -55,9 +108,6 @@
       <%= vendor.submit "Submit", :class=> "send-message" %>
       <p class="print">* indicates required field</p>
     </div>
-
-    <!-- <div class="clearfix"></div> -->
-    <!-- <p>*I agree that all of the above information is true.</p> -->
   </fieldset>
 <% end %>
 
