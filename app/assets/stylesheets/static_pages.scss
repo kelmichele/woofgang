@@ -124,48 +124,202 @@ ul.paw {padding-left: 0;
 //*********************************//
 //************* home **************//
 //*********************************//
-.home,.page {
+.home, .page {
+  p{margin-top:7px;}
+  h3, h4 {margin-bottom: 0;}
+  h3{font-size: 1.3rem; font-weight: $semi;}
+
+  .nlay-intro {@include sec-default(); padding:80px 0;
+    .text{width:53%; @include center-block();}
+
+    &.franch{
+      h4{font-weight: $semi;}
+      .text{width:68%;}
+      .text {border-left: 5px solid rgba($pink,.9); padding-left:40px;}
+    }
+  }
+
+  .nlay-boxes {@include sec-default();
+    background-color: $opink;
+    .images, .text {display: inline-block; float: left;}
+    .text{padding:90px 0 80px; margin-left:10%; width:25%; }
+    .images{float: right; width:55%;}
+
+    .img1,.img2{display: inline-block; width:50%;}
+    .img2{float: right;}
+    p{margin: 0;}
+  }
+
+  .nlay-service {@include sec-default(); padding:50px 0;
+    .mid{
+      position: relative; z-index: 0;
+      &::before {@include before(); width:60%; left:40%;background-color: darken($opink, 1%);}
+      .image,.text {display: inline-block; float: left; width:40%;}
+      .image{margin-left: 15%;}
+      .text {width:30%; padding:45px 0 0; margin-left: 5%;}
+
+      p.top{margin-bottom: 70px; }
+    }
+
+    .serve-tl {display: inline-block; float: none;
+      width:30%; margin:10px 1.5% 5px;
+
+      .logo {width:250px; @include center-block();}
+      &.long{width:40%;
+        .logo {width:330px;}
+      }
+    }
+
+    &.alt { padding-bottom: 0;
+      .mid .image{width:25%; margin-left: 30%;}
+      .mid {margin-top: -24%;}
+
+      .logo-row {
+        .left, .right{display: inline-block; float: left; width:30%;}
+        .right{width:60%; float: right; }
+
+        .left {
+          .serve-tl {@include sec-default(); margin: 0px 0 70px;
+            .logo{width:240px;}
+            &.vet {margin-bottom: 0;}
+          }
+        }
+        .right .serve-tl {
+          width:49%; margin:20px 0 0;
+          .logo {width:280px;}
+        }
+      }
+
+    }
+  }
+
+  .nlay-serveline{@include sec-default();
+    p.top{font-size: 16px;}
+
+    .left, .logos {display: inline-block;float: left;}
+    .left {width:55%; margin-top:100px;
+      img {margin-top: 35px;position: absolute; width: 55%; left:0;}
+    }
+
+    .logos {width:45%; float: right; margin-right:-6%;
+      width:43%;
+      position: relative; z-index: 0;
+      &::before {@include before(); width:30%; left:33%; background-color: darken($opink, 1%);}
+
+      .serve-tl {@include sec-default();background-color: $white; margin:50px 0; padding:15px;}
+
+      .lleft, .lright {display: inline-block;float: left; width:45%;}
+      .lright {width:50%;float: right; margin-top:120px;
+        .serve-tl {margin:60px 0;}
+      }
+    }
+  }
+
+  .nlay-logos {@include sec-default(); padding:60px 0; text-align: center;
+    position: relative; z-index: 0;
+    &::before{@include before(); background-color: darken($opink,1%); background-color: $fa; width:50%; left:50%; height:65%;}
+
+    h3{margin-top: 0;}
+
+    .over {width:85%; @include center-block();margin-bottom: 70px;}
+    .text {width:80%; @include center-block(); padding: 30px 0; background-color: $white; margin-top: -40px; position: relative;}
+
+    .logo {width:250px;@include center-block();}
+    .logos{text-align: center;}
+    .serve-tl{display: inline-block; float: none; width:30%; margin: 10px 0 10px 3%;}
+    .resort,.daycare{width: 40%; margin-left: 5%; margin-top: 55px;
+      .logo {width:300px;}
+    }
+
+    // .grooming, .resort {float: right;}
+    // .vet {margin-left:22%;}
+    // .top {margin-top: -250px;}
+    // .btm{margin-top:75px;}
+
+    // .serve-tl {position: absolute; padding:15px;}
+    // .bakery, .grooming{top:30%;}
+    // .bakery,.daycare {left: 0;}
+    // .grooming, .resort {right:0;}
+    // .daycare, .vet, .resort {bottom:2%;}
+    // .vet {left:40%;}
+  }
+
+  .nlay-boxes.tan,  .nlay-service .mid.tan::before, .nlay-serveline.tan .logos::before {background-color: $fa;}
+}
+
+
+
+.home-alt,.page, .home {
   .full-show{
     .uk-slideshow-items {max-height: 620px; overflow: hidden;}
     .abs-img{position: absolute; bottom: 0; width:45%; margin-bottom: -43px;}
   }
 
-  .hs-intro {@include sec-default(); padding:55px 0 70px;
-    // h1, p{width:80%; @include center-block();}
-    h1, h2{ line-height: 1.35em;
-      span{color:$pink;}
-    }
-    h1 {position: relative; z-index: 0;
-      &::before {@include before(); width:72%; height:1.5px; background-color: $pink; left: 28%; top:22px;}
-    }
-    h2{font-size: 1.55rem; margin-bottom: 0}
-
-    p{font-size: 20px;}
-
-
-    .left, .right {display: inline-block; float: left; width:55%;}
-    .right {float: none; margin-left: 2%; width:43%;  }
-
-    .left {width:80%; margin-left: 1.5%; width:95%;}
-    // .right{float: right; width:60%; margin-right: 10%; }
-    .right{width:70%; margin-left: 28%; }
+  .page-body {
+    .title-line{margin-top: 20px; opacity: .3; width:15%;}
+    h1{font-size: 1.1rem; font-family: $pop; text-transform: uppercase; color:$pink; letter-spacing: 10px; margin:0; font-weight: normal; }
+    h2{ font-size: 1.4rem; background-color: $white; margin: 7px 0 0; font-weight: 300;}
+    p{font-size: 18px; font-weight: 300;}
   }
 
   .simple-intro {@include sec-default(); padding:55px 0;
-    h1, h2{ line-height: 1.35em; margin:0;
-      font-weight: normal; color:$black;
-      font-size: 1.45rem;
-      span{color:$pink;}
-      // border-left: 2px solid rgba($pink, .2); padding-left: 30px;
-      width:85%;@include center-block();
-      text-align: center;
+    text-align: center;
+
+    &.less {text-align: left; padding:85px 0 70px;
+      position: relative; z-index: 0;
+      &::before {@include after(); height:24%; background-color: darken($opink,2%); background-color: rgba($f8,1);}
+      .left{width:60%; float: right; margin-top: 6%; }
+
+      .image {width:35%; float: left;}
+    }
+  }
+
+  .site-intro {@include sec-default(); padding-bottom: 40px;
+    margin-top: -40px;
+    position:relative;z-index: 2;
+
+    .full.top{background-color: $white; padding: 30px 50px 0; margin-bottom: 40px; box-shadow: 0px -20px 10px rgba($black,.1);text-align: center;
+      &.alt {box-shadow: 0px -90px 10px rgba($black,.1); }
+    }
+    .title-line{margin-top: 20px; opacity: .3; width:15%;}
+    h1{font-size: 1.1rem; font-family: $pop; text-transform: uppercase; color:$pink; letter-spacing: 10px; margin:0;}
+    h2{ font-size: 1.4rem; background-color: $white; margin:7px 0 0; font-weight: 300;
+      width:80%; @include center-block();
     }
 
-    &.less {
-      .inside.narrow{width:50%;}
-      h1{ text-align: left; float: left; width:100%; margin-bottom: 30px;}
-      .image {width:37%; float: right;}
-      p{width:90%;}
+    .image, .text {width: 47%; display: inline-block; float: left;}
+    .text{float: right; width:51%; }
+    p{margin: 20px 0 40px; padding:0 20px; font-size: 18px; font-weight: 300;}
+    p span {color: $pink;}
+
+    .alt {
+      .image, .text {width: 50%;}
+      .image{margin-left: -2%;}
+      .text {margin-right: -2%;}
+      // .text{float: right; width:51%; }
+    }
+  }
+
+  .mid {@include sec-default(); margin:50px 0;
+    p{font-weight: 300;}
+    .image-row{display:inline-block;
+      height:285px; overflow: hidden;
+      width:70%; float: left;
+      img{display: inline-block; float: left; width:49.5%;}
+      .img2 {float: right;}
+
+      margin-left: -9%;
+      height:260px; width:65%;
+    }
+    .subtext {width:38%; float: right; display: inline-block; margin-top: 4%;
+      float: none; padding-left: 15px;
+    }
+
+    &.rev {padding:0 0 45px;margin-top: 35px;
+      .image-row {float: right;margin-left: 0;margin-right: -8.8%;}
+      .subtext{width:43%;  padding-right: 15px;}
+      h4{margin-bottom: 0; font-size: 1.1rem; color:$pink;}
+      p{margin-top: 7px;}
     }
   }
 
@@ -233,6 +387,28 @@ ul.paw {padding-left: 0;
     }
   }
 
+  .border-over-sec{@include sec-default(); padding:55px 0;
+    position: relative; z-index: 0;
+    &::before{@include before(); width:40%; height:70%; left:35%; top:25%; border:1px solid rgba($black,.1);}
+    .image, .text {width: 50%; display: inline-block; float: left;}
+    .text {float: right; width:45%; margin-top: 13%; background-color: $white; padding: 20px 0;}
+
+    // .image{margin-left: -5%;}
+    // .text{margin-right: -5%;}
+
+    h4{font-size: 1.1rem; font-weight: $semi; margin-bottom: 0;}
+    p{margin-top: 0; margin-bottom: 0;}
+  }
+
+  .full.franch {padding:90px 0;
+    // position: relative; z-index: 0;
+    // &::before{@include before(); top:-80%; background-color: darken($opink,2%);}
+
+    h4,p{margin: 0;}
+    h4{font-weight: bold; margin-bottom: 10px;}
+    .text {border-left: 6px solid rgba($pink,.9); padding-left:40px;}
+  }
+
 
   // location type bg -- or maybe map marker icon?
   .hs4-locations{@include sec-default(); padding: 20px 0;
@@ -245,15 +421,21 @@ ul.paw {padding-left: 0;
   }
 
   .banner-locations{@include sec-default(); padding: 20px 0; text-align: center;
-    // margin-bottom: 80px;
     @include sec-bgimage('treat-table.jpg');background-position: center center;
     position: relative; z-index: 0;
     &::before {@include after(); background-color: rgba($pink7, .8);}
+
     h4,.btn-hlf {display: inline-block; float: left; width:70%;}
     h4{font-size: 1.8rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .4)); margin-bottom: 0;
     }
     .btn-hlf {float: right; width:30%;margin-top: 10px;}
     .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
+
+    &.dark{
+      background-image: url(image_path('corner-img.jpg'));
+      &::before{background-color:rgba($tbrown,.89);}
+      .woof-link {color:$pink;}
+    }
   }
 
   .hs-serve{@include sec-default(); padding: 50px 0 70px;
@@ -270,52 +452,39 @@ ul.paw {padding-left: 0;
     }
   }
 
+  .serve-grid{@include sec-default();padding: 50px 0;text-align: center;
+    // position: relative; z-index: 0;&::before{@include before(); background-color: $opink; width:35%; left:65%;}
 
+    .inside {width:60%; float: left; margin-left: 3%;}
+    .awards {width:33%; float: right; margin-right: 3%;}
 
-  h1{ margin:0;
-    font-weight: normal; color:$black;
-    font-size: 1.45rem;
-    span{color:$pink;}
-  }
+    h3{font-weight: bold; margin-bottom: 10px;}
 
-  .display-intro {@include sec-default(); padding:50px 0;
-    .title {width:45%; @include center-block();}
-    .image-row{width:67%; float: right; margin: 30px 0;
-      img{display: inline-block; float: left; width:49.5%;}
-      .img2 {float: right;}
-    }
-    .subtext {width:45%; @include center-block(); display: block; padding-right: 30px;}
-    p{font-size: 19px;}
-  }
-
-
-  .display-franchise {@include sec-default(); padding:50px 0;
-    .title {width:23%; display: inline-block; float: left; text-align: right;}
-    .text {width:45%; display: inline-block; float: right; margin-right: 27.5%; padding-right: 28px;}
-    p.big{font-size: 20px; font-weight: $semi; }
-
-    .image-row{width:67%; float: left; margin: 30px 0 45px;
-      img{display: inline-block; float: left; width:49.5%;}
-      .img2 {float: right;}
-    }
-  }
-
-  .serve-grid{@include sec-default();
-    padding: 60px 0; text-align: center;
-    // @include sec-bgimage('retail7.jpg'); background-size: cover;
-    // position: relative; z-index: 0;&::before{@include before(); background-color: rgba($black,.6);}
-
-    .serve-tl {display: inline-block; float: none; width:40%; margin:15px 0; position: relative;z-index: 0;
-      text-align: center; margin:10px 1.5%;
+    .serve-tl {display: inline-block; float: none;
+      width:30%; margin:15px 0; position: relative;z-index: 0;
+      text-align: center; margin:30px 1%;
+      // &::before{@include after(); background-color: $opink; bottom:-15px; height:20%;}
 
       .logo {width:250px; @include center-block();}
-      p{font-weight: $semi;}
+      p{font-weight: $semi; display: none;}
+
+      &.long{width:40%;
+        .logo {width:330px;}
+      }
+    }
+
+    li{width:100%;}
+    .uk-card.uk-card-default {background-color: transparent; text-align: center;}
+    .uk-card-media-top{width:80px; @include center-block();}
+    .uk-card-body {padding:15px 0; margin-bottom: 30px;
+      p {font-size: 16px;}
+      p span{font-size: 14px;}
     }
   }
 
 
   .full-img {@include sec-default(); padding:100px 0;
-    .full{@include sec-bgimage('store.jpg'); background-position: center center;}
+    .full{@include sec-bgimage('puff.jpg'); }
     .left, .right {width: 50%; background-color: white; padding:20px 40px;}
     .left{margin-top: -50px;}
     .right {float: right; margin-top: 300px; margin-bottom: -80px;}
