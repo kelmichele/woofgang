@@ -73,7 +73,7 @@
 										<a href="https://twitter.com<%= @location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
 									<% end %>
 
-									<% unless @location.yelp.empty? %>
+									<% if @location.yelp != '' %>
 										<a href="https://www.yelp.com/biz<%= @location.yelp %>" target="_blank"><span class="linkcon" uk-icon="icon: yelp;"></span></a>
 									<% end %>
 

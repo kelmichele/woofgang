@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    Location.all.paginate(:page => params[:page], :per_page => 6)
+	    Location.all.paginate(:page => params[:page], :per_page => 100)
 		end
 		# @locations = @locations.paginate(:page => params[:page], :per_page => 10)
 
