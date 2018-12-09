@@ -22,10 +22,10 @@ class LocationsController < ApplicationController
 
 		@tags = Tag.all
 
-		# respond_to do |format|
-		#   format.html
-		#   format.csv { send_data @locations.to_csv }
-		# end
+		respond_to do |format|
+		  format.html
+		  format.csv { send_data @locations.to_csv }
+		end
 	end
 
 	def import
