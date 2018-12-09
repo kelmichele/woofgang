@@ -124,7 +124,7 @@ ul.paw {padding-left: 0;
 //*********************************//
 //************* home **************//
 //*********************************//
-.home, .page {
+.home, .page, .home-alt {
   p{margin-top:7px;}
   h3, h4 {margin-bottom: 0;}
   h3{font-size: 1.3rem; font-weight: $semi;}
@@ -227,8 +227,10 @@ ul.paw {padding-left: 0;
     .logo {width:250px;@include center-block();}
     .logos{text-align: center;}
     .serve-tl{display: inline-block; float: none; width:30%; margin: 10px 0 10px 3%;}
-    .resort,.daycare{width: 40%; margin-left: 5%; margin-top: 55px;
-      .logo {width:300px;}
+    .resort,.daycare{
+      // width: 40%; margin-left: 5%;
+      margin-top: 55px;
+      .logo {width:320px;}
     }
 
     // .grooming, .resort {float: right;}
@@ -320,6 +322,22 @@ ul.paw {padding-left: 0;
       .subtext{width:43%;  padding-right: 15px;}
       h4{margin-bottom: 0; font-size: 1.1rem; color:$pink;}
       p{margin-top: 7px;}
+    }
+
+
+    &.extra {padding:40px 0 0;
+      position: relative; z-index: 0;
+
+      .image {width: 50%;}
+      .text {width: 45%; margin-top: 6%;}
+    }
+
+    &.extra.flip { margin-top:0; padding-top: 0;
+      &::before {@include before(); background-color: darken($opink, 2%); height:60%; top:-40%;}
+
+      .image {float: right;}
+      .text{float: left; margin-top: 8%;}
+      h4 {color:$pink;}
     }
   }
 
@@ -492,59 +510,23 @@ ul.paw {padding-left: 0;
 
 
 
-
   @include bp(tb) {
-    .hs-intro {
-      h3{font-size: 1.3rem;}
-      p{font-size: 16px;}
-    }
-
-    .hs-franchise{
-      h2 {font-size: 1.45rem;}
-      p{font-size: 16px;}
-      p span {font-size: 17px;}
-    }
-
     .hs4-locations{
       h4{font-size: 1.6rem;width:70%;}
       .btn-hlf {width:30%;margin-top: 6px;}
       .woof-link {font-size: 15px;}
     }
-
-    .hs-serve{padding: 35px 0 45px;
-      .intro {width:85%;
-        p{font-size: 16px;}
-      }
-    }
-  }
-
-  @include bp(nn) {
-    .hs-franchise {
-      .inside.med2 {width:80%;}
-      .fblock {
-        p,a{font-size: 1.2rem;}
-      }
-    }
   }
 
   @include bp(tn) {
-    .hs-intro {
-      h3{font-size: 1.2rem;}
-      p{font-size: 15px;}
-    }
-
     .hs4-locations{
       h4{font-size: 1.4rem;width:70%;}
       .btn-hlf {width:30%;margin-top: 6px;}
       .woof-link {font-size: 14px;}
     }
-
-    .hs-serve{
-      h3{font-size: 1.3rem;}
-      p{font-size: 15px;}
-    }
   }
 }
+
 
 
 //*********************************//
