@@ -16,7 +16,8 @@ class LocationsController < ApplicationController
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    Location.all.paginate(:page => params[:page], :per_page => 100)
+	    Location.all.paginate(:page => params[:page], :per_page => 6)
+	    # Location.all.paginate(:page => params[:page], :per_page => 100)
 		end
 		# @locations = @locations.paginate(:page => params[:page], :per_page => 10)
 
@@ -77,6 +78,6 @@ class LocationsController < ApplicationController
 	end
 
 	def location_params
-    params.require(:location).permit(:store_name, :email_address, :phone, :fb, :twitter, :insta, :yelp, :site, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+    params.require(:location).permit(:store_name, :email_address, :phone, :fb, :twitter, :insta, :yelp, :site, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids, :image)
   end
 end

@@ -102,6 +102,12 @@
     <div class="clearfix"></div>
     <hr>
 
+    <div class="forminfo image">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="clearfix"><hr>
+
 
     <div class="form-group btns">
       <%= f.submit(@location.new_record? ? "Add Location" : "Update Location", class: "btn woof-link") %>

@@ -23,9 +23,12 @@
 
 		<div class="dets">
 		 	<div class="location-body">
-				<div class="image">
-					<%= image_tag('location-sign.jpg', class: 'img-responsive', alt: '')%>
-				</div>
+				<% if @location.image.attached? %>
+			 		<div class="image attach"><%= image_tag @location.image %></div>
+				<% else %>
+
+					<div class="image"><%= image_tag('location-sign.jpg', class: 'img-responsive', alt: '')%></div>
+				<% end %>
 
 				<div class="location-dets">
 					<div class="inside med">
