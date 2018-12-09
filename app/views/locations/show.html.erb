@@ -60,24 +60,24 @@
 
 							<div class="cat soc">
 								<% if @location.list_links.count > 0 %>
-									<% if @location.fb %>
+									<% unless @location.fb.empty? %>
 										<a href="https://www.facebook.com<%= @location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
 									<% end %>
 
-									<% if @location.insta %>
+									<% unless @location.insta.empty? %>
 										<a href="https://www.instagram.com<%= @location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
 									<% end %>
 
-									<% if @location.twitter %>
+									<% unless @location.twitter.empty? %>
 										 <!-- != ''  -->
 										<a href="https://twitter.com<%= @location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
 									<% end %>
 
-									<% if @location.yelp %>
+									<% unless @location.yelp.empty? %>
 										<a href="https://www.yelp.com/biz<%= @location.yelp %>" target="_blank"><span class="linkcon" uk-icon="icon: yelp;"></span></a>
 									<% end %>
 
-									<% if @location.site %>
+									<% unless @location.site.empty? %>
 										<a href="<%= @location.site %>" target="_blank"><span class="linkcon" uk-icon="icon: link;"></span></a>
 									<% end %>
 								<% end %>
