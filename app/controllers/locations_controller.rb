@@ -77,6 +77,6 @@ class LocationsController < ApplicationController
 	end
 
 	def location_params
-    params.require(:location).permit(:store_name, :email_address, :phone, :fb, :twitter, :insta, :site, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+    params.require(:location).permit(:store_name, :email_address, :phone, :fb, :twitter, :insta, :yelp, :site, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
   end
 end

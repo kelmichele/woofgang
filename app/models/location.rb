@@ -70,7 +70,7 @@ class Location < ApplicationRecord
 
 
   def soc_links
-    [fb, insta, twitter, site].compact.join(" , ")
+    [fb, insta, twitter, yelp, site].compact.join(" , ")
   end
 
   def list_links
