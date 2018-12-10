@@ -1,7 +1,7 @@
-<% @page_title = "ALT -- Your Neighborhood Pet Store" %>
+<% @page_title = "LAYOUT -- Your Neighborhood Pet Store" %>
 <% @page_description = "New Description" %>
 
-
+<div class="home">
 
 <div class="full-show">
 	<div class="inside lg">
@@ -51,7 +51,7 @@
 </div>
 
 
-<div class="banner-locations ">
+<div class="banner-locations">
 	<div class="inside med2">
 		<h4>More Than 110 Locations Nationwide</h4>
 		<div class="btn-hlf">
@@ -62,20 +62,22 @@
 
 
 
-<!-- <div class="nlay-logos">
-	<div class="inside">
-		<div class="over">
-    	<div class="image"><%= image_tag('corner-img.jpg', class: 'img-responsive')%></div>
-    	<div class="text">
+<div class="nlay-logos">
+	<div class="full top ">
+		<div class="inside">
+		<div class="img1"><%= image_tag('store.jpg', class: 'img-responsive')%></div>
+			<div class="text-side">
 				<h3>Woof Gang Bakery does it all</h3>
 				<p>We offer a number of services to help keep your pets healthy and spoiled!<br>
-				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
-					Select a service from the logos below to visit the page, and learn more.
-				</p>
+				Contact your local Woof Gang Bakery to find out which services are available in your area.<br> Select a service from the logos below to visit the page, and learn more.</p>
 			</div>
-		</div>
 
-		<div class="full logos">
+			<div class="img-side"><%= image_tag('nl-pup.jpg', class: 'img-responsive img2')%></div>
+		</div>
+	</div>
+
+	<div class="full logos">
+		<div class="inside">
 			<%= link_to retail_path, class: 'serve-tl bakery' do %>
 	      <%= image_tag('wg-logo1.png', class: 'img-responsive logo')%>
 			<% end %>
@@ -98,50 +100,15 @@
 		</div>
 	</div>
 </div>
- -->
 
+<!-- <div class="image-full"><div class="full">
+    	<div class="left">
+				<h3>Woof Gang Bakery does it all</h3>
+				<p>We offer a number of services to help keep your pets healthy and spoiled!</p>
+			</div>
 
-<div class="nlay-service alt">
- 	<div class="logo-row top">
- 		<div class="inside lg">
- 			<div class="left">
- 				<%= link_to retail_path, class: 'serve-tl' do %>
- 		      <%= image_tag('wg-logo1.png', class: 'navbar-item logo')%>
- 				<% end %>
-
- 				<%= link_to grooming_path, class: 'serve-tl' do %>
- 		      <%= image_tag('wgb-groom.png', class: 'navbar-item logo')%>
- 				<% end %>
-
- 				<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
- 		      <%= image_tag('wgb-wellness.png', class: 'navbar-item logo')%>
- 				<% end %>
- 			</div>
-
- 			<div class="right">
- 				<%= link_to doggie_daycare_path, class: 'serve-tl' do %>
- 		      <%= image_tag('wgb-daycare.png', class: 'navbar-item logo')%>
- 				<% end %>
-
- 				<%= link_to doggie_daycare_path, class: 'serve-tl' do %>
- 		      <%= image_tag('wgb-daycare.png', class: 'navbar-item logo')%>
- 				<% end %>
- 			</div>
- 		</div>
- 	</div>
-
- 	<div class="full mid tan">
- 		<div class="inside">
-       <div class="image"><%= image_tag('leia.jpg', class: 'img-responsive')%></div>
-
- 			<div class="text">
- 				<h3>Woof Gang Bakery does it all</h3>
- 				<p class="top">We offer a number of services to help keep your pets healthy and spoiled!</p>
- 				<p>
- 				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
- 					Select a service from the logos displayed to visit the page, and learn more.
- 				</p>
- 			</div>
- 		</div>
- 	</div>
- </div>
+			<div class="right">
+				<p>Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
+					Select a service from the logos below to visit the page, and learn more.</p>
+			</div>
+		</div></div> -->

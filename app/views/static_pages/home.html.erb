@@ -58,7 +58,8 @@
 	</div>
 </div>
 
-<!-- <div class="nlay-service">
+
+<div class="nlay-service">
 	<div class="logo-row top">
 		<div class="inside">
 			<%= link_to retail_path, class: 'serve-tl' do %>
@@ -77,12 +78,12 @@
 
 	<div class="full mid tan">
 		<div class="inside">
-      <div class="image"><%= image_tag('ebba.jpg', class: 'img-responsive')%></div>
+      <div class="image"><%= image_tag('retail7.jpg', class: 'img-responsive')%></div>
 
 			<div class="text">
 				<h3>Woof Gang Bakery does it all</h3>
-				<p class="top">We offer a number of services to help keep your pets healthy and spoiled!</p>
-				<p>
+				<!-- <p class="top">We offer a number of services to help keep your pets healthy and spoiled!</p> -->
+				<p>We offer a number of services to help keep your pets healthy and spoiled!<br>
 				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
 					Select a service from the logos displayed to visit the page, and learn more.
 				</p>
@@ -92,7 +93,7 @@
 
 	<div class="logo-row btm">
 		<div class="inside">
-			<%= link_to doggie_daycare_path, class: 'serve-tl long' do %>
+			<%= link_to doggie_daycare_path, class: 'serve-tl long daycare' do %>
 	      <%= image_tag('wgb-daycare.png', class: 'navbar-item logo')%>
 			<% end %>
 
@@ -102,138 +103,52 @@
 		</div>
 	</div>
 </div>
- -->
 
-
-<!-- <div class="nlay-service alt">
-	<div class="logo-row top">
-		<div class="inside lg">
-			<div class="left">
-				<%= link_to retail_path, class: 'serve-tl' do %>
-		      <%= image_tag('wg-logo1.png', class: 'navbar-item logo')%>
-				<% end %>
-
-				<%= link_to grooming_path, class: 'serve-tl' do %>
-		      <%= image_tag('wgb-groom.png', class: 'navbar-item logo')%>
-				<% end %>
-
-				<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
-		      <%= image_tag('wgb-wellness.png', class: 'navbar-item logo')%>
-				<% end %>
-			</div>
-
-			<div class="right">
-				<%= link_to doggie_daycare_path, class: 'serve-tl' do %>
-		      <%= image_tag('wgb-daycare.png', class: 'navbar-item logo')%>
-				<% end %>
-
-				<%= link_to doggie_daycare_path, class: 'serve-tl' do %>
-		      <%= image_tag('wgb-daycare.png', class: 'navbar-item logo')%>
-				<% end %>
-			</div>
-		</div>
-	</div>
-
-	<div class="full mid tan">
+<!-- <div class="nlay-logos gallery">
+	<div class="over">
 		<div class="inside">
-      <div class="image"><%= image_tag('leia.jpg', class: 'img-responsive')%></div>
-
-			<div class="text">
-				<h3>Woof Gang Bakery does it all</h3>
-				<p class="top">We offer a number of services to help keep your pets healthy and spoiled!</p>
-				<p>
-				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
-					Select a service from the logos displayed to visit the page, and learn more.
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
- -->
-
-<!-- <div class="nlay-serveline tan">
-	<div class="inside">
-		<div class="left">
-			<div class="text">
-				<h3>Woof Gang Bakery does it all</h3>
-				<p class="top">We offer a number of services to help keep your pets healthy and spoiled!<br>
-				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
-					Select a service from the logos displayed to visit the page, and learn more.
-				</p>
-			</div>
-      <div class="image"><%= image_tag('corner-img.jpg', class: 'img-responsive')%></div>
-		</div>
-
-		<div class="logos">
-			<div class="lleft">
-				<%= link_to retail_path, class: 'serve-tl' do %>
-		      <%= image_tag('wg-logo1.png', class: 'navbar-item logo')%>
-				<% end %>
-
-				<%= link_to grooming_path, class: 'serve-tl' do %>
-		      <%= image_tag('wgb-groom.png', class: 'navbar-item logo')%>
-				<% end %>
-
-				<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
-		      <%= image_tag('wgb-wellness.png', class: 'navbar-item logo')%>
-				<% end %>
-			</div>
-
-			<div class="lright">
-				<%= link_to doggie_daycare_path, class: 'serve-tl long' do %>
-		      <%= image_tag('wgb-daycare.png', class: 'navbar-item logo')%>
-				<% end %>
-
-				<%= link_to doggie_daycare_path, class: 'serve-tl long' do %>
-		      <%= image_tag('wgb-daycare.png', class: 'navbar-item logo')%>
-				<% end %>
-			</div>
-		</div>
-	</div>
-</div> -->
-
-
-<div class="nlay-logos">
-	<div class="inside">
-
-		<div class="over">
-    	<div class="image"><%= image_tag('corner-img.jpg', class: 'img-responsive')%></div>
-    	<div class="text">
+			<div class="over-text">
 				<h3>Woof Gang Bakery does it all</h3>
 				<p>We offer a number of services to help keep your pets healthy and spoiled!<br>
 				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
-					Select a service from the logos below to visit the page, and learn more.
+					Select a service from the logos displayed to visit the page, and learn more.
 				</p>
 			</div>
 		</div>
+	</div>
 
-
-		<div class="full logos">
+	<div class="gallery-logos">
+		<div class="inside med2">
 			<%= link_to retail_path, class: 'serve-tl bakery' do %>
 	      <%= image_tag('wg-logo1.png', class: 'img-responsive logo')%>
 			<% end %>
+
+			<div class="serve-img"></div>
 
 			<%= link_to grooming_path, class: 'serve-tl grooming' do %>
 	      <%= image_tag('wgb-groom.png', class: 'img-responsive logo')%>
 			<% end %>
 
+			<div class="serve-img"></div>
+
 			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
 	      <%= image_tag('wgb-wellness.png', class: 'img-responsive logo')%>
 			<% end %>
+
+			<div class="serve-img"></div>
 
 			<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
 	      <%= image_tag('wgb-daycare.png', class: 'img-responsive logo')%>
 			<% end %>
 
+			<div class="serve-img"></div>
+
 			<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
 	      <%= image_tag('wgb-daycare.png', class: 'img-responsive logo')%>
 			<% end %>
 		</div>
-
-
 	</div>
-</div>
-
+</div> -->
 
 
 <!--

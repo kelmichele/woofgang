@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'page', to: 'static_pages#page'
   get 'home-alt', to: 'static_pages#home-alt'
+  get 'layout', to: 'static_pages#layout'
 
   get 'about-us', to: 'static_pages#about-us'
   get 'contact-us', to: 'static_pages#contact-us'
