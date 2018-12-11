@@ -4,32 +4,27 @@
 <div class="services-layout vet">
 	<div class="serv-slider inline-show">
 		<div class="inside lg">
-			<div class="il-slideshow" uk-slideshow="autoplay: true;max-height: 600; animation: push">
-				<%= image_tag('dogtor-bg.png', class: 'img-responsive wc-header') %>
+			<div class="il-slideshow" uk-slideshow>
+				<ul class="uk-slideshow-items">
+					<li><%= image_tag('clinic.jpg', class: 'img-responsive ', alt: '') %></li>
+				</ul>
 			</div>
 
 			<div class="title"><%= image_tag('wgb-wellness.png', class: 'img-responsive srv-logo', alt: '')%></div>
 		</div>
 	</div>
 
-	<div class="statement">
+	<!-- <div class="statement">
 		<div class="inside med2">
-	  	<!-- <div class="text">
-				<p>Our veterinary clinic locations offer the following services:</p>
-				<h4>Meet the Doctor</h4>
-				<p>Florida native, Dr. Barry Wander is the franchise owner and head veterinarian of Woof Gang Bakery, Grooming and Vet Clinic Boca Raton.</p>
-
-				<p>
-					Dr. Wander attended the University of Florida, where he earned his bachelor’s degree in animal science, and a master’s degree in animal nutrition.
-					In 1987, he opened Wander Animal Hospital. Dr. Wander has practiced veterinary medicine for 27 years, with a special interest in Dermatological diseases, and Pediatric and Geriatric Medicine.
-					He is dedicated to the local community, and to providing unparalleled service and quality products for customers and their four-legged friends.
-				</p>
-			</div> -->
+	  	<div class="text">
+	  		<h1>Woof Gang Bakery <br class="xl-br"> Veterinary Clinic</h1>
+				<p>Our veterinary clinic locations offer the services listed below.</p>
+			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="list-box alt">
-		<div class="inside med2">
+		<div class="inside med2-def">
 			<div class="left">
 				<p>Our veterinary clinic locations offer the following services:</p>
 				<ul class=" xsmall one">
@@ -53,7 +48,7 @@
 			</div>
 
 			<div class="sl-hlf">
-				<div class="sl1">
+				<!-- <div class="sl1">
 					<h4>Veterinary Clinic Locations:</h4>
 					<p class="name">Woof Gang Bakery, Grooming &amp; Vet Clinic</p>
 					<p class="info">
@@ -62,9 +57,9 @@
 					Boca Raton, FL 33433</p>
 					<p class="info">561-447-7966</p>
 					<p class="info">bocaraton@woofgangbakery.com</p>
-				</div>
+				</div> -->
 
-				<div class="sl2">
+				<div class="sl1">
 					<h4>Meet the Doctor</h4>
 					<p>Florida native, Dr. Barry Wander is the franchise owner and head veterinarian of Woof Gang Bakery, Grooming and Vet Clinic Boca Raton.</p>
 
@@ -74,8 +69,19 @@
 						He is dedicated to the local community, and to providing unparalleled service and quality products for customers and their four-legged friends.
 					</p>
 				</div>
+
+				<div class="sl2"><div class="inside narrow"><%= image_tag('dogtor.jpg', class: 'img-responsive inside med2', alt: '') %></div></div>
 			</div>
 		</div>
 	</div>
 
+
+	<div class="locations-disc">
+		<div class="inside med2">
+			<h4>Veterinary services are offered only at select locations.</h4>
+			<div class="btn-hlf">
+				<%= link_to "View Locations", "/tags/veterinary-clinic", class: 'woof-link' %>
+			</div>
+		</div>
+	</div>
 </div>

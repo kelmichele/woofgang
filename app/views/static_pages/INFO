@@ -21,6 +21,31 @@ AWARDS
 
 
 
+VENDOR EMAIL OG
+	<body>
+    <p><b>Application Date:</b> <%= @vendor.created_at %></p>
+    <hr>
+    <h3>Contact Information:</h3>
+    <hr>
+      <p><b>Full Name:</b><br> <%= @vendor.name %></p>
+      <p><b>Email:</b><br> <%= @vendor.email %></p>
+      <p><b>Phone Number:</b><br> <%= @vendor.phone %></p>
+      <p><b>Address:</b><br> <%= @vendor.address %></p>
+    <hr>
+    <h3>Product Information:</h3>
+    <hr>
+      <p><b>Vendor/Brand Name:</b><br> <%= @vendor.company %></p>
+      <p><b>Website:</b><br> <%= @vendor.website %></p>
+      <p><b>Category:</b><br> <%= @vendor.category %></p>
+      <p><b>Product Description:</b><br> <%= @vendor.product %></p>
+      <p><b>Are your products available in Big Box Stores?</b><br> <%= @vendor.big_box %></p>
+      <p><b>What is your order minimum?</b><br> <%= @vendor.order_min %></p>
+      <p><b>Product Price Range Wholesale</b><br> <%= @vendor.wholesale_price %></p>
+      <p><b>Where are your products manufactured or sourced from?</b><br> <%= @vendor.source %></p>
+      <p><b>What are your shipping terms?</b><br> <%= @vendor.shipping %></p>
+      <p><b>Product Price Range MSRP</b><br> <%= @vendor.msrp %></p>
+	  </body>
+
 
 
 LOCATIONS EXTRAS

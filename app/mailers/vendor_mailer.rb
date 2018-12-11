@@ -1,11 +1,11 @@
 class VendorMailer < ApplicationMailer
-	default from: "Vendor Relations Form from Website <noreply@woofgangbakery.com>"
-	default subject: "Vendor Relations Inquiry from Website"
+	default from: "Product Submission Form from Website <noreply@woofgangbakery.com>"
+	default subject: "Product Submission"
 
 	def new_vendor(vendor)
 	  @vendor = vendor
 
-    mail(to: "kelli@hsdesignhouse.com", subject: "Vendor Relations Inquiry from Website") do |format|
+    mail(to: "kelli@hsdesignhouse.com", subject: "Product Submission") do |format|
   	  format.html
   	  format.text
     end

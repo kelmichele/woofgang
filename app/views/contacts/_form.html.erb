@@ -39,11 +39,6 @@
       <%= contact.text_field :location %>
     </div>
 
-    <!-- <div class="form-group city">
-      <label>*Sign up for our newsletter?</label><br>
-      <%= contact.text_field :singup %>
-    </div> -->
-
     <div class="form-group grapevine">
       <label>*How did you hear about us?</label><br>
       <%= contact.select(:grapevine) do %>
@@ -52,8 +47,6 @@
         <% end %>
       <% end %>
     </div>
-
-    ['Other', 'Other'],
 
     <div class="form-group content">
       <label>*Questions/Comments:</label><br>
@@ -76,4 +69,3 @@
     <!-- <p>*I agree that all of the above information is true.</p> -->
   </fieldset>
 <% end %>
-

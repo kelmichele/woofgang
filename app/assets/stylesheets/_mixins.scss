@@ -41,17 +41,17 @@
   transition: all .1s ease;
 }
 
-@mixin ease() {
-  -webkit-transition: 0.1s;
-  -moz-transition: 0.1s;
-  transition: 0.1s;
+@mixin ease($speed) {
+  -webkit-transition: $speed;
+  -moz-transition: $speed;
+  transition: $speed;
 }
 
 @mixin link($size, $color) {
   width: $size; padding: 10px 20px; text-align: center;
   font-size: 16px; color: $color; font-weight: 500;
 
-  &:hover {text-decoration: none; @include ease(); opacity: .7; color: $color;}
+  &:hover {text-decoration: none; @include ease(.3s); opacity: .7; color: $color;}
 }
 
 @mixin tshadowl($glow) {
