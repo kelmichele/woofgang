@@ -3,129 +3,23 @@
 
 
 
-//****** franchise headers *******//
-	// V1 -- static or parallax?
-	// V2 -- tbox justify or hang off?
-	// V2:V3 -- tbox white or opink?
-
-// V1
-.franch-header {@include sec-default(); text-align: center;
-	.full{height:550px;@include sec-bgimage('fp-placeholder.jpg'); background-position: center center;
-		position: relative; z-index: 0;
-		&::before{@include before(); background-color: rgba($black,.3);}
-
-		.text {@include sec-default();margin-top:20%;}
-	}
-
-	.tbox {@include sec-default(); margin:auto !important;}
-
-  h1,h2 {color:$white; @include tshadowl(rgba($black, .5)); margin:0px; font-weight: bold;}
-  h1{text-transform: uppercase; letter-spacing: 1.5px;}
-  h2{ font-size:1.5rem; line-height: 1.5em;}
-}
-
-// V2
+// franchise header
 .franchise-head.v2 {@include sec-default(); position: relative; z-index: -1;
 	padding: 40px 3% 0 3%; text-align: center;
   &::before{@include after(); height: 50%;
   	background-color: darken($opink, 1%);
-  	// background-color: rgba($pink,.9);
   }
 	.inside.lg {width:95%; }
 
-  img {
-  	height: 500px; @include center-block();
-  	// width:67%;
-  	// @include sec-bgimage('fp-placeholder-nrw.jpg'); background-size: cover; background-position: center center;
-  }
+  img {height: 500px; @include center-block();}
 
   .text {@include sec-default(); text-align: center; padding:30px 0 30px;}
-  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em; font-size: 1.8rem; margin:0;
-  	font-family: $pop; letter-spacing: 1px;
+  h1{text-transform: uppercase; letter-spacing: 1px;line-height: 1.4em; font-size: 1.8rem; margin:0;
+  	// font-family: $pop;
   }
-  h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: $semi; font-family: $pop; font-weight: 300}
-}
-
-// V3
-.franchise-hfull {@include sec-default(); position: relative; z-index: -1;
-	@include sec-bgimage('hero-bg.jpg'); background-size: 40%; background-position: right bottom;
-	padding: 40px 3% 0 3%;
-	&::before{@include before(); height: 420px;background-color: rgba(darken($opink, 2%),.98);}
-	.inside.lg {width:95%; }
-
-  .image, .title {display: inline-block; float: left; width: 70%;}
-  .image { height: 480px;
-  	width:67%; margin-left: 3%;
-  	@include sec-bgimage('fp-placeholder-long.jpg'); background-size: cover; background-position: center center;
+  h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: 400;
+  	// font-family: $pop; font-weight: 300;
   }
-  .title {width:30%; float: right; padding: 80px 0 0;
-   text-align: center;
- 	}
-  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em; font-size: 2rem; margin:0;
-		font-family: $pop; letter-spacing: 1px;
-  }
-  h2{ font-size:1.15rem; margin-bottom: 8px; font-family: $pop; font-weight: 400;}
-
-	//img full height
-	// padding-top:0;
-	// &::before {height:70%; top:15%;}
-	// .title {margin-top:100px;}
-
-	// before full height
-	padding:60px 3%;
-	&::before {width:40%; left:60%; height:100%;}
-	.title {margin-top:100px; margin-right: -10px;}
-}
-
-// V4
-.franchise-head.v4 {@include sec-default(); position: relative; z-index: 0;
-	padding: 40px 3% 0 3%; text-align: center;
-  &::before{@include before(); height: 50%;
-  	background-color: darken($opink, 4%);
-  }
-	.inside.lg {width:95%; }
-
-  img {width: 60%; float:right; display: inline-block; margin-right: 2%;}
-
-  .text { text-align: justify; float:left; padding:30px 0 30px; display: inline-block; width:34%; margin-top: 10%; margin-left: 2%;}
-  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em; font-size: 2rem; margin:0;
-  	font-family: $pop; letter-spacing: 1px;
-  }
-  h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: $semi; font-family: $pop; font-weight: 300; text-align: left;}
-  h3{ font-size:1.2rem;  font-family: $pop; font-weight: 300; padding-right: 20px; margin-top: 100px;
-  	width:87%; line-height: 1.7em;
-  	// margin-left: -3%;
-		span{color:$pink;}
-  }
-}
-
-.title-block{@include sec-default(); @include sec-bgimage('treat-table.jpg'); background-position: center center; padding:30px 0;
-	position: relative; z-index: 0;
-	&::before{@include before(); background-color: rgba($pink7, .8);}
-
-	h1, h2 {margin:0; color:$white;}
-  h1{text-transform: uppercase; letter-spacing: 1.5px;line-height: 1.4em; font-size: 1.5rem;}
-  h2{ font-size:1.1rem; margin-bottom: 8px; }
-}
-
-.franch-head-layer {@include sec-default(); text-align: center;
-	position: relative; z-index: -1;
-	 // padding: 50px 0 25px;
-	@include sec-bgimage('fplaceholder.jpg');
-	&::before{@include after(); background-color: rgba($f8,.9); }
-	// &::before{@include after(); background-color: darken($opink, 3%); height:40%;}
-
-	img {@include center-block(); height:530px; border-left:10px solid $white; border-right: 10px solid $white;}
-}
-.fhl-text {@include sec-default();margin-top: 15px;
-	text-align: center;
-	// position: absolute; width:70%; left:15%;
-	// background-color: rgba($black,.2);
-	h1,h2 { @include tshadowl(rgba($black, 0)); margin:0px; font-weight: bold; }
-	h1{text-transform: uppercase; letter-spacing: .5px;font-family: $pop; }
-	h2{ font-size:1.5rem; line-height: 1.5em; font-size: 1.25rem; font-family: $pop; font-weight: 300;}
-
-	&.top {display: none;}
 }
 
 
@@ -133,23 +27,17 @@
 .franchise-layout {@include sec-default(); padding: 50px 0;
 	.statement {@include sec-default(); padding-bottom: 50px;
 		h3{font-size: 1.35rem;text-align: center;
-			// font-family: $pop; text-transform: uppercase;  font-size: 1.1rem; letter-spacing: .5px;
 		 	span {color: $pink;}
-		 	&.thin {font-family: $pop;font-weight: 300; }
+		 	// &.thin {font-family: $pop;font-weight: 300; }
 		}
 
 		&.less {
 			h3 {font-size: 1.2rem;}
-			// h3, img {display: inline-block; float: left; }
-			// img{width:35%; margin-left: 3%; }
-			// h3 {float:none; font-size: 1.2rem; text-align: left; width: 67%; margin-top:8%;
-			// 	background-color: $white; padding: 20px 0 20px 20px; margin-left: -5%;
-			// }
 		}
 	}
 
 	.franch-body {@include sec-default();
-		h4{font-weight: $semi; margin-bottom: 5px; font-family: $pop; }
+		h4{font-weight: $semi; margin-bottom: 5px; }
 		p{margin-top:0;}
 		.left, .right {display: inline-block; float: left; width:45%;}
 		.right{float: right;}
@@ -178,7 +66,6 @@
 		.full{padding:40px 0;}
 
 		ul.paw li {
-			// &::before {width: 30px; top:12px; left:15px; height:2px; background-color: rgba($pink, .6); background-image: none; }
 			&::before {width: 6px; height:6px; top:18px; left:0; background-color: rgba($pink, .6); background-image: none;
 				top:8px;
 			}
@@ -201,29 +88,22 @@
 			&.one h4{bottom:200px}
 			&.two h4{bottom:190px}
 		  &.three h4{bottom:165px;}
-			li{
-				// border-bottom: $border; padding-bottom: 5px; margin-bottom: 15px;
-				// text-align: right; font-size: 17px;
-				font-family: $pop; font-weight: 300; font-size: 16px;
+			li{font-size: 16px;
+				// font-weight: 300;
 			}
 
-
-
 			padding: 60px 5% 60px 18%;
-			h4{left:18%; font-family: $pop; text-transform: uppercase; font-size: 1.2rem;}
+			h4{left:18%; text-transform: uppercase; font-size: 1.2rem;}
 			&.one h4{bottom:165px}
 			&.two h4{bottom:145px}
 		  &.three h4{bottom:135px;}
 		}
-
-		// .content {position: relative; z-index: 0;&::before{@include before(); background-color: $opink; width: 60px; height:60px; left:-30px; top:-20px;}}
 	}
 
 	// fw
 	.col {@include sec-default();
-		p, li, a, h3, h4 {font-family: $pop;}
 		h4{font-weight: 500;  text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
-		p{font-weight: 300;}
+		// p{font-weight: 300;}
 
 		.full, .image-nrw {margin-bottom: 70px;
 			width:47%; display: inline-block;
@@ -235,15 +115,13 @@
 			&.two {margin-right: -2%;}
 		}
 		ul {padding-left: 20px;}
-		li {margin-bottom: 7px; font-size: 16px; font-weight: 300; line-height: 1.7em;
+		li {margin-bottom: 7px; font-size: 16px; line-height: 1.7em;
+			// font-weight: 300;
 			position: relative; z-index: 0;
 			margin-bottom: 5px;
 			padding-left: 14px;
 			&::before {@include before(); width:20px; height:1px; left: -20px; background-color: rgba($black, .2); top:14px;}
 		}
-
-		// .left, .right{display: inline-block; float: left; width:48%;}
-		// .right {float: right; width:50%;}
 
 		.image-nrw  {width:45%;
 			position:absolute; margin-top:22%; right:0;
@@ -255,12 +133,13 @@
 		hr {margin-top: 0; width:90%;}
 
 		.full.dbl {
-			h4{ font-family: $pop; font-weight: 500;text-transform: uppercase; letter-spacing: .3px; margin-bottom:5px;}
-			li {font-size: 16px; font-family: $pop; font-weight: 300; margin-bottom: 5px; line-height: 1.7em;
+			h4{ font-weight: 500;text-transform: uppercase; letter-spacing: .3px; margin-bottom:5px;}
+			li {font-size: 16px; margin-bottom: 5px; line-height: 1.7em;
+				// font-weight: 300;
 				position: relative; z-index: 0;padding-left: 5px;
 				&::before {@include before(); width:15px; height:1px; left: -20px; background-color: rgba($black, .2); top:12px;}
 			}
-			// ul {padding-left: 15px;}
+
 			.content, .image {display: inline-block; float: left;}
 			.content {
 				background-color: $white;
@@ -271,15 +150,11 @@
 
 
 			&.one {margin-bottom: 100px;
-				// .content{float: left;  margin-left: 4%}
-				// .image{float: none; margin-left: 2%;}
 				.content{float: none;  margin-left: 4%; margin-top: 5%;}
 				.image{float: left; margin-left: 2%;}
 			}
 
 			&.two {
-				// .image {margin-left: 1%}
-				// .content {width:50%; margin-right: -2%; }
 				p{width:90%;}
 
 				.image {float: none; }
@@ -290,10 +165,11 @@
 
 		.left, .right {display: inline-block; float: left; width:49%;
 			.full {padding-left: 20px;}
-			// .full.two {width:90%; float: right;}
-			li {font-size: 16px; font-family: $pop; font-weight: 300; margin-bottom: 5px; line-height: 1.7em;}
+			li {font-size: 16px; margin-bottom: 5px; line-height: 1.7em;
+				// font-weight: 300;
+			}
 			ul {padding-left: 15px; margin-bottom: 30px; }
-			h4{ font-family: $pop; font-weight: 500; color: $pink; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
+			h4{ font-weight: 500; color: $pink; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
 			.image {margin-bottom: 20px;}
 		}
 		.right {float: right; margin-top: 5%;}
@@ -316,8 +192,6 @@
 .franchise_pages .page-body {
 	ul, ul.paw {
     p {margin-bottom: 10px; font-weight: $semi; }
-    // li { font-size:17px;}
-    // margin-left:10px;
 
     @include bp(tb) {
 			li {font-size: 16px;}
@@ -336,7 +210,9 @@
 }
 
 .franchising {
-	.franchise-layout li {font-size: 16px; margin-bottom: 7px; font-weight: 300; text-transform: uppercase; letter-spacing: .5px;}
+	.franchise-layout li {font-size: 16px; margin-bottom: 7px; text-transform: uppercase; letter-spacing: .5px;
+		// font-weight: 300;
+	}
 
 	.landing-layout {@include sec-default(); padding:20px 0 80px;
 		li{ position: relative; z-index: 0; padding-left: 10px;
@@ -350,7 +226,7 @@
 			h3{ position: absolute;width:33%; font-size: 1.3rem;
 				padding-right: 40px;
 				margin-left: 3%;
-				font-weight: 300;
+				// font-weight: 300;
 				span{color:$pink;}
 			}
 			.image {display: inline-block;width:60%; float: right;}
@@ -371,14 +247,12 @@
 		.full.fw {
 			.image,.text {display: inline-block;width:45%; float: left;}
 			.text {width:48%; float: right;}
-			.woof-link{font-size:15px; width:50%; font-family: $pop; letter-spacing: .3px;
+			.woof-link{font-size:15px; width:50%; letter-spacing: .3px;
 				margin-left: 8%;
 				background-color: $pink;
 			}
-			p{ font-family: $pop; }
 
 			&.one p, &.two p.sig,  &.three p.sig{font-size: 18px;font-weight: 400; letter-spacing: .3px; }
-			// &.one p, &.two p.sig,  &.three p.sig{font-size: 18px;font-weight: 400; letter-spacing: .3px; color:$pink;}
 
 			&.one {
 				.image{width:48%;}
@@ -390,7 +264,9 @@
 			}
 
 			&.two {margin-top: 80px;
-				p{font-size: 16px; margin:5px 0 10px; font-weight: 300;}
+				p{font-size: 16px; margin:5px 0 10px;
+					// font-weight: 300;
+				}
 				p.sig{font-size: 18px; font-weight: 500; margin-bottom: 5px; margin-left: -15px;}
 				.text {float: left; width:54%; padding-left:15px; margin-left:-5%;}
 				.image {float: right; margin-top:8%;}
@@ -403,205 +279,9 @@
 
 
 
-//****** franchisees *******//
-.franchisees {
-	.intro-row{@include sec-default(); padding: 100px 0;text-align: center;
-		h3 {font-size: 1.15rem;}
-		span{ color: $pink; font-weight: $semi;}
-
-		ul{width:50%; @include center-block(); text-align: left;}
-		li {list-style-type: disc; color: $pink}
-	}
-
-	.fr-details{@include sec-default();
-		.image, .text {display: inline-block; float: left; width:30%;}
-		.text{float: right; width:67%; margin-top: 8%;}
-		h4 {color: $compb; font-weight: $semi; font-size: 1.1rem; margin-bottom: 10px;}
-
-		&.one {
-			position: relative; z-index: 0; padding: 15px 0;
-			&::before {@include after(); background-color: rgba($compt, .7);  bottom:0;}
-			h4{color: $white; margin-top:10px;}
-			.image {position: absolute; width:20%; top:-26%;}
-			.text{width:70%; margin-top: 0; padding-top:0;}
-		}
-
-		&.two{
-			padding:50px 0 55px;
-			h4{font-size: 1.5rem; font-weight: bold;}
-			.image{width:30%; float:right; margin-top: 2%;}
-			.text{width:60%;float: left;padding-top:0; margin-top: 3%; margin-left: 5%;}
-			ul.paw li{font-size: 18px; margin-bottom: 15px;}
-		}
-	}
-
-	.profile {padding-left: 0;
-		li{margin-bottom: 15px;
-			span {font-weight: bold;}
-		}
-	}
-
-	@include bp(su) {
-		.fr-details{
-			&.one {
-				&::before {@include after(); background-color: rgba($compt, .7);  bottom:0;}
-				.image {position: absolute; width:20%; top:-20%;
-					img{position: relative; height: 450px;}
-				}
-				.text{width:70%; margin-top: 0; padding-top:0;}
-			}
-
-			&.two{padding:70px 0 35px;
-				.image{width:25%;  margin-top: 0;}
-			}
-		}
-	}
-
-	@media (max-width: 1310px) {
-		.intro-row {padding-bottom: 40px;}
-		.fr-details{
-			&.one{
-				.text{width:85%;}
-				.image{margin-left:-10%; top:-15%;}
-			}
-			&.two {padding-top: 30px;}
-		}
-	}
-
-	@include bp(tb) {
-		.intro-row {padding:65px 0 40px;
-			.inside.med2{width:85%;}
-		}
-
-		.fr-details{
-			h4 {font-size: 1rem;}
-
-			&.one {padding-top:0;
-				.image{top:-12%; width:22%;}
-				.text{width:83%;
-					li {margin-bottom: 10px;}
-					li:last-child{margin-bottom: 0;}
-				}
-			}
-
-			&.two{
-				padding:50px 0 35px;
-				h4{font-size: 1.3rem;margin-bottom: 5px }
-				.image{width:25%; margin-top: 9%;}
-				.text{width:65%;margin-top: 3%; margin-left: 0;}
-				ul.paw li{font-size: 16px; margin-bottom: 10px;}
-				hr{margin-bottom: 12px;}
-			}
-		}
-	}
-
-	@include bp(tn) {
-		.intro-row {padding:50px 0 10px;
-			.inside.med2{width:90%;}
-			h3{font-size: 1rem;}
-		}
-
-		.fr-details{
-			&.one {padding:10px 0 20px;
-				.inside.med2{width:85%;}
-				.image{display: none;}
-				.text{@include sec-default();
-					li {font-size: 15px;}
-				}
-			}
-
-			&.two{
-				padding:20px 0 35px;
-				.inside.med{width:85%;}
-				h4{font-size: 1.1rem; }
-				.image{width:27%; margin-top: 9%;}
-				.text{width:70%;margin-top: 3%;}
-				ul.paw li{font-size: 15px; }
-			}
-		}
-	}
-
-	@include bp(oc) {
-		.fr-details {
-			&.two{
-				padding:30px 0 20px;
-				background-image: url(image_path('playful.png')); background-position: bottom right; background-repeat: no-repeat; background-size: 20%;
-				.inside.med{width:90%;}
-				h4{font-size: 1.1rem; }
-				.image{display: none;}
-				.text{width:85%;margin-top: 0;}
-				ul.paw li{font-size: 15px; }
-			}
-		}
-	}
-
-	@include bp(sm) {
-		.intro-row {padding:30px 0 0px;}
-	}
-}
-
 //****** real estate *******//
 .real-estate {}
 
-//****** invest details *******//
-.investment-details {
-	.idets {padding: 100px 0 ;}
-	.intro	{display: inline-block; width:45%; float:left; text-align: center;
-		span {font-weight: bold;}
-		img.mobile{display: none;}
-	}
-	ul.inv {
-		display: inline-block; width:53%; float:right;
-		li {margin-bottom:18px;
-			&.left {float: left;}
-			span{font-weight: $semi; color: $compb; font-size: 20px; }
-			span.print {font-weight: normal; color: $tbrown; font-size:15px;}
-		}
-	}
-
-	@include bp(su) {
-		.idets .inside.med{width:1155px;}
-		.intro {width: 48%; margin-left: 5%;}
-		ul.inv{width:46%;}
-	}
-
-	@include bp(tb) {
-		.idets {padding: 70px 0 20px;}
-	}
-
-	@include bp(tn) {
-		.idets {padding: 50px 0 20px;}
-		.inside.med{width:90%;}
-		.intro	{width:50%;
-			p {font-size: 15px}
-		}
-		ul.inv {width:50%;
-			li {margin-bottom:13px; margin-left: 0;
-				span{font-size: 16px; }
-				span.print {font-size:14px;}
-			}
-		}
-	}
-
-	@include bp(oc) {
-		.idets {padding: 50px 0 20px;}
-		.inside.med{width:90%;}
-		.intro	{width:90%; @include center-block();
-			img{ @include center-block(); display: none;}
-			img.mobile{@include sec-default();}
-		}
-		ul.inv {@include sec-default(); padding-top:20px;
-			li {margin-bottom:13px; margin-left: 0;
-				span{font-size: 16px; }
-				span.print {font-size:14px;}
-			}
-		}
-	}
-
-	@include bp(sm) {
-		.idets {padding: 30px 0 20px;}
-	}
-}
 
 //****** franchise faq *******//
 .franchise-faqs {
@@ -697,99 +377,6 @@
 //******** training **********//
 .training-support {}
 
-//******** steps **********//
-.info {
-	h3{font-size: 1.1rem; font-weight: $semi;}
-	.franch-body .inside {float: right;}
-
-	.overview{@include sec-default(); padding: 90px 0 40px;}
-	.list-intro, .x-img {display:inline-block; width: 48%; margin-left: 3%; float:left;}
-	.list-intro{padding-top:40px; float:right; width: 45%; margin-left: 0;
-		li{font-size: 1em; margin-bottom: 10px; font-weight: $semi;}
-	}
-
-	.steps-desc{@include sec-default(); padding: 40px 0;
-		@include sec-bgimage('bernie.png'); background-position: bottom left; background-size: 20%;
-	}
-
-	.step {width: 97%; float:left; display:block; margin-bottom:20px;
-		&.fr{float: right;}
-		span,.dets{display: inline-block; float: left; }
-		span{width:4%; font-size: 50px; margin-top: 4%; color: $pink; }
-		.dets {width:93%; float: right;}
-		h4{font-weight: $semi; margin-bottom: 0; color: $compt;}
-		p{margin-top: 5px;}
-	}
-
-	@include bp(su) {
-		.overview .inside {width:1230px;}
-	}
-
-	@include bp(tb) {
-		h3{font-size: 1rem; margin-bottom: 7px}
-
-		.overview{ padding: 80px 0 20px;
-			.inside {width:90%;}
-		}
-		.x-img {width: 50%; margin-left: 0; padding-right: 10px;}
-		.list-intro{padding-top:0px; width: 48%;
-			li a{font-size: 15px;}
-		}
-
-		.steps-desc{padding: 30px 0; background-size: 15%;
-			.inside.narrow {width: 80%;}
-		}
-	}
-
-	@include bp(tn) {
-		h3{font-size: 15px;}
-		.overview{ padding: 60px 0 20px;
-			.inside {width:90%;}
-			ul{padding-left:15px;}
-		}
-		.x-img {width: 45%; margin-top: 7%;}
-		.list-intro{width: 54%;}
-
-		.steps-desc{padding: 10px 0;
-			background-image: none;
-			.inside.narrow {width: 85%;}
-		}
-
-		.step {margin-bottom:0px;
-			span{font-size: 45px; }
-			h4{font-size: 1.1rem;}
-			p{font-size: 15px;}
-		}
-	}
-
-	@include bp(md) {
-		.overview {padding: 60px 5% 20px;
-			.inside {@include sec-default(); @include sec-bgimage('woof6.jpg'); background-size:32%; background-position: top left;}
-		}
-		.x-img {display: none;}
-		.list-intro{width:65%; float: right;}
-	}
-
-	@include bp(oc) {
-		.overview {padding: 50px 0 0px;
-			.inside {@include sec-default(); background-image: none;}
-		}
-		.list-intro{width:85%; @include center-block();}
-
-		.step {
-			span{margin-left: -10px;}
-		}
-	}
-
-	@include bp(sm) {
-		.steps-desc	.inside.narrow {width:90%;}
-		.step {margin-bottom:10px;
-			span{font-size: 40px; margin-top: 4%; margin-left: 0; }
-			.dets{padding-left:14px; float:right;}
-		}
-
-	}
-}
 
 //****** franchise inquiries *******//
 	// LOCATED IN STATIC_PAGES.SCSS WITH CONTACT PAGE
