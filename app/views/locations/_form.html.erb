@@ -105,6 +105,13 @@
     <div class="forminfo image">
       <%= f.label :image %>
       <%= f.file_field :image %>
+
+      <% unless @location.new_record? %>
+        <% if @location.image.attached? %>
+          <p class="tsmall">Current Image:</p>
+          <div class="thumb"><%= image_tag @location.image %></div>
+        <% end %>
+      <% end %>
     </div>
     <div class="clearfix"><hr>
 

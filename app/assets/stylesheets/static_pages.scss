@@ -2644,7 +2644,10 @@ ul.paw {padding-left: 0;
 }
 
 
-
+.posts.edit, .locations.edit {
+  .thumb {width:100px;}
+  p.tsmall {margin-bottom: 5px; font-size: 14px;}
+}
 
 
 
@@ -2677,6 +2680,7 @@ ul.paw {padding-left: 0;
 
   .l1{display: inline-block; float: left; width:30%; margin-left: 3%;}
 }
+.locations.show .image.attach img{ max-height: 360px; @include center-block();}
 
 
 .services-layout {@include sec-default();
@@ -2946,16 +2950,16 @@ ul.paw {padding-left: 0;
 
 
 .estates,.vendors,.reporters{
-  .page-body {background-color:$cream;
+  .page-body {background-color:$f9;
     // padding: 70px 100px;
     // @include sec-bgimage('woof10.jpg');
-    // position: relative; z-index: 0; &::before{@include before(); background-color: rgba($pink7, .5);}
+    // position: relative; z-index: 0; &::before{@include before(); background-color: rgba($black, .5);}
 
-    .full-sec{
-      // @include sec-bgimage('appa.jpg'); background-size: 43%;
-      // @include sec-bgimage('woof10.jpg');background-size: 43%;background-position: bottom left;
-      // box-shadow: 0 5px 40px rgba($black, .35);
-    }
+    // .full-sec{background-position: bottom left;
+    //   @include sec-bgimage('appa.jpg'); background-size: 43%;
+    //   @include sec-bgimage('woof10.jpg');background-size: 43%;
+    //   box-shadow: 0 5px 40px rgba($black, .35);
+    // }
   }
   .intro-text, .form-side{display: inline-block; float: left; width:40%;}
   .intro-text{width:35%; margin-top:5%; margin-left:5%;
@@ -2968,7 +2972,7 @@ ul.paw {padding-left: 0;
   .form-group {margin-bottom: 25px; }
   label {color: #666; font-weight: normal; font-size: 14px;}
 
-  input, textarea, select {border:0;color: #777; font-size: 14px; background-color: transparent;}
+  input, textarea, select {border:0;color: #000; font-size: 14px; background-color: transparent;}
   select {font-family: $body; color:#666; margin-bottom: 15px;}
 
 
@@ -2992,16 +2996,40 @@ ul.paw {padding-left: 0;
 }
 
 .reporters{
+  // .page-body{
+    // padding: 70px 100px;
+    // position: relative; z-index: 0;
+    // &::before{@include sec-bgimage('woof10.jpg'); width:43%;}
+
+    // @include sec-bgimage('woof10.jpg');
+    // &::after{@include before(); background-color: rgba($black, .5); }
+  // }
+
+  .full-sec{background-position: bottom left;
+    @include sec-bgimage('appa.jpg'); background-size: 43%;
+    box-shadow: 0 5px 40px rgba($black, .15);
+    background-color: $white;
+  }
+
   .form-group {width:48%; display: inline-block; float: left;
     &:nth-child(2n+2) {float: right;}
     &.content{@include sec-default();}
   }
 }
 
-.locations.show .image.attach img{ max-height: 360px; @include center-block();}
 
 
-
+.estates {
+  .full-sec {padding-top:0;}
+  .form-side{float: right; padding-top:40px; margin-right:5%;}
+  .intro-text{width:35%; margin-top:0; margin-left:0;
+    height:90vh;
+    position: fixed;z-index: 10;
+    @include sec-bgimage('appa.jpg'); background-size: cover;
+    box-shadow: 0 5px 40px rgba($black, .15);
+    background-color: $white;
+  }
+}
 
 
 
