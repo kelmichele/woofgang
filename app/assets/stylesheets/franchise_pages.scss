@@ -336,56 +336,7 @@
 }
 
 .franchising {
-  .border-left,.border-right {
-  	width:49.9%; height:30px; margin:5px 0 10px; float: right; display: block; border-left: 1px solid rgba($black,.2);
-  	&.lg{height:60px; }
-  }
-  .border-right {float: left; border-left: 0; border-right: 1px solid rgba($black,.2);}
-
-
 	.franchise-layout li {font-size: 16px; margin-bottom: 7px; font-weight: 300; text-transform: uppercase; letter-spacing: .5px;}
-	.statement {
-		// h3 {width:60%; text-align: left;
-		// 	@include center-block();
-		// }
-		.image {width:40%; display: inline-block; float: right;}
-		ul {width:25%; float: right; display: inline-block;
-			li {font-size: 16px; margin-bottom: 7px; font-family: $pop; font-weight: 400; text-transform: uppercase; letter-spacing: .5px;}
-		}
-
-		.list {@include sec-default(); text-align: center;
-			li{display: inline-block; float: none; margin: 10px 2%;}
-		}
-	}
-
-	.land-overview {@include sec-default();
-		.box {width:90%; float: right;}
-		.focus {width: 18%; background-color: $black; padding:30px 20px 20px; text-align: center;
-			position: absolute; z-index: 2;
-			left:5%; margin-top:10%;
-			p, h4 {color: $white; font-size: 17px; }
-		}
-		.image, .text {display: inline-block; float: left; width:50%; position: relative; z-index: 0;}
-		.image {width:40%;}
-		// .text {float:right;}
-
-		li{ position: relative; z-index: 0; padding-left: 10px; text-transform: none; letter-spacing: 0;
-			&::before {@include before(); width:15px; height:1px; left: -20px; background-color: rgba($black, .4); top:10px;}
-		}
-
-		.box.one {
-			margin-left: 7%;
-			.text{margin-top: 30px; width:55%; margin-left: 3%;}
-		}
-		.box.two {margin-top:60px;
-			float: right; margin-right: 7%;
-			.text {float: left; width:55%; margin-top:4%; margin-left: 2%;}
-			.image {float: right;}
-			.focus{left:80%;}
-			h4{margin-bottom: 0;}
-			p{margin:5px 0 10px;}
-		}
-	}
 
 	.landing-layout {@include sec-default(); padding:20px 0 80px;
 		li{ position: relative; z-index: 0; padding-left: 10px;
@@ -400,7 +351,6 @@
 				padding-right: 40px;
 				margin-left: 3%;
 				font-weight: 300;
-				// font-family: $pop; font-weight: 300; font-size: 1.2rem;
 				span{color:$pink;}
 			}
 			.image {display: inline-block;width:60%; float: right;}
@@ -409,27 +359,6 @@
 			.img2 {width:55%; float: left; margin-top: -25%; margin-left: -16%}
 
 			li{text-transform: none; letter-spacing: 0;}
-		}
-
-		.box.two{
-			.text{width:50%; float: right;}
-			.image {width:50%;}
-		}
-
-		.box.long {margin-top: -30px;
-			p.sig{font-size: 20px;font-weight: 500; letter-spacing: .3px; font-family: $pop; margin-bottom: 0;}
-			p.sig,p.one{margin-left: -15px;}
-			p{margin-top: 8px;}
-			.text{width:52%; padding:0 10px; margin-left: 2%;}
-			.image {width:45%; margin-top: 17%;}
-			.img1 {width:100%;}
-			.img2 {width:65%;
-			 	margin-top: -21%; margin-left: -22%; margin-left: -40%;
-			}
-
-			.image{ margin-top:10%;}
-			.img1{width:90%;}
-			.img2 {margin-top: -26%;}
 		}
 	}
 
@@ -455,7 +384,9 @@
 				.image{width:48%;}
 				.text{margin-top:5%;}
 
-				.woof-link {@include sec-default(); text-align: left; margin-left: 3%; width:123%; }
+				.woof-link {text-align: left; margin-left: 3%;
+					// width:123%;
+				}
 			}
 
 			&.two {margin-top: 80px;
@@ -466,198 +397,11 @@
 				ul{margin-top:25px;}
 				li{margin-bottom: 13px;}
 			}
-
-			&.three {margin-top: 80px;
-				.text {@include sec-default(); padding-left: 15px;}
-				p{font-size: 16px; margin:5px 0 10px; font-weight: 300;}
-				p.sig{font-size: 18px; font-weight: 500; margin-bottom: 5px; margin-left: -15px;}
-				// ul{margin-top:25px;}
-				// li{margin-bottom: 13px;}
-			}
-		}
-	}
-
-	.landing-layoutb {@include sec-default(); padding:20px 0;
-		.box{@include sec-default();}
-		.box.one {
-			h3{
-				font-size: 1.3rem;
-				font-weight: 300;
-				span{color:$pink;}
-			}
-			.text{@include center-block(); width:85%; text-align: center;}
-		}
-	}
-
-	.awards {@include sec-default();
-		.aw-item {display: inline-block; float: left;
-			width:45%;
-			margin: 20px 0;
-			// text-align: center;
-			// padding:40px 20px;
-			// @include sec-bgimage('award-pink.png'); background-size: 25%; background-position: center center;
-			// position: relative;z-index: 0; &::before {@include before(); background-color: rgba($white,.85);}
-			position: relative;z-index: 0; &::before {@include before();@include sec-bgimage('seal.png'); background-size: 15%; top:-20px; left:-45px;}
-
-			&:nth-child(2n+2){float: right;}
-		}
-		p span{font-size: 15px; color: $pink;}
-	}
-
-	.full-spread {
-		@include sec-default(); padding-top:50px;
-		.text, .image {display: inline-block;float: left; width:50%;}
-		.image {position: relative;}
-
-		h3{font-size: 1.3rem; font-weight: 300;
-			span{color:$pink;}
-		}
-
-		.fs1 {
-			.image {float: right; max-height: 300px; overflow: hidden; width:55%;}
-			.text{margin-top: 40px; width:51%; margin-left: -9%;}
-		}
-
-		.fs2 {
-			.text {float: right; margin-top: 40px; padding-left: 45px; margin-right: -8%; width:58%;}
-			.image {float: left; margin-top: -5%; margin-right: -8%;}
 		}
 	}
 }
 
 
-//****** franchise op *******//
-.franchise-opportunity {
-
-	.full.top { padding: 40px 0 60px;
-		.big, ul { display: inline-block; float: left; width: 35%; margin-left: 3%;}
-		.big { margin-top:2%; text-align: center;
-			p{font-size: 25px;@include sec-default();}
-			hr{display: none;}
-		}
-
-		ul.paw {float:right; width:55%;
-			li{margin-bottom: 10px;}
-			li::before{left:-3px; top:4px; display: none;}
-		}
-
-		.woof-link{@include sec-default(); background-color: rgba($pink,.3);}
-		.woof-link.xs-show{display: none;}
-		.btn{@include sec-default(); color: $white; @include tshadowl(rgba($black, .3));padding: 14px 8px; margin-top: 20%;}
-	}
-
-	.banner {@include sec-default(); background-color: $pink; padding: 30px 0 15px; text-align: center;
-		h3{color: $white; @include tshadowl(rgba($black, .3)); font-weight: bold; font-size:1.5rem;}
-	}
-
-	.full.btm {padding:50px 0;
-		.inside {width:80%;}
-		.tbox, .image {display: inline-block; float: left; width: 60%;}
-		.image{float: right;width:37%;}
-		.tbox {margin-top: 3%;}
-		li{margin-bottom: 10px;}
-	}
-
-
-	@include bp(tb) {
-		.fran-op {padding-top: 70px;}
-		.intro{width:95%;}
-
-		.full.top {padding: 10px 0 35px; background-size:12%;
-			.inside.med2{width:80%;}
-			.big { width: 35%; margin-left: 0;
-				p{font-size: 20px;}
-				.woof-link {font-size: 14px; padding: 10px 15px;}
-			}
-
-			ul.paw {width:60%; margin-left: 0; float: right;}
-		}
-
-		.banner {padding: 15px 0 0px;
-			h3{font-size:1.35rem;}
-		}
-
-		.full.btm {padding:50px 0 20px;
-			.inside {width:90%;}
-			p{font-size: 16px;}
-			.image{width:40%; }
-			.tbox {width: 60%; margin-top: 0; padding-right: 20px;}
-		}
-	}
-
-	@include bp(tn) {
-		h3{font-size: 1.1rem;}
-		.fran-op {padding-top: 55px;}
-
-		.full.top {padding: 15px 0 25px; background-image:none;
-			.inside.med2{width:85%;}
-			.big { width: 35%; margin-top:7%;
-				p{font-size: 18px;}
-				.woof-link{margin-top:5%;}
-			}
-
-			ul.paw {width:60%;}
-		}
-
-		.banner {padding: 10px 0;
-			h3{font-size:1.15rem;margin-bottom: 0px;}
-		}
-
-		.full.btm {padding:30px 0 20px;
-			.inside {width:90%;}
-			p{font-size: 15px; margin-bottom: 10px}
-			.image{display: none; }
-			.tbox {@include sec-default();padding-right: 0px;}
-		}
-	}
-
-	@include bp(oc) {
-		.fran-op {padding-top: 50px;}
-		.intro{@include sec-default();}
-		h3{font-size: 1rem; margin-bottom: 0;}
-
-		.full.top {padding: 15px 0 25px; background-image:none;
-			.inside.med2{width:85%;}
-			.big {@include center-block(); width:90%; margin-top:0; border-top: 1px solid rgba($tbrown, .1); padding-top: 15px;
-				p{font-size: 16px;}
-				.woof-link{display: none; }
-			}
-
-			ul.paw {@include sec-default();margin-bottom: 15px;
-				li{width: 85%; @include center-block();}
-			}
-
-			.woof-link.xs-show{display: block; margin-top: 0; width:50%; margin-left: 25%; font-size: 14px; padding:8px 20px;}
-		}
-
-		.banner h3{font-size:1rem;}
-
-		.full.btm {padding:20px 0 10px;
-			.inside {width:90%;}
-			p{font-size: 15px; margin-bottom: 10px}
-			.image{display: none; }
-			.tbox {@include sec-default();padding-right: 0px;}
-		}
-	}
-
-	@media (max-width:500px) {
-		.abs-franch {display: none;}
-		.fran-op {padding-top: 20px;}
-	}
-
-	@include bp(sm) {
-		.full.top {
-			.inside.med2{width:90%;}
-			.big { width:97%;
-				p{font-size: 15px;}
-			}
-
-			ul.paw li{width: 95%;}
-
-			.woof-link.xs-show{width:70%; margin-left: 15%; }
-		}
-	}
-}
 
 //****** franchisees *******//
 .franchisees {

@@ -5,24 +5,35 @@
 <% @page_description = "New Description" %>
 
 <div class="services-layout retail">
-	<div class="inside lg">
-		<div class="serv-slider srv-slides" uk-slider="autoplay: true">
-		  <ul class="uk-slider-items">
-				<li><%= image_tag('retail9.jpg', class: 'img-responsive') %></li>
-				<li><%= image_tag('retail7.jpg', class: 'img-responsive') %></li>
-				<li><%= image_tag('retail13.jpg', class: 'img-responsive') %></li>
-				<li><%= image_tag('retail9.jpg', class: 'img-responsive') %></li>
-				<li><%= image_tag('retail7.jpg', class: 'img-responsive') %></li>
-				<li><%= image_tag('retail13.jpg', class: 'img-responsive') %></li>
-		  </ul>
+	<div class="serv-slider inline-show">
+		<div class="inside lg">
+			<div class="il-slideshow" uk-slideshow="autoplay: true;max-height: 600; animation: push">
+				<div>
+				  <ul class="uk-slideshow-items">
+						<li><%= image_tag('retail9.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+						<li><%= image_tag('retail7.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+						<li><%= image_tag('retail13.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+						<li><%= image_tag('retail9.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+						<li><%= image_tag('retail7.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+						<li><%= image_tag('retail13.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+				  </ul>
+			    <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> -->
+			    <!-- <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> -->
+			  </div>
+			  <!-- <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul> -->
+			</div>
 
-		  <!-- <ul class="uk-slider-nav uk-dotnav uk-flex-center"></ul> -->
+
+			<div class="title">
+	  	  <%= image_tag('wg-logo1.png', class: 'img-responsive srv-logo', alt: '')%>
+			</div>
 		</div>
 	</div>
 
-	<div class="statement text-center">
-		<div class="inside alt">
-	  	<div class="logo-bg"><%= image_tag('wg-logo1.png', class: 'img-responsive srv-logo', alt: '')%></div>
+
+
+	<div class="statement">
+		<div class="inside med2">
 	  	<div class="text">
 				<h1 class="pink">We help you find the best food to feed your pet</h1>
 				<p>Woof Gang Bakery is the leader in raw, frozen diet, kibble, canned and dehydrated dog and cat foods.
@@ -32,7 +43,8 @@
 		</div>
 	</div>
 
-	<div class="gallery-sec stagg">
+
+<!-- 	<div class="gallery-sec stagg">
 		<div class="inside med2">
 			<div class="left">
 				<%= image_tag('home-slide-treats.jpg', class: 'img-responsive gall-img') %>
@@ -45,11 +57,24 @@
 			</div>
 		</div>
 	</div>
+</div> -->
+
+	<div class="gallery-sec mason">
+		<div class="inside med2">
+			<div class="full top">
+				<div class="left">
+					<%= image_tag('home-slide-treats.jpg', class: 'img-responsive gall-img') %>
+					<%= image_tag('bowls.jpg', class: 'img-responsive gall-img') %>
+				</div>
+
+				<!-- hlf two -->
+
+				<div class="right">
+					<%= image_tag('bday-treats2.jpg', class: 'img-responsive gall-img hlf') %>
+					<%= image_tag('toy-sec.jpg', class: 'img-responsive gall-img hlf two') %>
+					<%= image_tag('home-slide-treats.jpg', class: 'img-responsive gall-img') %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-
-<!-- instructions -->
-	<!-- At the top, add a photo rotator showing wide shots of different stores. Ideally six photos (but the quality of our selection will dictate), each that taken from a different perspective. -->
-	<!-- The main Woof Gang Bakery logo needs a place -- each of the services page needs the distinct logo. design should be uniform across all Services. -->
-	<!-- Below the rotator: Positioning statement: -->
-	<!-- Below this, a small variety of excellent photos showing different product displays, including treats, private label, chews/bones, collars/leashes, other retail items. -->

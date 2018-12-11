@@ -3,33 +3,45 @@
 
 
 <div class="services-layout daycare">
-	<div class="inside lg">
-		<div class="serv-slider srv-slides" uk-slider="autoplay: true">
-		  <ul class="uk-slider-items">
-				<li><%= image_tag('placehold.jpg', class: 'img-responsive') %></li>
-				<li><%= image_tag('placehold.jpg', class: 'img-responsive') %></li>
-				<li><%= image_tag('placehold.jpg', class: 'img-responsive') %></li>
-		  </ul>
 
-		  <!-- <ul class="uk-slider-nav uk-dotnav uk-flex-center"></ul> -->
+	<div class="serv-slider inline-show">
+		<div class="inside lg">
+			<div class="il-slideshow" uk-slideshow="autoplay: true;max-height: 600; animation: push">
+				<div>
+				  <ul class="uk-slideshow-items">
+						<li><%= image_tag('placehold.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+						<li><%= image_tag('placehold.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+				  </ul>
+			    <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> -->
+			    <!-- <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> -->
+			  </div>
+			  <!-- <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul> -->
+			</div>
+
+
+			<div class="title">
+	  	  <%= image_tag('wgb-daycare.png', class: 'img-responsive srv-logo', alt: '')%>
+	  	  <%= image_tag('wgb-walking.png', class: 'img-responsive srv-logo', alt: '')%>
+			</div>
 		</div>
 	</div>
 
 	<div class="statement">
 		<div class="inside med2">
 			<div class="full one">
-		  	<div class="logo-bg"><%= image_tag('wgb-daycare.png', class: 'img-responsive srv-logo', alt: '')%></div>
+		  	<!-- <div class="logo-bg"><%= image_tag('wgb-daycare.png', class: 'img-responsive srv-logo', alt: '')%></div> -->
+		  	<h2>Woof Gang Doggie Day Care</h2>
 				<div class="text"><p>Woof Gang Doggie Day Care offers a clean, safe and fun environment for monitored interaction with other dogs.</p></div>
 			</div>
 
 			<div class="full two">
-		  	<div class="logo-bg"><%= image_tag('wgb-walking.png', class: 'img-responsive srv-logo', alt: '')%></div>
+		  	<!-- <div class="logo-bg"><%= image_tag('wgb-walking.png', class: 'img-responsive srv-logo', alt: '')%></div> -->
+		  	<h2>Woof Gang Pet Resort</h2>
 				<div class="text"><p>Woof Gang Pet Resort is a boutique boarding facility that provides caring, convenient luxury dog boarding.</p></div>
 		  </div>
 	  </div>
 	</div>
 
-	<!-- <div class="disclaim"><h4>Doggie Day Care and Pet Resort services are offered only at select locations.</h4></div> -->
 	<div class="locations-disc">
 		<div class="inside med">
 			<h4>Doggie Day Care and Pet Resort services are offered only at select locations.</h4>
@@ -39,24 +51,3 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
-<!-- instructions -->
-	<!--
-	Rotator:
-	This is the only page on the site where we need to purchase stock photos. Paul will select these photos.
-
-	Logos (2):
-	Woof Gang Doggie Day Care
-	Woof Gang Pet Resort
-
-	Positioning Statement:
-	Woof Gang Doggie Day Care offers a clean, safe and fun environment for monitored interaction with other dogs. Woof Gang Pet Resort is a boutique boarding facility that provides caring, convenient luxury dog boarding.
-
-	Remove all copy and cut outs.
-	Doggie Day Care and Pet Resort services offered ONLY AT SELECT locations.
-	-->

@@ -296,8 +296,6 @@ ul.paw {padding-left: 0;
 }
 
 
-
-
 .home-alt, .layout {
   .full.franch {
     .text{width:53%; @include center-block();}
@@ -1106,1051 +1104,8 @@ ul.paw {padding-left: 0;
 //*********************************//
 //*********** services ***********//
 //*********************************//
-.services .services-full {
-  .services-desc {@include sec-default(); padding: 80px 0;}
-}
 
-.disc-banner {@include sec-default(); padding:30px 5% 20px; margin:30px 0 35px;
-  background-color: $fa; position: relative; z-index: 0;
-  .text{float: left; width: 80%;margin-left: 3%}
 
-  &::before {@include after(); z-index: 1; width:16%; left: 72%; @include sec-bgimage('sm-group.png'); background-position: bottom right; height:180%; }
-  &::after {@include before(); border:1px solid rgba($pink, .1); top:-8%; left:1%; height:98%}
-
-  h4{font-weight: $semi; margin-bottom: 5px; font-size: 1rem;}
-  p{margin-top: 0; margin-bottom:7px; font-size: 15px;}
-  p.final {margin-bottom: 15px;}
-  a{color:$compb;}
-  // &::after {@include before();@include sec-bgimage('favicon.png'); background-size: 3%; background-position: bottom left; left:1%; margin-top:-1%;}
-}
-
-.services-list {@include sec-default(); padding: 80px 0;
-  p{font-size:17px;}
-  .serve-box {@include sec-default(); margin-bottom:80px;
-    h3{margin-bottom: 10px;}
-    p{margin-top: 0;}
-    h4{margin-bottom: 6px; font-weight: bold;}
-
-    .img-box, .text {display: inline-block; float: left; width: 49.5%;}
-    .text {margin-top: 7%; float:right; width:46%}
-
-    &:nth-child(2n+2) {
-      .text {float: left;}
-      .img-box {float:right;}
-    }
-  }
-}
-
-.pet-stores,.retail {
-  .page-header {
-    @include sec-default(); position: relative; z-index: 0; padding: 60px 0 20px;
-    &::before{@include before(); height: 80%; background-color: rgba($compt, .7); border-bottom: 40px solid $compt;}
-    .tbox {@include sec-default(); text-align: center;}
-    .hd-img{width:42%; @include center-block(); text-align: center;}
-    h1{margin-bottom: 10px; font-size: 1.7rem;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px;}
-    h2{margin:0 0 10px; font-size:1.1rem;width:60%; @include center-block();}
-  }
-
-  .services-list {padding: 80px 0 0px;
-    .serve-box {
-      .text {margin-top: 3%;}
-      &:nth-child(2n+2) p{float: right;}
-      li {margin-bottom: 20px;}
-
-      &.two {
-        .text{float: left; margin-top:4%;}
-        .img-box {float: right;}
-      }
-    }
-  }
-
-  .banner {@include sec-default(); padding:20px 5% 10px; margin:30px 0 100px;
-    background-color: $f8; position: relative; z-index: 0;
-
-    p{float: left; width: 70%}
-    &::before {@include after(); z-index: 1; width:16%; left: 75%; @include sec-bgimage('party-pups.png'); background-position: bottom right; height:180%; }
-    &::after {@include before(); border:1px solid rgba($pink, .3); top:-8%; left:1%; height:98%}
-  }
-
-  @media (max-width:1200px) {
-    .services-list {padding: 50px 0 0px;
-      .serve-box {
-        .text {margin-top: 0;}
-        li {margin-bottom: 15px;}
-        &.two {
-          .text{margin-top:2%;}
-        }
-      }
-    }
-
-    .banner { padding:20px 5% 15px; margin:15px 0 80px;
-      p{float: left; width: 78%}
-      &::before {width:16%; left: 80%; height:180%; }
-    }
-  }
-
-  @include bp(tb) {
-    .page-header {padding: 35px 0 20px;
-      .hd-img{width:42%;}
-      h1{font-size: 1.5rem;}
-      h2{width:70%;font-size: 16px;}
-    }
-
-    .services-list {padding: 35px 0 0px;
-      p{font-size: 16px;}
-      .serve-box {margin-bottom: 55px;
-        .text {width:48%;}
-        li{font-size: 15px;}
-        &.two {
-          .text{margin-top:2%;}
-        }
-      }
-    }
-
-    .banner { padding:20px 5% 15px; margin:15px 0 60px;
-      p{font-size: 16px; width: 78%}
-      &::before {width:16%; left: 80%; height:180%; }
-    }
-  }
-
-  @include bp(tn) {
-    .page-header {padding: 20px 0;
-      &::before{border-bottom: 25px solid $compt;}
-      .hd-img{width:50%;}
-      h1{font-size: 1.3rem; margin-bottom: 5px;}
-      h2{width:85%;}
-    }
-
-    .services-list {padding: 20px 0 0px;
-      .inside.med{width:88%;}
-      p{font-size: 15px;}
-      .serve-box {margin-bottom: 15px;
-
-        &.one {
-          .img-box {display: none;}
-          .text {@include sec-default();}
-          li{margin-bottom: 10px;}
-        }
-        &.two {
-          .text{margin-top:0; }
-          .logos{width:90%; @include center-block();}
-        }
-      }
-    }
-
-    .banner { padding:20px 5% 15px; margin:15px 0 45px;
-      p{font-size: 15px; width: 85%}
-      &::before {width:15%; left: 86%;}
-      &::after{ top:-5%;}
-    }
-  }
-
-  @include bp(oc) {
-    .page-header {padding: 20px 0 10px;
-      &::before{border-bottom: 20px solid $compt;}
-      .hd-img{width:55%;}
-      h1{font-size: 1.2rem;}
-      h2{@include sec-default();}
-    }
-
-    .services-list {padding: 20px 0 0px;
-      .serve-box {
-        &.two {
-          .img-box {display: none;}
-          .text{@include center-block(); width:90%;}
-          .logos{width:95%;}
-        }
-      }
-    }
-
-    .banner { padding:20px 0 15px; margin:15px 0 35px;
-      p{width: 95%; @include center-block(); text-align: center;}
-      &::before {display: none;}
-      &::after{ top:-5%;}
-    }
-  }
-}
-
-.grooming {
-  .pup-header {background-color: rgba($pink, .5);
-    .full{@include sec-bgimage('lab.png'); background-size: 27%; background-position: bottom right; padding:65px 0 40px;
-      &::before{background-color: rgba($pink, .5);}
-    }
-    .tbox { width:60%; text-align: left; margin-left: 15%;}
-
-    h1{@include tshadowl(rgba($black, .4));}
-    p{margin-top: 8px; font-size: 17px;}
-    h2{margin-top: 8px; font-size:1.1rem; line-height: 1.4em;}
-  }
-
-  .top-box {@include sec-default(); padding: 100px 0 50px;
-    .bone-border{display: none;}
-    .intro{@include sec-default(); padding: 0 8% 40px; text-align: center;}
-    h3{font-size: 1.4rem; }
-
-    .tb-box {display: inline-block; float: left; width: 48%;
-      &.two{float:right;}
-
-      .img-box, .text {display: inline-block; float: right; }
-      .text {margin-top: 25px;width: 69%; margin-left: -6%;
-        position: relative;z-index: 0;
-        &::before {@include before(); width:200px; height:200px;  border-radius: 50%; left:-25%; top:-12%;
-          background-color: rgba($compb, .8);
-        }
-      }
-      .img-box{width:31%; float: left; position: relative; z-index:2;}
-      h4{margin-bottom: 6px; font-weight: bold; font-size:1.2rem;}
-      p{margin-top: 0px; font-size: 16px}
-
-      &.three {@include center-block(); width: 60%;
-        .text {
-          &::before {left:-15%;}
-        }
-      }
-    }
-    .clearfix.space {margin-top: 50px; @include sec-default();}
-  }
-
-  .banner {@include sec-default();padding:30px 0 80px;
-    .full{padding:27px 0 20px; background-color: $fa; position: relative; z-index: 0;
-      p{float: left; display: inline-block; width: 70%; font-weight: $semi;}
-      .link{display:inline-block; float: right; margin-top: 12px;}
-      &::after {@include before(); border:1px solid rgba($pink, .3); top:-8%; left:1%; height:98%}
-    }
-  }
-
-  .layer-sec {@include sec-default();
-    padding:50px 0; background-color: $white;
-    position: relative; z-index: 0; &::before {@include before(); height:50%; background-color: $f8;}
-
-    .intro {width:75%; @include center-block(); text-align: center; }
-    .full{margin-top: 20px;}
-    .left, .right {display: inline-block; float: left; width: 48.5%;}
-    .right {float: right; margin-top: 5%;}
-    .left img{margin-bottom: 30px;}
-    .text {width: 95%; @include center-block();
-      p {margin-bottom: 25px;}
-    }
-  }
-
-  @media (min-width:1810px) {
-    .pup-header .full {background-size: 20% !important;}
-
-    .top-box .inside.med {width: 65%;}
-
-  }
-  @include bp(su) {
-    .pup-header .full {background-size: 22%;}
-  }
-
-  @include bp(tb) {
-    .pup-header {
-      .full{padding:25px 0 15px; background-size:22%;}
-      .tbox { width:65%; margin-left: 5%;}
-      h1{font-size: 1.6rem;}
-      h2{ font-size:16px; line-height: 1.4em;}
-    }
-
-    .top-box {padding: 65px 0 35px;
-      .inside.med{width:90%;}
-      .tb-box {width: 50%;
-        .text {margin-top: 15px; width: 74%; margin-left: -6%;
-          &::before {width:185px; height:185px;  border-radius: 50%; left:-25%; top:-12%;}
-        }
-        .img-box{width:25%; }
-        h4{font-size:1.1rem;}
-        p{font-size: 15px}
-
-        &.three {width: 60%;
-          .text {
-            &::before {left:-15%;}
-          }
-        }
-      }
-    }
-
-    .banner {padding:30px 0 50px;
-      .inside{width:90%;}
-      .full{padding:27px 0 20px;
-        p{ width: 77%; font-size: 16px;}
-        .woof-link{font-size:15px;}
-      }
-    }
-
-    .layer-sec {
-      padding:35px 0;
-      .intro {width:80%;}
-      .full{margin-top: 10px;}
-      .left, .right {width: 48.5%;}
-      .right { margin-top: 5%;}
-      .left img{margin-bottom: 15px;}
-      .text p {font-size: 15px;}
-    }
-  }
-
-  @include bp(tn) {
-    .pup-header {
-      .inside.med2 {width:85%;}
-      .tbox { width:75%; margin-left: 0;}
-      h1{font-size: 1.4rem;}
-      h2{ font-size:15px;}
-    }
-
-    .top-box {padding: 50px 0 35px;
-      .inside.med{width:90%;}
-      .tb-box {margin-bottom: 0;
-        &.one, &.three, &.two {float: left; width: 90%;}
-        &.two {float: right;}
-
-        .img-box{width:20%; }
-        .text{margin-top: 15px; width: 80%; margin-left: 0px;
-          &::before {width:160px; height:160px; left:-15%; top:-10%;}
-          h4{padding-top:10px; font-size: 17px;}
-        }
-      }
-      .clearfix.space {margin-top: 35px;}
-    }
-
-    .banner {padding:30px 0 50px;
-      .full{
-        p{ @include sec-default(); font-size: 15px; margin-bottom: 0;}
-        .link{margin:15px 0; @include sec-default(); text-align: center;}
-        .woof-link {padding:7px 20px; float: none;}
-      }
-    }
-
-    .layer-sec {
-      .inside.med2 {width:80%;}
-      .intro {@include sec-default();
-        p {font-size: 16px;}
-      }
-      .left p {margin-bottom: 16px;}
-      .woof-link {font-size:15px; padding:7px 20px;}
-    }
-  }
-
-  @include bp(mb) {
-    .top-box {padding: 50px 0 0px;
-      .tb-box {margin-bottom: 30px;
-        .text::before { top:-5%;}
-        .text h4{font-size: 16px;}
-      }
-      .clearfix.space {margin-top:10px;}
-    }
-
-    .banner {padding:20px 0 35px;}
-    .layer-sec {
-      .inside.med2 {width: 90%;}
-      .intro p{font-size: 15px; margin-bottom: 10px;}
-    }
-  }
-
-  @include bp(sm) {
-    .pup-header {
-      .full{background-image: none; padding:15px 0 5px;}
-      .inside.med2 {width:90%;}
-      .tbox { @include sec-default();text-align: center;}
-      h1{font-size: 1.25rem;}
-      h2{ font-size:15px;}
-    }
-
-    .top-box {padding: 15px 0 0px;
-      .bone-border{display: block; margin:6px 0 20px;}
-
-      .tb-box {margin-bottom: 0px;
-        &.one, &.three, &.two {@include sec-default();}
-        .img-box{display: none;}
-        .text{@include sec-default();
-          margin-top:0;
-          &::before{left:-15px;top:0;width:130px; height:130px; display: none;}
-        }
-      }
-      .clearfix.space {margin-top:0px;}
-    }
-
-    .banner .full{text-align: center; padding:20px 0;
-      &::after {top:-4%; left:2%;}
-    }
-
-    .layer-sec {
-      .inside.med2 {width: 90%;}
-      .left {@include sec-default(); text-align: center;
-        img{width:75%; @include center-block(); margin-bottom: 20px;}
-        .text{@include sec-default();}
-      }
-      .right{display: none;}
-    }
-  }
-}
-
-.self-service-grooming {
-  .pup-header {
-    .inside.med2 {width:70%;}
-    .full{background-image: url(image_path('blacklab.png'));background-size: 25%; background-position: bottom right;}
-    .tbox{width:70%;}
-
-    h1{@include tshadowl(rgba($black, .4));}
-  }
-
-  .intro {width: 55%; @include center-block(); text-align: center;
-    margin-top:20px;
-    p {font-size: 1.1rem;}
-  }
-
-  .cols-sec{@include sec-default(); padding:30px 0 0px; margin-bottom: 50px;
-    .fw{@include sec-default();@include sec-bgimage('basset-mud.jpg'); background-size: 24%; background-position: center bottom;}
-    .left, .right {display: inline-block; width: 30%; float: left;}
-    .left{margin-left: 2%;}
-    .right {float:right; width:28%;}
-    h2{font-size: 1.1rem; font-weight:$semi;}
-    ul{padding-left:0;}
-    h4{margin:0 0 7px; font-weight: $semi; font-size: 1.1rem; color:$pink}
-    p{margin-bottom: 20px; margin-top: 0;}
-    li {margin-bottom: 10px;}
-  }
-
-  .disc-banner {margin-bottom: 50px;
-    padding: 20px 10px 20px 10px; text-align: center;
-    &::after {border:1px solid rgba($compb, .15); top:-6%; }
-    &::before {left:84%; width:13%;}
-    .text {width:83%; margin-left: 0;}
-    h4{margin-bottom: 20px;}
-    p { color: $brown; display: inline-block; float: none; width:32%; font-weight: bold; margin: 0 .5% 12px;
-      span {font-size: 17px; line-height: 1.8em; color: $pink;}
-    }
-  }
-
-  @media (min-width:1600px) {
-    .pup-header .full{background-size:20%;}
-
-    .cols-sec {padding:20px 5% 0;
-      .fw{background-size: 20%;}
-    }
-
-    .disc-banner {
-      &::before {left:84%; width:10%;}
-    }
-  }
-
-  @include bp(tb) {
-    .pup-header {
-      .full{background-size: 17%; padding:30px 0 ;}
-      .tbox{width:100%;}
-      h1{font-size: 1.75rem;}
-    }
-
-    .intro {width: 85%; margin-top:0px;
-      p {font-size: 1.1rem;}
-      .bone-border{margin:15px 0 0px;}
-    }
-
-    .cols-sec{padding:20px 3% 0px; margin-bottom: 45px;
-      .inside {width:92%;}
-      .fw { background-size: 25%;background-position: bottom left; background-image: url(image_path('basset-mud-mobile.jpg'));}
-
-      li {display: inline-block; float: left; width:50%;}
-      h4{margin:0 0 5px; }
-      p{margin-bottom: 20px; font-size: 16px;}
-
-      .left{margin-left: 0;@include sec-default(); margin-bottom: 40px;
-        .cs-bx {display: inline-block; float: left; width:47%;
-          &.one{margin-left: 2%;}
-          &.two {float: right;}
-        }
-      }
-      .right {width:70%; margin-left:0;
-        h4{padding-bottom: 6px; border-bottom: 1px solid rgba($tbrown,.1); margin-bottom: 15px;}
-      }
-    }
-
-    .disc-banner {
-      padding: 20px 10px 20px 10px;
-      &::before {left:84%; width:13%;}
-      .text {width:95%;}
-      p { width:40%;
-        span {font-size: 16px; }
-      }
-    }
-  }
-
-  @include bp(tn) {
-    .pup-header {
-      .full{background-size: 15%; padding:20px 0;}
-      h1{font-size: 1.5rem;}
-    }
-
-    .full-sec {padding-top: 25px;}
-
-    .intro {width: 85%; margin-top: 0;
-      p {font-size: 1rem;}
-      .bone-border{margin:15px 0 0px;}
-    }
-
-    .cols-sec{padding:0px 3% 0px; margin-bottom: 20px;
-      .inside {width:92%;}
-      .fw{background-position: bottom right;}
-
-      li {@include sec-default();}
-      h4{margin:0 0 5px; }
-      p,li {font-size: 15px;}
-
-      .left{
-        .cs-bx {display: inline-block; float: left; width:48%;
-          &.one{margin-left: 0;}
-        }
-      }
-      .right {width:60%; @include center-block();}
-    }
-
-    .disc-banner {padding:20px 30px;
-      &::before {display: none;}
-      .text {@include sec-default();}
-      p { width:48%;
-        span {font-size: 16px; }
-      }
-    }
-  }
-
-  @include bp(mb) {
-    .disc-banner {padding:20px 30px;
-      &::after{top:-4%;}
-      p {  font-size:15px;@include sec-default();}
-    }
-  }
-
-  @include bp(oc) {
-    .pup-header {
-      .full{background-image:none;padding:10px 0;}
-      h1{font-size: 1.3rem;}
-    }
-
-    .cols-sec{padding:0px 3% 0px; margin-bottom: 20px;
-      .left{margin-bottom:10px;
-        .cs-bx {@include sec-default();}
-      }
-      .right {width:85%;}
-    }
-  }
-}
-
-.doggie-daycare{
-  .bone-border{display: none;}
-  .pup-header {
-    background-color: rgba($compt, .7);
-    .full {background-image: url(image_path('kelpie.png')); background-position: top left;
-      background-position: bottom left;background-size: 20%; padding-top: 60px;
-
-      &::before{ background-color: rgba($compt, .7);}
-      .tbox {width:55%;
-        @include center-block();
-        // float:right; margin-right:8%
-      }
-    }
-    h2{font-size: 1.2rem; line-height: 1.4em;}
-  }
-
-  .services-list {padding-bottom: 0px;
-    .serve-box {
-      &.dc1 {
-        h2{font-size: 1.2rem;}
-        .text {width:40%; float: left; margin-left:5%; text-align: justify; margin-top:2%;}
-        .img-box {float:right;}
-      }
-
-      &.two {margin:0px 0 75px;
-        .img-box {float: left; width:53%; margin-top:4%}
-        .text {float: right; width:42%; margin-top:0;}
-      }
-    }
-  }
-
-  .disc-banner {padding-top:15px; text-align: center;
-    margin: 10px 0 60px;
-    &::before{display: none;}
-    .text {@include sec-default();}
-  }
-
-  @media (min-width:1670px) {
-    .services-list .serve-box.two .img-box{margin-top:0;}
-  }
-
-  @include bp(su) {
-    .pup-header {
-      .full{background-size:17%;}
-    }
-
-    .services-list .inside.med{width:70%;}
-  }
-
-  @include bp(tb) {
-    .pup-header {
-      .full {background-size: 15%; padding: 20px 0 15px; background-position: center left;
-        .tbox {width:70%; @include center-block();}
-      }
-      h1{font-size: 1.7rem;}
-      h2{font-size: 1.1rem; }
-    }
-
-    .services-list {padding:50px 0;
-      .inside.med{width:85%;}
-      .serve-box {margin-bottom: 30px;
-        h4{font-size: 1.1rem; margin-top:0; margin-bottom: 5px;}
-        p{font-size: 16px;}
-        &.dc1 {
-          .text {width:53%; margin-left:0; text-align: left; margin-top:2%;}
-          .img-box {width:45%;}
-        }
-
-        &.two {margin:0px 0 0px;
-          .img-box { width:47%; margin-top:4%; padding-right: 10px;}
-          .text { width:52%;}
-          p {margin-bottom: 10px;}
-        }
-      }
-    }
-
-    .disc-banner {
-      margin: 0px 0 30px;
-    }
-  }
-
-  @include bp(tn) {
-    .pup-header {background-color: rgba($compt, .9);
-      .inside.med2{width:85%;}
-      .full {background-image: none; padding: 15px 0 5px;
-        &::before{background-color: rgba($compt, .9);}
-        .tbox {width:75%; }
-      }
-      h1{font-size: 1.5rem;}
-      h2{font-size: 1rem; }
-    }
-
-    .services-list {padding:50px 0;
-      .inside.med{width:85%;}
-      .serve-box {margin-bottom: 30px;
-        h4{font-size: 1rem; }
-        p{font-size: 15px;}
-        &.dc1 {
-          .text {width:55%; margin-top:0;}
-          .img-box {width:45%;}
-        }
-        .bone-border{display: block; margin:20px 0 15px;}
-
-        &.two {margin:0px 0 0px;
-          .img-box { width:70%; @include center-block(); margin-top:4%; padding-right: 0px;}
-          .text { @include sec-default();}
-          p {margin-bottom: 10px;}
-        }
-      }
-    }
-
-    .disc-banner {
-      margin: 0px 0 30px;padding:20px 2.5% 20px;
-      .text{@include sec-default(); margin-left: 0;}
-    }
-  }
-
-  @include bp(mb) {
-    .pup-header .full .tbox {@include sec-default();}
-
-    .services-list {padding:50px 0;
-      .inside.med{width:90%;}
-      .serve-box.dc1 {
-        margin-bottom:15px;
-        .img-box {margin-top:5%;}
-      }
-      .serve-box.two .img-box {width:60%;}
-    }
-    .disc-banner .text{width:95%; @include center-block();}
-  }
-
-  @include bp(oc) {
-    .services-list {padding:35px 0;
-      .inside.med{width:90%;}
-      .serve-box.dc1 {
-        .text{@include sec-default();}
-        .img-box {width:55%; @include center-block(); margin-top: 0px;}
-      }
-      .serve-box.two .img-box {width:75%;}
-    }
-    .disc-banner .text{width:95%; @include center-block();}
-  }
-
-  @include bp(sm) {
-    .services-list {
-      .serve-box.dc1 .img-box {width:65%;}
-      .serve-box.two .img-box {width:80%;}
-    }
-  }
-}
-
-.vet-clinic {
-  .pup-header {
-    background-color: rgba($compb, .7);
-    .full {padding:55px 0 40px;
-      background-image: url(image_path('sad-face.png')); background-size: 40%; background-position: right bottom;
-      &::before {background-color: rgba($compb, .7);}
-    }
-    .tbox{width:80%;}
-  }
-
-  h3{border-bottom:1px solid #ddd; padding-bottom: 7px; font-weight: bold;}
-  .top-list {@include sec-default(); padding: 80px 0 40px;
-    .text, .info-box, .image-box {display: inline-block; float: left;}
-    .info-box{width: 35%;float: right;}
-
-    .img-box{width: 25%;}
-
-    .title {border-bottom:1px solid #ddd;}
-    h3{border-bottom: 0; margin-bottom: 0;
-      &.sm{font-size: 1.2rem;}
-    }
-    p.disclaim{margin-top: 0;width:90%; font-size: 14px; margin-bottom: 10px; color:rgba($tbrown,.7);}
-    .text {float: right; width:70%; margin-top:3%;
-      ul {padding-left: 0;padding-top:15px; display: inline-block; float: left;
-        &.one {width:30%;}
-        &.two {width:27%; margin-left: 3%;}
-        &.last{width:40%;}
-      }
-      li {margin-bottom:10px; font-size:17px;}
-    }
-  }
-
-  .doc-box {@include sec-default();
-    position: relative; z-index: 0; background-color: $fa;
-    &::before{@include before(); width:37%; background-color: rgba($compt, .7); left:63%;}
-    .doc-info, .info-box {display:inline-block; width:60%; float:left;}
-    .doc-info{padding: 40px 0 35px;}
-    .info-box{width:33%; float: right; padding:50px 0 10px;
-      p {color: $white;@include tshadowl(rgba($black, .3)); font-weight: $semi;}
-      h4{font-weight: bold; color:$tbrown; border-bottom:1px solid rgba($tbrown, .1); padding-bottom: 5px;}
-      p.name{margin-bottom: 0; padding-left: 15px;}
-      p.info {padding-left:15px; margin-top: 0px;}
-    }
-  }
-
-  @include bp(su) {
-    .pup-header .full {background-size: 35%;}
-
-    .top-list {
-      .inside.med{width:1200px;}
-    }
-  }
-
-  @include bp(tb) {
-    .pup-header {
-      .full {padding:25px 0; background-size: 30%;}
-      .tbox{width:100%;}
-      h1{font-size: 1.8rem;}
-    }
-
-    .top-list {padding: 50px 0 40px;
-      .img-box{width: 25%; margin-left:-5%;}
-
-      .text {width:75%; margin-top:0;
-        ul {
-          &.one {width:32%;}
-          &.two {width:27%; margin-left: 1%;}
-          &.last{width:40%;}
-        }
-        li {font-size:16px;}
-      }
-      h3.sm{font-size: 1.1rem;}
-      p.disclaim{width:95%;}
-    }
-
-    .doc-box {
-      &::before{left:59%; width:41%;}
-      p{font-size: 15px;}
-      h3{font-size:1.3rem; }
-      h4{font-size:1.2rem; }
-      .doc-info{width:59%; padding: 25px 10px 15px 0;}
-      .info-box{width:38%; padding:30px 0 10px;
-        p{@include tshadowl(rgba($black, .1));}
-        p.name{padding-left: 15px;}
-        p.info {padding-left:15px;}
-      }
-    }
-  }
-
-  @include bp(tn) {
-    .pup-header {
-      .full {padding:15px 0 10px; background-size: 25%;}
-      h1{font-size: 1.5rem;}
-    }
-
-    .top-list {padding: 50px 0 40px;
-      @include sec-bgimage('dogtor.jpg'); background-position: bottom left; background-size:17%;
-      .img-box{display: none;}
-
-      .text {width:85%;
-        ul {
-          &.one {width:32%;}
-          &.two {width:27%; margin-left: 1%;}
-          &.last{width:40%;}
-        }
-        li {font-size:15px;}
-      }
-      h3.sm{font-size: 1.1rem;}
-      p.disclaim{width:100%;}
-    }
-
-    .doc-box {
-      &::before{width:100%; height:51%; left:0;}
-      h3{font-size:1.2rem; margin-bottom: 8px;}
-      h4{font-size:1.1rem; }
-      .doc-info{@include sec-default(); padding: 25px 0px 30px;
-        p{margin-bottom: 0; margin-top:12px;}
-      }
-      .info-box{@include sec-default();padding:20px 0 10px;
-        p.name{padding-left: 15px;}
-        p.info {padding-left:15px;}
-      }
-    }
-  }
-
-  @include bp(md) {
-    .pup-header {
-      h1{font-size: 1.35rem;}
-    }
-
-    .top-list {padding: 35px 0 ; background-size:20%;
-
-      .inside.med{width:90%;}
-      .title{margin-bottom: 15px;}
-      .text {@include sec-default();
-        width:80%; float: right;
-        ul {
-          &.one, &.two,  &.last{margin:0; padding-top:0;}
-          &.one, &.two {width:50%; display: inline-block; float: left;}
-          &.last{@include sec-default();
-            li {display: inline-block; float: left; width:50%;}
-          }
-        }
-      }
-      h3.sm{font-size: 1rem;}
-    }
-
-    .doc-box {
-      &::before{height:49%;}
-      h3{font-size:1.1rem; }
-      h4{font-size:1rem; }
-    }
-  }
-
-  @include bp(oc) {
-    .pup-header {
-      h1{font-size: 1.2rem;}
-    }
-
-    .top-list {padding: 35px 0 15px; background-image:none;
-      .inside.med{width:85%;}
-      .text {@include sec-default();}
-    }
-
-    .doc-box {
-      &::before{height:46%;}
-      h3{font-size:1.1rem; }
-      h4{font-size:1rem; }
-    }
-  }
-
-  @include bp(sm) {
-    .pup-header .full {background-image: none;}
-
-    .top-list {padding: 35px 0 15px;
-      .inside.med{width:85%;}
-      .text{
-        ul.one, ul.two, ul.last {@include sec-default();
-          li{@include sec-default();}
-        }
-      }
-    }
-
-    .doc-box {
-      &::before{height:40%;}
-      h3{font-size:1.1rem; }
-      h4{font-size:1rem; }
-    }
-  }
-}
-
-//*********************************//
-//*********** about  ***********//
-//*********************************//
-.about-us {
-  .pup-header {
-    .full {background-image: url(image_path('gshep.png')); background-position: bottom right; background-size: 22%; padding-top:60px;}
-    .inside.narrow{width:60%;}
-    .tbox{width:70%;}
-  }
-
-  .as1{@include sec-default();padding: 60px 0 50px;
-    position: relative;z-index: 0;
-    &::after {@include after(); background-color: $fa; height: 40%;}
-    .as1-intro {text-align: center; width:95%; @include center-block();}
-
-    .full.content {margin-top:20px;
-      .left, .right {display: inline-block; float: left; width:61%;}
-      .right {width: 36%; float: right; }
-      .snip {width:90%; @include center-block(); margin-top: 45px;}
-    }
-  }
-
-  .acc-story {@include sec-default(); padding: 80px 0 50px;
-    .os-text, .acc-text {display:inline-block; float:left; }
-    .os-text {width:38%;
-      h3{margin-bottom: 0; font-weight: $semi; border-bottom: 1px solid rgba($tbrown, .1); padding-bottom:7px;}
-    }
-
-    .acc-text {float:right; width: 58%; margin-top:3%;
-      .clearfix {@include sec-default(); margin-bottom: 40px;}
-
-      .as2-box {display: inline-block; float: left; width: 49%; margin-top:20px;
-        &.two, &.four{float:right;}
-
-        .img-box, .text {display: inline-block; float: right; }
-        .text {margin-top: 25px;width: 69%; margin-left: -6%;
-          position: relative;z-index: 0;
-          &::before {@include before(); width:150px; height:150px; background-color: rgba($compb, .8); border-radius: 50%; left:-25%; top:-15%;}
-        }
-        .img-box{width:31%; float: left; position: relative; z-index:2;}
-        h4{margin-bottom: 6px; font-weight: bold; font-size:1.2rem;}
-        p{margin-top: 0px; font-size: 16px}
-      }
-    }
-  }
-
-  @include bp(su) {
-    .pup-header {
-      .full {background-size: 19%;}
-      .tbox{@include sec-default(); text-align: center;}
-    }
-
-    .as1 {
-      .inside.med2 {width: 60%;}
-      .as1-intro {width:90%;}
-    }
-
-    .acc-story .inside {width:80%;}
-  }
-
-  @include bp(tb) {
-    .pup-header {
-      .full {background-size: 20%; padding:30px 0 15px;}
-      .tbox{width:100%;}
-      h1{font-size: 1.7rem;}
-      h2{font-size:1.35rem;}
-    }
-
-    .as1{padding:40px 0 30px;
-      .as1-intro {@include sec-default(); }
-      p {font-size: 16px; margin-bottom: 0px;}
-
-      .full.content {margin-top:30px;
-        .snip {margin-top: 30px;}
-      }
-    }
-
-    .acc-story {padding: 30px 0 15px;
-      .os-text {width:85%; @include center-block();
-        h3{font-size:1.3rem;}
-        p{font-size: 16px;}
-      }
-      .acc-text { @include sec-default(); margin-top:0; padding:15px 2.5%;
-        .clearfix {margin-bottom: 30px;}
-        .as2-box { width: 48%;}
-      }
-    }
-  }
-
-  @include bp(tn) {
-    .pup-header {
-      .full { padding:20px 0 6px;}
-      h1{font-size: 1.5rem;}
-      h2{font-size:1.2rem;}
-    }
-
-    .as1{padding:30px 0 30px;
-      p {font-size: 15px; }
-
-      .full.content {margin-top:20px;
-        .left, .right {width:61%;}
-        .right {width: 36%; }
-        .snip {width:98%;margin-top: 15px;}
-      }
-    }
-
-    .acc-story {padding: 20px 0 15px;
-      .os-text {@include sec-default();
-        h3{font-size:1.15rem;}
-        p{font-size: 15px;}
-      }
-      .acc-text { padding:0px 2.5% 10px;
-        .clearfix {margin-bottom: 30px;}
-        .as2-box { width: 48%;
-          p {font-size: 15px;}
-        }
-      }
-    }
-  }
-
-  @include bp(pl) {
-    .pup-header {
-      .inside.med {width:90%;}
-      h1{font-size: 1.5rem;}
-      h2{font-size:1.2rem;}
-    }
-  }
-
-  @include bp(oc) {
-    .pup-header {
-      .inside.med {width:95%;}
-      h1{font-size: 1.35rem;}
-      h2{font-size:1rem;}
-    }
-
-    .as1 .inside.med2 {width: 90%;}
-    .acc-story {
-      .acc-text {padding: 0;
-        .clearfix {margin-bottom: 15px;}
-        .as2-box { width: 80%; margin: 5px 0;
-          .text {margin-top: 45px;
-            &::before {width:130px; height:130px;left:-25%; top:-20%;}
-          }
-          p{margin-top:10px;}
-        }
-      }
-    }
-  }
-
-  @include bp(sm) {
-    .pup-header .full{background-image: none;}
-
-    .as1{padding:20px 0 30px;
-      .full.content {margin-top:20px;
-        .left{width:73%;
-          img{padding: 0 6px 6px 0;}
-        }
-        .right {width: 27%; }
-        .snip {@include sec-default();margin-top: 5px;}
-      }
-    }
-
-    .acc-story {
-      .acc-text {
-        .clearfix {margin-bottom: 0px;}
-        .as2-box { @include sec-default(); margin: 10px 0;
-          .img-box{width:26%;}
-          .text {margin-top: 25px; width:73%;
-            &::before {width:110px; height:110px;left:-20%; top:-10%;}
-          }
-          p{margin-top:5px;}
-        }
-      }
-    }
-  }
-}
 
 //*********************************//
 //*********** users ***********//
@@ -2195,7 +1150,7 @@ ul.paw {padding-left: 0;
 
 
 //*********************************//
-//*********** blogs ***********//
+//*********** posts ***********//
 //*********************************//
 .posts {
   .ipage-header {padding:30px 0 15px;
@@ -2644,20 +1599,14 @@ ul.paw {padding-left: 0;
 }
 
 
+//*********************************//
+//*********** updates ***********//
+//*********************************//
+
 .posts.edit, .locations.edit {
   .thumb {width:100px;}
   p.tsmall {margin-bottom: 5px; font-size: 14px;}
 }
-
-
-
-
-.co-header {
-  @include sec-default(); @include sec-bgimage('treat-table.jpg');
-  position: relative; z-index: 0;
-  &::before{@include before(); background-color: rgba($pink,.85);}
-}
-
 
 
 .locations{
@@ -2683,6 +1632,20 @@ ul.paw {padding-left: 0;
 .locations.show .image.attach img{ max-height: 360px; @include center-block();}
 
 
+
+
+
+// .self-service-grooming {
+//   .services-layout .statement, .services-layout .locations-disc, .services-layout .list-box, header, footer a {
+//     h1,h2,h3,h4,h5,p,li,a {
+//       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+//       font-style: normal; font-variant: normal;
+//       font-weight: normal;
+//       letter-spacing: 0;
+//     }
+//   }
+// }
+
 .services-layout {@include sec-default();
   .full-show {@include sec-default();}
 
@@ -2705,11 +1668,13 @@ ul.paw {padding-left: 0;
     }
   }
 
-  .statement {@include sec-default(); padding:50px 0;
-    .srv-logo{width:300px; @include center-block(); margin-bottom: 25px;}
-    h1, h2{font-size: 1.6rem; margin-bottom: 7px; font-family: $pop;font-weight: normal;}
-    h2{font-weight: bold; }
-    p{margin: 30px 0;}
+  .statement {@include sec-default(); padding:70px 0;
+    h1, h2{font-size: 1.6rem; margin-bottom: 7px; font-weight: normal; color:$pink;}
+    // h2{font-weight: bold; }
+
+    p, h1,h2 {display: inline-block; float: left; width:34%; }
+    h1,h2{font-weight: 500; padding-right:20px;border-right: 1px solid rgba($black,.3);}
+    p {width:64%; float: right; margin-top: 0; margin-right:-2%;}
   }
 
   .full.sl {padding:70px 0;
@@ -2740,21 +1705,6 @@ ul.paw {padding-left: 0;
       .left,.right {display: inline-block; float: left; width:49%;}
       .right{float: right; margin-top:50px;}
       .gall-img {@include sec-default(); margin-bottom: 20px;}
-    }
-
-    &.tres{
-      .left, .mid, .right {display: inline-block; width:32%; float: left; }
-      .mid {margin-left: 2%; margin-top: 30px;}
-      .right {float: right; margin-top: 60px}
-
-      .gall-img {margin-bottom: 15px;}
-    }
-
-    &.grid {text-align: center;
-      .left, .mid, .right {display: inline-block; width:32.5%; float: left; }
-      .mid {margin-left: 1.3%;}
-      .right {float: right;}
-      .gall-img {margin-bottom: 15px;}
     }
 
     &.mason {
@@ -2850,103 +1800,64 @@ ul.paw {padding-left: 0;
   }
 }
 
-.services-layout.groom {
-  .statement {padding:70px 0;
-    // text-align: center;
-    // h1, h2 {font-size: 1.45rem; font-weight: 500;}
-    // p{width:90%; @include center-block(); margin-top: 15px;}
 
-    //H1, P INLINE
-    text-align: left;
+// .services-layout.retail, .services-layout.daycare, .services-layout.ss-groom, .services-layout.vet {
+//   h1{ font-weight: normal;position: relative; z-index: 0;font-weight: 500; }
+//   h1.spread {text-align: center; color:$pink;}
+//   .statement{padding:60px 0 80px; margin-bottom: 30px;
 
-    p, h1 {display: inline-block; float: left; width:34%; }
-    h1{font-weight: 500; padding-right:20px;border-right: 1px solid rgba($black,.3);}
-    p {width:64%; float: right; margin-top: 0; margin-right:-2%;}
-  }
-}
+//     //logo / text inline
+//     padding:110px 0 70px;
+//     .logo-bg, .text {display: inline-block; float: left; width:32%; }
+//     .logo-bg {border-right: $border; }
+//     .text {width:65%; float: right; text-align: left;
+//       h1{margin-bottom:10px; font-size:1.45rem; }
+//       p{margin-top: 0;}
+//     }
+//   }
+// }
 
+// .services-layout.daycare {
+//   .statement {margin-bottom: 0; padding:50px 0;
+//     .med2 {width:70%;}
+//     .logo-bg {width:38%;}
+//     .text{width:50%;margin-top: 40px;}
 
-.services-layout.retail, .services-layout.daycare, .services-layout.ss-groom, .services-layout.vet {
-  h1{ font-weight: normal;position: relative; z-index: 0;font-weight: 500; }
-  h1.spread {text-align: center; color:$pink;}
-  .statement{padding:60px 0 80px; margin-bottom: 30px;
-    // normal
-    // .logo-bg, .text {@include center-block();}
-    // .srv-logo {background-color: $white; padding:0 25px; width:320px;}
-    // .text{width: 80%; margin-top: 50px; width:85%;}
+//     .full.one {
+//       .text{margin-top: 30px; float:none; margin-left: 2%}
+//       .logo-bg{margin-left: 8%;}
+//       .srv-logo {width:320px;}
+//     }
 
-    //logo / text inline
-    padding:110px 0 70px;
-    .logo-bg, .text {display: inline-block; float: left; width:32%; }
-    .logo-bg {border-right: $border; }
-    .text {width:65%; float: right; text-align: left;
-      h1{margin-bottom:10px; font-size:1.45rem; }
-      p{margin-top: 0;}
-    }
-
-    // PINK SQUARES
-    // .text {float: left; margin-left: 0;}
-    .logo-bg{position: relative; z-index: 0;
-      // &::before { @include before(); width:50%;height:145px; top: -40px; left: -5%; background-color: $opink;}
-    }
-  }
-}
-
-.services-layout.daycare {
-  .statement {margin-bottom: 0; padding:50px 0;
-    .med2 {width:70%;}
-    .logo-bg {width:38%;}
-    .text{width:50%;margin-top: 40px;}
-
-    .full.one {
-      .text{margin-top: 30px; float:none; margin-left: 2%}
-      .logo-bg{margin-left: 8%;}
-      .srv-logo {width:320px;}
-    }
-
-    .full.two {margin-top:60px;
-      .text{float: left;margin-left: 5%; text-align: right; margin-right: 3%}
-      .logo-bg {float: none; border-right: 0; border-left: $border;
-        &::before{left:55%;}
-      }
-      .srv-logo{width:285px;}
-    }
-  }
-}
+//     .full.two {margin-top:60px;
+//       .text{float: left;margin-left: 5%; text-align: right; margin-right: 3%}
+//       .logo-bg {float: none; border-right: 0; border-left: $border;
+//         &::before{left:55%;}
+//       }
+//       .srv-logo{width:285px;}
+//     }
+//   }
+// }
 
 .services-layout.vet {
-  // border-top:1px solid $f0;
   .inline-show {
     &::before{height:250px;}
-    .il-slideshow, .title {width:35%;}
-    .il-slideshow {border:0;}
+    // .il-slideshow, .title {width:35%;}
+    .il-slideshow {border:0;width:35%;}
     .title {padding-top:50px;}
   }
 }
 
-.services-layout.ss-groom {
-  // .uk-slideshow-items{max-height: 630px; overflow: hidden; position: relative; z-index: 0;}
-  // ul.paw li {text-align: left; display: inline-block; float: left; width:50%;}
+// .services-layout.ss-groom {
+//   .statement {text-align: center;
+//     .logo-bg {margin-top:-20px;}
+//     p{font-size: 1.2rem; }
+//     p span {color: $pink;}
 
-  .statement {text-align: center;
-    .logo-bg {margin-top:-20px;}
-    p{font-size: 1.2rem; }
-    p span {color: $pink;}
-
-    padding-bottom: 30px;
-  }
-}
-
-// .self-service-grooming {
-//   .services-layout .statement, .services-layout .locations-disc, .services-layout .list-box, header, footer a {
-//     h1,h2,h3,h4,h5,p,li,a {
-//       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-//       font-style: normal; font-variant: normal;
-//       font-weight: normal;
-//       letter-spacing: 0;
-//     }
+//     padding-bottom: 30px;
 //   }
 // }
+
 
 
 .estates,.vendors,.reporters{
@@ -3016,8 +1927,6 @@ ul.paw {padding-left: 0;
     &.content{@include sec-default();}
   }
 }
-
-
 
 .estates {
   .full-sec {padding-top:0;}
