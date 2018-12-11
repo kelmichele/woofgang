@@ -1251,6 +1251,11 @@ ul.paw {padding-left: 0;
 //   }
 // }
 
+.grooming,.retail {
+  .uk-lightbox.uk-overflow-hidden.uk-lightbox-panel.uk-open {background-color: rgba($black,.8);}
+  .uk-lightbox-items>*>* {max-width: 90%; max-height: 90%;}
+}
+
 .services-layout {@include sec-default();
   .full-show {@include sec-default();}
 
@@ -1333,13 +1338,7 @@ ul.paw {padding-left: 0;
   .list-box{@include sec-default(); padding: 40px 0 40px;
     text-align: center;
     position: relative; z-index: 0;
-    // background-color: rgba($f8,.85);
-    // @include sec-bgimage('open-pup5.jpg'); background-position: left center;
-    // background-size: 40%;
-    &::before {@include before(); background-color: rgba($f8, .87); height:70%; top:15%;
-      // background-color: rgba($opink,.9);
-    }
-
+    &::before {@include before(); background-color: rgba($f8, .87); height:70%; top:15%;}
 
     h4,.left p{font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: .7px; margin-bottom: 20px;}
     ul {width:70%; @include center-block(); padding-left: 0;}
