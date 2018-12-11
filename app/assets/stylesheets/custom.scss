@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700|Poppins:300,400,500,600|Quicksand:400,500,700|Helvetica Neue,Helvetica,Arial,sans-serif: 300,400,500,600,700; ');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700|Poppins:300,400,500,600|Quicksand:400,500,700|Helvetica Neue:300,400,500,600;');
 @import "mixins";
 @import "variables";
 
@@ -66,16 +66,13 @@ body {
     &.quick {font-family: $quick;}
     &.pink {color: $pink;}
     &.brown {color: $brown;}
-    &.compb {color: $compb;}
-    &.compt {color: $compt;}
-    &.compg {color: $compg;}
     &.strong {font-weight: bold;}
     &.semi {font-weight: $semi;}
   }
+  p,li{font-weight: 300;}
   p{font-size: 17px;}
   h1{font-size: 2rem; font-weight: bold;}
   h2{font-size: 1.75rem;}
-
 }
 .bmargin0 {margin-bottom: 0;}
 .tmargin0 {margin-top: 0;}

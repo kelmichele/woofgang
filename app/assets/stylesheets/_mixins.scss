@@ -112,6 +112,10 @@
     @media (max-width: 1025px)  { @content ; }
   }
 
+  @else if $point == br {
+    @media (max-width: 1024px)  { @content ; }
+  }
+
   @else if $point == nn {
     @media (max-width: 992px)  { @content ; }
   }

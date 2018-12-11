@@ -47,11 +47,13 @@
     <div class="form-group grapevine">
       <label>*How did you hear about us?</label><br>
       <%= contact.select(:grapevine) do %>
-        <% [['Select Answer', ''], ['Business Journal', 'Business Journal'], ['Newspaper', 'Newspaper'], ['Magazine', 'Magazine'], ['Online', 'Online'], ['Social Media', 'Social Media'], ['Other', 'Other']].each do |c| -%>
+        <% [['Select Answer', ''], ['Advertising', 'Advertising'], ['Social Media', 'Social Media'], ['Family/Friend', 'Family/Friend'], ['Google', 'Google'], ['Event', 'Event'], ['Other', 'Other']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
     </div>
+
+    ['Other', 'Other'],
 
     <div class="form-group content">
       <label>*Questions/Comments:</label><br>

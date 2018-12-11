@@ -140,7 +140,8 @@
     <div class="form-group grapevine">
       <!-- <label>Where did you find our web address?</label><br> -->
       <%= estate.select(:grapevine) do %>
-        <% [['Where did you find our web address?', ''], ['Business Journal', 'Business Journal'], ['Newspaper', 'Newspaper'], ['Magazine', 'Magazine'], ['Online', 'Online'], ['Social Media', 'Social Media'], ['Other', 'Other']].each do |c| -%>
+        <% [['Where did you find our web address?', '' ], ['Advertising', 'Advertising'], ['Social Media', 'Social Media'], ['Family/Friend', 'Family/Friend'], ['Google', 'Google'], ['Event', 'Event'], ['Other', 'Other']].each do |c| -%>
+         <!-- % [['Where did you find our web address?', ''], ['Business Journal', 'Business Journal'], ['Newspaper', 'Newspaper'], ['Magazine', 'Magazine'], ['Online', 'Online'], ['Social Media', 'Social Media'], ['Other', 'Other']].each do |c| -%> -->
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>

@@ -24,11 +24,12 @@ $compg:#01667a;
 
 $lbrown:#eae6e5;
 
-$semi: 600;
+$semi: 500;
 $border: 1px solid $f0;
 $muli: 'Muli', sans-serif;
 $quick: 'Quicksand', sans-serif;
-// $pop: 'Poppins', sans-serif;
-$pop: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $helv: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $helv: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $pop: 'Poppins', sans-serif;
+$pop: $helv;
 $body: $helv;

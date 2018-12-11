@@ -8,13 +8,22 @@
 
 .honey {position: absolute;left: -9999px;}
 
+// .container 1180px;
 .inside{width: 85%; @include center-block();
+  // 1224px
   &.lg {width: 90%;}
+  // 1296px
   &.alt {width: 80%;}
+  // 1152px;
   &.med {width:75%;}
+  // width: 1080px;
   &.med2 {width:65%;}
+  // @include bp(xl) {&.med2 {width:936px;}}
+  // @include bp(br) {&.med2 {width:75%;}}
   &.med3 {width:60%;}
+  // 864px
   &.narrow {width:55%;}
+  // 792px
 
   @include bp(tb) {
   	&.med {width:80%;}
@@ -1239,26 +1248,12 @@ ul.paw {padding-left: 0;
 }
 .locations.show .image.attach img{ max-height: 360px; @include center-block();}
 
-
-// .self-service-grooming {
-//   .services-layout .statement, .services-layout .locations-disc, .services-layout .list-box, header, footer a {
-//     h1,h2,h3,h4,h5,p,li,a {
-//       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-//       font-style: normal; font-variant: normal;
-//       font-weight: normal;
-//       letter-spacing: 0;
-//     }
-//   }
-// }
-
 .grooming,.retail {
   .uk-lightbox.uk-overflow-hidden.uk-lightbox-panel.uk-open {background-color: rgba($black,.8);}
   .uk-lightbox-items>*>* {max-width: 90%; max-height: 90%;}
 }
 
 .services-layout {@include sec-default();
-  .full-show {@include sec-default();}
-
   .inline-show {@include sec-default(); padding-top:40px;position: relative; z-index: 0;
     .il-slideshow, .title {display: inline-block; float: left; width: 78%;}
     .title {width:21%; float: right; padding: 150px 0 0;}
@@ -1269,36 +1264,15 @@ ul.paw {padding-left: 0;
     .title { padding-top: 120px;}
   }
 
-  .srv-slides {@include sec-default();
-    .uk-slider-items li{margin-right: 7px}
-    img{height:615px;}
-
-    .uk-slider-nav.uk-dotnav {margin-top: 15px;
-      li {padding-left:5px;}
-    }
-  }
-
   .statement {@include sec-default(); padding:70px 0;
-    h1, h2{font-size: 1.6rem; margin-bottom: 7px; font-weight: normal; color:$pink;}
-    // h2{font-weight: bold; }
-
+    // .text {width: 940px;}
     p, h1,h2 {display: inline-block; float: left; width:34%; }
-    h1,h2{font-weight: 500; padding-right:20px;border-right: 1px solid rgba($black,.3);}
-    p {width:64%; float: right; margin-top: 0; margin-right:-2%;}
-  }
-
-  .full.sl {padding:70px 0;
-    .inside.med {width:70%;}
-    .sl1, .sl2 {@include sec-default();
-      width:44%; display: inline-block; float: left;
-      // @include sec-bgimage('retail13.jpg'); background-size: cover; background-position: right center;
-      //position:relative; z-index:0; &::before {@include before(); background-color: rgba($white, .95);}
-
-      h4 {text-transform: uppercase; font-weight: bold; letter-spacing: .5px; margin: 0px; color: $pink;}
-      p{margin-top:10px;}
+    h1,h2{font-size: 1.7rem; margin-bottom: 7px; font-weight: $semi; color:$pink; padding-right:20px;border-right: 1px solid rgba($black,.3);
+      text-align: center;
     }
-    .sl1{margin-left: 2%}
-    .sl2 {float: right; margin-right: -2%;}
+    p {width:60%; float: right; margin-top: 0; }
+    // p {width:64%; float: right; margin-top: 0; margin-right:-2%;}
+
   }
 
   .gallery-sec {@include sec-default(); padding:50px 0;
@@ -1335,57 +1309,21 @@ ul.paw {padding-left: 0;
     }
   }
 
-  .list-box{@include sec-default(); padding: 40px 0 40px;
-    text-align: center;
-    position: relative; z-index: 0;
-    &::before {@include before(); background-color: rgba($f8, .87); height:70%; top:15%;}
+  .list-box{@include sec-default(); padding: 60px 0 40px;
+    h4{font-size: 1.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin: 0px; color:$black;}
 
-    h4,.left p{font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: .7px; margin-bottom: 20px;}
-    ul {width:70%; @include center-block(); padding-left: 0;}
-    li {font-size: 17px;margin-bottom: 10px;
-      display: inline-block; float: none;
-      margin:0 10px 10px; padding-left:10px;
+    .left,.sl-hlf{display: inline-block; float: left; width:40%;}
+    .sl-hlf{width:55%; float: right;
+      .sl1, .sl2 {@include sec-default();}
+      .sl1{margin-bottom: 30px;}
+      p{margin-top: 10px;}
+    }
+
+    ul{@include sec-default(); margin-top:15px; padding-left:15px;}
+    li {@include sec-default(); font-size: 16px;
+      margin:0 10px 10px; padding-left:15px;
       position: relative; z-index: 0;
-      &::before {@include before(); width:5px; height: 5px; background-color: $pink; top:10px; left:-10px; left:-5px;}
-
-      &:first-child::before{display: none;}
-    }
-
-    .image{width:45%; float: left;}
-    .text{width:49%; float: right; text-align: left;margin-top: 8%;}
-    .left p {border-bottom: 1px solid rgba($black,.1); font-weight: 500; font-size: 1.35rem; color:$pink; width:93%;}
-    ul{@include sec-default(); text-align: left; padding-left: 30px; }
-    li {
-      // font-weight: 300;
-      width:70%; display: inline-block; float: none; margin:0 0 7px;
-      &::before {width:15px; height:1px; background-color: rgba($black,.4); top:12px; left:-10px; left:-15px;}
-      &:nth-child(2n+2) {float: left; width:30%;}
-      &:first-child::before{display: block;}
-    }
-
-
-
-
-
-    &.alt {
-      text-align:left; padding-top: 60px;
-      &::before {display: none;}
-      .left,.sl-hlf{display: inline-block; float: left; width:40%;}
-      .left p,h4{color:$black; margin-bottom: 10px}
-
-      ul{@include sec-default(); margin-top:5px; padding-left:15px;}
-      li {@include sec-default(); font-size: 16px; padding-left:15px;
-        &::before { width:10px; height: 1px; background-color: $pink; top:12px; left:-5px;}
-        &:first-child::before{display: block;}
-      }
-
-      .sl-hlf{width:55%; float: right;
-        .sl1, .sl2 {@include sec-default();
-          h4 {text-transform: uppercase; font-weight: bold; letter-spacing: .5px; margin: 0px;}
-          p{margin-top:10px;}
-        }
-        .sl1{margin-bottom: 30px;}
-      }
+      &::before {@include before(); width:10px; height: 1px; background-color: $pink; top:12px; left:-5px;}
     }
   }
 
