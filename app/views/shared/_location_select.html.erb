@@ -1,0 +1,97 @@
+<!-- <select id="sel_location" class="form-select">
+    <option selected value="">Select a state...</option>
+    <option value="Connecticut">Connecticut</option>
+    <option value="Florida">Florida</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Kansas">Kansas</option>
+    <option value="Nevada">Nevada</option>
+    <option value="NewJersey">New Jersey</option>
+    <option value="NewYork">New York</option>
+    <option value="NorthCarolina">North Carolina</option>
+    <option value="SouthCarolina">South Carolina</option>
+    <option value="Tennesse">Tennesse</option>
+    <option value="Texas">Texas</option>
+    <option value="Virginia">Virginia</option>
+  </select> -->
+
+  <%= contact.select(:singup) do %>
+    <% [['Select State', ''], ['Connecticut', 'Connecticut'], ['Florida', 'Florida'], ['Georgia', 'Georgia'], ['Kansas', 'Kansas'], ['Nevada', 'Nevada'], ['New Jersey', 'NewJersey'], ['New York', 'NewYork'], ['North Carolina', 'NorthCarolina'], ['South Carolina', 'SouthCarolina'], ['Tennesse', 'Tennesse'], ['Texas', 'Texas'], ['Virginia', 'Virginia']].each do |c| -%>
+      <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+  <% end %>
+
+  <div style="display:none" id="Connecticut" class="location-select">
+    <%= contact.collection_select(:location, @ct.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display: none;" id="Florida" class="location-select">
+    <%= contact.collection_select(:location, @fl.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="Georgia" class="location-select">
+    <%= contact.collection_select(:location, @ga.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="Kansas" class="location-select">
+    <%= contact.collection_select(:location, @ks.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="Nevada" class="location-select">
+    <%= contact.collection_select(:location, @nv.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="NewJersey" class="location-select">
+    <%= contact.collection_select(:location, @nj.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="NewYork" class="location-select">
+    <%= contact.collection_select(:location, @ny.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="NorthCarolina" class="location-select">
+    <%= contact.collection_select(:location, @nc.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="SouthCarolina" class="location-select">
+    <%= contact.collection_select(:location, @sc.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="Tennesse" class="location-select">
+    <%= contact.collection_select(:location, @tn.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="Texas" class="location-select">
+    <%= contact.collection_select(:location, @tx.each, :title_state, :ntitle) %>
+  </div>
+
+  <div style="display:none" id="Virginia" class="location-select">
+    <%= contact.collection_select(:location, @va.each, :title_state, :ntitle) %>
+  </div>
+
+
+
+
+
+<script>
+  jQuery(document).ready(function(){
+  jQuery('#contact_singup').change(function(){
+    form = jQuery(this).val();
+    if(form){
+      jQuery('.location-select').hide();
+      jQuery('#'+form).show();
+    }
+  });
+});
+var Connecticut = new VarienForm('Connecticut', true);
+var Florida = new VarienForm('Florida', true);
+var Georgia = new VarienForm('Georgia', true);
+var Kansas = new VarienForm('Kansas', true);
+var Nevada = new VarienForm('Nevada', true);
+var NewJersey = new VarienForm('New Jersey', true);
+var NewYork = new VarienForm('New York', true);
+var NorthCarolina = new VarienForm('North Carolina', true);
+var SouthCarolina = new VarienForm('South Carolina', true);
+var Tennesse = new VarienForm('Tennesse', true);
+var Texas = new VarienForm('Texas', true);
+var Virginia = new VarienForm('Virginia', true);
+</script>

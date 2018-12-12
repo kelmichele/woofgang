@@ -40,6 +40,10 @@ class Location < ApplicationRecord
     "#{street_address_one}" + "\n" + "#{city}, #{state} #{zip}" + "\n"
   end
 
+  def title_state
+    "#{ntitle}, #{state}"
+  end
+
   def address_changed?
     street_address_one_changed? || street_address_two_changed? || city_changed? || state_changed? || zip_changed?
   end

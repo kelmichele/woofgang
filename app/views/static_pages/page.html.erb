@@ -1,0 +1,21 @@
+<div class="full-sec">
+	<div class="inside">
+<!--
+		<div class="left">
+
+			<% localist.each do |location| %>
+				<%= link_to location_path(location) do %>
+					<p>
+						(<%= location.id %>) <%= location.store_name %> - <%= location.state %><br>
+						<%= location.email_address %>
+					</p>
+				<% end %>
+
+			<% end %>
+		</div> -->
+
+		<div class="right">
+			<%= render 'shared/location_select' %>
+	  </div>
+	</div>
+</div>

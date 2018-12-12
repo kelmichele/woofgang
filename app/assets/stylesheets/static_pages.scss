@@ -138,6 +138,13 @@ ul.paw {padding-left: 0;
   a{font-size: 14px;}
 }
 
+
+
+.page {
+  .left, .right {display: inline-block; width:45%; float: left;}
+  .right {float: right;}
+}
+
 //*********************************//
 //************* home **************//
 //*********************************//
@@ -769,6 +776,10 @@ ul.paw {padding-left: 0;
 }
 
 .sessions.show {
+  .page-body .inside {width:80%;}
+  .left, .right {display: inline-block; float: left; width:45%;}
+  .right {float: right;}
+
   h4{margin-bottom: 0; font-weight: bold; border-bottom: $border; padding-bottom:6px; color:$brown;}
   h3{margin:5px 0 10px; font-size: 1.3rem; font-weight: $semi;}
 }
@@ -1223,7 +1234,7 @@ ul.paw {padding-left: 0;
   }
 }
 
-
+.location-select {margin-top:15px;}
 //*********************************//
 //*********** updates ***********//
 //*********************************//

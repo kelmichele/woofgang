@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
 
+  get 'page', to: 'static_pages#page'
   get 'services', to: 'static_pages#services'
   get 'grooming', to: 'static_pages#grooming'
   get 'self-service-grooming', to: 'static_pages#self-service-grooming'
@@ -38,8 +39,10 @@ Rails.application.routes.draw do
   get '/vendor', to: 'vendors#new', as: 'vendor'
   post '/vendor', to: 'vendors#create'
 
+
   get '/contact', to: 'contacts#new', as: 'contact'
   post '/contact', to: 'contacts#create'
+  get 'contacts', to: 'contacts#index'
 
   get '/media-inquiries', to: 'reporters#new', as: 'media-inquiries'
   post '/media-inquiries', to: 'reporters#create'
