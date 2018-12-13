@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'training-support', to: 'franchise_pages#training-support'
   get 'real-estate', to: 'franchise_pages#real-estate'
   get 'franchise-steps', to: 'franchise_pages#franchise-steps'
+  get 'approval-process', to: 'franchise_pages#approval-process'
   get 'faq', to: 'franchise_pages#faq'
 
   get '/fb', to: 'social#fb'

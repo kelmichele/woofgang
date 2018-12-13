@@ -1,7 +1,9 @@
 @import "mixins";
 @import "variables";
 
-
+@include bp(tb) {
+	br.xl {display: none;}
+}
 
 // franchise header
 .franchise-head.v2 {@include sec-default(); position: relative; z-index: -1;
@@ -14,21 +16,16 @@
   img {height: 500px; @include center-block();}
 
   .text {@include sec-default(); text-align: center; padding:30px 0 30px;}
-  h1{text-transform: uppercase; letter-spacing: 1px;line-height: 1.4em; font-size: 1.8rem; margin:0;
-  	// font-family: $pop;
-  }
-  h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: 400;
-  	// font-family: $pop; font-weight: 300;
-  }
+  h1{text-transform: uppercase; letter-spacing: 1px;line-height: 1.4em; font-size: 1.8rem; margin:0;}
+  h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: 300;}
 }
 
 
 /////
-.franchise-layout {@include sec-default(); padding: 50px 0;
-	.statement {@include sec-default(); padding-bottom: 50px;
+.franchise-layout.fl2 {@include sec-default();
+	.statement {@include sec-default(); padding: 50px 0;
 		h3{font-size: 1.35rem;text-align: center;
 		 	span {color: $pink;}
-		 	// &.thin {font-family: $pop;font-weight: 300; }
 		}
 
 		&.less {
@@ -36,205 +33,85 @@
 		}
 	}
 
-	.franch-body {@include sec-default();
-		h4{font-weight: $semi; margin-bottom: 5px; }
-		p{margin-top:0;}
-		.left, .right {display: inline-block; float: left; width:45%;}
-		.right{float: right;}
-
-		&.alt {
-			.right, .left{width: 48%;}
-			li{font-size: 17px;}
-		}
-	}
-
-	.fb-tabs {
-		@include sec-default(); background-color: $f8; padding:30px 0;
-		.uk-tab li {
-			a {font-size: 16px;  text-transform: none; color:$black;}
-
-			&.uk-active a {border-color:$pink; font-weight: $semi;}
-		}
-
-		.uk-switcher{@include sec-default(); padding-top:25px;}
-	}
-
-	// h4 vertical
-	.inline-info {
-		.bod {width: 60%; float:right; margin-right: 5%}
-
-		.full{padding:40px 0;}
-
-		ul.paw li {
-			&::before {width: 6px; height:6px; top:18px; left:0; background-color: rgba($pink, .6); background-image: none;
-				top:8px;
-			}
-		}
-
-		.full {
-			position: relative; z-index: 0;
-			@include sec-default(); padding: 60px 10%;
-
-			p{margin-bottom: 30px;}
-			p.text-right {text-align: right;}
-			h4 {font-weight: normal;
-				position: absolute; @include rotate(-90deg); width:220px; z-index: 1; bottom:140px;
-			}
-			&.one,&.three{background-color: rgba($f8, .5); }
-			&.one h4 {bottom: 175px;}
-
-			.content {width:80%; float: right;}
-			h4{left:0;}
-			&.one h4{bottom:200px}
-			&.two h4{bottom:190px}
-		  &.three h4{bottom:165px;}
-			li{font-size: 16px;
-				// font-weight: 300;
-			}
-
-			padding: 60px 5% 60px 18%;
-			h4{left:18%; text-transform: uppercase; font-size: 1.2rem;}
-			&.one h4{bottom:165px}
-			&.two h4{bottom:145px}
-		  &.three h4{bottom:135px;}
-		}
-	}
-
 	// fw
-	.col {@include sec-default();
-		h4{font-weight: 500;  text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
-		// p{font-weight: 300;}
+	.col {@include sec-default(); position: relative;
+		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
 
-		.full, .image-nrw {margin-bottom: 70px;
-			width:47%; display: inline-block;
-			width:45%;
-			float: left;
-			&:nth-child(2n+2){float: right;}
-			&.three {margin-top: 30px;}
-			&.one, &.three {margin-left:3%; }
-			&.two {margin-right: -2%;}
+		.full, .image-nrw {margin-bottom: 60px; display: inline-block;float: left; width:45%;
+			&.two, &.four{float: right;}
 		}
 		ul {padding-left: 20px;}
 		li {margin-bottom: 7px; font-size: 16px; line-height: 1.7em;
-			// font-weight: 300;
 			position: relative; z-index: 0;
 			margin-bottom: 5px;
 			padding-left: 14px;
 			&::before {@include before(); width:20px; height:1px; left: -20px; background-color: rgba($black, .2); top:14px;}
 		}
 
-		.image-nrw  {width:45%;
-			position:absolute; margin-top:22%; right:0;
+		.image-nrw  {width:47%;
+			position:absolute; right:0;
+			bottom:-20px;
 			height:270px; overflow: hidden;
 		}
 	}
 
-	.lay-new {padding:50px 0 40px;
-		hr {margin-top: 0; width:90%;}
-
-		.full.dbl {
-			h4{ font-weight: 500;text-transform: uppercase; letter-spacing: .3px; margin-bottom:5px;}
-			li {font-size: 16px; margin-bottom: 5px; line-height: 1.7em;
-				// font-weight: 300;
-				position: relative; z-index: 0;padding-left: 5px;
-				&::before {@include before(); width:15px; height:1px; left: -20px; background-color: rgba($black, .2); top:12px;}
-			}
-
-			.content, .image {display: inline-block; float: left;}
-			.content {
-				background-color: $white;
-				width:45%;
-				float: right;
-			}
-			.image{ width:45%;}
-
-
-			&.one {margin-bottom: 100px;
-				.content{float: none;  margin-left: 4%; margin-top: 5%;}
-				.image{float: left; margin-left: 2%;}
-			}
-
-			&.two {
-				p{width:90%;}
-
-				.image {float: none; }
-				.content {width:50%; float: left; margin-left: 2%; padding-left: 20px; margin-top:1%;}
-			}
-		}
-
-
-		.left, .right {display: inline-block; float: left; width:49%;
-			.full {padding-left: 20px;}
-			li {font-size: 16px; margin-bottom: 5px; line-height: 1.7em;
-				// font-weight: 300;
-			}
-			ul {padding-left: 15px; margin-bottom: 30px; }
-			h4{ font-weight: 500; color: $pink; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
-			.image {margin-bottom: 20px;}
-		}
-		.right {float: right; margin-top: 5%;}
+	.banner-disc{@include sec-default(); padding: 20px 0; margin-top: 40px;
+	  @include sec-bgimage('treat-table.jpg');background-position: center center;
+	  position: relative; z-index: 0;
+	  &::before {@include after(); background-color: rgba($pink7, .9);}
+	  h4,.btn-hlf {display: inline-block; float: left; width:77%;}
+	  h4{font-size: 1.2rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .5)); margin-bottom: 0;
+	  	letter-spacing: .3px;
+	  }
+	  .btn-hlf {float: right; width:22%; margin-top: 10px;}
+	  .woof-link {@include sec-default();background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 15px;
+	  	letter-spacing: .3px;
+	  	color: $black; text-shadow: none;
+	  }
 	}
-}
 
-.training-support {
-	.franch-head-layer {margin-bottom: 60px;}
-	.fhl-text, .statement {display: inline-block; float: left; width:30%;}
-	.fhl-text {margin-left: 13%; padding-right: 20px; border-right: $border;}
-	.statement {float: none; margin-left: 1%; width:45%; text-align: left;
-		padding-left: 15px;
-		// margin-top:3%;
-		h3{font-size: 1.1rem;
-		 	span {color: $pink;}
+	@include bp(tb) {
+
+		.statement {
+			h3{font-size: 1.2rem;}
 		}
-	}
-}
 
-.franchise_pages .page-body {
-	ul, ul.paw {
-    p {margin-bottom: 10px; font-weight: $semi; }
-
-    @include bp(tb) {
-			li {font-size: 16px;}
-    }
-
-    @include bp(tn) {
+		.col {
+			h4{font-size: 1.1rem;}
 			li {font-size: 15px;}
-    }
-  }
-}
+		}
 
-.intro {width:77%;
-	&.center {@include center-block();}
-	&.sm{width:65%;}
-	.woof-link{@include center-block();}
-}
-
-.franchising {
-	.franchise-layout li {font-size: 16px; margin-bottom: 7px; text-transform: uppercase; letter-spacing: .5px;
-		// font-weight: 300;
+		.banner-disc {text-align: center; margin-top: 10px;
+			h4{font-size: 1.1rem; @include sec-default(); margin-bottom: 15px;}
+			.btn-hlf {@include center-block(); width:30%; }
+			.woof-link {font-size: 14px;}
+		}
 	}
+}
 
-	.landing-layout {@include sec-default(); padding:20px 0 80px;
+.franchise-layout.fl1{
+	li {font-size: 16px; margin-bottom: 7px; text-transform: uppercase; letter-spacing: .5px;}
+
+	.landing-layout {@include sec-default(); padding:80px 0 60px;
 		li{ position: relative; z-index: 0; padding-left: 10px;
 			&::before {@include before(); width:15px; height:1px; left: -20px; background-color: rgba($black, .4); top:10px;}
 		}
 
-		.box{@include sec-default();}
+		.box{@include sec-default();padding:0 15px;}
 		.box.one,.box.two, .box.long {
-			.image, .text { float: left; width:40%; }
-			.text {margin-top: 2%;}
-			h3{ position: absolute;width:33%; font-size: 1.3rem;
-				padding-right: 40px;
-				margin-left: 3%;
-				// font-weight: 300;
-				span{color:$pink;}
-			}
-			.image {display: inline-block;width:60%; float: right;}
-			.img1, .img2 {display: inline-block; float: right; position: relative; z-index: 0; border:7px solid $white;}
+			.image, .text {display: inline-block; float: left; position: relative; z-index: 0;}
+			// .text {	margin-top: 2%;}
+			.text {width: 40%; z-index: 1;}
+			.image {width:63%; margin-right:-3%; float: right;}
+			.img1, .img2 {display: inline-block; float: right;  border:7px solid $white;}
 			.img1 {width:90%;}
 			.img2 {width:55%; float: left; margin-top: -25%; margin-left: -16%}
-
 			li{text-transform: none; letter-spacing: 0;}
+			h3{
+				// position: absolute;margin-top: 10px;width:31%;padding-right: 40px;
+				font-weight: 300;font-size: 1.3rem;
+				span{color:$pink;}
+			}
 		}
 	}
 
@@ -247,41 +124,107 @@
 		.full.fw {
 			.image,.text {display: inline-block;width:45%; float: left;}
 			.text {width:48%; float: right;}
-			.woof-link{font-size:15px; width:50%; letter-spacing: .3px;
-				margin-left: 8%;
-				background-color: $pink;
-			}
-
-			&.one p, &.two p.sig,  &.three p.sig{font-size: 18px;font-weight: 400; letter-spacing: .3px; }
+			.woof-link{font-size:15px; width:50%; letter-spacing: .3px;margin-left: 8%;background-color: $pink;}
 
 			&.one {
-				.image{width:48%;}
-				.text{margin-top:5%;}
-
-				.woof-link {text-align: left; margin-left: 3%;
-					// width:123%;
-				}
+				.image{width:51%;}
+				.text{margin-top:5%; width: 45%}
+				.woof-link {text-align: left; margin-left: 3%;}
 			}
 
 			&.two {margin-top: 80px;
-				p{font-size: 16px; margin:5px 0 10px;
-					// font-weight: 300;
-				}
-				p.sig{font-size: 18px; font-weight: 500; margin-bottom: 5px; margin-left: -15px;}
-				.text {float: left; width:54%; padding-left:15px; margin-left:-5%;}
+				p.reg{font-size: 16px; margin:5px 0 10px; padding-left: 15px;}
+				p.sig{margin-bottom: 5px;}
+				// .text {float: left; width:54%; padding-left:15px; margin-left:-5%;}
+				.text {float: left; width:50%; padding-left:15px;}
 				.image {float: right; margin-top:8%;}
 				ul{margin-top:25px;}
 				li{margin-bottom: 13px;}
+			}
+
+			p.sig{font-size: 18px;font-weight: 400; letter-spacing: .3px; color: $pink;}
+		}
+	}
+
+	@include bp(tb) {
+		.content-layout {padding: 30px 0;
+			li {font-size: 15px;}
+			.full.fw {
+				p.sig {font-size: 17px;}
+
+				&.two {margin-top: 50px;
+					.text {width:55%; padding-right: 20px; margin-left: -1%;}
+					p.reg{font-size: 15px;}
+				}
 			}
 		}
 	}
 }
 
 
+.real-estate .franchise-layout.fl2 {
+	.col {
+		.full {width:48%;
+			&.two{width:45%;}
+			&.three {margin-top: 50px;}
+		}
+	}
 
-//****** real estate *******//
-.real-estate {}
+  @media (max-width:1100px) {
+  	.banner-disc {
+  		h4{font-size: 1.1rem;}
+  	}
+	}
 
+	@include bp(tb) {
+		.col {
+			.image-nrw {bottom:-75px;}
+			.full.three {margin-top: 20px;}
+		}
+	}
+}
+
+.approval-process {
+	.franchise-layout.fl2 {
+		.col {
+			// padding-bottom:280px;
+			.full, .image-nrw {
+				width:60%;
+				&.two, &.four {width:35%;}
+			}
+		}
+	}
+}
+
+.faq {
+	.franchise-layout.fl1 .content-layout .full.fw.one,
+	.franchise-layout.fl1 .content-layout .full.fw.two,
+ 	.franchise-layout.fl2 {
+		// .text {margin-top:3%;}
+		li::before{display: none;}
+		h4{font-size: 17px; margin-bottom: 0; text-transform: none; letter-spacing: 0; font-weight: 300;}
+		.uk-accordion-content{border-top:1px solid rgba($tbrown,.1);border-bottom:1px solid rgba($tbrown,.1); margin-top:10px; padding: 10px 0; width:90%;
+			p{font-weight: normal; font-size: 16px;}
+		}
+		.uk-accordion-title{overflow: visible;
+			&::before{float:left; margin-left: 0px; margin-top:-2px; background-position: left center; opacity: .5;
+			}
+		}
+	}
+
+ 	.franchise-layout.fl2 {
+		.full {width:49%;}
+		.full.two{float: right;}
+		.col li::before{display: none;}
+	}
+}
+
+.training-support .franchise-layout.fl1 {
+	.landing-layout .box{
+		.text {width: 43%;}
+		.image {width:60%;}
+	}
+}
 
 //****** franchise faq *******//
 .franchise-faqs {
@@ -373,9 +316,6 @@
   	.faq-acc .inside.med{width: 94%;}
 	}
 }
-
-//******** training **********//
-.training-support {}
 
 
 //****** franchise inquiries *******//

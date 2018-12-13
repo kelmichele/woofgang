@@ -16,17 +16,19 @@
   &.alt {width: 80%;}
   // 1152px;
   &.med {width:75%;}
-  // width: 1080px;
+  &.med-def {width:1080px;}
   &.med2 {width:65%;}
-  // @include bp(xl) {&.med2 {width:936px;}}
-  // @include bp(br) {&.med2 {width:75%;}}
   &.med3 {width:60%;}
   // 864px
   &.narrow {width:55%;}
   // 792px
 
+  @media (max-width:1100px) {
+    &.med-def {width:90%;}
+  }
 
   @include bp(xl) {
+    &.svn {width:1015px;}
     &.med2-def{width: 940px;}
   }
 
@@ -38,6 +40,7 @@
   }
   @include bp(br) {
     &.med2-def {width:85%;}
+    &.svn {width:85%;}
   }
 }
 
