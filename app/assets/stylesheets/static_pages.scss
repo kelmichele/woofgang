@@ -1235,6 +1235,14 @@ ul.paw {padding-left: 0;
 }
 
 .location-select {margin-top:15px;}
+
+
+.db-listing {
+  @include sec-default(); margin-bottom: 30px;
+  h4, p {margin:0;}
+}
+
+
 //*********************************//
 //*********** updates ***********//
 //*********************************//

@@ -10,10 +10,10 @@
 <div class="full-sec">
 	<div class="inside narrow">
 			<% @contacts.each do |contact| %>
-				<%= link_to contact_path(contact) do %>
-					<h4 class="bmargin0"><b>(<%= contact.id %>) <%= contact.name %></b></h4>
-					<p style="margin-top: 7px;">
-						<%= contact.location %><br>
+				<%= link_to contact_path(contact), class: 'db-listing' do %>
+					<h4><b><%= contact.name %></b></h4>
+					<p><b><%= contact.created_at.to_date %></b><br>
+						<!-- <%= contact.location %><br> -->
 						<%= contact.email %>
 					</p>
 				<% end %>
