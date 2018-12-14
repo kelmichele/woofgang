@@ -112,7 +112,7 @@
 	}
 
 	.above{@include sec-default();background-color: $pink; padding: 7px 30px 5px;
-		position: fixed; z-index: 999999; box-shadow: 0px 2px 2px rgba($black, .1);
+		position: fixed; z-index: 999; box-shadow: 0px 2px 2px rgba($black, .1);
 
 		.contact, .social, .mobile-nav {display:inline-block;width: 30%; margin-top:3px;}
 		.contact a {font-size: 13px;}

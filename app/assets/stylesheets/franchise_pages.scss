@@ -6,11 +6,15 @@ br.sm {display: none;}
 br.tn {display: none;}
 @include bp(tb) {
 	br.xl {display: none;}
+	br.tb {display: block;}
 }
-
 @include bp(tn) {
 	br.tn {display: block;}
 }
+@include bp(sm) {
+	br.sm {display: block;}
+}
+
 
 // franchise header
 .franchise-head.v2 {@include sec-default(); position: relative; z-index: -1;

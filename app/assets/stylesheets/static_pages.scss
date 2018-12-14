@@ -27,6 +27,7 @@
     &.med-def {width:90%;}
   }
 
+  // @media (min-width: 1024px){
   @include bp(xl) {
     &.svn {width:1015px;}
     &.med2-def{width: 940px;}
@@ -38,6 +39,7 @@
     &.med3 {width:70%;}
 	  &.narrow {width:70%;}
   }
+
   @include bp(br) {
     &.med2-def {width:85%;}
     &.svn {width:85%;}
@@ -729,7 +731,187 @@ hr{
 //*********************************//
 //*********** services ***********//
 //*********************************//
+.grooming,.retail {
+  .uk-lightbox.uk-overflow-hidden.uk-lightbox-panel.uk-open {background-color: rgba($black,.8);}
+  .uk-lightbox-items>*>* {max-width: 90%; max-height: 90%;}
+}
 
+.services-layout {@include sec-default();
+  .inline-show {@include sec-default(); padding-top:40px;position: relative; z-index: 0;
+    .il-slideshow, .title {display: inline-block; float: left; width: 75%;}
+    .title {width:21%; float: right; padding: 120px 0 0;}
+    h1{color:$brown; text-transform: uppercase; letter-spacing: .5px; font-size: 1.75rem;}
+
+    &::before{@include before(); height: 420px;background-color: $opink;}
+    .il-slideshow {border:7px solid $white; }
+  }
+
+  .statement {@include sec-default(); padding:70px 0;
+    p, h1,h2 {display: inline-block; float: left; width:34%; }
+    h1,h2{font-size: 1.7rem; margin-bottom: 7px; font-weight: $semi; color:$pink; padding-right:20px;border-right: 1px solid rgba($black,.15);}
+    p {width:60%; float: right; margin-top: 0; }
+  }
+
+  .gallery-sec {@include sec-default(); padding:50px 0;
+    position: relative; z-index: 0;
+    &::before{@include before(); height:40%; background-color: $opink;}
+
+    &.uniform{
+      .gall-img {display: inline-block; float: left; width:50%; padding:10px;
+        &:nth-child(2n+2) {float: right;}
+      }
+    }
+
+    &.stagg{
+      .left,.right {display: inline-block; float: left; width:49%;}
+      .right{float: right; margin-top:50px;}
+      .gall-img {@include sec-default(); margin-bottom: 20px;}
+    }
+
+    &.mason {
+      .left, .right {display: inline-block; float: left;}
+      .right {float: right;}
+      .gall-img{margin-bottom: 15px;
+        &.hlf {display: inline-block; float: left; width:49%;}
+        &.hlf.two {float: right;}
+      }
+
+      .top{
+        .left {width:50%;
+          .gall-img.hlf{height:255px;}
+        }
+        .right{width:49%;}
+
+      }
+    }
+  }
+
+  .list-box{@include sec-default(); padding: 60px 0 40px;
+    h4{font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin: 0px; color:$black;}
+
+    .left,.sl-hlf{display: inline-block; float: left; width:40%; width:37%;}
+    .sl-hlf{width:62%; float: right;
+      .sl1, .sl2 {@include sec-default();}
+      .sl1{margin-bottom: 30px;}
+      p{margin-top: 10px;}
+    }
+
+    ul{@include sec-default(); margin-top:15px; padding-left:15px;}
+    li {@include sec-default(); font-size: 16px;
+      margin:0 10px 10px; padding-left:15px;
+      position: relative; z-index: 0;
+      &::before {@include before(); width:10px; height: 1px; background-color: $pink; top:12px; left:-5px;}
+    }
+  }
+
+  .locations-disc{@include sec-default(); padding: 20px 0;
+    text-align: center;
+    @include sec-bgimage('treat-table.jpg');background-position: center center;
+    position: relative; z-index: 0;
+    &::before {@include after(); background-color: rgba($pink7, .8);}
+    h4,.btn-hlf {display: inline-block; float: left; width:75%;}
+    h4{font-size: 1.2rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .4)); margin-bottom: 0;
+    }
+    .btn-hlf {float: right; width:25%; margin-top: 0px;}
+    .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
+  }
+
+  @include bp(tb) {
+    .inline-show { padding-top:40px;
+      .il-slideshow, .title { width: 75%;}
+      .title {width:26%; margin-right: -3%;}
+
+      &::before{height: 380px;}
+    }
+
+    .statement {padding:50px 0 35px;
+      h1,h2{font-size: 1.4rem; width:30%; border-right:0; margin-top:7px;}
+      p{width:69%; border-left: 1px solid rgba($black,.1); padding-left: 4%;}
+    }
+  }
+
+  @include bp(br) {
+    .inline-show {
+      &::before{ height: 80%;}
+    }
+
+    .statement {padding:50px 0 35px; text-align: center;
+      p, h1,h2 {@include center-block(); width:85%; padding:0; border:0; }
+      h1,h2{margin-top: 0;}
+    }
+  }
+}
+
+.retail .services-layout{
+  .statement{
+    h1, h2 {width:37%;}
+    p{width:59%;}
+  }
+
+  @include bp(tb) {
+    .statement {
+      h1,h2{ width:30%; padding-right: 0;}
+      p{width:68%; padding-left: 3.5%}
+    }
+  }
+  @include bp(br) {
+    .statement{
+      p, h1,h2 {width:90%;}
+    }
+  }
+}
+
+.doggie-daycare .services-layout {
+  .inline-show {
+    &::before{height:470px;}
+    .title {padding-top:50px;}
+    .srv-logo{margin-top:50px;}
+  }
+  .statement { text-align: center;
+    p{ width:50%;}
+    h2{width:50%; border:0;}
+
+    .full {position: relative;z-index: 0;
+      // &::before{@include before(); width:1px; left: 48%;background-color: rgba($black, .2);}
+    }
+
+
+    .full.two {margin-top: 40px;
+      // &::before{left:55%;}
+      p { float: left; }
+      h2 {float: none;
+        // width:36%; border-right: 0; padding-left: 7%;
+        // border-left: 1px solid rgba($black,.2);
+      }
+    }
+  }
+
+  .statement.alt-lay{text-align: left;
+    position: relative;z-index: 0;
+    &::before{@include before(); width:1px; left: 49.5%; height:80%; top:10%; background-color: rgba($black, .2);}
+    p,h2,h1 {@include sec-default(); border:none;}
+    .text {display: inline-block; width: 45%; float: left;}
+    .text.two {float: right;}
+  }
+}
+
+.services-layout.vet {
+  .inline-show {
+    &::before{height:350px;}
+    .il-slideshow { height:auto; width:800px; margin-left:5%;
+      // max-height: 400px;max-height: 560px;
+      ul{height:auto;}
+      // li{ max-height: 400px; max-height: 560px; overflow: hidden;}
+    }
+
+    .title {margin-right: 4%;}
+  }
+
+  .list-box{
+    .left{ width:35%;}
+    .sl-hlf {width:60%;}
+  }
+}
 
 
 //*********************************//
@@ -1267,153 +1449,6 @@ hr{
   .l1{display: inline-block; float: left; width:30%; margin-left: 3%;}
 }
 .locations.show .image.attach img{ max-height: 360px; @include center-block();}
-
-.grooming,.retail {
-  .uk-lightbox.uk-overflow-hidden.uk-lightbox-panel.uk-open {background-color: rgba($black,.8);}
-  .uk-lightbox-items>*>* {max-width: 90%; max-height: 90%;}
-}
-
-.services-layout {@include sec-default();
-  .inline-show {@include sec-default(); padding-top:40px;position: relative; z-index: 0;
-    .il-slideshow, .title {display: inline-block; float: left; width: 78%;}
-    .title {width:21%; float: right; padding: 150px 0 0;}
-    h1{color:$brown; text-transform: uppercase; letter-spacing: .5px; font-size: 1.75rem;}
-
-    &::before{@include before(); height: 420px;background-color: $opink;}
-    .il-slideshow {border:7px solid $white; width:75%;}
-    .title { padding-top: 120px;}
-  }
-
-  .statement {@include sec-default(); padding:70px 0;
-    p, h1,h2 {display: inline-block; float: left; width:34%; }
-    h1,h2{font-size: 1.7rem; margin-bottom: 7px; font-weight: $semi; color:$pink; padding-right:20px;border-right: 1px solid rgba($black,.3);}
-    p {width:60%; float: right; margin-top: 0; }
-  }
-
-  .gallery-sec {@include sec-default(); padding:50px 0;
-    position: relative; z-index: 0;
-    &::before{@include before(); height:40%; background-color: $opink;}
-
-    &.uniform{
-      .gall-img {display: inline-block; float: left; width:50%; padding:10px;
-        &:nth-child(2n+2) {float: right;}
-      }
-    }
-
-    &.stagg{
-      .left,.right {display: inline-block; float: left; width:49%;}
-      .right{float: right; margin-top:50px;}
-      .gall-img {@include sec-default(); margin-bottom: 20px;}
-    }
-
-    &.mason {
-      .left, .right {display: inline-block; float: left;}
-      .right {float: right;}
-      .gall-img{margin-bottom: 15px;
-        &.hlf {display: inline-block; float: left; width:49%;}
-        &.hlf.two {float: right;}
-      }
-
-      .top{
-        .left {width:50%;
-          .gall-img.hlf{height:255px;}
-        }
-        .right{width:49%;}
-
-      }
-    }
-  }
-
-  .list-box{@include sec-default(); padding: 60px 0 40px;
-    h4{font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin: 0px; color:$black;}
-
-    .left,.sl-hlf{display: inline-block; float: left; width:40%; width:37%;}
-    .sl-hlf{width:62%; float: right;
-      .sl1, .sl2 {@include sec-default();}
-      .sl1{margin-bottom: 30px;}
-      p{margin-top: 10px;}
-    }
-
-    ul{@include sec-default(); margin-top:15px; padding-left:15px;}
-    li {@include sec-default(); font-size: 16px;
-      margin:0 10px 10px; padding-left:15px;
-      position: relative; z-index: 0;
-      &::before {@include before(); width:10px; height: 1px; background-color: $pink; top:12px; left:-5px;}
-    }
-  }
-
-  .locations-disc{@include sec-default(); padding: 20px 0;
-    text-align: center;
-    @include sec-bgimage('treat-table.jpg');background-position: center center;
-    position: relative; z-index: 0;
-    &::before {@include after(); background-color: rgba($pink7, .8);}
-    h4,.btn-hlf {display: inline-block; float: left; width:75%;}
-    h4{font-size: 1.2rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .4)); margin-bottom: 0;
-    }
-    .btn-hlf {float: right; width:25%; margin-top: 0px;}
-    .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
-  }
-}
-
-.retail .services-layout{
-  .statement{
-    h1, h2 {width:37%;}
-    p{width:59%;}
-  }
-}
-
-.doggie-daycare .services-layout {
-  .inline-show {
-    &::before{height:470px;}
-    .title {padding-top:50px;}
-    .srv-logo{margin-top:50px;}
-  }
-  .statement { text-align: center;
-    p{ width:50%;}
-    h2{width:50%; border:0;}
-
-    .full {position: relative;z-index: 0;
-      // &::before{@include before(); width:1px; left: 48%;background-color: rgba($black, .2);}
-    }
-
-
-    .full.two {margin-top: 40px;
-      // &::before{left:55%;}
-      p { float: left; }
-      h2 {float: none;
-        // width:36%; border-right: 0; padding-left: 7%;
-        // border-left: 1px solid rgba($black,.2);
-      }
-    }
-  }
-
-  .statement.alt-lay{text-align: left;
-    position: relative;z-index: 0;
-    &::before{@include before(); width:1px; left: 49.5%; height:80%; top:10%; background-color: rgba($black, .2);}
-    p,h2,h1 {@include sec-default(); border:none;}
-    .text {display: inline-block; width: 45%; float: left;}
-    .text.two {float: right;}
-  }
-}
-
-.services-layout.vet {
-  .inline-show {
-    &::before{height:350px;}
-    .il-slideshow { height:auto; width:800px; margin-left:5%;
-      // max-height: 400px;max-height: 560px;
-      ul{height:auto;}
-      // li{ max-height: 400px; max-height: 560px; overflow: hidden;}
-    }
-
-    .title {margin-right: 4%;}
-  }
-
-  .list-box{
-    .left{ width:35%;}
-    .sl-hlf {width:60%;}
-  }
-}
-
 
 .estates,.vendors,.reporters{
   .page-body {background-color:$f9;
