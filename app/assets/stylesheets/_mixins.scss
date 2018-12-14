@@ -113,7 +113,7 @@
   }
 
   @else if $point == br {
-    @media (max-width: 1024px)  { @content ; }
+    @media (max-width: 1023px)  { @content ; }
   }
 
   @else if $point == nn {

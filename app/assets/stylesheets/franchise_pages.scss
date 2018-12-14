@@ -1,8 +1,15 @@
 @import "mixins";
 @import "variables";
 
+br.tb {display: none;}
+br.sm {display: none;}
+br.tn {display: none;}
 @include bp(tb) {
 	br.xl {display: none;}
+}
+
+@include bp(tn) {
+	br.tn {display: block;}
 }
 
 // franchise header
@@ -13,7 +20,8 @@
   }
 	.inside.lg {width:95%; }
 
-  img {height: 500px; @include center-block();}
+  // img {height: 500px; @include center-block();}
+  img {@include center-block();}
 
   .text {@include sec-default(); text-align: center; padding:30px 0 30px;}
   h1{text-transform: uppercase; letter-spacing: 1px;line-height: 1.4em; font-size: 1.8rem; margin:0;}
@@ -24,7 +32,7 @@
 /////
 .franchise-layout.fl2 {@include sec-default();
 	.statement {@include sec-default(); padding: 50px 0;
-		h3{font-size: 1.35rem;text-align: center;
+		h3{font-size: 1.35rem;text-align: center; font-weight: 300; letter-spacing: .5px;
 		 	span {color: $pink;}
 		}
 
@@ -35,7 +43,7 @@
 
 	// fw
 	.col {@include sec-default(); position: relative;
-		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;}
+		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; font-size: 1.15rem; }
 
 		.full, .image-nrw {margin-bottom: 60px; display: inline-block;float: left; width:45%;
 			&.two, &.four{float: right;}
@@ -71,7 +79,6 @@
 	}
 
 	@include bp(tb) {
-
 		.statement {
 			h3{font-size: 1.2rem;}
 		}
@@ -87,6 +94,24 @@
 			.woof-link {font-size: 14px;}
 		}
 	}
+
+	@media (max-width:1100px) {
+  	.banner-disc {
+  		h4{font-size: 1.1rem;}
+  	}
+	}
+
+	@include bp(tn) {
+		.statement { padding:35px 0 20px;
+			h3 {font-size: 1.1rem;}
+		}
+
+		.col {
+			h4{font-size: 1rem;}
+			.full.one, .full.two, .full.three, .full.four{width:70%; @include center-block(); margin-bottom: 45px;}
+			.image-nrw {}
+		}
+	}
 }
 
 .franchise-layout.fl1{
@@ -97,20 +122,58 @@
 			&::before {@include before(); width:15px; height:1px; left: -20px; background-color: rgba($black, .4); top:10px;}
 		}
 
-		.box{@include sec-default();padding:0 15px;}
-		.box.one,.box.two, .box.long {
+		.box{@include sec-default();padding:0 15px;
 			.image, .text {display: inline-block; float: left; position: relative; z-index: 0;}
-			// .text {	margin-top: 2%;}
-			.text {width: 40%; z-index: 1;}
+			.text {width: 40%; z-index: 1; padding-left: 10px; }
 			.image {width:63%; margin-right:-3%; float: right;}
 			.img1, .img2 {display: inline-block; float: right;  border:7px solid $white;}
 			.img1 {width:90%;}
 			.img2 {width:55%; float: left; margin-top: -25%; margin-left: -16%}
 			li{text-transform: none; letter-spacing: 0;}
 			h3{
-				// position: absolute;margin-top: 10px;width:31%;padding-right: 40px;
-				font-weight: 300;font-size: 1.3rem;
+				position: absolute;margin-top: 15px;
+				font-weight: 300;font-size: 1.3rem;letter-spacing: .5px;
 				span{color:$pink;}
+			}
+		}
+
+		@media (max-width:1100px) {
+			.inside.med-def{width:95%;}
+			.box {
+				.text {}
+				.image {width:60%; margin-right: 0;}
+				.img2 {margin-top: -15%;}
+			}
+		}
+
+		@include bp(tb) {
+			padding:60px 0 45px;
+			.inside.med-def{width:90%;}
+			.box{
+				h3{font-size: 1.15rem; position: relative;}
+				.text {padding-left: 0;}
+
+				.text{width:45%;}
+				.image {width:55%;}
+			}
+		}
+
+		@include bp(br) {
+			padding:45px 0 30px;
+			.box{
+				h3{font-size: 1.1rem; }
+				.text{width:55%;}
+				.image {width:43%;}
+				.img1 {@include sec-default();}
+				.img2 {display: none;}
+			}
+		}
+
+		@include bp(tn) {
+			padding:20px 0 10px;
+			.box{
+				.text{width:90%; @include center-block(); text-align: center;}
+				.image {display: none;}
 			}
 		}
 	}
@@ -133,7 +196,6 @@
 			}
 
 			&.two {margin-top: 80px;
-				p.reg{font-size: 16px; margin:5px 0 10px; padding-left: 15px;}
 				p.sig{margin-bottom: 5px;}
 				// .text {float: left; width:54%; padding-left:15px; margin-left:-5%;}
 				.text {float: left; width:50%; padding-left:15px;}
@@ -143,22 +205,64 @@
 			}
 
 			p.sig{font-size: 18px;font-weight: 400; letter-spacing: .3px; color: $pink;}
+			p.reg{font-size: 16px; margin:5px 0 10px; padding-left: 15px;}
 		}
-	}
 
-	@include bp(tb) {
-		.content-layout {padding: 30px 0;
+		@include bp(tb) {
+			padding: 30px 0;
 			li {font-size: 15px;}
 			.full.fw {
 				p.sig {font-size: 17px;}
 
 				&.two {margin-top: 50px;
-					.text {width:55%; padding-right: 20px; margin-left: -1%;}
-					p.reg{font-size: 15px;}
+					.text {width:52%; padding-right:30px; padding-left: 0;}
 				}
 			}
 		}
+
+		@include bp(tn) {
+			padding: 10px 0 30px;
+			.full.fw.one, .full.fw.two {
+				.text {width:80%; float: left;}
+				.image {width:15%; float: right;}
+			}
+
+		}
 	}
+}
+
+.franchising .franchise-layout.fl1 {
+	.landing-layout {
+		.box {
+			.text {margin-top: 20px;}
+			.image {margin-right: 0; margin-left: -3%;}
+			h3{ width:102%; padding-right: 15px; }
+
+			@include bp(tb) {
+				br.xl.one {display: block;}
+				.text{margin-top: 10px;}
+			}
+
+			@include bp(br) {
+				br.xl.one {display: none;}
+				h3{width:100%;}
+			}
+		}
+	}
+
+	.content-layout .full.fw {}
+}
+
+.training-support .franchise-layout.fl1 {
+	.landing-layout .box{
+		h3{width:108%;}
+
+		@include bp(br) {
+			h3{width:100%;}
+		}
+	}
+
+	.content-layout .full.fw p.sig{margin-bottom: 5px;}
 }
 
 
@@ -170,16 +274,27 @@
 		}
 	}
 
-  @media (max-width:1100px) {
-  	.banner-disc {
-  		h4{font-size: 1.1rem;}
-  	}
-	}
-
 	@include bp(tb) {
 		.col {
 			.image-nrw {bottom:-75px;}
 			.full.three {margin-top: 20px;}
+		}
+
+		@include bp(tn) {
+			.col {padding-bottom: 270px;
+				.full.one, .full.two, .full.three{width:60%; @include center-block(); margin-top: 0;}
+				.image-nrw {width:75%;}
+			}
+
+			.banner-disc{margin-top: 15px;}
+		}
+
+		@include bp(md) {
+			.statement .med2-def{width:70%;}
+
+			.col {
+				.full.one, .full.two, .full.three, .full.four{width:80%;}
+			}
 		}
 	}
 }
@@ -187,10 +302,21 @@
 .approval-process {
 	.franchise-layout.fl2 {
 		.col {
-			// padding-bottom:280px;
 			.full, .image-nrw {
 				width:60%;
 				&.two, &.four {width:35%;}
+			}
+		}
+
+		@include bp(tn) {
+			.col {
+				.full.one, .full.two, .full.three, .full.four{width:80%; @include center-block();}
+			}
+		}
+
+		@include bp(oc) {
+			.col {
+				.full.one, .full.two, .full.three, .full.four{@include sec-default();}
 			}
 		}
 	}
@@ -219,12 +345,6 @@
 	}
 }
 
-.training-support .franchise-layout.fl1 {
-	.landing-layout .box{
-		.text {width: 43%;}
-		.image {width:60%;}
-	}
-}
 
 //****** franchise faq *******//
 .franchise-faqs {
