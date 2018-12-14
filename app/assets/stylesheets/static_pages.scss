@@ -811,6 +811,7 @@ hr{
     &::before {@include after(); background-color: rgba($pink7, .8);}
     h4,.btn-hlf {display: inline-block; float: left; width:75%;}
     h4{font-size: 1.2rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .4)); margin-bottom: 0;
+      letter-spacing: .5px;
     }
     .btn-hlf {float: right; width:25%; margin-top: 0px;}
     .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
@@ -828,6 +829,11 @@ hr{
       h1,h2{font-size: 1.4rem; width:30%; border-right:0; margin-top:7px;}
       p{width:69%; border-left: 1px solid rgba($black,.1); padding-left: 4%;}
     }
+
+    .locations-disc{
+      h4{font-size: 1.1rem; }
+      .woof-link {font-size:15px;}
+    }
   }
 
   @include bp(br) {
@@ -838,6 +844,48 @@ hr{
     .statement {padding:50px 0 35px; text-align: center;
       p, h1,h2 {@include center-block(); width:85%; padding:0; border:0; }
       h1,h2{margin-top: 0;}
+    }
+  }
+
+  @include bp(tn) {
+    .inline-show {
+      .il-slideshow, .title {margin-left: -3%;}
+      .title {width:29%; padding-top: 90px;}
+    }
+
+    .statement{padding:35px 0 25px;
+      p,h1,h2{@include sec-default();}
+      h1,h2 {font-size: 1.25rem;}
+      p{font-size: 16px;}
+    }
+
+    .locations-disc{padding-top:15px;
+      .med2{width:95%;}
+      h4 { @include sec-default();margin-bottom: 15px; font-size: 1rem; }
+      .btn-hlf {width:40%; @include center-block(); }
+      .woof-link{padding:7px 20px;}
+    }
+  }
+
+  @include bp(md) {
+    .inline-show {
+      .title{padding-top: 75px;}
+    }
+    .statement {
+      h1,h2 {font-size: 1.15rem;}
+      p{width:90%; @include center-block();}
+    }
+  }
+
+  @include bp(pl) {
+    .inline-show {
+      &::before{height:250px;}
+      .il-slideshow {@include sec-default(); margin:0 0 20px 0;}
+      .title{@include center-block(); width: 200px;padding:0;}
+    }
+
+    .statement {
+      p{@include sec-default();}
     }
   }
 }
@@ -854,10 +902,25 @@ hr{
       p{width:68%; padding-left: 3.5%}
     }
   }
+
   @include bp(br) {
     .statement{
       p, h1,h2 {width:90%;}
     }
+  }
+
+  @include bp(tn) {
+    .statement{
+      p, h1,h2 {@include sec-default();}
+    }
+  }
+
+  @include bp(md) {
+    .statement p {width:95%; @include center-block();}
+  }
+
+  @include bp(pl) {
+    .statement p { @include sec-default();}
   }
 }
 
@@ -884,6 +947,8 @@ hr{
         // border-left: 1px solid rgba($black,.2);
       }
     }
+
+
   }
 
   .statement.alt-lay{text-align: left;
@@ -892,6 +957,10 @@ hr{
     p,h2,h1 {@include sec-default(); border:none;}
     .text {display: inline-block; width: 45%; float: left;}
     .text.two {float: right;}
+  }
+
+  @include bp(tb) {
+    .locations-disc .med{width:95%;}
   }
 }
 
