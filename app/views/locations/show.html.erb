@@ -8,7 +8,7 @@
 	</div>
 
  	<div class="full">
- 		<div class="back-link">
+ 		<!-- <div class="back-link">
  			<%= link_to "/locations", class: 'text-link' do %>
  				<span class="" uk-icon="icon: arrow-left;"></span> Back to Locations
  			<% end %>
@@ -19,9 +19,10 @@
  				<div class="actions"><small><%= link_to("Edit Location (#{@location.id})", edit_location_path(@location)) %></small></div>
  				<% if @location.longitude == nil %><div class="actions coords">**<small>Coordinates Missing**</small></div><% end %>
  			</div>
- 		<% end %>
+ 		<% end %> -->
 
-		<div class="dets">
+
+		<div class="inside med2">
 		 	<div class="location-body">
 				<% if @location.image.attached? %>
 			 		<div class="image attach"><%= image_tag @location.image %></div>
@@ -31,89 +32,83 @@
 				<% end %>
 
 				<div class="location-dets">
-					<div class="inside med">
-						<div class="full top">
-							<h3><%= @location.ntitle %> Location Details</h3>
+					<div class="full top">
+					<!-- <h3><%= @location.ntitle %> Details</h3> -->
+						<h3>Store Details</h3>
 
-							<div class="btn-row">
-								<a href="<%= @location.direct_link %>" target="_blank" class="woof-link">Get Directions </a>
-							</div>
-							<div class="clearfix"></div><hr class="one">
-						</div>
-
-						<div class="left one">
-							<div class="cat address">
-								<p class="addr"><%= @location.street_address_one.titleize %><br>
-								<% if @location.street_address_two %>
-									<span class="addr2"><%= @location.street_address_two.titleize %></span>
-								<% end %>
-								<%= @location.city %>, <%= @location.state %> <%= @location.zip %></p>
-							</div>
-						</div>
-
-						<div class="right one">
-							<div class="cat phone">
-								<!-- <p><a href="tel: <%= @location.phone %>"><%= @location.phone %></a></p> -->
-								<p><a href="tel:<%= @location.phone %>"><%= number_to_phone(@location.phone, delimiter: '-') %></a></p>
-							</div>
-
-							<div class="cat email">
-								<p><a href="mailto:<%= @location.email_address %>"><%= @location.email_address %></a></p>
-							</div>
-
-							<div class="cat soc">
-								<% if @location.list_links.count > 0 %>
-									<% unless @location.fb.empty? %>
-										<a href="https://www.facebook.com<%= @location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
-									<% end %>
-
-									<% unless @location.insta.empty? %>
-										<a href="https://www.instagram.com<%= @location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
-									<% end %>
-
-									<% unless @location.twitter.empty? %>
-										 <!-- != ''  -->
-										<a href="https://twitter.com<%= @location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
-									<% end %>
-
-									<% if @location.yelp != '' %>
-										<a href="https://www.yelp.com/biz<%= @location.yelp %>" target="_blank"><span class="linkcon" uk-icon="icon: yelp;"></span></a>
-									<% end %>
-
-									<% unless @location.site.empty? %>
-										<a href="<%= @location.site %>" target="_blank"><span class="linkcon" uk-icon="icon: link;"></span></a>
-									<% end %>
-								<% end %>
-							</div>
-						</div>
-						<div class="clearfix"></div><hr class="two">
-
-						<div class="left two">
-							<% if @location.hours %>
-								<div class="cat hours">
-									<p class="hd">Hours of Operation:</p>
-									<p>
-										<% @location.c_hours.each do |c_hours| %>
-											<%= c_hours %><br>
-										<% end %>
-									</p>
-								</div>
-							<% end %>
-						</div>
-
-						<div class="right two">
-							<div class="full cat tags">
-								<p class="hd">Store Services:</p>
-								<% @location.tag_split.each do |tag| %>
-									<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
-										<span class="tag-img"></span>
-									</button>
-								<% end %>
-							</div>
+						<div class="btn-row">
+							<a href="<%= @location.direct_link %>" target="_blank" class="woof-link">Directions </a>
 						</div>
 					</div>
+					<div class="clearfix"></div><hr class="one">
+
+
+					<div class="cat address">
+						<p class="addr"><%= @location.street_address_one.titleize %><br>
+						<% if @location.street_address_two %>
+							<span class="addr2"><%= @location.street_address_two.titleize %></span>
+						<% end %>
+						<%= @location.city %>, <%= @location.state %> <%= @location.zip %></p>
+					</div>
+
+					<div class="clearfix"></div><hr class="one">
+					<div class="cat phone">
+						<p><a href="tel:<%= @location.phone %>"><%= number_to_phone(@location.phone, delimiter: '-') %></a></p>
+					</div>
+
+					<div class="cat email">
+						<p><a href="mailto:<%= @location.email_address %>"><%= @location.email_address %></a></p>
+					</div>
+
+					<div class="cat soc">
+						<% if @location.list_links.count > 0 %>
+							<% unless @location.fb.empty? %>
+								<a href="https://www.facebook.com<%= @location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
+							<% end %>
+
+							<% unless @location.insta.empty? %>
+								<a href="https://www.instagram.com<%= @location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
+							<% end %>
+
+							<% unless @location.twitter.empty? %>
+								 <!-- != ''  -->
+								<a href="https://twitter.com<%= @location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
+							<% end %>
+
+							<% if @location.yelp != '' %>
+								<a href="https://www.yelp.com/biz<%= @location.yelp %>" target="_blank"><span class="linkcon" uk-icon="icon: yelp;"></span></a>
+							<% end %>
+
+							<% unless @location.site.empty? %>
+								<a href="<%= @location.site %>" target="_blank"><span class="linkcon" uk-icon="icon: link;"></span></a>
+							<% end %>
+						<% end %>
+					</div>
+
+					<div class="clearfix"></div><hr class="one">
+					<% if @location.hours %>
+						<div class="cat hours">
+							<p class="hd">Hours of Operation:</p>
+							<p>
+								<% @location.c_hours.each do |c_hours| %>
+									<%= c_hours %><br>
+								<% end %>
+							</p>
+						</div>
+					<% end %>
+
+					<div class="cat tags">
+						<p class="hd">Store Services:</p>
+						<% @location.tag_split.each do |tag| %>
+							<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+					</div>
 				</div>
+
 			</div>
 		</div>
+
 	</div>
 </div>

@@ -291,8 +291,10 @@ hr{
     }
 
     .nlay-logos{
+      .inside.one{width:90%;}
       .text {width:95%;}
       p{font-size: 16px;}
+      h3{font-size: 1.15rem;}
       .full.logos .inside{width:95%;}
       .serve-tl{width:25%; margin: 20px 3% 20px;}
       .logo {width:100%;}
@@ -402,8 +404,6 @@ hr{
       background-color: $pink; color: white; letter-spacing: 1px;
       @include sec-bgimage('search.png'); background-position: center center; background-size: 40%;
     }
-
-    // .tag-icon {float: left;}
 
     .searcher,.filter-box,.text {display: inline-block; width:35%; float: left;box-shadow: 0px 1px 4px rgba($black, .2);}
     .text {padding:10px 15px;float: right; position: relative;z-index: 0;
@@ -651,8 +651,10 @@ hr{
 }
 
 .locations.show {
-  h2{margin-bottom: 0;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: $semi; font-size: 1.6rem;}
-  h1{margin-top: 0px;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: bold;}
+  // h1, h2 {color:$black; letter-spacing: 1px; text-transform: uppercase; @include tshadowl(rgba($black, .2));}
+  h1, h2{color:$black; }
+  h2{margin-bottom: 0;font-weight:300; font-size: 1.2rem;}
+  h1{margin-top: 0px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
   h3{font-size: 1.2rem; font-weight: bold; color:$pink; }
   .text-link{ color: $tbrown;}
 
@@ -671,14 +673,11 @@ hr{
     }
   }
 
-  .location-page {@include sec-default();
-    @include sec-bgimage('adobe-sneak.png'); background-size: 12%; background-position: bottom right; padding-bottom:80px;
-    position: relative; z-index: 0; &::before {@include before(); background-color: $compb; height: 395px;}
+  .location-page {@include sec-default(); padding-bottom:80px;
+    position: relative; z-index: 0; &::before {@include before(); height: 395px; height:350px; background-color: darken($opink, 1%);}
 
     .title {@include sec-default(); text-align: center; padding: 50px 0 0px;}
 
-    // .back-link, .dets, .admin-side {display: inline-block; float: left; width: 25%;}
-    // .dets {width:50%;}
     .back-link, .dets, .admin-side {display: inline-block; float: left; width: 20%;}
     .dets {width:60%;}
 
@@ -691,36 +690,91 @@ hr{
       .actions.coords{color:$red; font-weight: $semi; margin-top: 10px;}
     }
 
-    .location-body {@include sec-default(); background-color: $white; box-shadow: 0px 1px 10px rgba($black, .2); padding-bottom: 20px;}
-    .image{@include sec-default(); background-color: $f8;
-      //img{width:50%; @include center-block();}
+    // .location-body {@include sec-default(); padding: 20px 0;
+    //   background-color: $white;box-shadow: 0px 1px 10px rgba($black, .2);
+    // }
+    // .image{@include sec-default();
+    //   &.attach img{ max-height: 400px; @include center-block();}
+    // }
+
+    // .location-dets {
+    //   @include sec-default(); padding-top:20px;
+    //   .inside.med{margin-left:11%;}
+
+    //   hr.one{margin-top: 5px;}
+    //   hr.two{margin-top: 15px;}
+    //   .full.top {
+    //     h3, .btn-row{display: inline-block; width:60%; float: left; padding-bottom: 0; margin-bottom: 0;}
+    //     h3{margin-top: 12px;}
+    //     .btn-row{width:25%; float: right;}
+    //     .woof-link {width:auto;padding:5px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 13px; background-color: $pink; float: right;}
+    //   }
+    //   .left, .right {display: inline-block; float: left; width:50%; }
+    //   .right {float: right;width:50%; text-align: right;
+    //     .tag-icon {float: right;}
+    //   }
+    // }
+
+
+
+    // ALL INLINE
+    // .location-body {@include sec-default();
+    //   background-color: $white; box-shadow: 0px 1px 10px rgba($black, .2);
+    // }
+
+    // .image, .location-dets {display: inline-block; width:40%; float: left;}
+    // .image{
+    //   &.attach img{ max-height: 400px;}
+    // }
+
+    // .location-dets {width:55%; margin-left: 2%;padding:20px 0;
+    //   .inside.med{margin-left:11%;}
+
+    //   hr.one{margin-top: 5px;}
+    //   hr.two{margin-top: 15px;}
+    //   .full.top {
+    //     h3, .btn-row{display: inline-block; width:60%; float: left; padding-bottom: 0; margin-bottom: 0;}
+    //     h3{margin-top: 12px;}
+    //     .btn-row{width:25%; float: right;}
+    //     .woof-link {width:auto;padding:5px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 13px; background-color: $pink; float: right;}
+    //   }
+    //   .left, .right {display: inline-block; float: left; width:50%; }
+    //   .right {float: right;width:50%; text-align: right;
+    //     .tag-icon {float: right;}
+    //   }
+    // }
+
+
+
+    // MULTI ROW
+    &::before{height:250px;}
+    .title {margin-bottom: 20px;}
+    .dets {width:80%; @include center-block();}
+    .location-body {@include sec-default();}
+    .image, .location-dets {display: inline-block; float: left; width:40%; }
+
+    .image{
+      &.attach img{ max-height: 400px; @include center-block();}
     }
 
-    .location-dets {
-      // width:75%;@include center-block();
-      @include sec-default(); padding-top:20px;
-      .inside.med{margin-left:11%;}
-
+    .location-dets {float: right; width:58%; background-color: $white;box-shadow: 0px 1px 10px rgba($black, .1);
+      padding: 20px 40px;
       hr.one{margin-top: 5px;}
       hr.two{margin-top: 15px;}
       .full.top {
         h3, .btn-row{display: inline-block; width:60%; float: left; padding-bottom: 0; margin-bottom: 0;}
         h3{margin-top: 12px;}
         .btn-row{width:25%; float: right;}
-        .woof-link {width:auto;padding:5px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 13px; background-color: $compb; float: right;}
+        .woof-link {width:auto;padding:5px 20px; font-weight: $semi;letter-spacing: .5px; font-size: 13px; background-color: $pink; float: right;}
       }
-      .left, .right {display: inline-block; float: left; width:50%; }
-      .right {float: right;width:50%; text-align: right;
+
+      .cat.hours, .cat.tags {display: inline-block; float: left; width:50%;}
+      .cat.tags {float: right; text-align: right;
         .tag-icon {float: right;}
       }
     }
   }
 
-  @include bp(su) {
-    .location-page {background-size:8%;
-      .image img{@include center-block();}
-    }
-  }
 
   @media (max-width:1200px) {
     .location-page .location-dets {
@@ -1145,8 +1199,8 @@ hr{
 //*********************************//
 .posts {
   .ipage-header {padding:30px 0 15px;
-    background-color: rgba($pink, .7);
-    h1{color:$white; @include tshadowl(rgba($black, .2)); font-size: 1.7rem;}
+    background-color:darken($opink, 1%);
+    h1{color:$black; font-size: 1.8rem; letter-spacing: .5px;}
   }
 
   .blog-form {width:65%; @include center-block();}
@@ -1193,10 +1247,13 @@ hr{
 }
 
 .posts.index  {
+  .full-sec {position: relative; z-index: 0;
+    &::before {@include before(); height:150px; background-color:darken($opink, 1%);}
+  }
   .woof-link {float:right; width: 200px; background-color: $tbrown; position: absolute; left: 75%; margin-top: -50px; }
 
   .post-li {
-    display: inline-block; float: left; width:31%; height:400px; margin: 10px 1% 30px;
+    display: inline-block; float: left; width:31%; height:400px; margin: 10px 1% 30px; background-color: $white;
     background-size: cover; background-position: top left; background-repeat: no-repeat; border: $border;
     position: relative; z-index: 0;
     &::before {@include before(); background-color: rgba($black, 0);}
@@ -1267,13 +1324,11 @@ hr{
 .posts.show {
   .full-post {
     @include sec-default();padding:40px 0 60px;position: relative; z-index: 0;
-    &::before {@include before(); background-color: $compb;background-color: rgba($pink, .7); height: 375px;}
-    // &::before {@include before();@include sec-bgimage('treat-table.jpg'); height: 375px; z-index: -2; background-position: center center; }
-    // &::after {@include before();background-color: rgba($pink7, .9); height: 375px;}
+    &::before {@include before(); background-color: $compb;background-color: darken($opink, 1%); height: 375px;}
 
 
-    h2{margin-bottom: 0;color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px; font-weight: $semi; font-size: 1.3rem;}
-    h1{margin-top:0;color:$white; @include tshadowl(rgba($black, .2)); font-weight: bold; line-height: 1.4em; font-size: 1.7rem;}
+    h2{margin-bottom: 0;color:$black; text-transform: uppercase;letter-spacing: 1px; font-weight: $semi; font-size: 1.3rem;}
+    h1{margin-top:0;color:$black; font-weight: bold; line-height: 1.4em; font-size: 1.7rem;}
 
     .title {@include sec-default(); text-align: center; margin-bottom: 15px;}
 
@@ -1285,7 +1340,7 @@ hr{
     }
     .admin-side{margin-top: 260px; padding-right: 15px; float: right;
       .actions {float: right; }
-      .woof-link{width:auto; display: block; float: right; margin-bottom: 8px;}
+      .woof-link{width:auto; display: block; float: right; margin-bottom: 8px; }
       .woof-link.edit {background-color: $compt;}
       .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px 15px; font-weight: $semi;}
     }
@@ -1316,9 +1371,9 @@ hr{
   @include bp(su) {
     .full-post {
       &::before {height:340px;}
-      .admin-side {padding-right:0;
-        .woof-link {margin-right:15px;}
-      }
+      // .admin-side {padding-right:0;
+      //   .woof-link {margin-right:15px;}
+      // }
     }
 
     .recent-posts {
@@ -1338,6 +1393,10 @@ hr{
 
       .image {padding-right: 20px;}
     }
+  }
+
+  @include bp(xl) {
+    .full-post .admin-side .woof-link {width:95%;}
   }
 
   @include bp(tb) {
@@ -1628,7 +1687,6 @@ hr{
 
   .l1{display: inline-block; float: left; width:30%; margin-left: 3%;}
 }
-.locations.show .image.attach img{ max-height: 360px; @include center-block();}
 
 
 .estates,.vendors,.reporters{

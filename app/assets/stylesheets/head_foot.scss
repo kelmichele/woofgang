@@ -180,7 +180,8 @@
 		p.mod-link{margin:10px 0 0;
 			a{color: $pink; font-weight: $semi;}
 		}
-		.text-link{@include sec-default();margin:6px 0 0; font-size: 14px; font-weight: $semi;}
+		.text-link{@include sec-default();margin:6px 0 0; font-size: 14px; font-weight: $semi; }
+		&.fb4 .text-link{color:$pink;}
 	}
 
 	h5{font-weight: bold; margin-bottom: 0;}
