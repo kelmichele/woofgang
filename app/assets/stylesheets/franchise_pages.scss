@@ -276,6 +276,8 @@ br.tn {display: none;}
 			&.two{width:45%;}
 			&.three {margin-top: 50px;}
 		}
+
+		.img1,.img2 {display: inline-block; float: left; width:50%;}
 	}
 
 	@include bp(tb) {
