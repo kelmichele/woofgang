@@ -7,15 +7,23 @@
 	</div>
 </div> -->
 
-<div class="full-sec">
-	<div class="inside">
-		<div class="intro-text">
-			<h1><%= @page_title %></h1>
-			<p>Got a great product? Submit details on your product to Woof Gang Bakery Vendor Relations.</p>
+<div class="full-sec" uk-grid>
+	<!-- <div class="inside"> -->
+
+		<div id="text" class="intro-text">
+			<div class="full intext" style="z-index: 90;" uk-sticky="offset: 200; bottom: #text;">
+				<div class="hd-text">
+					<h1><%= @page_title %></h1>
+					<p>Got a great product? Submit details on your product to Woof Gang Bakery Vendor Relations.</p>
+				</div>
+
+				<div class="image"><%= image_tag('woof10.jpg', class: 'img-repsonsive', alt: '') %></div>
+			</div>
 		</div>
 
-		<div class="form-side">
+		<div id="form-b" class="form-side">
 	    <%= render 'form' %>
 	  </div>
-	</div>
+	<!-- </div> -->
 </div>
+

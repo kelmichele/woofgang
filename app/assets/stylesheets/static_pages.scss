@@ -1164,6 +1164,44 @@ hr{
   }
 }
 
+.contacts .services-layout{
+  h1 {color:$black; font-size: 1.8rem; letter-spacing: .5px}
+  h3{font-size: 1.2rem; font-weight: normal; margin-bottom: 0;}
+
+  .inline-show {
+    &::before{height:350px;}
+   .il-img{width:70%; float: left; display: inline-block; @include center-block(); width:90%;}
+   .title{margin-right: 0; width:27%; float: right;}
+   p{font-size: 17.5px;}
+  }
+
+  .statement {
+    h1,h2{width:100%; border:none; padding:0;}
+    p {width:100%;}
+    .woof-link {letter-spacing: .2px;font-size: 14.5px;
+      width:31%; display: inline-block; float: none; margin: 10px .5%; padding:10px;
+    }
+
+    .left, .right {display: inline-block; float: left; }
+    .left{padding-right:20px;border-right: 1px solid rgba($black,.15); width:69%;}
+    .right {width:27%; float: right;
+      p{font-size: 16px; margin-bottom: 10px;}
+      p b {color: $pink;}
+    }
+
+    &.s2 {
+      .left, .far, .right {display: inline-block; float: left;}
+      .left {width:40%;}
+      .right {width: 33%; margin-left: 1%; padding-left: 20px;}
+      .left, .right {padding-right: 20px; border-right: 1px solid rgba($black,.15);}
+      .far {float: right; width:25%;}
+      .woof-link {@include sec-default(); margin-bottom: 10px;}
+    }
+  }
+
+  .location-select {width:100%; float: left;}
+}
+
 
 //*********************************//
 //*********** users ***********//
@@ -1473,7 +1511,7 @@ hr{
 //*********************************//
 //***** contact and inquiries *****//
 //*********************************//
-.contacts, .candidates {
+.candidates {
   h1{margin-bottom: 10px}
   h3{font-size: 1.3rem; margin-top: 0;}
 
@@ -1481,9 +1519,6 @@ hr{
 
     .woof-link{background-color: $white; color:$pink; display: block; width:80%; margin-bottom: 20px;}
     .over, .form-side {display: inline-block; float: left; width:25%;position: relative;z-index: 1;}
-    .over { z-index: 0; padding-right:20px;
-      &::before {@include before(); background-color: rgba($compt, .8); height:120%; width:180%; left:-18%; top:-10%;}
-    }
 
     .form-side{width: 74%; float:right;}
     h3{font-size: 1.3rem; margin-bottom: 0;}
@@ -1514,98 +1549,7 @@ hr{
       p{font-size: 15px;}
     }
   }
-}
 
-.contacts {
-  .pup-header.inline {background-color: rgba($compt, .7);
-    .full{padding-top:80px;
-      background-size: 44%; background-position: bottom right;
-      &::before {background-color: rgba($compt, .7);}
-    }
-  }
-
-  .intro-sec {@include sec-default(); text-align: center; padding-top: 60px;}
-  .full-contact {padding: 45px 0 60px;
-    .over, .form-side { width:33%;}
-    .over { padding:30px 20px 30px 45px;
-      &::before {@include before(); background-color: rgba($compt, .7); width:150%; }
-      h3{color: $white; font-weight: bold; @include tshadowl(rgba($black, .3)); margin-bottom: 6px;}
-      p{padding-left: 7px; margin-top: 5px; font-weight: $semi;}
-    }
-    .form-side{width: 67%; margin-top: 5%;}
-  }
-
-  @include bp(tb) {
-    .intro-sec {padding-top: 30px;}
-    .full-contact {padding-top:10px;
-      .inside{width:90%;}
-      .over { padding: 20px 20px 20px 30px;}
-    }
-  }
-
-  @include bp(tn) {
-    .intro-sec .inside.narrow{width:85%;}
-    .full-contact {padding-top:10px;
-      .over, .form-side {@include sec-default();}
-      .over { padding: 20px 20px 20px 30px;
-        background-color: $fa;
-        &::before{display: none;}
-
-        h3{color: $compt; text-shadow: none; font-size: 1rem;}
-        hr{display: none;}
-
-        .is-box {display: inline-block; float: left; width:45%;
-          &.one{margin-left: 7%;}
-          &.two, &.three {float: right; }
-        }
-      }
-    }
-  }
-
-  @include bp(oc) {
-    .intro-sec {width:95%;
-      p{font-size: 15px;}
-    }
-    .full-contact {
-      .over { padding: 20px 20px 15px;
-        .is-box {width:50%;
-          &.one{margin-left: 0;}
-          &.two, &.three {text-align: right;}
-        }
-      }
-      form {padding-right:30px;
-        .form-group {@include sec-default(); margin-bottom: 15px;
-          &.submit {margin-bottom: 0;}
-          input[type=submit] {width:auto; font-size: 15px; padding:7px 20px;}
-        }
-      }
-    }
-  }
-
-  @include bp(ph) {
-    .full-contact {
-      .over { padding: 20px 20px 15px;
-        hr{display: block;}
-        .is-box {
-          &.one, &.two, &.three {width:80%; @include center-block();text-align: left;}
-        }
-      }
-      form {padding-right:15px;}
-    }
-  }
-
-  @include bp(sm) {
-    .full-contact {
-      .over {
-        .is-box {
-          &.one, &.two, &.three {width:95%;}
-        }
-      }
-    }
-  }
-}
-
-.candidates {
   .inquiries .over {
     hr{opacity: .6;}
     .text-link {color: $white;}
@@ -1706,41 +1650,34 @@ hr{
 }
 
 
-.estates,.vendors,.reporters{
-  .page-body {background-color:$f9;
-    // padding: 70px 100px;
-    // @include sec-bgimage('woof10.jpg');
-    // position: relative; z-index: 0; &::before{@include before(); background-color: rgba($black, .5);}
+.estates,.vendors,.reporters, .contacts{
+  .page-body {background-color:$f9;}
+  h1{font-size: 1.6rem; margin-bottom: 0;}
+  p{margin-top:8px;}
 
-    // .full-sec{background-position: bottom left;
-    //   @include sec-bgimage('appa.jpg'); background-size: 43%;
-    //   @include sec-bgimage('woof10.jpg');background-size: 43%;
-    //   box-shadow: 0 5px 40px rgba($black, .35);
-    // }
-  }
   .intro-text, .form-side{display: inline-block; float: left; width:40%;}
-  .intro-text{width:35%; margin-top:5%; margin-left:5%;
-    h1{font-size: 1.6rem; margin-bottom: 0;}
-    p{margin-top:8px;}
-  }
+  .intro-text{width:35%; margin-top:5%; margin-left:5%;}
   .form-side {float:right; width:55%;}
 
   p.print{font-size: 14px; color: $red; float: right;}
   .form-group {margin-bottom: 25px; }
-  label {color: #666; font-weight: normal; font-size: 14px;}
+  label {color: $black; font-weight: normal; font-size: 15px; letter-spacing: .2px;}
 
-  input, textarea, select {border:0;color: #000; font-size: 14px; background-color: transparent;}
-  select {font-family: $body; color:#666; margin-bottom: 15px;}
+  input, textarea, select {border:0;color: $black; font-size: 14px; background-color: transparent;}
+  select {font-family: $body; color:$black; margin-bottom: 15px;}
 
 
-  .form-group {border-bottom: 2px inset rgba($black,.3); margin-bottom:20px;
+  .form-group {border-bottom: 2px solid rgba($black,.1); margin-bottom:20px;
     &.submit {border-bottom: 0;}
   }
 }
 
 .estates, .vendors{
   hr{@include sec-default();}
-  h3 {@include sec-default();margin-bottom: 15px; font-size: 1.2rem; font-weight: bold; color:$black; text-transform: uppercase; letter-spacing: .7px; background-color:$f2; padding:15px;}
+  h3 {@include sec-default();margin-bottom: 15px; font-size: 1.1rem; font-weight: bold;
+    text-transform: uppercase; letter-spacing: 1px; color:$pink; margin-left: -15px;
+    // background-color:$f2; padding:15px;color:$black;
+  }
 }
 
 .vendors{
@@ -1750,44 +1687,39 @@ hr{
     label.full{@include sec-default(); margin-top: 0; margin-bottom: 20px;}
   }
   .form-group.category br{line-height: 2.2em;}
+
+  .intro-text {width:45%; height:150vh; margin-top: 4%; margin-left: 0;
+    .hd-text {width:60%; float: right; margin-right: 6%; margin-bottom: 50px;}
+  }
+}
+
+.contacts {
+  .intro-text {width:45%;  margin-top: 0; margin-left: 0;
+    .hd-text, .is-box {width:80%; float: right; margin-right: 6%; margin-bottom: 30px;}
+
+    .is-box {
+      margin-bottom: 0; margin-top: 30px;
+      p{font-size: 16px;}
+    }
+  }
 }
 
 .reporters{
-  // .page-body{
-    // padding: 70px 100px;
-    // position: relative; z-index: 0;
-    // &::before{@include sec-bgimage('woof10.jpg'); width:43%;}
-
-    // @include sec-bgimage('woof10.jpg');
-    // &::after{@include before(); background-color: rgba($black, .5); }
-  // }
-
-  .full-sec{background-position: bottom left;
-    @include sec-bgimage('appa.jpg'); background-size: 43%;
-    box-shadow: 0 5px 40px rgba($black, .15);
-    background-color: $white;
-  }
-
   .form-group {width:48%; display: inline-block; float: left;
     &:nth-child(2n+2) {float: right;}
     &.content{@include sec-default();}
   }
 }
 
-.estates {
+.estates, .reporters {
+  h1{margin-bottom: 0;}
+  p {margin-top: 5px;}
   .full-sec {padding-top:0;}
-  .form-side{float: right; padding-top:40px; margin-right:5%;}
-  .intro-text{width:35%; margin-top:0; margin-left:0;
-    height:90vh;
-    position: fixed;z-index: 10;
-    @include sec-bgimage('appa.jpg'); background-size: cover;
+
+  .full-sec{
+    @include sec-bgimage('appa.jpg'); background-size: 43%;
     box-shadow: 0 5px 40px rgba($black, .15);
     background-color: $white;
   }
+  .form-side {height:100vh; overflow-y: scroll; margin-right: 0; padding: 50px 4% 0 1%;}
 }
-
-
-
-
-
-

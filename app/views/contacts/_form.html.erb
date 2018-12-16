@@ -1,5 +1,69 @@
-<%= render 'shared/errors', obj: @contact %>
+<select id="locate_list" class="form-select">
+        <option selected value="">Select a state...</option>
+        <option value="Connecticut">Connecticut</option>
+        <option value="Florida">Florida</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Kansas">Kansas</option>
+        <option value="Nevada">Nevada</option>
+        <option value="NewJersey">New Jersey</option>
+        <option value="NewYork">New York</option>
+        <option value="NorthCarolina">North Carolina</option>
+        <option value="SouthCarolina">South Carolina</option>
+        <option value="Tennesse">Tennesse</option>
+        <option value="Texas">Texas</option>
+        <option value="Virginia">Virginia</option>
+      </select>
 
+
+      <div style="display:none" id="Connecticut" class="location-select">
+        Connecticut
+      </div>
+
+      <div style="display:none" id="Florida" class="location-select">
+        Florida
+      </div>
+
+      <div style="display:none" id="Georgia" class="location-select">
+        Georgia
+      </div>
+
+      <div style="display:none" id="Kansas" class="location-select">
+        Kansas
+      </div>
+
+      <div style="display:none" id="Nevada" class="location-select">
+        Nevada
+      </div>
+
+      <div style="display:none" id="NewJersey" class="location-select">
+        NewJersey
+      </div>
+
+      <div style="display:none" id="NewYork" class="location-select">
+        NewYork
+      </div>
+
+      <div style="display:none" id="NorthCarolina" class="location-select">
+        NorthCarolina
+      </div>
+
+      <div style="display:none" id="SouthCarolina" class="location-select">
+        SouthCarolina
+      </div>
+
+      <div style="display:none" id="Tennesse" class="location-select">
+        Tennesse
+      </div>
+
+      <div style="display:none" id="Texas" class="location-select">
+        Texas
+      </div>
+
+      <div style="display:none" id="Virginia" class="location-select">
+        Virginia
+      </div>
+
+<%= render 'shared/errors', obj: @contact %>
 <%= form_for @contact, url: contact_path do |contact| %>
   <fieldset>
     <% if flash[:notice] %>
@@ -10,10 +74,10 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <div class="top">
+    <!-- <div class="full top">
       <p class="print">* indicates required field</p>
-      <hr>
-    </div>
+      <div class="clearfix"></div><hr>
+    </div> -->
 
 
     <div class="form-group name">
@@ -34,11 +98,17 @@
     <div class="form-group location">
       <label>*Nearest Location:</label><br>
       <!-- = render 'shared/location_select' %> -->
-      <%= contact.select(:singup) do %>
-        <% [['Select State', ''], ['Connecticut', 'Connecticut'], ['Florida', 'Florida'], ['Georgia', 'Georgia'], ['Kansas', 'Kansas'], ['Nevada', 'Nevada'], ['New Jersey', 'NewJersey'], ['New York', 'NewYork'], ['North Carolina', 'NorthCarolina'], ['South Carolina', 'SouthCarolina'], ['Tennesse', 'Tennesse'], ['Texas', 'Texas'], ['Virginia', 'Virginia']].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-        <% end %>
-      <% end %>
+      <!-- = contact.select(:singup) do %>
+        < [['Select State', ''], ['Connecticut', 'Connecticut'], ['Florida', 'Florida'], ['Georgia', 'Georgia'], ['Kansas', 'Kansas'], ['Nevada', 'Nevada'], ['New Jersey', 'NewJersey'], ['New York', 'NewYork'], ['North Carolina', 'NorthCarolina'], ['South Carolina', 'SouthCarolina'], ['Tennesse', 'Tennesse'], ['Texas', 'Texas'], ['Virginia', 'Virginia']].each do |c| -%>
+          = content_tag(:option, c.first, value: c.last) %>
+        < end %>
+      < end %> -->
+
+
+
+
+
+
     </div>
 
     <div class="form-group grapevine">
@@ -66,6 +136,26 @@
     <div class="form-group submit">
       <%= contact.submit "Submit", :class=> "send-message" %>
     </div>
+
+    <p class="print">* indicates required field</p>
   </fieldset>
 <% end %>
 
+
+
+
+
+
+
+
+<script>
+jQuery(document).ready(function(){
+  jQuery('#locate_list').change(function(){
+    form = jQuery(this).val();
+    if(form){
+      jQuery('.location-select').hide();
+      jQuery('#'+form).show();
+    }
+  });
+});
+</script>

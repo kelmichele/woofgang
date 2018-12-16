@@ -1,43 +1,94 @@
 <% @page_title = "Contact Us" %>
 <% @page_description = "New Description" %>
 
-<div class="ipage-header opink simple">
-	<div class="inside">
-		<h1>Contact Us</h1>
-	</div>
-</div>
 
-<div class="intro-sec">
-	<div class="inside narrow">
-		<p>If you need to contact a store regarding a grooming appointment, please visit <%= link_to 'our locations page', locations_path, class: 'text-link' %> to contact the store directly.
-		For general inquires, comments, and questions, please fill out the form below, or contact our corporate office directly.</p>
-	</div>
-</div>
+<div class="full-sec" uk-grid style="display: none;">
+	<div id="text" class="intro-text">
+		<div class="hd-text">
+			<h1><%= @page_title %></h1>
+			<p>If you need to contact a store regarding a grooming appointment, please visit <%= link_to 'our locations page', locations_path, class: 'text-link' %> to contact the store directly.<br class="xl"> For general inquires, comments, and questions, please fill out the form below, or contact our corporate office directly.</p>
+		</div>
 
-<div class="full-contact">
-	<div class="inside">
-		<div class="over">
-			<div class="is-box one">
-				<h3>Contact Information:</h3>
-				<p>Woof Gang Bakery Corporate Office<br>
-				7575 Dr. Phillips Blvd<br>
-				Suite 275<br>
-				Orlando, FL 32819</p>
+		<div class="image"><%= image_tag('woof10.jpg', class: 'img-repsonsive', alt: '') %></div>
 
-				<p>P: 407-355-9210<br>
-					F: 877-554-1020</p>
+		<div class="is-box one">
+			<h3>Contact Information:</h3>
+			<p>Woof Gang Bakery Corporate Office<br>
+			7575 Dr. Phillips Blvd<br>
+			Suite 275<br>
+			Orlando, FL 32819</p>
 
-				<p>Monday-Friday: 8am-5pm</p>
-			</div>
+			<p>P: 407-355-9210<br>
+				F: 877-554-1020</p>
+
+			<p>Monday-Friday: 8am-5pm</p>
 
 			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
 			<%= link_to 'Contact Vendor Relations', vendor_path, class: 'woof-link' %>
 			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
 		</div>
+	</div>
 
-		<div class="form-side">
-	    <%= render 'form' %>
-	  </div>
+	<div id="form-b" class="form-side">
+    <%= render 'form' %>
+  </div>
+</div>
 
+
+
+
+<div class="services-layout contactus">
+	<div class="serv-slider inline-show">
+		<div class="inside">
+			<div class="il-img"><%= image_tag('ext-city-market.jpg', class: 'img-responsive', alt: '') %></div>
+
+			<!-- <div class="title">
+				<h1><%= @page_title %></h1>
+				<p>If you need to contact a store regarding a grooming appointment, please visit <%= link_to 'our locations page', locations_path, class: 'text-link' %> to contact the store directly.</p>
+			</div> -->
+		</div>
+	</div>
+
+	<div class="statement">
+		<div class="inside med2-def">
+	  	<div class="text">
+	  		<div class="left">
+	  			<h1><%= @page_title %></h1>
+					<p>If you need to contact a store regarding a grooming appointment, please visit <%= link_to 'our locations page', locations_path, class: 'text-link' %> to contact the store directly. For general inquires, comments, and questions, please fill out the form below, or contact our corporate office directly.</p>
+	  			 <div class="clearfix"></div>
+	  			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
+	  			<%= link_to 'Contact Vendor Relations', vendor_path, class: 'woof-link' %>
+	  			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
+	  		</div>
+
+	  		<div class="right">
+	  			<p><b>Woof Gang Bakery Corporate:</b><br>
+	  			7575 Dr. Phillips Blvd<br>
+	  			Suite 275<br>
+	  			Orlando, FL 32819</p>
+
+	  			<p>P: 407-355-9210<br>
+	  				F: 877-554-1020</p>
+
+	  			<p>Monday-Friday: 8am-5pm</p>
+	  		</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="locations-disc">
+		<div class="inside med2">
+			<h4>Self-Service Grooming is offered only at select locations.</h4>
+			<div class="btn-hlf">
+				<%= link_to "View Locations", "/tags/self-service-grooming", class: 'woof-link' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="list-box alt">
+		<div class="inside med2-def">
+		  <%= render 'form' %>
+		</div>
 	</div>
 </div>
+
