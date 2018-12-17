@@ -3,17 +3,17 @@
 
 .uk-navbar-nav {}
 .uk-navbar-nav>li>a{ padding:0; min-height:auto; }
+.navbar-center{@include sec-default(); background-color: $white;}
 // display:block !important;
 
 //*********************************//
 //********** header inline *********//
 //*********************************//
 .inline-header {@include sec-default();background-color: $white; padding-bottom: 10px;
-	.navbar-nav,.uk-navbar-nav{display: inline-block; float: left; width: 25%;}
-	.navbar-nav,.uk-navbar-nav {float: right; width:70%; text-align: right; margin-top: 8%; margin-right: 2%;}
+	// .navbar-nav,.uk-navbar-nav{display: inline-block; float: left; width: 25%;}
+	// .navbar-nav,.uk-navbar-nav {float: right; width:70%; text-align: right; margin-top: 8%; margin-right: 2%;}
 
-	// box-shadow: 0px 1px 1px rgba($black, .1);
-	&.uk-navbar-sticky.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);}
+	// &.uk-navbar-sticky.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);}
 
 	li {display: inline-block; float: none; margin: 1% 0 0px 3%;
 		a { color:$brown;font-weight: $semi;
@@ -30,9 +30,6 @@
 		}
 	}
 
-	.above,.below{width:25%; float:right; margin-right: 9%; padding: 5px 15px 7px; background-color: $pink;
-		border-bottom-right-radius: 18px; border-bottom-left-radius: 18px;
-	}
 	.contact,.social{display:inline-block; float: left; color:$white; width:50%;
 		span, a {color:$white; }
 		img {height:12px; margin-right: 0px;}
@@ -43,16 +40,16 @@
 		li {display:inline-block; float:none; margin: 0 .7%; width: 16px; height: 16px;}
 	}
 
-	.navbar-nav,.uk-navbar-nav {margin-top: 5%;}
+	// .navbar-nav,.uk-navbar-nav {margin-top: 5%;}
 
 	&.centered {background-color: $white;padding-bottom: 0px;
-		// .navbar-center{ position: relative; z-index: 0;}
 		.uk-navbar-container.inside{width:90%;background-color: $white}
-		.nb-logo{@include sec-default(); text-align: center;padding:0px; width:40%; @include center-block();}
+		.nb-logo{@include sec-default(); text-align: center;padding:0px; width:40%; @include center-block(); margin-bottom: 25px;}
 		.logo {width:300px; @include center-block();}
 
-		.uk-navbar-nav{@include sec-default(); text-align: center; margin-top: 25px;padding:10px 0 10px; border-top:1px solid $f2;
+		.uk-navbar-nav{@include sec-default(); text-align: center; padding:10px 0 10px; border-top:1px solid $f2;
 			border-bottom:1px inset rgba($f2, .9);
+			// margin-top: 25px;
 		}
 
 		.uk-navbar-nav li{margin: 0 0 0px 4%;
@@ -62,9 +59,13 @@
 			a{text-transform: none; font-size: 15px; letter-spacing: 0;}
 		}
 	}
-	&.centered.uk-navbar-sticky.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .0); padding-top:8px;
+	&.centered.uk-navbar-sticky.uk-sticky-fixed {padding-top:8px;
 		.logo {width:250px; @include ease(.3s);}
 		.uk-navbar-nav{margin-top: 15px;}
+	}
+
+	.full.navstick{background-color: $white;
+		&.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);}
 	}
 }
 
