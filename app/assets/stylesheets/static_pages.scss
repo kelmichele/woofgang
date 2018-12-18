@@ -178,7 +178,7 @@ hr{
 
   .bg-sec {@include sec-default(); padding:70px 0 0px; margin-top:30px;
     position: relative; z-index: 0;
-    &::before {@include before();@include sec-bgimage('woof10.jpg'); background-position: bottom left; width:60%;height:85%;}
+    &::before {@include before();@include sec-bgimage('retail-slide4.jpg'); background-position: bottom left; width:60%;height:85%;}
     &::after {@include before(); background-color: rgba($pink7, .94); width:60%;height:85%;}
 
     .image, .text {display: inline-block; float: left; width:50%;}
@@ -207,7 +207,6 @@ hr{
     .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
 
     &.dark{
-      background-image: url(image_path('corner-img.jpg'));
       &::before{background-color:rgba($tbrown,.89);}
       .woof-link {color:$pink;}
     }
@@ -227,6 +226,13 @@ hr{
     .resort,.daycare{
       margin-top: 55px;
       .logo {width:320px;}
+    }
+
+    .image-row {text-align: center;
+      .img1, .img2, .img3 {display: inline-block; float: none; height:350px;}
+      // .img2 {margin-left: 1%;}
+      // .img1, .img3{ width:22%; }
+      // .img2{width:54%;}
     }
   }
 
@@ -923,13 +929,10 @@ hr{
         &.hlf.two {float: right;}
       }
 
-      .top{
-        .left {width:50%;
-          .gall-img.hlf{height:255px;}
-        }
-        .right{width:49%;}
-
+      .left {width:50%; width:47%;
+        // .gall-img.hlf{height:255px;}
       }
+      .right{width:49%; width:52%;}
     }
   }
 
@@ -1145,22 +1148,42 @@ hr{
 
 .services-layout.vet {
   .inline-show {
-    &::before{height:350px;}
-    .il-slideshow {
-      // height:auto; width:800px; margin-left:5%;
-      // max-height: 400px;max-height: 560px;
-      // ul{height:auto;}
-      // li{ max-height: 400px; max-height: 560px; overflow: hidden;}
-
-      width:60%; margin-left: 5%; max-height: 500px; overflow: hidden;
-    }
-
-    .title {margin-right: 4%;}
+    &::before{height:390px;}
+    .il-slideshow {width:64%; margin-left: 5%; max-height: 500px; overflow: hidden;}
+    .title {margin-right: 5%;}
   }
 
-  .list-box{
-    .left{ width:35%;}
-    .sl-hlf {width:60%;}
+  .statement {
+    h4, ul {display: inline-block; float: left; width:30%;}
+    h4{margin-top:45px; color:$pink;}
+    ul {width:68%; float: right; border-left: 1px solid rgba($black, .1); padding-left: 40px; margin-right: -2%;}
+
+    li {
+      display: inline-block; float: left;
+      // width:31%;
+      width:28%;
+      font-size: 16px;
+      margin:0 1% 10px;
+      padding-left:10px;
+      position: relative; z-index: 0;&::before {@include before(); width:8px; height: 1px; background-color: $pink; top:12px; left:-5px;}
+
+      &.right {float: right; width:39%; margin-right: 0;}
+    }
+  }
+
+  .list-box{margin-top: 40px;
+    .left{ width:40%;
+      h4 {margin-left: -5%; font-size: 1.2rem; letter-spacing: .8px;}
+    }
+    .sl-hlf {width:60%; margin-right: -5%;}
+    .sl1 {margin-bottom: 0;}
+    .sl2{width:50%; float: right;}
+
+    &.alt {margin-top: 20px;
+      .sl-hlf {@include sec-default();}
+      .sl1, .sl2 {display: inline-block; float: left; width:75%;}
+      .sl2 {float: right; width:25%; margin-top: 60px; margin-right: -3%;}
+    }
   }
 }
 
@@ -1168,21 +1191,20 @@ hr{
   h1 {color:$black; font-size: 1.8rem; letter-spacing: .5px}
   h3{font-size: 1.2rem; font-weight: normal; margin-bottom: 0;}
 
-  // .form-group {width:45%; float: left; margin-top: 25px;
-  //   &.name, &.phone, &.email {display: inline-block; width:31%;}
-  //   &.phone{margin-left: 3%;}
-  //   &.email {float: right;}
+  .form-group {width:45%; float: left; margin-top: 25px;
+    &.name, &.phone {display: inline-block; width:45%;}
+    &.phone{float: right;}
 
-  //   &.location {@include sec-default();
-  //     .form-select, .location-select {display: inline-block; float: left; width: 45%;}
-  //     .location-select {float: right;}
-  //   }
-  // }
+    // &.location {@include sec-default();
+    //   .form-select, .location-select {display: inline-block; float: left; width: 45%;}
+    //   .location-select {float: right;}
+    // }
+  }
 
   .services-layout{
     .inline-show {
       &::before{height:350px;}
-     .il-img{width:70%; float: left; display: inline-block; @include center-block(); width:90%;}
+     .il-img{width:70%; float: left; display: inline-block; @include center-block(); width:90%; border:7px solid $white;}
      .title{margin-right: 0; width:27%; float: right;}
      p{font-size: 17.5px;}
     }
@@ -1208,6 +1230,16 @@ hr{
         .left, .right {padding-right: 20px; border-right: 1px solid rgba($black,.15);}
         .far {float: right; width:25%;}
         .woof-link {@include sec-default(); margin-bottom: 10px;}
+      }
+    }
+
+    .list-box {
+      position: relative; z-index: 0; &::before {@include before(); background-color: $opink; height:35%;}
+      form {background-color: $white;padding:10px 20px; box-shadow: 0px 5px 8px rgba($black, .1);}
+      p.print {margin: 0;}
+      .top {margin-bottom: 25px;
+        h4{letter-spacing: 1px;}
+        hr{margin-top: 14px;}
       }
     }
   }
@@ -1520,105 +1552,8 @@ hr{
 
 
 //*********************************//
-//***** contact and inquiries *****//
+//***** contact *****//
 //*********************************//
-.candidates {
-  h1{margin-bottom: 10px}
-  h3{font-size: 1.3rem; margin-top: 0;}
-
-  .inquiries, .full-contact {@include sec-default();padding: 100px 0;
-
-    .woof-link{background-color: $white; color:$pink; display: block; width:80%; margin-bottom: 20px;}
-    .over, .form-side {display: inline-block; float: left; width:25%;position: relative;z-index: 1;}
-
-    .form-side{width: 74%; float:right;}
-    h3{font-size: 1.3rem; margin-bottom: 0;}
-    p.disclose{margin-top: 5px;}
-
-    form{@include sec-default(); border: $border; box-shadow: 0px 3px 5px rgba($black, .1);
-      position: relative;z-index: 0;
-      &::before {@include before(); background-color: rgba($f9, .93);}
-      &::after {@include before(); z-index: -2; @include sec-bgimage('bday-treats.jpg'); background-size: cover; background-position: top center;}
-
-      .top{width:95%; @include center-block();}
-
-      .form-group {width:45%; display: inline-block; float: left; margin: 0 2.5% 25px;
-        &.submit{@include sec-default;}
-
-        &.terms{
-          input#candidate_terms,label{display: inline-block; float: left; width:5%;}
-          label {width:93%; margin-top: 6px;}
-        }
-      }
-    }
-  }
-
-
-  @include bp(tb) {
-    .inquiries, .full-contact {
-      h3{font-size: 1.1rem;}
-      p{font-size: 15px;}
-    }
-  }
-
-  .inquiries .over {
-    hr{opacity: .6;}
-    .text-link {color: $white;}
-    .contact-info {padding-left: 20px;
-      p {color: $white;@include tshadowl(rgba($black, .2));}
-    }
-  }
-
-  @include bp(tb) {
-    .inquiries {padding-top: 50px;
-      .over {text-align: center; width:75%; @include center-block(); margin-bottom: 20px;
-        &::before {display: none;}
-        hr {width:50%; @include center-block();}
-        .text-link{color: $compt;}
-        .contact-info p{display: inline-block; float: none; width:45%; color: $tbrown; text-shadow:none;}
-      }
-
-      .form-side {@include sec-default();}
-      form {
-        .form-group{
-          &.terms{
-            input#candidate_terms,label{width:3%;}
-            label {width:93%;}
-          }
-
-          &.submit {margin-bottom: 0;}
-        }
-      }
-    }
-  }
-
-  @include bp(tn) {
-    .inquiries {padding: 40px 0 30px;
-      .over {width:95%; margin-bottom: 10px;}
-
-      .form-side {@include sec-default();}
-      form {
-        .form-group{
-          width: 90%; @include center-block(); margin-bottom: 15px;
-
-          &.submit {width: 90%; @include center-block();
-            input{font-size: 15px; margin-top: 20px; width:auto; padding:7px 20px;}
-          }
-        }
-      }
-    }
-  }
-
-  @include bp(ph) {
-    .inquiries { padding-top: 25px;
-      .over {width:98%;
-        .contact-info p{@include sec-default(); margin: 0px 0 20px;}
-      }
-
-      .form-side {@include sec-default();}
-    }
-  }
-}
 
 .location-select {margin-top:15px;}
 
@@ -1662,7 +1597,6 @@ hr{
 
 
 .estates,.vendors,.reporters, .contacts{
-  .page-body {background-color:$f9;}
   h1{font-size: 1.6rem; margin-bottom: 0;}
   p{margin-top:8px;}
 
@@ -1670,7 +1604,9 @@ hr{
   .intro-text{width:35%; margin-top:5%; margin-left:5%;}
   .form-side {float:right; width:55%;}
 
-  p.print{font-size: 14px; color: $red; float: right;}
+  p.print{font-size: 14px; color: $pink;
+    // float: right;
+  }
   .form-group {margin-bottom: 25px; }
   label {color: $black; font-weight: normal; font-size: 15px; letter-spacing: .2px;}
 
@@ -1684,10 +1620,10 @@ hr{
 }
 
 .estates, .vendors{
+  .page-body {background-color:$f9;}
   hr{@include sec-default();}
   h3 {@include sec-default();margin-bottom: 15px; font-size: 1.1rem; font-weight: bold;
     text-transform: uppercase; letter-spacing: 1px; color:$pink; margin-left: -15px;
-    // background-color:$f2; padding:15px;color:$black;
   }
 }
 
@@ -1704,18 +1640,8 @@ hr{
   }
 }
 
-.contacts {
-  .intro-text {width:45%;  margin-top: 0; margin-left: 0;
-    .hd-text, .is-box {width:80%; float: right; margin-right: 6%; margin-bottom: 30px;}
-
-    .is-box {
-      margin-bottom: 0; margin-top: 30px;
-      p{font-size: 16px;}
-    }
-  }
-}
-
 .reporters{
+  .page-body {background-color:$f9;}
   .form-group {width:48%; display: inline-block; float: left;
     &:nth-child(2n+2) {float: right;}
     &.content{@include sec-default();}

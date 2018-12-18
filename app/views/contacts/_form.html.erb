@@ -9,29 +9,30 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <!-- <div class="full top">
+    <div class="full top">
+      <h4>Contact Form</h4>
       <p class="print">* indicates required field</p>
       <div class="clearfix"></div><hr>
-    </div> -->
-
+    </div>
 
     <div class="form-group name">
-      <label>*Full Name:</label><br>
+      <label>* Full Name:</label><br>
       <%= contact.text_field :name %>
     </div>
 
     <div class="form-group phone">
-      <label>*Phone: </label><br>
+      <label>* Phone: </label><br>
       <%= contact.text_field :phone %>
     </div>
 
     <div class="form-group email">
-      <label>*Email: </label><br>
+      <label>* Email: </label><br>
       <%= contact.email_field :email %>
     </div>
+    <div class="clearfix"></div>
 
     <div class="form-group location">
-      <label>*Nearest Location:</label><br>
+      <label>* Nearest Location:</label><br>
       <!-- = render 'shared/location_select' %> -->
       <%= contact.select(:singup) do %>
         <% [['Select State', ''], ['Connecticut', 'Connecticut'], ['Florida', 'Florida'], ['Georgia', 'Georgia'], ['Kansas', 'Kansas'], ['Nevada', 'Nevada'], ['New Jersey', 'NewJersey'], ['New York', 'NewYork'], ['North Carolina', 'NorthCarolina'], ['South Carolina', 'SouthCarolina'], ['Tennesse', 'Tennesse'], ['Texas', 'Texas'], ['Virginia', 'Virginia']].each do |c| -%>
@@ -39,18 +40,19 @@
         <% end %>
       <% end %>
     </div>
+    <div class="clearfix"></div>
 
     <div class="form-group grapevine">
-      <label>*How did you hear about us?</label><br>
       <%= contact.select(:grapevine) do %>
-        <% [['Select Answer', ''], ['Advertising', 'Advertising'], ['Social Media', 'Social Media'], ['Family/Friend', 'Family/Friend'], ['Google', 'Google'], ['Event', 'Event'], ['Other', 'Other']].each do |c| -%>
+        <% [['* How did you hear about us?', ''], ['Advertising', 'Advertising'], ['Social Media', 'Social Media'], ['Family/Friend', 'Family/Friend'], ['Google', 'Google'], ['Event', 'Event'], ['Other', 'Other']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
     </div>
+    <div class="clearfix"></div>
 
     <div class="form-group content">
-      <label>*Questions/Comments:</label><br>
+      <label>* Questions/Comments:</label><br>
       <%= contact.text_area :content %>
     </div>
 
@@ -66,7 +68,6 @@
       <%= contact.submit "Submit", :class=> "send-message" %>
     </div>
 
-    <p class="print">* indicates required field</p>
   </fieldset>
 <% end %>
 

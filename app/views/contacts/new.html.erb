@@ -1,42 +1,6 @@
 <% @page_title = "Contact Us" %>
 <% @page_description = "New Description" %>
 
-
-<div class="full-sec" uk-grid style="display: none;">
-	<div id="text" class="intro-text">
-		<div class="hd-text">
-			<h1><%= @page_title %></h1>
-			<p>If you need to contact a store regarding a grooming appointment, please visit <%= link_to 'our locations page', locations_path, class: 'text-link' %> to contact the store directly.<br class="xl"> For general inquires, comments, and questions, please fill out the form below, or contact our corporate office directly.</p>
-		</div>
-
-		<div class="image"><%= image_tag('woof10.jpg', class: 'img-repsonsive', alt: '') %></div>
-
-		<div class="is-box one">
-			<h3>Contact Information:</h3>
-			<p>Woof Gang Bakery Corporate Office<br>
-			7575 Dr. Phillips Blvd<br>
-			Suite 275<br>
-			Orlando, FL 32819</p>
-
-			<p>P: 407-355-9210<br>
-				F: 877-554-1020</p>
-
-			<p>Monday-Friday: 8am-5pm</p>
-
-			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
-			<%= link_to 'Contact Vendor Relations', vendor_path, class: 'woof-link' %>
-			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
-		</div>
-	</div>
-
-	<div id="form-b" class="form-side">
-    <!-- = render 'form' %> -->
-  </div>
-</div>
-
-
-
-
 <div class="services-layout contactus">
 	<div class="serv-slider inline-show">
 		<div class="inside">
@@ -54,7 +18,7 @@
 	  	<div class="text">
 	  		<div class="left">
 	  			<h1><%= @page_title %></h1>
-					<p>If you need to contact a store regarding a grooming appointment, please visit <%= link_to 'our locations page', locations_path, class: 'text-link' %> to contact the store directly. For general inquires, comments, and questions, please fill out the form below, or contact our corporate office directly.</p>
+					<p>If you need to contact a store regarding a grooming appointment, please visit our <%= link_to 'locations page', locations_path, class: 'text-link' %> to contact the store directly. For general inquires, comments, and questions, please fill out the form below, or contact our corporate office directly.</p>
 	  			 <div class="clearfix"></div>
 	  			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
 	  			<%= link_to 'Contact Vendor Relations', vendor_path, class: 'woof-link' %>
@@ -76,12 +40,12 @@
 		</div>
 	</div>
 
-	<div class="locations-disc">
+<!-- 	<div class="locations-disc">
 		<div class="inside med2">
 		</div>
-	</div>
+	</div> -->
 
-	<div class="list-box alt">
+	<div class="list-box">
 		<div class="inside med2-def">
 		  <%= render 'form' %>
 		</div>

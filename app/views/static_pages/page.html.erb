@@ -1,21 +1,66 @@
-<div class="full-sec">
-	<div class="inside">
-<!--
-		<div class="left">
+<% @page_title = "Wellness ALT" %>
+<% @page_description = "New Description" %>
 
-			<% localist.each do |location| %>
-				<%= link_to location_path(location) do %>
+<div class="services-layout vet">
+	<div class="serv-slider inline-show">
+		<div class="inside lg">
+			<div class="il-slideshow"><%= image_tag('clinic.jpg', class: 'img-responsive ', alt: '') %></div>
+
+			<div class="title"><%= image_tag('wgb-wellness.png', class: 'img-responsive srv-logo', alt: '')%></div>
+		</div>
+	</div>
+
+	<div class="statement">
+		<div class="inside med2-def">
+	  	<div class="text">
+				<h4>Our veterinary clinic locations offer the following services:</h4>
+
+				<ul>
+					<li>Diagnostics</li>
+					<li>Surgery</li>
+					<li class="right">Prescription Pet Foods</li>
+					<li>Microchipping</li>
+					<li>Pharmacy</li>
+					<li class="right">Nutritional counseling</li>
+
+					<li>Laboratory</li>
+					<li>Radiology</li>
+					<li class="right">Parasite Prevention and Control</li>
+					<li>Dental Care</li>
+					<li>Prophylaxis</li>
+					<li class="right">International and interstate health certificates for travel</li>
+					<li>Immunizations</li>
+					<li>Wellness Exams</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="locations-disc">
+		<div class="inside med2">
+			<h4>Veterinary services are offered only at select locations.</h4>
+			<div class="btn-hlf">
+				<%= link_to "View Locations", "/tags/veterinary-clinic", class: 'woof-link' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="list-box alt">
+		<div class="inside med2-def">
+			<div class="sl-hlf">
+				<div class="sl1">
+					<h4>Meet the Doctor</h4>
+					<p>Florida native, Dr. Barry Wander is the franchise owner and head veterinarian of <br class="xl">Woof Gang Bakery, Grooming and Vet Clinic Boca Raton.</p>
+
 					<p>
-						(<%= location.id %>) <%= location.store_name %> - <%= location.state %><br>
-						<%= location.email_address %>
+						Dr. Wander attended the University of Florida, where he earned his bachelor’s degree in animal science, and a master’s degree in animal nutrition.
+						In 1987, he opened Wander Animal Hospital. Dr. Wander has practiced veterinary medicine for 27 years, with a special interest in Dermatological diseases, and Pediatric and Geriatric Medicine.
+						He is dedicated to the local community, and to providing unparalleled service and quality products for customers and their four-legged friends.
 					</p>
-				<% end %>
+				</div>
 
-			<% end %>
-		</div> -->
-
-		<div class="right">
-			<%= render 'shared/location_select' %>
-	  </div>
+				<div class="sl2"><%= image_tag('dogtor.jpg', class: 'img-responsive inside med2', alt: '') %></div>
+			</div>
+		</div>
 	</div>
 </div>
