@@ -6,10 +6,10 @@
 		<div class="inside">
 			<div class="il-img"><%= image_tag('ext-city-market.jpg', class: 'img-responsive', alt: '') %></div>
 
-			<!-- <div class="title">
+			<div class="title">
+				<!-- <h2>Woof Gang Bakery</h2> -->
 				<h1><%= @page_title %></h1>
-				<p>If you need to contact a store regarding a grooming appointment, please visit <%= link_to 'our locations page', locations_path, class: 'text-link' %> to contact the store directly.</p>
-			</div> -->
+			</div>
 		</div>
 	</div>
 
@@ -17,17 +17,19 @@
 		<div class="inside med2-def">
 	  	<div class="text">
 	  		<div class="left">
-	  			<h1><%= @page_title %></h1>
+	  			<!-- <h1><%= @page_title %></h1> -->
 					<p>If you need to contact a store regarding a grooming appointment, please visit our <%= link_to 'locations page', locations_path, class: 'text-link' %> to contact the store directly. For general inquires, comments, and questions, please fill out the form below, or contact our corporate office directly.</p>
-	  			 <div class="clearfix"></div>
-	  			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
-	  			<%= link_to 'Contact Vendor Relations', vendor_path, class: 'woof-link' %>
-	  			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
+	  			<div class="clearfix"></div>
+	  			<div class="btn-row">
+		  			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
+		  			<%= link_to 'Contact Vendor Relations', vendor_path, class: 'woof-link' %>
+		  			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
+		  		</div>
 	  		</div>
 
 	  		<div class="right">
-	  			<p><b>Woof Gang Bakery Corporate:</b><br>
-	  			7575 Dr. Phillips Blvd<br>
+	  			<p><b>Woof Gang Bakery Corporate:</b></p>
+	  			<p>7575 Dr. Phillips Blvd<br>
 	  			Suite 275<br>
 	  			Orlando, FL 32819</p>
 

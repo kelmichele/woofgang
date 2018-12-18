@@ -24,10 +24,11 @@
 	.uk-navbar-dropdown{ padding: 10px 5px 15px 10px; margin-top: 15px;
 		width:250px;
 		// top:168px !important;
-		background-color: $f8;
-		.uk-nav.uk-navbar-dropdown-nav {text-align: left;}
-		li {@include sec-default();
-			a{font-weight: normal; font-size: 14px;}
+		background-color: $f9;
+		.uk-nav.uk-navbar-dropdown-nav {text-align: left;
+			li {@include sec-default();
+				a{font-weight: normal;text-transform: none; font-size: 15px; letter-spacing: .2px;}
+			}
 		}
 	}
 
@@ -55,9 +56,6 @@
 
 		.uk-navbar-nav li{margin: 0 0 0px 4%;
 			a {font-size: 16px; font-family: $pop; text-transform: uppercase; letter-spacing: .6px;}
-		}
-		.uk-navbar-dropdown li {width:100%;
-			a{text-transform: none; font-size: 15px; letter-spacing: 0;}
 		}
 	}
 	&.centered.uk-navbar-sticky.uk-sticky-fixed {padding-top:8px;

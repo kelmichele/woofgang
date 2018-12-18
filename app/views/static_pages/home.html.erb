@@ -60,12 +60,12 @@
 <div class="nlay-logos">
 	<div class="inside one">
 		<div class="over">
-    	<!-- <div class="image"><%= image_tag('corner-img.jpg', class: 'img-responsive')%></div> -->
-    	<div class="image-row">
+    	<div class="image"><%= image_tag('treat-table.jpg', class: 'img-responsive')%></div>
+    	<!-- <div class="image-row">
     		<%= image_tag('pup25.jpg', class: 'img-responsive img1')%>
     		<%= image_tag('bowl-shelf.jpg', class: 'img-responsive img2')%>
     		<%= image_tag('woof6.jpg', class: 'img-responsive img3')%>
-  		</div>
+  		</div> -->
     	<div class="text">
 				<h3>Woof Gang Bakery does it all</h3>
 				<p>We offer a number of services to help keep your pets healthy and spoiled!<br>
@@ -78,25 +78,33 @@
 
 	<div class="full logos">
 		<div class="inside">
-			<%= link_to retail_path, class: 'serve-tl bakery' do %>
-	      <%= image_tag('wg-logo1.png', class: 'img-responsive logo')%>
-			<% end %>
+			<div class="full top">
+				<%= link_to retail_path, class: 'serve-tl bakery' do %>
+		      <%= image_tag('wgbakery.png', class: 'img-responsive logo')%>
+				<% end %>
 
-			<%= link_to grooming_path, class: 'serve-tl grooming' do %>
-	      <%= image_tag('wgb-groom.png', class: 'img-responsive logo')%>
-			<% end %>
+				<%= link_to grooming_path, class: 'serve-tl grooming' do %>
+		      <%= image_tag('wgb-grooming.png', class: 'img-responsive logo')%>
+				<% end %>
 
-			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
-	      <%= image_tag('wgb-wellness.png', class: 'img-responsive logo')%>
-			<% end %>
+				<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
+		      <%= image_tag('wgb-ss.png', class: 'img-responsive logo')%>
+				<% end %>
+			</div>
 
-			<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
-	      <%= image_tag('wgb-daycare.png', class: 'img-responsive logo')%>
-			<% end %>
+			<div class="full btm">
+				<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
+		      <%= image_tag('wgb-clinic.png', class: 'img-responsive logo')%>
+				<% end %>
 
-			<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
-	      <%= image_tag('wgb-daycare.png', class: 'img-responsive logo')%>
-			<% end %>
+				<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
+		      <%= image_tag('wgb-ddaycare.png', class: 'img-responsive logo')%>
+				<% end %>
+
+				<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
+		      <%= image_tag('wgb-resort.png', class: 'img-responsive logo')%>
+				<% end %>
+			</div>
 		</div>
 
 	</div>

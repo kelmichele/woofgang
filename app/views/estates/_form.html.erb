@@ -10,39 +10,41 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <!-- <div class="top">
+    <div class="full top">
       <p class="print">* indicates required field</p>
       <hr>
-    </div> -->
+    </div>
 
     <h3>Your Information</h3>
+    <div class="clearfix"></div>
+
     <div class="form-group fname">
-      <label>*First Name:</label><br>
+      <label>* First Name:</label><br>
       <%= estate.text_field :first_name %>
     </div>
 
     <div class="form-group lname">
-      <label>*Last Name:</label><br>
+      <label>* Last Name:</label><br>
       <%= estate.text_field :last_name %>
     </div>
 
     <div class="form-group company">
-      <label>*Landlord/Company Information:</label><br>
+      <label>* Landlord/Company Information:</label><br>
       <%= estate.text_field :company %>
     </div>
 
     <div class="form-group phone">
-      <label>*Phone: </label><br>
+      <label>* Phone: </label><br>
       <%= estate.text_field :phone %>
     </div>
 
     <div class="form-group email">
-      <label>*Email: </label><br>
+      <label>* Email: </label><br>
       <%= estate.email_field :email %>
     </div>
 
     <div class="form-group address">
-      <label>*Street Address:</label><br>
+      <label>* Street Address:</label><br>
       <%= estate.text_field :address %>
     </div>
 
@@ -52,28 +54,30 @@
     </div>
 
     <div class="form-group city">
-      <label>*City:</label><br>
+      <label>* City:</label><br>
       <%= estate.text_field :city %>
     </div>
 
     <div class="form-group state">
-      <label>*State:</label><br>
+      <label>* State:</label><br>
       <%= estate.text_field :state %>
     </div>
 
     <div class="form-group zip">
-      <label>*Zip:</label><br>
+      <label>* Zip:</label><br>
       <%= estate.text_field :zip %>
     </div>
 
     <div class="form-group county">
-      <label>*County:</label><br>
+      <label>* County:</label><br>
       <%= estate.text_field :county %>
     </div>
 
     <h3>Property Details</h3>
+    <div class="clearfix"></div>
+
     <div class="form-group address">
-      <label>*Street Address:</label><br>
+      <label>* Street Address:</label><br>
       <%= estate.text_field :est_address %>
     </div>
 
@@ -83,40 +87,40 @@
     </div>
 
     <div class="form-group est_city">
-      <label>*City:</label><br>
+      <label>* City:</label><br>
       <%= estate.text_field :est_city %>
     </div>
 
     <div class="form-group est_state">
-      <label>*State:</label><br>
+      <label>* State:</label><br>
       <%= estate.text_field :est_state %>
     </div>
 
     <div class="form-group est_zip">
-      <label>*Zip:</label><br>
+      <label>* Zip:</label><br>
       <%= estate.text_field :est_zip %>
     </div>
 
     <div class="form-group est_county">
-      <label>*County:</label><br>
+      <label>* County:</label><br>
       <%= estate.text_field :est_county %>
     </div>
 
     <div class="form-group est_develop">
-      <label>*Located In (i.e. shopping center name, development, community):</label><br>
+      <label>* Located In (i.e. shopping center name, development, community):</label><br>
       <%= estate.text_field :est_develop %>
     </div>
 
     <div class="form-group est_footage">
-      <label>*Site Square Footage:</label><br>
+      <label>* Site Square Footage:</label><br>
       <%= estate.text_field :est_footage %>
     </div>
 
     <div class="form-group est_type">
-      <!-- <label>*Type of Property:</label><br> -->
+      <!-- <label>* Type of Property:</label><br> -->
       <%= estate.select(:est_type) do %>
         <!--other-->
-        <% [['*Type of Property:', ''], ['Downtown', 'Downtown'], ['Freestanding', 'Freestanding'], ['Mall', 'Mall'], ['Shopping Center End Cap', 'Shopping Center End Cap'], ['Shopping Center In-Line', 'Shopping Center In-Line'], ['Other', 'Other']].each do |c| -%>
+        <% [['* Type of Property:', ''], ['Downtown', 'Downtown'], ['Freestanding', 'Freestanding'], ['Mall', 'Mall'], ['Shopping Center End Cap', 'Shopping Center End Cap'], ['Shopping Center In-Line', 'Shopping Center In-Line'], ['Other', 'Other']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
@@ -128,15 +132,17 @@
     </div>
 
     <div class="form-group est_timeframe">
-      <!-- <label>*When will property be available?</label><br> -->
+      <!-- <label>* When will property be available?</label><br> -->
       <%= estate.select(:est_timeframe) do %>
-        <% [['*When will property be available?', ''], ['Immediately', 'Immediately'], ['Within 1 Month', 'Within 1 Month'], ['2-5 months', '2-5 months'], ['More than 6 months', 'More than 6 months']].each do |c| -%>
+        <% [['* When will property be available?', ''], ['Immediately', 'Immediately'], ['Within 1 Month', 'Within 1 Month'], ['2-5 months', '2-5 months'], ['More than 6 months', 'More than 6 months']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
     </div>
 
     <h3>Additional</h3>
+    <div class="clearfix"></div>
+
     <div class="form-group grapevine">
       <!-- <label>Where did you find our web address?</label><br> -->
       <%= estate.select(:grapevine) do %>
@@ -160,7 +166,6 @@
 
     <div class="form-group submit">
       <%= estate.submit "Submit", :class=> "send-message" %>
-      <p class="print">* indicates required field</p>
     </div>
   </fieldset>
 <% end %>

@@ -312,11 +312,27 @@ br.tn {display: none;}
 
 .approval-process {
 	.franchise-layout.fl2 {
-		.col {
-			.full, .image-nrw {
-				width:60%;
-				&.two, &.four {width:35%;}
+		// .col {
+		// 	.full, .image-nrw {
+		// 		width:60%;
+		// 		&.two, &.four {width:35%;}
+		// 	}
+		// }
+
+		.col {padding-bottom: 70px;
+			.row, .full {@include sec-default();}
+			.full{margin-bottom: 30px;}
+			.list, .image {display: inline-block; float: left; width:52%;}
+			.image{width:50%; float: right; margin-right: -7%; margin-top: 8%;}
+
+			.row.top {margin-bottom: 30px;
+				.image {float: left; width:55%; margin: 0;}
+				.list {float: right; width:40%; margin-top: 6%;}
 			}
+		}
+
+		.image-row {@include sec-default();
+			.img1,.img2,.img3{display: inline-block; float: left; width:49%;}
 		}
 
 		@include bp(tn) {
@@ -362,6 +378,7 @@ br.tn {display: none;}
 	h4{margin-bottom: 0; font-weight: bold; letter-spacing: .3px; color:$pink;}
   p.print{font-size: 14px; color: $pink; margin-top: 5px;}
 	label {color: $black; font-weight: normal; font-size: 15px; letter-spacing: .1px;}
+	p.disclose{margin:7px 0 10px;}
 
   input, textarea, select {border:0;color: $black; font-size: 14px; background-color: transparent;}
   select {font-family: $body; color:$black; margin-bottom: 15px;}
@@ -377,12 +394,16 @@ br.tn {display: none;}
 
   .franchise-layout {
   	.landing-layout .box{
-	  	.text {width:43%; margin-left: -3%; margin-top: 50px;}
+	  	.text {width:40%; margin-top: 50px;}
 	  	.image{width:60%; margin-left: 0;}
-	  	.img1{width:99%;}
+	  	.img1{width:100%; border:0;}
 			.img2 {margin-top: -28%; margin-left: -24%}
 	  	.contact-info{padding-left: 15px;}
-	  	p{font-size: 1.15rem; margin: 0 0 10px;}
+	  	p{font-size: 1.13rem; margin: 0 0 10px;}
+
+	  	.text {width:44%;  margin-top: 60px;}
+	  	.image {width:58%;}
+			.img2 {margin-top: -28%; margin-left: -34%; width:60%;}
 	  }
 
 	  .content-layout{

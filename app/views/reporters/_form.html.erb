@@ -10,34 +10,33 @@
       <div class="notice"><%= flash[:alert] %></div>
     <% end %>
 
-    <!-- <div class="top">
+    <div class="full top">
       <p class="print">* indicates required field</p>
       <hr>
-    </div> -->
-
+    </div>
 
     <div class="form-group name">
-      <label>*First Name:</label><br>
+      <label>* First Name:</label><br>
       <%= reporter.text_field :first_name %>
     </div>
 
     <div class="form-group name">
-      <label>*Last Name:</label><br>
+      <label>* Last Name:</label><br>
       <%= reporter.text_field :last_name %>
     </div>
 
     <div class="form-group phone">
-      <label>*Phone: </label><br>
+      <label>* Phone: </label><br>
       <%= reporter.text_field :phone %>
     </div>
 
     <div class="form-group email">
-      <label>*Email: </label><br>
+      <label>* Email: </label><br>
       <%= reporter.email_field :email %>
     </div>
 
     <div class="form-group location">
-      <label>*Media Outlet:</label><br>
+      <label>* Media Outlet:</label><br>
       <%= reporter.text_field :outlet %>
     </div>
 
@@ -48,7 +47,7 @@
 
     <div class="form-group content">
       <!-- (-500 characters max) -->
-      <label>*Your Question:</label><br>
+      <label>* Your Question:</label><br>
       <%= reporter.text_area :question %>
     </div>
 
@@ -62,7 +61,6 @@
 
     <div class="form-group submit">
       <%= reporter.submit "Submit", :class=> "send-message" %>
-      <p class="print">* indicates required field</p>
     </div>
   </fieldset>
 <% end %>
