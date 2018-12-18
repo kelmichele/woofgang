@@ -323,10 +323,10 @@ br.tn {display: none;}
 			.row, .full {@include sec-default();}
 			.full{margin-bottom: 30px;}
 			.list, .image {display: inline-block; float: left; width:52%;}
-			.image{width:50%; float: right; margin-right: -7%; margin-top: 8%;}
+			.image{width:52%; float: right; margin-right: -10%; margin-top: 10%;}
 
-			.row.top {margin-bottom: 30px;
-				.image {float: left; width:55%; margin: 0;}
+			.row.top {margin-bottom: 0px;
+				.image {float: left; width:54%; margin: 0;}
 				.list {float: right; width:40%; margin-top: 6%;}
 			}
 		}
