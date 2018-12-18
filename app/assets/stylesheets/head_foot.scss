@@ -23,7 +23,7 @@
 
 	.uk-navbar-dropdown{ padding: 10px 5px 15px 10px; margin-top: 15px;
 		width:250px;
-		top:168px !important;
+		// top:168px !important;
 		background-color: $f8;
 		.uk-nav.uk-navbar-dropdown-nav {text-align: left;}
 		li {@include sec-default();
