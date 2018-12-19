@@ -61,8 +61,8 @@ document.addEventListener("turbolinks:load", function() {
 
       var crd = position.coords;
 
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
+      console.log(position.coords.latitude);
+      console.log(position.coords.longitude);
 
     },
     error: function(error) {
