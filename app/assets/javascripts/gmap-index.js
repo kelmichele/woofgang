@@ -46,4 +46,33 @@ document.addEventListener("turbolinks:load", function() {
     Turbolinks.visit('/locations?l=' + position);
   });
 
+
+  GMaps.geolocate({
+    success: function(position) {
+      // map.setCenter(position.coords.latitude, position.coords.longitude);
+      // map.setZoom(10)
+
+      var map = new GMaps({
+        div: '#map',
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      });
+      window.map = map;
+
+      var crd = position.coords;
+
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+
+    },
+    error: function(error) {
+      alert('Geolocation failed: '+ error.message);
+    },
+    not_supported: function() {
+      alert("Your browser does not support geolocation");
+    },
+    always: function() {
+    }
+  });
 });
+

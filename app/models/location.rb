@@ -15,7 +15,7 @@ class Location < ApplicationRecord
   validates :phone, presence: true
   validates :email_address, presence: true
 
-  default_scope -> { order(state: :asc)}
+  # default_scope -> { order(state: :asc)}
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings

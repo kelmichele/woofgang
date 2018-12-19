@@ -1618,10 +1618,12 @@ hr{
     label.full{@include sec-default(); margin-top: 0; margin-bottom: 20px;}
   }
   .form-group.category br{line-height: 2.2em;}
+  p.print{margin-top: 0;}
+  fieldset {margin: 0px; padding-bottom: 0}
 
-  .intro-text {width:45%; height:150vh; margin-top: 4%; margin-left: 0;
-    .hd-text {width:60%; float: right; margin-right: 6%; margin-bottom: 50px;}
-  }
+  // .intro-text {width:45%; height:150vh; margin-top: 4%; margin-left: 0;
+  //   .hd-text {width:60%; float: right; margin-right: 6%; margin-bottom: 50px;}
+  // }
 }
 
 .reporters{
@@ -1636,7 +1638,7 @@ hr{
   .full.top{margin-bottom: 30px;}
 }
 
-.estates, .reporters {
+.estates, .reporters, .vendors {
   h1{margin-bottom: 0; color:$pink;}
   p {margin-top: 5px;}
   .full.top {

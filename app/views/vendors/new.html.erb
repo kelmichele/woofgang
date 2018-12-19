@@ -2,24 +2,23 @@
 <% @page_description = "New Description" %>
 
 
-<div class="full-sec" uk-grid>
-	<!-- <div class="inside"> -->
-
-		<div id="text" class="intro-text">
-			<div class="full intext" style="z-index: 90;" uk-sticky="offset: 200; bottom: #text;">
-				<div class="hd-text">
-					<h1><%= @page_title %></h1>
-					<p class="bmargin0">Got a great product? Submit details on your product to Woof Gang Bakery Vendor Relations.</p>
-		      <p class="print">*  indicates required field</p>
-				</div>
-
-				<div class="image"><%= image_tag('woof10.jpg', class: 'img-repsonsive', alt: '') %></div>
+<div class="full-sec" id="it-wrap" uk-grid>
+	<div class="intro-text">
+		<div class="full in-itext" style="z-index: 90; padding-bottom:0px;" uk-sticky=" bottom: #it-wrap;"><%= image_tag('appa.jpg', class: 'img-responsive img1', alt: '') %></div>
+		<!-- <div class="full intext" style="z-index: 90;" uk-sticky="offset: 200; bottom: #text;"> -->
+			<!-- <div class="hd-text">
+				<h1><%= @page_title %></h1>
+				<p class="bmargin0">Got a great product? Submit details on your product to Woof Gang Bakery Vendor Relations.</p>
+	      <p class="print">*  indicates required field</p>
 			</div>
-		</div>
+ -->
+			<!-- <div class="image"><%= image_tag('woof10.jpg', class: 'img-repsonsive', alt: '') %></div> -->
+		<!-- </div> -->
+	</div>
 
-		<div id="form-b" class="form-side">
-	    <%= render 'form' %>
-	  </div>
-	<!-- </div> -->
+	<div id="form-b" class="form-side">
+		<h1><%= @page_title %></h1>
+		<p class="bmargin0">Got a great product? Submit details on your product to Woof Gang Bakery Vendor Relations.</p>
+	  <%= render 'form' %>
+	</div>
 </div>
-

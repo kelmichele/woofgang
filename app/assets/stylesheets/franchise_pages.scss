@@ -311,28 +311,23 @@ br.tn {display: none;}
 }
 
 .approval-process {
-	.franchise-layout.fl2 {
-		// .col {
-		// 	.full, .image-nrw {
-		// 		width:60%;
-		// 		&.two, &.four {width:35%;}
-		// 	}
-		// }
-
-		.col {padding-bottom: 70px;
-			.row, .full {@include sec-default();}
-			.full{margin-bottom: 30px;}
-			.list, .image {display: inline-block; float: left; width:52%;}
-			.image{width:52%; float: right; margin-right: -10%; margin-top: 10%;}
-
-			.row.top {margin-bottom: 0px;
-				.image {float: left; width:54%; margin: 0;}
-				.list {float: right; width:40%; margin-top: 6%;}
+	.franchise-layout.fl2 { padding-bottom: 50px;
+		.col {
+			h4{font-weight: 600;}
+			.full, .image-nrw {
+				width:60%;
+				&.two, &.four {width:35%;}
 			}
 		}
 
-		.image-row {@include sec-default();
-			.img1,.img2,.img3{display: inline-block; float: left; width:49%;}
+		.image-row {@include sec-default(); text-align: center;
+			.img1,.img2,.img3{display: inline-block; float: none;
+				// width:49.7%;
+				// width:33%; margin-left: .5%;
+				height:275px; height:300px;
+			}
+			.img1 {margin-left: 0;}
+			// .img2{float: right;}
 		}
 
 		@include bp(tn) {
