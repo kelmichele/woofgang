@@ -17,7 +17,7 @@ class Location < ApplicationRecord
 
   default_scope -> { order(state: :asc)}
 
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
   def ntitle

@@ -106,23 +106,6 @@ hr{
   }
 }
 
-.pup-header {@include sec-default(); background-color: rgba($pink, .5);
-  .full{@include sec-bgimage('peeking.png'); background-size: 50%; background-position: bottom center;
-    padding-top:15px; background-color: $white;
-    height:250px;
-    position: relative;z-index: 0;&::before{@include before(); background-color: rgba($pink, .5);}
-  }
-  .tbox {width:50%;text-align: center; @include center-block();}
-
-  h1{margin-bottom: 0px; color:$white; @include tshadowl(rgba($black, .2)); text-transform: uppercase;letter-spacing: 1px;}
-  h2{margin-top:0; font-size:1.5rem; line-height: 1.1em;}
-
-  &.inline {
-    .full {background-position: bottom right; height:auto; padding:90px 0 30px;}
-    .tbox{float: left;}
-  }
-}
-
 #map {height:500px;}
 
 .uk-tab-bottom.uk-tab {margin-left:0;
@@ -347,13 +330,14 @@ hr{
 //*********** locations ***********//
 //*********************************//
 .locations {
-  .pup-header {
-    background-color: rgba($compb,.9);
-    .full {background-image: none;padding: 20px 0 15px;}
-    .full::before {background-color: rgba($compb,.9);}
-    .tbox {@include sec-default();}
+  // .pup-header
+  .ipage-header {
+    background-color: darken($opink,1%); padding:25px 0 20px;
+    h1{margin-bottom: 0px; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
+    h2{margin-top:6px; font-size:1.25rem; line-height: 1.1em;}
 
-    button.wl-uk{position:absolute; left: 80%; width:15%; margin-top: 60px;
+    button.wl-uk{position:absolute; left: 80%; width:15%;
+      margin-top: -50px;
       background-color: $white; color:$pink; border:1px solid rgba($pink, .3); text-shadow: none;
     }
     .uk-dropdown {width:45%; min-width: auto;background-color: $f9;
@@ -367,7 +351,6 @@ hr{
         hr{margin-top: 10px;}
       }
     }
-    h2{font-size: 1.3rem;}
   }
 
   .tag-icon {display: inline-block; float: left; width:30px;
