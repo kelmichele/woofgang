@@ -120,8 +120,6 @@ hr{
   a{font-size: 14px;}
 }
 
-
-
 .page {
   .left, .right {display: inline-block; width:45%; float: left;}
   .right {float: right;}
@@ -167,7 +165,19 @@ hr{
     .image, .text {display: inline-block; float: left; width:50%;}
     .text {width:39%; margin-left: 5%; padding: 30px 0 0 0;}
     .image{float: right;}
+
     p{color:$white;@include tshadowl(rgba($black,.4)); font-weight: 400;}
+
+
+    // 12/20
+    padding-bottom: 70px; &::before, &::after {height: 100%;}
+    &::before{@include sec-bgimage('franchising1.jpg'); background-position: center center;}
+    .image {width:54%;}
+    .img1, .img2 {display: inline-block; float: left;
+      // width:49.8%;
+      height:252.3px;
+    }
+    .img2 {float: right;}
   }
 
   .full.franch {padding:90px 0;
@@ -181,37 +191,30 @@ hr{
   .banner-locations{@include sec-default(); padding: 20px 0; text-align: center;
     @include sec-bgimage('treat-table.jpg');background-position: center center;
     position: relative; z-index: 0;
-    &::before {@include after(); background-color: rgba($pink7, .8);}
+    &::before {@include after(); background-color: rgba($pink7, .9);}
 
     h4,.btn-hlf {display: inline-block; float: left; width:70%;}
-    h4{font-size: 1.8rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .4)); margin-bottom: 0;
-    }
+    h4{font-size: 1.8rem; font-weight: bold; color: $white; @include tshadowl(rgba($black, .4)); margin-bottom: 0;}
     .btn-hlf {float: right; width:30%;margin-top: 10px;}
     .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
-
-    &.dark{
-      &::before{background-color:rgba($tbrown,.89);}
-      .woof-link {color:$pink;}
-    }
   }
 
   .nlay-logos {@include sec-default(); padding:60px 0; text-align: center;
-    h3{margin-top: 0;}
-
     .over {width:85%; @include center-block();margin-bottom: 20px;}
-    .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; margin-top: -40px; position: relative;
-      box-shadow: 0px -90px 10px rgba($black,.1);
+    .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; position: relative;
+      margin-top: -40px; box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
+      // margin-top: -60px; box-shadow: 0px -15px 15px rgba($black,.1); h3{margin: 10px 0; font-size: 1.5rem;}
     }
 
     .top {margin-bottom: 20px;}
-    .logo {width:265px;@include center-block();}
+    .logo{@include center-block(); height:80px;}
     .logos{text-align: center;}
     .serve-tl{display: inline-block; float: none; width:30%; margin: 10px 0 10px 3%;}
 
 
     .image {max-height:430px; overflow: hidden;}
     .image-row {text-align: center;
-      .img1, .img2, .img3 {display: inline-block; float: none; height:350px;}
+      .img1, .img2, .img3 {display: inline-block; float: none; height:350px; height:300px;}
       // .img2 {margin-left: 1%;}
       // .img1, .img3{ width:22%; }
       // .img2{width:54%;}
