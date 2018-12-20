@@ -8,20 +8,20 @@ class ContactsController < ApplicationController
     @contact = Contact.new
 
     @locations = Location.all
-    @ct = Location.where(state: "CT")
-    @fl = Location.where(state: "FL")
-    @ga = Location.where(state: "GA")
-    @ks = Location.where(state: "KS")
-    @nc = Location.where(state: "NC")
-    @nj = Location.where(state: "NJ")
-    @nv = Location.where(state: "NV")
-    @ny = Location.where(state: "NY")
-    @sc = Location.where(state: "SC")
-    @tn = Location.where(state: "TN")
-    @tx = Location.where(state: "TX")
-    @va = Location.where(state: "VA")
+    @ct = Location.where(state: "CT").reorder('store_name ASC')
+    @fl = Location.where(state: "FL").reorder('store_name ASC')
+    @ga = Location.where(state: "GA").reorder('store_name ASC')
+    @ks = Location.where(state: "KS").reorder('store_name ASC')
+    @nc = Location.where(state: "NC").reorder('store_name ASC')
+    @nj = Location.where(state: "NJ").reorder('store_name ASC')
+    @nv = Location.where(state: "NV").reorder('store_name ASC')
+    @ny = Location.where(state: "NY").reorder('store_name ASC')
+    @sc = Location.where(state: "SC").reorder('store_name ASC')
+    @tn = Location.where(state: "TN").reorder('store_name ASC')
+    @tx = Location.where(state: "TX").reorder('store_name ASC')
+    @va = Location.where(state: "VA").reorder('store_name ASC')
 
-    @choices =  ['Connecticut', 'Florida', 'Georgia', 'Kansas', 'Nevada', 'New Jersey', 'New York', 'North Carolina', 'South Carolina', 'Tennesse', 'Texas', 'Virginia']
+    @states =  ['Connecticut', 'Florida', 'Georgia', 'Kansas', 'Nevada', 'New Jersey', 'New York', 'North Carolina', 'South Carolina', 'Tennesse', 'Texas', 'Virginia']
   end
 
   def create

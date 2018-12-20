@@ -1171,13 +1171,13 @@ hr{
   h3{font-size: 1.2rem; font-weight: normal; margin-bottom: 0;}
 
   .form-group {width:45%; float: left; margin-top: 25px;
-    &.name, &.phone {display: inline-block; width:45%;}
-    &.phone{float: right;}
+    &.name, &.phone, &.email, &.grapevine {display: inline-block; width:45%;}
+    &.phone, &.grapevine{float: right;}
 
-    // &.location {@include sec-default();
-    //   .form-select, .location-select {display: inline-block; float: left; width: 45%;}
-    //   .location-select {float: right;}
-    // }
+    &.location {@include sec-default();
+      #contact_singup, .location-select {display: inline-block; float: left; width: 45%;}
+      .location-select {float: right; margin-top: 0;}
+    }
   }
 
   .services-layout{

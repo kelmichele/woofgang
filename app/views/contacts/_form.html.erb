@@ -29,18 +29,6 @@
       <label>* Email: </label><br>
       <%= contact.email_field :email %>
     </div>
-    <div class="clearfix"></div>
-
-    <div class="form-group location">
-      <label>* Nearest Location:</label><br>
-      <!-- = render 'shared/location_select' %> -->
-      <%= contact.select(:singup) do %>
-        <% [['Select State', ''], ['Connecticut', 'Connecticut'], ['Florida', 'Florida'], ['Georgia', 'Georgia'], ['Kansas', 'Kansas'], ['Nevada', 'Nevada'], ['New Jersey', 'NewJersey'], ['New York', 'NewYork'], ['North Carolina', 'NorthCarolina'], ['South Carolina', 'SouthCarolina'], ['Tennesse', 'Tennesse'], ['Texas', 'Texas'], ['Virginia', 'Virginia']].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="clearfix"></div>
 
     <div class="form-group grapevine">
       <%= contact.select(:grapevine) do %>
@@ -51,11 +39,29 @@
     </div>
     <div class="clearfix"></div>
 
+    <div class="form-group location">
+      <label>* Nearest Location:</label><br>
+      <%= contact.select(:singup) do %>
+        <% [['Select State', ''], ['Connecticut', 'CT'], ['Florida', 'FL'], ['Georgia', 'GA'], ['Kansas', 'KS'], ['Nevada', 'NV'], ['New Jersey', 'NJ'], ['New York', 'NY'], ['North Carolina', 'NC'], ['South Carolina', 'SC'], ['Tennesse', 'TN'], ['Texas', 'TX'], ['Virginia', 'VA']].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+
+
+      <div id="chosen" class="location-select">
+        <% grouped_options = ['Connecticut', ['Select Store', options_from_collection_for_select(@ct.each, :title_state, :ntitle)]], ['Florida', ['Select Store', options_from_collection_for_select(@fl.each, :title_state, :ntitle)]],['Georgia', ['Select Store', options_from_collection_for_select(@ga.each, :title_state, :ntitle)]], ['Kansas', ['Select Store', options_from_collection_for_select(@ks.each, :title_state, :ntitle)]], ['Nevada', ['Select Store', options_from_collection_for_select(@nv.each, :title_state, :ntitle)]], ['New Jersey', ['Select Store', options_from_collection_for_select(@nj.each, :title_state, :ntitle)]], ['New York', ['Select Store', options_from_collection_for_select(@ny.each, :title_state, :ntitle)]], ['North Carolina', ['Select Store', options_from_collection_for_select(@nc.each, :title_state, :ntitle)]], ['South Carolina', ['Select Store', options_from_collection_for_select(@sc.each, :title_state, :ntitle)]], ['Tennesse', ['Select Store', options_from_collection_for_select(@tn.each, :title_state, :ntitle)]], ['Texas', ['Select Store', options_from_collection_for_select(@tx.each, :title_state, :ntitle)]], ['Virginia', ['Select Store', options_from_collection_for_select(@va.each, :title_state, :ntitle)]]%>
+
+        <%= contact.select(:location) do %>
+          <%= grouped_options_for_select(grouped_options) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
     <div class="form-group content">
       <label>* Questions/Comments:</label><br>
       <%= contact.text_area :content %>
     </div>
-
 
     <div class="form-group honey">
       <%= label_tag :honey %>
@@ -63,12 +69,9 @@
       <span class="help">Do not fill in this field. It is an anti-spam measure.</span>
     </div>
 
-
     <div class="form-group submit">
       <%= contact.submit "Submit", :class=> "send-message" %>
     </div>
 
   </fieldset>
 <% end %>
-
-
