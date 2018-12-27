@@ -1,5 +1,5 @@
 jQuery ->
-	# $('#contact_location').parent().hide()
+	$('#contact_location').parent().hide()
 	locations = $('#contact_location').html()
 	$('#contact_singup').change ->
 		state = $('#contact_singup :selected').text()

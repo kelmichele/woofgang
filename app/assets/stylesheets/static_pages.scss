@@ -339,10 +339,7 @@ hr{
     h1{margin-bottom: 0px; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
     h2{margin-top:6px; font-size:1.25rem; line-height: 1.1em;}
 
-    button.wl-uk{position:absolute; left: 80%; width:15%;
-      margin-top: -50px;
-      background-color: $white; color:$pink; border:1px solid rgba($pink, .3); text-shadow: none;
-    }
+    button.wl-uk{position:absolute; left: 80%; width:15%;margin-top: -50px;background-color: $pink; color:$white; border:1px solid rgba($pink, .3);}
     .uk-dropdown {width:45%; min-width: auto;background-color: $f9;
       .manu, .import {display: inline-block; width:40%; float:left;}
       .woof-link {@include sec-default(); margin: 6px 0;}
@@ -440,7 +437,7 @@ hr{
 
   .full.listings {margin-top: 50px;}
   .map {@include sec-default(); margin-bottom: 20px;}
-  #map {height:370px;margin-bottom: 6px;}
+  #map {height:450px;margin-bottom: 6px;}
   .gm-style-iw {
     p{font-size: 14px; margin:8px 0;}
     p.email{margin-bottom: 12px;}
@@ -1167,20 +1164,13 @@ hr{
 }
 
 .contacts {
-  h1 {color:$black; font-size: 1.8rem; letter-spacing: .5px}
-  h3{font-size: 1.2rem; font-weight: normal; margin-bottom: 0;}
-
-  .form-group {width:45%; float: left; margin-top: 25px;
-    &.name, &.phone, &.email, &.grapevine {display: inline-block; width:45%;}
-    &.phone, &.grapevine{float: right;}
-
-    &.location {@include sec-default();
-      #contact_singup, .location-select {display: inline-block; float: left; width: 45%;}
-      .location-select {float: right; margin-top: 0;}
-    }
+  .form-group {display: inline-block; width:45%; float: left; margin-top: 25px;
+    &.phone, &.grapevine, &.location{float: right;}
   }
 
   .services-layout{
+    // h1 {color:$black; font-size: 1.8rem; letter-spacing: .5px}
+    h3{font-size: 1.2rem; font-weight: normal; margin-bottom: 0;}
     .inline-show {
       &::before{height:350px;}
      .il-img{ @include center-block(); width:90%; border:7px solid $white;}
@@ -1190,7 +1180,7 @@ hr{
 
      .il-img{width:78%; float: left; display: inline-block; }
      .title{margin-right: -1%; width:20%; float: right;
-      h1{color:$brown; letter-spacing: 1.1px; @include tshadowl(rgba($black, .1)); }
+      h1{color:$brown; letter-spacing: .5px; text-transform: none;}
      }
     }
 
@@ -1211,14 +1201,8 @@ hr{
         p b {color: $pink;}
       }
 
-      &.s2 {
-        .left, .far, .right {display: inline-block; float: left;}
-        .left {width:40%;}
-        .right {width: 33%; margin-left: 1%; padding-left: 20px;}
-        .left, .right {padding-right: 20px; border-right: 1px solid rgba($black,.15);}
-        .far {float: right; width:25%;}
-        .woof-link {@include sec-default(); margin-bottom: 10px;}
-      }
+      .left{float: right;border-right: 0; padding-right: 0; border-left: 1px solid rgba($black,.15); padding-left: 20px;}
+      .right {float: left;}
     }
 
     .list-box {

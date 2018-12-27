@@ -35,7 +35,6 @@
 
 
 <div class="full-search">
-	<!-- <div class="inside lg"> -->
 	<div class="full listings">
 		<div class="search-sec">
 			<div class="inside lg">
@@ -68,9 +67,6 @@
 		</div>
 
 		<div class="map">
-			<!-- <p><a onclick="geoFindMe()">Show my location</a></p>
-			<div id="out"></div> -->
-
 			<%= render 'shared/map' %>
 		</div>
 
@@ -86,7 +82,6 @@
 							<% else %>
 								<%= link_to location_path(location) do %>
 									<div class="cat name">
-										<!-- Woof Gang Bakery & Grooming  -->
 										<%= location.city.titleize %></div>
 								<% end %>
 							<% end %>
