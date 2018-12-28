@@ -1,0 +1,54 @@
+<%= tag.div id: "locations-list", data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } do %>
+	<table>
+		<% @locations.each do |location| %>
+			<div class="location-bx">
+				<% if location.store_name %>
+					<%= link_to location_path(location) do %>
+						<div class="cat name"><%= location.ntitle.titleize %></div>
+					<% end %>
+				<% else %>
+					<%= link_to location_path(location) do %>
+						<div class="cat name">
+							<%= location.city.titleize %></div>
+					<% end %>
+				<% end %>
+
+				<div class="cat address">
+					<%= location.street_address_one %><% if location.street_address_two %>,
+					<span class="addr"><%= location.street_address_two.titleize %></span>
+					<% end %>
+					<br><%= location.city %>, <%= location.state %> <%= location.zip %>
+				</div>
+
+				<div class="cat phone"><a href="tel:<%= location.phone %>"><%= number_to_phone(location.phone, delimiter: '-') %></a></div>
+
+				<div class="cat email">
+					<a class="fw-mail" href="mailto:<%= location.email_address %>"><%= location.email_address %></a>
+					<a class="sm-mail" href="mailto:<%= location.email_address %>"><span  uk-icon="icon: mail;"></span></a>
+				</div>
+
+				<% if location.tags.count > 0 %>
+					<div class="cat tags">
+						<span>Store Services:</span><br>
+						<% location.tag_split.each do |tag| %>
+							<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+					</div>
+				<% end %>
+
+				<div class="btn-row">
+					<%= link_to "Store Details", location_path(location), class: 'woof-link' %>
+					<a href="<%= location.direct_link %>" target="_blank" class="woof-link dir">Directions </a>
+				</div>
+
+
+    		<% if user_signed_in? && current_user.admin? %>
+					<% if location.longitude == nil %><div class="actions">**<small>Coordinates Missing**</small></div><% end %>
+				<% end %>
+			</div>
+		<% end %>
+	</table>
+<% end %>
+<%= will_paginate @locations, remote: true %>

@@ -3,20 +3,22 @@ class LocationsController < ApplicationController
 
 	def index
 		@locations = if params[:l]
+			# JUST FOR REDO SEARCH
 	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
 	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
 	    distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
 	    box      = Geocoder::Calculations.bounding_box(center, distance)
-	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 5)
+	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 15)
 
 	  elsif params[:near]
-	    Location.near(params[:near], 100).paginate(:page => params[:page], :per_page => 6)
+	  	# for type search
+	    Location.near(params[:near], 600).paginate(:page => params[:page], :per_page => 5)
 
 	  elsif params[:tag]
-	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
+	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
 
 	  else
-	    Location.all.paginate(:page => params[:page], :per_page => 12)
+	    Location.all.paginate(:page => params[:page], :per_page => 4)
 		end
 
 		@tags = Tag.all
