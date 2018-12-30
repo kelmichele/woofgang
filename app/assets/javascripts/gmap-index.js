@@ -21,6 +21,7 @@ window.addMarkers = function addMarkers() {
     }
   });
 
+  geoFindMe();
   setSafeBounds(element);
 }
 
@@ -38,23 +39,41 @@ function setSafeBounds(element) {
   }
 }
 
-document.addEventListener("turbolinks:load", function() {
-    map = window.map = new GMaps({
-      div: '#map',
-      lat: 35.941764,
-      lng: -86.922942,
-      zoom: 7
-    });
 
+function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    console.log("Geolocation is not supported by your browser");
+    return;
+  }
+
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    console.log('Latitude is ' + latitude + ', Longitude is ' + longitude);
+  }
+
+  function error() {
+    console.log("Unable to retrieve your location");
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+
+
+
+
+document.addEventListener("turbolinks:load", function() {
+  map = window.map = new GMaps({
+    div: '#map',
+    lat: 35.941764,
+    lng: -86.922942,
+    zoom: 6
+  });
 
   addMarkers();
-
-  // document.querySelector("#redo-search").addEventListener("click", function(e) {
-  //   e.preventDefault();
-  //   var bounds = map.getBounds();
-  //   var station = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
-  //   Turbolinks.visit('/locations?l=' + station);
-  // });
 
   map.addListener("dragend", function() {
     var bounds = map.getBounds();
