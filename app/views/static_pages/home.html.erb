@@ -51,15 +51,6 @@
 	</div>
 </div>
 
-<div class="banner-locations">
-	<div class="inside med2">
-		<h4>More Than 110 Locations Nationwide</h4>
-		<div class="btn-hlf">
-			<%= link_to "Find One Near You", locations_path, class: 'woof-link' %>
-		</div>
-	</div>
-</div>
-
 <div class="nlay-logos">
 	<div class="inside one">
 		<div class="over">
@@ -81,35 +72,39 @@
 
 	<div class="full logos">
 		<div class="inside">
-			<div class="full top">
-				<%= link_to retail_path, class: 'serve-tl bakery' do %>
-		      <%= image_tag('wgbakery.png', class: 'img-responsive logo')%>
-				<% end %>
+			<%= link_to retail_path, class: 'serve-tl bakery' do %>
+	      <%= image_tag('wgbakery.png', class: 'img-responsive logo')%>
+			<% end %>
 
-				<%= link_to grooming_path, class: 'serve-tl grooming' do %>
-		      <%= image_tag('wgb-grooming.png', class: 'img-responsive logo')%>
-				<% end %>
+			<%= link_to grooming_path, class: 'serve-tl grooming' do %>
+	      <%= image_tag('wgb-grooming.png', class: 'img-responsive logo')%>
+			<% end %>
 
-				<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
-		      <%= image_tag('wgb-ss.png', class: 'img-responsive logo')%>
-				<% end %>
-			</div>
+			<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
+	      <%= image_tag('wgb-ss.png', class: 'img-responsive logo')%>
+			<% end %>
 
-			<div class="full btm">
-				<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
-		      <%= image_tag('wgb-clinic.png', class: 'img-responsive logo')%>
-				<% end %>
+			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
+	      <%= image_tag('wgb-clinic.png', class: 'img-responsive logo')%>
+			<% end %>
 
-				<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
-		      <%= image_tag('wgb-ddaycare.png', class: 'img-responsive logo')%>
-				<% end %>
+			<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
+	      <%= image_tag('wgb-ddaycare.png', class: 'img-responsive logo')%>
+			<% end %>
 
-				<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
-		      <%= image_tag('wgb-resort.png', class: 'img-responsive logo')%>
-				<% end %>
-			</div>
+			<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
+	      <%= image_tag('wgb-resort.png', class: 'img-responsive logo')%>
+			<% end %>
 		</div>
+	</div>
+</div>
 
+<div class="banner-locations">
+	<div class="inside med2">
+		<h4>More Than 110 Locations Nationwide</h4>
+		<div class="btn-hlf">
+			<%= link_to "Find One Near You", locations_path, class: 'woof-link' %>
+		</div>
 	</div>
 </div>
 

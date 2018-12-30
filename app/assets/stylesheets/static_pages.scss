@@ -131,7 +131,7 @@ hr{
 .home{
   .page-body {
     .title-line{margin-top: 20px; opacity: .3; width:15%;}
-    h1{font-size: 1.1rem; text-transform: uppercase; color:$pink; letter-spacing: 10px; margin:0; font-weight: 600; }
+    h1{font-size: 1.1rem; text-transform: uppercase; color:$pink; letter-spacing: 10px; letter-spacing: 3px; margin:0; font-weight: 600; }
     h2{ font-size: 1.4rem; background-color: $white; margin: 7px 0 0; font-weight: 300; letter-spacing: .5px;
       // font-weight: 300;
     }
@@ -207,9 +207,15 @@ hr{
     }
 
     .top {margin-bottom: 20px;}
-    .logo{@include center-block(); height:80px;}
+    .logo{@include center-block();
+     // height:80px;
+    }
     .logos{text-align: center;}
-    .serve-tl{display: inline-block; float: none; width:30%; margin: 10px 0 10px 3%;}
+    .serve-tl{display: inline-block; float: none;
+      // width:30%; margin: 10px 0 10px 3%;
+      // width: 30%; margin:0 0 10px 3%; padding:0px 45px;
+      width:23%; margin: 10px 5%;
+    }
 
 
     .image {max-height:430px; overflow: hidden;}
@@ -229,6 +235,10 @@ hr{
     .nlay-logos{
       .text {width:85%;}
     }
+  }
+
+  @media (max-width: 1200px) {
+    .nlay-logos .serve-tl {width:25%; margin:10px 3%;}
   }
 
   @include bp(tb) {
@@ -252,8 +262,6 @@ hr{
       .text {width:90%;padding-bottom: 0;}
       p{font-size: 17px;}
       .full.logos .inside{width:90%;}
-      .serve-tl{width:25%; margin: 20px 3% 20px;}
-      .logo {width:100%;}
     }
   }
 
@@ -286,9 +294,8 @@ hr{
       .text {width:95%;}
       p{font-size: 16px;}
       h3{font-size: 1.15rem;}
-      .full.logos .inside{width:95%;}
-      .serve-tl{width:25%; margin: 20px 3% 20px;}
-      .logo {width:100%;}
+      // .full.logos .inside{width:95%;}
+      .serve-tl {width:37%; margin:13px 4%;}
     }
   }
 
@@ -308,6 +315,10 @@ hr{
     .banner-locations {text-align: center;
       h4,.btn-hlf {@include sec-default();margin-bottom: 10px;}
     }
+  }
+
+  @include bp(oc) {
+    .nlay-logos .serve-tl {width:50%; @include center-block(); margin-top:40px;}
   }
 }
 
@@ -929,10 +940,9 @@ hr{
     }
 
     ul{@include sec-default(); margin-top:15px; padding-left:15px;}
-    li {@include sec-default(); font-size: 16px;
-      margin:0 10px 10px; padding-left:15px;
-      position: relative; z-index: 0;
-      &::before {@include before(); width:10px; height: 1px; background-color: $pink; top:12px; left:-5px;}
+    li {font-size: 16px;margin:0 10px 10px;
+      // padding-left:15px;
+      // position: relative; z-index: 0; &::before {@include before(); width:10px; height: 1px; background-color: $pink; top:12px; left:-5px;}
     }
   }
 
@@ -1019,7 +1029,7 @@ hr{
     .inline-show {
       &::before{height:250px;}
       .il-slideshow {@include sec-default(); margin:0 0 20px 0;}
-      .title{@include center-block(); width: 200px;padding:0;}
+      .title{@include center-block(); width: 240px;padding:0;}
     }
 
     .statement p{@include sec-default();}
@@ -1062,6 +1072,10 @@ hr{
   }
 
   @include bp(tb) {
+    .inline-show {
+      .title{width:25%; margin-right: -2%;}
+    }
+
     .statement {
       h1,h2{ width:30%; padding-right: 0;}
       p{width:68%; padding-left: 3.5%}
@@ -1073,6 +1087,11 @@ hr{
       p, h1,h2 {width:90%;}
     }
   }
+
+  @include bp(pl) {
+    .inline-show .title{@include center-block(); width:240px;}
+  }
+
 
   @include bp(tn) {
     .statement{
@@ -1086,6 +1105,32 @@ hr{
 
   @include bp(pl) {
     .statement p { @include sec-default();}
+  }
+}
+
+.grooming .services-layout {
+  .statement{
+    h1, h2 {width:25%;}
+    p{width:70%;}
+  }
+  @include bp(tb) {
+    .statement{
+      h1, h2 {width:23%;}
+      p{width:77%;}
+    }
+  }
+
+  @include bp(br) {
+    .statement {
+      p, h1,h2 {@include center-block(); width:88%; padding:0; border:0; }
+      // h1,h2{margin-top: 0;}
+    }
+  }
+
+  @include bp(md) {
+    .statement {
+      p, h1,h2 {width:95%;}
+    }
   }
 }
 
@@ -1126,23 +1171,20 @@ hr{
   .inline-show {
     &::before{height:390px;}
     .il-slideshow {width:64%; margin-left: 5%; max-height: 500px; overflow: hidden;}
-    .title {margin-right: 5%;}
+    // .title {margin-right: 5%;}
+    .title {margin-right: 1.5%;}
   }
 
   .statement {
     h4, ul {display: inline-block; float: left; width:30%;}
     h4{margin-top:45px; color:$pink;}
-    ul {width:68%; float: right; border-left: 1px solid rgba($black, .1); padding-left: 40px; margin-right: -2%;}
+    ul {width:68%; float: right; border-left: 1px solid rgba($black, .1); padding-left: 45px; margin-right: -2%;}
 
-    li {
-      display: inline-block; float: left;
-      // width:31%;
+    li {float: left;
       width:28%;
       font-size: 16px;
       margin:0 1% 10px;
-      padding-left:10px;
-      position: relative; z-index: 0;&::before {@include before(); width:8px; height: 1px; background-color: $pink; top:12px; left:-5px;}
-
+      list-style-type: disc;
       &.right {float: right; width:39%; margin-right: 0;}
     }
   }
@@ -1159,6 +1201,83 @@ hr{
       .sl-hlf {@include sec-default();}
       .sl1, .sl2 {display: inline-block; float: left; width:75%;}
       .sl2 {float: right; width:25%; margin-top: 60px; margin-right: -3%;}
+    }
+  }
+
+  @include bp(tb) {
+    .inline-show {
+      &::before{height:300px;}
+      .il-slideshow {margin-left: 3%;}
+      .title {margin-right: 0; width:30%; padding-top: 80px;}
+    }
+
+    .statement {
+      h4, ul {width:25%;}
+      h4{margin-top:35px;}
+      ul {width:75%;}
+      li {font-size: 15px;}
+    }
+
+    .list-box.alt {margin-top:0; padding:40px 0 30px;
+      h4 {font-size: 1.15rem;}
+      .sl1 {width:90%; @include center-block();}
+      .sl2{display: none;}
+      p{font-size: 16px;}
+    }
+  }
+
+  @include bp(br) {
+    .statement {
+      h4{margin-top:20px; font-size: 1.15rem;}
+      ul {text-align: left;}
+      li.right {margin-right: 0;}
+    }
+
+    .list-box.alt {
+      h4 {font-size: 1.1rem;}
+      p {margin-bottom: 12px; font-size: 15px;}
+      .sl1 {@include sec-default();}
+    }
+  }
+
+  @include bp(tn) {
+    .inline-show {
+      &::before{height:230px;}
+      .il-slideshow {margin-left: 0;}
+      .title {width:33%; padding-top: 60px;}
+    }
+
+    .statement {padding-top:20px;
+      h4 {@include sec-default();}
+      ul {width:90%; @include center-block();border-left: 0; }
+    }
+  }
+
+  @include bp(pl) {
+    .inline-show {
+      &::before{height:250px;}
+      .il-slideshow {@include sec-default(); margin:0 0 20px 0;}
+      .title{@include center-block(); width: 260px;padding:0;}
+    }
+
+    .statement {
+      h4 {font-size: 1.1rem;}
+      ul {width:80%;}
+      li {float: left;
+        width:45%; margin:0 0 10px;
+        &.right, &.sm-right {float: right; width:50%;}
+      }
+    }
+  }
+
+  @include bp(oc) {
+    .statement {
+      h4 {font-size: 1rem;}
+      // ul {@include sec-default();}
+      li, li.right, li.sm-right {width:100%; float: left;
+        // width:45%; margin:0 0 10px;
+        // &.right, &.sm-right {float: right; width:50%;}
+      }
     }
   }
 }
