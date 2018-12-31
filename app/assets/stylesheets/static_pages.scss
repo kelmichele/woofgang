@@ -199,31 +199,31 @@ hr{
     .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
   }
 
-  .nlay-logos {@include sec-default(); padding:60px 0; text-align: center;
+  .nlay-logos {@include sec-default(); text-align: center;
+    padding:60px 0; padding:0px 0 60px;
     .over {width:85%; @include center-block();margin-bottom: 20px;}
     .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; position: relative;
       margin-top: -40px; box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
-      // margin-top: -60px; box-shadow: 0px -15px 15px rgba($black,.1); h3{margin: 10px 0; font-size: 1.5rem;}
     }
 
     .top {margin-bottom: 20px;}
-    .logo{@include center-block();
-     // height:80px;
-    }
+    .logo{@include center-block();}
     .logos{text-align: center;}
     .serve-tl{display: inline-block; float: none;
-      // width:30%; margin: 10px 0 10px 3%;
-      // width: 30%; margin:0 0 10px 3%; padding:0px 45px;
       width:23%; margin: 10px 5%;
+
+      &.daycare, &.vet {width:25%; margin:10px 4%; }
     }
 
 
     .image {max-height:430px; overflow: hidden;}
-    .image-row {text-align: center;
-      .img1, .img2, .img3 {display: inline-block; float: none; height:350px; height:300px;}
-      // .img2 {margin-left: 1%;}
-      // .img1, .img3{ width:22%; }
-      // .img2{width:54%;}
+    .image-row {text-align: center; height:300px; overflow: hidden;
+      .img1, .img2, .img3 {display: inline-block; float: none; vertical-align: top;
+        // height:300px;
+      }
+      .img1 {width:30%;}
+      .img2{width:46%;}
+      .img3{width:22%;}
     }
   }
 
@@ -295,7 +295,7 @@ hr{
       p{font-size: 16px;}
       h3{font-size: 1.15rem;}
       // .full.logos .inside{width:95%;}
-      .serve-tl {width:37%; margin:13px 4%;}
+      .serve-tl, .serve-tl.daycare, .serve-tl.vet {width:37%; margin:13px 4%;}
     }
   }
 
@@ -318,14 +318,17 @@ hr{
   }
 
   @include bp(oc) {
-    .nlay-logos .serve-tl {width:50%; @include center-block(); margin-top:40px;}
+    .nlay-logos {
+      .serve-tl, .serve-tl.daycare, .serve-tl.vet {width:50%; @include center-block(); margin-top:40px;}
+    }
   }
 }
 
 
 .award-sec {@include sec-default();
   .uk-card {text-align: center;
-    @include sec-bgimage('adobe-award.png'); background-size: 30%; background-position: center center;
+    @include sec-bgimage('logo-pups.png');
+    background-size: 30%; background-position: center center;
   }
   .award-slider {
     li:first-child{background-image: none;

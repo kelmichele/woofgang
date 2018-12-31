@@ -352,6 +352,7 @@ br.tn {display: none;}
 	.franchise-layout.fl1 .content-layout .full.fw.two,
  	.franchise-layout.fl2 {
 		// .text {margin-top:3%;}
+		li.acc-faq {list-style-type: none;}
 		li::before{display: none;}
 		h4{font-size: 17px; margin-bottom: 0; text-transform: none; letter-spacing: 0; font-weight: 300;}
 		.uk-accordion-content{border-top:1px solid rgba($tbrown,.1);border-bottom:1px solid rgba($tbrown,.1);
@@ -367,7 +368,31 @@ br.tn {display: none;}
 		li.uk-open {
 			h4{ color:$pink; font-weight: 500; }
 		}
+
+		@media (max-width:1320px) {
+			.inside.med {width:85%;}
+		}
+
+		@include bp(tb) {
+			.inside.med {width:90%;}
+			.full{width:50%;}
+			.full.two{margin-right: -3%;}
+			ul{padding-left: 0;}
+			h4{font-size: 15px;}
+			.uk-accordion-content p{font-size: 15px;}
+		}
+
+		@include bp(br) {
+			padding-bottom: 20px;
+			.statement {padding-bottom: 30px;}
+			.full.one, .full.two {width:75%; @include center-block(); margin-bottom: 20px;}
+		}
+
+		@include bp(md) {
+			.full.one, .full.two {width:90%;}
+		}
 	}
+
 }
 
 .candidates {
