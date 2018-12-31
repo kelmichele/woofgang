@@ -2,7 +2,6 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
-		# city = request.location.city
 		@locations = if params[:l]
 			# JUST FOR REDO SEARCH
 	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
@@ -19,7 +18,6 @@ class LocationsController < ApplicationController
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
 
 	  else
-	    # Location.near(city).paginate(:page => params[:page], :per_page => 4)
 	    Location.all.paginate(:page => params[:page], :per_page => 4)
 		end
 

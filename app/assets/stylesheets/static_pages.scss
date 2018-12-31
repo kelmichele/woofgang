@@ -23,6 +23,8 @@
   &.narrow {width:55%;}
   &.narrow-def {width:792px}
 
+  &.home-def {width:850px;}
+
   @media (max-width:1100px) {
     &.med-def {width:90%;}
   }
@@ -172,12 +174,21 @@ hr{
     // 12/20
     padding-bottom: 70px; &::before, &::after {height: 100%;}
     &::before{@include sec-bgimage('franchising1.jpg'); background-position: center center;}
-    .image {width:54%;}
+    .image {width:54%; max-height: 248px; overflow: hidden;}
     .img1, .img2 {display: inline-block; float: left;
-      // width:49.8%;
-      height:252.3px;
+      width:49.8%;
+      // height:252.3px;
     }
     .img2 {float: right;}
+
+
+    &.ff {
+      h4, p{color:$white;@include tshadowl(rgba($black,.4)); font-weight: 400; margin:0;letter-spacing: .3px;}
+      h4{ margin-bottom: 10px; font-size: 1.2rem;}
+      p{font-size: 17px;}
+      .text {margin-left: 3.5%;}
+      .btext {border-left: 4px solid rgba($white,.75);padding-left:25px;}
+    }
   }
 
   .full.franch {padding:90px 0;
@@ -203,7 +214,8 @@ hr{
     padding:60px 0; padding:0px 0 60px;
     .over {width:85%; @include center-block();margin-bottom: 20px;}
     .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; position: relative;
-      margin-top: -40px; box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
+      margin-top: -40px;
+       box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
     }
 
     .top {margin-bottom: 20px;}
@@ -217,13 +229,15 @@ hr{
 
 
     .image {max-height:430px; overflow: hidden;}
-    .image-row {text-align: center; height:300px; overflow: hidden;
+    .image-row {text-align: center;
+     height:430px; overflow: hidden;
       .img1, .img2, .img3 {display: inline-block; float: none; vertical-align: top;
         // height:300px;
       }
-      .img1 {width:30%;}
-      .img2{width:46%;}
-      .img3{width:22%;}
+      // .img1, .img3 {width:25%;}
+      .img1{display: none;}
+      .img2{width:67%;}
+      .img3{width:31.1%;}
     }
   }
 

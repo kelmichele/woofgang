@@ -23,8 +23,15 @@
 				<div class="cat phone"><a href="tel:<%= location.phone %>"><%= number_to_phone(location.phone, delimiter: '-') %></a></div>
 
 				<div class="cat email">
-					<a class="fw-mail" href="mailto:<%= location.email_address %>"><%= location.email_address %></a>
-					<a class="sm-mail" href="mailto:<%= location.email_address %>"><span  uk-icon="icon: mail;"></span></a>
+					<!-- <a class="fw-mail" href="mailto:<%= location.email_address %>"><%= location.email_address %></a> -->
+					<!-- <a class="sm-mail" href="mailto:<%= location.email_address %>"><span  uk-icon="icon: mail;"></span></a> -->
+					<a class="" href="mailto:<%= location.email_address %>"><span  uk-icon="icon: mail;"></span></a>
+
+
+						<% if location.fb %>
+							<a href="https://www.facebook.com<%= location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
+						<% end %>
+
 				</div>
 
 				<% if location.tags.count > 0 %>
