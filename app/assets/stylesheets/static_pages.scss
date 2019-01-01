@@ -225,6 +225,7 @@ hr{
       width:23%; margin: 10px 5%;
 
       &.daycare, &.vet {width:25%; margin:10px 4%; }
+      &.ss {width:28%; margin:10px 4% 10px 1%;  }
     }
 
 
@@ -388,6 +389,7 @@ hr{
     &.veterinary-clinic {background-image: url(image_path('tag-vet2.png')); background-size:67%;}
     &.self-service-grooming {background-image: url(image_path('tag-ss.png'));}
     &.doggie-daycare {background-image: url(image_path('tag-daycare.png')); background-size: 67%;}
+    &.retail {background-image: url(image_path('bag3.png'));}
   }
 
   span.addr2{@include sec-default();}

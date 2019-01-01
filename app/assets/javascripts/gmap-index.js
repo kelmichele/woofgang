@@ -63,6 +63,40 @@ function geoFindMe() {
 }
 
 
+// function geolocationSuccess(position) {
+//   var latitude = position.coords.latitude;
+//   var longitude = position.coords.longitude;
+//   gon.global.ltln = 30.293,-87.543;
+//   // var latlng = gon.latlng = position.coords.latitude + "," + position.coords.longitude;
+
+
+//   map.setCenter(latitude, longitude);
+//   map.setZoom(6);
+
+//   // var bounds = map.getBounds();
+//   // var pos = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
+
+//   // Turbolinks.visit('/locations?q=' + pos);
+//   console.log('Latitude is ' + latitude + ', Longitude is ' + longitude);
+// }
+// function geolocationError() {
+//   // Handle error, for now we'll just log to console
+//   console.log("please enable location for this feature to work!");
+// }
+// $(document).on('ready page:ready', function() {
+//   $("#current-location").on("click", function(event) {
+//     event.preventDefault();
+//     if ("geolocation" in navigator) {
+//       navigator.geolocation.getCurrentPosition(geolocationSuccess,
+//       geolocationError);
+//     } else {
+//       alert("Geolocation not supported!");
+//     }
+//   });
+// });
+
+
+
 
 
 document.addEventListener("turbolinks:load", function() {

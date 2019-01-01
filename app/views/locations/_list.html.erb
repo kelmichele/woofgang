@@ -25,7 +25,7 @@
 				<div class="cat email">
 					<!-- <a class="fw-mail" href="mailto:<%= location.email_address %>"><%= location.email_address %></a> -->
 					<!-- <a class="sm-mail" href="mailto:<%= location.email_address %>"><span  uk-icon="icon: mail;"></span></a> -->
-					<a class="" href="mailto:<%= location.email_address %>"><span  uk-icon="icon: mail;"></span></a>
+					<a href="mailto:<%= location.email_address %>"><span uk-icon="icon: mail;"></span></a>
 
 
 						<% if location.fb %>
@@ -34,16 +34,19 @@
 
 				</div>
 
-				<% if location.tags.count > 0 %>
-					<div class="cat tags">
-						<span>Store Services:</span><br>
+				<div class="cat tags">
+					<span>Store Services:</span><br>
+					<button class="tag-icon retail" uk-tooltip="Retail"><span class="tag-img"></span></button>
+
+					<% if location.tags.count > 0 %>
+
 						<% location.tag_split.each do |tag| %>
 							<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
 								<span class="tag-img"></span>
 							</button>
 						<% end %>
-					</div>
-				<% end %>
+					<% end %>
+				</div>
 
 				<div class="btn-row">
 					<%= link_to "Store Details", location_path(location), class: 'woof-link' %>

@@ -3,7 +3,12 @@
 
 <div class="location-page">
 	<div class="title">
-		<h2>Woof Gang Bakery & Grooming </h2>
+
+		<% if @location.store_name.include? "Grooming" %>
+			<h2>Woof Gang Bakery & Grooming </h2>
+		<% else %>
+			<h2>Woof Gang Bakery</h2>
+		<% end %>
 		<h1><%= @location.ntitle %></h1>
 	</div>
 
@@ -28,7 +33,7 @@
 			 		<div class="image attach"><%= image_tag @location.image %></div>
 				<% else %>
 
-					<div class="image"><%= image_tag('location-sign.jpg', class: 'img-responsive', alt: '')%></div>
+					<div class="image"><%= image_tag('savannah-interior.jpg', class: 'img-responsive', alt: '')%></div>
 				<% end %>
 
 				<div class="location-dets">
@@ -57,7 +62,8 @@
 					</div>
 
 					<div class="cat email">
-						<p><a href="mailto:<%= @location.email_address %>"><%= @location.email_address %></a></p>
+						<p><a href="mailto:<%= @location.email_address %>"><span uk-icon="icon: mail;"></span></a></p>
+						<!-- <p><a href="mailto:<%= @location.email_address %>"><%= @location.email_address %></a></p> -->
 					</div>
 
 					<div class="cat soc">
@@ -99,6 +105,7 @@
 
 					<div class="cat tags">
 						<p class="hd">Store Services:</p>
+						<button class="tag-icon retail" uk-tooltip="Retail"><span class="tag-img"></span></button>
 						<% @location.tag_split.each do |tag| %>
 							<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
 								<span class="tag-img"></span>

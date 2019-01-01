@@ -21,7 +21,15 @@ class Location < ApplicationRecord
   has_many :tags, through: :taggings
 
   def ntitle
-    store_name.remove("Woof Gang Bakery & Grooming")
+    if store_name.include? "Grooming"
+      store_name.remove("Woof Gang Bakery & Grooming")
+    else
+      store_name.remove("Woof Gang Bakery")
+    end
+  end
+
+  def ntitle_b
+    store_name.remove("Woof Gang Bakery")
   end
 
   def c_hours
