@@ -22,7 +22,8 @@
 <% @ft_info = capture do %>
   <ul class="ft-list info">
 		<li><%= link_to "Home", root_path %></li>
-		<li><%= link_to "Locations", locations_path %></li>
+    <li><a id="locateLink">Locations</a></li>
+		<!-- <li><= link_to "Locations", locations_path %></li> -->
 		<li><%= link_to "Blog", posts_path %></li>
 		<li><%= link_to "Contact Us", contact_path %></li>
 		<% if user_signed_in? && current_user.admin? %>
