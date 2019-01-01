@@ -21,7 +21,7 @@ window.addMarkers = function addMarkers() {
     }
   });
 
-  geoFindMe();
+  // geoFindMe();
   setSafeBounds(element);
 }
 
@@ -39,61 +39,63 @@ function setSafeBounds(element) {
   }
 }
 
+// function geoFindMe() {
+//   var output = document.getElementById("out");
 
-function geoFindMe() {
-  var output = document.getElementById("out");
+//   if (!navigator.geolocation){
+//     console.log("Geolocation is not supported by your browser");
+//     return;
+//   }
 
-  if (!navigator.geolocation){
-    console.log("Geolocation is not supported by your browser");
-    return;
-  }
+//   function success(position) {
+//     var latitude  = position.coords.latitude;
+//     var longitude = position.coords.longitude;
 
-  function success(position) {
-    var latitude  = position.coords.latitude;
-    var longitude = position.coords.longitude;
+//     console.log('Latitude is ' + latitude + ', Longitude is ' + longitude);
+//   }
 
-    console.log('Latitude is ' + latitude + ', Longitude is ' + longitude);
-  }
+//   function error() {
+//     console.log("Unable to retrieve your location");
+//   }
 
-  function error() {
-    console.log("Unable to retrieve your location");
-  }
+//   navigator.geolocation.getCurrentPosition(success, error);
+// }
 
-  navigator.geolocation.getCurrentPosition(success, error);
+function geolocationSuccess(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  // gon.global.ltln = 30.293,-87.543;
+  var latlng = position.coords.latitude + "," + position.coords.longitude;
+
+  console.log('Latitude is ' + latitude + ', Longitude is ' + longitude);
+
+
+  // map.setCenter(latitude, longitude);
+  // map.setZoom(6);
+
+  // var bounds = map.getBounds();
+  // var pos = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
+  // Turbolinks.visit('/locations?q=' + pos);
+
+  Turbolinks.visit('/locations?q=' + latlng)
+  // Turbolinks.visit('/locations?utf8=✓&near=' + latlng + '&commit=')
+
 }
-
-
-// function geolocationSuccess(position) {
-//   var latitude = position.coords.latitude;
-//   var longitude = position.coords.longitude;
-//   gon.global.ltln = 30.293,-87.543;
-//   // var latlng = gon.latlng = position.coords.latitude + "," + position.coords.longitude;
-
-
-//   map.setCenter(latitude, longitude);
-//   map.setZoom(6);
-
-//   // var bounds = map.getBounds();
-//   // var pos = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
-
-//   // Turbolinks.visit('/locations?q=' + pos);
-//   console.log('Latitude is ' + latitude + ', Longitude is ' + longitude);
-// }
-// function geolocationError() {
-//   // Handle error, for now we'll just log to console
-//   console.log("please enable location for this feature to work!");
-// }
-// $(document).on('ready page:ready', function() {
-//   $("#current-location").on("click", function(event) {
-//     event.preventDefault();
-//     if ("geolocation" in navigator) {
-//       navigator.geolocation.getCurrentPosition(geolocationSuccess,
-//       geolocationError);
-//     } else {
-//       alert("Geolocation not supported!");
-//     }
-//   });
-// });
+function geolocationError() {
+  // Handle error, for now we'll just log to console
+  console.log("please enable location for this feature to work!");
+}
+$(document).on('ready page:ready', function() {
+  $("#current-location").on("click", function(event) {
+    event.preventDefault();
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(geolocationSuccess,
+      geolocationError);
+    } else {
+      alert("Geolocation not supported!");
+    }
+  });
+});
 
 
 

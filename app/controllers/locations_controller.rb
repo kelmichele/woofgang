@@ -2,10 +2,12 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
+		# top 3 work
 		# @latlng = 30.293,-87.543
-		# gon.ltln = 28.843,-82.022
-		@latlng = gon.global.ltln
-    nearbys = Location.near(@latlng, 350, :order => "distance")
+		# @latlng = 28.843,-82.022
+    # nearbys = Location.near(@latlng, 350, :order => "distance")
+
+    nearbys = Location.near(params[:q], 350, :order => "distance")
 
 		@locations = if params[:l]
 			# JUST FOR REDO SEARCH
@@ -17,15 +19,17 @@ class LocationsController < ApplicationController
 
 	  elsif params[:near]
 	  	# for type search
-	    Location.near(params[:near], 600).paginate(:page => params[:page], :per_page => 5)
+	    Location.near(params[:near], 300).paginate(:page => params[:page], :per_page => 5)
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
 
+		elsif params[:q]
+			nearbys.paginate(:page => params[:page], :per_page => 4)
+
 	  else
 	  	# howthefuckkkkk do i get the users location here, to search near params
 	    Location.all.paginate(:page => params[:page], :per_page => 4)
-    	# nearbys.paginate(:page => params[:page], :per_page => 4)
 		end
 
 		@tags = Tag.all

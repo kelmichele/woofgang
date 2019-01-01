@@ -28,10 +28,6 @@ class Location < ApplicationRecord
     end
   end
 
-  def ntitle_b
-    store_name.remove("Woof Gang Bakery")
-  end
-
   def c_hours
     hours.split(",")
   end
