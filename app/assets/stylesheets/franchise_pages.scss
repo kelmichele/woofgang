@@ -30,6 +30,20 @@ br.tn {display: none;}
   .text {@include sec-default(); text-align: center; padding:30px 0 30px;}
   h1{text-transform: uppercase; letter-spacing: 1px;line-height: 1.4em; font-size: 1.8rem; margin:0;}
   h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: 300;}
+
+	@include bp(tb) {
+		h1 {font-size: 1.65rem;}
+		h2 {font-size: 1.1rem;}
+	}
+
+	@include bp(tn) {
+		h1 {font-size: 1.45rem;}
+		h2 {font-size: 1rem;}
+	}
+
+	@include bp(oc) {
+		h1 {font-size: 1.3rem;}
+	}
 }
 
 
@@ -128,16 +142,13 @@ br.tn {display: none;}
 	li {font-size: 16px; margin-bottom: 7px; text-transform: uppercase; letter-spacing: .5px;}
 
 	.landing-layout {@include sec-default(); padding:80px 0 60px;
-		li{list-style-type: disc;
-		 // position: relative; z-index: 0; padding-left: 10px;
-			// &::before {@include before(); width:15px; height:1px; left: -20px; background-color: rgba($black, .4); top:10px;}
-		}
+		li{list-style-type: disc;}
 
 		.box{@include sec-default();padding:0 15px;
 			.image, .text {display: inline-block; float: left; position: relative; z-index: 0;}
 			.text {width: 40%; z-index: 1; padding-left: 10px; }
 			.image {width:63%; margin-right:-3%; float: right;}
-			.img1, .img2 {display: inline-block; float: right;  border:7px solid $white;}
+			.img1, .img2 {display: inline-block; float: right; border:7px solid $white;}
 			.img1 {width:90%;}
 			.img2 {width:55%; float: left; margin-top: -25%; margin-left: -16%}
 			li{text-transform: none; letter-spacing: 0;}
@@ -148,7 +159,7 @@ br.tn {display: none;}
 			}
 		}
 
-		@media (max-width:1100px) {
+		@media (max-width:1155px) {
 			.inside.med-def{width:95%;}
 			.box {
 				.text {}
@@ -161,7 +172,7 @@ br.tn {display: none;}
 			padding:60px 0 45px;
 			.inside.med-def{width:90%;}
 			.box{
-				h3{font-size: 1.15rem; position: relative;}
+				h3{font-size: 1rem; position: relative;}
 				.text {padding-left: 0;}
 
 				.text{width:45%;}
@@ -180,20 +191,22 @@ br.tn {display: none;}
 			}
 		}
 
-		@include bp(tn) {
+		@include bp(md) {
 			padding:20px 0 10px;
 			.box{
-				.text{width:90%; @include center-block(); text-align: center;}
+				.text{width:85%; @include center-block();text-align: center;}
 				.image {display: none;}
 			}
+		}
+
+		@include bp(mb) {
+			.box .text{width:90%;}
 		}
 	}
 
 	.content-layout {@include sec-default(); padding:40px 0 80px;
 		li{text-transform: none; letter-spacing: 0;
 			list-style-type: disc;
-			// position: relative; z-index: 0; padding-left: 10px;
-			// &::before {@include before(); width:15px; height:1px; left: -15px; background-color: rgba($black, .3); top:11px;}
 		}
 
 		.full.fw {
@@ -209,7 +222,6 @@ br.tn {display: none;}
 
 			&.two {margin-top: 65px;
 				p.sig{margin-bottom: 5px;}
-				// .text {float: left; width:54%; padding-left:15px; margin-left:-5%;}
 				.text {float: left; width:50%; padding-left:15px;}
 				.image {float: right; margin-top:8%;}
 				ul{margin-top:25px;}
@@ -234,10 +246,10 @@ br.tn {display: none;}
 
 		@include bp(tn) {
 			padding: 10px 0 30px;
-			.full.fw.one, .full.fw.two {
-				.text {width:80%; float: left;}
-				.image {width:15%; float: right;}
-			}
+			// .full.fw.one, .full.fw.two {
+			// 	.text {width:80%; float: left;}
+			// 	.image {width:15%; float: right;}
+			// }
 
 		}
 	}
@@ -248,21 +260,111 @@ br.tn {display: none;}
 		.box {
 			.text {margin-top: 20px;}
 			.image {margin-right: 0; margin-left: -3%;}
-			h3{ width:112%; padding-right: 10px; margin-left: -8%}
+			h3{ width:112%; padding-right: 10px; margin-left: -8%; }
+		}
+	}
 
-			@include bp(tb) {
-				br.xl.one {display: block;}
-				.text{margin-top: 10px;}
-			}
+	@include bp(tb) {
+		.landing-layout .box {
+			.med-def {width:85%;}
+			h3{ width:100%; padding-right: 0px; margin-left: 0; position: relative;}
+			br.xl.one {display: block;}
+			.text{margin-top: 10px;}
 
-			@include bp(br) {
-				br.xl.one {display: none;}
-				h3{width:100%;}
+			.img1 {width:100%;}
+			.img2 {width:70%; margin-top: -22%; margin-left: -45%}
+
+			// .text{width:45%;}
+			.image {width:52%; }
+		}
+
+		.content-layout{
+			.full.fw{
+				&.one {
+					.image{width:48%;}
+					.text{margin-top:6%; width: 48%;}
+				}
+
+				// IF YOU DO CHANGE IMAGE, START HERE
+				// &.two {margin-top: 50px;
+				// 	.text {width:58%; padding-right:0px;}
+				// 	.image{width:40%;}
+				// }
+
+				// IF YOU DON'T CHANGE BOX 2 IMAGE
+				&.two {padding-top: 35px;margin-top:60px;
+					position: relative;
+					&::before{@include before(); height:5px; width:90%; margin-left: 5%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
+					.image {display: none;}
+					.text{@include sec-default();}
+				}
 			}
 		}
 	}
 
-	.content-layout .full.fw {}
+	@include bp(br) {
+		.landing-layout .box {
+			.med-def{width:800px;}
+			.img2 {display: none;}
+			.image {width:50%; margin-left: 0;}
+			.text {width:48%; margin-top: 35px;}
+
+			br.xl.one {display: none;}
+			h3 {font-size: 1rem;}
+		}
+	}
+
+	@include bp(tn) {
+		.landing-layout .box {padding:30px 0;
+			.med-def {width:90%;}
+			.image{width:43%;}
+			.text {width:55%; margin-top:15px;}
+		}
+
+		.content-layout {
+			.fw.full {
+				p.sig {font-size:16px;}
+				p.reg {font-size: 15px;}
+				.woof-link{font-size: 14px;}
+				&.one {
+					.image {width:40%;}
+					.text {width:57%;}
+				}
+
+			}
+		}
+	}
+
+	@include bp(md) {
+		.landing-layout .box {padding: 0;
+			.text{margin-top: 0; width:85%; @include center-block();}
+		}
+		.content-layout {
+			.full.fw.one {padding: 45px 0 0;
+				position: relative;
+				&::before{@include before(); height:5px; width:90%; margin-left: 5%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
+				.image {display: none;}
+				.text{@include center-block(); width:70%; margin-top: 0;}
+			}
+			.full.fw.two {margin-top: 45px;}
+		}
+	}
+
+	@include bp(mb) {
+		.landing-layout .box .text{width:90%;}
+
+		.content-layout {
+			.full.fw.one .text {width:85%;}
+		}
+	}
+
+	@include bp(oc) {
+		.landing-layout .box .text{width:96%;}
+
+		.content-layout {
+			.full.fw.one .text {width:95%;}
+		}
+	}
 }
 
 .training-support .franchise-layout.fl1 {
