@@ -40,9 +40,8 @@
     <div class="clearfix"></div>
 
     <div class="form-group state">
-      <!-- <label>* Nearest Location:</label><br> -->
       <%= contact.select(:singup) do %>
-        <% [['* Select State', ''], ['Connecticut', 'CT'], ['Florida', 'FL'], ['Georgia', 'GA'], ['Kansas', 'KS'], ['Nevada', 'NV'], ['New Jersey', 'NJ'], ['New York', 'NY'], ['North Carolina', 'NC'], ['South Carolina', 'SC'], ['Tennesse', 'TN'], ['Texas', 'TX'], ['Virginia', 'VA']].each do |c| -%>
+        <% [['* Nearest Location', ''], ['Connecticut', 'CT'], ['Florida', 'FL'], ['Georgia', 'GA'], ['Kansas', 'KS'], ['Nevada', 'NV'], ['New Jersey', 'NJ'], ['New York', 'NY'], ['North Carolina', 'NC'], ['South Carolina', 'SC'], ['Tennesse', 'TN'], ['Texas', 'TX'], ['Virginia', 'VA']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
