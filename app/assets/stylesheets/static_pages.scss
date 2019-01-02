@@ -40,6 +40,7 @@
 	  &.med2 {width:75%;}
     &.med3 {width:70%;}
 	  &.narrow {width:70%;}
+    &.home-def {width:75%;}
   }
 
   @include bp(br) {
@@ -151,7 +152,6 @@ hr{
 
   .nlay-intro {@include sec-default(); padding:80px 0;
     // .text{width:53%; @include center-block();}
-
     &.franch{
       h4{font-weight: $semi;}
       .text{width:68%;}
@@ -160,6 +160,7 @@ hr{
   }
 
   .bg-sec {@include sec-default(); padding:70px 0 0px; margin-top:30px;
+    margin-bottom: 120px;
     position: relative; z-index: 0;
     &::before {@include before();@include sec-bgimage('retail-slide4.jpg'); background-position: bottom left; width:60%;height:85%;}
     &::after {@include before(); background-color: rgba($pink7, .94); width:60%;height:85%;}
@@ -187,7 +188,7 @@ hr{
       h4{ margin-bottom: 10px; font-size: 1.2rem;}
       p{font-size: 17px;}
       .text {margin-left: 3.5%;}
-      .btext {border-left: 4px solid rgba($white,.75);padding-left:25px;}
+      // .btext {border-left: 4px solid rgba($white,.75);padding-left:25px;}
     }
   }
 
@@ -215,7 +216,7 @@ hr{
     .over {width:85%; @include center-block();margin-bottom: 20px;}
     .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; position: relative;
       margin-top: -40px;
-       box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
+      box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
     }
 
     .top {margin-bottom: 20px;}
@@ -253,54 +254,62 @@ hr{
   }
 
   @media (max-width: 1200px) {
-    .nlay-logos .serve-tl {width:25%; margin:10px 3%;}
+    // .nlay-logos .serve-tl {width:25%; margin:10px 3%;}
   }
 
   @include bp(tb) {
     .banner-locations{
-      h4{font-size: 1.5rem;}
+      h4{font-size: 1.4rem;}
       .btn-hlf {margin-top: 6px;}
       .woof-link {font-size: 15px;}
     }
 
     .nlay-intro{padding:70px 0 55px;
-      h2{font-size: 1.25rem;}
+      h2{font-size: 1.2rem;}
+      // .text {width:90%;@include center-block();}
     }
 
-    .bg-sec {
+    .bg-sec.ff {margin-bottom: 90px;
       .text {padding-top: 0px; }
-      p{font-size: 17px;}
+      h4{font-size: 1.1rem;}
+      p{font-size: 16px;}
     }
 
     .nlay-logos{
       .over {@include sec-default(); margin-bottom: 0; }
-      .text {width:90%;padding-bottom: 0;}
+      .text {width:90%;padding: 15px 0;
+        box-shadow: 0px 0px 0px rgba($black,.1);
+        h3{font-size: 1.3rem;}
+      }
+      .image-row{height:auto;}
       p{font-size: 17px;}
       .full.logos .inside{width:90%;}
     }
   }
 
   @include bp(tn) {
+    .home-def {width:82%;}
     .nlay-intro{padding:50px 0 25px;
-      .text{width:90%; @include center-block();}
+      h2{font-size: 1.1rem;}
     }
 
-    .bg-sec {padding-top: 30px;
-      &::before, &::after {height:90%;}
-      .text {padding: 0px; width:40%; }
-      .image{width:53%;}
-      p{font-size: 16px;}
+    .bg-sec.ff {padding: 40px 0; margin-bottom: 75px;
+      .text {padding: 0px; width:50%; margin-top: 25px; }
+      .image{width:45%; max-height: auto;}
+      .img1 {@include sec-default();}
+      .img2 {display: none;}
+      h4{font-size: 16px;}
+      p{font-size: 15px;}
     }
 
-    .full.franch{padding:50px 0;
-      h4{font-size: 1.1rem;}
-      .text {@include sec-default();padding-left:25px;}
-      p{font-size: 16px;}
-    }
+    // .full.franch{padding:50px 0;
+    //   h4{font-size: 1.1rem;}
+    //   .text {@include sec-default();padding-left:25px;}
+    //   p{font-size: 16px;}
+    // }
 
     .banner-locations{
-      h4{font-size: 1.35rem;}
-      .btn-hlf {}
+      h4{font-size: 1.3rem;}
       .woof-link {font-size: 14px;}
     }
 
@@ -308,23 +317,37 @@ hr{
       .inside.one{width:90%;}
       .text {width:95%;}
       p{font-size: 16px;}
-      h3{font-size: 1.15rem;}
-      // .full.logos .inside{width:95%;}
-      .serve-tl, .serve-tl.daycare, .serve-tl.vet {width:37%; margin:13px 4%;}
+      .text h3{font-size: 1.15rem;}
+
+      .serve-tl{
+        width:35%; margin: 10px 5%;
+
+        &.daycare, &.vet {width:39%; margin:10px 4%; }
+        &.ss {width:41%; margin:10px 4% 10px 1%;  }
+      }
     }
   }
 
   @include bp(pl) {
     .nlay-intro {text-align: center;
       h1{font-size: 1rem;}
-      h2{font-size: 1.15rem;}
     }
 
-    .bg-sec {padding-top: 30px;
-      &::before, &::after {height:60%;width:90%;}
-      .text {padding: 0px; width:72%; }
-      .image{width:50%;}
+    .bg-sec.ff {margin-bottom: 40px;
+      &::before, &::after {height:55%;width:80%;}
+      .text {padding: 0px; width:72%; margin-left: 6%; margin-top: 0;}
+      .image{width:70%; margin-top: 20px;}
       p{margin-bottom: 10px;}
+    }
+
+    .nlay-logos{
+      .image-row{display: none;}
+      .text{@include sec-default();}
+
+      .serve-tl {
+        // &.daycare, &.vet, &.ss, &.bakery, &.grooming, &.resort{
+        // }
+      }
     }
 
     .banner-locations {text-align: center;
@@ -333,8 +356,22 @@ hr{
   }
 
   @include bp(oc) {
-    .nlay-logos {
-      .serve-tl, .serve-tl.daycare, .serve-tl.vet {width:50%; @include center-block(); margin-top:40px;}
+    .nlay-intro{padding-bottom: 15px;}
+
+    .bg-sec.ff {margin-bottom: 20px;
+      &::before, &::after {height:60%;width:100%;}
+      .text {@include center-block(); width:80%;text-align: center;}
+      .image{@include center-block(); width:85%;}
+    }
+
+    .nlay-logos {padding-bottom: 20px;
+      .serve-tl {
+        &.daycare, &.vet, &.ss, &.bakery, &.grooming, &.resort{
+          @include sec-default(); margin-bottom: 30px;
+
+          .logo {height:70px; @include center-block();}
+        }
+      }
     }
   }
 }
