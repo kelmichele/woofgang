@@ -11,9 +11,11 @@
 
 <div class="full-sec">
 	<div class="inside">
-		<%= link_to "Delete This Location", location_path(@location), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "woof-link btn-danger" %>
-		<%= link_to("[ Cancel and Return ]", locations_path, :class => 'back-link inline') %>
-		<hr>
+		<div class="full-btn">
+			<%= link_to("[ Cancel and Return ]", locations_path, :class => 'back-link inline') %>
+			<%= link_to "Delete This Location", location_path(@location), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "woof-link btn-danger" %>
+		</div>
+		<!-- <hr> -->
 		<%= render 'form' %>
 	</div>
 </div>

@@ -3,13 +3,20 @@
 
 <div class="location-page">
 	<div class="title">
-
 		<% if @location.store_name.include? "Grooming" %>
 			<h2>Woof Gang Bakery & Grooming </h2>
 		<% else %>
 			<h2>Woof Gang Bakery</h2>
 		<% end %>
 		<h1><%= @location.ntitle %></h1>
+
+		<% if user_signed_in? && current_user.admin? %>
+			<div class="admin-link">
+				<%= link_to("Edit Location (#{@location.id})", edit_location_path(@location), class: 'woof-link') %>
+				<% if @location.longitude == nil %><div class="actions coords">**<small>Coordinates Missing**</small></div><% end %>
+			</div>
+		<% end %>
+
 	</div>
 
  	<div class="full">
@@ -17,14 +24,7 @@
  			<%= link_to "/locations", class: 'text-link' do %>
  				<span class="" uk-icon="icon: arrow-left;"></span> Back to Locations
  			<% end %>
- 		</div>
-
- 		<% if user_signed_in? && current_user.admin? %>
- 			<div class="admin-side">
- 				<div class="actions"><small><%= link_to("Edit Location (#{@location.id})", edit_location_path(@location)) %></small></div>
- 				<% if @location.longitude == nil %><div class="actions coords">**<small>Coordinates Missing**</small></div><% end %>
- 			</div>
- 		<% end %> -->
+ 		</div> -->
 
 
 		<div class="inside med2">
