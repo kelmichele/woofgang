@@ -44,8 +44,7 @@ class LocationsController < ApplicationController
 			nearbys.paginate(:page => params[:page], :per_page => 4)
 
 	  else
-	  	# howthefuckkkkk do i get the users location here, to search near params
-	    Location.all.paginate(:page => params[:page], :per_page => 4)
+	    Location.all.paginate(:page => params[:page], :per_page => 100)
 		end
 
 		@tags = Tag.all

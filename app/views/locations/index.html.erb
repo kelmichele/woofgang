@@ -39,7 +39,7 @@
 			<div class="inside lg">
 				<div class="searcher">
 					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
-					  <%= f.text_field :near, class: "form-control", placeholder: "Search by Location" %>
+					  <%= f.text_field :near, class: "form-control", placeholder: "Search by city and state, or zip" %>
 					  <%= f.submit "", class: "btn btn-outline-secondary search" %>
 					<% end %>
 				</div>

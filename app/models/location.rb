@@ -5,7 +5,7 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  has_one_attached :image
+  # has_one_attached :image
 
   validates :store_name, presence: true
   validates :street_address_one, presence: true, uniqueness: { scope: :city, case_sensitive: false }
