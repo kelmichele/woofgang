@@ -70,17 +70,13 @@ br.tn {display: none;}
 		li {margin-bottom: 7px; font-size: 16px; line-height: 1.7em;
 			margin-bottom: 5px;
 			list-style-type: disc;
-			// position: relative; z-index: 0;
-			// padding-left: 14px;
-			// &::before {@include before(); width:20px; height:1px; left: -20px; background-color: rgba($black, .2); top:14px;}
 		}
 
 		.image-nrw  {width:47%;
 			position:absolute; right:0;
-			bottom:-20px;
-			height:270px; overflow: hidden;
-			height:300px; bottom:-40px;
+			overflow: hidden; height:300px; bottom:-40px;
 		}
+
 		.image-fullrow{margin-bottom: 80px;
 			@include sec-default(); height:270px; overflow: hidden;
 			img{width:58%;}
@@ -246,11 +242,6 @@ br.tn {display: none;}
 
 		@include bp(tn) {
 			padding: 10px 0 30px;
-			// .full.fw.one, .full.fw.two {
-			// 	.text {width:80%; float: left;}
-			// 	.image {width:15%; float: right;}
-			// }
-
 		}
 	}
 }
@@ -370,15 +361,54 @@ br.tn {display: none;}
 .training-support .franchise-layout.fl1 {
 	.landing-layout .box{
 		h3{width:108%; width:120%; margin-left: -10%; }
-
-		@include bp(br) {
-			h3{width:100%;}
-		}
 	}
 
 	.content-layout .full.fw p.sig{margin-bottom: 5px;}
-}
 
+	@include bp(tb) {
+		.landing-layout .box {
+			.med-def {width:85%;}
+			h3{width:100%; position: relative;padding-right: 0px; margin-left: 0;}
+			.img1 {width:100%;}
+			.img2 {width:70%; margin-top: -22%; margin-left: -45%}
+
+			.text{width:45%;}
+			.image {width:52%;}
+		}
+	}
+
+	@include bp(tn) {
+		.landing-layout {padding:25px 0 15px;
+			.box{padding:0;
+				.text{width:85%; @include center-block();text-align: center;}
+				.image {display: none;}
+			}
+		}
+
+		.content-layout{
+			.full.fw.one, .full.fw.two { padding-top:45px;
+				position: relative;
+				&::before{@include before(); height:5px; width:90%; margin-left: 5%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
+
+				.text {width:85%; @include center-block(); margin-top: 0;}
+				.image {display: none;}
+			}
+		}
+	}
+
+	@include bp(mb) {
+		.landing-layout .box {
+			.text{@include sec-default();}
+			h3 {font-size: 1rem;}
+		}
+
+		.content-layout .full.fw{
+			.med-def{width:95%;}
+			&.one, &.two {@include sec-default();}
+			&.two {margin-top: 30px;}
+		}
+	}
+}
 
 .real-estate .franchise-layout.fl2 {
 	.col {
@@ -395,24 +425,59 @@ br.tn {display: none;}
 			.image-nrw {bottom:-75px;}
 			.full.three {margin-top: 20px;}
 		}
+	}
 
-		@include bp(tn) {
-			.col {padding-bottom: 270px;
-				.full.one, .full.two, .full.three{width:60%; @include center-block(); margin-top: 0;}
-				.image-nrw {width:75%;}
-			}
-
-			.banner-disc{margin-top: 15px;}
+	@include bp(tn) {
+		.col {
+			// padding-bottom: 270px;
+			.full.one, .full.two, .full.three{width:55%; @include center-block(); margin-top: 0;}
+			// .full.three{margin-bottom: 0;}
+			.image-nrw {@include sec-default(); position: relative; bottom:0; height:auto;}
 		}
 
-		@include bp(md) {
-			.statement .med2-def{width:70%;}
+		.banner-disc{margin-top: 15px;}
+	}
 
-			.col {
-				.full.one, .full.two, .full.three, .full.four{width:80%;}
-			}
+	@include bp(md) {
+		.statement .med2-def{width:70%;}
+
+		.col {
+			.full.one, .full.two, .full.three, .full.four{width:80%;}
 		}
 	}
+
+	@include bp(mb) {
+		.statement {
+			h3{font-size:1rem;}
+		}
+
+		.col {
+			.full.one, .full.two, .full.three, .full.four{width:90%;}
+		}
+
+		.banner-disc{margin-top: 0;
+			.med-def {width:95%;}
+			.btn-hlf {width:50%;}
+			h4 {font-size:1rem;}
+		}
+	}
+
+	@include bp(oc) {
+		.statement {
+			.med2-def{width:90%;}
+		}
+
+		.col {
+			.full.one, .full.two, .full.three, .full.four{width:95%;}
+		}
+
+		.banner-disc{
+			.med-def {width:97%;}
+			.btn-hlf {width:50%;}
+			h4 {font-size:1rem;}
+		}
+	}
+
 }
 
 .approval-process {
@@ -426,13 +491,13 @@ br.tn {display: none;}
 		}
 
 		.image-row {@include sec-default(); text-align: center;
+			max-height:299px; overflow: hidden;
 			.img1,.img2,.img3{display: inline-block; float: none;
-				// width:49.7%;
-				// width:33%; margin-left: .5%;
-				height:275px; height:300px;
+				vertical-align: top;
+				width:33.5%;
 			}
-			.img1 {margin-left: 0;}
-			// .img2{float: right;}
+			.img2 {width:22%}
+			// .img1 {margin-left: 0;}
 		}
 
 		@include bp(tn) {
@@ -493,8 +558,11 @@ br.tn {display: none;}
 		@include bp(md) {
 			.full.one, .full.two {width:90%;}
 		}
-	}
 
+		@include bp(mb) {
+			// h3{font-size:1rem;}
+		}
+	}
 }
 
 .candidates {
@@ -517,23 +585,78 @@ br.tn {display: none;}
 
   .franchise-layout {
   	.landing-layout .box{
-	  	.text {width:40%; margin-top: 50px;}
-	  	.image{width:60%; margin-left: 0;}
+  		.text {width:44%;  margin-top: 60px;}
+	  	.image {width:58%;margin-left: 0;}
+
 	  	.img1{width:100%; border:0;}
-			.img2 {margin-top: -28%; margin-left: -24%}
+			.img2 {margin-top: -28%; margin-left: -34%;width:60%;}
 	  	.contact-info{padding-left: 15px;}
 	  	p{font-size: 1.13rem; margin: 0 0 10px;}
-
-	  	.text {width:44%;  margin-top: 60px;}
-	  	.image {width:58%;}
-			.img2 {margin-top: -28%; margin-left: -34%; width:60%;}
 	  }
 
 	  .content-layout{
+	  	.img-mob{display: none;}
 			.full.fw.one .text {
 				margin-top: 4%;
 			}
 	  }
+  }
+
+  @media (max-width:1155px) {
+  	.franchise-layout .landing-layout {
+	  	.inside.med-def{width:95%;}
+	  	.box {
+	  		.image {width:58%; margin-right: -3%;}
+	  		.img2 {margin-top: -30%;}
+	  	}
+	  }
+  }
+
+  @include bp(tb) {
+  	.franchise-layout {
+  		.landing-layout {
+		  	.box {
+		  		.text {margin-top:60px; width:46%;}
+		  		.image {width:52%; margin-right: 0;}
+		  		.img2 {margin-top: -25%;}
+		  	}
+		  }
+
+		  .content-layout .full.fw.one{
+		  	.image {display: none;}
+		  	.text {@include center-block(); width:80%;}
+		  	// .img-fw{display: none;}
+		  	// .img-mob{display: block;}
+
+		  }
+		}
+  }
+
+  @include bp(md) {
+  	h4 {font-size: 1.1rem;}
+  	p.disclose {font-size: 15px;}
+		.franchise-layout {
+			.landing-layout .box {padding-top: 20px;
+				.text {@include sec-default(); margin-top: 0;}
+				p{font-size: 1rem;}
+			}
+
+			.content-layout .full.fw.one {
+				position: relative;
+				&::before{@include before(); height:5px; width:90%; margin-left: 9%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
+				.text {width:85%;}
+			}
+		}
+  }
+
+  @include bp(oc) {
+		.franchise-layout {
+			.landing-layout .box {}
+
+			.content-layout .full.fw.one{
+				.text {@include sec-default();}
+			}
+		}
   }
 }
 
