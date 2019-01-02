@@ -35,7 +35,7 @@ class LocationsController < ApplicationController
 
 	  elsif params[:near]
 	  	# for type search
-	    Location.near(params[:near], 200).paginate(:page => params[:page], :per_page => 5)
+	    Location.near(params[:near], 100, :order => "distance").paginate(:page => params[:page], :per_page => 5)
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
