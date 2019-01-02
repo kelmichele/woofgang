@@ -15,3 +15,17 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+var ua = navigator.userAgent.toLowerCase();
+if (ua.indexOf('safari') != -1) {
+  if (ua.indexOf('chrome') > -1) {
+  } else {
+    // jQuery $('body').addClass('safari');
+		$(document).ready(function() {
+			body = $('body')
+			body.addClass('safari');
+		});
+
+  }
+}

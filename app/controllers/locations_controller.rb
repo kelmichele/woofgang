@@ -6,6 +6,22 @@ class LocationsController < ApplicationController
 		# @latlng = 30.293,-87.543
 		# @latlng = 28.843,-82.022
     # nearbys = Location.near(@latlng, 350, :order => "distance")
+    @ct = Location.where(state: "CT").reorder('store_name ASC')
+    @fl = Location.where(state: "FL").reorder('store_name ASC')
+    @ga = Location.where(state: "GA").reorder('store_name ASC')
+    @ks = Location.where(state: "KS").reorder('store_name ASC')
+    @nc = Location.where(state: "NC").reorder('store_name ASC')
+    @nj = Location.where(state: "NJ").reorder('store_name ASC')
+    @nv = Location.where(state: "NV").reorder('store_name ASC')
+    @ny = Location.where(state: "NY").reorder('store_name ASC')
+    @sc = Location.where(state: "SC").reorder('store_name ASC')
+    @tn = Location.where(state: "TN").reorder('store_name ASC')
+    @tx = Location.where(state: "TX").reorder('store_name ASC')
+    @va = Location.where(state: "VA").reorder('store_name ASC')
+    @newj = Location.where(state: "New Jersey").reorder('store_name ASC')
+    @vg = Location.where(state: "Virginia").reorder('store_name ASC')
+    @fa = Location.where(state: "Florida").reorder('store_name ASC')
+    @ff = Location.where(state: "FL ").reorder('store_name ASC')
 
     nearbys = Location.near(params[:q], 350, :order => "distance")
 
@@ -19,7 +35,7 @@ class LocationsController < ApplicationController
 
 	  elsif params[:near]
 	  	# for type search
-	    Location.near(params[:near], 300).paginate(:page => params[:page], :per_page => 5)
+	    Location.near(params[:near], 200).paginate(:page => params[:page], :per_page => 5)
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)

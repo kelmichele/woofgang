@@ -3,13 +3,16 @@
 
 <div class="full-sec" id="it-wrap" uk-grid>
 	<div class="intro-text">
-		<div class="full in-itext" style="z-index: 90; padding-bottom:0px;" uk-sticky=" bottom: #it-wrap;"><%= image_tag('appa.jpg', class: 'img-responsive img1', alt: '') %></div>
+		<div class="full in-itext" style="z-index: 90; padding-bottom:0px;" uk-sticky=" bottom: #it-wrap;">
+			<%= image_tag('appa.jpg', class: 'img-responsive img-fw', alt: '') %>
+			<%= image_tag('appa-mob.jpg', class: 'img-responsive img-mob', alt: '') %>
+		</div>
 	</div>
 
 	<div class="form-side">
 		<div class="full">
 			<h1><%= @page_title %></h1>
-			<p class="bmargin0">Do you have available property that may be a perfect fit for a Woof Gang Bakery?<br> Submit a site for consideration.</p>
+			<p class="bmargin0">Do you have available property that may be a perfect fit for a Woof Gang Bakery?<br class="xl"> Submit a site for consideration.</p>
 		</div>
     <%= render 'form' %>
   </div>

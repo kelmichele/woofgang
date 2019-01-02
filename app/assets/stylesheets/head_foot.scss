@@ -91,7 +91,7 @@
 
 @media (max-width:1024px) {
 	.inline-header.centered {
-		padding: 65px 0 20px; position: relative !important;
+		padding: 65px 0 5px; position: relative !important;
 		.uk-navbar-nav {display: none;}
 		.navbar-center{@include sec-default();}
 
