@@ -26,16 +26,6 @@
 		}
 	}
 
-	// .contact,.social{display:inline-block; float: left; color:$white; width:50%;
-	// 	span, a {color:$white; }
-	// 	img {height:12px; margin-right: 0px;}
-	// 	a {font-size: 14px;}
-	// }
-
-	// .social {padding-left: 0; float:right; text-align: right; margin-top: -2px;
-	// 	li {display:inline-block; float:none; margin: 0 .7%; width: 16px; height: 16px;}
-	// }
-
 	&.centered {background-color: $white;padding-bottom: 0px;
 		.uk-navbar-container.inside{width:90%;background-color: $white}
 		.nb-logo{@include sec-default(); text-align: center;padding:0px; width:40%; @include center-block(); margin-bottom: 25px;}
@@ -49,10 +39,6 @@
 			a {font-size: 16px; font-family: $pop; text-transform: uppercase; letter-spacing: .6px;}
 		}
 	}
-	// &.centered.uk-navbar-sticky.uk-sticky-fixed {padding-top:8px;
-	// 	.logo {width:250px; @include ease(.3s);}
-	// 	.uk-navbar-nav{margin-top: 15px;}
-	// }
 
 	.full.navstick{background-color: $white;
 		&.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);}
@@ -89,11 +75,13 @@
 	.inline-header {}
 }
 
-@media (max-width:1024px) {
+@include bp(br) {
+// @include bp(tb) {
 	.inline-header.centered {
-		padding: 65px 0 5px; position: relative !important;
+		padding: 70px 0 25px; position: relative !important;
 		.uk-navbar-nav {display: none;}
 		.navbar-center{@include sec-default();}
+		.nb-logo {margin-bottom: 0;}
 
 		&.uk-navbar-sticky.uk-sticky-fixed {
 			padding-top: 65px;
@@ -126,10 +114,12 @@
 }
 
 @include bp(ph) {
-	.inline-header {}
-	.above {padding: 5px 15px;
-		// .mobile-nav{margin-top: 10%; margin-right: 5%;}
+	.inline-header.centered {
+		.nb-logo{@include sec-default();}
+		.logo {width:230px;}
 	}
+
+	.above {padding: 5px 15px;}
 }
 
 //*********************************//
