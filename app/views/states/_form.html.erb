@@ -1,0 +1,22 @@
+<%= render 'shared/errors', obj: @state %>
+
+<div class="loc-form">
+  <%= form_for(@state, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <div class="form-group">
+      <div class="forminfo name">
+        <label>State Abbreviation:</label>
+        <%= f.text_field :name, class: "form-control", placeholder: "FL", autofocus: true %>
+      </div>
+
+      <div class="forminfo fullname">
+        <label>State Name:</label>
+        <%= f.text_field :full_name, class: "form-control", placeholder: "Florida", autofocus: true %>
+      </div>
+    </div>
+
+    <div class="form-group btns">
+      <%= f.submit(@state.new_record? ? "Add State" : "Update State", class: "btn woof-link save") %>
+    </div>
+  <% end %>
+</div>
+<div class="clearfix"></div>

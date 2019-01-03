@@ -38,6 +38,8 @@
       <div class="forminfo state">
         <%= f.label :state %><br>
         <%= f.text_field :state, class: "form-control", placeholder: "State", autofocus: true %>
+        <!-- <= f.collection_select(:state_id, State.all, :id, :name) %> -->
+        <!-- <= f.collection_select(:state_id, State.all, :name, :full_name)%> -->
       </div>
 
       <div class="forminfo zip">

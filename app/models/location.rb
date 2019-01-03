@@ -11,7 +11,7 @@ class Location < ApplicationRecord
   validates :store_name, presence: true
   validates :street_address_one, presence: true, uniqueness: { scope: :city, case_sensitive: false }
   validates :city, presence: true
-  validates :state, presence: true
+  validates :state_id, presence: true
   validates :zip, presence: true
   validates :phone, presence: true
   validates :email_address, presence: true
@@ -102,7 +102,7 @@ class Location < ApplicationRecord
 
   def self.to_csv(options = {})
     # desired_columns = ["store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state", "zip", "hours", "latitude", "longitude"]
-    desired_columns = ["store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude"]
+    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |location|

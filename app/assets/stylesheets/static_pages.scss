@@ -885,6 +885,25 @@ hr{
   }
 }
 
+.states{
+  &.index {
+    .state-li {margin-bottom: 20px;
+      // p,.actions{display: inline-block; float: left; width:50%;}
+      p{margin-bottom: 0px;}
+      .actions {font-size: 14px;}
+      span {margin-left: 15px;}
+    }
+  }
+
+  &.new {
+    .form-group {display: inline-block; float: left; width:78%;}
+    .form-group.btns{width:20%; float: right; margin-top: 25px;}
+    .forminfo{width:48%; display: inline-block; float: left; margin:0;}
+    .woof-link.save{width:100%;}
+    .back-link.inline{float: left; margin-top: 30px;}
+  }
+}
+
 //*********************************//
 //*********** services ***********//
 //*********************************//
