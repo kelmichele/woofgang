@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_000024) do
+ActiveRecord::Schema.define(version: 2019_01_03_170912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,14 +34,6 @@ ActiveRecord::Schema.define(version: 2018_12_09_000024) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
-  create_table "blogs", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "image"
   end
 
   create_table "candidates", force: :cascade do |t|
@@ -139,6 +131,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_000024) do
     t.string "site"
     t.string "image"
     t.string "yelp"
+    t.integer "state_id"
     t.index ["city"], name: "index_locations_on_city"
     t.index ["state"], name: "index_locations_on_state"
     t.index ["zip"], name: "index_locations_on_zip"
@@ -166,6 +159,18 @@ ActiveRecord::Schema.define(version: 2018_12_09_000024) do
     t.string "honey"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "full_name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["full_name"], name: "index_states_on_full_name"
+    t.index ["id"], name: "index_states_on_id"
+    t.index ["name"], name: "index_states_on_name"
+    t.index ["slug"], name: "index_states_on_slug"
   end
 
   create_table "taggings", force: :cascade do |t|

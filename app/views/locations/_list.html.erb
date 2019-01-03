@@ -4,7 +4,7 @@
 			<div class="location-bx">
 				<% if location.store_name %>
 					<%= link_to location_path(location) do %>
-						<div class="cat name"><%= location.ntitle.titleize %></div>
+						<div class="cat name"><%= location.ntitle.titleize %> (<%= location.id %>)</div>
 					<% end %>
 				<% else %>
 					<%= link_to location_path(location) do %>

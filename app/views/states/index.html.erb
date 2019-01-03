@@ -1,0 +1,7 @@
+<div class="inside">
+	<% for state in @states %>
+	 	<%= link_to state_path(state), class: 'dropdown-item' do %>
+			<p><%= state.id %> <%= state.name %></p>
+	 	<% end %>
+  <% end %>
+</div>

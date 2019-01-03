@@ -53,6 +53,8 @@ Rails.application.routes.draw do
 
   get 'tags/:tag', to: 'locations#index', as: :tag
 
+  resources :states
+
   resources :locations do
     collection do
       post :import

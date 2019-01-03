@@ -392,7 +392,7 @@ hr{
 //*********************************//
 //*********** locations ***********//
 //*********************************//
-.locations {
+.locations, .states {
   // .pup-header
   .ipage-header {
     background-color: darken($opink,1%); padding:25px 0 20px;
@@ -460,7 +460,7 @@ hr{
   }
 }
 
-.locations.index {
+.locations.index, .states.show {
   .btn-row {margin: 5px 0 10px;}
   .full-search {@include sec-default(); padding: 40px 0; background-color: $f9; padding-top:0;}
   .search-sec{
@@ -876,6 +876,14 @@ hr{
   }
 }
 
+.states.show {
+  .search-sec {
+    .searcher, .filter-box, #current-location {display: inline-block; float: left; width:23%; margin: 0;}
+    .searcher{width:30%;}
+    .filter-box {margin-left: 3%}
+    #current-location{float:right; background-color:$pink; color:$white; width:15%;}
+  }
+}
 
 //*********************************//
 //*********** services ***********//
