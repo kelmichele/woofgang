@@ -396,7 +396,7 @@ hr{
 //*********************************//
 //*********** locations ***********//
 //*********************************//
-.locations, .states {
+.locations, .states, .stores {
   .admin-uk{position:absolute; left: 80%; margin-top: -70px;}
   h1{margin-bottom: 0px; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
   h2{margin-top:6px; font-size:1.25rem; line-height: 1.1em;}
@@ -467,7 +467,7 @@ hr{
 }
 
 
-.locations.index, .states.show {
+.locations.index, .states.show, .stores.index {
   .btn-row {margin: 5px 0 10px;}
   .full-search {@include sec-default(); padding: 40px 0; background-color: $f9; padding-top:0;}
   .search-sec{
@@ -720,7 +720,7 @@ hr{
   }
 }
 
-.locations.show {
+.locations.show, .stores.show {
   // h1, h2 {color:$black; letter-spacing: 1px; text-transform: uppercase; @include tshadowl(rgba($black, .2));}
   h1, h2{color:$black; }
   h2{margin-bottom: 0;font-weight:300; font-size: 1.2rem;}
@@ -875,7 +875,7 @@ hr{
   }
 }
 
-.states.show, .locations.index {
+.states.show, .locations.index, .stores.index {
   .search-sec {
     .searcher, .filter-box, #current-location {display: inline-block; float: left; width:23%; margin: 0;}
     .searcher{width:30%;}

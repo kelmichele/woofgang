@@ -61,6 +61,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :stores do
+    collection do
+      post :import
+    end
+  end
+
   resources :posts
   resources :blogs
 end

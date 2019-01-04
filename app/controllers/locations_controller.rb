@@ -2,7 +2,6 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
-		# city = request.location.city
 		@states = State.all
     nearbys = Location.near(params[:q], 350, :order => "distance")
 
@@ -21,8 +20,8 @@ class LocationsController < ApplicationController
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
 
-		elsif params[:q]
-			nearbys.paginate(:page => params[:page], :per_page => 9)
+		# elsif params[:q]
+		# 	nearbys.paginate(:page => params[:page], :per_page => 9)
 
 	  else
 	    Location.all.paginate(:page => params[:page], :per_page => 9)

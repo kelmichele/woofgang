@@ -1,0 +1,118 @@
+<% @page_title = "Our Stores" %>
+<% @page_description = "New Description" %>
+
+<div class="ipage-header">
+	<div class="inside narrow">
+		<h1><%= @page_title %></h1>
+		<h2>Use the map below to find a store near you.</h2>
+	</div>
+
+	<% if user_signed_in? && current_user.admin? %>
+  	<div class="boundary-align uk-panel">
+	    <button class="woof-link wl-uk uk-float-right" type="button">Admin Options</button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+      	<div class="admin-btns">
+      		<div class="manu">
+      			<%= link_to 'Add a Store', new_store_path, class: 'woof-link' %>
+      			<%= link_to "Download CSV", stores_path(format: "csv"), class: 'woof-link dl' %>
+						<%= link_to "Add a State", new_state_path, class: 'woof-link' %>
+      		</div>
+
+    			<div class="import">
+    				<p class="bmargin0">Import Stores</p>
+    				<hr>
+    				<%= form_tag import_stores_path, multipart: true do %>
+    				  <%= file_field_tag :file %>
+    				  <hr>
+    				  <%= submit_tag "Import" %>
+    				<% end %>
+    			</div>
+      	</div>
+    	</div>
+    </div>
+	<% end %>
+</div>
+	<!-- <div class="head-sec">
+		<h1>Find a store near you</h1>
+		<% if user_signed_in? && current_user.admin? %>
+	  	<div class="boundary-align uk-panel">
+		    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+		    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+	      	<div class="admin-btns">
+	      		<div class="manu">
+	      			<%= link_to 'Add a Store', new_store_path, class: 'woof-link' %>
+	      			<%= link_to "Download CSV", stores_path(format: "csv"), class: 'woof-link dl' %>
+							<%= link_to "Add a State", new_state_path, class: 'woof-link' %>
+	      		</div>
+
+	    			<div class="import">
+	    				<p class="bmargin0">Import Stores</p>
+	    				<hr>
+	    				<%= form_tag import_stores_path, multipart: true do %>
+	    				  <%= file_field_tag :file %>
+	    				  <hr>
+	    				  <%= submit_tag "Import" %>
+	    				<% end %>
+	    			</div>
+	      	</div>
+	    	</div>
+	    </div>
+		<% end %>
+		<hr>
+	</div> -->
+
+	<div class="full-search">
+		<div class="full listings">
+			<div class="search-sec">
+				<div class="inside lg">
+					<div class="searcher">
+						<%= form_with(url: stores_path, class: "form-inline", local: true, method: :get) do |f| %>
+						  <%= f.text_field :near, class: "form-control", placeholder: "Search by city and state, or zip" %>
+						  <%= f.submit "", class: "btn btn-outline-secondary search" %>
+						<% end %>
+					</div>
+
+			  	<div class="boundary-align uk-panel filter-box">
+				    <div class="filter-uk">Search by Service <span  uk-icon="icon: chevron-down;"></span></div>
+				    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
+
+			    	</div>
+			    </div>
+
+	      	<div class="boundary-align uk-panel filter-box states">
+	    	    <div class="filter-uk">Search by State <span  uk-icon="icon: chevron-down;"></span></div>
+	    	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
+	    	    	<% @states.each do |state| %>
+	    					<div class="filter-tag">
+	    						<%= link_to "#{state.full_name}", state_path(state) %>
+	    					</div>
+	    				<% end %>
+	        	</div>
+	        </div>
+
+					<a id="current-store">Find stores near me</a>
+
+
+
+
+					<p><%= request.ip %></p>
+					<p><%= request.location.city %></p>
+					<p><%= request.location.country %></p>
+
+			  </div>
+			</div>
+
+			<div class="map">
+		    <%= tag.div nil, id: 'map' %>
+			</div>
+
+			<div class="loclist">
+				<div class="inside">
+					<p id="result-info"></p>
+
+					<%= render partial: "list" %>
+				</div>
+			</div>
+
+		</div>
+	</div>

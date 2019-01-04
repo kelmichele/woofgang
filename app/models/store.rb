@@ -1,4 +1,4 @@
-class Location < ApplicationRecord
+class Store < ApplicationRecord
   extend FriendlyId
   friendly_id :store_name, use: :slugged
 
@@ -65,7 +65,7 @@ class Location < ApplicationRecord
   end
 
   def self.tagged_with(name)
-    Tag.find_by!(name: name).locations
+    Tag.find_by!(name: name).stores
   end
 
   def self.tag_counts
@@ -101,9 +101,9 @@ class Location < ApplicationRecord
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      location = find_by(store_name: row["store_name"]) || new
-      location.attributes = row.to_hash
-      location.save!
+      store = find_by(store_name: row["store_name"]) || new
+      store.attributes = row.to_hash
+      store.save!
     end
   end
 
@@ -112,14 +112,14 @@ class Location < ApplicationRecord
     desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state.name", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude"]
     CSV.generate(options) do |csv|
       csv << desired_columns
-      all.each do |location|
-        csv << location.attributes.values_at(*desired_columns)
+      all.each do |store|
+        csv << store.attributes.values_at(*desired_columns)
       end
     end
   end
 
 end
 
-# rake geocode:all CLASS=Location SLEEP=0.25 BATCH=100
-# Location.near("")
-# l = Location.new(street: "", suite: "", city: "", state: "", zip: "", phone: "")
+# rake geocode:all CLASS=Store SLEEP=0.25 BATCH=100
+# Store.near("")
+# l = Store.new(street: "", suite: "", city: "", state: "", zip: "", phone: "")
