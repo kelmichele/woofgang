@@ -2,8 +2,8 @@ class StoresController < ApplicationController
 	before_action :set_store, only: [:edit, :show, :update, :destroy]
 
 	def index
-		result = request.location
-		city = request.location.city
+		# result = request.location
+		# city = request.location.city
 
 		@states = State.all
     # nearbys = Store.near(params[:q], 350, :order => "distance")
