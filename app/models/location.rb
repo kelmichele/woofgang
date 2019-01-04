@@ -16,10 +16,17 @@ class Location < ApplicationRecord
   validates :phone, presence: true
   validates :email_address, presence: true
 
+  before_save :update_og_state
+
   # default_scope -> { order(state: :asc)}
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
+
+
+  def update_og_state
+    self.og_state = self.state.name
+  end
 
   def ntitle
     if store_name.include? "Grooming"
@@ -50,11 +57,7 @@ class Location < ApplicationRecord
   end
 
   def address_changed?
-    street_address_one_changed? || street_address_two_changed? || city_changed? || state_id_changed? || zip_changed?
-  end
-
-  def state_name
-    state.name
+    street_address_one_changed? || city_changed? || state_id_changed? || zip_changed?
   end
 
   def direct_link

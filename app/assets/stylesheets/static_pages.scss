@@ -1877,4 +1877,6 @@ hr{
   }
 }
 
-.notice.scs p {margin: 15px 0 10px;}
+.notice.scs, .alert.scs {
+  p {margin: 15px 0 10px;}
+}

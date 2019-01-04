@@ -3,10 +3,6 @@ class LocationsController < ApplicationController
 
 	def index
 		@states = State.all
-		# top 3 work
-		# @latlng = 30.293,-87.543
-		# @latlng = 28.843,-82.022
-    # nearbys = Location.near(@latlng, 350, :order => "distance")
     nearbys = Location.near(params[:q], 350, :order => "distance")
 
 		@locations = if params[:l]

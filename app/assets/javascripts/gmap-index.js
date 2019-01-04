@@ -14,11 +14,7 @@ window.addMarkers = function addMarkers() {
         lng: location.longitude,
         title: location.address,
         infoWindow: {
-          // content: '<p>' + location.street_address_one + '<br>' + location.city + ', ' + location.state + ' ' + location.zip + '</p><p>' + '<a href="tel:' + location.phone + '">' + location.phone +
-          // '</a></p> <p class="email"><a href="mailto:' + location.email_address + '">' + location.email_address + '</a></p> <p><a class="woof-link" href="https://www.google.com/maps/dir//' +
-          // location.street_address_one + '+' + location.city + '+' + location.state + '+' + location.zip + '" target="_blank">Get Directions</a></p>'
-
-          content: '<p>' + location.address + '</p><p>' + '<a href="tel:' + location.phone + '">' + location.phone +
+          content: '<p>' + location.street_address_one + '<br>' + location.city + ', ' + location.og_state + ' ' + location.zip + '</p><p>' + '<a href="tel:' + location.phone + '">' + location.phone +
           '</a></p> <p class="email"><a href="mailto:' + location.email_address + '">' + location.email_address + '</a></p> <p><a class="woof-link" href="https://www.google.com/maps/dir//' +
           location.street_address_one + '+' + location.city + '+' + location.state + '+' + location.zip + '" target="_blank">Get Directions</a></p>'
         }
