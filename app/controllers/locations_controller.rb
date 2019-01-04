@@ -3,7 +3,6 @@ class LocationsController < ApplicationController
 
 	def index
 		@states = State.all
-
 		# top 3 work
 		# @latlng = 30.293,-87.543
 		# @latlng = 28.843,-82.022
@@ -50,6 +49,7 @@ class LocationsController < ApplicationController
 
 	def new
     @location = Location.new
+    @states = State.all
 	end
 
 	def create

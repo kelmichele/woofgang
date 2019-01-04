@@ -8,23 +8,13 @@ class ContactsController < ApplicationController
     @contact = Contact.new
 
     @locations = Location.all
-    @ct = Location.where(state: "CT").reorder('store_name ASC')
-    @fl = Location.where(state: "FL").reorder('store_name ASC')
-    @ga = Location.where(state: "GA").reorder('store_name ASC')
-    @ks = Location.where(state: "KS").reorder('store_name ASC')
-    @nc = Location.where(state: "NC").reorder('store_name ASC')
-    @nj = Location.where(state: "NJ").reorder('store_name ASC')
-    @nv = Location.where(state: "NV").reorder('store_name ASC')
-    @ny = Location.where(state: "NY").reorder('store_name ASC')
-    @sc = Location.where(state: "SC").reorder('store_name ASC')
-    @tn = Location.where(state: "TN").reorder('store_name ASC')
-    @tx = Location.where(state: "TX").reorder('store_name ASC')
-    @va = Location.where(state: "VA").reorder('store_name ASC')
-
-    @states =  ['Connecticut', 'Florida', 'Georgia', 'Kansas', 'Nevada', 'New Jersey', 'New York', 'North Carolina', 'South Carolina', 'Tennesse', 'Texas', 'Virginia']
+    @states = State.all
   end
 
   def create
+    @locations = Location.all
+    @states = State.all
+
     @contact = Contact.new(contact_params)
 
     if @contact.valid? && @contact.save

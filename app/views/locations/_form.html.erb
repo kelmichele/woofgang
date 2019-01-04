@@ -37,9 +37,7 @@
 
       <div class="forminfo state">
         <%= f.label :state %><br>
-        <%= f.text_field :state, class: "form-control", placeholder: "State", autofocus: true %>
-        <!-- <= f.collection_select(:state_id, State.all, :id, :name) %> -->
-        <!-- <= f.collection_select(:state_id, State.all, :name, :full_name)%> -->
+        <%= f.collection_select(:state_id, State.all, :id, :name) %>
       </div>
 
       <div class="forminfo zip">
@@ -50,7 +48,7 @@
 
       <div class="clearfix"></div>
       <h3>Social<br>
-        <span>Social media url bases are already entered. Just add /your-link in each box.<br><b>Enter FULL website url.</b></span>
+        <span>Social media url bases are already entered. Just add <b>/your-link</b> in each box.<br><b>Enter FULL website url.</b></span>
       </h3>
       <div class="forminfo link fb">
         <%= f.label :facebook %><br>
@@ -88,7 +86,7 @@
       </div>
 
       <div class="forminfo tags">
-        <%= f.label :tags %><br>
+        <label>Tags <span>(command + click all that apply)</span><br>
         <%= f.collection_select(:tag_ids, Tag.all, :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %>
       </div>
 

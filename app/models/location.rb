@@ -5,7 +5,7 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  has_one_attached :image
+  # has_one_attached :image
   belongs_to :state
 
   validates :store_name, presence: true
@@ -38,23 +38,27 @@ class Location < ApplicationRecord
   end
 
   def city_state
-    "#{city}, #{state}"
+    "#{city}, #{state.name}"
   end
 
   def full_address
-    "#{street_address_one}" + "\n" + "#{city}, #{state} #{zip}" + "\n"
+    "#{street_address_one}" + "\n" + "#{city}, #{state.name} #{zip}" + "\n"
   end
 
   def title_state
-    "#{ntitle}, #{state}"
+    "#{ntitle}, #{state.name}"
   end
 
   def address_changed?
-    street_address_one_changed? || street_address_two_changed? || city_changed? || state_changed? || zip_changed?
+    street_address_one_changed? || street_address_two_changed? || city_changed? || state_id_changed? || zip_changed?
+  end
+
+  def state_name
+    state.name
   end
 
   def direct_link
-    "https://www.google.com/maps/dir//" + "#{store_name}" + "," + "#{street_address_one}" + "+" + "#{city}" + "+" + "#{state}" + "+" + "#{zip}"
+    "https://www.google.com/maps/dir//" + "#{store_name}" + "," + "#{street_address_one}" + "+" + "#{city}" + "+" + "#{state.name}" + "+" + "#{zip}"
   end
 
   def self.tagged_with(name)
@@ -102,7 +106,7 @@ class Location < ApplicationRecord
 
   def self.to_csv(options = {})
     # desired_columns = ["store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state", "zip", "hours", "latitude", "longitude"]
-    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude"]
+    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state.name", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |location|

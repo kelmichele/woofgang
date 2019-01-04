@@ -1,9 +1,9 @@
 <%= render 'shared/errors', obj: @contact %>
 <%= form_for @contact, url: contact_path do |contact| %>
   <fieldset>
-    <% if flash[:notice] %>
+   <!--  < if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
-    <% end %>
+    < end %> -->
 
     <% if flash[:alert] %>
       <div class="notice"><%= flash[:alert] %></div>
@@ -32,7 +32,7 @@
 
     <div class="form-group grapevine">
       <%= contact.select(:grapevine) do %>
-        <% [['* How did you hear about us?', ''], ['Advertising', 'Advertising'], ['Social Media', 'Social Media'], ['Family/Friend', 'Family/Friend'], ['Google', 'Google'], ['Event', 'Event'], ['Other', 'Other']].each do |c| -%>
+        <% [['How did you hear about us?', ''], ['Advertising', 'Advertising'], ['Social Media', 'Social Media'], ['Family/Friend', 'Family/Friend'], ['Google', 'Google'], ['Event', 'Event'], ['Other', 'Other']].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
       <% end %>
@@ -40,33 +40,11 @@
     <div class="clearfix"></div>
 
     <div class="form-group state">
-      <%= contact.select(:singup) do %>
-        <% [['* Nearest Location', ''], ['Connecticut', 'CT'], ['Florida', 'FL'], ['Georgia', 'GA'], ['Kansas', 'KS'], ['Nevada', 'NV'], ['New Jersey', 'NJ'], ['New York', 'NY'], ['North Carolina', 'NC'], ['South Carolina', 'SC'], ['Tennesse', 'TN'], ['Texas', 'TX'], ['Virginia', 'VA']].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-        <% end %>
-      <% end %>
+      <%= contact.collection_select(:singup, State.all, :id, :full_name, :prompt => "* Nearest Location") %>
     </div>
 
     <div class="form-group location">
-        <% grouped_options =
-          ['Connecticut', [['* Select Store', ''], options_from_collection_for_select(@ct.each, :title_state, :ntitle)]],
-          # ['Connecticut',[['United States','US'],'Canada']],
-          ['Florida', ['* Select Store', options_from_collection_for_select(@fl.each, :title_state, :ntitle)]],
-          ['Georgia', ['* Select Store', options_from_collection_for_select(@ga.each, :title_state, :ntitle)]],
-          ['Kansas', ['* Select Store', options_from_collection_for_select(@ks.each, :title_state, :ntitle)]],
-          ['Nevada', ['* Select Store', options_from_collection_for_select(@nv.each, :title_state, :ntitle)]],
-          ['New Jersey', ['* Select Store', options_from_collection_for_select(@nj.each, :title_state, :ntitle)]],
-          ['New York', ['* Select Store', options_from_collection_for_select(@ny.each, :title_state, :ntitle)]],
-          ['North Carolina', ['* Select Store', options_from_collection_for_select(@nc.each, :title_state, :ntitle)]],
-          ['South Carolina', ['* Select Store', options_from_collection_for_select(@sc.each, :title_state, :ntitle)]],
-          ['Tennesse', ['* Select Store', options_from_collection_for_select(@tn.each, :title_state, :ntitle)]],
-          ['Texas', ['* Select Store', options_from_collection_for_select(@tx.each, :title_state, :ntitle)]],
-          ['Virginia', ['* Select Store', options_from_collection_for_select(@va.each, :title_state, :ntitle)]]
-        %>
-
-        <%= contact.select(:location) do %>
-          <%= grouped_options_for_select(grouped_options) %>
-        <% end %>
+      <%= grouped_collection_select(:contact, :location, @states, :locations, :full_name, :title_state, :ntitle) %>
     </div>
     <div class="clearfix"></div>
 

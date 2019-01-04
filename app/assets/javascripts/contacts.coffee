@@ -1,4 +1,5 @@
-# jQuery ->
+# $(document).on 'turbolinks:load', ->
+# 	jQuery ->
 # 	$('#contact_location').parent().hide()
 # 	locations = $('#contact_location').html()
 # 	$('#contact_singup').change ->
@@ -10,6 +11,7 @@
 # 		else
 # 			$('#contact_location').empty()
 # 			$('#contact_location').parent().hide()
+
 
 
 $(document).on 'turbolinks:load', ->

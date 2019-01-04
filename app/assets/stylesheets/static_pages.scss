@@ -458,7 +458,10 @@ hr{
       }
     }
   }
+
+  &.new .back-link.inline {float:left;}
 }
+
 
 .locations.index, .states.show {
   .btn-row {margin: 5px 0 10px;}
@@ -1758,10 +1761,12 @@ hr{
 .locations{
   .loc-form {
     h3 {margin-bottom: 15px; font-size: 1.2rem; font-weight: bold; color:$black; text-transform: uppercase; letter-spacing: .7px;
-      background-color:$f2; padding:15px;
-      span{font-size: 14px; font-weight: normal;}
+      background-color:$f2; padding:15px; color:$pink;
+      span{font-size: 14px; font-weight: normal; color:$black; text-transform: none;}
+      span b {color: $pink;}
     }
     input {font-size: 13px;}
+    label span {font-size: 13px;}
 
     .forminfo {
       &.hours, &.tags {display:block;}
@@ -1872,3 +1877,4 @@ hr{
   }
 }
 
+.notice.scs p {margin: 15px 0 10px;}

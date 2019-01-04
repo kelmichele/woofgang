@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_03_170912) do
+ActiveRecord::Schema.define(version: 2019_01_04_142941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 2019_01_03_170912) do
     t.string "street_address_one"
     t.string "street_address_two"
     t.string "city"
-    t.string "state"
+    t.string "og_state"
     t.string "zip"
     t.string "phone"
     t.datetime "created_at", null: false
@@ -133,7 +133,8 @@ ActiveRecord::Schema.define(version: 2019_01_03_170912) do
     t.string "yelp"
     t.integer "state_id"
     t.index ["city"], name: "index_locations_on_city"
-    t.index ["state"], name: "index_locations_on_state"
+    t.index ["og_state"], name: "index_locations_on_og_state"
+    t.index ["state_id"], name: "index_locations_on_state_id"
     t.index ["zip"], name: "index_locations_on_zip"
   end
 

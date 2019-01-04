@@ -106,7 +106,7 @@ a {
     &.alert-alert {background-color: $red; color: $white; }
   }
 }
-.notice {color: $red;}
+.notice, .notice p {color: $red;}
 
 .panel.panel-danger.err {width:90%; @include center-block();
   h4.panel-title {background-color: rgba($red, .8); color: $white; @include tshadowl(rgba($black, .7)); margin-bottom:10px;padding-left: 10px;}
