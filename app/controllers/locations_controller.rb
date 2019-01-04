@@ -27,6 +27,21 @@ class LocationsController < ApplicationController
 	    Location.all.paginate(:page => params[:page], :per_page => 100)
 		end
 
+
+		gon.result_info = if params[:near]
+			if @locations.count > 0
+				"#{@locations.count} " + 'locations within 100 miles of <b>"' + params[:near] + '"</b>'
+			else
+				'There are currently no locations in within 100 miles of "' + params[:near] + '"'
+			end
+
+		elsif params[:q]
+			if @locations.count = 0
+				"There are currently no locations within 100 miles of your area. Use the map above to search other areas."
+			end
+		end
+
+
 		@tags = Tag.all
 
 		respond_to do |format|

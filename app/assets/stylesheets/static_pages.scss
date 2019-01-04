@@ -7,6 +7,7 @@
 @import "variables";
 
 .honey {position: absolute;left: -9999px;}
+#result-info{@include sec-default(); text-align: center; margin:10px 0 30px;}
 
 // .container 1180px;
 .inside{width: 85%; @include center-block();
@@ -517,7 +518,7 @@ hr{
 
   .loclist{
     position: relative; z-index: 1; @include sec-default();
-    margin-top: -60px;
+    // margin-top: -60px;
     .inside {width:72%;@include center-block();}
   }
 
