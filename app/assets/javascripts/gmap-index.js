@@ -37,8 +37,8 @@ function setSafeBounds(element) {
 
   } else {
     map.fitZoom();
-    document.getElementById('result-info').innerHTML = gon.result_info
   }
+  document.getElementById('result-info').innerHTML = gon.result_info;
 }
 
 

@@ -880,7 +880,7 @@ hr{
   }
 }
 
-.states.show {
+.states.show, .locations.index {
   .search-sec {
     .searcher, .filter-box, #current-location {display: inline-block; float: left; width:23%; margin: 0;}
     .searcher{width:30%;}

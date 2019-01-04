@@ -32,7 +32,7 @@ class LocationsController < ApplicationController
 			if @locations.count > 0
 				"#{@locations.count} " + 'locations within 100 miles of <b>"' + params[:near] + '"</b>'
 			else
-				'There are currently no locations in within 100 miles of "' + params[:near] + '"'
+				'There are currently no locations in within 100 miles of <b>"' + params[:near] + '"</b>'
 			end
 
 		elsif params[:q]
