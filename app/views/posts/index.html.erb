@@ -5,7 +5,10 @@
 	<div class="inside med2">
 		<h1>Woof Gang Bakery Blog</h1>
 		<% if user_signed_in? && current_user.admin? %>
-			<%= link_to 'Create New Post', new_post_path, class: 'woof-link' %>
+	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+  			<%= link_to "Create New Post", new_post_path, class: 'woof-link' %>
+      </div>
 		<% end %>
 	</div>
 </div>

@@ -11,10 +11,10 @@
 		<h1><%= @location.ntitle %></h1>
 
 		<% if user_signed_in? && current_user.admin? %>
-			<div class="admin-link">
+			<button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
 				<%= link_to("Edit Location (#{@location.id})", edit_location_path(@location), class: 'woof-link') %>
-				<% if @location.longitude == nil %><div class="actions coords">**<small>Coordinates Missing**</small></div><% end %>
-			</div>
+      </div>
 		<% end %>
 
 	</div>

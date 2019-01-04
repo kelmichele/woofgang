@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
+		city = request.location.city
 		@states = State.all
     nearbys = Location.near(params[:q], 350, :order => "distance")
 
@@ -15,7 +16,7 @@ class LocationsController < ApplicationController
 
 	  elsif params[:near]
 	  	# for type search
-	    Location.near(params[:near], 100, :order => "distance").paginate(:page => params[:page], :per_page => 9)
+	    Location.near(params[:near], 20, :order => "distance").paginate(:page => params[:page], :per_page => 9)
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
@@ -24,21 +25,24 @@ class LocationsController < ApplicationController
 			nearbys.paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    Location.all.paginate(:page => params[:page], :per_page => 100)
+	    Location.all.paginate(:page => params[:page], :per_page => 9)
 		end
 
 
 		gon.result_info = if params[:near]
 			if @locations.count > 0
-				"#{@locations.count} " + 'locations within 100 miles of <b>"' + params[:near] + '"</b>'
+				"#{@locations.count} " + 'locations within 20 miles of <b>"' + params[:near] + '"</b>'
 			else
-				'There are currently no locations in within 100 miles of <b>"' + params[:near] + '"</b>'
+				'There are currently no locations in within 20 miles of <b>"' + params[:near] + '"</b>'
 			end
 
 		elsif params[:q]
 			if @locations.count < 1
-				"There are currently no locations within 100 miles of your area. Use the map above to search other areas."
+				"There are currently no locations within 20 miles of your area. Use the map above to search other areas."
 			end
+
+		else
+			""
 		end
 
 

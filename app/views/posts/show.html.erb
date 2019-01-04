@@ -16,7 +16,15 @@
 
 	<% if user_signed_in? && current_user.admin? %>
 		<div class="admin-side">
-			<%= render 'actions' %>
+			<!-- <= render 'actions' %> -->
+	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+      	<div class="admin-btns">
+      		<div class="manu">
+      			<%= render 'actions' %>
+      		</div>
+      	</div>
+      </div>
 		</div>
 	<% end %>
 
