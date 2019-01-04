@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
-		city = request.location.city
+		# city = request.location.city
 		@states = State.all
     nearbys = Location.near(params[:q], 350, :order => "distance")
 
