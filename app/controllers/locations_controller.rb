@@ -36,7 +36,7 @@ class LocationsController < ApplicationController
 			end
 
 		elsif params[:q]
-			if @locations.count = 0
+			if @locations.count < 1
 				"There are currently no locations within 100 miles of your area. Use the map above to search other areas."
 			end
 		end
