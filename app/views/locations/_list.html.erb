@@ -26,16 +26,22 @@
 					<a href="mailto:<%= location.email_address %>"><span uk-icon="icon: mail;"></span></a>
 
 
-						<% if location.fb %>
-							<a href="https://www.facebook.com<%= location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
-						<% end %>
+					<% if location.fb %>
+						<a href="https://www.facebook.com<%= location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
+					<% end %>
+
+					<% if location.insta %>
+						<a href="https://www.instagram.com<%= location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
+					<% end %>
+
+					<% if location.twitter %>
+						<a href="https://twitter.com<%= location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
+					<% end %>
 
 				</div>
 
 				<div class="cat tags">
 					<span>Store Services:</span><br>
-					<button class="tag-icon retail" uk-tooltip="Retail"><span class="tag-img"></span></button>
-
 					<% if location.tags.count > 0 %>
 
 						<% location.tag_split.each do |tag| %>

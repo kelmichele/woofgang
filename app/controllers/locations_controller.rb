@@ -45,7 +45,7 @@ class LocationsController < ApplicationController
 		end
 
 
-		@tags = Tag.all
+		@tags = Tag.find(9,1,2,3,0)
 
 		respond_to do |format|
 		  format.html

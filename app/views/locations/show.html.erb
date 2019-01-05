@@ -64,11 +64,10 @@
 					</div>
 
 					<div class="cat email">
-						<p><a href="mailto:<%= @location.email_address %>"><span uk-icon="icon: mail;"></span></a></p>
-						<!-- <p><a href="mailto:<%= @location.email_address %>"><%= @location.email_address %></a></p> -->
 					</div>
 
 					<div class="cat soc">
+						<a href="mailto:<%= @location.email_address %>"><span uk-icon="icon: mail;"></span></a>
 						<% if @location.list_links.count > 0 %>
 							<% unless @location.fb.empty? %>
 								<a href="https://www.facebook.com<%= @location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
@@ -107,7 +106,6 @@
 
 					<div class="cat tags">
 						<p class="hd">Store Services:</p>
-						<button class="tag-icon retail" uk-tooltip="Retail"><span class="tag-img"></span></button>
 						<% @location.tag_split.each do |tag| %>
 							<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
 								<span class="tag-img"></span>

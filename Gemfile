@@ -62,3 +62,4 @@ gem "aws-sdk-s3", require: false
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'geocoder'
 gem 'redis', '~> 4.0', '>= 4.0.2'
+# gem 'searchkick'
