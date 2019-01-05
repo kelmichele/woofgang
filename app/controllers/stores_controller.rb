@@ -26,8 +26,8 @@ class StoresController < ApplicationController
 			nearbys.paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    # Store.all.paginate(:page => params[:page], :per_page => 9)
-	    Store.near(coords, 200).paginate(:page => params[:page], :per_page => 9)
+	    Store.all.paginate(:page => params[:page], :per_page => 9)
+	    # Store.near(coords, 200).paginate(:page => params[:page], :per_page => 9)
 		end
 
 

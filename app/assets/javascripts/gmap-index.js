@@ -90,11 +90,10 @@ function geoFindMe() {
   }
 
   function error() {
-    console.log("Unable to retrieve your location " + gon.user_ip );
+    console.log("Unable to retrieve your location");
 
     $.getJSON('https://ipinfo.io/geo', function(response) {
-      // var loc = response.loc.split(',');
-      var loc = gon.user_ip.split(',');
+      var loc = response.loc.split(',');
       var coords = {
           latitude: loc[0],
           longitude: loc[1]
