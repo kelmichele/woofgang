@@ -2,8 +2,6 @@ class StoresController < ApplicationController
 	before_action :set_store, only: [:edit, :show, :update, :destroy]
 
 	def index
-		coords = "35.941764, -86.922942"
-
 		@states = State.all
     nearbys = Store.near(params[:q], 350, :order => "distance")
 
@@ -27,7 +25,6 @@ class StoresController < ApplicationController
 
 	  else
 	    Store.all.paginate(:page => params[:page], :per_page => 9)
-	    # Store.near(coords, 200).paginate(:page => params[:page], :per_page => 9)
 		end
 
 
