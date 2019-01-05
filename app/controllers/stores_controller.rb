@@ -2,11 +2,10 @@ class StoresController < ApplicationController
 	before_action :set_store, only: [:edit, :show, :update, :destroy]
 
 	def index
-		# result = request.location
-		# city = request.location.city
+		coords = "35.941764, -86.922942"
 
 		@states = State.all
-    # nearbys = Store.near(params[:q], 350, :order => "distance")
+    nearbys = Store.near(params[:q], 350, :order => "distance")
 
 		@stores = if params[:l]
 			# JUST FOR REDO SEARCH
@@ -23,9 +22,12 @@ class StoresController < ApplicationController
 	  elsif params[:tag]
 	    Store.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
 
+	  elsif params[:q]
+			nearbys.paginate(:page => params[:page], :per_page => 9)
+
 	  else
 	    # Store.all.paginate(:page => params[:page], :per_page => 9)
-	    Store.near(:city, 250, :order => "distance").paginate(:page => params[:page], :per_page => 9)
+	    Store.near(coords, 200).paginate(:page => params[:page], :per_page => 9)
 		end
 
 
