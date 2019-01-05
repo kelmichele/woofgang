@@ -84,12 +84,12 @@ function geoFindMe() {
 
       jQuery('#current-location').show();
       $(document).on('click', '#locateLink', function(e) {
-        Turbolinks.visit('/stores?q=' + latlng)
+        Turbolinks.visit('/locations?q=' + latlng)
       });
 
       $(document).on('click', '#current-location', function(event) {
         event.preventDefault();
-        Turbolinks.visit('/stores?q=' + latlng)
+        Turbolinks.visit('/locations?q=' + latlng)
       });
     });
   }
