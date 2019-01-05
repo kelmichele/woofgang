@@ -20,8 +20,8 @@ class LocationsController < ApplicationController
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
 
-		# elsif params[:q]
-		# 	nearbys.paginate(:page => params[:page], :per_page => 9)
+		elsif params[:q]
+			nearbys.paginate(:page => params[:page], :per_page => 9)
 
 	  else
 	    Location.all.paginate(:page => params[:page], :per_page => 9)

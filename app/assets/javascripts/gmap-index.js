@@ -3,39 +3,21 @@ var map;
 jQuery('#current-location').hide();
 
 window.addMarkers = function addMarkers() {
-  // var element = document.querySelector("#locations-list");
-  // var locations = window.locations = JSON.parse(element.dataset.locations);
-
-  var element = document.querySelector("#stores-list");
-  var stores = window.stores = JSON.parse(element.dataset.stores);
+  var element = document.querySelector("#locations-list");
+  var locations = window.locations = JSON.parse(element.dataset.locations);
 
   map.removeMarkers();
 
-  // locations.forEach(function(location) {
-  //   if (location.latitude && location.longitude) {
-  //     var marker = map.addMarker({
-  //       lat: location.latitude,
-  //       lng: location.longitude,
-  //       title: location.address,
-  //       infoWindow: {
-  //         content: '<p>' + location.street_address_one + '<br>' + location.city + ', ' + location.og_state + ' ' + location.zip + '</p><p>' + '<a href="tel:' + location.phone + '">' + location.phone +
-  //         '</a></p> <p class="email"><a href="mailto:' + location.email_address + '">' + location.email_address + '</a></p> <p><a class="woof-link" href="https://www.google.com/maps/dir//' +
-  //         location.street_address_one + '+' + location.city + '+' + location.state + '+' + location.zip + '" target="_blank">Get Directions</a></p>'
-  //       }
-  //     });
-  //   }
-  // });
-
-  stores.forEach(function(store) {
-    if (store.latitude && store.longitude) {
+  locations.forEach(function(location) {
+    if (location.latitude && location.longitude) {
       var marker = map.addMarker({
-        lat: store.latitude,
-        lng: store.longitude,
-        title: store.address,
+        lat: location.latitude,
+        lng: location.longitude,
+        title: location.address,
         infoWindow: {
-          content: '<p>' + store.street_address_one + '<br>' + store.city + ', ' + store.og_state + ' ' + store.zip + '</p><p>' + '<a href="tel:' + store.phone + '">' + store.phone +
-          '</a></p> <p class="email"><a href="mailto:' + store.email_address + '">' + store.email_address + '</a></p> <p><a class="woof-link" href="https://www.google.com/maps/dir//' +
-          store.street_address_one + '+' + store.city + '+' + store.state + '+' + store.zip + '" target="_blank">Get Directions</a></p>'
+          content: '<p>' + location.street_address_one + '<br>' + location.city + ', ' + location.og_state + ' ' + location.zip + '</p><p>' + '<a href="tel:' + location.phone + '">' + location.phone +
+          '</a></p> <p class="email"><a href="mailto:' + location.email_address + '">' + location.email_address + '</a></p> <p><a class="woof-link" href="https://www.google.com/maps/dir//' +
+          location.street_address_one + '+' + location.city + '+' + location.state + '+' + location.zip + '" target="_blank">Get Directions</a></p>'
         }
       });
     }
@@ -61,7 +43,7 @@ function setSafeBounds(element) {
 
 
 $(document).on('click', '#locateLink', function(e) {
-  Turbolinks.visit('/stores')
+  Turbolinks.visit('/locations')
 });
 
 function geoFindMe() {
@@ -80,19 +62,17 @@ function geoFindMe() {
 
     jQuery('#current-location').show();
     $(document).on('click', '#locateLink', function(e) {
-      Turbolinks.visit('/stores?q=' + latlng)
+      Turbolinks.visit('/locations?q=' + latlng)
     });
 
     $(document).on('click', '#current-location', function(event) {
       event.preventDefault();
-      Turbolinks.visit('/stores?q=' + latlng)
+      Turbolinks.visit('/locations?q=' + latlng)
     });
   }
 
   function error() {
     console.log("Unable to retrieve your location");
-
-
   }
 
   navigator.geolocation.getCurrentPosition(success, error);
@@ -113,8 +93,7 @@ document.addEventListener("turbolinks:load", function() {
     var bounds = map.getBounds();
     var station = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
 
-    Turbolinks.visit('/stores?l=' + station);
-    // Turbolinks.visit('/locations?l=' + station);
+    Turbolinks.visit('/locations?l=' + station);
   });
 });
 
