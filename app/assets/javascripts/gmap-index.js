@@ -73,6 +73,25 @@ function geoFindMe() {
 
   function error() {
     console.log("Unable to retrieve your location");
+
+    $.getJSON('https://ipinfo.io/geo', function(response) {
+      var loc = response.loc.split(',');
+      var coords = {
+          latitude: loc[0],
+          longitude: loc[1]
+      };
+      var latlng = coords.latitude + "," + coords.longitude;
+
+      jQuery('#current-location').show();
+      $(document).on('click', '#locateLink', function(e) {
+        Turbolinks.visit('/stores?q=' + latlng)
+      });
+
+      $(document).on('click', '#current-location', function(event) {
+        event.preventDefault();
+        Turbolinks.visit('/stores?q=' + latlng)
+      });
+    });
   }
 
   navigator.geolocation.getCurrentPosition(success, error);
