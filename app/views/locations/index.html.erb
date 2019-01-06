@@ -32,42 +32,23 @@
     </div>
 	<% end %>
 </div>
-	<!-- <div class="head-sec">
-		<h1>Find a location near you</h1>
-		<% if user_signed_in? && current_user.admin? %>
-	  	<div class="boundary-align uk-panel">
-		    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
-		    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
-	      	<div class="admin-btns">
-	      		<div class="manu">
-	      			<%= link_to 'Add a Location', new_location_path, class: 'woof-link' %>
-	      			<%= link_to "Download CSV", locations_path(format: "csv"), class: 'woof-link dl' %>
-							<%= link_to "Add a State", new_state_path, class: 'woof-link' %>
-	      		</div>
-
-	    			<div class="import">
-	    				<p class="bmargin0">Import Locations</p>
-	    				<hr>
-	    				<%= form_tag import_locations_path, multipart: true do %>
-	    				  <%= file_field_tag :file %>
-	    				  <hr>
-	    				  <%= submit_tag "Import" %>
-	    				<% end %>
-	    			</div>
-	      	</div>
-	    	</div>
-	    </div>
-		<% end %>
-		<hr>
-	</div> -->
 
 	<div class="full-search">
 		<div class="full listings">
 			<div class="search-sec">
 				<div class="inside lg">
 					<div class="searcher">
+						  <!-- <= f.text_field :proximity, placeholder: "20" %> -->
 						<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
 						  <%= f.text_field :near, class: "form-control", placeholder: "Search by city and state, or zip" %>
+
+						  <%= f.select(:proximity) do %>
+						    <% [['10 miles', '10'], ['20 miles', '20'], [ '30 miles', '30']].each do |c| -%>
+						      <%= content_tag(:option, c.first, value: c.last) %>
+						    <% end %>
+						  <% end %>
+
+
 						  <%= f.submit "", class: "btn btn-outline-secondary search" %>
 						<% end %>
 					</div>
@@ -100,7 +81,7 @@
 			</div>
 
 			<div class="map">
-		    <!-- <= tag.div nil, id: 'map' %> -->
+		    <%= tag.div nil, id: 'map' %>
 			</div>
 
 			<div class="loclist">

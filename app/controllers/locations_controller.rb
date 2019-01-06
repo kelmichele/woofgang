@@ -15,7 +15,8 @@ class LocationsController < ApplicationController
 
 	  elsif params[:near]
 	  	# for type search
-	    Location.near(params[:near], 20, :order => "distance").paginate(:page => params[:page], :per_page => 9)
+	    # Location.near(params[:near], 20, :order => "distance").paginate(:page => params[:page], :per_page => 9)
+	    Location.near(params[:near], params[:proximity], :order => "distance").paginate(:page => params[:page], :per_page => 9)
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
@@ -30,9 +31,9 @@ class LocationsController < ApplicationController
 
 		gon.result_info = if params[:near]
 			if @locations.count > 0
-				"#{@locations.count} " + 'locations within 20 miles of <b>"' + params[:near] + '"</b>'
+				"#{@locations.count} " + 'locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 			else
-				'There are currently no locations in within 20 miles of <b>"' + params[:near] + '"</b>'
+				'There are currently no locations in within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 			end
 
 		elsif params[:q]
