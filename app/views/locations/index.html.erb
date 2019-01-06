@@ -37,7 +37,6 @@
 		<div class="full listings">
 			<div class="search-sec">
 				<div class="inside lg">
-			    <p><%= request.location.latitude %></p>
 					<div class="searcher">
 						<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
 						  <%= f.text_field :near, class: "form-control", placeholder: "Search by city and state, or zip" %>
