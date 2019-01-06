@@ -13,7 +13,7 @@
 		<% if user_signed_in? && current_user.admin? %>
 			<button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
 	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
-				<%= link_to("Edit Location (#{@location.id})", edit_location_path(@location), class: 'woof-link') %>
+				<%= link_to("Edit Location (#{@location.id})", edit_location_path(@location), class: 'woof-link cst') %>
       </div>
 		<% end %>
 
@@ -38,7 +38,6 @@
 
 				<div class="location-dets">
 					<div class="full top">
-					<!-- <h3><%= @location.ntitle %> Details</h3> -->
 						<h3>Store Details</h3>
 
 						<div class="btn-row">
@@ -49,10 +48,8 @@
 
 
 					<div class="cat address">
-						<!-- <p class="addr"><%= @location.street_address_one.titleize %><br> -->
-							<p class="addr"><%= @location.street_address_one.strip %><br>
+						<p class="addr"><%= @location.street_address_one.strip %><br>
 						<% if @location.street_address_two %>
-							<!-- <span class="addr2"><%= @location.street_address_two.titleize %></span> -->
 							<span class="addr2"><%= @location.street_address_two %></span>
 						<% end %>
 						<%= @location.city.strip %>, <%= @location.state.name %> <%= @location.zip %></p>
@@ -68,28 +65,28 @@
 
 					<div class="cat soc">
 						<a href="mailto:<%= @location.email_address %>"><span uk-icon="icon: mail;"></span></a>
-						<% if @location.list_links.count > 0 %>
-							<% unless @location.fb.empty? %>
+						<!-- < if @location.list_links.count > 0 %> -->
+							<% if @location.fb %>
 								<a href="https://www.facebook.com<%= @location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
 							<% end %>
 
-							<% unless @location.insta.empty? %>
+							<% if @location.insta %>
 								<a href="https://www.instagram.com<%= @location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
 							<% end %>
 
-							<% unless @location.twitter.empty? %>
+							<% if @location.twitter %>
 								 <!-- != ''  -->
 								<a href="https://twitter.com<%= @location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
 							<% end %>
 
-							<% if @location.yelp != '' %>
+							<% if @location.yelp %>
 								<a href="https://www.yelp.com/biz<%= @location.yelp %>" target="_blank"><span class="linkcon" uk-icon="icon: yelp;"></span></a>
 							<% end %>
 
-							<% unless @location.site.empty? %>
+							<% if @location.site %>
 								<a href="<%= @location.site %>" target="_blank"><span class="linkcon" uk-icon="icon: link;"></span></a>
 							<% end %>
-						<% end %>
+						<!-- < end %> -->
 					</div>
 
 					<div class="clearfix"></div><hr class="one">
