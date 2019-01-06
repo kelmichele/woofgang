@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
+		@loc = request.remote_ip
 		@states = State.all
     nearbys = Location.near(params[:q], 20, :order => "distance")
 

@@ -4,6 +4,7 @@
 <div class="ipage-header">
 	<div class="inside narrow">
 		<h1><%= @page_title %></h1>
+		<h1><%= @loc %></h1>
 		<h2>Use the map below to find a location near you.</h2>
 	</div>
 
@@ -81,17 +82,6 @@
 
 			<div class="map">
 		    <%= tag.div nil, id: 'map' %>
-		        <script>
-		          // Note: This example requires that you consent to location sharing when
-		          // prompted by your browser. If you see the error "The Geolocation service
-		          // failed.", it means you probably did not give permission for the browser to
-		          // locate you.
-
-		        </script>
-		        <!-- <script async defer
-		        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_DQwU42qTGnrTdVyyTpSrvnZzaSspU2A&callback=initMap">
-		        </script> -->
-
 			</div>
 
 			<div class="loclist">
