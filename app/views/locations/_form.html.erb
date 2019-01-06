@@ -87,7 +87,8 @@
 
       <div class="forminfo tags">
         <label>Tags <span>(command + click all that apply)</span><br>
-        <%= f.collection_select(:tag_ids, Tag.all, :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %>
+        <%= f.collection_select(:tag_ids, Tag.find(9,1,2,3,0), :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %>
+        <!-- <= f.collection_select(:tag_ids, Tag.all, :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %> -->
       </div>
 
       <div class="forminfo lat">

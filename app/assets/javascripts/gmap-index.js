@@ -1,6 +1,9 @@
 geoFindMe();
 var map;
 jQuery('#current-location').hide();
+var ulat;
+var ulng;
+var pos_cords;
 
 window.addMarkers = function addMarkers() {
   var element = document.querySelector("#locations-list");
@@ -57,6 +60,9 @@ function geoFindMe() {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
     var latlng = position.coords.latitude + "," + position.coords.longitude;
+    pos_cords = position.coords.latitude + "," + position.coords.longitude;
+    ulat  = position.coords.latitude;
+    ulng  = position.coords.longitude;
 
     console.log('Latitude is ' + latitude + ', Longitude is ' + longitude);
 
@@ -81,6 +87,10 @@ function geoFindMe() {
           longitude: loc[1]
       };
       var latlng = coords.latitude + "," + coords.longitude;
+
+      pos_cords = coords.latitude + "," + coords.longitude;
+      ulat  = coords.latitude;
+      ulng  = coords.longitude;
 
       jQuery('#current-location').show();
       $(document).on('click', '#locateLink', function(e) {
@@ -115,4 +125,3 @@ document.addEventListener("turbolinks:load", function() {
     Turbolinks.visit('/locations?l=' + station);
   });
 });
-

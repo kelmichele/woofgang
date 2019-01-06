@@ -5,7 +5,7 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  has_one_attached :image
+  # has_one_attached :image
   belongs_to :state
 
   validates :store_name, presence: true
@@ -94,7 +94,6 @@ class Location < ApplicationRecord
   def list_links
     soc_links.split(',')
   end
-
 
   def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)

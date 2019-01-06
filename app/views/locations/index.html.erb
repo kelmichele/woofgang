@@ -37,6 +37,7 @@
 		<div class="full listings">
 			<div class="search-sec">
 				<div class="inside lg">
+			    <p><%= request.location.latitude %></p>
 					<div class="searcher">
 						<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
 						  <%= f.text_field :near, class: "form-control", placeholder: "Search by city and state, or zip" %>
@@ -81,6 +82,17 @@
 
 			<div class="map">
 		    <%= tag.div nil, id: 'map' %>
+		        <script>
+		          // Note: This example requires that you consent to location sharing when
+		          // prompted by your browser. If you see the error "The Geolocation service
+		          // failed.", it means you probably did not give permission for the browser to
+		          // locate you.
+
+		        </script>
+		        <!-- <script async defer
+		        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_DQwU42qTGnrTdVyyTpSrvnZzaSspU2A&callback=initMap">
+		        </script> -->
+
 			</div>
 
 			<div class="loclist">

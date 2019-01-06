@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
 
 	def index
 		@states = State.all
-    nearbys = Location.near(params[:q], 350, :order => "distance")
+    nearbys = Location.near(params[:q], 20, :order => "distance")
 
 		@locations = if params[:l]
 			# JUST FOR REDO SEARCH
@@ -27,7 +27,6 @@ class LocationsController < ApplicationController
 	  else
 	    Location.all.paginate(:page => params[:page], :per_page => 99)
 		end
-
 
 		gon.result_info = if params[:near]
 			if @locations.count > 0
