@@ -1,23 +1,9 @@
-AWARDS
-	Grooming:
-		Orlando Magazine Best Groomer
-		Raleigh Magazine Best Groomer
-
-
-	Retail:
-		Top 10 Largest Retailers – Pet Business Media
-		Best Overall Multi-Unit Retailer -- Pet Business Media
-		* Retailer of the Year Franchise Award -- Pet Product News
-
-
-	Franchise:
-		Nation’s Fastest-growing Pet Chains -- Pet Insight Magazine
-		Central Florida's Top Privately Held Companies – Orlando Business Journal
-		Central Florida’s Fastest Growing Companies – Orlando Business Journal
-		* Retailer of the Year Franchise Award -- Pet Product News
-
-
-		? Multi-Service Excellence Award -- Pet Business Media
+LOCATION PAGE:
+	- if we start having problems with socials
+	<% if location.fb != nil %>
+		<!-- if we start having issues< if location.fb.size > 1 %> -->
+		<p><%= location.fb %> - <%= location.fb.size %></p>
+	<% end %>
 
 
 

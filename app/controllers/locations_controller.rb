@@ -24,7 +24,7 @@ class LocationsController < ApplicationController
 			nearbys.paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    Location.all.paginate(:page => params[:page], :per_page => 9)
+	    Location.all.paginate(:page => params[:page], :per_page => 99)
 		end
 
 
