@@ -5,6 +5,7 @@
 	<div class="inside narrow">
 		<h1><%= @page_title %></h1>
 		<h2>Use the map below to find a location near you.</h2>
+		<p><%= @user_lat %>, <%= @user_lng %></h1>
 	</div>
 
 	<% if user_signed_in? && current_user.admin? %>

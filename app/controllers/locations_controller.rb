@@ -1,8 +1,13 @@
+require 'pointa'
+
 class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
 		# @loc = request.remote_ip
+		pointa = get_user_location
+		@user_lng = pointa["longitude"]
+    @user_lat = pointa["latitude"]
 
 		@states = State.all
     nearbys = Location.near(params[:q], 20, :order => "distance")
@@ -22,6 +27,7 @@ class LocationsController < ApplicationController
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
+	    # Location.near("Omaha, NE", 20, select: "locations.*, tags.*").joins(:tags)
 
 		elsif params[:q]
 			nearbys.paginate(:page => params[:page], :per_page => 9)
@@ -103,6 +109,12 @@ class LocationsController < ApplicationController
 		@location = Location.friendly.find(params[:id])
 		# @location = Location.find(params[:id])
 	end
+
+	def get_user_location
+    ip_address = request.remote_ip
+    # ip_address = "107.167.195.186"
+    Pointa.get_pointa ip_address
+  end
 
 	def location_params
     params.require(:location).permit(:store_name, :email_address, :phone, :fb, :twitter, :insta, :yelp, :site, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, :state_id, { tag_ids: [] }, :tag_ids, :image)
