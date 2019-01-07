@@ -871,6 +871,7 @@ hr{
 
     &::before{@include before(); height: 420px;background-color: $opink;}
     .il-slideshow {border:7px solid $white; }
+    // .uk-slideshow-nav.uk-dotnav{}
   }
 
   .statement {@include sec-default(); padding:70px 0;

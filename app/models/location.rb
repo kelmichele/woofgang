@@ -86,7 +86,6 @@ class Location < ApplicationRecord
     tag_list.split(',')
   end
 
-
   def soc_links
     [fb, insta, twitter, yelp, site].compact.join(" , ")
   end

@@ -7,12 +7,13 @@ class LocationsController < ApplicationController
 		pointa = get_user_location
 		@user_lng = pointa["longitude"]
     @user_lat = pointa["latitude"]
-    gon.user_lat = @user_lat
-    gon.user_lng = @user_lng
+   	crds = [@user_lat, @user_lng]
+
+    # self.by_dist = Location.distance_to(@crd)
 
 		@states = State.all
     nearbys = Location.near(params[:q], 20, :order => "distance")
-    neighbors = Location.near([@user_lat, @user_lng], 60, :order => "distance")
+    neighbors = Location.near(crds, 60, :order => "distance")
 
 		@locations = if params[:l]
 			# JUST FOR REDO SEARCH
@@ -28,18 +29,27 @@ class LocationsController < ApplicationController
 	    Location.near(params[:near], params[:proximity], :order => "distance").paginate(:page => params[:page], :per_page => 9)
 
 	  elsif params[:tag]
-	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
+	    Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200).paginate(:page => params[:page], :per_page => 9)
 	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    neighbors.all.paginate(:page => params[:page], :per_page => 9)
+	    neighbors.all.paginate(:page => params[:page], :per_page => 110)
 		end
+
+		@tags = Tag.find(9,1,2,3,0)
 
 		gon.result_info = if params[:near]
 			if @locations.count > 0
 				"#{@locations.count} " + 'locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 			else
-				'There are currently no locations in within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
+				'There are currently no locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
+			end
+
+		elsif params[:tag]
+			if @locations.count < 1
+				'There are currently no locations in your area that offer <b>"' + params[:tag] + '</b>."'
+			else
+				" "
 			end
 
 		else
@@ -49,8 +59,6 @@ class LocationsController < ApplicationController
 				" "
 			end
 		end
-
-		@tags = Tag.find(9,1,2,3,0)
 
 		respond_to do |format|
 		  format.html
@@ -89,7 +97,6 @@ class LocationsController < ApplicationController
 		if @location.update(location_params)
 		  flash[:success] = "Location was updated successfully."
 	    redirect_to location_path(@location)
-	    # redirect_to locations_path(@location)
 		else
 		  render 'edit'
 		end
