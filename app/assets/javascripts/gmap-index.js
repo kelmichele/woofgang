@@ -45,9 +45,9 @@ function setSafeBounds(element) {
 }
 
 
-$(document).on('click', '#locateLink', function(e) {
-  Turbolinks.visit('/locations')
-});
+// $(document).on('click', '#locateLink', function(e) {
+//   Turbolinks.visit('/locations')
+// });
 
 function geoFindMe() {
   if (!navigator.geolocation){
@@ -67,13 +67,13 @@ function geoFindMe() {
     console.log('Latitude is ' + latitude + ', Longitude is ' + longitude);
 
     jQuery('#current-location').show();
-    $(document).on('click', '#locateLink', function(e) {
-      Turbolinks.visit('/locations?q=' + latlng)
-    });
+    // $(document).on('click', '#locateLink', function(e) {
+    //   Turbolinks.visit('/locations?q=' + latlng)
+    // });
 
     $(document).on('click', '#current-location', function(event) {
       event.preventDefault();
-      Turbolinks.visit('/locations?q=' + latlng)
+      Turbolinks.visit('/locations')
     });
   }
 
@@ -93,13 +93,13 @@ function geoFindMe() {
       ulng  = coords.longitude;
 
       jQuery('#current-location').show();
-      $(document).on('click', '#locateLink', function(e) {
-        Turbolinks.visit('/locations?q=' + latlng)
-      });
+      // $(document).on('click', '#locateLink', function(e) {
+      //   Turbolinks.visit('/locations?q=' + latlng)
+      // });
 
       $(document).on('click', '#current-location', function(event) {
         event.preventDefault();
-        Turbolinks.visit('/locations?q=' + latlng)
+        Turbolinks.visit('/locations')
       });
     });
   }

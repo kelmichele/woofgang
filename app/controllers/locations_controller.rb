@@ -4,13 +4,15 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
-		# @loc = request.remote_ip
 		pointa = get_user_location
 		@user_lng = pointa["longitude"]
     @user_lat = pointa["latitude"]
+    gon.user_lat = @user_lat
+    gon.user_lng = @user_lng
 
 		@states = State.all
     nearbys = Location.near(params[:q], 20, :order => "distance")
+    neighbors = Location.near([@user_lat, @user_lng], 60, :order => "distance")
 
 		@locations = if params[:l]
 			# JUST FOR REDO SEARCH
@@ -27,13 +29,12 @@ class LocationsController < ApplicationController
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
-	    # Location.near("Omaha, NE", 20, select: "locations.*, tags.*").joins(:tags)
 
-		elsif params[:q]
-			nearbys.paginate(:page => params[:page], :per_page => 9)
+		# elsif params[:q]
+		# 	nearbys.paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    Location.all.paginate(:page => params[:page], :per_page => 99)
+	    neighbors.all.paginate(:page => params[:page], :per_page => 9)
 		end
 
 		gon.result_info = if params[:near]
@@ -43,13 +44,17 @@ class LocationsController < ApplicationController
 				'There are currently no locations in within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 			end
 
-		elsif params[:q]
-			if @locations.count < 1
-				"There are currently no locations within 20 miles of your area. Use the map above to search other areas."
-			end
+		# elsif params[:q]
+		# 	if @locations.count < 1
+		# 		"There are currently no locations in your area. Use the map above to search other areas."
+		# 	end
 
 		else
-			""
+			if @locations.count < 1
+				"There are currently no locations in your area. Use the map above to search other areas."
+			else
+				" "
+			end
 		end
 
 
@@ -107,7 +112,6 @@ class LocationsController < ApplicationController
 	private
 	def set_location
 		@location = Location.friendly.find(params[:id])
-		# @location = Location.find(params[:id])
 	end
 
 	def get_user_location
