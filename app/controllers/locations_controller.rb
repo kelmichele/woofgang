@@ -14,8 +14,6 @@ class LocationsController < ApplicationController
     nearbys = Location.near(params[:q], 20, :order => "distance")
     neighbors = Location.near([@user_lat, @user_lng], 60, :order => "distance")
 
-    tagged = Location.tagged_with(params[:tag])
-
 		@locations = if params[:l]
 			# JUST FOR REDO SEARCH
 	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
