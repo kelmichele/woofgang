@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
 
 	def index
 		@loc = request.remote_ip
-		@lat = Geocoder.search(@loc).first.city
+
 		@states = State.all
     nearbys = Location.near(params[:q], 20, :order => "distance")
 
