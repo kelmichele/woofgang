@@ -225,12 +225,12 @@ hr{
 
     .top {margin-bottom: 20px;}
     .logo{@include center-block();}
-    .logos{text-align: center;}
     .serve-tl{display: inline-block; float: none;
       width:23%; margin: 10px 5%;
-
       &.daycare, &.vet {width:25%; margin:10px 4%; }
       &.ss {width:29%; margin:10px 0 10px 2%; }
+
+      // width:25%; margin: 10px 3%;
     }
 
 
