@@ -66,24 +66,24 @@
 					<div class="cat soc">
 						<a href="mailto:<%= @location.email_address %>"><span uk-icon="icon: mail;"></span></a>
 						<!-- < if @location.list_links.count > 0 %> -->
-							<% if @location.fb %>
+							<% if @location.fb && @location.fb.size > 1 %>
 								<a href="https://www.facebook.com<%= @location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
 							<% end %>
 
-							<% if @location.insta %>
+							<% if @location.insta && @location.insta.size > 1 %>
 								<a href="https://www.instagram.com<%= @location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
 							<% end %>
 
-							<% if @location.twitter %>
+							<% if @location.twitter && @location.twitter.size > 1 %>
 								 <!-- != ''  -->
 								<a href="https://twitter.com<%= @location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
 							<% end %>
 
-							<% if @location.yelp %>
+							<% if @location.yelp && @location.yelp.size > 1 %>
 								<a href="https://www.yelp.com/biz<%= @location.yelp %>" target="_blank"><span class="linkcon" uk-icon="icon: yelp;"></span></a>
 							<% end %>
 
-							<% if @location.site %>
+							<% if @location.site && @location.site.size > 1 %>
 								<a href="<%= @location.site %>" target="_blank"><span class="linkcon" uk-icon="icon: link;"></span></a>
 							<% end %>
 						<!-- < end %> -->
