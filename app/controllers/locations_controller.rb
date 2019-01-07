@@ -2,7 +2,14 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
-		@loc = request.remote_ip
+		# @loc = request.remote_ip
+		handler = IPinfo::create(Rails.application.credentials.ip_info[:access_token])
+		details = handler.details()
+		# city = details.city
+		@city = request.location.city
+		loc = details.loc
+		lat = details.latitude
+		lon = details.longitude
 
 		@states = State.all
     nearbys = Location.near(params[:q], 20, :order => "distance")

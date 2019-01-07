@@ -78,7 +78,7 @@ function geoFindMe() {
   }
 
   function error() {
-    console.log("Unable to retrieve your location");
+    console.log("Unable to retrieve your location - ipinfo");
 
     $.getJSON('https://ipinfo.io/geo', function(response) {
       var loc = response.loc.split(',');

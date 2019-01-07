@@ -1,15 +1,15 @@
 Geocoder.configure(
   # Geocoding options
-  # timeout: 3,                 # geocoding service timeout (secs)
-  # lookup: :google,         # name of geocoding service (symbol)
-  :google => {
-    api_key: Rails.application.credentials.google[:gmaps_key]
-  },
+  timeout: 3,                 # geocoding service timeout (secs)
+  lookup: :google,         # name of geocoding service (symbol)
+  # :google => {
+    api_key: Rails.application.credentials.google[:gmaps_key],
+  # },
 
-  # ip_lookup: :ipinfo_io,      # name of IP address geocoding service (symbol)
-  :ipinfo_io => {
-    access_token: Rails.application.credentials.ip_info[:access_token]
-  },
+  ip_lookup: :ipinfo_io,      # name of IP address geocoding service (symbol)
+  # :ipinfo_io => {
+  #   access_token: Rails.application.credentials.ip_info[:access_token]
+  # },
   # language: :en,              # ISO-639 language code
   use_https: true,           # use HTTPS for lookup requests? (if supported)
   # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
