@@ -19,13 +19,10 @@ class StatesController < ApplicationController
 
 	  elsif params[:near]
 	  	# for type search
-	    Location.near(params[:near], 100, :order => "distance").paginate(:page => params[:page], :per_page => 9)
+	    Location.near(params[:near], params[:proximity], :order => "distance").paginate(:page => params[:page], :per_page => 9)
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
-
-		elsif params[:q]
-			nearbys.paginate(:page => params[:page], :per_page => 9)
 
 	  else
 	    @state_locations.paginate(:page => params[:page], :per_page => 9)

@@ -14,6 +14,8 @@ class LocationsController < ApplicationController
     nearbys = Location.near(params[:q], 20, :order => "distance")
     neighbors = Location.near([@user_lat, @user_lng], 60, :order => "distance")
 
+    tagged = Location.tagged_with(params[:tag])
+
 		@locations = if params[:l]
 			# JUST FOR REDO SEARCH
 	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
@@ -29,9 +31,7 @@ class LocationsController < ApplicationController
 
 	  elsif params[:tag]
 	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
-
-		# elsif params[:q]
-		# 	nearbys.paginate(:page => params[:page], :per_page => 9)
+	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
 	    neighbors.all.paginate(:page => params[:page], :per_page => 9)
@@ -44,11 +44,6 @@ class LocationsController < ApplicationController
 				'There are currently no locations in within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 			end
 
-		# elsif params[:q]
-		# 	if @locations.count < 1
-		# 		"There are currently no locations in your area. Use the map above to search other areas."
-		# 	end
-
 		else
 			if @locations.count < 1
 				"There are currently no locations in your area. Use the map above to search other areas."
@@ -56,7 +51,6 @@ class LocationsController < ApplicationController
 				" "
 			end
 		end
-
 
 		@tags = Tag.find(9,1,2,3,0)
 

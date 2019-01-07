@@ -466,37 +466,24 @@ hr{
   &.new .back-link.inline {float:left;}
 }
 
-
 .locations.index, .states.show, .stores.index {
   .woof-link.cst{font-size: 14px;@include sec-default();}
   .btn-row {margin: 5px 0 10px;}
   .full-search {@include sec-default(); padding: 40px 0; background-color: $f9; padding-top:0;}
-  .search-sec{@include sec-default();margin-bottom: 20px;
+  .search-sec{@include sec-default();margin-bottom: 20px; text-align: center;
+
+    .searcher,.filter-box{display: inline-block; width:30%; float: none; box-shadow: 0px 1px 4px rgba($black, .2); margin-left: 3%;}
+
     .form-control, select, .btn-outline-secondary.search {display: inline-block; float: left; height:44px; }
     .form-control {width:70%; border:0; padding-left: 15px;font-family: $body; margin-top: 0;}
     select{width:20%; margin-top:0;}
+    #proximity{border-radius: 0; border-color: transparent;}
     .btn.btn-outline-secondary.search {width: 10%;margin-top:0; float: right;
       background-color: $pink; color: white; letter-spacing: 1px;
       @include sec-bgimage('search.png'); background-position: center center; background-size: 40%;
     }
 
-    .searcher,.filter-box,.text, #current-location {display: inline-block; width:40%; float: left;box-shadow: 0px 1px 4px rgba($black, .2);}
-
-
-    // .text {padding:10px 15px;float: right; position: relative;z-index: 0;
-    //   &::after{@include after(); background-color: $pink; width:11%; left:89%;}
-
-    //   p,a{font-size: 14px;margin-bottom: 0; }
-    //   span{float: right; color: $white; font-weight: bold;}
-    // }
-
-    #current-location {display: inline-block; float: right; width:15%; text-align: center;
-      padding:10px 15px; font-family: $body; font-size: 14px; background-color: $white; border-radius: 0;
-      background-color:$pink;
-    }
-
-    .filter-box {
-      width: 25%; margin-left: 2.5%;
+    .filter-box {width: 25%;
       .filter-uk {@include sec-default(); background-color: $white; color: $tbrown; cursor: pointer; padding: 10px 10px 10px 20px;
         text-align: left; font-size: 14px;
         position: relative;z-index: 0;
@@ -510,6 +497,11 @@ hr{
         a{font-size: 15px;}
       }
     }
+
+    #current-location {display: inline-block; float: right; width:15%; text-align: center;
+      padding:10px 15px; font-family: $body; font-size: 14px; background-color: $white; border-radius: 0;
+      background-color:$pink;
+    }
   }
 
   .full.listings {margin-top: 50px;}
@@ -520,8 +512,6 @@ hr{
     p.email{margin-bottom: 12px;}
     .woof-link {font-size: 13px; padding: 7px 20px;}
   }
-
-  .redo {@include sec-default();background-color: $compb; padding: 5px 25px;background-color: darken($compb, 20%);}
 
   .loclist{
     position: relative; z-index: 1; @include sec-default();
@@ -558,48 +548,11 @@ hr{
     }
   }
 
-
-
-  // move to top if used, delete ipage-header
-  // .page-body {position: relative; z-index: 0; background-color: $f9;&::before{@include before(); height:30%; background-color: darken($opink,1%); background-color: rgba($brown,.1);}}
-  // .services-layout h2{line-height: 1.6rem; font-size: 1.1rem; font-weight: 300; color:$tbrown;}
-  // .head-sec {@include sec-default();padding:75px 5% 20px;
-  //   .uk-dropdown {width:45%; min-width: auto;background-color: $f9;
-  //     .manu, .import {display: inline-block; width:40%; float:left;}
-  //     .woof-link {@include sec-default(); margin: 6px 0;}
-  //     .import {float: right; width:55%; background-color: $white; padding:15px 20px; border:$border;
-  //       p{font-size: 16px; font-weight: $semi;}
-  //       input[type="submit"] {background-color: $compb; height:auto; width:auto; padding:4px 25px;
-  //         color: $white; @include tshadowl(rgba($black, .1)); float: right; font-size: 14px;
-  //       }
-  //       hr{margin-top: 10px;}
-  //     }
-  //   }
-  //  hr {margin-top: 10px;}
-  //  .admin-uk {margin-top: -40px; display: none;}
-  //  h1{font-size: 1.3rem; text-transform: none; letter-spacing: .4px;}
-  // }
-  // .full.listings {margin-top: 0px;}
-
-  // .search-sec {
-  //   // .text::after, .filter-box .filter-uk::after, #current-location,.btn.btn-outline-secondary.search {background-color: $tbrown;}
-  // }
-
-
-
-
-
-
   @media (max-width:1200px) {
     .search-sec{
       .filter-box .filter-uk{
         span {width:18px; height:18px; margin-top: 4px;}
         &::after {width:14%; left:86%;}
-      }
-
-      .text{
-        span {width:17px; height:17px; margin-top:2px; padding-left: 1px;}
-        &::after {width:12%; left:88%;}
       }
     }
 
@@ -879,16 +832,11 @@ hr{
   }
 }
 
-.states.show, .locations.index, .stores.index {
-  .search-sec {
-    .searcher, .filter-box, #current-location {display: inline-block; float: left; width:23%; margin: 0;}
-    .searcher{width:30%;}
-    .filter-box {margin-left: 3%}
-    #current-location{float:right; color:$white; width:15%;}
-  }
-}
 
 .states{
+  &.show {
+    .ipage-header .uk-dropdown {width:25%}
+  }
   &.index {
     .state-li {margin-bottom: 20px;
       // p,.actions{display: inline-block; float: left; width:50%;}
