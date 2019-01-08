@@ -1447,8 +1447,8 @@ hr{
   }
   .woof-link, input.submit {display: inline-block; float: left; min-height: auto; height:auto; font-family: $body; padding: 6px 15px; font-size: 15px; font-weight: $semi;}
   .woof-link.danger {float: right; background-color: $red;}
-  .woof-link.cancel {float: right; background-color: transparent; color: $red; text-align: right; font-weight: bold; @include tshadowl(rgba($black, .1));}
-  input.submit {background-color: $compb;}
+  .woof-link.cancel {background-color: transparent; color: $red; text-align: left; font-weight: bold; @include tshadowl(rgba($black, .1));}
+  input.submit {background-color: $compb;float: right;}
 }
 
 .posts.edit, .posts.new {
@@ -1515,11 +1515,13 @@ hr{
   }
 
   @include bp(tb) {
-    .ipage-header {
+    .ipage-header {padding-top:40px;
       h1{font-size: 1.5rem;}
     }
 
-    .full-sec .inside { width:90%; }
+    .full-sec {padding-top:0;
+      .inside { width:90%; }
+    }
     ul {padding-left: 15px;}
     .post-li {width:32%; margin: 10px .5% 30px;}
   }
@@ -1545,17 +1547,23 @@ hr{
     .full-sec {padding-top:20px;}
     ul {padding-left: 0;}
     // .post-li {width:90%; float: none; margin: 10px auto 20px; @include center-block();
-      // min-height:180px; height:auto; background-color: $fa; padding: 30px 20px 20px;
-      // h3{width:55%; position: relative; float: right; bottom:0; padding:0;}
-      // background-size:40%; background-position: center left;
+    //   min-height:180px; height:auto; background-color: $fa; padding: 30px 20px 20px;
+    //   h3{width:55%; position: relative; float: right; bottom:0; padding:0;}
+    //   background-size:40%; background-position: center left;
     // }
+    .post-li {
+      width:70%; float: none; margin: 20px auto 35px; @include center-block();
+      min-height:220px; height:auto; padding: 30px 20px 20px;
+    }
   }
 
-  // @include bp(sm) {
-  //   .post-li {@include sec-default(); margin: 10px 0;
-  //     min-height:180px;
-  //   }
-  // }
+  @include bp(ph) {
+    .post-li {width:85%;}
+  }
+
+  @include bp(sm) {
+    .post-li {width:95%;}
+  }
 }
 
 .posts.show {
@@ -1575,10 +1583,11 @@ hr{
     .back-link {padding-left: 15px;margin-top: 250px;
       .text-link {font-size: 16px; color:$tbrown;}
     }
+
     .admin-side{margin-top: 260px; padding-right: 15px; float: right;
       .actions {float: right; }
       .woof-link{width:auto; display: block; float: right; margin-bottom: 8px; }
-      .woof-link.edit {background-color: $compt;}
+      .woof-link.edit {background-color: $black;}
       .actions a{font-size: 15px; color:$white; background-color: $red; padding:10px 15px; font-weight: $semi;}
     }
 
@@ -1608,9 +1617,6 @@ hr{
   @include bp(su) {
     .full-post {
       &::before {height:340px;}
-      // .admin-side {padding-right:0;
-      //   .woof-link {margin-right:15px;}
-      // }
     }
 
     .recent-posts {
@@ -1638,15 +1644,15 @@ hr{
 
   @include bp(tb) {
     .full-post {padding-bottom: 30px;
-      .title .inside.med2 {width:80%;}
-      h1{margin-bottom: 0; font-size: 1.5rem;}
+      h1{margin-bottom: 0; font-size: 1.4rem; margin-bottom: 10px;}
 
-      .back-link,.admin-side{padding:0px 10px 10px; margin-top:0;width:45%; margin-left: 4%;}
-      .admin-side{float: right; margin: 0 4% 0 0; padding-bottom: 0;
-        .woof-link{border:1px solid rgba($white,.5);}
+      .back-link,.admin-side{padding:0px 10px 10px; margin:0;@include sec-default();}
+      .back-link {text-align: center;@include sec-default();}
+      .admin-side{float: right; margin: 0 4% 0 0; padding-bottom: 15px;
+        .woof-link{@include sec-default(); margin:8px 0;}
         .woof-link.danger{margin-right: 10px;}
       }
-      .dets{width:90%;@include center-block();}
+      .dets{width:90%;@include center-block(); }
     }
 
     .recent-posts { padding: 25px 0;
@@ -1659,8 +1665,8 @@ hr{
 
   @include bp(tn) {
     .full-post {
-      .title .inside.med2 {width:90%;}
-      h1{font-size: 1.35rem;}
+      // .title .inside.med2 {width:80%;}
+      h1{font-size: 1.3rem;}
     }
   }
 
