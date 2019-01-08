@@ -255,6 +255,14 @@ br.tn {display: none;}
 		}
 	}
 
+	.content-layout .full.fw.two{margin-top: 65px;
+		// p.sig{margin-bottom: 5px;}
+		// .text {float: left; width:50%; padding-left:15px;}
+		.image {width:48%;}
+		// ul{margin-top:25px;}
+		// li{margin-bottom: 13px;}
+	}
+
 	@include bp(tb) {
 		.landing-layout .box {
 			.med-def {width:85%;}
