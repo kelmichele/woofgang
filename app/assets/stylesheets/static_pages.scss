@@ -1428,10 +1428,8 @@ hr{
 //*********** posts ***********//
 //*********************************//
 .posts {
-  .ipage-header {padding:30px 0 15px;
-    background-color:darken($opink, 1%);
-    h1{color:$brown; font-size: 1.8rem; letter-spacing: .5px;}
-  }
+  h1{color:$brown; font-size: 1.8rem; letter-spacing: .5px;}
+  .ipage-header {padding:30px 0 15px;background-color:darken($opink, 1%);}
 
   .blog-form {width:65%; @include center-block();}
 
@@ -1480,9 +1478,11 @@ hr{
   .admin-uk{position:absolute; left: 80%; margin-top: -50px;}
   .full-sec {position: relative; z-index: 0;
     &::before {@include before(); height:150px; background-color:darken($opink, 1%);}
+    // .top{@include sec-default(); padding:30px 0; text-align: center;}
+    // &::after {@include before(); height:400px; background-color:rgba(darken($opink,5%), .9);}
+    // &::before{@include before(); height:400px; @include sec-bgimage('security.jpg');z-index: -2;}
   }
   .woof-link{@include sec-default();}
-  // .woof-link {float:right; width: 200px; background-color: $tbrown; position: absolute; left: 75%; margin-top: -50px; }
 
   .post-li {
     display: inline-block; float: left; width:31%; height:400px; margin: 10px 1% 30px; background-color: $white;
@@ -1515,7 +1515,7 @@ hr{
   }
 
   @include bp(tb) {
-    .ipage-header {padding:15px 0 0px;
+    .ipage-header {
       h1{font-size: 1.5rem;}
     }
 
@@ -1525,13 +1525,18 @@ hr{
   }
 
   @include bp(tn) {
-    .ipage-header {padding:10px 0;
+    .ipage-header {
+      .admin-uk{margin-top: -30px;}
       h1{font-size: 1.3rem; margin:0;}
     }
 
     .full-sec {padding-top:20px;}
     ul {padding-left: 15px;}
-    .post-li {width:45%; margin: 10px 2.5% 30px; height:300px;}
+    // .post-li {width:45%; margin: 10px 2.5% 30px; height:300px;}
+    .post-li {width:45%; margin: 10px 2.5% 30px; height:300px;
+      &::before{@include before();background-color: rgba($fa, .9);}
+      h3 {background-color: transparent; position: relative; font-weight: 600;margin-top:6%;}
+    }
   }
 
   @include bp(oc) {
@@ -1539,18 +1544,18 @@ hr{
 
     .full-sec {padding-top:20px;}
     ul {padding-left: 0;}
-    .post-li {width:90%; float: none; margin: 10px auto 20px; @include center-block();
-      min-height:180px; height:auto; background-color: $fa; padding: 30px 20px 20px ;
-      h3{width:55%; position: relative; float: right; bottom:0; padding:0;}
-      background-size:40%; background-position: center left;
-    }
+    // .post-li {width:90%; float: none; margin: 10px auto 20px; @include center-block();
+      // min-height:180px; height:auto; background-color: $fa; padding: 30px 20px 20px;
+      // h3{width:55%; position: relative; float: right; bottom:0; padding:0;}
+      // background-size:40%; background-position: center left;
+    // }
   }
 
-  @include bp(sm) {
-    .post-li {@include sec-default(); margin: 10px 0;
-      min-height:180px;
-    }
-  }
+  // @include bp(sm) {
+  //   .post-li {@include sec-default(); margin: 10px 0;
+  //     min-height:180px;
+  //   }
+  // }
 }
 
 .posts.show {
