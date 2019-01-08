@@ -14,10 +14,7 @@
 						<li><%= image_tag('daycare4.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
 						<li><%= image_tag('daycare5.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
 				  </ul>
-			    <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> -->
-			    <!-- <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> -->
 			  </div>
-			  <!-- <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul> -->
 			</div>
 
 
@@ -27,24 +24,6 @@
 			</div>
 		</div>
 	</div>
-
-<!-- 	<div class="statement">
-		<div class="inside med3">
-			<div class="full one">
-		  	<div class="text">
-		  		<h2>Woof Gang Doggie Day Care</h2>
-					<p>Woof Gang Doggie Day Care offers a clean, safe and fun environment for monitored interaction with other dogs.</p>
-				</div>
-			</div>
-			<div class="full"><br><hr></div>
-			<div class="full two">
-				<div class="text">
-			  	<h2>Woof Gang Pet Resort</h2>
-					<p>Woof Gang Pet Resort is a boutique boarding facility that provides caring, convenient luxury dog boarding.</p>
-				</div>
-		  </div>
-	  </div>
-	</div> -->
 
 	<div class="statement alt-lay">
 		<div class="inside med2-def">
@@ -65,6 +44,22 @@
 			<h4>Doggie Day Care and Pet Resort services are offered only at select locations.</h4>
 			<div class="btn-hlf">
 				<%= link_to "View Locations", "/tags/doggie-daycare", class: 'woof-link' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="gallery-sec stagg">
+		<div class="inside med2" uk-lightbox>
+			<div class="full top">
+				<div class="left">
+			    <a href="<%= image_url('daycare1.jpg') %>" data-alt="Image"><%= image_tag('daycare1.jpg', class: 'img-responsive gall-img') %></a>
+			    <a href="<%= image_url('daycare2.jpg') %>" data-alt="Image"><%= image_tag('daycare2.jpg', class: 'img-responsive gall-img') %></a>
+				</div>
+
+				<div class="right">
+			    <a href="<%= image_url('daycare3.jpg') %>" data-alt="Image"><%= image_tag('daycare3.jpg', class: 'img-responsive gall-img ') %></a>
+			    <a href="<%= image_url('daycare4.jpg') %>" data-alt="Image"><%= image_tag('daycare4.jpg', class: 'img-responsive gall-img ') %></a>
+				</div>
 			</div>
 		</div>
 	</div>

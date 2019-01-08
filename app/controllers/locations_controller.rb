@@ -9,8 +9,6 @@ class LocationsController < ApplicationController
     @user_lat = pointa["latitude"]
    	crds = [@user_lat, @user_lng]
 
-    # self.by_dist = Location.distance_to(@crd)
-
 		@states = State.all
     nearbys = Location.near(params[:q], 20, :order => "distance")
     neighbors = Location.near(crds, 60, :order => "distance")

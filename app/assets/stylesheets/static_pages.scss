@@ -150,8 +150,10 @@ hr{
   }
 
   .full-show{
-    .uk-slideshow-items {max-height: 620px; overflow: hidden;}
+    // .uk-slideshow-items {max-height: 620px; overflow: hidden;}
+    .uk-slideshow-items {max-height: 650px; overflow: hidden;}
     .abs-img{position: absolute; bottom: 0; width:45%; margin-bottom: -43px;}
+    .uk-slidenav {margin-top:10%;}
   }
 
   .nlay-intro {@include sec-default(); padding:80px 0;
@@ -169,9 +171,8 @@ hr{
     &::before {@include before();@include sec-bgimage('retail-slide4.jpg'); background-position: bottom left; width:60%;height:85%;}
     &::after {@include before(); background-color: rgba($pink7, .94); width:60%;height:85%;}
 
-    .image, .text {display: inline-block; float: left; width:50%;}
-    .text {width:39%; margin-left: 5%; padding: 30px 0 0 0;}
-    .image{float: right;}
+    .image,.images, .text {display: inline-block; float: right; width:50%;}
+    .text {width:39%; margin-left: 5%; padding: 30px 0 0 0; float: left;}
 
     p{color:$white;@include tshadowl(rgba($black,.4)); font-weight: 400;}
 
@@ -179,12 +180,15 @@ hr{
     // 12/20
     padding-bottom: 70px; &::before, &::after {height: 100%;}
     &::before{@include sec-bgimage('franchising1.jpg'); background-position: center center;}
-    .image {width:54%; max-height: 248px; overflow: hidden;}
-    .img1, .img2 {display: inline-block; float: left;
-      width:49.8%;
-      // height:252.3px;
+    .image,.images {width:54%; max-height: 248px; overflow: hidden;}
+    .image {max-height: 100%;}
+    .images{
+      .img1, .img2 {display: inline-block; float: left;
+        width:49.8%;
+        // height:252.3px;
+      }
+      .img2 {float: right;}
     }
-    .img2 {float: right;}
 
 
     &.ff {
@@ -233,18 +237,30 @@ hr{
       // width:25%; margin: 10px 3%;
     }
 
-
     .image {max-height:430px; overflow: hidden;}
     .image-row {text-align: center;
      height:430px; overflow: hidden;
-      .img1, .img2, .img3 {display: inline-block; float: none; vertical-align: top;
-        // height:300px;
+      .img1, .img2, .img3, .img4 {display: inline-block; float: none; vertical-align: top;}
+
+      &.two {
+        .img1, .img4{display: none;}
+        .img2{width:67%;}
+        .img3{width:31.1%;}
       }
-      // .img1, .img3 {width:25%;}
-      .img1{display: none;}
-      .img2{width:67%;}
-      .img3{width:31.1%;}
+
+      &.three {height:380px;
+        .img1, .img3 {width:25%;}
+        .img2{width:48%;}
+        .img4 {display: none;}
+      }
+
+      &.four {height:380px;
+        .img1, .img2, .img3, .img4 {width:24%;}
+      }
     }
+
+    // .image-row {display: none;}
+    .text {box-shadow: none; margin-top: 20px;}
   }
 
   @media (min-width: 1400px) {
@@ -262,6 +278,11 @@ hr{
   }
 
   @include bp(tb) {
+    .full-show{
+      .uk-position-center-left {margin-left: 5px;}
+      .uk-position-center-right {margin-right:5px;}
+    }
+
     .banner-locations{
       h4{font-size: 1.4rem;}
       .btn-hlf {margin-top: 6px;}
@@ -299,6 +320,12 @@ hr{
   }
 
   @include bp(tn) {
+    .full-show {
+      .uk-slidenav {margin-top:5%;}
+      .uk-position-center-left {margin-left: 2px;}
+      .uk-position-center-right {margin-right:2px;}
+    }
+
     .home-def {width:82%;}
     .nlay-intro{padding:50px 0 25px;
       h2{font-size: 1.1rem;}
@@ -340,6 +367,12 @@ hr{
   }
 
   @include bp(pl) {
+    .full-show {
+      .uk-slidenav {margin-top:0;}
+      .uk-position-center-left {margin-left: 0px;}
+      .uk-position-center-right {margin-right:0px;}
+    }
+
     .nlay-intro {text-align: center;
       h1{font-size: 1rem;}
     }
@@ -383,6 +416,12 @@ hr{
           .logo {height:70px; @include center-block();}
         }
       }
+    }
+  }
+
+  @include bp(ph) {
+    .full-show {
+      .uk-position-center-left,.uk-position-center-right {display: none;}
     }
   }
 }
@@ -908,6 +947,8 @@ hr{
         // .gall-img.hlf{height:255px;}
       }
       .right{width:49%; width:52%;}
+
+      .left.stag, .right.stag{margin-top: 50px}
     }
   }
 
@@ -1049,8 +1090,11 @@ hr{
 .retail .services-layout{
   .inline-show .title{width:21%;}
   .statement{
-    h1, h2 {width:37%;}
-    p{width:59%;}
+    // h1, h2 {width:37%;}
+    // p{width:59%;}
+
+    h1, h2 {width:29%;padding:40px 0px 50px 0;}
+    p{width:74%; padding-left: 20px;margin: 5px -4% 5px 0;}
   }
 
   @include bp(tb) {
@@ -1059,14 +1103,16 @@ hr{
     }
 
     .statement {
-      h1,h2{ width:30%; padding-right: 0;}
-      p{width:68%; padding-left: 3.5%}
+      // h1,h2{ width:30%; padding-right: 0;}
+      // p{width:68%; padding-left: 3.5%}
+      h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:26%; padding:30px 15px 30px 0;}
+      p{border-left: 0;width:77%; font-size: 16px; padding-left: 10px;}
     }
   }
 
   @include bp(br) {
     .statement{
-      p, h1,h2 {width:90%;}
+      p, h1,h2 {width:90%; border:none; @include center-block(); padding:0; margin:10px auto;}
     }
   }
 
@@ -1077,16 +1123,10 @@ hr{
 
   @include bp(tn) {
     .statement{
-      p, h1,h2 {@include sec-default();}
+      .inside.med2-def {width:90%;}
+      h1,h2,p {@include sec-default();}
+      p{margin:5px auto;}
     }
-  }
-
-  @include bp(md) {
-    .statement p {width:95%; @include center-block();}
-  }
-
-  @include bp(pl) {
-    .statement p { @include sec-default();}
   }
 }
 
@@ -1145,8 +1185,70 @@ hr{
   }
 
   @include bp(tb) {
+    .inline-show{
+      &::before{height:360px;}
+    .title {padding-top:30px;}
+    }
+
+    .statement.alt-lay {
+      .text {width: 48%; padding: 0 10px;}
+      h2{font-size: 1.3rem;}
+      p{padding-left: 0; font-size: 16px;}
+    }
+
     .locations-disc .med{width:95%;}
   }
+
+  @include bp(tb) {
+    .inline-show{
+      &::before{height:300px;}
+    .title {padding-top:0px;}
+    }
+
+    .statement.alt-lay {
+      .text {width: 48%; padding: 0 10px;}
+      h2{font-size: 1.15rem;}
+      p{font-size: 15px;}
+    }
+  }
+
+  @include bp(pl) {
+    .inline-show{
+      &::before{height:300px;}
+      .title{@include sec-default(); text-align: center;}
+      .srv-logo.daycare, .srv-logo.resort {display: inline-block; float: none; width:35%; margin:10px 3%;
+      }
+    }
+
+    .statement.alt-lay {padding:30px 0;
+      &::before{display: none;}
+      .text, .text.two {width: 75%; @include center-block(); text-align: center;}
+      h2{margin-top: 20px;}
+    }
+  }
+
+  @include bp(oc) {
+    .inline-show{
+      &::before{height:250px;}
+      .srv-logo.daycare, .srv-logo.resort {@include center-block(); width:250px;}
+      .srv-logo.daycare{ margin-bottom: 45px;}
+    }
+
+    .statement.alt-lay {padding:15px 0 30px;
+      .text, .text.two {width: 90%;}
+    }
+  }
+
+  @include bp(sm) {
+    .inline-show{
+      &::before{height:180px;}
+    }
+
+    .statement.alt-lay {
+      .text, .text.two {@include sec-default(); }
+    }
+  }
+
 }
 
 .services-layout.vet {
@@ -1429,7 +1531,7 @@ hr{
 //*********************************//
 .posts {
   h1{color:$brown; font-size: 1.8rem; letter-spacing: .5px;}
-  .ipage-header {padding:30px 0 15px;background-color:darken($opink, 1%);}
+  .ipage-header {padding:40px 0 0;background-color:darken($opink, 1%);}
 
   .blog-form {width:65%; @include center-block();}
 
@@ -1692,6 +1794,10 @@ hr{
       }
       .dets{width:95%;@include center-block();}
     }
+  }
+
+  @include bp(ph) {
+    .full-post .title .inside.med2 {width:90%;}
   }
 }
 
