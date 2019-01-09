@@ -69,5 +69,5 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  resources :blogs
+  resources :slides
 end

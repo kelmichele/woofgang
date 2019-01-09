@@ -1609,7 +1609,7 @@ hr{
 //*********************************//
 //*********** posts ***********//
 //*********************************//
-.posts {
+.posts, .slides {
   h1{color:$brown; font-size: 1.8rem; letter-spacing: .5px;}
   .ipage-header {padding:40px 0 0;background-color:darken($opink, 1%);}
 
@@ -1633,7 +1633,7 @@ hr{
   input.submit {background-color: $compb;float: right;}
 }
 
-.posts.edit, .posts.new {
+.posts.edit, .posts.new, .slides {
   .form-group.title {margin-top: 30px;}
   .sub-actions {position: absolute; width: 15%; left:83%;
     .woof-link {@include sec-default(); margin-bottom:20px;}
@@ -1881,6 +1881,33 @@ hr{
   }
 }
 
+
+.slides{
+  .ipage-header{padding-bottom: 30px;}
+  .admin-uk {margin-top: -60px;}
+  .uk-dropdown .woof-link{@include sec-default();}
+  &.new, &.edit {
+    .slide-form {width:70%; @include center-block();}
+    .img-wrp{border:1px solid rgba($black,.1); padding:20px;}
+  }
+}
+.slides.index{
+  .li-slides li {@include sec-default();margin-bottom: 30px;
+    img, .info{display: inline-block; float: left;}
+
+    .info {padding: 30px 0 0 30px;}
+    img {width:350px;}
+    p{font-size: 15px; float: none; }
+
+    .options{@include sec-default();}
+  }
+
+  .full-show{@include sec-default();
+    .uk-slideshow-items {max-height: 650px; overflow: hidden;}
+    .abs-img{position: absolute; bottom: 0; width:45%; margin-bottom: -43px;}
+    .uk-slidenav {margin-top:10%;}
+  }
+}
 
 //*********************************//
 //***** contact *****//

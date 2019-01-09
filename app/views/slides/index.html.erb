@@ -1,0 +1,33 @@
+<% @page_title = "Manage Slides" %>
+<% @page_description = "" %>
+
+<div class="ipage-header">
+	<div class="inside med2">
+		<h1><%= @page_title %></h1>
+		<% if user_signed_in? && current_user.admin? %>
+	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+  			<%= link_to "Create New slide", new_slide_path, class: 'woof-link' %>
+      </div>
+		<% end %>
+	</div>
+</div>
+
+<div class="full-sec">
+	<div class="inside">
+		<ul class="li-slides">
+			<% @slides.each do |slide| %>
+				<li>
+					<% if slide.image.attached? %>
+					  <div class="preview"><%= image_tag(slide.image) %></div>
+					<% end %>
+
+					<div class="info">
+				  	<p><%= slide.title %></p>
+					  <div class="options"></div>
+					</div>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
