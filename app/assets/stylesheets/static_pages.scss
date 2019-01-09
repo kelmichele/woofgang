@@ -135,7 +135,7 @@ hr{
 //*********************************//
 //************* home **************//
 //*********************************//
-.home{
+.home, .page, .home-alt{
   .page-body {
     .title-line{margin-top: 20px; opacity: .3; width:15%;}
     h1{font-size: 1.1rem; text-transform: uppercase; color:$pink; letter-spacing: 10px; letter-spacing: 3px; margin:0; font-weight: 600; }
@@ -166,7 +166,7 @@ hr{
   }
 
   .bg-sec {@include sec-default(); padding:70px 0 0px; margin-top:30px;
-    margin-bottom: 120px;
+    margin-bottom: 120px; margin-bottom: 80px;
     position: relative; z-index: 0;
     &::before {@include before();@include sec-bgimage('retail-slide4.jpg'); background-position: bottom left; width:60%;height:85%;}
     &::after {@include before(); background-color: rgba($pink7, .94); width:60%;height:85%;}
@@ -179,21 +179,18 @@ hr{
 
     // 12/20
     padding-bottom: 70px; &::before, &::after {height: 100%;}
-    &::before{@include sec-bgimage('franchising1.jpg'); background-position: center center;}
+    &::before{@include sec-bgimage('franchising1.jpg'); background-position: center center; }
     .image,.images {width:54%; max-height: 248px; overflow: hidden;}
     .image {max-height: 100%;}
     .images{
-      .img1, .img2 {display: inline-block; float: left;
-        width:49.8%;
-        // height:252.3px;
-      }
+      .img1, .img2 {display: inline-block; float: left;width:49.8%;}
       .img2 {float: right;}
 
-
-      // max-height: 340px;
-      // .img1{width:66.5%;}
-      // .img2{width:32.5%;}
+      max-height: 290px;
+      .img1{width:60%;}
+      .img2{width:39%;}
     }
+    // &::before, &::after {height: 70%;}
 
 
     &.ff {
@@ -201,7 +198,13 @@ hr{
       h4{ margin-bottom: 10px; font-size: 1.2rem;}
       p{font-size: 17px;}
       .text {margin-left: 3.5%;}
-      // .btext {border-left: 4px solid rgba($white,.75);padding-left:25px;}
+    }
+
+    &.alt {
+      .images{
+        text-align: right;max-height: 300px;
+        .img1,.img2,.img3 {display: inline-block; float: none; width:32.8%; vertical-align: top;}
+      }
     }
   }
 
@@ -224,22 +227,23 @@ hr{
     .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
   }
 
-  .nlay-logos {@include sec-default(); text-align: center;
-    padding:60px 0; padding:0px 0 60px;
+  .nlay-logos {@include sec-default(); text-align: center; padding:0px 0 60px;
     .over {width:85%; @include center-block();margin-bottom: 20px;}
     .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; position: relative;
       margin-top: -40px;
       box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
+      h3{font-size: 1.35rem;}
     }
 
     .top {margin-bottom: 20px;}
     .logo{@include center-block();}
     .serve-tl{display: inline-block; float: none;
-      width:23%; margin: 10px 5%;
-      &.daycare, &.vet {width:25%; margin:10px 4%; }
-      &.ss {width:29%; margin:10px 0 10px 2%; }
+      // width:23%; margin: 10px 5%;
+      // &.daycare, &.vet {width:25%; margin:10px 4%; }
+      // &.ss {width:29%; margin:10px 0 10px 2%; }
 
-      // width:25%; margin: 10px 3%;
+      width:25%; margin:20px .5% 20px;
+      &.daycare{padding:15px 15px 0;}
     }
 
     .image {max-height:430px; overflow: hidden;}
@@ -248,9 +252,9 @@ hr{
       .img1, .img2, .img3, .img4 {display: inline-block; float: none; vertical-align: top;}
 
       &.two {
-        .img1, .img4{display: none;}
+        .img3, .img4{display: none;}
         .img2{width:67%;}
-        .img3{width:31.1%;}
+        .img1{width:31.1%;}
       }
 
       &.three {height:380px;
@@ -262,10 +266,19 @@ hr{
       &.four {height:380px;
         .img1, .img2, .img3, .img4 {width:24%;}
       }
+
+      &.five {height:330px;
+        .img1, .img2, .img3, .img4, .img5 {width:19%;}
+      }
     }
 
-    // .image-row {display: none;}
-    .text {box-shadow: none; margin-top: 20px;}
+    &.reg {padding:30px 0 80px;}
+    &.none {
+      margin-top: -10px;
+       padding-bottom: 90px;
+      .image-row {display: none;}
+      .text {box-shadow: none; margin-top: 0px;padding-top: 0;}
+    }
   }
 
   @media (min-width: 1400px) {
@@ -496,6 +509,8 @@ hr{
       select {height:130px; padding: 5px 0;}
       option {margin-bottom: 3px;padding: 1px 7px;}
     }
+
+    .forminfo.coming{width:25%;}
 
     @include bp(tb) {
       .pup-header .full {padding:20px 0;}
@@ -902,7 +917,7 @@ hr{
 //*********************************//
 //*********** services ***********//
 //*********************************//
-.grooming,.retail {
+.grooming,.retail, .doggie-daycare {
   .uk-lightbox.uk-overflow-hidden.uk-lightbox-panel.uk-open {background-color: rgba($black,.8);}
   .uk-lightbox-items>*>* {max-width: 90%; max-height: 90%;}
 }
@@ -1098,8 +1113,17 @@ hr{
     // h1, h2 {width:37%;}
     // p{width:59%;}
 
-    h1, h2 {width:29%;padding:40px 0px 50px 0;}
+    h1, h2 {width:29%;padding:50px 0px 60px 0;}
     p{width:74%; padding-left: 20px;margin: 5px -4% 5px 0;}
+  }
+
+
+  .statement{padding-bottom: 50px;}
+  .retail-awards{@include sec-default(); padding-bottom: 70px;
+    .uk-slider-items li {
+      img{width:205px;@include center-block();}
+    }
+    .uk-slider-nav.uk-dotnav{display: none;}
   }
 
   @include bp(tb) {
@@ -1253,14 +1277,19 @@ hr{
       .text, .text.two {@include sec-default(); }
     }
   }
-
 }
 
 .services-layout.vet {
+  // .inline-show {
+  //   &::before{height:390px;}
+  //   .il-slideshow {width:64%; margin-left: 5%; max-height: 500px; overflow: hidden;}
+  //   .title {margin-right: 1.5%;}
+  // }
   .inline-show {
     &::before{height:390px;}
-    .il-slideshow {width:64%; margin-left: 5%; max-height: 500px; overflow: hidden;}
-    .title {margin-right: 1.5%;}
+    .il-slideshow {width:70%; max-height: 500px; overflow: hidden;}
+    .il-slideshow img {width:100%;}
+    .title {margin-right: -5%; width:27%; }
   }
 
   .statement {
@@ -1294,9 +1323,13 @@ hr{
 
   @include bp(tb) {
     .inline-show {
+      .inside.med{width:85%;}
       &::before{height:300px;}
-      .il-slideshow {margin-left: 3%;}
-      .title {margin-right: 0; width:30%; padding-top: 80px;}
+      .il-slideshow {width:70%; max-height: 400px; }
+      .title {margin-right: -5%; width:31%; }
+
+      // .il-slideshow {margin-left: 3%;}
+      // .title {margin-right: 0; width:30%; padding-top: 80px;}
     }
 
     .statement {
@@ -1331,7 +1364,7 @@ hr{
   @include bp(tn) {
     .inline-show {
       &::before{height:230px;}
-      .il-slideshow {margin-left: 0;}
+      .il-slideshow {margin-left: 0; max-height: 350px;}
       .title {width:33%; padding-top: 60px;}
     }
 
@@ -1484,6 +1517,32 @@ hr{
   @include bp(sm) {
     .services-layout {
       .statement .woof-link {width:95%;}
+    }
+  }
+}
+
+.self-service-grooming .services-layout {
+  .inline-show {
+    .il-slideshow{width: 74%;}
+    .title {width:26%;padding: 120px 0 0; margin-right: -3%;}
+  }
+
+  .list-box{
+    h4{font-size: 1.15rem;}
+  }
+
+  @include bp(tb) {
+    .inline-show {
+      .il-slideshow{width: 72%;}
+      .title {width:30%;padding: 120px 0 0; margin-right: -4%;}
+    }
+  }
+
+  @include bp(pl) {
+    .inline-show {
+      &::before{height:250px;}
+      .il-slideshow {@include sec-default(); margin:0 0 20px 0;}
+      .title{@include center-block(); width: 320px;padding:0;}
     }
   }
 }

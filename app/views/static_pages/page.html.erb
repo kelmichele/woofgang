@@ -1,76 +1,120 @@
-<% @page_title = "Wellness ALT" %>
+<% @page_title = "PAGE Your Neighborhood Pet Store" %>
 <% @page_description = "New Description" %>
 
-<div class="services-layout vet">
-	<div class="serv-slider inline-show">
-		<div class="inside lg">
-			<div class="il-slideshow"><%= image_tag('clinic.jpg', class: 'img-responsive ', alt: '') %></div>
-
-			<div class="title"><%= image_tag('wgb-clinic.png', class: 'img-responsive srv-logo', alt: '')%></div>
-		</div>
+<!-- 1295x620 -->
+<div class="full-show">
+	<div class="inside lg">
+		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
+	    <ul class="uk-slideshow-items">
+				<li><%= image_tag('home-slide-interior.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-exterior.jpg', class: 'img-responsive uk-cover') %></li>
+				<!-- <li><%= image_tag('home-slide-owner.jpg', class: 'img-responsive uk-cover') %></li> -->
+				<li><%= image_tag('home-slide-bone.jpg', class: 'img-responsive uk-cover') %></li>
+				<li><%= image_tag('home-slide-treats.jpg', class: 'img-responsive uk-cover') %></li>
+	    </ul>
+	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+	  </div>
 	</div>
+</div>
 
 
-	<div class="list-box">
-		<div class="inside med2-def">
-			<div class="left">
-				<h4>Our veterinary clinic locations offer the following services:</h4>
-				<ul>
-					<li>Diagnostics</li>
-					<li>Surgery</li>
-					<li>Microchipping</li>
-					<li>Pharmacy</li>
-
-					<li>Laboratory</li>
-					<li>Radiology</li>
-					<li>Dental Care</li>
-					<li>Prophylaxis</li>
-					<li>Immunizations</li>
-
-					<li>Prescription Pet Foods</li>
-					<li>Nutritional counseling</li>
-					<li>Wellness Exams</li>
-					<li>Parasite Prevention and Control</li>
-					<li>International and interstate health<br clear="xl"> certificates for travel</li>
-				</ul>
-			</div>
-
-			<div class="sl-hlf">
-				<!-- <div class="sl1">
-					<h4>Veterinary Clinic Locations:</h4>
-					<p class="name">Woof Gang Bakery, Grooming &amp; Vet Clinic</p>
-					<p class="info">
-					7050 W. Palmetto Park Rd<br>
-					Suite 21<br>
-					Boca Raton, FL 33433</p>
-					<p class="info">561-447-7966</p>
-					<p class="info">bocaraton@woofgangbakery.com</p>
-				</div> -->
-
-				<div class="sl1">
-					<h4>Meet the Doctor</h4>
-					<p>Florida native, Dr. Barry Wander is the franchise owner and head veterinarian of Woof Gang Bakery, Grooming and Vet Clinic Boca Raton.</p>
-
-					<p>
-						Dr. Wander attended the University of Florida, where he earned his bachelor’s degree in animal science, and a master’s degree in animal nutrition.
-						In 1987, he opened Wander Animal Hospital. Dr. Wander has practiced veterinary medicine for 27 years, with a special interest in Dermatological diseases, and Pediatric and Geriatric Medicine.
-						He is dedicated to the local community, and to providing unparalleled service and quality products for customers and their four-legged friends.
-					</p>
-				</div>
-
-				<div class="sl2"><%= image_tag('dogtor.jpg', class: 'img-responsive inside med2', alt: '') %></div>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="locations-disc">
-		<div class="inside med2">
-			<h4>Veterinary services are offered only at select locations.</h4>
-			<div class="btn-hlf">
-				<%= link_to "View Locations", "/tags/veterinary-clinic", class: 'woof-link' %>
-			</div>
+<div class="nlay-intro comp">
+	<!-- <div class="inside xx"> -->
+	<div class="inside home-def">
+		<div class="text">
+			<h1>Woof Gang Bakery</h1>
+			<h2>Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America,<span> with more than 110 locations across the U.S.</span>
+			Woof Gang Bakery offers the very best in pet care by providing quality products and grooming with a service-oriented approach. Each location is a neighborhood store committed to the well-being, health and happiness of pets.</h2>
 		</div>
 	</div>
 </div>
 
+<div class="bg-sec ff">
+	<div class="text">
+		<!-- <p>Woof Gang Bakery offers the very best in pet care by providing quality products and grooming with a service-oriented approach. Each location is a neighborhood store committed to the well-being, health and happiness of pets.</p> -->
+			<div class="btext">
+				<h4>Our approach to franchising is very simple:</h4>
+				<p class="two">Successful franchising is built upon successful franchisees.<br> Our leadership philosophy is based upon the belief that we should direct, not dominate the franchise system, and that our franchisees should have a voice and participate in that direction.</p>
+			</div>
+	</div>
+
+	<div class="images three">
+		<%=image_tag('sign.jpg', class: 'img-responsive img1', alt: '') %>
+		<%=image_tag('pup8-tall.jpg', class: 'img-responsive img2', alt: '') %>
+	</div>
+	<!-- <div class="image"><%=image_tag('sign.jpg', class: 'img-responsive img1', alt: '') %></div> -->
+</div>
+
+<div class="nlay-logos none">
+	<div class="inside one">
+    	<!-- <div class="image-row four">
+    		<%= image_tag('fi-counter2.jpg', class: 'img-responsive img3')%>
+    		<%= image_tag('cg-smile.jpg', class: 'img-responsive img2')%>
+    		<%= image_tag('pup37.jpg', class: 'img-responsive img4')%>
+    		<%= image_tag('riggins.png', class: 'img-responsive img4')%>
+  		</div> -->
+
+  		<div class="image-row three">
+    		<%= image_tag('fi-counter2.jpg', class: 'img-responsive img3')%>
+    		<%= image_tag('woof6.jpg', class: 'img-responsive img2')%>
+    		<%= image_tag('cg-pup.jpg', class: 'img-responsive img3')%>
+  		</div>
+
+		<div class="over">
+    	<div class="text">
+				<h3>Woof Gang Bakery does it all</h3>
+				<p>We offer a number of services to help keep your pets healthy and spoiled!<br>
+				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
+					Select a service from the logos below to visit the page, and learn more.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="full logos">
+		<div class="inside">
+			<%= link_to retail_path, class: 'serve-tl bakery' do %>
+	      <%= image_tag('logo-bakery.jpg', class: 'img-responsive logo')%>
+			<% end %>
+
+			<%= link_to grooming_path, class: 'serve-tl grooming' do %>
+	      <%= image_tag('logo-grooming.jpg', class: 'img-responsive logo')%>
+			<% end %>
+
+			<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
+	      <%= image_tag('logo-resort.jpg', class: 'img-responsive logo')%>
+			<% end %>
+
+			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
+	      <%= image_tag('logo-wellness.jpg', class: 'img-responsive logo')%>
+			<% end %>
+
+			<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
+	      <%= image_tag('logo-ss.jpg', class: 'img-responsive logo')%>
+			<% end %>
+
+			<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
+	      <%= image_tag('wgb-ddaycare.png', class: 'img-responsive logo')%>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="banner-locations">
+	<div class="inside med2">
+		<h4>More Than 110 Locations Nationwide</h4>
+		<div class="btn-hlf">
+			<%= link_to "Find One Near You", locations_path, class: 'woof-link' %>
+		</div>
+	</div>
+</div>
+
+
+<!--
+<div class="award-sec">
+	<div class="inside">
+		<%= render 'award-slider' %>
+	</div>
+</div>
+-->

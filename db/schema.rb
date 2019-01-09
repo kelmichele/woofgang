@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_04_224305) do
+ActiveRecord::Schema.define(version: 2019_01_09_005743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 2019_01_04_224305) do
     t.string "image"
     t.string "yelp"
     t.integer "state_id"
+    t.boolean "coming_soon", default: false
     t.index ["city"], name: "index_locations_on_city"
     t.index ["og_state"], name: "index_locations_on_og_state"
     t.index ["state_id"], name: "index_locations_on_state_id"

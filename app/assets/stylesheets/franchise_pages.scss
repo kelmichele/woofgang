@@ -262,6 +262,16 @@ br.tn {display: none;}
 		// ul{margin-top:25px;}
 		// li{margin-bottom: 13px;}
 	}
+	.content-layout{padding-bottom: 0;}
+
+	.fr-awards{@include sec-default(); text-align: center; padding:80px 0 40px;
+		li{list-style-type: none;}
+		.seals li {width:20%; display: inline-block; float: none; }
+    .uk-slider-nav.uk-dotnav{display: none;}
+		.uk-slider-items li {
+			img{width:215px;@include center-block();}
+		}
+	}
 
 	@include bp(tb) {
 		.landing-layout .box {
@@ -500,12 +510,43 @@ br.tn {display: none;}
 
 		.image-row {@include sec-default(); text-align: center;
 			max-height:299px; overflow: hidden;
-			.img1,.img2,.img3{display: inline-block; float: none;
-				vertical-align: top;
-				width:33.5%;
-			}
+			.img1,.img2,.img3{display: inline-block; float: none;vertical-align: top;}
+
+		&.reg {
+			.img1,.img3 {width:33.5%}
 			.img2 {width:22%}
-			// .img1 {margin-left: 0;}
+		}
+
+		&.alt{
+			max-height: 350px;
+			.img1,.img3{width:18%;}
+			.img2 {width:45%;}
+		}
+
+			&.four {
+				max-height:380px;
+			  .img1, .img2, .img3, .img4 {width:19%;}
+			}
+
+			&.three {
+				.img1,.img3 {width: 18%;}
+				.img2{width: 40%;}
+
+				.img1,.img3 {width: 22%;}
+				.img2{width: 36%;}
+			}
+
+			&.one {
+				.img1,.img3{display: none;}
+				.img2 {width:85%; @include center-block();}
+			}
+
+			&.mason{
+				// .img1,.img2,.img3,.img4{width:auto;}
+				.img1{width:25%;}
+				.img2{width:35%;}
+				.img3{width:20%;}
+			}
 		}
 
 		@include bp(tn) {

@@ -45,6 +45,15 @@
         <%= f.text_field :zip, class: "form-control", placeholder: "Zipcode", autofocus: true %>
       </div>
 
+      <div class="forminfo coming">
+        <label>Coming soon?</label>
+        <%= f.select(:coming_soon) do %>
+          <% [['No', 'No'], ['Yes', 'Yes']].each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %>
+      </div>
+
 
       <div class="clearfix"></div>
       <h3>Social<br>

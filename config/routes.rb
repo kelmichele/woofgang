@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'page', to: 'static_pages#page'
+  get 'home-alt', to: 'static_pages#home-alt'
   get 'services', to: 'static_pages#services'
   get 'grooming', to: 'static_pages#grooming'
   get 'self-service-grooming', to: 'static_pages#self-service-grooming'
