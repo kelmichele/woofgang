@@ -3,6 +3,10 @@
 
 <div class="location-page">
 	<div class="title">
+		<% if @location.coming_soon?  %>
+			<h4>Coming Soon</h4>
+		<% end %>
+
 		<% if @location.store_name.include? "Grooming" %>
 			<h2>Woof Gang Bakery & Grooming </h2>
 		<% else %>

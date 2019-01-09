@@ -48,7 +48,7 @@
       <div class="forminfo coming">
         <label>Coming soon?</label>
         <%= f.select(:coming_soon) do %>
-          <% [['No', 'No'], ['Yes', 'Yes']].each do |c| -%>
+          <% [['No', 'false'], ['Yes', 'true']].each do |c| -%>
             <%= content_tag(:option, c.first, value: c.last) %>
           <% end %>
         <% end %>
