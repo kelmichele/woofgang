@@ -281,6 +281,17 @@ hr{
     }
   }
 
+
+
+  .image-section{ @include sec-default(); text-align: center; padding-bottom: 80px;
+    img{display: inline-block; float: none; width:20%;}
+
+    &.alt {
+      img{width:18%;}
+    }
+  }
+
+
   @media (min-width: 1400px) {
     .bg-sec .text {padding-top: 60px;}
   }
