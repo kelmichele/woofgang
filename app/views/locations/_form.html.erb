@@ -3,7 +3,9 @@
   <%= form_for(@location, :html => {class: "form-horizontal", role: "form" }) do |f| %>
     <div class="form-group">
 
-      <h3>Contact</h3>
+      <h3>Contact<br>
+        <span><a href="#modal-sanc" uk-toggle>Click here for street address naming conventions</a></span>
+      </h3>
       <div class="forminfo name">
         <%= f.label :store_name %><br>
         <%= f.text_field :store_name, class: "form-control", placeholder: "Woof Gang Bakery & Grooming", autofocus: true %>
@@ -132,4 +134,19 @@
       <%= f.submit(@location.new_record? ? "Add Location" : "Update Location", class: "btn woof-link save") %>
     </div>
   <% end %>
+</div>
+
+<div id="modal-sanc" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <p>Avenue<br>
+      Blvd<br>
+      Circle<br>
+      Drive <br>
+      Hwy<br>
+      Ln<br>
+      Pkwy<br>
+      Road<br>
+      Street<br>
+      Trail</p>
+  </div>
 </div>

@@ -623,7 +623,7 @@ hr{
   }
 
   .full.listings {margin-top: 50px;}
-  .map {@include sec-default(); margin-bottom: 20px;}
+  .map {@include sec-default(); margin-bottom: 20px;padding:0 50px;}
   #map {height:450px;margin-bottom: 6px;}
   .gm-style-iw {
     p{font-size: 14px; margin:8px 0;}
@@ -691,11 +691,15 @@ hr{
     .search-sec{
       .inside.lg{width:95%;}
 
-      .form-control {width:72%;}
-      .btn.btn-outline-secondary.search {width: 45px;}
+      .searcher, .filter-box{margin-left: 1%;}
+      .searcher{width:40%;}
+
+      .form-control {width:68%;}
+      .btn.btn-outline-secondary.search {width: 11%;}
       select {}
     }
 
+    #map {height:350px;}
     .loclist .inside {width:90%;}
     .location-bx {
       min-height: 352px;
@@ -709,6 +713,9 @@ hr{
     .search-sec{
       .searcher {width:71%; margin-bottom: 15px; }
       .filter-box { width:34%;}
+
+      .btn.btn-outline-secondary.search {width: 45px;}
+
     }
   }
 
@@ -1161,7 +1168,7 @@ hr{
   }
 
 
-  .statement{padding-bottom: 50px;}
+  // .statement{padding-bottom: 50px;}
   .retail-awards{@include sec-default(); padding-bottom: 70px;
     .uk-slider-items li {
       img{width:205px;@include center-block();}
