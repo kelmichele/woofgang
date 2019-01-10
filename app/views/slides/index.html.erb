@@ -13,18 +13,24 @@
 	</div>
 </div>
 
+
 <div class="full-sec">
 	<div class="inside">
-		<ul class="li-slides">
+		<ul id="slides" class="li-slides" data-url="<%= sort_slides_path %>">
 			<% @slides.each do |slide| %>
-				<li>
+				<li id="<%= dom_id(slide) %>">
 					<% if slide.image.attached? %>
 					  <div class="preview"><%= image_tag(slide.image) %></div>
 					<% end %>
 
 					<div class="info">
 				  	<p><%= slide.title %></p>
-					  <div class="options"></div>
+				  	<hr>
+					  <div class="options">
+					  	<!-- <span><%= link_to "View", slide_path(slide) %></span> -->
+					  	<span><%= link_to "Edit", edit_slide_path(slide) %></span>
+					  	<span class="delete"><%= link_to "Delete", slides_path, method: :delete, data: { confirm: "Are you sure you want to delete this slide?" } %></span>
+					  </div>
 					</div>
 				</li>
 			<% end %>

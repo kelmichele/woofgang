@@ -9,6 +9,15 @@ class SlidesController < ApplicationController
     @slide = Slide.new
 	end
 
+	def sort
+    params[:slide].each_with_index do |id, index|
+      Slide.where(id: id).update_all(order: index + 1)
+    end
+
+    head :ok
+  end
+
+
 	def create
 		@slide = Slide.new(slide_params)
 
@@ -39,6 +48,6 @@ class SlidesController < ApplicationController
   end
 
   def slide_params
-    params.require(:slide).permit(:image, :title)
+    params.require(:slide).permit(:image, :title, :order, :display, :link)
   end
 end

@@ -69,5 +69,10 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  resources :slides
+
+  resources :slides do
+    collection do
+      patch :sort
+    end
+  end
 end

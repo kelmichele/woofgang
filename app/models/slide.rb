@@ -4,5 +4,7 @@ class Slide < ApplicationRecord
 
 	has_one_attached :image
 
+  default_scope -> { order(order: :asc)}
+
 	# boolean for display? link option? order!
 end

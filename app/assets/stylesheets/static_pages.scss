@@ -1601,7 +1601,7 @@ hr{
   .left, .right {display: inline-block; float: left; width:45%;}
   .right {float: right;}
 
-  h4{margin-bottom: 0; font-weight: bold; border-bottom: $border; padding-bottom:6px; color:$brown;}
+  h4{margin-bottom: 0; font-weight: bold; border-bottom: $border; padding-bottom:6px; color:$pink;}
   h3{margin:5px 0 10px; font-size: 1.3rem; font-weight: $semi;}
 }
 
@@ -1897,9 +1897,13 @@ hr{
 
     .info {padding: 30px 0 0 30px;}
     img {width:350px;}
-    p{font-size: 15px; float: none; }
+    p{font-size: 15px; float: none; margin-bottom: 7px;}
 
-    .options{@include sec-default();}
+    .options{@include sec-default(); }
+    span{font-size: 14px; font-weight: 400; }
+    span.delete{margin-left: 15px;
+      a{color: $red;}
+    }
   }
 
   .full-show{@include sec-default();
