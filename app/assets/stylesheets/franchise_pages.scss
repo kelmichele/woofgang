@@ -32,6 +32,7 @@ br.tn {display: none;}
   h2{ font-size:1.2rem; margin-bottom: 0px; font-weight: 300;}
 
 	@include bp(tb) {
+		padding-top:0px;
 		h1 {font-size: 1.65rem;}
 		h2 {font-size: 1.1rem;}
 	}
@@ -43,6 +44,11 @@ br.tn {display: none;}
 
 	@include bp(oc) {
 		h1 {font-size: 1.3rem;}
+		h2{font-size: 15px;}
+	}
+
+	@include bp(sm) {
+		h1 {font-size: 1.1rem;}
 	}
 }
 
@@ -609,7 +615,12 @@ br.tn {display: none;}
 		}
 
 		@include bp(mb) {
-			// h3{font-size:1rem;}
+			h3{font-size:1rem;}
+		}
+
+		@include bp(oc) {
+			.statement .inside.med2-def{width:90%;}
+			.full.one, .full.two {@include sec-default();}
 		}
 	}
 }

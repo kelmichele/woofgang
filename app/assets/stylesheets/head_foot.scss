@@ -234,6 +234,10 @@
 			span {width:17px; height:17px;}
 		}
 	}
+
+	.footer-level .btm{border-top: 0; margin-top: 0;
+		.copy, .hs {@include sec-default(); text-align: center;margin:5px 0;}
+	}
 }
 
 

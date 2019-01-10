@@ -37,6 +37,8 @@
   .rails-default-error-page h1 {
     font-size: 18px;
     line-height: 1.5em;
+    margin-bottom: 5px;
+    color: #7a1501;
   }
 
   .rails-default-error-page div.dialog > p {
@@ -104,8 +106,23 @@
     }
   }
 
+  @media (max-width:420px) {
+    .rails-default-error-page {
+      height: 97vh;
+      background-position: bottom center;
+    }
 
+    .rails-default-error-page div.dialog {
+      width:100%;
+      margin:20px 0 0;
+      padding:0;
+      padding-bottom: 20px;
+    }
 
+    .rails-default-error-page div.dialog img{
+      width:200px;
+    }
+  }
   </style>
 </head>
 
