@@ -13,12 +13,10 @@ class Location < ApplicationRecord
   validates :city, presence: true
   validates :state_id, presence: true
   validates :zip, presence: true
-  validates :phone, presence: true
-  validates :email_address, presence: true
+  # validates :phone, presence: true
+  # validates :email_address, presence: true
 
   before_save :update_og_state
-
-  # default_scope -> { order(state: :asc)}
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings

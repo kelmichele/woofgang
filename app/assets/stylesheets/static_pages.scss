@@ -194,9 +194,12 @@ hr{
 
 
     &.ff {
-      h4, p{color:$white;@include tshadowl(rgba($black,.4)); font-weight: 400; margin:0;letter-spacing: .3px;}
+      h4, p{color:$white;@include tshadowl(rgba($black,.3)); font-weight: 400; margin:0;letter-spacing: .3px;}
       h4{ margin-bottom: 10px; font-size: 1.2rem;}
-      p{font-size: 17px;}
+
+      p{font-size: 17px;
+        letter-spacing: .4px;
+      }
       .text {margin-left: 3.5%;}
     }
 
@@ -282,9 +285,41 @@ hr{
   }
 
 
+  .wgb-slides {@include sec-default(); padding:0 0px 5px;
+    li {margin-right:5px;
+      img {height:315px; width:auto;}
+    }
+
+    .uk-position-center-left,.uk-position-center-right {background-color: rgba($black,.5)}
+  }
 
   .image-section{ @include sec-default(); text-align: center; padding-bottom: 80px;
     img{display: inline-block; float: none; width:20%;}
+
+
+    &.two {
+      img {width:49%;}
+    }
+
+    &.three {
+      img{width:33%;}
+    }
+
+    &.threeb {
+      .img1, .img3{width:21%;}
+      .img2{width:45%;}
+    }
+
+    &.threec {
+      .img1, .img3{width:38%;}
+      .img2{width:17.5%;}
+    }
+
+    &.four {
+      img{vertical-align: top;}
+      .img1, .img3{width:15%;}
+      .img2,.img4{width:34%;}
+    }
 
     &.alt {
       img{width:18%;}
@@ -1892,15 +1927,17 @@ hr{
   }
 }
 .slides.index{
-  .li-slides li {@include sec-default();margin-bottom: 30px;
+  h1,h2{margin:0;}
+  .li-slides li {@include sec-default();margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid rgba($black,.1);
     img, .info{display: inline-block; float: left;}
 
     .info {padding: 30px 0 0 30px;}
     img {width:350px;}
     p{font-size: 15px; float: none; margin-bottom: 7px;}
+    // p b{color:$pink;}
 
     .options{@include sec-default(); }
-    span{font-size: 14px; font-weight: 400; }
+    span a{font-size: 14px; font-weight: 400; color:$compb;}
     span.delete{margin-left: 15px;
       a{color: $red;}
     }

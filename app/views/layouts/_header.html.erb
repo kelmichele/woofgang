@@ -28,7 +28,17 @@
       <div class="full navstick"  uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
         <div class="inside">
           <ul class="uk-navbar-nav">
-            <li><%= link_to "Home", root_path %></li>
+            <!-- <li><%= link_to "Home", root_path %></li> -->
+            <li>
+              <a href="#">Home</a>
+              <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                  <li><%= link_to "Home", root_path %></li>
+                  <li><%= link_to "Home Alternative", home_alt_path %></li>
+                </ul>
+              </div>
+            </li>
+
             <li>
               <a href="#">Franchise</a>
               <div class="uk-navbar-dropdown">

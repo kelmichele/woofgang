@@ -4,6 +4,7 @@
 <div class="ipage-header">
 	<div class="inside med2">
 		<h1><%= @page_title %></h1>
+		<h2>Drag slides to change order</h2>
 		<% if user_signed_in? && current_user.admin? %>
 	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
 	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
@@ -24,8 +25,9 @@
 					<% end %>
 
 					<div class="info">
-				  	<p><%= slide.title %></p>
-				  	<hr>
+				  	<p>
+				  		<strong>Title:</strong> <%= slide.title %></p>
+				  	<!-- <hr> -->
 					  <div class="options">
 					  	<!-- <span><%= link_to "View", slide_path(slide) %></span> -->
 					  	<span><%= link_to "Edit", edit_slide_path(slide) %></span>
