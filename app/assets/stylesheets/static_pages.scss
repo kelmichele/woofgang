@@ -276,11 +276,14 @@ hr{
     }
 
     &.reg {padding:30px 0 80px;}
-    &.none {
-      margin-top: -10px;
-       padding-bottom: 90px;
+    &.none {padding-bottom: 80px;
       .image-row {display: none;}
-      .text {box-shadow: none; margin-top: 0px;padding-top: 0;}
+      .over {margin-bottom: 0}
+      .text {box-shadow: none; margin-top: 0px;padding-top: 0; padding-bottom: 10px;}
+
+      .serve-tl {width:27%; margin:20px 0 20px;
+        &.vet, &.ss, &.daycare{margin:20px .8%;}
+      }
     }
   }
 
@@ -517,6 +520,20 @@ hr{
         }
         hr{margin-top: 10px;}
       }
+
+      @include bp(br) {
+        width:40%;
+        .import{display: none;}
+        .manu {@include sec-default();}
+      }
+
+      @include bp(br) {
+        width:50%;
+      }
+
+      @include bp(sm) {
+        width:65%; margin-left: 15%;
+      }
     }
   }
 
@@ -725,7 +742,10 @@ hr{
   }
 
   @include bp(oc) {
-    .ipage-header .inside.narrow{width:90%;}
+    .ipage-header {
+      .inside.narrow{width:90%;}
+      .uk-dropdown{}
+    }
     .search-sec{
       .searcher {margin-bottom: 0;}
       .filter-box { width:85%;margin-top: 10px;}
@@ -737,14 +757,16 @@ hr{
   @include bp(ph) {
     .admin-uk{left: 90%; }
     .search-sec{
-      .searcher,.filter-box { width:95%;}
+      .searcher,.filter-box { width:95%; margin-left: auto;}
     }
   }
 
   @include bp(sm) {
+    .admin-uk {position: relative; left: 0; margin-top: 0;@include center-block();}
     .search-sec{
-      // .searcher,.filter-box { width:95%;}
-      .form-control {width:60%;}
+      .form-inline{background-color: transparent;}
+      .form-control {width:100%;}
+      select {width:80%;}
     }
 
     .location-bx{@include sec-default(); min-height: auto;}
