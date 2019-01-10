@@ -552,7 +552,7 @@ hr{
     .back-link.inline {color: $red; font-weight: bold; float:right; }
 
     .forminfo.tags {
-      select {height:130px; padding: 5px 0;}
+      select {height:150px; padding: 5px 0;}
       option {margin-bottom: 3px;padding: 1px 7px;}
     }
 
@@ -783,6 +783,7 @@ hr{
 
 .locations.show, .stores.show {
   // h1, h2 {color:$black; letter-spacing: 1px; text-transform: uppercase; @include tshadowl(rgba($black, .2));}
+
   h1, h2{color:$black; }
   h2{margin-bottom: 0;font-weight:300; font-size: 1.2rem;}
   h1{margin-top: 0px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
@@ -809,6 +810,7 @@ hr{
     position: relative; z-index: 0; &::before {@include before(); height: 395px; height:350px; background-color: darken($opink, 1%);}
 
     .title {@include sec-default(); text-align: center; padding: 50px 0 30px;
+      .uk-dropdown {width:20%;}
       .woof-link.cst{font-size: 14px;@include sec-default();
         &.btm{margin-top: 15px;}
       }
