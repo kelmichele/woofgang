@@ -809,7 +809,9 @@ hr{
     position: relative; z-index: 0; &::before {@include before(); height: 395px; height:350px; background-color: darken($opink, 1%);}
 
     .title {@include sec-default(); text-align: center; padding: 50px 0 30px;
-      .woof-link.cst{font-size: 14px;@include sec-default();}
+      .woof-link.cst{font-size: 14px;@include sec-default();
+        &.btm{margin-top: 15px;}
+      }
       .admin-link {position: absolute; right:30px; margin-top:-60px;
         .woof-link { background-color: $red; margin-bottom: 10px; font-size: 14px;}
       }

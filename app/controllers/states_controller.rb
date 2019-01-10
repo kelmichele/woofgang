@@ -9,24 +9,7 @@ class StatesController < ApplicationController
 		@state_locations = @state.locations.all
 		@states = State.all
 
-		@locations = if params[:l]
-			# JUST FOR REDO SEARCH
-	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
-	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
-	    distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
-	    box      = Geocoder::Calculations.bounding_box(center, distance)
-	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 9)
-
-	  elsif params[:near]
-	  	# for type search
-	    Location.near(params[:near], params[:proximity], :order => "distance").paginate(:page => params[:page], :per_page => 9)
-
-	  elsif params[:tag]
-	    Location.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
-
-	  else
-	    @state_locations.paginate(:page => params[:page], :per_page => 9)
-		end
+		@locations =  @state_locations.paginate(:page => params[:page], :per_page => 9)
 	end
 
 	def new

@@ -18,6 +18,7 @@
 			<button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
 	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
 				<%= link_to("Edit Location (#{@location.id})", edit_location_path(@location), class: 'woof-link cst') %>
+  			<%= link_to 'Add a Location', new_location_path, class: 'woof-link cst btm' %>
       </div>
 		<% end %>
 
