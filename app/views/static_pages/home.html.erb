@@ -7,7 +7,7 @@
 		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
 	    <ul class="uk-slideshow-items">
 				<% @slides.each do |slide| %>
-					<li><%= image_tag(slide.image, class: 'img-responsive', alt: "#{slide.title}")%></li>
+					<li><%= image_tag(slide.image, class: 'img-responsive uk-position-bottom ', alt: "#{slide.title}")%></li>
 				<% end %>
 	    </ul>
 	  </div>
