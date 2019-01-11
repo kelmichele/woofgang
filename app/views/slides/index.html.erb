@@ -31,7 +31,7 @@
 					  <div class="options">
 					  	<!-- <span><%= link_to "View", slide_path(slide) %></span> -->
 					  	<span><%= link_to "Edit", edit_slide_path(slide) %></span>
-					  	<span class="delete"><%= link_to "Delete", slides_path, method: :delete, data: { confirm: "Are you sure you want to delete this slide?" } %></span>
+					  	<span class="delete"><%= link_to "Delete", slide_path(slide.id), method: :delete, data: { confirm: "Are you sure you want to delete this slide?" } %></span>
 					  </div>
 					</div>
 				</li>

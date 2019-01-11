@@ -218,20 +218,20 @@ br.tn {display: none;}
 
 			&.one {
 				.image{width:51%;}
-				.text{margin-top:6%; width: 45%}
+				.text{width: 45%}
 				.woof-link {text-align: left; margin-left: 3%;}
 			}
 
-			&.two {margin-top: 65px;
+			&.two {margin-top: 125px;
 				p.sig{margin-bottom: 5px;}
 				.text {float: left; width:50%; padding-left:15px;}
-				.image {float: right; margin-top:8%;}
+				.image {float: right;}
 				ul{margin-top:25px;}
 				li{margin-bottom: 13px;}
 			}
 
 			p.sig{font-size: 18px;font-weight: 400; letter-spacing: .3px; color: $pink;}
-			p.reg{font-size: 16px; margin:5px 0 10px; padding-left: 15px;}
+			p.reg{font-size: 16px; margin:5px 0 10px; }
 		}
 
 		@include bp(tb) {
@@ -261,12 +261,8 @@ br.tn {display: none;}
 		}
 	}
 
-	.content-layout .full.fw.two{margin-top: 65px;
-		// p.sig{margin-bottom: 5px;}
-		// .text {float: left; width:50%; padding-left:15px;}
+	.content-layout .full.fw.two{
 		.image {width:48%;}
-		// ul{margin-top:25px;}
-		// li{margin-bottom: 13px;}
 	}
 	// .content-layout{padding-bottom: 0;}
 

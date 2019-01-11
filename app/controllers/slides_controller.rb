@@ -37,7 +37,8 @@ class SlidesController < ApplicationController
   end
 
   def destroy
-    @slide.destroy
+    Slide.find(params[:id]).destroy
+    flash[:success] = "Slide was successfully deleted!"
     redirect_to slides_path
   end
 

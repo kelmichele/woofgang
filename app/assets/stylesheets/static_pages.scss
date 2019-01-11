@@ -246,7 +246,7 @@ hr{
       // &.ss {width:29%; margin:10px 0 10px 2%; }
 
       width:25%; margin:20px .5% 20px;
-      &.daycare{padding:15px 15px 0;}
+      // &.daycare{padding:15px 15px 0;}
     }
 
     .image {max-height:430px; overflow: hidden;}
@@ -281,8 +281,8 @@ hr{
       .over {margin-bottom: 0}
       .text {box-shadow: none; margin-top: 0px;padding-top: 0; padding-bottom: 10px;}
 
-      .serve-tl {width:27%; margin:20px 0 20px;
-        &.vet, &.ss, &.daycare{margin:20px .8%;}
+      .serve-tl {width:28%;
+        // &.vet, &.ss, &.daycare{margin:20px .8%;}
       }
     }
   }
@@ -376,12 +376,9 @@ hr{
       p{font-size: 16px;}
       .full.logos .inside{width:95%;}
 
-      .serve-tl{
-        width:25%;
-        margin: 10px 2%;
-
-        &.daycare, &.vet {width:27%; margin:10px 2%; }
-        &.ss {width:30%; margin:10px 0 10px 2%; }
+      &.none .serve-tl{
+        width:30%;
+        // margin: 10px 2%;
       }
     }
   }
@@ -407,12 +404,6 @@ hr{
       p{font-size: 15px;}
     }
 
-    // .full.franch{padding:50px 0;
-    //   h4{font-size: 1.1rem;}
-    //   .text {@include sec-default();padding-left:25px;}
-    //   p{font-size: 16px;}
-    // }
-
     .banner-locations{
       h4{font-size: 1.3rem;}
       .woof-link {font-size: 14px;}
@@ -424,11 +415,8 @@ hr{
       p{font-size: 16px;}
       .text h3{font-size: 1.15rem;}
 
-      .serve-tl{
+      &.none .serve-tl{
         width:35%; margin: 10px 5%;
-
-        &.daycare, &.vet {width:39%; margin:10px 4%; }
-        &.ss {width:41%; margin:10px 4% 10px 1%;  }
       }
     }
   }
@@ -454,11 +442,6 @@ hr{
     .nlay-logos{
       .image-row{display: none;}
       .text{@include sec-default();}
-
-      .serve-tl {
-        // &.daycare, &.vet, &.ss, &.bakery, &.grooming, &.resort{
-        // }
-      }
     }
 
     .banner-locations {text-align: center;
@@ -476,13 +459,7 @@ hr{
     }
 
     .nlay-logos {padding-bottom: 20px;
-      .serve-tl {
-        &.daycare, &.vet, &.ss, &.bakery, &.grooming, &.resort{
-          @include sec-default(); margin-bottom: 30px;
-
-          .logo {height:70px; @include center-block();}
-        }
-      }
+      &.none .serve-tl {@include sec-default(); margin-bottom: 30px;}
     }
   }
 
@@ -1237,10 +1214,9 @@ hr{
 
 .doggie-daycare .services-layout {
   .inline-show {
-    &::before{height:470px;}
-    .title {padding-top:50px;}
+    &::before{height:450px;}
+    .title {padding-top:50px; width:25%;}
     .srv-logo{margin-top:50px;
-      &.resort {width:260px; @include center-block();}
     }
   }
   .statement { text-align: center;
@@ -1337,9 +1313,10 @@ hr{
   // }
   .inline-show {
     &::before{height:390px;}
-    .il-slideshow {width:70%; max-height: 500px; overflow: hidden;}
-    .il-slideshow img {width:100%;}
-    .title {margin-right: -5%; width:27%; }
+    // .il-slideshow {width:70%; max-height: 500px; overflow: hidden;}
+    .il-slideshow {width:72%; max-height: 100%;}
+    // .il-slideshow img {width:100%;}
+    .title {margin-right: -5%; width:30%; }
   }
 
   .statement {
