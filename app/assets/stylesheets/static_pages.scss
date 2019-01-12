@@ -341,7 +341,12 @@ hr{
   }
 
   @media (max-width: 1200px) {
-    // .nlay-logos .serve-tl {width:25%; margin:10px 3%;}
+    .bg-sec.ff {margin-bottom: 90px;
+      h4{font-size: 1.1rem;}
+      p{font-size: 16px;}
+      .text {width: 38%;}
+      .images {width:55%; }
+    }
   }
 
   @include bp(tb) {
@@ -360,10 +365,18 @@ hr{
       h2{font-size: 1.2rem;}
     }
 
-    .bg-sec.ff {margin-bottom: 90px;
-      .text {padding-top: 0px; }
-      h4{font-size: 1.1rem;}
-      p{font-size: 16px;}
+    .bg-sec.ff {margin-bottom: 0px;
+      &::before, &::after{height:60%; width:70%;}
+      &::before {background-size: cover;}
+      h4{font-size: 1rem;}
+      .text {padding-top: 0px; width: 50%; margin-left: 6%}
+      .images {width:70%; margin-top: 40px;}
+
+      &.alt {
+        .images{max-height: 300px;
+          .img1,.img2,.img3 {width:31%;}
+        }
+      }
     }
 
     .nlay-logos{
@@ -395,11 +408,14 @@ hr{
       h2{font-size: 1.1rem;}
     }
 
-    .bg-sec.ff {padding: 40px 0; margin-bottom: 75px;
-      .text {padding: 0px; width:50%; margin-top: 25px; }
-      .image{width:45%; max-height: auto;}
-      .img1 {@include sec-default();}
-      .img2 {display: none;}
+    .bg-sec.ff {padding: 40px 0 60px;
+      &::before, &::after{height:60%; width:80%;}
+      .text {width:65%; }
+      // margin-bottom: 75px;
+      // .text {padding: 0px; width:50%; margin-top: 25px; }
+      // .image{width:45%; max-height: auto;}
+      // .img1 {@include sec-default();}
+      // .img2 {display: none;}
       h4{font-size: 16px;}
       p{font-size: 15px;}
     }
@@ -452,10 +468,14 @@ hr{
   @include bp(oc) {
     .nlay-intro{padding-bottom: 15px;}
 
-    .bg-sec.ff {margin-bottom: 20px;
+    .bg-sec.ff {margin-bottom: 0;
       &::before, &::after {height:60%;width:100%;}
       .text {@include center-block(); width:80%;text-align: center;}
-      .image{@include center-block(); width:85%;}
+      .images{@include center-block(); width:85%; text-align: center;}
+
+      &.alt .images{max-height: auto;
+        .img1,.img2,.img3 {float: none;}
+      }
     }
 
     .nlay-logos {padding-bottom: 20px;
