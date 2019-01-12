@@ -408,7 +408,7 @@ hr{
       h2{font-size: 1.1rem;}
     }
 
-    .bg-sec.ff {padding: 40px 0 60px;
+    .bg-sec.ff {padding: 40px 0;
       &::before, &::after{height:60%; width:80%;}
       .text {width:65%; }
       // margin-bottom: 75px;
@@ -432,7 +432,7 @@ hr{
       .text h3{font-size: 1.15rem;}
 
       &.none .serve-tl{
-        width:35%; margin: 10px 5%;
+        width:40%; margin: 20px 3%;
       }
     }
   }
@@ -448,7 +448,7 @@ hr{
       h1{font-size: 1rem;}
     }
 
-    .bg-sec.ff {margin-bottom: 40px;
+    .bg-sec.ff {
       &::before, &::after {height:55%;width:80%;}
       .text {padding: 0px; width:72%; margin-left: 6%; margin-top: 0;}
       .image{width:70%; margin-top: 20px;}
@@ -458,6 +458,12 @@ hr{
     .nlay-logos{
       .image-row{display: none;}
       .text{@include sec-default();}
+      h3{font-size: 1rem;}
+      p{font-size: 15px;}
+
+      &.none .serve-tl{
+        width:47%; margin: 20px 1%;
+      }
     }
 
     .banner-locations {text-align: center;
@@ -466,7 +472,9 @@ hr{
   }
 
   @include bp(oc) {
-    .nlay-intro{padding-bottom: 15px;}
+    .nlay-intro{padding-bottom: 15px;
+      h2{font-size: 1rem;}
+    }
 
     .bg-sec.ff {margin-bottom: 0;
       &::before, &::after {height:60%;width:100%;}
@@ -478,8 +486,10 @@ hr{
       }
     }
 
-    .nlay-logos {padding-bottom: 20px;
-      &.none .serve-tl {@include sec-default(); margin-bottom: 30px;}
+    .nlay-logos.none {padding-bottom: 40px;
+      .serve-tl {@include sec-default(); margin-bottom: 30px;
+        .logo{@include center-block(); width:310px;}
+      }
     }
   }
 
