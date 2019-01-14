@@ -55,18 +55,3 @@
 		</div>
 	</div>
 </div>
-
-
-
-<script>
-	var SortSelect = function(select) {
-    var options = jQuery.makeArray(select.find('option'));
-
-    var sorted = options.sort(function(a, b) {
-        return (jQuery(a).text() > jQuery(b).text()) ? 1 : -1;
-    });
-
-    select.append(jQuery(sorted))
-          .attr('selectedIndex', 0);
-};
-</script>
