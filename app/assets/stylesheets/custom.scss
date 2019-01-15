@@ -50,10 +50,16 @@ html {
 
 
 body {
+  border-top: 10px solid $brown;
+  border-bottom: 10px solid $brown;
   margin:0;
 	line-height: 1.5em;
   font-family: $body;
   @include sec-default();
+
+  @include bp(br) {
+    border-top: 0;
+  }
   // background-color: $f8;
   // padding:0 50px;
   // .page-body {background-color: $f9;}

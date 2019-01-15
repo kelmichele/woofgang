@@ -4,27 +4,6 @@
 <%= render 'franchise_pages/franch-header2' %>
 
 <div class="franchise-layout fl1">
-	<!-- <div class="statement">
-		<div class="inside med2-def">
-			<h3>For general inquires, comments and questions, please <%= link_to('click here to fill out our corporate contact form, or contact our corporate office directly.', contact_path, class: 'text-link') %></h3>
-		</div>
-	</div> -->
-
-	<div class="landing-layout">
-		<div class="box one">
-			<div class="inside med2-def">
-				<div class="image">
-					<%= image_tag('inquiries.jpg', class: 'img-responsive img1', alt: '') %>
-					<%= image_tag('inquiries1.jpg', class: 'img-responsive img2', alt: '') %>
-				</div>
-
-				<div class="text">
-					<!-- <p class="disclose">The submission of this application does not obligate the applicant to become a franchisee of Woof Gang Bakery, nor does it obligate us to offer you a franchise.</p> -->
-					<p>For general inquires, comments and questions, please <%= link_to('click here to fill out our corporate contact form, or contact our corporate office directly.', contact_path, class: 'text-link') %></p>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div class="content-layout" id="image-wrap" uk-grid>
 		<div  class="full one fw">
@@ -41,4 +20,23 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="inside med"><div class="sep"></div></div>
+
+
+	<div class="landing-layout">
+		<div class="box one">
+			<div class="inside med2-def">
+				<div class="image">
+					<%= image_tag('inquiries.jpg', class: 'img-responsive img1', alt: '') %>
+					<%= image_tag('inquiries1.jpg', class: 'img-responsive img2', alt: '') %>
+				</div>
+
+				<div class="text">
+					<p>For general inquires, comments and questions, please <%= link_to('click here to contact our corporate office directly.', contact_path, class: 'text-link') %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>

@@ -69,7 +69,7 @@ br.tn {display: none;}
 	.col {@include sec-default(); position: relative;
 		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; font-size: 1.15rem; }
 
-		.full, .image-nrw {margin-bottom: 60px; display: inline-block;float: left; width:45%;
+		.full, .image-nrw, .image-box {margin-bottom: 60px; display: inline-block;float: left; width:45%;
 			&.two, &.four{float: right;}
 		}
 		ul {padding-left: 20px;}
@@ -78,7 +78,7 @@ br.tn {display: none;}
 			list-style-type: disc;
 		}
 
-		.image-nrw  {width:47%;
+		.image-nrw {width:47%;
 			position:absolute; right:0;
 			overflow: hidden; height:300px; bottom:-40px;
 		}
@@ -87,6 +87,8 @@ br.tn {display: none;}
 			@include sec-default(); height:270px; overflow: hidden;
 			img{width:58%;}
 		}
+
+		.image-box {float:right;}
 	}
 
 	.banner-disc{@include sec-default(); padding: 20px 0; margin-top: 40px;
@@ -438,21 +440,23 @@ br.tn {display: none;}
 		}
 
 		.img1,.img2 {display: inline-block; float: left; width:50%;}
+
+		.image-nrw {height:340px; bottom:-60px;}
 	}
 
 	@include bp(tb) {
 		.col {
-			.image-nrw {bottom:-75px;}
+			// .image-nrw {bottom:-75px;}
+			.image-nrw {position: relative; bottom:0; float: right; height:auto; width:51%; margin-right: -2%;}
 			.full.three {margin-top: 20px;}
 		}
 	}
 
 	@include bp(tn) {
 		.col {
-			// padding-bottom: 270px;
 			.full.one, .full.two, .full.three{width:55%; @include center-block(); margin-top: 0;}
-			// .full.three{margin-bottom: 0;}
-			.image-nrw {@include sec-default(); position: relative; bottom:0; height:auto;}
+			.image-nrw {@include center-block();width:80%;}
+			// .image-nrw {@include sec-default(); position: relative; bottom:0; height:auto;}
 		}
 
 		.banner-disc{margin-top: 15px;}
@@ -489,6 +493,7 @@ br.tn {display: none;}
 
 		.col {
 			.full.one, .full.two, .full.three, .full.four{width:95%;}
+			.image-nrw {@include center-block();width: 95%;}
 		}
 
 		.banner-disc{
@@ -639,9 +644,14 @@ br.tn {display: none;}
     }
   }
 
+	.sep {@include sec-default(); height:10px; border-top:1px solid rgba($black,.1);border-bottom:1px solid rgba($black,.1); margin-top: 15px;}
+
   .franchise-layout {
   	.landing-layout .box{
-  		.text {width:44%;  margin-top: 60px;}
+  		// .text {width:44%;  margin-top: 60px;}
+	  	// .image {width:58%;margin-left: 0;}
+
+	  	.text {width:40%;  margin-top: 60px;}
 	  	.image {width:58%;margin-left: 0;}
 
 	  	.img1{width:100%; border:0;}
@@ -672,34 +682,38 @@ br.tn {display: none;}
   	.franchise-layout {
   		.landing-layout {
 		  	.box {
-		  		.text {margin-top:60px; width:46%;}
+		  		.text {margin-top:60px; width:44%;}
 		  		.image {width:52%; margin-right: 0;}
 		  		.img2 {margin-top: -25%;}
 		  	}
 		  }
 
-		  .content-layout .full.fw.one{
-		  	.image {display: none;}
-		  	.text {@include center-block(); width:80%;}
-		  	// .img-fw{display: none;}
-		  	// .img-mob{display: block;}
-
+		  .content-layout {padding-bottom: 0;
+		  	.full.fw.one{
+			  	.image {display: none;}
+			  	.text {@include center-block(); width:80%;}
+			  	// .img-fw{display: none;}
+			  	// .img-mob{display: block;}
+			  }
 		  }
 		}
+
+		// .sep {margin-top: 0;}
   }
 
   @include bp(md) {
   	h4 {font-size: 1.1rem;}
   	p.disclose {font-size: 15px;}
 		.franchise-layout {
-			.landing-layout .box {padding-top: 20px;
+			.landing-layout .box {padding-top: 0px; padding-bottom: 15px;
 				.text {@include sec-default(); margin-top: 0;}
 				p{font-size: 1rem;}
 			}
 
 			.content-layout .full.fw.one {
-				position: relative;
-				&::before{@include before(); height:5px; width:90%; margin-left: 9%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
+				fieldset {margin-bottom: 0}
+				// position: relative;
+				// &::before{@include before(); height:5px; width:90%; margin-left: 9%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
 				.text {width:85%;}
 			}
 		}

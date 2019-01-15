@@ -1,13 +1,13 @@
 <% @page_title = "Your Neighborhood Pet Store" %>
 <% @page_description = "New Description" %>
 
-<!-- 1295x620 -->
+<!-- 1296x720 -->
 <div class="full-show">
 	<div class="inside lg">
-		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
+		<div class="fw-slideshow" uk-slideshow="autoplay: true; autoplay-interval: 5000; animation: push">
 	    <ul class="uk-slideshow-items">
 				<% @slides.each do |slide| %>
-					<li><%= image_tag(slide.image, class: 'img-responsive uk-position-bottom ', alt: "#{slide.title}")%></li>
+					<li><%= image_tag(slide.image, class: 'img-responsive uk-position-bottom', alt: "#{slide.title}")%></li>
 				<% end %>
 	    </ul>
 	  </div>
@@ -90,15 +90,16 @@
 <div class="wgb-slides">
 	<div class="uk-position-relative uk-visible-toggle uk-light" uk-slider="autoplay: true">
 	  <ul class="uk-slider-items">
-			<li><%= image_tag('cg-golden.jpg', class: 'img-responsive img3')%></li>
+			<li><%= image_tag('ivory.jpg', class: 'img-responsive img3')%></li>
 	    <li><%= image_tag('sharing.jpg', class: 'img-responsive img1')%></li>
-			<li><%= image_tag('pup37.jpg', class: 'img-responsive img2')%></li>
 			<li><%= image_tag('sav1601.jpg', class: 'img-responsive img3')%></li>
 			<li><%= image_tag('group.jpg', class: 'img-responsive img3')%></li>
 			<li><%= image_tag('riggins.png', class: 'img-responsive img4')%></li>
 			<li><%= image_tag('retail-gallery1.jpg', class: 'img-responsive img3')%></li>
 			<li><%= image_tag('harley-bone.png', class: 'img-responsive img3')%></li>
 			<li><%= image_tag('waco-vera.jpg', class: 'img-responsive img3')%></li>
+			<li><%= image_tag('monty.jpg', class: 'img-responsive img3')%></li>
+			<li><%= image_tag('sasha.jpg', class: 'img-responsive img3')%></li>
 	  </ul>
 
 		<a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous uk-slider-item="previous"></a>

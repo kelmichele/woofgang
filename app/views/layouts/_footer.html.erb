@@ -4,7 +4,7 @@
   	<li><%= link_to "Training & Support", training_support_path %></li>
   	<li><%= link_to "Approval Process", approval_process_path %></li>
   	<li><%= link_to "Real Estate", real_estate_path %></li>
-  	<li><%= link_to "Franchise FAQ's", faq_path %></li>
+  	<li><%= link_to "Franchise FAQs", faq_path %></li>
   	<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
   </ul>
 <% end %>
@@ -22,21 +22,15 @@
 <% @ft_info = capture do %>
   <ul class="ft-list info">
 		<li><%= link_to "Home", root_path %></li>
-    <!-- <li><a id="locateLink">Locations</a></li> -->
 		<li><%= link_to "Locations", locations_path %></li>
 		<li><%= link_to "Blog", posts_path %></li>
 		<li><%= link_to "Contact Us", contact_path %></li>
-		<% if user_signed_in? && current_user.admin? %>
-			<li class="account"><%= link_to "Admin Account*", account_path %></li>
-			<% else %>
-			<li class="account"><%= link_to "Admin Account", login_path %></li>
-		<% end %>
-  </ul>
+	</ul>
 <% end %>
 
 <% @ft_contact = capture do %>
 	<p class="tmargin0">7575 Dr. Phillips Blvd<br> Suite 275<br>Orlando, FL 32819</p>
-	<p class="two"><span>Corporate Office Hours:</span><br>Monday - Friday: 8am - 5pm</p>
+	<p><a href="tel:4073559210"><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></a></p>
 <% end %>
 
 
@@ -77,11 +71,11 @@
 			</div>
 
 			<div class="fbs fb4">
-				<h5>Woof Gang Bakery Corporate:</h5>
+				<h5>Woof Gang Bakery Corporate Office</h5>
 				<div class="title-line sm"></div><div class="clearfix"></div>
 				<%= @ft_contact %>
 				<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'text-link' %>
-				<%= link_to 'Contact Vendor Relations', vendor_path, class: 'text-link' %>
+				<%= link_to 'Vendor Relations', vendor_path, class: 'text-link' %>
 				<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'text-link' %>
 			</div>
 		</div>
@@ -107,7 +101,7 @@
 	        <a class="uk-accordion-title" href="#"><h5>Contact</h5></a>
 	        <div class="uk-accordion-content"><%= @ft_contact %>
 					<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'text-link' %>
-					<%= link_to 'Contact Vendor Relations', vendor_path, class: 'text-link' %>
+					<%= link_to 'Vendor Relations', vendor_path, class: 'text-link' %>
 					<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'text-link' %>
 	        </div>
 		    </li>

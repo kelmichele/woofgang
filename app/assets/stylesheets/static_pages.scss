@@ -1001,8 +1001,10 @@ hr{
     &::before{@include before(); height:40%; background-color: $opink;}
 
     &.uniform{
-      .gall-img {display: inline-block; float: left; width:50%; padding:10px;
-        &:nth-child(2n+2) {float: right;}
+      .left,.right {display: inline-block; float: left; width:50%;}
+      .gall-img { padding:10px;
+        // display: inline-block; float: left; width:50%;
+        //   &:nth-child(2n+2) {float: right;}
       }
     }
 
@@ -1167,11 +1169,17 @@ hr{
 .retail .services-layout{
   .inline-show .title{width:21%;}
   .statement{
+    // OG
     // h1, h2 {width:37%;}
     // p{width:59%;}
 
-    h1, h2 {width:29%;padding:50px 0px 60px 0;}
-    p{width:74%; padding-left: 20px;margin: 5px -4% 5px 0;}
+    // with 2 paragraphs
+    // h1, h2 {width:29%;padding:50px 0px 60px 0;}
+    // p{width:74%; padding-left: 20px;margin: 5px -4% 5px 0;}
+
+    // new
+    h1, h2 {width:29%;padding-right: 10px;}
+    p{width:69%;padding-left: 5px;}
   }
 
 
@@ -1189,16 +1197,24 @@ hr{
     }
 
     .statement {
+      br.xl {display: block;}
+      // OG
       // h1,h2{ width:30%; padding-right: 0;}
       // p{width:68%; padding-left: 3.5%}
-      h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:26%; padding:30px 15px 30px 0;}
-      p{border-left: 0;width:77%; font-size: 16px; padding-left: 10px;}
+
+      // 2 p'graphs
+      // h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:26%; padding:30px 15px 30px 0;}
+      // p{border-left: 0;width:77%; font-size: 16px; padding-left: 10px;}
+
+      h1, h2 {width:24%;padding-right: 0px;}
+      p{width:74%;padding-left: 20px;}
     }
   }
 
   @include bp(br) {
     .statement{
       p, h1,h2 {width:90%; border:none; @include center-block(); padding:0; margin:10px auto;}
+      br.xl {display: none;}
     }
   }
 
@@ -1218,20 +1234,26 @@ hr{
 
 .grooming .services-layout {
   .statement{
-    h1, h2 {width:25%;}
-    p{width:70%;}
+    // h1, h2 {width:25%;}
+    // p{width:70%;}
+
+    // with 2 paragraphs
+    h1 {width:25%;padding:30px 0px;}
+    p{width:78%; padding-left: 20px;margin: 5px -4% 5px 0;}
   }
   @include bp(tb) {
     .statement{
-      h1, h2 {width:23%;}
-      p{width:77%;}
+      // h1, h2 {width:23%;}
+      // p{width:77%;}
+
+      h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:22%;}
+      p{border-left: 0;width:77%; font-size: 16px; padding-left: 15px; margin-right: 0;}
     }
   }
 
   @include bp(br) {
     .statement {
       p, h1,h2 {@include center-block(); width:88%; padding:0; border:0; }
-      // h1,h2{margin-top: 0;}
     }
   }
 
@@ -1928,6 +1950,8 @@ hr{
 
 
 .slides{
+  h1,h2{margin:0;}
+  h2{font-size: 1.35rem;}
   .ipage-header{padding-bottom: 30px;}
   .admin-uk {margin-top: -60px;}
   .uk-dropdown .woof-link{@include sec-default();}
@@ -1937,7 +1961,6 @@ hr{
   }
 }
 .slides.index{
-  h1,h2{margin:0;}
   .li-slides li {@include sec-default();margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid rgba($black,.1);
     img, .info{display: inline-block; float: left;}
 
