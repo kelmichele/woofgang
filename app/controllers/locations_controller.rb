@@ -35,6 +35,7 @@ class LocationsController < ApplicationController
 		end
 
 		@tags = Tag.find(9,1,2,3,0)
+		# @tags = Tag.all
 
 		gon.result_info = if params[:near]
 			if @locations.count > 0

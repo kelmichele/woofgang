@@ -34,12 +34,6 @@
 
 		<div class="inside med2">
 		 	<div class="location-body">
-				<% if @location.image.attached? %>
-			 		<div class="image attach"><%= image_tag @location.image %></div>
-				<% else %>
-
-					<div class="image"><%= image_tag('cg-bone.jpg', class: 'img-responsive', alt: '')%></div>
-				<% end %>
 
 				<div class="location-dets">
 					<div class="full top">
@@ -108,13 +102,49 @@
 
 					<div class="cat tags">
 						<p class="hd">Store Services:</p>
-						<% @location.tag_split.each do |tag| %>
-							<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+						<% if @location.tag_ids.include? 9 %>
+							<button class="tag-icon retail" uk-tooltip="Retail">
 								<span class="tag-img"></span>
 							</button>
 						<% end %>
+
+						<% if @location.tag_ids.include? 1 %>
+							<button class="tag-icon grooming" uk-tooltip="Grooming">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+
+						<% if @location.tag_ids.include? 2 %>
+							<button class="tag-icon self-service-grooming" uk-tooltip="Self Service Grooming">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+
+						<% if @location.tag_ids.include? 3 %>
+							<button class="tag-icon doggie-daycare" uk-tooltip="Doggie Daycare">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+
+						<% if @location.tag_ids.include? 0 %>
+							<button class="tag-icon veterinary-clinic" uk-tooltip="Veterinary Clinic">
+								<span class="tag-img"></span>
+							</button>
+						<% end %>
+						 <!-- < @location.tag_split.each do |tag| %>
+							<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
+								<span class="tag-img"></span>
+							</button>
+						< end %> -->
 					</div>
 				</div>
+
+				<% if @location.image.attached? %>
+			 		<div class="image attach"><%= image_tag @location.image %></div>
+				<% else %>
+
+					<div class="image"><%= image_tag('cg-bone.jpg', class: 'img-responsive', alt: '')%></div>
+				<% end %>
 
 			</div>
 		</div>

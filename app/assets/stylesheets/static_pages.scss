@@ -861,7 +861,7 @@ hr{
 
       .cat.hours, .cat.tags {display: inline-block; float: left; width:50%;}
       .cat.tags {float: right; text-align: right;
-        .tag-icon {float: right;}
+        .tag-icon {float: none;}
       }
     }
   }
@@ -903,11 +903,12 @@ hr{
     }
   }
 
-  @include bp(tn) {
+  @include bp(br) {
     h2{font-size: 1.25rem;}
     h1{font-size: 1.5rem;}
 
     .location-page {
+      .full .inside.med2{width:90%;}
       .title {padding:25px 0 0;}
       .back-link, .admin-side {width: 35%; margin:0px 0 10px; padding: 0;}
       .back-link {margin-left:7%;}
@@ -917,18 +918,38 @@ hr{
     }
   }
 
+  @include bp(tn) {
+    .location-page {
+      .location-dets {
+        .full.top {
+          h3, .btn-row {@include sec-default();}
+          .woof-link {float: left; }
+        }
+        .cat.tags, .cat.hours {@include sec-default(); text-align: left;}
+      }
+
+      .dets {width:85%; @include center-block();}
+    }
+  }
+
   @include bp(oc) {
+    .admin-uk{display: none;}
     h2{font-size: 1.1rem;}
     h1{font-size: 1.35rem;}
 
     .location-page {
+      .full .inside.med2{width:70%;}
+
       .title {padding:15px 0 0;}
       .back-link, .admin-side {width: 40%; margin:0px 0 10px; padding: 0;}
       .back-link {margin-left:5%;}
       .admin-side {margin-right: 5%;}
 
+      .image, .location-dets {@include sec-default();}
+      .image {margin-top: 20px;}
+
       .dets {width:90%;}
-      .location-dets{
+      .location-dets{padding:20px 30px;
         .full.top h3{font-size: 1rem;}
       }
     }
@@ -936,13 +957,14 @@ hr{
 
   @include bp(sm) {
     .location-page{
+      .full .inside.med2{width:85%;}
       .location-dets{padding-top:10px;
-        .full.top{text-align: center;
-          h3, .btn-row{@include sec-default();
-            .woof-link {float:none;}
-          }
-          hr.one {margin-top: 15px;}
-        }
+        // .full.top{text-align: center;
+          // h3, .btn-row{@include sec-default();
+          //   .woof-link {float:none;}
+          // }
+          // hr.one {margin-top: 15px;}
+        // }
       }
     }
   }
