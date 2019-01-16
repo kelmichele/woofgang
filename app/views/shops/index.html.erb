@@ -1,0 +1,72 @@
+<% @page_title = "Our Shops" %>
+<% @page_description = "New Description" %>
+
+<div class="ipage-header">
+	<div class="inside narrow">
+		<h1><%= @page_title %></h1>
+		<h2>Use the map below to find a shop near you.</h2>
+	</div>
+
+	<% if user_signed_in? && current_user.admin? %>
+  	<div class="boundary-align uk-panel">
+	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <!-- <button class="woof-link wl-uk uk-float-right" type="button">Admin Options</button> -->
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+      	<div class="admin-btns">
+      		<div class="manu">
+      			<%= link_to 'Add a Shop', new_shop_path, class: 'woof-link' %>
+      			<%= link_to "Download CSV", shops_path(format: "csv"), class: 'woof-link dl' %>
+						<%= link_to "Add a State", new_state_path, class: 'woof-link' %>
+      		</div>
+
+    			<div class="import">
+    				<p class="bmargin0">Import Shops</p>
+    				<hr>
+    				<%= form_tag import_shops_path, multipart: true do %>
+    				  <%= file_field_tag :file %>
+    				  <hr>
+    				  <%= submit_tag "Import" %>
+    				<% end %>
+    			</div>
+      	</div>
+    	</div>
+    </div>
+	<% end %>
+</div>
+
+	<div class="full-search">
+		<div class="full listings">
+			<div class="search-sec">
+				<div class="inside lg">
+					<div class="searcher">
+						<%= form_with(url: shops_path, class: "form-inline", local: true, method: :get) do |f| %>
+						  <%= f.text_field :near, class: "form-control", placeholder: "Search by city and state, or zip" %>
+						  <%= f.submit "", class: "btn btn-outline-secondary search" %>
+						<% end %>
+					</div>
+
+			  	<div class="boundary-align uk-panel filter-box">
+				    <div class="filter-uk">Search by Service <span  uk-icon="icon: chevron-down;"></span></div>
+				    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
+
+			    	</div>
+			    </div>
+
+
+
+			  </div>
+			</div>
+
+			<div class="map">
+			</div>
+
+			<div class="loclist">
+				<div class="inside">
+					<p id="result-info"></p>
+
+					<%= render partial: "list" %>
+				</div>
+			</div>
+
+		</div>
+	</div>

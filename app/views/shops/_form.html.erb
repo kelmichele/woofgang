@@ -1,6 +1,6 @@
-<%= render 'shared/errors', obj: @store %>
+<%= render 'shared/errors', obj: @shop %>
 <div class="loc-form">
-  <%= form_for(@store, :html => {class: "form-horizontal", role: "form" }) do |f| %>
+  <%= form_for(@shop, :html => {class: "form-horizontal", role: "form" }) do |f| %>
     <div class="form-group">
 
       <h3>Contact</h3>
@@ -82,12 +82,7 @@
 
       <div class="forminfo hours">
         <%= f.label :hours %><br>
-        <%= f.text_area :hours, class: "form-control", placeholder: "Store Hours", autofocus: true %>
-      </div>
-
-      <div class="forminfo tags">
-        <label>Tags <span>(command + click all that apply)</span><br>
-        <%= f.collection_select(:tag_ids, Tag.all, :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %>
+        <%= f.text_area :hours, class: "form-control", placeholder: "Shop Hours", autofocus: true %>
       </div>
 
       <div class="forminfo lat">
@@ -108,10 +103,10 @@
       <%= f.label :image %>
       <%= f.file_field :image %>
 
-      <% unless @store.new_record? %>
-        <% if @store.image.attached? %>
+      <% unless @shop.new_record? %>
+        <% if @shop.image.attached? %>
           <p class="tsmall">Current Image:</p>
-          <div class="thumb"><%= image_tag @store.image %></div>
+          <div class="thumb"><%= image_tag @shop.image %></div>
         <% end %>
       <% end %>
     </div>
@@ -119,7 +114,7 @@
 
 
     <div class="form-group btns">
-      <%= f.submit(@store.new_record? ? "Add Store" : "Update Store", class: "btn woof-link save") %>
+      <%= f.submit(@shop.new_record? ? "Add Shop" : "Update Shop", class: "btn woof-link save") %>
     </div>
   <% end %>
 </div>

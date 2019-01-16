@@ -1,0 +1,48 @@
+<%= tag.div id: "shops-list", data: { shops: @shops.to_json(methods: [:address]), l: params[:l] } do %>
+	<table>
+		<% @shops.each do |shop| %>
+			<div class="location-bx">
+				<% if shop.store_name %>
+					<%= link_to shop_path(shop) do %>
+						<div class="cat name"><%= shop.ntitle.titleize %></div>
+					<% end %>
+				<% else %>
+					<%= link_to shop_path(shop) do %>
+						<div class="cat name">
+							<%= shop.city.titleize %></div>
+					<% end %>
+				<% end %>
+
+				<div class="cat address">
+					<%= shop.street_address_one %><% if shop.street_address_two %>,
+					<span class="addr"><%= shop.street_address_two %></span>
+					<% end %>
+					<br><%= shop.city %>, <%= shop.state.name %> <%= shop.zip %>
+				</div>
+
+				<div class="cat phone"><a href="tel:<%= shop.phone %>"><%= number_to_phone(shop.phone, delimiter: '-') %></a></div>
+
+				<div class="cat email">
+					<a href="mailto:<%= shop.email_address %>"><span uk-icon="icon: mail;"></span></a>
+
+
+						<% if shop.fb %>
+							<a href="https://www.facebook.com<%= shop.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
+						<% end %>
+
+				</div>
+
+				<div class="btn-row">
+					<%= link_to "Shop Details", shop_path(shop), class: 'woof-link' %>
+					<a href="<%= shop.direct_link %>" target="_blank" class="woof-link dir">Directions </a>
+				</div>
+
+
+    		<% if user_signed_in? && current_user.admin? %>
+					<% if shop.longitude == nil %><div class="actions">**<small>Coordinates Missing**</small></div><% end %>
+				<% end %>
+			</div>
+		<% end %>
+	</table>
+<% end %>
+<%= will_paginate @shops, remote: true %>

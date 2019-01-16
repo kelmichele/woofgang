@@ -62,7 +62,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :stores do
+  resources :shops do
     collection do
       post :import
     end

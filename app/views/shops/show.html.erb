@@ -1,0 +1,113 @@
+<% @page_title = @shop.store_name.titleize %>
+<% @page_description = "New Description" %>
+
+<div class="shop-page">
+	<div class="title">
+		<% if @shop.store_name.include? "Grooming" %>
+			<h2>Woof Gang Bakery & Grooming </h2>
+		<% else %>
+			<h2>Woof Gang Bakery</h2>
+		<% end %>
+		<h1><%= @shop.ntitle %></h1>
+
+		<% if user_signed_in? && current_user.admin? %>
+			<button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+				<%= link_to("Edit Shop (#{@shop.id})", edit_shop_path(@shop), class: 'woof-link') %>
+      </div>
+		<% end %>
+
+	</div>
+
+ 	<div class="full">
+ 		<!-- <div class="back-link">
+ 			<%= link_to "/shops", class: 'text-link' do %>
+ 				<span class="" uk-icon="icon: arrow-left;"></span> Back to Shops
+ 			<% end %>
+ 		</div> -->
+
+
+		<div class="inside med2">
+		 	<div class="shop-body">
+				<% if @shop.image.attached? %>
+			 		<div class="image attach"><%= image_tag @shop.image %></div>
+				<% else %>
+
+					<div class="image"><%= image_tag('savannah-interior.jpg', class: 'img-responsive', alt: '')%></div>
+				<% end %>
+
+				<div class="shop-dets">
+					<div class="full top">
+					<!-- <h3><%= @shop.ntitle %> Details</h3> -->
+						<h3>Shop Details</h3>
+
+						<div class="btn-row">
+							<a href="<%= @shop.direct_link %>" target="_blank" class="woof-link">Directions </a>
+						</div>
+					</div>
+					<div class="clearfix"></div><hr class="one">
+
+
+					<div class="cat address">
+						<!-- <p class="addr"><%= @shop.street_address_one.titleize %><br> -->
+							<p class="addr"><%= @shop.street_address_one %><br>
+						<% if @shop.street_address_two %>
+							<!-- <span class="addr2"><%= @shop.street_address_two.titleize %></span> -->
+							<span class="addr2"><%= @shop.street_address_two %></span>
+						<% end %>
+						<%= @shop.city %>, <%= @shop.state.name %> <%= @shop.zip %></p>
+					</div>
+
+					<div class="clearfix"></div><hr class="one">
+					<div class="cat phone">
+						<p><a href="tel:<%= @shop.phone %>"><%= number_to_phone(@shop.phone, delimiter: '-') %></a></p>
+					</div>
+
+					<div class="cat email">
+						<p><a href="mailto:<%= @shop.email_address %>"><span uk-icon="icon: mail;"></span></a></p>
+						<!-- <p><a href="mailto:<%= @shop.email_address %>"><%= @shop.email_address %></a></p> -->
+					</div>
+
+					<div class="cat soc">
+						<% if @shop.list_links.count > 0 %>
+							<% unless @shop.fb.empty? %>
+								<a href="https://www.facebook.com<%= @shop.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
+							<% end %>
+
+							<% unless @shop.insta.empty? %>
+								<a href="https://www.instagram.com<%= @shop.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
+							<% end %>
+
+							<% unless @shop.twitter.empty? %>
+								 <!-- != ''  -->
+								<a href="https://twitter.com<%= @shop.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
+							<% end %>
+
+							<% if @shop.yelp != '' %>
+								<a href="https://www.yelp.com/biz<%= @shop.yelp %>" target="_blank"><span class="linkcon" uk-icon="icon: yelp;"></span></a>
+							<% end %>
+
+							<% unless @shop.site.empty? %>
+								<a href="<%= @shop.site %>" target="_blank"><span class="linkcon" uk-icon="icon: link;"></span></a>
+							<% end %>
+						<% end %>
+					</div>
+
+					<div class="clearfix"></div><hr class="one">
+					<% if @shop.hours %>
+						<div class="cat hours">
+							<p class="hd">Hours of Operation:</p>
+							<p>
+								<% @shop.c_hours.each do |c_hours| %>
+									<%= c_hours %><br>
+								<% end %>
+							</p>
+						</div>
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>

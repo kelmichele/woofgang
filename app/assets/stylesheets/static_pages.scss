@@ -509,7 +509,7 @@ hr{
 //*********************************//
 //*********** locations ***********//
 //*********************************//
-.locations, .states, .stores {
+.locations, .states, .shops {
   .admin-uk{position:absolute; left: 80%; margin-top: -70px;}
   h1{margin-bottom: 0px; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
   h2{margin-top:6px; font-size:1.25rem; line-height: 1.1em;}
@@ -595,7 +595,7 @@ hr{
   &.new .back-link.inline {float:left;}
 }
 
-.locations.index, .states.show, .stores.index {
+.locations.index, .states.show, .shops.index {
   .woof-link.cst{font-size: 14px;@include sec-default();}
   .btn-row {margin: 5px 0 10px;}
   .full-search {@include sec-default(); padding: 40px 0; background-color: $f9; padding-top:0;}
@@ -787,7 +787,7 @@ hr{
   }
 }
 
-.locations.show, .stores.show {
+.locations.show, .shops.show {
   // h1, h2 {color:$black; letter-spacing: 1px; text-transform: uppercase; @include tshadowl(rgba($black, .2));}
 
   h1, h2{color:$black; }

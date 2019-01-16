@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_10_175529) do
+ActiveRecord::Schema.define(version: 2019_01_16_191122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,29 +163,7 @@ ActiveRecord::Schema.define(version: 2019_01_10_175529) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "slides", force: :cascade do |t|
-    t.string "image"
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "order"
-    t.boolean "display"
-    t.string "link"
-  end
-
-  create_table "states", force: :cascade do |t|
-    t.string "name"
-    t.string "full_name"
-    t.string "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["full_name"], name: "index_states_on_full_name"
-    t.index ["id"], name: "index_states_on_id"
-    t.index ["name"], name: "index_states_on_name"
-    t.index ["slug"], name: "index_states_on_slug"
-  end
-
-  create_table "stores", force: :cascade do |t|
+  create_table "shops", force: :cascade do |t|
     t.string "store_name"
     t.string "street_address_one"
     t.string "street_address_two"
@@ -207,10 +185,32 @@ ActiveRecord::Schema.define(version: 2019_01_10_175529) do
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["city"], name: "index_stores_on_city"
-    t.index ["og_state"], name: "index_stores_on_og_state"
-    t.index ["state_id"], name: "index_stores_on_state_id"
-    t.index ["zip"], name: "index_stores_on_zip"
+    t.index ["city"], name: "index_shops_on_city"
+    t.index ["og_state"], name: "index_shops_on_og_state"
+    t.index ["state_id"], name: "index_shops_on_state_id"
+    t.index ["zip"], name: "index_shops_on_zip"
+  end
+
+  create_table "slides", force: :cascade do |t|
+    t.string "image"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order"
+    t.boolean "display"
+    t.string "link"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "full_name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["full_name"], name: "index_states_on_full_name"
+    t.index ["id"], name: "index_states_on_id"
+    t.index ["name"], name: "index_states_on_name"
+    t.index ["slug"], name: "index_states_on_slug"
   end
 
   create_table "taggings", force: :cascade do |t|
