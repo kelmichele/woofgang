@@ -69,7 +69,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, :except => :index, :path => ''
+  resources :posts, :except => :index, :path => '' do
+    member do
+      delete :delete_image_attachment
+    end
+  end
 
   resources :slides do
     collection do

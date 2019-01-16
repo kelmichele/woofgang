@@ -54,6 +54,8 @@
 			<%= link_to recent.slug, class: 'rpost' do %>
 				<% if recent.image.attached? %>
 				  <div class="image"><%= image_tag recent.image %></div>
+				  <% else %>
+				  <div class="image"><%= image_tag 'blog-recent.png' %></div>
 				<% end %>
 
 				<div class="rtitle">

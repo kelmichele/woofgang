@@ -23,6 +23,11 @@
 
 		  <% unless @post.new_record? %>
 				<% if @post.image.attached? %>
+					<%= link_to 'Remove image', delete_image_attachment_post_url(@post),
+                method: :delete,
+                data: { confirm: 'Are you sure you want to delete this image?' } %>
+
+
 					<p class="tsmall">Current Image:</p>
 				  <div class="thumb"><%= image_tag @post.image %></div>
 				<% end %>
@@ -36,7 +41,7 @@
 
 		<div class="form-group final">
 		  <div class="actions">
-		    <%= link_to("[ Cancel ]", blog_path, :class => 'action woof-link cancel') %>
+		    <%= link_to("[ Cancel ]", post_path(@post), :class => 'action woof-link cancel') %>
 		    <%= f.submit(@post.new_record? ? "Create new post" : "Update post", class: "action woof-link submit") %>
 		  </div>
 		  <p class="rule"><small>*Required Fields</small></p>

@@ -1,10 +1,18 @@
 class PostsController < ApplicationController
-	before_action :set_post, only: [:edit, :show, :update, :destroy]
+	before_action :set_post, only: [:edit, :show, :update, :destroy, :delete_image_attachment]
 	helper_method :recent
 
 	def index
     @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
   end
+
+  def delete_image_attachment
+    # @image = ActiveStorage::Attachment.find(params[:id])
+    # @image = ActiveStorage::Blob.find(params[:id])
+    @post.image.purge
+    redirect_back(fallback_location: request.referer)
+  end
+
 
   def show
   end
