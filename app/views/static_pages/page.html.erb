@@ -1,104 +1,47 @@
-<% @page_title = "PAGE Your Neighborhood Pet Store" %>
-<% @page_description = "New Description" %>
+<% @page_title = "Woof Gang Bakery Blog" %>
+<% @page_description = "" %>
 
-<!-- 1295x620 -->
-<div class="full-show">
-	<div class="inside lg">
-		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
-	    <ul class="uk-slideshow-items">
-				<li><%= image_tag('home-slide-interior.jpg', class: 'img-responsive uk-cover') %></li>
-				<li><%= image_tag('home-slide-exterior.jpg', class: 'img-responsive uk-cover') %></li>
-				<li><%= image_tag('home-slide-owner.jpg', class: 'img-responsive uk-cover') %></li>
-				<li><%= image_tag('home-slide-bone.jpg', class: 'img-responsive uk-cover') %></li>
-				<li><%= image_tag('home-slide-treats.jpg', class: 'img-responsive uk-cover') %></li>
-	    </ul>
-	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-	  </div>
-	</div>
-</div>
-
-
-<div class="nlay-intro comp">
-	<!-- <div class="inside xx"> -->
-	<div class="inside home-def">
-		<div class="text">
-			<h1>Woof Gang Bakery</h1>
-			<h2>Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America,<span> with more than 110 locations across the U.S.</span>
-			Woof Gang Bakery offers the very best in pet care by providing quality products and grooming with a service-oriented approach. Each location is a neighborhood store committed to the well-being, health and happiness of pets.</h2>
-		</div>
-	</div>
-</div>
-
-<div class="bg-sec ff">
-	<div class="text">
-			<div class="btext">
-				<h4>Our approach to franchising is very simple:</h4>
-				<p class="two">Successful franchising is built upon successful franchisees.<br> Our leadership philosophy is based upon the belief that we should direct, not dominate the franchise system, and that our franchisees should have a voice and participate in that direction.</p>
-			</div>
-	</div>
-
-	<div class="images">
-		<%=image_tag('sign.jpg', class: 'img-responsive img1', alt: '') %>
-		<%=image_tag('pup8-tall.jpg', class: 'img-responsive img2', alt: '') %>
-	</div>
-	<!-- <div class="image"><%=image_tag('sign-narrow.jpg', class: 'img-responsive img1', alt: '') %></div> -->
-</div>
-
-<div class="nlay-logos reg">
-	<div class="inside one">
-		<div class="over">
-  		<div class="image-row three">
-    		<%= image_tag('fi-counter2.jpg', class: 'img-responsive img1')%>
-    		<%= image_tag('sharing.jpg', class: 'img-responsive img2')%>
-    		<%= image_tag('cg-smile.jpg', class: 'img-responsive img3')%>
-  		</div>
-
-    	<div class="text">
-				<h3>Woof Gang Bakery does it all</h3>
-				<p>We offer a number of services to help keep your pets healthy and spoiled!<br>
-				 	Contact your local Woof Gang Bakery to find out which services are available in your area.<br>
-					Select a service from the logos below to visit the page, and learn more.
-				</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="full logos">
-		<div class="inside">
-			<%= link_to retail_path, class: 'serve-tl bakery' do %>
-	      <%= image_tag('logo-bakery.jpg', class: 'img-responsive logo')%>
-			<% end %>
-
-			<%= link_to grooming_path, class: 'serve-tl grooming' do %>
-	      <%= image_tag('logo-grooming.jpg', class: 'img-responsive logo')%>
-			<% end %>
-
-			<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
-	      <%= image_tag('logo-resort.jpg', class: 'img-responsive logo')%>
-			<% end %>
-
-			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
-	      <%= image_tag('logo-wellness.jpg', class: 'img-responsive logo')%>
-			<% end %>
-
-			<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
-	      <%= image_tag('logo-ss.jpg', class: 'img-responsive logo')%>
-			<% end %>
-
-			<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
-	      <%= image_tag('wgb-ddaycare.png', class: 'img-responsive logo')%>
-			<% end %>
-		</div>
-	</div>
-</div>
-
-<div class="banner-locations">
+<div class="ipage-header">
 	<div class="inside med2">
-		<h4>More Than 110 Locations Nationwide</h4>
-		<div class="btn-hlf">
-			<%= link_to "Find One Near You", locations_path, class: 'woof-link' %>
-		</div>
+		<h1>Woof Gang Bakery Blog</h1>
+		<% if user_signed_in? && current_user.admin? %>
+	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+  			<%= link_to "Create New Post", new_post_path, class: 'woof-link' %>
+      </div>
+		<% end %>
 	</div>
 </div>
 
+<div class="full-sec">
+	<div class="inside">
+		<!-- <div class="top">
+			<h1>Woof Gang Bakery Blog</h1>
+			<% if user_signed_in? && current_user.admin? %>
+		    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+		    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+	  			<%= link_to "Create New Post", new_post_path, class: 'woof-link' %>
+	      </div>
+			<% end %>
+		</div> -->
+
+		<ul class="blog-posts">
+		<% @posts.each do |post| %>
+			<style type="text/css">
+				.post-li.post-<%= post.id %> {
+					<% if post.image.attached? %>
+						background-image: url(<%= rails_blob_url(post.image) %>);
+						<% else %>
+						background-image: url(/assets/home-slide-bone.jpg);
+					<% end %>
+				}
+			</style>
+
+			<%= link_to post_path(post), class: "post-li post-#{post.id}" do %>
+			  <h3 class="title"><%= post.title %></h3>
+			<% end %>
+		<% end %>
+		</ul>
+	</div>
+	<%= will_paginate @posts, remote: true %>
+</div>

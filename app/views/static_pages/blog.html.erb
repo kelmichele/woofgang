@@ -1,0 +1,37 @@
+<% @page_title = "Woof Gang Bakery Blog" %>
+<% @page_description = "" %>
+
+<div class="ipage-header">
+	<div class="inside med2">
+		<h1>Woof Gang Bakery Blog</h1>
+		<% if user_signed_in? && current_user.admin? %>
+	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
+	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
+  			<%= link_to "Create New Post", new_post_path, class: 'woof-link' %>
+      </div>
+		<% end %>
+	</div>
+</div>
+
+<div class="full-sec">
+	<div class="inside">
+		<ul class="blog-posts">
+			<% @posts.each do |post| %>
+				<style type="text/css">
+					.post-li.post-<%= post.id %> {
+						<% if post.image.attached? %>
+							background-image: url(<%= rails_blob_url(post.image) %>);
+							<% else %>
+							background-image: url(/assets/home-slide-bone.jpg);
+						<% end %>
+					}
+				</style>
+
+				<%= link_to post_path(post), class: "post-li post-#{post.id}" do %>
+				  <h3 class="title"><%= post.title %></h3>
+				<% end %>
+		<% end %>
+		</ul>
+	</div>
+	<%= will_paginate @posts, remote: true %>
+</div>

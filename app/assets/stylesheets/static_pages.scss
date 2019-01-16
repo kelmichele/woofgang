@@ -135,7 +135,7 @@ hr{
 //*********************************//
 //************* home **************//
 //*********************************//
-.home, .page, .home-alt{
+.home, .home-alt{
   .page-body {
     .title-line{margin-top: 20px; opacity: .3; width:15%;}
     h1{font-size: 1.1rem; text-transform: uppercase; color:$pink; letter-spacing: 10px; letter-spacing: 3px; margin:0; font-weight: 600; }
@@ -1580,7 +1580,7 @@ hr{
 //*********************************//
 //*********** posts ***********//
 //*********************************//
-.posts, .slides {
+.posts, .slides, .page, .blog {
   h1{color:$brown; font-size: 1.8rem; letter-spacing: .5px;}
   .ipage-header {padding:40px 0 0;background-color:darken($opink, 1%);}
 
@@ -1627,7 +1627,7 @@ hr{
   }
 }
 
-.posts.index  {
+.posts.index, .page, .blog  {
   .admin-uk{position:absolute; left: 80%; margin-top: -50px;}
   .full-sec {position: relative; z-index: 0;
     &::before {@include before(); height:150px; background-color:darken($opink, 1%);}
