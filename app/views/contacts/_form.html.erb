@@ -10,6 +10,8 @@
     <% end %>
 
     <div class="full top">
+      <p class="msg">To make a grooming appointment or for specific product questions, visit the <%= link_to 'Locations page', locations_path, class: 'text-link' %> to contact your local store directly. For general inquires, comments and questions, please fill out the contact form below:</p>
+      <hr>
       <h4>Contact Form</h4>
       <p class="print">* indicates required field</p>
       <div class="clearfix"></div><hr>
@@ -44,6 +46,7 @@
     </div>
 
     <div class="form-group location">
+      <label>* Select a store: </label><br>
       <%= grouped_collection_select(:contact, :location, @states, :locations, :full_name, :title_state, :ntitle) %>
     </div>
     <div class="clearfix"></div>

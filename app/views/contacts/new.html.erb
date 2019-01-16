@@ -12,47 +12,32 @@
 		</div>
 	</div>
 
-
-	<div class="statement">
+	<div id="cbod" class="cbody">
 		<div class="inside med2-def">
-	  	<div class="text">
-
-  		<div class="right">
-  			<p class="sp"><b>Woof Gang Bakery Corporate Office</b></p>
-  			<div class="address">
+			<div class="left">
+			<div class="full" style="z-index: 90;" uk-sticky="offset: 60; bottom: #cbod">
+				<p class="sp"><b>Woof Gang Bakery Corporate Office</b></p>
+  			<div class="col address">
   				<p>7575 Dr. Phillips Blvd<br>
 	  			Suite 275<br>
 	  			Orlando, FL 32819</p>
 	  		</div>
 
-  			<div class="nums">
-  				<p>407-355-9210
-  					<!-- <br>F: 877-554-1020 -->
-  				</p>
-
+  			<div class="col nums">
+  				<p><a href="tel:4073559210"><%= number_to_phone(4073559210, delimiter: '-', class: 'tel') %></a></p>
   				<p>Monday-Friday: 8am-5pm</p>
   			</div>
-  		</div>
 
-			<div class="clearfix tb"></div>
+  			<div class="col btn-row">
+	  			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
+	  			<%= link_to 'Vendor Relations', vendor_path, class: 'woof-link' %>
+	  			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
+				</div>
+			</div></div>
 
-
-	  		<div class="left">
-					<p>To make a grooming appointment or for specific product questions, visit the <%= link_to 'Locations page', locations_path, class: 'text-link' %> to contact your local store directly. For general inquires, comments and questions, please fill out the contact form below:</p>
-	  			<div class="clearfix"></div>
-	  			<div class="btn-row">
-		  			<%= link_to 'Media & Press Inquiries', media_inquiries_path, class: 'woof-link' %>
-		  			<%= link_to 'Vendor Relations', vendor_path, class: 'woof-link' %>
-		  			<%= link_to 'Real Estate Submissions', real_estate_submissions_path, class: 'woof-link' %>
-		  		</div>
-	  		</div>
+			<div class="right">
+			  <%= render 'form' %>
 			</div>
-		</div>
-	</div>
-
-	<div class="list-box">
-		<div class="inside med2-def">
-		  <%= render 'form' %>
 		</div>
 	</div>
 </div>

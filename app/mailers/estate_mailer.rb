@@ -5,8 +5,8 @@ class EstateMailer < ApplicationMailer
 	def new_estate(estate)
 	  @estate = estate
 
-	  #cara@woofgangbakery.com & josh@woofgangbakery.com
-	  mail(to: "kelli@hsdesignhouse.com", subject: "Real Estate Submission") do |format|
+	  #kelli@hsdesignhouse.com
+	  mail(to: "cara@woofgangbakery.com,josh@woofgangbakery.com", subject: "Real Estate Submission") do |format|
   	  format.html
   	  format.text
     end
