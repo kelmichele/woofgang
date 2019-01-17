@@ -2031,43 +2031,11 @@ hr{
         h2{font-size: 1.55rem; letter-spacing: .3px; margin-bottom: 0;}
      }
     }
-
-    .statement {
-      h1,h2{width:100%; border:none; padding:0;}
-      p {width:100%;}
-      .woof-link {letter-spacing: .2px;font-size: 14.5px;
-        width:31%; display: inline-block; float: none; margin: 10px .5%; padding:10px;
-      }
-
-      .left, .right {display: inline-block; float: left; }
-      .left{width:73%;
-        float: right; border-left: 1px solid rgba($black,.15); padding-left: 30px;
-        p{margin-top: 25px;}
-        .btn-row{@include sec-default(); margin-bottom: 25px;}
-      }
-      .right {width:26%;
-        p{font-size: 16px; margin-bottom: 10px;}
-        p b {color: $pink;}
-      }
-    }
-
-    .list-box {
-      position: relative; z-index: 0; &::before {@include before(); background-color: $opink; height:35%;}
-      form {background-color: $white;padding:10px 20px; box-shadow: 0px 5px 8px rgba($black, .1);}
-      p.print {margin: 0;}
-      .top {margin-bottom: 25px;
-        h4{letter-spacing: 1px;}
-        hr{margin-top: 14px;}
-      }
-    }
   }
 
 
   .cbody{@include sec-default();padding:60px 0;
     .left, .right {display: inline-block; float: left; width: 40%;}
-    // .uk-active.uk-sticky-fixed
-
-    // .left {border-right: 1px solid rgba($black,.1)}
 
     .right{width:55%; float: right;
       fieldset{margin:0; padding:0;}
@@ -2090,43 +2058,23 @@ hr{
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   .clearfix.tb {display: none;}
+
   @include bp(tb) {
     .clearfix.tb {display: block;}
 
     .services-layout {
       h1 {font-size: 1.55rem;}
-      // .statement {text-align: center; padding:35px 0 20px;
-      //   .woof-link {font-size: 14px;}
+    }
 
-      //   .left {
-      //     width:90%; @include center-block();
-      //     border:0; padding-left: 0;
-      //     p {font-size: 15px; border:0;}
-      //   }
+    .cbody {padding:30px 0;
+      .left {
+        p{font-size: 15px;}
+        p.sp {font-size: 15px;}
+        .woof-link {font-size: 14px; width:70%;}
+      }
 
-      //   .right {
-      //     width:50%; @include center-block();
-      //     p {border:0; font-size: 15px;}
-      //     p b{font-size: 16px;}
-      //     .address, .nums,{display: inline-block; float:left; width:45%;}
-      //     .nums{float: right;}
-      //   }
-      // }
+      .right h4{font-size: 1.1rem;}
     }
   }
 
@@ -2137,33 +2085,42 @@ hr{
         .il-img {@include sec-default(); margin:0 0 15px 0;}
         .title{@include sec-default();padding:0;}
       }
+    }
 
-  //     .statement { padding:20px 0 10px;
-  //       .woof-link {width:55%; @include center-block();}
-  //       .right {width:65%; text-align: center;
-  //         .address, .nums {@include sec-default();}
-  //       }
-  //     }
+    .cbody {
+      .left, .right {@include center-block(); text-align: center; width:85%;}
+      .left {
+        .col.btn-row {margin-top: 20px;}
+        .woof-link {width:55%; @include center-block();}
+      }
+      .right {
+        p.msg {margin-top: 30px;}
+        .form-group {text-align: left;}
+      }
     }
   }
 
-  // @include bp(pl) {
-  //   .form-group {@include sec-default();
-  //     &.form-group.submit input.send-message, &.form-group.submit input[type=submit] {width:35%;}
-  //   }
-  // }
+  @include bp(pl) {
+    .form-group {@include sec-default();
+      &.form-group.submit input.send-message, &.form-group.submit input[type=submit] {width:50%;}
+    }
+  }
 
-  // @include bp(ph) {
-  //   .services-layout {
-  //     .statement .woof-link {width:85%;}
-  //   }
-  // }
+  @include bp(oc) {
+    .cbody {
+      .left, .right {@include sec-default();}
+      .left {
+        .woof-link{width:60%;}
+      }
+    }
+  }
 
-  // @include bp(sm) {
-  //   .services-layout {
-  //     .statement .woof-link {width:95%;}
-  //   }
-  // }
+  @include bp(sm) {
+    .cbody {
+      .left .woof-link{width:90%;}
+    }
+  }
+
 }
 
 .notice.scs, .alert.scs {
