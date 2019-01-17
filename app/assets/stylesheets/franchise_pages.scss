@@ -634,7 +634,7 @@ br.tn {display: none;}
 
   input, textarea, select {border:0;color: $black; font-size: 14px; background-color: transparent;}
   select {font-family: $body; color:$black; margin-bottom: 15px;}
-  .form-group {@include sec-default(); border-bottom: 2px solid rgba($black,.1); margin-bottom:20px;
+  .form-group {@include sec-default(); border-bottom: 2px solid rgba($black,.1); margin-bottom:10px;
     &.submit {border-bottom: 0;
     	input[type=submit] {width:30%;}
     }
@@ -644,7 +644,7 @@ br.tn {display: none;}
     }
   }
 
-	.sep {@include sec-default(); height:10px; border-top:1px solid rgba($black,.1);border-bottom:1px solid rgba($black,.1); margin-top: 15px;}
+	// .sep {@include sec-default(); height:10px; border-top:1px solid rgba($black,.1);border-bottom:1px solid rgba($black,.1); margin-top: 15px;}
 
   .franchise-layout {
   	.landing-layout .box{

@@ -209,6 +209,8 @@
 				li, a, p{font-size: 15px;}
 				li{margin-bottom: 10px;}
 			}
+
+			.text-link {@include sec-default();}
 		}
 
 		.btm {
