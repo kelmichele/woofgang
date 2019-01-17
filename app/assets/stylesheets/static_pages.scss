@@ -1852,6 +1852,15 @@ hr{
   }
 }
 
+.posts.new, .posts.edit {
+  .form-group.image {
+    label{@include sec-default();}
+    .full.current{margin-top: 20px;}
+  }
+  #post_image{ width:80%; border:1px solid rgba($black,.1);padding:15px; height:auto;}
+  .rmv-img {color: $red; font-size: 15px; font-weight: bold; margin-top: -25px;float: right;}
+}
+
 
 .slides{
   h1,h2{margin:0;}

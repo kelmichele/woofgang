@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 	extend FriendlyId
-  friendly_id :pug, use: :slugged
+  friendly_id :url, use: :slugged
 
 	has_one_attached :image
 
@@ -9,7 +9,6 @@ class Post < ApplicationRecord
   validates :url, presence: true
 
   default_scope -> { order(date: :desc) }
-  # default_scope -> { order(created_at: :desc) }
 
   def pug
     "#{url}".downcase.parameterize
@@ -48,7 +47,6 @@ class Post < ApplicationRecord
 	end
 
 	def self.to_csv(options = {})
-	  # desired_columns = ["store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state", "zip", "hours", "latitude", "longitude"]
 	  desired_columns = ["id", "title", "content", "url", "date"]
 	  CSV.generate(options) do |csv|
 	    csv << desired_columns

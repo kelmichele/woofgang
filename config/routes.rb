@@ -69,7 +69,18 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, :except => :index, :path => '' do
+  # resources :posts, :except => :index, :path => '' do
+  #   member do
+  #     delete :delete_image_attachment
+  #   end
+
+  #   collection do
+  #     post :import
+  #   end
+  # end
+
+
+  resources :posts, :except => [:index, :new], :path => '' do
     member do
       delete :delete_image_attachment
     end
@@ -78,6 +89,8 @@ Rails.application.routes.draw do
       post :import
     end
   end
+  get '/posts/new', to: 'posts#new', as: 'new_post'
+
 
   resources :slides do
     collection do
