@@ -1,5 +1,5 @@
 <% @page_title = @location.store_name.titleize %>
-<% @page_description = "New Description" %>
+<% @page_description = "Check out the details for the Woof Gang Bakery #{@location.ntitle} location. Contact the store directly for more information." %>
 
 <div class="location-page">
 	<div class="title">
@@ -25,12 +25,6 @@
 	</div>
 
  	<div class="full">
- 		<!-- <div class="back-link">
- 			<%= link_to "/locations", class: 'text-link' do %>
- 				<span class="" uk-icon="icon: arrow-left;"></span> Back to Locations
- 			<% end %>
- 		</div> -->
-
 
 		<div class="inside med2">
 		 	<div class="location-body">
@@ -131,19 +125,17 @@
 								<span class="tag-img"></span>
 							</button>
 						<% end %>
-						 <!-- < @location.tag_split.each do |tag| %>
-							<button class="tag-icon <%= tag %>" uk-tooltip="<%= tag.titleize %>">
-								<span class="tag-img"></span>
-							</button>
-						< end %> -->
+
 					</div>
 				</div>
 
 				<% if @location.image.attached? %>
-			 		<div class="image attach"><%= image_tag @location.image %></div>
+			 		<div title="<%= @location.store_name %> store exterior" class="image attach"><%= image_tag @location.image %></div>
 				<% else %>
 
-					<div class="image"><%= image_tag('woof-box.jpg', class: 'img-responsive', alt: '')%></div>
+					<div class="image">
+						<%= image_tag('woof-box.jpg', class: 'img-responsive', alt: 'Woof Gang Bakery store interior')%>
+					</div>
 				<% end %>
 
 			</div>

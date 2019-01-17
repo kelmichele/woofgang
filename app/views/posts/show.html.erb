@@ -1,5 +1,5 @@
 <% @page_title = @post.title.titleize %>
-<% @page_description = "" %>
+<% @page_description = "#{@post.title}" %>
 
 <div class="full-post">
 	<div class="title">
@@ -32,7 +32,7 @@
 		<div class="post-body">
 			<div class="image">
 				<% if @post.image.attached? %>
-				  <%= image_tag @post.image %>
+				  <%= image_tag @post.image, alt: "#{@post.title}"%>
 				<% end %>
 			</div>
 

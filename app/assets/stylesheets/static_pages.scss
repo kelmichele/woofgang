@@ -76,6 +76,7 @@ hr{
 .woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3));}
 .text-link{font-weight: $semi; color: $pink;
   &.blue{color: $compb;}
+  &.und {text-decoration: underline; }
 }
 .clearfix::after {
   content: "";
@@ -190,7 +191,6 @@ hr{
       .img1{width:60%;}
       .img2{width:39%;}
     }
-    // &::before, &::after {height: 70%;}
 
 
     &.ff {
@@ -241,39 +241,10 @@ hr{
     .top {margin-bottom: 20px;}
     .logo{@include center-block();}
     .serve-tl{display: inline-block; float: none;
-      // width:23%; margin: 10px 5%;
-      // &.daycare, &.vet {width:25%; margin:10px 4%; }
-      // &.ss {width:29%; margin:10px 0 10px 2%; }
-
       width:25%; margin:20px .5% 20px;
-      // &.daycare{padding:15px 15px 0;}
     }
 
     .image {max-height:430px; overflow: hidden;}
-    .image-row {text-align: center;
-     height:430px; overflow: hidden;
-      .img1, .img2, .img3, .img4 {display: inline-block; float: none; vertical-align: top;}
-
-      &.two {
-        .img3, .img4{display: none;}
-        .img2{width:67%;}
-        .img1{width:31.1%;}
-      }
-
-      &.three {height:380px;
-        .img1, .img3 {width:25%;}
-        .img2{width:48%;}
-        .img4 {display: none;}
-      }
-
-      &.four {height:380px;
-        .img1, .img2, .img3, .img4 {width:24%;}
-      }
-
-      &.five {height:330px;
-        .img1, .img2, .img3, .img4, .img5 {width:19%;}
-      }
-    }
 
     &.reg {padding:30px 0 80px;}
     &.none {padding-bottom: 80px;
@@ -1260,8 +1231,10 @@ hr{
     // p{width:70%;}
 
     // with 2 paragraphs
-    h1 {width:25%;padding:30px 0px;}
-    p{width:78%; padding-left: 20px;margin: 5px -4% 5px 0;}
+    // h1 {width:25%;padding:30px 0px;}
+    // p{width:78%; padding-left: 20px;margin: 5px -4% 5px 0;}
+    h1 {width:29%;padding:30px 0px;}
+    p{width:75%; padding-left: 20px;margin: 5px -4% 5px 0;}
   }
   @include bp(tb) {
     .statement{

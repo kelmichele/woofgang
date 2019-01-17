@@ -1,5 +1,5 @@
 <% @page_title = "Your Neighborhood Pet Store" %>
-<% @page_description = "New Description" %>
+<% @page_description = "Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America, with more than 110 locations across the U.S." %>
 
 <!-- 1296x720 -->
 <div class="full-show">
@@ -33,20 +33,14 @@
 	</div>
 
 	<div class="images four">
-		<%= image_tag('fi-counter2.jpg', class: 'img-responsive img3')%>
-		<%= image_tag('woof6.jpg', class: 'img-responsive img1')%>
-		<%= image_tag('cg-smile.jpg', class: 'img-responsive img2')%>
+		<%= image_tag('fi-counter2.jpg', class: 'img-responsive img3', alt: 'Dog at counter of Woof Gang Bakery store')%>
+		<%= image_tag('woof6.jpg', class: 'img-responsive img1', alt: 'Woof Gang Bakery homemade treats')%>
+		<%= image_tag('cg-smile.jpg', class: 'img-responsive img2', alt: 'Smiling dog at counter of Woof Gang Bakery store')%>
 	</div>
 </div>
 
 <div class="nlay-logos none">
 	<div class="inside one">
-  		<div class="image-row three">
-    		<%= image_tag('fi-counter2.jpg', class: 'img-responsive img3')%>
-    		<%= image_tag('woof6.jpg', class: 'img-responsive img2')%>
-    		<%= image_tag('cg-pup.jpg', class: 'img-responsive img3')%>
-  		</div>
-
 		<div class="over">
     	<div class="text">
 				<h3>Woof Gang Bakery does it all</h3>
@@ -61,27 +55,27 @@
 	<div class="full logos">
 		<div class="inside">
 			<%= link_to retail_path, class: 'serve-tl bakery' do %>
-	      <%= image_tag('logo-bakery.png', class: 'img-responsive logo')%>
+	      <%= image_tag('logo-bakery.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery logo')%>
 			<% end %>
 
 			<%= link_to grooming_path, class: 'serve-tl grooming' do %>
-	      <%= image_tag('logo-grooming.png', class: 'img-responsive logo')%>
+	      <%= image_tag('logo-grooming.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery grooming logo')%>
 			<% end %>
 
 			<%= link_to doggie_daycare_path, class: 'serve-tl resort' do %>
-	      <%= image_tag('logo-resort.png', class: 'img-responsive logo')%>
+	      <%= image_tag('logo-resort.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery pet resort logo')%>
 			<% end %>
 
 			<%= link_to vet_clinic_path, class: 'serve-tl vet' do %>
-	      <%= image_tag('logo-wellness.png', class: 'img-responsive logo')%>
+	      <%= image_tag('logo-wellness.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery wellness clinic logo')%>
 			<% end %>
 
 			<%= link_to self_service_grooming_path, class: 'serve-tl ss' do %>
-	      <%= image_tag('logo-ss.png', class: 'img-responsive logo')%>
+	      <%= image_tag('logo-ss.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery self-service grooming logo')%>
 			<% end %>
 
 			<%= link_to doggie_daycare_path, class: 'serve-tl daycare' do %>
-	      <%= image_tag('logo-daycare.png', class: 'img-responsive logo')%>
+	      <%= image_tag('logo-daycare.png', class: 'img-responsive logo', alt: 'Woof Gang Bakery doggie day care logo')%>
 			<% end %>
 		</div>
 	</div>
@@ -90,16 +84,15 @@
 <div class="wgb-slides">
 	<div class="uk-position-relative uk-visible-toggle uk-light" uk-slider="autoplay: true">
 	  <ul class="uk-slider-items">
-			<li><%= image_tag('ivory.jpg', class: 'img-responsive img3')%></li>
-			<li><%= image_tag('sav1601.jpg', class: 'img-responsive img3')%></li>
-			<li><%= image_tag('group.jpg', class: 'img-responsive img3')%></li>
-			<li><%= image_tag('riggins.png', class: 'img-responsive img4')%></li>
-			<li><%= image_tag('cg-bone.jpg', class: 'img-responsive img4')%></li>
-			<!-- <li><%= image_tag('retail-gallery1.jpg', class: 'img-responsive img3')%></li> -->
-			<li><%= image_tag('harley-bone.png', class: 'img-responsive img3')%></li>
-			<li><%= image_tag('waco-vera.jpg', class: 'img-responsive img3')%></li>
-			<li><%= image_tag('monty.jpg', class: 'img-responsive img3')%></li>
-			<li><%= image_tag('sasha.jpg', class: 'img-responsive img3')%></li>
+			<li><%= image_tag('ivory.jpg', class: 'img-responsive img3', alt: 'Ivory the dog')%></li>
+			<li><%= image_tag('sav1601.jpg', class: 'img-responsive img3', alt: 'Shaggy pup in a Woof Gang store')%></li>
+			<li><%= image_tag('group.jpg', class: 'img-responsive img3', alt: 'Three dogs smiling in the yard')%></li>
+			<li><%= image_tag('riggins.png', class: 'img-responsive img4', alt: 'Cute dog with Woof Gang Bakery treats')%></li>
+			<li><%= image_tag('cg-bone.jpg', class: 'img-responsive img4', alt: 'White dog with Woof Gang homemade bone')%></li>
+			<li><%= image_tag('harley-bone.png', class: 'img-responsive img3', alt: 'Husky puppy sniffing Woof Gang homemade bone')%></li>
+			<li><%= image_tag('waco-vera.jpg', class: 'img-responsive img3', alt: 'Golden retriever with a Woof Gang Bakery shopping bag')%></li>
+			<li><%= image_tag('monty.jpg', class: 'img-responsive img3', alt: 'Monty the dog, in the yard')%></li>
+			<li><%= image_tag('sasha.jpg', class: 'img-responsive img3', alt: 'Sasha the dog, next to the Woof Gang treat table')%></li>
 	  </ul>
 
 		<a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous uk-slider-item="previous"></a>

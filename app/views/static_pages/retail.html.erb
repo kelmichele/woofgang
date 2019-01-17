@@ -1,5 +1,5 @@
 <% @page_title = "Retail" %>
-<% @page_description = "New Description" %>
+<% @page_description = "Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in the U.S." %>
 
 <% @page_title = "Retail" %>
 <% @page_description = "New Description" %>
@@ -10,21 +10,18 @@
 			<div class="il-slideshow" uk-slideshow="autoplay: true;max-height: 600; autoplay-interval: 5000; animation: push">
 				<div>
 				  <ul class="uk-slideshow-items">
-						<li><%= image_tag('retail-slide3.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
-						<li><%= image_tag('retail-slide5.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
-						<li><%= image_tag('retail-slide1.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
-						<li><%= image_tag('retail-slide4.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
-						<li><%= image_tag('food-ashville.jpg', class: 'img-responsive uk-cover', alt: '') %></li>
+						<li><%= image_tag('retail-slide3.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Bakery, chew toy section') %></li>
+						<li><%= image_tag('retail-slide5.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Bakery store, dog food section') %></li>
+						<li><%= image_tag('retail-slide1.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Bakery store interior') %></li>
+						<li><%= image_tag('retail-slide4.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Bakery dog treat section') %></li>
+						<li><%= image_tag('food-ashville.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Bakery, dog food close-up') %></li>
 				  </ul>
-			    <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> -->
-			    <!-- <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> -->
 			  </div>
-			  <!-- <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul> -->
 			</div>
 
 
 			<div class="title">
-	  	  <%= image_tag('wg-logo1.png', class: 'img-responsive srv-logo', alt: '')%>
+	  	  <%= image_tag('wg-logo1.png', class: 'img-responsive srv-logo', alt: 'Woof Gang Bakery logo')%>
 			</div>
 		</div>
 	</div>
@@ -34,30 +31,29 @@
 	  	<div class="text">
 				<h1>We help you provide <br class="xl">the best for your pet</h1>
 				<p>Woof Gang Bakery is the leader in raw, kibble, canned and dehydrated dog and cat foods. Our quality pet food brands are formulated to nourish your pet with nutrient-rich foods that promote lifelong health. The nutritionally balanced pet foods we offer are free from artificial colors, flavors and preservatives.</p>
-				<!-- <p class="two">In addition to premium pet foods, Woof Gang Bakery retail offerings include a unique collection of stylish accessories, collars, leads, toys, natural chews and bones, and grooming products.</p> -->
 			</div>
 		</div>
 	</div>
-
-	<!-- <div class="retail-awards">
-		<div class="inside med">
-			<= render 'award-slider' %>
-		</div>
-	</div> -->
 
 	<div class="gallery-sec uniform">
 		<div class="inside med2" uk-lightbox>
 			<div class="full top">
 				<div class="left">
-			    <a href="<%= image_url('retail-gallery1.jpg') %>" data-alt="Image"><%= image_tag('retail-gallery1.jpg', class: 'img-responsive gall-img') %></a>
-			    <a href="<%= image_url('retail-gallery5.jpg') %>" data-alt="Image"><%= image_tag('retail-gallery5.jpg', class: 'img-responsive gall-img') %></a>
-			    <a href="<%= image_url('collars-leashes.jpg') %>" data-alt="Image"><%= image_tag('collars-leashes.jpg', class: 'img-responsive gall-img') %></a>
+			    <a href="<%= image_url('retail-gallery1.jpg') %>" data-alt="Dog sneaking treat from Woof Gang Bakery table">
+		    	<%= image_tag('retail-gallery1.jpg', alt: 'Dog sneaking treat from Woof Gang Bakery table', class: 'img-responsive gall-img') %></a>
+			    <a href="<%= image_url('retail-gallery5.jpg') %>" data-alt="Woof Gang Bakery wall of treats">
+			    <%= image_tag('retail-gallery5.jpg', alt: 'Woof Gang Bakery wall of treats', class: 'img-responsive gall-img') %></a>
+			    <a href="<%= image_url('collars-leashes.jpg') %>" data-alt="Woof Gang Bakery store, collars and leashes">
+			    <%= image_tag('collars-leashes.jpg', alt: 'Woof Gang Bakery store, collars and leashes', class: 'img-responsive gall-img') %></a>
 				</div>
 
 				<div class="right">
-			    <a href="<%= image_url('retail-gallery2.jpg') %>" data-alt="Image"><%= image_tag('retail-gallery2.jpg', class: 'img-responsive gall-img') %></a>
-			    <a href="<%= image_url('retail-gallery4.jpg') %>" data-alt="Image"><%= image_tag('retail-gallery4.jpg', class: 'img-responsive gall-img') %></a>
-			    <a href="<%= image_url('westu9.jpg') %>" data-alt="Image"><%= image_tag('westu9.jpg', class: 'img-responsive gall-img') %></a>
+			    <a href="<%= image_url('retail-gallery2.jpg') %>" data-alt="Woof Gang Bakery store, collar display">
+			    <%= image_tag('retail-gallery2.jpg', alt: 'Woof Gang Bakery store, collar display', class: 'img-responsive gall-img') %></a>
+			    <a href="<%= image_url('retail-gallery4.jpg') %>" data-alt="Woof Gang Bakery grooming products">
+			    <%= image_tag('retail-gallery4.jpg', alt: 'Woof Gang Bakery grooming products', class: 'img-responsive gall-img') %></a>
+			    <a href="<%= image_url('westu9.jpg') %>" data-alt="Woof Gang Bakery, Circle C store interior">
+			    <%= image_tag('westu9.jpg', alt: 'Woof Gang Bakery, Circle C store interior', class: 'img-responsive gall-img') %></a>
 				</div>
 			</div>
 		</div>

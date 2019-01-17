@@ -1,5 +1,5 @@
 <% @page_title = "Grooming" %>
-<% @page_description = "New Description" %>
+<% @page_description = "Woof Gang Grooming is the ultimate retreat for the pampered pet. Make an appointment for your furry family member today!" %>
 
 <div class="services-layout groom">
 	<div class="serv-slider inline-show">
@@ -7,18 +7,15 @@
 			<div class="il-slideshow" uk-slideshow="autoplay: true; max-height: 600; autoplay-interval: 5000; animation: push">
 				<div>
 			    <ul class="uk-slideshow-items">
-						<li><%= image_tag('husky-groom.jpg', class: 'img-responsive uk-cover') %></li>
-						<li><%= image_tag('grooming-slide4.jpg', class: 'img-responsive uk-cover') %></li>
+						<li><%= image_tag('husky-groom.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Grooming, husky after a haircut') %></li>
+						<li><%= image_tag('grooming-slide4.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Grooming room') %></li>
 			    </ul>
-			    <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> -->
-			    <!-- <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> -->
 			  </div>
-			  <!-- <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul> -->
 			</div>
 
 
 			<div class="title">
-	  	  <%= image_tag('wgb-grooming.png', class: 'img-responsive srv-logo', alt: '')%>
+	  	  <%= image_tag('wgb-grooming.png', class: 'img-responsive srv-logo', alt: 'Woof Gang Bakery, grooming logo')%>
 			</div>
 		</div>
 	</div>
@@ -26,7 +23,7 @@
 	<div class="statement">
 		<div class="inside med2-def">
 	  	<div class="text">
-				<h1>We help your pet<br class="xl"> look their best</h1>
+				<h1>We help your pet<br class="xl"> look &amp; feel their best</h1>
 				<p>Woof Gang Grooming is the ultimate retreat for the pampered pet, designed to provide a calm and luxurious experience in which your pets can be groomed, indulged and revitalized.</p>
 				<p class="two">With our state-of-the-art grooming equipment and premium products, we provide exceptional care to your pet in a safe and friendly environment. We have the skills and knowledge to handle any breed and any size dog.</p>
 			</div>
@@ -37,17 +34,22 @@
 		<div class="inside med2" uk-lightbox>
 			<div class="full top">
 				<div class="left">
-					<a href="<%= image_url('grooming-gallery2.jpg') %>" data-alt="Image"><%= image_tag('grooming-gallery2.jpg', class: 'img-responsive gall-img hlf') %></a>
-			    <a href="<%= image_url('grooming-gallery3.jpg') %>" data-alt="Image"><%= image_tag('grooming-gallery3.jpg', class: 'img-responsive gall-img hlf two') %></a>
+					<a href="<%= image_url('grooming-gallery2.jpg') %>" data-alt="Excited dog after Woof Gang Grooming session">
+					<%= image_tag('grooming-gallery2.jpg', class: 'img-responsive gall-img hlf', alt: 'Excited dog after Woof Gang Grooming session') %></a>
+			    <a href="<%= image_url('grooming-gallery3.jpg') %>" data-alt="Dog in the Woof Gang Grooming tub">
+			    <%= image_tag('grooming-gallery3.jpg', class: 'img-responsive gall-img hlf two', alt: 'Dog in the Woof Gang Grooming tub') %></a>
 
-			    <a href="<%= image_url('grooming-gallery1.jpg') %>" data-alt="Image"><%= image_tag('grooming-gallery1.jpg', class: 'img-responsive gall-img') %></a>
+			    <a href="<%= image_url('grooming-gallery1.jpg') %>" data-alt="Fluffy, happy dog waiting for a Woof Gang bath">
+			    <%= image_tag('grooming-gallery1.jpg', class: 'img-responsive gall-img', alt: 'Fluffy, happy dog waiting for a Woof Gang bath') %></a>
 				</div>
 
 				<div class="right">
-			    <a href="<%= image_url('grooming-gallery7.jpg') %>" data-alt="Image"><%= image_tag('grooming-gallery7.jpg', class: 'img-responsive gall-img') %></a>
-			    <a href="<%= image_url('grooming-gallery5.jpg') %>" data-alt="Image"><%= image_tag('grooming-gallery5.jpg', class: 'img-responsive gall-img hlf') %></a>
-			    <a href="<%= image_url('grooming-gallery8.jpg') %>" data-alt="Image"><%= image_tag('grooming-gallery8.jpg', class: 'img-responsive gall-img hlf two') %></a>
-			    <!-- <a href="<%= image_url('grooming-gallery4.jpg') %>" data-alt="Image"><%= image_tag('grooming-gallery4.jpg', class: 'img-responsive gall-img') %></a> -->
+			    <a href="<%= image_url('grooming-gallery7.jpg') %>" data-alt="Two golden retrievers wrapped in Woof Gang Grooming towels">
+			    <%= image_tag('grooming-gallery7.jpg', class: 'img-responsive gall-img', alt: 'Two golden retrievers wrapped in Woof Gang Grooming towels') %></a>
+			    <a href="<%= image_url('grooming-gallery5.jpg') %>" data-alt="Woof Gang Grooming puppy">
+			    <%= image_tag('grooming-gallery5.jpg', class: 'img-responsive gall-img hlf', alt: 'Woof Gang Grooming puppy') %></a>
+			    <a href="<%= image_url('grooming-gallery8.jpg') %>" data-alt="Dog getting groomed">
+			    <%= image_tag('grooming-gallery8.jpg', class: 'img-responsive gall-img hlf two', alt: 'Dog getting groomed') %></a>
 				</div>
 			</div>
 		</div>
