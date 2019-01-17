@@ -2,6 +2,8 @@ require 'pointa'
 
 class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
 
 	def index
 		pointa = get_user_location
@@ -120,5 +122,12 @@ class LocationsController < ApplicationController
 
 	def location_params
     params.require(:location).permit(:store_name, :email_address, :phone, :fb, :twitter, :insta, :yelp, :site, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, :state_id, :coming_soon, { tag_ids: [] }, :tag_ids, :image)
+  end
+
+  def require_admin
+    if !current_user.admin?
+      flash[:danger] = "Only admin users can perform that action"
+      redirect_to locations_path
+    end
   end
 end

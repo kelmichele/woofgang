@@ -1,5 +1,7 @@
 class SlidesController < ApplicationController
 	before_action :set_slide, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :index]
+  before_action :require_admin, only: [:edit, :update, :destroy, :new, :index]
 
 	def index
 		@slides = Slide.all
@@ -50,5 +52,12 @@ class SlidesController < ApplicationController
 
   def slide_params
     params.require(:slide).permit(:image, :title, :order, :display, :link)
+  end
+
+  def require_admin
+    if !current_user.admin?
+      flash[:danger] = "Only admin users can perform that action"
+      redirect_to slides_path
+    end
   end
 end

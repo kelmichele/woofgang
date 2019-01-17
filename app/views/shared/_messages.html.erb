@@ -1,0 +1,21 @@
+<% if current_page?('/contact') || current_page?('/media-inquiries') || current_page?('/vendor') || current_page?('/real-estate-submissions') || current_page?('franchise-inquries') %>
+
+	<% if flash[:notice] %>
+	  <div class="notice scs"><p><%= flash[:notice] %></p></div>
+	<% end %>
+
+	<% if flash[:alert] %>
+	  <p class="alert scs">Errors listed below.</p>
+	<% end %>
+
+<% else %>
+
+	<div class="msg-bx">
+	  <% flash.each do |name, msg| %>
+	    <div class="alert-top alert-<%= name %>">
+	      <a href="#" class="close" data-dismiss="alert">×</a>
+	      <%= msg %>
+	    </div>
+	  <% end %>
+	</div>
+<% end %>

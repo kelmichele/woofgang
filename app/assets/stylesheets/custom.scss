@@ -107,14 +107,14 @@ a {
 
 // forms //
 .msg-bx {@include sec-default();
-  .alert{font-weight: bold; padding: 7px 20px;
-    &.alert-notice { background-color: rgba(0,146,13, .2); color: $black;}
-    &.alert-alert {background-color: $red; color: $white; }
-  }
+  .alert-top {padding:8px 0;}
 }
-.notice, .notice p {color: $red; text-align: center;}
+.notice, .notice p, p.alert.scs, .alert-top {color: $red; text-align: center;}
 
-.panel.panel-danger.err {width:90%; @include center-block();
+.panel.panel-danger.err {
+  // width:90%; @include center-block();
+  margin:30px 0;
+  border-bottom: 1px solid rgba($red,.5); padding-bottom: 15px;
   h4.panel-title {background-color: rgba($red, .8); color: $white; @include tshadowl(rgba($black, .7)); margin-bottom:10px;padding-left: 10px;}
   li {color: $red; margin-bottom:5px; list-style-type: disc;}
 }

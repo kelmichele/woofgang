@@ -19,7 +19,7 @@ class StaticPagesController < ApplicationController
 	end
 
 	def blog
-    @posts = Post.all.paginate(:page => params[:page], :per_page => 90)
+    @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
 
     respond_to do |format|
       format.html

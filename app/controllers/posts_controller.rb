@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
 	before_action :set_post, only: [:edit, :show, :update, :destroy, :delete_image_attachment]
 	helper_method :recent
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
+
 
 	def index
     @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
@@ -55,7 +58,6 @@ class PostsController < ApplicationController
   private
   def set_post
 		@post = Post.friendly.find(params[:id])
-    # @post = Post.find(params[:id])
   end
 
   def post_params
@@ -64,5 +66,12 @@ class PostsController < ApplicationController
 
   def recent
   	recent = Post.last(3)
+  end
+
+  def require_admin
+    if !current_user.admin?
+      flash[:danger] = "Only admin users can perform that action"
+      redirect_to blog_path
+    end
   end
 end

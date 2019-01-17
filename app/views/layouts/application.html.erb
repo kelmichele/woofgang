@@ -22,13 +22,7 @@
     <%= render 'layouts/header' %>
     <div class="page-body">
       <div class="inside">
-        <% if flash[:notice] %>
-          <div class="notice scs"><p><%= flash[:notice] %></p></div>
-        <% end %>
-
-        <% if flash[:alert] %>
-          <p class="alert scs">Errors listed below.</p>
-        <% end %>
+        <%= render 'shared/messages' %>
       </div>
 
       <%= yield %>
