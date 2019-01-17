@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
 
+  def import
+    Post.import(params[:file])
+    redirect_to blog_path, notice: 'Posts imported.'
+  end
 
   def show
   end

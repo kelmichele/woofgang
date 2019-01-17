@@ -8,6 +8,18 @@
 	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
 	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
   			<%= link_to "Create New Post", new_post_path, class: 'woof-link' %>
+  			<div class="clearfix"></div><br>
+  			<%= link_to "Download CSV", blog_path(format: "csv"), class: 'woof-link dl' %>
+
+  			<div class="clearfix"></div><br>
+  			<div class="import">
+  				<hr>
+  				<%= form_tag import_posts_path, multipart: true do %>
+  				  <%= file_field_tag :file %>
+  				  <hr>
+  				  <%= submit_tag "Import" %>
+  				<% end %>
+  			</div>
       </div>
 		<% end %>
 	</div>

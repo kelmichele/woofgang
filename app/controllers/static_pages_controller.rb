@@ -19,7 +19,11 @@ class StaticPagesController < ApplicationController
 	end
 
 	def blog
-    @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
-	end
+    @posts = Post.all.paginate(:page => params[:page], :per_page => 90)
 
+    respond_to do |format|
+      format.html
+      format.csv { send_data @posts.to_csv }
+    end
+	end
 end

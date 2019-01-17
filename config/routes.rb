@@ -73,6 +73,10 @@ Rails.application.routes.draw do
     member do
       delete :delete_image_attachment
     end
+
+    collection do
+      post :import
+    end
   end
 
   resources :slides do
