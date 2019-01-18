@@ -30,7 +30,7 @@ gem 'wkhtmltopdf-binary'
 gem 'gon'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
-
+gem 'rack-rewrite'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
