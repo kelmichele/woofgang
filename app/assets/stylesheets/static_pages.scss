@@ -1969,6 +1969,7 @@ hr{
 }
 
 .vendors{
+  .form-side {padding-bottom: 50px;}
   .full-sec{padding-bottom: 0;}
   .form-group.big_box, .form-group.category {padding-bottom:5px;
     label, input {display: inline-block; }
@@ -1977,7 +1978,7 @@ hr{
   }
   .form-group.category br{line-height: 2.2em;}
   p.print{margin-top: 0;}
-  fieldset {margin: 0px; padding-bottom: 0}
+  fieldset {margin: 0px; padding-bottom: 0;}
 }
 
 .reporters{
