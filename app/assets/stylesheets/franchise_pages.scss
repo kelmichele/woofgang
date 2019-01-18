@@ -392,6 +392,7 @@ br.tn {display: none;}
 	}
 
 	.content-layout .full.fw p.sig{margin-bottom: 5px;}
+	.content-layout .full.fw.two li:last-child{margin-bottom: 0px;}
 
 	@include bp(tb) {
 		.landing-layout .box {
