@@ -1414,7 +1414,7 @@ hr{
     .inline-show {
       .inside.med{width:85%;}
       &::before{height:300px;}
-      .il-slideshow {width:70%; max-height: 400px; }
+      .il-slideshow {width:70%; }
       .title {margin-right: -5%; width:31%; }
     }
 
@@ -1450,7 +1450,7 @@ hr{
   @include bp(tn) {
     .inline-show {
       &::before{height:230px;}
-      .il-slideshow {margin-left: 0; max-height: 350px;}
+      .il-slideshow {margin-left: 0; }
       .title {width:33%; padding-top: 60px;}
     }
 
