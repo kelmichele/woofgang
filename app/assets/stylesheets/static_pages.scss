@@ -301,9 +301,21 @@ hr{
   }
 
 
+  @media (min-width: 1620px) {
+    .full-show {
+      .inside.lg {width:1400px;}
+      .uk-slideshow-items {@include center-block();
+        li img{@include center-block();}
+      }
+    }
+  }
+
   @media (min-width: 1500px) {
     .full-show {
-      .uk-slideshow-items {@include center-block(); max-height:750px;}
+      .inside.lg {width:1296px;}
+      .uk-slideshow-items {@include center-block();
+        li img{@include center-block();}
+      }
     }
   }
 
