@@ -301,6 +301,13 @@ hr{
   }
 
 
+  @media (min-width: 1500px) {
+    .full-show {
+      .uk-slideshow-items {@include center-block(); max-height:750px;}
+    }
+  }
+
+
   @media (min-width: 1400px) {
     .bg-sec .text {padding-top: 60px;}
   }
