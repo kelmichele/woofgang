@@ -167,7 +167,7 @@ hr{
   }
 
   .bg-sec {@include sec-default(); padding:70px 0 0px; margin-top:0px;
-    margin-bottom: 120px; margin-bottom: 80px;
+    margin-bottom: 120px; margin-bottom: 65px;
     position: relative; z-index: 0;
     &::before {@include before();@include sec-bgimage('retail-slide4.jpg'); background-position: bottom left; width:60%;height:85%;}
     &::after {@include before(); background-color: rgba($pink7, .94); width:60%;height:85%;}
