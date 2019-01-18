@@ -230,7 +230,7 @@ hr{
     .woof-link {background-color: $white; box-shadow: 0px 5px 8px rgba($black, .1); font-weight: bold; font-size: 1rem; color: $tbrown; text-shadow: none;}
   }
 
-  .nlay-logos {@include sec-default(); text-align: center; padding:0px 0 60px;
+  .nlay-logos {@include sec-default(); text-align: center; padding:0px 0 80px;
     .over {width:85%; @include center-block();margin-bottom: 20px;}
     .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; position: relative;
       margin-top: -40px;
@@ -569,7 +569,7 @@ hr{
 .locations.index, .states.show, .shops.index {
   .woof-link.cst{font-size: 14px;@include sec-default();}
   .btn-row {margin: 5px 0 10px;}
-  .full-search {@include sec-default(); padding: 40px 0; background-color: $f9; padding-top:0;}
+  .full-search {@include sec-default(); padding: 0px 0 80px; background-color: $f9;}
   .search-sec{@include sec-default(); margin-bottom: 20px; text-align: center;
 
     .searcher,.filter-box{display: inline-block; width:30%; float: none; box-shadow: 0px 1px 4px rgba($black, .2); margin-left: 3%;}
@@ -601,7 +601,7 @@ hr{
   }
 
   .full.listings {margin-top: 50px;}
-  .map {@include sec-default(); margin-bottom: 20px;padding:0 50px;}
+  .map {@include sec-default(); padding:0 50px;}
   #map {height:450px;margin-bottom: 6px;}
   .gm-style-iw {
     p{font-size: 14px; margin:8px 0;}
@@ -609,8 +609,10 @@ hr{
     .woof-link {font-size: 13px; padding: 7px 20px;}
   }
 
-  .loclist{
+  .loclist{padding-top: 30px;
     position: relative; z-index: 1; @include sec-default();
+
+    // padding:80px 0;
     // margin-top: -60px;
     .inside {width:72%;@include center-block();}
   }
@@ -983,13 +985,13 @@ hr{
     // .uk-slideshow-nav.uk-dotnav{}
   }
 
-  .statement {@include sec-default(); padding:70px 0;
+  .statement {@include sec-default(); padding:80px 0;
     p, h1,h2 {display: inline-block; float: left; width:34%; }
     h1,h2{font-size: 1.7rem; margin-bottom: 7px; font-weight: $semi; color:$pink; padding-right:20px;border-right: 1px solid rgba($black,.15);}
     p {width:60%; float: right; margin-top: 0; }
   }
 
-  .gallery-sec {@include sec-default(); padding:50px 0;
+  .gallery-sec {@include sec-default(); padding:80px 0;
     position: relative; z-index: 0;
     &::before{@include before(); height:40%; background-color: $opink;}
 
@@ -1024,7 +1026,7 @@ hr{
     }
   }
 
-  .list-box{@include sec-default(); padding: 60px 0 40px;
+  .list-box{@include sec-default(); padding: 80px 0 ;
     h4{font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin: 0px; color:$black;}
 
     .left,.sl-hlf{display: inline-block; float: left; width:40%; width:37%;}
@@ -1353,16 +1355,10 @@ hr{
 }
 
 .services-layout.vet {
-  // .inline-show {
-  //   &::before{height:390px;}
-  //   .il-slideshow {width:64%; margin-left: 5%; max-height: 500px; overflow: hidden;}
-  //   .title {margin-right: 1.5%;}
-  // }
+
   .inline-show {
     &::before{height:390px;}
-    // .il-slideshow {width:70%; max-height: 500px; overflow: hidden;}
     .il-slideshow {width:72%; max-height: 100%;}
-    // .il-slideshow img {width:100%;}
     .title {margin-right: -5%; width:30%; }
   }
 
@@ -1380,7 +1376,7 @@ hr{
     }
   }
 
-  .list-box{margin-top: 40px;
+  .list-box{
     .left{ width:40%;
       h4 {margin-left: -5%; font-size: 1.2rem; letter-spacing: .8px;}
     }
@@ -1388,7 +1384,7 @@ hr{
     .sl1 {margin-bottom: 0;}
     .sl2{width:50%; float: right;}
 
-    &.alt {margin-top: 20px;
+    &.alt {margin-top: 0px;
       .sl-hlf {@include sec-default();}
       .sl1, .sl2 {display: inline-block; float: left; width:75%;}
       .sl2 {float: right; width:25%; margin-top: 60px; margin-right: -3%;}
@@ -1401,9 +1397,6 @@ hr{
       &::before{height:300px;}
       .il-slideshow {width:70%; max-height: 400px; }
       .title {margin-right: -5%; width:31%; }
-
-      // .il-slideshow {margin-left: 3%;}
-      // .title {margin-right: 0; width:30%; padding-top: 80px;}
     }
 
     .statement {
@@ -1468,10 +1461,7 @@ hr{
   @include bp(oc) {
     .statement {
       h4 {font-size: 1rem;}
-      // ul {@include sec-default();}
       li, li.right, li.sm-right {width:100%; float: left;
-        // width:45%; margin:0 0 10px;
-        // &.right, &.sm-right {float: right; width:50%;}
       }
     }
   }
@@ -2034,7 +2024,7 @@ hr{
   }
 
 
-  .cbody{@include sec-default();padding:60px 0;
+  .cbody{@include sec-default();padding:80px 0;
     .left, .right {display: inline-block; float: left; width: 40%;}
 
     .right{width:55%; float: right;
@@ -2120,7 +2110,6 @@ hr{
       .left .woof-link{width:90%;}
     }
   }
-
 }
 
 .notice.scs, .alert.scs {

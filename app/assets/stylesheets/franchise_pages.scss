@@ -54,8 +54,8 @@ br.tn {display: none;}
 
 
 /////
-.franchise-layout.fl2 {@include sec-default();
-	.statement {@include sec-default(); padding: 50px 0;
+.franchise-layout.fl2 {@include sec-default();padding-bottom: 80px;
+	.statement {@include sec-default(); padding: 80px 0;
 		h3{font-size: 1.35rem;text-align: center; font-weight: 300; letter-spacing: .5px;
 		 	span {color: $pink;}
 		}
@@ -69,7 +69,7 @@ br.tn {display: none;}
 	.col {@include sec-default(); position: relative;
 		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; font-size: 1.15rem; }
 
-		.full, .image-nrw, .image-box {margin-bottom: 60px; display: inline-block;float: left; width:45%;
+		.full, .image-nrw, .image-box {margin-bottom: 80px; display: inline-block;float: left; width:45%;
 			&.two, &.four{float: right;}
 		}
 		ul {padding-left: 20px;}
@@ -91,7 +91,8 @@ br.tn {display: none;}
 		.image-box {float:right;}
 	}
 
-	.banner-disc{@include sec-default(); padding: 20px 0; margin-top: 40px;
+	.banner-disc{@include sec-default(); padding: 20px 0;
+		// margin-top: 40px;
 	  @include sec-bgimage('treat-table.jpg');background-position: center center;
 	  position: relative; z-index: 0;
 	  &::before {@include after(); background-color: rgba($pink7, .9);}
@@ -107,13 +108,15 @@ br.tn {display: none;}
 	}
 
 	@include bp(tb) {
-		.statement {
+		padding-bottom: 65px;
+		.statement {padding:65px 0;
 			h3{font-size: 1.2rem;}
 		}
 
 		.col {
 			h4{font-size: 1.1rem;}
 			li {font-size: 15px;}
+			.full, .image-nrw, .image-box {margin-bottom: 50px;}
 		}
 
 		.banner-disc {text-align: center; margin-top: 10px;
@@ -145,7 +148,7 @@ br.tn {display: none;}
 .franchise-layout.fl1{
 	li {font-size: 16px; margin-bottom: 7px; text-transform: uppercase; letter-spacing: .5px;}
 
-	.landing-layout {@include sec-default(); padding:80px 0 60px;
+	.landing-layout {@include sec-default(); padding:80px 0;
 		li{list-style-type: disc;}
 
 		.box{@include sec-default();padding:0 15px;
@@ -173,7 +176,7 @@ br.tn {display: none;}
 		}
 
 		@include bp(tb) {
-			padding:60px 0 45px;
+			padding:65px 0;
 			.inside.med-def{width:90%;}
 			.box{
 				h3{font-size: 1rem; position: relative;}
@@ -185,7 +188,7 @@ br.tn {display: none;}
 		}
 
 		@include bp(br) {
-			padding:45px 0 30px;
+			padding:55px 0;
 			.box{
 				h3{font-size: 1.1rem; }
 				.text{width:55%;}
@@ -196,7 +199,7 @@ br.tn {display: none;}
 		}
 
 		@include bp(md) {
-			padding:20px 0 10px;
+			padding:25px 0 20px;
 			.box{
 				.text{width:85%; @include center-block();text-align: center;}
 				.image {display: none;}
@@ -208,7 +211,7 @@ br.tn {display: none;}
 		}
 	}
 
-	.content-layout {@include sec-default(); padding:40px 0 80px;
+	.content-layout {@include sec-default(); padding:0px 0 80px;
 		li{text-transform: none; letter-spacing: 0;
 			list-style-type: disc;
 		}
@@ -224,7 +227,8 @@ br.tn {display: none;}
 				.woof-link {text-align: left; margin-left: 3%;}
 			}
 
-			&.two {margin-top: 125px;
+			&.two {
+				margin-top: 80px;
 				p.sig{margin-bottom: 5px;}
 				.text {float: left; width:50%; padding-left:15px;}
 				.image {float: right;}
@@ -237,19 +241,27 @@ br.tn {display: none;}
 		}
 
 		@include bp(tb) {
-			padding: 30px 0;
+			padding: 0 0 65px;
 			li {font-size: 15px;}
 			.full.fw {
 				p.sig {font-size: 17px;}
 
-				&.two {margin-top: 50px;
+				&.two {
+					margin-top: 65px;
 					.text {width:52%; padding-right:30px; padding-left: 0;}
 				}
 			}
 		}
 
-		@include bp(tn) {
-			padding: 10px 0 30px;
+		@include bp(tb) {
+			padding: 0 0 55px;
+			.full.fw.two {margin-top: 55px;}
+		}
+
+		@include bp(md) {
+			padding:0 0 25px;
+			.full.fw.two{margin-top: 35px;}
+			// padding: 10px 0 30px;
 		}
 	}
 }
@@ -266,7 +278,6 @@ br.tn {display: none;}
 	.content-layout .full.fw.two{
 		.image {width:48%;}
 	}
-	// .content-layout{padding-bottom: 0;}
 
 	.fr-awards{@include sec-default(); text-align: center; padding:80px 0 40px;
 		li{list-style-type: none;}
@@ -287,7 +298,6 @@ br.tn {display: none;}
 			.img1 {width:100%;}
 			.img2 {width:70%; margin-top: -22%; margin-left: -45%}
 
-			// .text{width:45%;}
 			.image {width:52%; }
 		}
 
@@ -295,7 +305,7 @@ br.tn {display: none;}
 			.full.fw{
 				&.one {
 					.image{width:48%;}
-					.text{margin-top:6%; width: 48%;}
+					.text{width: 48%;}
 				}
 
 				// IF YOU DO CHANGE IMAGE, START HERE
@@ -305,9 +315,7 @@ br.tn {display: none;}
 				// }
 
 				// IF YOU DON'T CHANGE BOX 2 IMAGE
-				&.two {padding-top: 35px;margin-top:60px;
-					position: relative;
-					&::before{@include before(); height:5px; width:90%; margin-left: 5%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
+				&.two {padding-top: 10px;
 					.image {display: none;}
 					.text{@include sec-default();}
 				}
@@ -328,7 +336,8 @@ br.tn {display: none;}
 	}
 
 	@include bp(tn) {
-		.landing-layout .box {padding:30px 0;
+		.landing-layout .box {
+			// padding:30px 0;
 			.med-def {width:90%;}
 			.image{width:43%;}
 			.text {width:55%; margin-top:15px;}
@@ -349,17 +358,14 @@ br.tn {display: none;}
 	}
 
 	@include bp(md) {
-		.landing-layout .box {padding: 0;
+		.landing-layout .box {
 			.text{margin-top: 0; width:85%; @include center-block();}
 		}
 		.content-layout {
-			.full.fw.one {padding: 45px 0 0;
-				position: relative;
-				&::before{@include before(); height:5px; width:90%; margin-left: 5%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
+			.full.fw.one {
 				.image {display: none;}
 				.text{@include center-block(); width:70%; margin-top: 0;}
 			}
-			.full.fw.two {margin-top: 45px;}
 		}
 	}
 
@@ -400,7 +406,8 @@ br.tn {display: none;}
 	}
 
 	@include bp(tn) {
-		.landing-layout {padding:25px 0 15px;
+		.landing-layout {
+			// padding:25px 0 15px;
 			.box{padding:0;
 				.text{width:85%; @include center-block();text-align: center;}
 				.image {display: none;}
@@ -408,9 +415,10 @@ br.tn {display: none;}
 		}
 
 		.content-layout{
-			.full.fw.one, .full.fw.two { padding-top:45px;
-				position: relative;
-				&::before{@include before(); height:5px; width:90%; margin-left: 5%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
+			.full.fw.one, .full.fw.two {
+				// padding-top:45px;
+				// position: relative;
+				// &::before{@include before(); height:5px; width:90%; margin-left: 5%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
 
 				.text {width:85%; @include center-block(); margin-top: 0;}
 				.image {display: none;}
@@ -427,36 +435,36 @@ br.tn {display: none;}
 		.content-layout .full.fw{
 			.med-def{width:95%;}
 			&.one, &.two {@include sec-default();}
-			&.two {margin-top: 30px;}
+			// &.two {margin-top: 30px;}
 		}
 	}
 }
 
 .real-estate .franchise-layout.fl2 {
-	.col {
+	padding-bottom: 0;
+	.col {margin-bottom: 60px;
 		.full {width:48%;
 			&.two{width:45%;}
-			&.three {margin-top: 50px;}
+			// &.three {margin-top: 50px;}
 		}
 
 		.img1,.img2 {display: inline-block; float: left; width:50%;}
 
-		.image-nrw {height:340px; bottom:-60px;}
+		.image-nrw {height:340px; bottom:-80px;}
 	}
 
+	@media (min-width:1360px) {.col {margin-bottom: 80px;}}
 	@include bp(tb) {
-		.col {
-			// .image-nrw {bottom:-75px;}
+		.col {margin-bottom: 35px;
 			.image-nrw {position: relative; bottom:0; float: right; height:auto; width:51%; margin-right: -2%;}
-			.full.three {margin-top: 20px;}
+			// .full.three {margin-top: 20px;}
 		}
 	}
 
 	@include bp(tn) {
-		.col {
+		.col {margin-bottom: 0;
 			.full.one, .full.two, .full.three{width:55%; @include center-block(); margin-top: 0;}
 			.image-nrw {@include center-block();width:80%;}
-			// .image-nrw {@include sec-default(); position: relative; bottom:0; height:auto;}
 		}
 
 		.banner-disc{margin-top: 15px;}
@@ -503,10 +511,16 @@ br.tn {display: none;}
 		}
 	}
 
+	@include bp(ph) {
+		.banner-disc{
+			.btn-hlf {width:80%;}
+			h4 {font-size:1rem;}
+		}
+	}
 }
 
 .approval-process {
-	.franchise-layout.fl2 { padding-bottom: 50px;
+	.franchise-layout.fl2 {
 		.col {
 			h4{font-weight: 600;}
 			.full, .image-nrw {
@@ -515,54 +529,34 @@ br.tn {display: none;}
 			}
 		}
 
-		.image-row {@include sec-default(); text-align: center;
-			max-height:299px; overflow: hidden;
-			.img1,.img2,.img3{display: inline-block; float: none;vertical-align: top;}
-
-		&.reg {
-			.img1,.img3 {width:33.5%}
-			.img2 {width:22%}
+		.image-row {@include sec-default(); text-align: center; overflow: hidden;max-height:380px;
+			img{display: inline-block; float: none;vertical-align: top; width:21%;}
 		}
 
-		&.alt{
-			max-height: 350px;
-			.img1,.img3{width:18%;}
-			.img2 {width:45%;}
+		@include bp(tb) {
+			.statement {padding:35px 0;}
 		}
 
-			&.four {
-				max-height:380px;
-			  .img1, .img2, .img3, .img4 {width:19%; width:21%;}
-			}
-
-			&.three {
-				.img1,.img3 {width: 18%;}
-				.img2{width: 40%;}
-
-				.img1,.img3 {width: 22%;}
-				.img2{width: 36%;}
-			}
-
-			&.one {
-				.img1,.img3{display: none;}
-				.img2 {width:85%; @include center-block();}
-			}
-
-			&.mason{
-				// .img1,.img2,.img3,.img4{width:auto;}
-				.img1{width:25%;}
-				.img2{width:35%;}
-				.img3{width:20%;}
-			}
-		}
-
-		@include bp(tn) {
+		@include bp(br) {
+			.statement {padding:35px 0 20px;}
 			.col {
 				.full.one, .full.two, .full.three, .full.four{width:80%; @include center-block();}
 			}
 		}
 
+		@include bp(tb) {
+			.image-row {max-height:auto;
+				img{ width:30%;}
+				.img3 {display: none;}
+			}
+		}
+
 		@include bp(oc) {
+			.image-row {max-height:auto;
+				img{ width:45%;}
+				.img2 {display: none;}
+			}
+
 			.col {
 				.full.one, .full.two, .full.three, .full.four{@include sec-default();}
 			}
@@ -571,8 +565,6 @@ br.tn {display: none;}
 }
 
 .faq {
-	.franchise-layout.fl1 .content-layout .full.fw.one,
-	.franchise-layout.fl1 .content-layout .full.fw.two,
  	.franchise-layout.fl2 {
 		// .text {margin-top:3%;}
 		li.acc-faq {list-style-type: none;}
@@ -584,7 +576,7 @@ br.tn {display: none;}
 		}
 		.uk-accordion-title::before{float:left; margin-left: 0px; margin-top:-2px; background-position: left center; opacity: .5;}
 
-		.full {width:49%; display: inline-block;}
+		.full {width:49%; display: inline-block; margin-bottom: 0}
 		.full.two{float: right;}
 		// .col li::before{display: none;}
 
@@ -592,11 +584,13 @@ br.tn {display: none;}
 			h4{ color:$pink; font-weight: 500; }
 		}
 
+
 		@media (max-width:1320px) {
 			.inside.med {width:85%;}
 		}
 
 		@include bp(tb) {
+			.statement {padding-bottom: 30px;}
 			.inside.med {width:90%;}
 			.full{width:50%;}
 			.full.two{margin-right: -3%;}
@@ -644,23 +638,19 @@ br.tn {display: none;}
     }
   }
 
-	// .sep {@include sec-default(); height:10px; border-top:1px solid rgba($black,.1);border-bottom:1px solid rgba($black,.1); margin-top: 15px;}
-
   .franchise-layout {
+  	.landing-layout {padding: 0 0 80px;}
   	.landing-layout .box{
-  		// .text {width:44%;  margin-top: 60px;}
-	  	// .image {width:58%;margin-left: 0;}
-
 	  	.text {width:40%;  margin-top: 60px;}
 	  	.image {width:58%;margin-left: 0;}
 
 	  	.img1{width:100%; border:0;}
-			.img2 {margin-top: -28%; margin-left: -34%;width:60%;}
+			.img2 {margin-top: -28%; margin-left: -34%;width:60%; border-bottom: 0;}
 	  	.contact-info{padding-left: 15px;}
 	  	p{font-size: 1.13rem; margin: 0 0 10px;}
 	  }
 
-	  .content-layout{
+	  .content-layout{padding:80px 0;
 	  	.img-mob{display: none;}
 			.full.fw.one .text {
 				margin-top: 4%;
@@ -680,7 +670,7 @@ br.tn {display: none;}
 
   @include bp(tb) {
   	.franchise-layout {
-  		.landing-layout {
+  		.landing-layout { padding: 0 0 65px;
 		  	.box {
 		  		.text {margin-top:60px; width:44%;}
 		  		.image {width:52%; margin-right: 0;}
@@ -688,23 +678,24 @@ br.tn {display: none;}
 		  	}
 		  }
 
-		  .content-layout {padding-bottom: 0;
+		  .content-layout {padding:65px 0;
+		  	fieldset{margin: 0; padding:0;}
+		  	// padding-bottom: 0;
 		  	.full.fw.one{
 			  	.image {display: none;}
-			  	.text {@include center-block(); width:80%;}
-			  	// .img-fw{display: none;}
-			  	// .img-mob{display: block;}
+			  	.text {@include center-block(); width:80%; margin-top:0;}
 			  }
 		  }
 		}
-
-		// .sep {margin-top: 0;}
   }
 
   @include bp(md) {
   	h4 {font-size: 1.1rem;}
   	p.disclose {font-size: 15px;}
 		.franchise-layout {
+			.content-layout {padding:25px 0;}
+			.landing-layout {padding: 0 0 25px;}
+
 			.landing-layout .box {padding-top: 0px; padding-bottom: 15px;
 				.text {@include sec-default(); margin-top: 0;}
 				p{font-size: 1rem;}
@@ -712,8 +703,6 @@ br.tn {display: none;}
 
 			.content-layout .full.fw.one {
 				fieldset {margin-bottom: 0}
-				// position: relative;
-				// &::before{@include before(); height:5px; width:90%; margin-left: 9%; border-top: 1px solid rgba($black,.1);border-bottom: 1px solid rgba($black,.1);}
 				.text {width:85%;}
 			}
 		}
@@ -730,8 +719,6 @@ br.tn {display: none;}
   }
 }
 
-
-//****** franchise faq *******//
 .franchise-faqs {
   .top-row {@include sec-default(); padding: 100px 0 0px;
 		h3 {font-size: 1.2rem; }
