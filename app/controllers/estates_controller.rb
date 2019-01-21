@@ -16,6 +16,6 @@ class EstatesController < ApplicationController
 
   private
     def estate_params
-      params.require(:estate).permit(:company, :first_name, :last_name, :address, :address2, :city, :county, :state, :zip, :email, :phone, :est_address, :est_address2, :est_city, :est_county, :est_state, :est_zip, :est_develop, :est_footage, :est_type, :est_timeframe, :grapevine, :other, :source, :honey)
+      params.require(:estate).permit(:company, :first_name, :last_name, :address, :address2, :city, :county, :state, :zip, :email, :phone, :landlord, :est_address, :est_address2, :est_city, :est_county, :est_state, :est_zip, :est_develop, :est_footage, :est_type, :est_timeframe, :grapevine, :other, :source, :honey)
     end
 end
