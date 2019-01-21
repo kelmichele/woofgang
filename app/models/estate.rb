@@ -10,7 +10,6 @@ class Estate < ApplicationRecord
   validates :email, presence: true
   validates :phone, presence: true
   validates :est_address, presence: true
-  # validates :est_address2, presence: true
   validates :landlord, presence: true
   validates :est_city, presence: true
   validates :est_county, presence: true
