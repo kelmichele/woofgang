@@ -1841,6 +1841,8 @@ hr{
   }
   #post_image{ width:80%; border:1px solid rgba($black,.1);padding:15px; height:auto;}
   .rmv-img {color: $red; font-size: 15px; font-weight: bold; margin-top: -25px;float: right;}
+
+  label span {font-size: 13px;}
 }
 
 
@@ -1913,6 +1915,7 @@ hr{
 
     .forminfo {
       &.hours, &.tags {display:block;}
+      &.hours textarea {height:55px; width:100%;}
     }
   }
 

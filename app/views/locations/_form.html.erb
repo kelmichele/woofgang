@@ -8,7 +8,7 @@
       </h3>
       <div class="forminfo name">
         <%= f.label :store_name %><br>
-        <%= f.text_field :store_name, class: "form-control", placeholder: "Woof Gang Bakery & Grooming", autofocus: true %>
+        <%= f.text_field :store_name, class: "form-control", placeholder: "Woof Gang Bakery & Grooming Store", autofocus: true %>
       </div>
 
       <div class="forminfo email">
@@ -63,27 +63,27 @@
       </h3>
       <div class="forminfo link fb">
         <%= f.label :facebook %><br>
-        <%= f.text_field :fb, class: "form-control", placeholder: "https://www.facebook.com/", autofocus: true %>
+        <%= f.text_field :fb, class: "form-control", placeholder: "https://www.facebook.com", autofocus: true %>
       </div>
 
       <div class="forminfo link insta">
         <%= f.label :instagram %><br>
-        <%= f.text_field :insta, class: "form-control", placeholder: "https://www.instagram.com/", autofocus: true %>
+        <%= f.text_field :insta, class: "form-control", placeholder: "https://www.instagram.com", autofocus: true %>
       </div>
 
       <div class="forminfo link twitter">
         <%= f.label :twitter %><br>
-        <%= f.text_field :twitter, class: "form-control", placeholder: "https://", autofocus: true %>
+        <%= f.text_field :twitter, class: "form-control", placeholder: "https://twitter.com", autofocus: true %>
       </div>
 
       <div class="forminfo link yelp">
         <%= f.label :yelp %><br>
-        <%= f.text_field :yelp, class: "form-control", placeholder: "https://www.yelp.com/biz/", autofocus: true %>
+        <%= f.text_field :yelp, class: "form-control", placeholder: "https://www.yelp.com/biz", autofocus: true %>
       </div>
 
       <div class="forminfo link site">
         <%= f.label :website %><br>
-        <%= f.text_field :site, class: "form-control", placeholder: "https://", autofocus: true %>
+        <%= f.text_field :site, class: "form-control", placeholder: "https://yoursite.com", autofocus: true %>
       </div>
 
 
@@ -92,23 +92,23 @@
       <h3>Additional</h3>
 
       <div class="forminfo hours">
-        <%= f.label :hours %><br>
-        <%= f.text_area :hours, class: "form-control", placeholder: "Store Hours", autofocus: true %>
+        <label>Store Hours <span>(same as docs)</span></label><br>
+        <%= f.text_area :hours, class: "form-control", placeholder: "Mon-Fri 9:30am-8pm, Sat 9:30am-6pm, Sun 10am-5", autofocus: true %>
       </div>
 
       <div class="forminfo tags">
-        <label>Tags <span>(command + click all that apply)</span><br>
+        <label>Tags <span>(ctrl + click all that apply)</span><br>
         <%= f.collection_select(:tag_ids, Tag.find(9,1,2,3,0), :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %>
         <!-- <= f.collection_select(:tag_ids, Tag.all, :id, :name,  {include_blank: '[ none ]'}, {:multiple => true}) %> -->
       </div>
 
       <div class="forminfo lat">
-        <%= f.label :latitude %><br>
+        <label>Latitude <span>(leave blank)</span></label><br>
         <%= f.text_field :latitude, class: "form-control", placeholder: "Latitude", autofocus: true %>
       </div>
 
       <div class="forminfo long">
-        <%= f.label :longitude %><br>
+        <label>Longitude <span>(leave blank)</span></label><br>
         <%= f.text_field :longitude, class: "form-control", placeholder: "Longitude", autofocus: true %>
       </div>
     </div>
