@@ -24,8 +24,12 @@ br.tn {display: none;}
   }
 	.inside.lg {width:95%; }
 
-  // img {height: 500px; @include center-block();}
-  img {@include center-block();}
+  .feat {@include center-block();}
+  .seal {position: absolute; z-index: 2;
+  	// width:220px; height: 220px; left:7%; margin-top:-130px;
+  	width:200px; height: 200px; left:7.8%; margin-top:-115px;
+  	@include sec-bgimage('seals/seal4.png');
+  }
 
   .text {@include sec-default(); text-align: center; padding:30px 0 30px;}
   h1{text-transform: uppercase; letter-spacing: 1px;line-height: 1.4em; font-size: 1.8rem; margin:0;}
@@ -35,6 +39,8 @@ br.tn {display: none;}
 		padding-top:0px;
 		h1 {font-size: 1.65rem;}
 		h2 {font-size: 1.1rem;}
+
+		.seal {width:200px; height: 200px; left:3%; margin-top:-115px;}
 	}
 
 	@include bp(tn) {
@@ -51,6 +57,12 @@ br.tn {display: none;}
 		h1 {font-size: 1.1rem;}
 	}
 }
+.real-estate .franchise-head.v2 .seal{@include sec-bgimage('seals/seal2.png');}
+.candidates .franchise-head.v2 .seal{@include sec-bgimage('seals/seal3.png');}
+.approval-process .franchise-head.v2 .seal{@include sec-bgimage('seals/seal6.png');}
+.franchising .franchise-head.v2 .seal{@include sec-bgimage('seals/seal9.png');}
+.training-support .franchise-head.v2 .seal{@include sec-bgimage('seals/seal10.png');}
+
 
 
 /////
