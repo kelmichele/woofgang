@@ -55,7 +55,7 @@ br.tn {display: none;}
 	}
 
 	@include bp(oc) {
-		&::before{height:40%; bottom:20%;}
+		&::before{height:45%; bottom:15%;}
 		h1 {font-size: 1.3rem;}
 		h2{font-size: 15px;}
 		.text {padding-bottom: 15px;}
@@ -75,6 +75,15 @@ br.tn {display: none;}
 .approval-process .franchise-head.v2 .seal{background-image: url(image_path('seals/seal6.png'));}
 .franchising .franchise-head.v2 .seal{background-image: url(image_path('seals/seal9.png'));}
 .training-support .franchise-head.v2 .seal{background-image: url(image_path('seals/seal10.png'));}
+@include bp(oc) {
+	.real-estate .franchise-head.v2 .seal, .candidates .franchise-head.v2 .seal, .approval-process .franchise-head.v2 .seal, 
+	.franchising .franchise-head.v2 .seal, .training-support .franchise-head.v2 .seal {background-image: none;}
+	.real-estate .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal2.png'));}
+	.candidates .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal3.png'));}
+	.approval-process .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal6.png'));}
+	.franchising .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal9.png'));}
+	.training-support .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal10.png'));}
+}
 
 
 
@@ -168,6 +177,10 @@ br.tn {display: none;}
 			.image-nrw {}
 		}
 	}
+
+	@include bp(oc) {
+		.statement {padding-top:10px;}
+	}
 }
 
 .franchise-layout.fl1{
@@ -233,6 +246,11 @@ br.tn {display: none;}
 
 		@include bp(mb) {
 			.box .text{width:90%;}
+		}
+		
+		@include bp(oc) {
+			padding:0px 0 20px;
+			.box h3 {margin-top: 8px;}
 		}
 	}
 
@@ -579,6 +597,7 @@ br.tn {display: none;}
 		}
 
 		@include bp(oc) {
+			.statement { padding-top:10px; }
 			.image-row {max-height:auto;
 				img{ width:45%;}
 				.img2 {display: none;}
