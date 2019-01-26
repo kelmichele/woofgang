@@ -40,12 +40,19 @@ br.tn {display: none;}
 		h1 {font-size: 1.65rem;}
 		h2 {font-size: 1.1rem;}
 
-		.seal {width:200px; height: 200px; left:3%; margin-top:-115px;}
+		.seal {left:3%; margin-top:-115px;}
 	}
 
 	@include bp(tn) {
 		h1 {font-size: 1.45rem;}
 		h2 {font-size: 1rem;}
+
+		.seal {width:180px; height: 180px; left:3%; margin-top:-70px;}
+	}
+
+	@include bp(mb) {
+		.seal {width:150px; height: 150px; left:3%; margin-top:-70px;}
+
 	}
 
 	@include bp(oc) {
