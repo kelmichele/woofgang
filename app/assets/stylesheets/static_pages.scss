@@ -1007,12 +1007,15 @@ hr{
     &::before{@include before(); height: 420px;background-color: $opink;}
     .il-slideshow {border:7px solid $white; }
     // .uk-slideshow-nav.uk-dotnav{}
-
-    .seal {position: absolute; z-index: 2; bottom:-80px;
-      width:200px; height: 200px; left:1%;
-      @include sec-bgimage('seals/seal5.png');
-    }
   }
+
+  .seal {position: absolute; z-index: 2; bottom:-67px;
+    width:200px; height: 200px; right:21%;
+    @include sec-bgimage('seals/seal5.png');
+  }
+  &.groom .seal {background-image: url(image_path('seals/seal11.png'));}
+  &.daycare .seal {background-image: url(image_path('seals/seal7.png')); }
+  &.ss-groom .seal {background-image: url(image_path('seals/seal8.png'));}
 
   .statement {@include sec-default(); padding:80px 0;
     p, h1,h2 {display: inline-block; float: left; width:34%; }
@@ -1093,6 +1096,8 @@ hr{
       &::before{height: 380px;}
     }
 
+    .seal {width:180px; height:180px; bottom: -60px; right: 19%;}
+
     .statement {padding:50px 0 35px;
       h1,h2{font-size: 1.4rem; width:30%; border-right:0; margin-top:7px;}
       p{width:69%; border-left: 1px solid rgba($black,.1); padding-left: 4%;}
@@ -1116,10 +1121,13 @@ hr{
   }
 
   @include bp(tn) {
-    .inline-show {
+    .inline-show {margin-bottom: 20px;
+      &::before{ height: 70%;}
       .il-slideshow, .title {margin-left: -3%;}
       .title {width:29%; padding-top: 90px;}
     }
+
+    .seal {width:150px; height:150px; bottom: -48px; right: 22%;}
 
     .statement{padding:35px 0 25px;
       p,h1,h2{@include sec-default();}
@@ -1158,6 +1166,10 @@ hr{
       .title{@include center-block(); width: 240px;padding:0;}
     }
 
+    .seal {bottom:25px; right:5px;}
+    &.retail .seal {bottom: 65px;}
+    &.daycare .seal {bottom:140px;}
+
     .statement p{@include sec-default();}
 
     .list-box{
@@ -1169,6 +1181,19 @@ hr{
   }
 
   @include bp(oc) {
+    .inline-show {margin-bottom: 0;}
+    .statement{padding:20px 0 25px;}
+
+    &.groom, &.daycare, &.ss-groom, &.retail {
+      .seal {position: relative; z-index: 0; left:0; margin-top:20px; bottom: 0px;
+        @include sec-default(); background-image: none; height:auto;
+        .sicon {width:150px; height: 150px; @include center-block(); @include sec-bgimage('seals/seal4.png');}
+      }
+    }
+    &.groom .seal .sicon{background-image: url(image_path('seals/seal11.png'));}
+    &.daycare .seal .sicon{background-image: url(image_path('seals/seal7.png'));}
+    &.ss-groom .seal .sicon{background-image: url(image_path('seals/seal8.png'));}
+
     .list-box{padding: 25px 0;
       .med2-def{width:90%;}
       h4{font-size: 1rem; }
@@ -1254,6 +1279,10 @@ hr{
       p{margin:5px auto;}
     }
   }
+
+  @include bp(oc) {
+    .statement {padding-top: 5px;}
+  }
 }
 
 .grooming .services-layout {
@@ -1288,6 +1317,10 @@ hr{
       p, h1,h2 {width:95%;}
     }
   }
+
+  @include bp(oc) {
+    .statement {padding-top:10px;}
+  }
 }
 
 .doggie-daycare .services-layout {
@@ -1320,7 +1353,7 @@ hr{
   @include bp(tb) {
     .inline-show{
       &::before{height:360px;}
-    .title {padding-top:30px;}
+      .title {padding-top:30px; width:28%;}
     }
 
     .statement.alt-lay {
@@ -1332,10 +1365,10 @@ hr{
     .locations-disc .med{width:95%;}
   }
 
-  @include bp(tb) {
+  @include bp(tn) {
     .inline-show{
-      &::before{height:300px;}
-    .title {padding-top:0px;}
+      &::before{height:280px;}
+      .title {padding-top:0px; width:30%; margin-left: -2%;}
     }
 
     .statement.alt-lay {
@@ -1349,11 +1382,12 @@ hr{
     .inline-show{
       &::before{height:300px;}
       .title{@include sec-default(); text-align: center;}
-      .srv-logo.daycare, .srv-logo.resort {display: inline-block; float: none; width:35%; margin:10px 3%;
-      }
+      .srv-logo.daycare, .srv-logo.resort {@include center-block(); width:300px; margin:40px auto 0px;}
+      .srv-logo.resort {margin-top: 25px;}
+      // .srv-logo.daycare, .srv-logo.resort {display: inline-block; float: none; width:40%; margin:10px 3%;}
     }
 
-    .statement.alt-lay {padding:30px 0;
+    .statement.alt-lay {padding:10px 0;
       &::before{display: none;}
       .text, .text.two {width: 75%; @include center-block(); text-align: center;}
       h2{margin-top: 20px;}
@@ -1361,13 +1395,12 @@ hr{
   }
 
   @include bp(oc) {
-    .inline-show{
+    .inline-show{margin-bottom: 0;
       &::before{height:250px;}
-      .srv-logo.daycare, .srv-logo.resort {@include center-block(); width:250px;}
-      .srv-logo.daycare{ margin-bottom: 45px;}
+      .srv-logo.resort {margin-top: 5px;}
     }
 
-    .statement.alt-lay {padding:15px 0 30px;
+    .statement.alt-lay {padding:0px 0 30px;
       .text, .text.two {width: 90%;}
     }
   }
@@ -1513,12 +1546,24 @@ hr{
     }
   }
 
+  @include bp(tn) {
+    .inline-show {
+      &::before{height:230px;}
+      .il-slideshow{width: 72%;}
+      .title {width:33%;padding: 80px 0 0; margin-right: -4%;}
+    }
+  }
+
   @include bp(pl) {
     .inline-show {
       &::before{height:250px;}
       .il-slideshow {@include sec-default(); margin:0 0 20px 0;}
       .title{@include center-block(); width: 320px;padding:0;}
     }
+  }
+
+  @include bp(oc) {
+    .statement {padding-top:10px;}
   }
 }
 
