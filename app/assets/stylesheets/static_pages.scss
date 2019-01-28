@@ -160,11 +160,6 @@ hr{
       .text{width:68%;}
       .text {border-left: 5px solid rgba($pink,.9); padding-left:40px;}
     }
-
-    // .inside.home-def{width:940px;}
-    // .text.seal-il, .seal{display: inline-block;}
-    // .text.seal-il{float: right; width:90%; margin-right: -8.5%;}
-    // .seal {width:200px; position: absolute; left:14%; margin-top: 5px;}
   }
 
   .bg-sec {@include sec-default(); padding:70px 0 0px; margin-top:0px;
@@ -175,8 +170,8 @@ hr{
 
     .image,.images, .text {display: inline-block; float: right; width:50%;}
     .text {width:39%; margin-left: 5%; padding: 30px 0 0 0; float: left;}
-    .seal {@include sec-default();
-        .sealcon{width:200px; @include center-block(); position: absolute; bottom:-45px;}
+    .seal {@include center-block(); width:225px;
+      .sealcon{width:200px; @include center-block(); position: absolute; bottom:-45px;}
     }
 
     p{color:$white;@include tshadowl(rgba($black,.4)); font-weight: 400;}
@@ -187,15 +182,6 @@ hr{
     &::before{@include sec-bgimage('franchising1.jpg'); background-position: center center; }
     .image,.images {width:54%; max-height: 248px; overflow: hidden;}
     .image {max-height: 100%;}
-    .images{
-      // .img1, .img2 {display: inline-block; float: left;width:49.8%;}
-      // .img2 {float: right;}
-
-      // max-height: 290px;
-      // .img1{width:60%;}
-      // .img2{width:39%;}
-    }
-
 
     &.ff {
       h4, p{color:$white;@include tshadowl(rgba($black,.3)); font-weight: 400; margin:0;letter-spacing: .3px;}
@@ -219,8 +205,6 @@ hr{
         // }
       }
     }
-
-    .seal {@include center-block(); width:225px;}
   }
 
   .full.franch {padding:90px 0;
@@ -379,6 +363,10 @@ hr{
           .img1,.img2,.img3 {width:31%;}
         }
       }
+
+      .seal {@include sec-default();
+        .sealcon{width:200px; bottom:auto; margin-top:30px; margin-left: 3%;}
+      }
     }
 
     .nlay-logos{
@@ -420,6 +408,8 @@ hr{
       // .img2 {display: none;}
       h4{font-size: 16px;}
       p{font-size: 15px;}
+
+      .seal .sealcon{bottom:auto; margin-top:12px; margin-left: 0;}
     }
 
     .banner-locations{
@@ -451,10 +441,12 @@ hr{
     }
 
     .bg-sec.ff {
-      &::before, &::after {height:55%;width:80%;}
+      &::before, &::after {height:50%;width:85%;}
       .text {padding: 0px; width:72%; margin-left: 6%; margin-top: 0;}
       .image{width:70%; margin-top: 20px;}
       p{margin-bottom: 10px;}
+
+      .seal .sealcon{width:185px;margin-top: 0px; bottom:60px; margin-left: -15px;}
     }
 
     .nlay-logos{
@@ -478,7 +470,7 @@ hr{
       h2{font-size: 1rem;}
     }
 
-    .bg-sec.ff {margin-bottom: 0;
+    .bg-sec.ff {margin-bottom: 0; padding-bottom: 25px;
       &::before, &::after {height:60%;width:100%;}
       .text {@include center-block(); width:80%;text-align: center;}
       .images{@include center-block(); width:85%; text-align: center;}
@@ -486,6 +478,8 @@ hr{
       &.alt .images{max-height: auto;
         .img1,.img2,.img3 {float: none;}
       }
+     
+      .seal .sealcon{position: relative;@include center-block();margin-top: 10px; bottom:auto; margin-bottom: 20px;}
     }
 
     .nlay-logos.none {padding-bottom: 40px;
