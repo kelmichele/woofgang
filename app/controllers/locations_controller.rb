@@ -33,8 +33,8 @@ class LocationsController < ApplicationController
 	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    # neighbors.all.paginate(:page => params[:page], :per_page => 110)
-	    Location.all.paginate(:page => params[:page], :per_page => 150)
+	    neighbors.all.paginate(:page => params[:page], :per_page => 110)
+	    # Location.all.paginate(:page => params[:page], :per_page => 150)
 		end
 
 		@tags = Tag.find(9,1,2,3,0)
