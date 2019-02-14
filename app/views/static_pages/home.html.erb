@@ -3,17 +3,30 @@
 <% @page_description = "Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America, with more than 110 locations across the U.S." %>
 
 <!-- 1296x720 -->
+
 <div class="full-show">
 	<div class="inside lg">
-		<div class="fw-slideshow" uk-slideshow="autoplay: true; autoplay-interval: 4000; animation: push">
+		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
 	    <ul class="uk-slideshow-items">
-				<% @slides.each do |slide| %>
-					<li><%= image_tag(slide.image, class: 'img-responsive uk-position-bottom', alt: "#{slide.title}")%></li>
-				<% end %>
+				<li><%= image_tag('villages.jpg', class: 'img-responsive uk-cover') %></li>
 	    </ul>
+	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
 	  </div>
 	</div>
 </div>
+
+<!-- <div class="full-show">
+	<div class="inside lg">
+		<div class="fw-slideshow" uk-slideshow="autoplay: true; autoplay-interval: 4000; animation: push">
+	    <ul class="uk-slideshow-items">
+				< @slides.each do |slide| %>
+					<li><= image_tag(slide.image, class: 'img-responsive uk-position-bottom', alt: "#{slide.title}")%></li>
+				< end %>
+	    </ul>
+	  </div>
+	</div>
+</div> -->
 
 <div class="nlay-intro comp">
 	<div class="inside home-def">
