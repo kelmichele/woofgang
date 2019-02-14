@@ -4,7 +4,7 @@
 
 <!-- 1296x720 -->
 
-<div class="full-show">
+<!-- <div class="full-show">
 	<div class="inside lg">
 		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
 	    <ul class="uk-slideshow-items">
@@ -15,19 +15,19 @@
 	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
 	  </div>
 	</div>
-</div>
+</div> -->
 
-<!-- <div class="full-show">
+<div class="full-show">
 	<div class="inside lg">
 		<div class="fw-slideshow" uk-slideshow="autoplay: true; autoplay-interval: 4000; animation: push">
 	    <ul class="uk-slideshow-items">
-				< @slides.each do |slide| %>
-					<li><= image_tag(slide.image, class: 'img-responsive uk-position-bottom', alt: "#{slide.title}")%></li>
-				< end %>
+				<% @slides.each do |slide| %>
+					<li><%= image_tag(slide.image, class: 'img-responsive uk-position-bottom', alt: "#{slide.title}")%></li>
+				<% end %>
 	    </ul>
 	  </div>
 	</div>
-</div> -->
+</div>
 
 <div class="nlay-intro comp">
 	<div class="inside home-def">
