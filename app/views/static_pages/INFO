@@ -1,3 +1,18 @@
+maxmemory 5mb
+maxmemory-policy allkeys-lru
+
+redis-server /config/redis.conf
+
+
+heroku addons:info redistogo
+
+
+
+
+heroku redis:maxmemory redis-cylindrical-10912 --policy allkeys-lru
+heroku redis:maxmemory redis-cylindrical-10912 5mb
+
+
 LOCATION PAGE:
 	- if we start having problems with socials
 	<% if location.fb != nil %>
@@ -116,70 +131,3 @@ LOCATIONS EXTRAS
 	heroku config:set  REDISTOGO_URL=redis://redistogo:f60167df7479ead015249116b05ac2f4@spinyfin.redistogo.com:11064/
 	heroku config:set  REDIS_URL=redis://redistogo:f60167df7479ead015249116b05ac2f4@spinyfin.redistogo.com:11064/
 	unset.   get
-
-
-BLOG EXTRAS
-	no image -- add if to posts/index --
-	- Woof Gang Bakery, Your Neighborhood Pet Store, Grows in Palm Beach County with Four New Stores
-	- Woof Gang Bakery Unleashes New Pet Retail Store and Grooming Location in Wilmington, North Carolina
-
-
-
-
-	TINY img ---
-		- Orlando- Based Woof Gang Bakery Opens Six New Stores and Opens First Full-Service Animal Clinic
-		- Woof Gang Bakery Raleigh Reopens with a Makeover and New Owners
-		- Woof Gang Bakery Wins Best Grooming
-		- Woof Gang Bakery Named Tenth Largest Pet Retailer in North America
-
-
-
-	links --
-		- Woof Gang Bakery says business is doggone good
-		- Orlando-Based Woof Gang Bakery Named Fifteenth Largest Pet Food Retailer
-		- Orlando-Based Woof Gang Bakery Awarded Best Overall Multi-Unit Retailer Award
-		- TripswithPets.com-Pet Friendly Destinations
-		- Woof Gang Bakery ranks among top fastest growing pet chains
-		- Woof Gang Bakery: The Pet Industry’s Top Dog
-		- Woof Gang Bakery Named Tenth Largest Pet Retailer in North America
-
-
-
-
-
-	taglines ---
-		plano:
-		This New Breed of Neighborhood Pet Store is the First Location in Plano and the Company’s Seventh Franchise in Texas
-
-		buckead reopens:
-		Neighborhood Pet Supply Store and Grooming Franchise Caters to Buckhead Area’s Health-conscious Pet Owners and Pampered Pups
-
-		Woof Gang Bakery, Your Neighborhood Pet Store, Grows in Palm Beach County with Four New Stores:
-		Woof Gang Bakery Franchise Expands to 45 Stores in 2013
-
-		Woof Gang Bakery Unleashes New Pet Retail Store and Grooming Location in Raleigh, North Carolina:
-		This New Breed of Neighborhood Pet Store is First Location in Wakefield and Company’s Sixth Franchise in North Carolina
-
-		Katy opening:
-		This New Breed of Neighborhood Pet Store is the First Location in Katy and the Company’s Eighth Franchise in Texas
-
-		Woof Gang Bakery Unleashes New Pet Retail Store and Grooming Location in Wilmington, North Carolina:
-		This New Breed of Neighborhood Pet Store is the First Location in Wilmington and the Company’s Fifth Franchise in North Carolina
-
-		Orlando-Based Woof Gang Bakery Leads the Pack With New Services and Amenities:
-		Franchise Offers the Very Best in Pet Care by Introducing Animal Clinics And Doggie Day Care to Franchise Portfolio
-
-		Woof Gang Bakery Embarks on First Nevada Location – New Pet Retail Store and Grooming Opens in Las Vegas:
-		This New Breed of Neighborhood Pet Store is the First of Five Stores Planned for Las Vegas
-
-		Woof Gang Bakery Raleigh Reopens with a Makeover and New Owners:
-		Neighborhood Pet Supply Store and Grooming Franchise Caters to Raleigh Area’s Health-conscious Pet Owners and Pampered Pups
-
-		Orlando- Based Woof Gang Bakery Opens Six New Stores and Opens First Full-Service Animal Clinic:
-		Woof Gang Bakery franchise will grow to 43 stores by the end of 2013
-
-		Woof Gang Bakery Unleashes Ninth Central Florida Store:
-		This New Breed of Neighborhood Pet Store is Located in Apopka
-
-		Woof Gang Bakery Unleashes New Pet Retail Store and Grooming Location in St Petersburg, Florida:
-		This New Breed of Neighborhood Pet Store is the First Location in St Petersburg and the Company’s 19th Florida Location

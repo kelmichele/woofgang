@@ -1,7 +1,17 @@
 <% @page_title = "Franchise FAQs" %>
 <% @page_description = "Read through frequently asked questions. Feel free to contact the Woof Gang Bakery corporate office for more information." %>
 
-<%= render 'franchise_pages/franch-header2' %>
+<div class="franchise-head v2">
+	<div class="inside med">
+		<%= image_tag('franch-faq.JPG', class: 'img-responsive feat', alt: 'Woof Gang Bakery wrapped suv') %>
+
+		<div class="text">
+			<h2>Become a Woof Gang Bakery Franchisee</h2>
+			<h1><%= @page_title %></h1>
+		</div>
+		<div class="seal"><div class="sicon"></div></div>
+	</div>
+</div>
 
 	<% @why = capture do %>
 		<p>We want our franchisees to be successful! Woof Gang Bakery offers quality products and a unique concept that aligns with a growing, multi-billion dollar industry. Our stores are strategically positioned in upscale retail properties and we have an effective marketing program that creates awareness and drives business.</p>
