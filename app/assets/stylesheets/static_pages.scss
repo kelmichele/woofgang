@@ -2103,6 +2103,10 @@ hr{
         h2{font-size: 1.55rem; letter-spacing: .3px; margin-bottom: 0;}
      }
     }
+
+    .franchise-head.v2 {
+      img{@include center-block();}
+    }
   }
 
 
@@ -2179,7 +2183,13 @@ hr{
   }
 
   @include bp(oc) {
-    .cbody {
+    .services-layout .franchise-head.v2 {
+      &::before{height:50%; bottom:0;}
+      .text{padding-top: 20px;}
+      h1 {font-size: 1.3rem;}
+    }
+
+    .cbody {padding-top:15px;
       .left, .right {@include sec-default();}
       .left {
         .woof-link{width:60%;}
