@@ -13,7 +13,8 @@ class LocationsController < ApplicationController
 
 		@states = State.all
     nearbys = Location.near(params[:q], 20, :order => "distance")
-    neighbors = Location.near(crds, 60, :order => "distance")
+    neighbors = Location.near(crds, 400, :order => "distance")
+    # 60
 
 		@locations = if params[:l]
 			# JUST FOR REDO SEARCH
