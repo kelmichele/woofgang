@@ -118,10 +118,10 @@ document.addEventListener("turbolinks:load", function() {
 
   addMarkers();
 
-  map.addListener("dragend", function() {
-    var bounds = map.getBounds();
-    var station = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
+  // map.addListener("dragend", function() {
+  //   var bounds = map.getBounds();
+  //   var station = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
 
-    Turbolinks.visit('/locations?l=' + station);
-  });
+  //   Turbolinks.visit('/locations?l=' + station);
+  // });
 });
