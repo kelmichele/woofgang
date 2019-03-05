@@ -263,6 +263,12 @@ br.tn {display: none;}
 			.image,.text {display: inline-block;width:45%; float: left;}
 			.text {width:48%; float: right;}
 			.woof-link{font-size:15px; width:50%; letter-spacing: .3px;margin-left: 8%;background-color: $pink;}
+		
+			.image.plus-seal{position: relative; }
+			.page-seal {
+				position: absolute; z-index: 2; width:185px; 
+				bottom:-40px; margin-left:-90px;
+			}
 
 			&.one {
 				.image{width:51%;}
@@ -283,6 +289,19 @@ br.tn {display: none;}
 			p.reg{font-size: 16px; margin:5px 0 10px; }
 		}
 
+		@media (max-width:1270px) {
+			.full.fw {
+				.page-seal {margin-left: -60px;}
+			}
+		}
+
+		@media (max-width:1200px) {
+			.full.fw {
+				.image.plus-seal {}
+				.page-seal {margin-left: 30.5%; bottom:-60px;}
+			}
+		}
+
 		@include bp(tb) {
 			padding: 0 0 65px;
 			li {font-size: 15px;}
@@ -293,12 +312,18 @@ br.tn {display: none;}
 					margin-top: 65px;
 					.text {width:52%; padding-right:30px; padding-left: 0;}
 				}
+
+				.page-seal {width:170px;}
 			}
 		}
 
-		@include bp(tb) {
+		@include bp(tn) {
 			padding: 0 0 55px;
 			.full.fw.two {margin-top: 55px;}
+
+			// .full.fw .page-seal {margin-left: 23%;}
+			.full.fw .page-seal {position: relative; bottom:0; @include center-block(); width:165px; margin-top:7px;}
+
 		}
 
 		@include bp(md) {
@@ -351,13 +376,6 @@ br.tn {display: none;}
 					.text{width: 48%;}
 				}
 
-				// IF YOU DO CHANGE IMAGE, START HERE
-				// &.two {margin-top: 50px;
-				// 	.text {width:58%; padding-right:0px;}
-				// 	.image{width:40%;}
-				// }
-
-				// IF YOU DON'T CHANGE BOX 2 IMAGE
 				&.two {padding-top: 10px;
 					.image {display: none;}
 					.text{@include sec-default();}
@@ -406,7 +424,10 @@ br.tn {display: none;}
 		}
 		.content-layout {
 			.full.fw.one {
-				.image {display: none;}
+				.image {@include sec-default();
+					.photo-img{display: none;}
+				  .page-seal {margin-top: 0; margin-bottom: 10px;}
+				}
 				.text{@include center-block(); width:70%; margin-top: 0;}
 			}
 		}
