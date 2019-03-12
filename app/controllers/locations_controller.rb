@@ -30,7 +30,8 @@ class LocationsController < ApplicationController
 	    Location.near(params[:near], params[:proximity], :order => "distance").paginate(:page => params[:page], :per_page => 9)
 
 	  elsif params[:tag]
-	    Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200).paginate(:page => params[:page], :per_page => 9)
+	    #ADDED ORDER, 3/12 Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200).paginate(:page => params[:page], :per_page => 9)
+	    Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200, :order => "distance").paginate(:page => params[:page], :per_page => 9)
 	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
@@ -118,7 +119,6 @@ class LocationsController < ApplicationController
 
 	def get_user_location
     ip_address = request.remote_ip
-    # ip_address = "107.167.195.186"
     Pointa.get_pointa ip_address
   end
 

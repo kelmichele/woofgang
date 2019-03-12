@@ -105,7 +105,7 @@ class Location < ApplicationRecord
 
   def self.to_csv(options = {})
     # desired_columns = ["store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state", "zip", "hours", "latitude", "longitude"]
-    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state.name", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude"]
+    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state_id", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |location|
