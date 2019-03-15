@@ -3,8 +3,8 @@ module Pointa
   require 'json'
 
   def get_pointa ip_address
-    # pointa = Net::HTTP.get(URI("https://ipapi.co/#{ip_address}/json/"))
-    pointa = ("https://api.ipapi.com/api/check?access_key=" + Rails.application.credentials.ipapi[:ipapi_access])
+    pointa = Net::HTTP.get(URI("https://ipapi.co/#{ip_address}/json/"))
+    # pointa = ("https://api.ipapi.com/api/check?access_key=" + Rails.application.credentials.ipapi[:ipapi_access])
 
     JSON.parse(pointa)
   end
