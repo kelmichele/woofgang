@@ -118,7 +118,8 @@ class LocationsController < ApplicationController
 	end
 
 	def get_user_location
-    ip_address = request.remote_ip
+	  ip_address = request.remote_ip
+  	# ip_address = "192.96.192.142"
     Pointa.get_pointa ip_address
   end
 
