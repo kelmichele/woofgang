@@ -41,7 +41,12 @@ function setSafeBounds(element) {
   } else {
     map.fitZoom();
   }
-  document.getElementById('result-info').innerHTML = gon.result_info;
+  
+  var res_element = document.getElementById('result-info');
+  if (res_element != null) {
+    document.getElementById('result-info').innerHTML = gon.result_info;
+  }
+  // document.getElementById('result-info').innerHTML = gon.result_info;
 }
 
 
