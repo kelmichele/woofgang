@@ -13,12 +13,15 @@
 	<div class="inside med2-def">
 		<% for state in @states %>
 		 	<div class="state-li">
-				<p><%= state.id %>. <%= state.full_name %></p>
-				<div class="actions">
-					<span><%= link_to "View", state_path(state) %></span>
-					<span><%= link_to "Edit", edit_state_path(state) %></span>
-					<!-- <= link_to "Delete State", state_path(state.id), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "delete" %> -->
-				</div>
+				<%= link_to state_path(state) do %>
+					<p><%= state.id %>. <%= state.full_name %></p>
+				<% end %>
+				
+				<% if user_signed_in? && current_user.admin? %>
+					<div class="actions">
+						<span><%= link_to "Edit", edit_state_path(state) %></span>
+					</div>
+				<% end %>
 		 	</div>
 	  <% end %>
 	</div>
