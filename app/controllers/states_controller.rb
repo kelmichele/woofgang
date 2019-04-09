@@ -1,5 +1,8 @@
 class StatesController < ApplicationController
 	before_action :set_state, only: [ :edit, :update, :destroy, :show]
+	before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
+
 
 	def index
 		@states = State.all
@@ -51,5 +54,12 @@ class StatesController < ApplicationController
 
 	def state_params
     params.require(:state).permit(:name, :full_name)
+  end
+
+  def require_admin
+    if !current_user.admin?
+      flash[:danger] = "Only admin users can perform that action"
+      redirect_to locations_path
+    end
   end
 end
