@@ -73,7 +73,7 @@
     	    <div class="filter-uk">Search by State <span  uk-icon="icon: chevron-down;"></span></div>
     	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
     	    	<% @states.each do |state| %>
-    					<div class="filter-tag">
+    					<div class="filter-tag <%= state.full_name %>">
     						<%= link_to "#{state.full_name}", state_path(state) %>
     					</div>
     				<% end %>
