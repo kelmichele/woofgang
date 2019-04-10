@@ -35,14 +35,15 @@ class LocationsController < ApplicationController
 	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    neighbors.all.paginate(:page => params[:page], :per_page => 110)
-	    # Location.all.paginate(:page => params[:page], :per_page => 150)
+	    # neighbors.all.paginate(:page => params[:page], :per_page => 110)
+	    Location.near(crds, 100, :order => "distance").paginate(:page => params[:page], :per_page => 9)
 		end
 
 		@tags = Tag.find(9,1,2,3,0)
 		# @tags = Tag.all
 
 		gon.result_info = if params[:near]
+			# search
 			if @locations.count > 0
 				"#{@locations.count} " + 'locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 			else
@@ -60,7 +61,7 @@ class LocationsController < ApplicationController
 			if @locations.count < 1
 				"There are currently no locations in your area. Use the map above to search other areas."
 			else
-				" "
+				"#{@locations.count} " + 'locations in your area.'
 			end
 		end
 
