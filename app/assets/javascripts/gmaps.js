@@ -259,7 +259,7 @@ var GMaps = (function(global) {
       }
 
     if (typeof(this.el) === 'undefined' || this.el === null) {
-      throw 'No element defined.';
+      throw 'No element defined GEO262.';
     }
 
     window.context_menu = window.context_menu || {};
