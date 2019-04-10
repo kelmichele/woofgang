@@ -45,7 +45,7 @@ class LocationsController < ApplicationController
 		gon.result_info = if params[:near]
 			# search
 			if @locations.count > 0
-				"#{@locations.count} " + 'locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
+				"#{@locations.count} " + 'location(s) within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 			else
 				'There are currently no locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 			end
@@ -61,7 +61,7 @@ class LocationsController < ApplicationController
 			if @locations.count < 1
 				"There are currently no locations in your area. Use the map above to search other areas."
 			else
-				"#{@locations.count} " + 'locations in your area.'
+				"#{@locations.count} " + 'location(s) in your area.'
 			end
 		end
 
