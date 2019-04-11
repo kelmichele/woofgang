@@ -42,6 +42,17 @@
 					<% end %>
 				</div>
 
+				<div class="boundary-align uk-panel filter-box states">
+    	    <div class="filter-uk">Search by State <span  uk-icon="icon: chevron-down;"></span></div>
+    	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
+    	    	<% @states.each do |state| %>
+    					<div class="filter-tag <%= state.full_name %>">
+    						<%= link_to "#{state.full_name}", state_path(state) %>
+    					</div>
+    				<% end %>
+        	</div>
+        </div>
+
 		  	<div class="boundary-align uk-panel filter-box">
 			    <div class="filter-uk">Search by Service <span  uk-icon="icon: chevron-down;"></span></div>
 			    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
@@ -68,17 +79,6 @@
 						</div>
 		    	</div>
 		    </div>
-
-      	<div class="boundary-align uk-panel filter-box states">
-    	    <div class="filter-uk">Search by State <span  uk-icon="icon: chevron-down;"></span></div>
-    	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
-    	    	<% @states.each do |state| %>
-    					<div class="filter-tag <%= state.full_name %>">
-    						<%= link_to "#{state.full_name}", state_path(state) %>
-    					</div>
-    				<% end %>
-        	</div>
-        </div>
 		  </div>
 		</div>
 

@@ -52,18 +52,6 @@
 						<% end %>
 					</div>
 
-			  	<div class="boundary-align uk-panel filter-box">
-				    <div class="filter-uk">Search by Service <span  uk-icon="icon: chevron-down;"></span></div>
-				    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
-				    	<% @tags.each do |tag| %>
-								<div class="filter-tag">
-									<span class="tag-icon <%= tag.name %>"></span>
-									<%= link_to "#{tag.display_name}", tag_path(tag.name) %>
-								</div>
-							<% end %>
-			    	</div>
-			    </div>
-
 	      	<div class="boundary-align uk-panel filter-box states">
 	    	    <div class="filter-uk">Search by State <span  uk-icon="icon: chevron-down;"></span></div>
 	    	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
@@ -74,6 +62,18 @@
 	    				<% end %>
 	        	</div>
 	        </div>
+
+	        <div class="boundary-align uk-panel filter-box">
+				    <div class="filter-uk">Search by Service <span  uk-icon="icon: chevron-down;"></span></div>
+				    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
+				    	<% @tags.each do |tag| %>
+								<div class="filter-tag">
+									<span class="tag-icon <%= tag.name %>"></span>
+									<%= link_to "#{tag.display_name}", tag_path(tag.name) %>
+								</div>
+							<% end %>
+			    	</div>
+			    </div>
 			  </div>
 			</div>
 

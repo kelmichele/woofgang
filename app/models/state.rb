@@ -7,5 +7,5 @@ class State < ApplicationRecord
 	validates :name, presence: true
 	validates :full_name, presence: true
 
-  default_scope -> { order(name: :asc)}
+  default_scope -> { order(full_name: :asc)}
 end
