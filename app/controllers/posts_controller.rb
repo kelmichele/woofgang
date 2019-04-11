@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
 
 	def index
-    @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
+    @posts = Post.all.paginate(:page => params[:page], :per_page => 50)
   end
 
   def delete_image_attachment

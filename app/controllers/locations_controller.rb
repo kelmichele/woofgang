@@ -22,21 +22,21 @@ class LocationsController < ApplicationController
 	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
 	    distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
 	    box      = Geocoder::Calculations.bounding_box(center, distance)
-	    Location.within_bounding_box(box).paginate(:page => params[:page], :per_page => 9)
+	    Location.within_bounding_box(box)
 
 	  elsif params[:near]
 	  	# for type search
 	    # Location.near(params[:near], 20, :order => "distance").paginate(:page => params[:page], :per_page => 9)
-	    Location.near(params[:near], params[:proximity], :order => "distance").paginate(:page => params[:page], :per_page => 9)
+	    Location.near(params[:near], params[:proximity], :order => "distance")
 
 	  elsif params[:tag]
 	    #ADDED ORDER, 3/12 Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200).paginate(:page => params[:page], :per_page => 9)
-	    Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200, :order => "distance").paginate(:page => params[:page], :per_page => 9)
+	    Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200, :order => "distance")
 	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
 	    # neighbors.all.paginate(:page => params[:page], :per_page => 110)
-	    Location.near(crds, 100, :order => "distance").paginate(:page => params[:page], :per_page => 9)
+	    Location.near(crds, 100, :order => "distance")
 		end
 
 		@tags = Tag.find(9,1,2,3,0)
