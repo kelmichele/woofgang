@@ -42,28 +42,28 @@ class LocationsController < ApplicationController
 		@tags = Tag.find(9,1,2,3,0)
 		# @tags = Tag.all
 
-		gon.result_info = if params[:near]
-			# search
-			if @locations.count > 0
-				"#{@locations.count} " + 'location(s) within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
-			else
-				'There are currently no locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
-			end
+		# gon.result_info = if params[:near]
+		# 	# search
+		# 	if @locations.count > 0
+		# 		"#{@locations.count} " + 'location(s) within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
+		# 	else
+		# 		'There are currently no locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
+		# 	end
 
-		elsif params[:tag]
-			if @locations.count < 1
-				'There are currently no locations in your area that offer <b>"' + params[:tag] + '</b>."'
-			else
-				" "
-			end
+		# elsif params[:tag]
+		# 	if @locations.count < 1
+		# 		'There are currently no locations in your area that offer <b>"' + params[:tag] + '</b>."'
+		# 	else
+		# 		" "
+		# 	end
 
-		else
-			if @locations.count < 1
-				"There are currently no locations in your area. Use the map above to search other areas."
-			else
-				"#{@locations.count} " + 'location(s) in your area.'
-			end
-		end
+		# else
+		# 	if @locations.count < 1
+		# 		"There are currently no locations in your area. Use the map above to search other areas."
+		# 	else
+		# 		"#{@locations.count} " + 'location(s) in your area.'
+		# 	end
+		# end
 
 		respond_to do |format|
 		  format.html
