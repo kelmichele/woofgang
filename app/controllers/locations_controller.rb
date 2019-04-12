@@ -40,34 +40,15 @@ class LocationsController < ApplicationController
 		end
     @pagy, @locations = pagy(@locations, items: 9)
 
-
 		@tags = Tag.find(9,1,2,3,0)
 
 
-		@locCount = Location.all.count
+		# @locCount = Location.all.count
 		gon.result_info = if params[:near]
 			# search
-			if @locCount > 0
-				"#{@locCount} " + 'location(s) within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
-			else
-				'There are currently no locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
-			end
-
-		elsif params[:tag]
-			if @locCount < 1
-				'There are currently no locations in your area that offer <b>"' + params[:tag] + '</b>."'
-			else
-				# "#{@locCount} " + 'location(s) in your area that offer <b>' + params[:tag].capitalize + '</b>.'
-				" "
-			end
-
+			'location(s) within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
 		else
-			if @locCount < 1
-				"There are currently no locations in your area. Use the map above to search other areas."
-			else
-				# "#{@locCount} " + 'location(s) in your area.'
-				" "
-			end
+			" "
 		end
 
 		
@@ -128,8 +109,6 @@ class LocationsController < ApplicationController
 	def get_user_location
 	  ip_address = request.remote_ip
   	# ip_address = "192.96.192.142"
-		# ip_address = "174.110.241.123"
-  	# ip_address = "107.167.195.186"
     Pointa.get_pointa ip_address
   end
 
