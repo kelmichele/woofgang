@@ -36,7 +36,7 @@ class LocationsController < ApplicationController
 
 	  else
 	    # neighbors.all.paginate(:page => params[:page], :per_page => 110)
-	    Location.near(crds, 700, :order => "distance")
+	    Location.near(crds, 700, :order => "distance").paginate(:page => params[:page], :per_page => 9)
 		end
 
 		@tags = Tag.find(9,1,2,3,0)

@@ -25,6 +25,9 @@ gem 'will_paginate'
 # gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 
+# gem 'trix-gem'
+gem 'trix-rails', require: 'trix'
+
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
 
@@ -68,3 +71,4 @@ gem 'redis', '~> 4.0', '>= 4.0.2'
 # , require: true
 gem 'IPinfo'
 # gem 'searchkick'
+

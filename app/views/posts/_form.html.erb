@@ -36,7 +36,9 @@
 
 		<div class="form-group content">
 	    *<%= f.label :content %><br>
-	    <%= f.text_area :content %>
+	    <!-- <= f.text_area :content %> -->
+
+	    <%= trix_editor :post, :content %>
 		</div>
 
 		<div class="form-group final">

@@ -42,6 +42,7 @@
 					<p class="date"><%= @post.date.strftime("%m/%d/%Y")  %></p>
 				<% end %>
 				<%= simple_format(@post.content) %>
+				<!-- html_safe -->
 			</div>
 		</div>
 	</div>
