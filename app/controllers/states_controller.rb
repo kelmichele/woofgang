@@ -12,7 +12,9 @@ class StatesController < ApplicationController
 		@state_locations = @state.locations.all
 		@states = State.all
 
-		@locations =  @state_locations.paginate(:page => params[:page], :per_page => 40)
+		@locations =  @state_locations
+		# .paginate(:page => params[:page], :per_page => 40)
+    @pagy, @locations = pagy(@state_locations.all, items: 9)
 	end
 
 	def new
