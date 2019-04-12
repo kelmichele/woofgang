@@ -12,9 +12,11 @@
 				<% end %>
 
 				<div class="cat address">
-					<%= location.street_address_one.strip %><% if location.street_address_two %>,
-					<span class="addr"><%= location.street_address_two %></span>
+					<%= location.street_address_one.strip %>
+					<% if location.street_address_two && location.street_address_two.size > 1 %>
+						<br><span class="addr"><%= location.street_address_two %></span>
 					<% end %>
+
 					<br><%= location.city.strip %>, <%= location.state.name %> <%= location.zip %>
 				</div>
 

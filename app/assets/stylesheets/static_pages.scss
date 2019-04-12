@@ -650,6 +650,7 @@ hr{
   .location-bx {
     display: inline-block; width: 31%; float: left;
     min-height: 290px;
+    min-height: 315px;
     margin:10px 1% 40px;
     color:$tbrown; background-color: $white;
     padding: 15px 20px 0px 20px;
@@ -674,6 +675,10 @@ hr{
 
       }
     }
+
+    // KP IF BUTTONS LOOK MISMATCHED, BUILD FROM THIS.
+    position: relative;
+    .btn-row{position:absolute; bottom:5px; margin:0; left:5%; width:90%;}
   }
 
   @media (max-width:1200px) {
@@ -729,6 +734,16 @@ hr{
     }
   }
 
+  @include bp(nn) {
+    .loclist .inside {width:70%;}
+    .location-bx {
+      min-height: 335px;
+      width:48%; margin:10px 1% 20px;
+
+      // .btn-row{position:relative;}
+    }
+  }
+
   @include bp(tn) {
     .full-search {padding-bottom: 20px;}
 
@@ -739,10 +754,10 @@ hr{
     }
 
     .loclist .inside {width:80%;}
-    .location-bx {
-      min-height: 335px;
-      width:48%; margin:10px 1% 20px;
-    }
+    // .location-bx {
+    //   min-height: 335px;
+    //   width:48%; margin:10px 1% 20px;
+    // }
 
     .pagination { margin-top: 10px;}
   }
@@ -768,13 +783,18 @@ hr{
       .filter-box { width:85%;margin-top: 10px;}
     }
 
-    .location-bx{min-height: 355px;}
+    // .location-bx{min-height: 355px;}
   }
 
   @include bp(ph) {
     .admin-uk{left: 90%; }
     .search-sec{
       .searcher,.filter-box { width:95%; margin-left: auto;}
+    }
+    
+    .loclist .inside {width:65%;}
+    .location-bx{@include sec-default(); min-height: auto;
+      .btn-row{position: relative;}
     }
   }
 
@@ -786,7 +806,7 @@ hr{
       select {width:80%;}
     }
 
-    .location-bx{@include sec-default(); min-height: auto;}
+    .loclist .inside {width:80%;}
   }
 }
 
