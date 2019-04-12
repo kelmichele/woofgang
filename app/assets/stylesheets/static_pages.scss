@@ -1815,6 +1815,7 @@ hr{
       p,div {font-size: 15px; margin:10px 0; color:$black; font-family: $helv; font-weight: 300;
         strong{font-weight:600;}
         del { text-decoration: underline;}
+        em{color:$black;}
       }
 
       p.date{font-size: 14px; color: #666; margin:0px;}
