@@ -30,43 +30,47 @@ class LocationsController < ApplicationController
 	    Location.near(params[:near], params[:proximity], :order => "distance")
 
 	  elsif params[:tag]
-	    #ADDED ORDER, 3/12 Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200).paginate(:page => params[:page], :per_page => 9)
+	    #ADDED ORDER, 3/12
 	    Location.tagged_with(params[:tag]).near([@user_lat, @user_lng], 1200, :order => "distance")
 	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
 	    # neighbors.all.paginate(:page => params[:page], :per_page => 110)
 	    Location.near(crds, 500, :order => "distance")
-	    # .paginate(:page => params[:page], :per_page => 9)
 		end
     @pagy, @locations = pagy(@locations, items: 9)
 
 
 		@tags = Tag.find(9,1,2,3,0)
-		# @tags = Tag.all
 
-		# gon.result_info = if params[:near]
-		# 	# search
-		# 	if @locations.count > 0
-		# 		"#{@locations.count} " + 'location(s) within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
-		# 	else
-		# 		'There are currently no locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
-		# 	end
 
-		# elsif params[:tag]
-		# 	if @locations.count < 1
-		# 		'There are currently no locations in your area that offer <b>"' + params[:tag] + '</b>."'
-		# 	else
-		# 		" "
-		# 	end
+		@locCount = Location.all.count
+		gon.result_info = if params[:near]
+			# search
+			if @locCount > 0
+				"#{@locCount} " + 'location(s) within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
+			else
+				'There are currently no locations within ' + params[:proximity] + ' miles of <b>"' + params[:near] + '"</b>'
+			end
 
-		# else
-		# 	if @locations.count < 1
-		# 		"There are currently no locations in your area. Use the map above to search other areas."
-		# 	else
-		# 		"#{@locations.count} " + 'location(s) in your area.'
-		# 	end
-		# end
+		elsif params[:tag]
+			if @locCount < 1
+				'There are currently no locations in your area that offer <b>"' + params[:tag] + '</b>."'
+			else
+				# "#{@locCount} " + 'location(s) in your area that offer <b>' + params[:tag].capitalize + '</b>.'
+				" "
+			end
+
+		else
+			if @locCount < 1
+				"There are currently no locations in your area. Use the map above to search other areas."
+			else
+				# "#{@locCount} " + 'location(s) in your area.'
+				" "
+			end
+		end
+
+		
 
 		respond_to do |format|
 		  format.html
@@ -122,8 +126,10 @@ class LocationsController < ApplicationController
 	end
 
 	def get_user_location
-	  ip_address = request.remote_ip
+	  # ip_address = request.remote_ip
   	# ip_address = "192.96.192.142"
+		# ip_address = "174.110.241.123"
+  	ip_address = "107.167.195.186"
     Pointa.get_pointa ip_address
   end
 
