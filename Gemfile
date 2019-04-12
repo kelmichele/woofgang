@@ -27,6 +27,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 
 # gem 'trix-gem'
 gem 'trix-rails', require: 'trix'
+gem 'pagy', '~> 2.1', '>= 2.1.5'
 
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'

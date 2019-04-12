@@ -2213,3 +2213,16 @@ hr{
 .notice.scs, .alert.scs {
   p {margin: 15px 0 10px;}
 }
+
+
+
+.pagy-nav.pagination{
+  @include sec-default(); text-align: center; margin-top: 0px;
+
+  span{color:$black; font-size:14px; margin:0 5px;}
+  span.active{font-weight: bold; text-decoration: underline;}
+  span.disabled{color:#c7c7c7;}
+  // active prev disabled
+}
+
+

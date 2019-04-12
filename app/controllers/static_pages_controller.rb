@@ -19,7 +19,9 @@ class StaticPagesController < ApplicationController
 	end
 
 	def blog
-    @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
+    # @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
+		# @pagy, @records = pagy(Product.some_scope, some_option: 'some option for this instance')
+    @pagy, @posts = pagy(Post.all, items: 12)
 
     respond_to do |format|
       format.html
