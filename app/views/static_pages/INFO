@@ -1,3 +1,5 @@
+# if Rails.env.production? end
+
 FAKE Locations
 	new = Location.new(street_address_one: "13701 Perdido Key Dr", city: "Pensacola", state_id: 2, zip: "32507", phone: "1234567", latitude: 30.2964886, longitude: -87.4313131, store_name: "WGB Temporary", email_address: "temp@wgb.com", hours: "This is not a real store, created for testing", slug: "wgb-temporary", coming_soon: true)
 

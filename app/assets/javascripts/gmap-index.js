@@ -97,6 +97,7 @@ document.addEventListener("turbolinks:load", function() {
   });
 
   addMarkers();
+  console.log("Official: " + gon.user_station);
 
   // map.addListener("dragend", function() {
   //   var bounds = map.getBounds();
