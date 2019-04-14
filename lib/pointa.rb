@@ -3,8 +3,8 @@ module Pointa
   require 'json'
 
   def get_pointa ip_address
-    pointa = Net::HTTP.get(URI("https://ipapi.co/#{ip_address}/json/"))
-    # pointa = Net::HTTP.get(URI("https://ipapi.co/json/"))
+    # pointa = Net::HTTP.get(URI("https://ipapi.co/#{ip_address}/json/"))
+    pointa = Net::HTTP.get(URI("https://ipapi.co/json/"))
 
     JSON.parse(pointa)
   end

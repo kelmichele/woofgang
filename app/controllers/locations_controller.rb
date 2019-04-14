@@ -1,4 +1,4 @@
-require 'pointa'
+# require 'pointa'
 
 class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
@@ -6,11 +6,16 @@ class LocationsController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
 	def index
-		pointa = get_user_location
-		@user_lng = pointa["longitude"]
-    @user_lat = pointa["latitude"]
+		# pointa = get_user_location
+		# @user_lng = pointa["longitude"]
+    # @user_lat = pointa["latitude"]
+
+    @user_lng = Net::HTTP.get(URI("https://ipapi.co/longitude/"))
+    @user_lat = Net::HTTP.get(URI("https://ipapi.co/latitude/"))
+    uip = Net::HTTP.get(URI("https://ipapi.co/city/"))
+
    	crds = [@user_lat, @user_lng]
-   	uip = pointa["city"]
+   	# uip = pointa["city"]
 
    	gon.user_station = uip
 
@@ -39,7 +44,7 @@ class LocationsController < ApplicationController
 
 	  else
 	    # neighbors.all.paginate(:page => params[:page], :per_page => 110)
-	    Location.near(crds, 100, :order => "distance")
+	    Location.near(crds, 440, :order => "distance")
 		end
     @pagy, @locations = pagy(@locations, items: 9)
 
@@ -109,11 +114,12 @@ class LocationsController < ApplicationController
 		@location = Location.friendly.find(params[:id])
 	end
 
-	def get_user_location
-	  ip_address = request.remote_ip
-  	# ip_address = "192.96.192.142"
-    Pointa.get_pointa ip_address
-  end
+	# def get_user_location
+	#   # ip_address = request.remote_ip
+ #  	# ip_address = "192.96.192.142"
+ #  	# ip_address = Net::HTTP.get(URI("https://ipapi.co/ip/"))
+ #    Pointa.get_pointa ip_address
+ #  end
 
 	def location_params
     params.require(:location).permit(:store_name, :email_address, :phone, :fb, :twitter, :insta, :yelp, :site, :street_address_one, :street_address_two, :city, :state, :zip, :hours, :latitude, :longitude, :tag_list, :tag, :state_id, :coming_soon, { tag_ids: [] }, :tag_ids, :image)
