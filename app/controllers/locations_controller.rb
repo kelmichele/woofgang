@@ -1,4 +1,4 @@
-# require 'pointa'
+require 'pointa'
 
 class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
