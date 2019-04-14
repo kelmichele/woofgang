@@ -11,7 +11,8 @@ class LocationsController < ApplicationController
     @user_lat = pointa["latitude"]
 
    	crds = [@user_lat, @user_lng]
-   	uip = pointa["city"]
+   	# uip = pointa["city"]
+   	uip = request.remote_ip
 
    	gon.user_station = uip
 
