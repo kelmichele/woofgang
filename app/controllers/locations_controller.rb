@@ -9,11 +9,9 @@ class LocationsController < ApplicationController
 		pointa = get_user_location
 		@user_lng = pointa["longitude"]
     @user_lat = pointa["latitude"]
-
    	crds = [@user_lat, @user_lng]
-   	# uip = pointa["city"]
-   	uip = request.remote_ip
 
+   	uip = request.remote_ip
    	gon.user_station = uip
 
 		@states = State.all
@@ -41,7 +39,7 @@ class LocationsController < ApplicationController
 
 	  else
 	    # neighbors.all.paginate(:page => params[:page], :per_page => 110)
-	    Location.near(crds, 100, :order => "distance")
+	    Location.near(crds, 450, :order => "distance")
 		end
     @pagy, @locations = pagy(@locations, items: 9)
 
