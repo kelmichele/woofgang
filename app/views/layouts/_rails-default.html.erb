@@ -11,4 +11,6 @@
 <%= action_cable_meta_tag %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<% unless current_page?('/page') %>
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + Rails.application.credentials.google[:gmaps_key], :defer => "defer" %>
+<% end %>

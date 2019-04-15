@@ -508,7 +508,7 @@ hr{
 //*********************************//
 //*********** locations ***********//
 //*********************************//
-.locations, .states, .shops {
+.locations, .states, .shops, .page {
   .admin-uk{position:absolute; left: 80%; margin-top: -70px;}
   h1{margin-bottom: 0px; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
   h2{margin-top:6px; font-size:1.25rem; line-height: 1.1em;}
@@ -1019,16 +1019,46 @@ hr{
 
 
 
-// .page {
-//   .ipage-header {
-//     background-color: darken($opink,1%); padding:25px 0 20px;
-//   }
-//   #storerocket-widget .storerocket-result-website-link {
-//     font-size:13.5px; border-radius:0; letter-spacing: .2px;
-//    @include tshadowl(rgba($black, .1));
-//    padding:6px 20px;
-//   }
-// }
+.page {
+  .full-search {@include sec-default(); padding: 60px 0; background-color: $white;}
+  #storerocket-widget .storerocket-result-website-link {
+    font-size:13.5px; border-radius:0; letter-spacing: .2px;
+   @include tshadowl(rgba($black, .1));padding:6px 20px;
+  }
+
+  .storerocket-result-distance {display: none;}
+  .storerocket-result-name {color:$pink; font-family: $helv;}
+
+  #storerocket-search{width:75%; @include center-block();}
+  .storerocket-query {margin-right:0; margin-top:-3px;}
+  #storerocket-widget .storerocket-radius-button {
+    color: $tbrown; font-size:14px; border-radius: 0;
+    background-color: $pink; color: $white;
+  }
+
+  .storerocket-filters{margin-left: 15%;}
+  #storerocket-widget .storerocket-filters-button{
+    height:40px; color: $tbrown; font-size:14px; padding-right:0; width:300px;text-align:left;
+    span{background-color: $pink; color:$white; height:40px; padding: 1px 15px; float:right;}
+  }
+
+
+  .storerocket-filters .storerocket-filters--item-color{display:none;}
+  .storerocket-filters .storerocket-filters--item{padding-left:30px; background-color: transparent;
+    &::before{
+    @include before(); width:30px; height:30px; margin-left:-8px;
+    @include sec-bgimage('tag-groom.png'); background-size: 60%; background-position: bottom right;
+    background-color: none;
+    }
+
+    &:nth-child(2)::before{background-image:url(image_path('bag3.png'));}
+    &:nth-child(3)::before{background-image:url(image_path('tag-ss.png'));}
+    &:nth-child(4)::before{background-image:url(image_path('tag-daycare.png'));}
+    &:nth-child(5)::before{background-image:url(image_path('tag-vet2.png'));}
+  }
+  
+  #storerocket-powered {display: none;}
+}
 
 //*********************************//
 //*********** services ***********//
