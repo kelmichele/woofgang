@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	helper_method :current_user
-	helper_method :request_ip
+	helper_method :ip_one
 
 	include Pagy::Backend
 
-	def request_ip
-		@request_ip = request.remote_ip
-   	gon.req_remote = @request_ip
+	def ip_one
+		ip_one = request.remote_ip
+   	gon.req_remote = ip_one
 	end
 end
