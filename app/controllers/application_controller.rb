@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 	include Pagy::Backend
 
 	def request_ip
-		@request_ip = request.ip
-   	gon.req_premote = @request_ip
+		@request_ip = request.remote_ip
+   	gon.req_remote = @request_ip
 	end
 end
