@@ -1,19 +1,15 @@
-<% @page_title = "Woof Gang Bakery Blog" %>
-<% @page_description = "" %>
+<% @page_title = "Our Locations" %>
+<% @page_description = "Woof Gang Bakery has over 110 locations in the U.S. Use our map to find a location near you." %>
 
 <div class="ipage-header">
-	<div class="inside med2">
-		<h1>Woof Gang Bakery Blog</h1>
-		<% if user_signed_in? && current_user.admin? %>
-	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
-	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
-  			<%= link_to "Create New Post", new_post_path, class: 'woof-link' %>
-      </div>
-		<% end %>
+	<div class="inside narrow">
+		<h1><%= @page_title %></h1>
+		<h2>Use the map below to find a location near you.</h2>
 	</div>
 </div>
 
-<div class="full-sec">
+
+<div class="full-search">
 	<div class="inside">
 		<!-- <div class="top">
 			<h1>Woof Gang Bakery Blog</h1>
@@ -24,24 +20,9 @@
 	      </div>
 			<% end %>
 		</div> -->
+<!-- <div id='storerocket-widget' style='width:100%;' data-storerocket-env='p' data-storerocket-id='2BrJqjZ8qE'><p style='text-align:center;font-size:13px;padding:10px;'>Store locator is loading from StoreRocket <a target='_blank' href='https://storerocket.io' style='font-size:13px;'>Store Locator Software</a>..</p></div><script>(function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.src='https://cdn.storerocket.io/js/widget-mb.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());</script> -->
 
-		<ul class="blog-posts">
-		<% @posts.each do |post| %>
-			<style type="text/css">
-				.post-li.post-<%= post.id %> {
-					<% if post.image.attached? %>
-						background-image: url(<%= rails_blob_url(post.image) %>);
-						<% else %>
-						background-image: url(/assets/home-slide-bone.jpg);
-					<% end %>
-				}
-			</style>
-
-			<%= link_to post_path(post), class: "post-li post-#{post.id}" do %>
-			  <h3 class="title"><%= post.title %></h3>
-			<% end %>
-		<% end %>
-		</ul>
-	</div>
-	<%= will_paginate @posts, remote: true %>
+<div id='storerocket-widget' style='width:100%;' data-storerocket-env='p' data-storerocket-id='2BrJqjZ8qE'><p style='text-align:center;font-size:13px;padding:10px;'>Store locator is loading from StoreRocket <a target='_blank' href='https://storerocket.io' style='font-size:13px;'>Store Locator Software</a>..</p></div><script>(function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.src='https://cdn.storerocket.io/js/widget.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());</script>
 </div>
+
+<!-- https://storerocket.io/pricing -->
