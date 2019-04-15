@@ -17,3 +17,5 @@
 //= require turbolinks
 //= require trix
 //= require_tree .
+
+  console.log("app request: " + gon.req_remote);
