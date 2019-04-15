@@ -18,4 +18,5 @@
 //= require trix
 //= require_tree .
 
-  console.log("app request: " + gon.req_remote);
+
+console.log("Store near:" + gon.home_loc);

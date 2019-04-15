@@ -38,8 +38,9 @@ class LocationsController < ApplicationController
 	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	    # neighbors.all.paginate(:page => params[:page], :per_page => 110)
-	    Location.near(crds, 100, :order => "distance")
+	  #   # neighbors.all.paginate(:page => params[:page], :per_page => 110)
+	    # Location.near(crds, 100, :order => "distance")
+			Location.near(crds, 5)
 		end
     @pagy, @locations = pagy(@locations, items: 9)
 

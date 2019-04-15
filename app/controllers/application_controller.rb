@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	helper_method :current_user
-	helper_method :ip_one
+	helper_method :home_loc
 
 	include Pagy::Backend
 
-	def ip_one
-		ip_one = request.remote_ip
-   	gon.req_remote = ip_one
-	end
+	def home_loc
+  	home_loc = request.env['HTTP_X_FORWARDED_FOR']
+  	gon.home_loc = home_loc
+  end
+
 end
