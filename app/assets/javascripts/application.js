@@ -17,6 +17,3 @@
 //= require turbolinks
 //= require trix
 //= require_tree .
-
-
-console.log("Store near:" + gon.home_loc);

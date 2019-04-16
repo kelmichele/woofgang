@@ -1030,7 +1030,13 @@ hr{
   .storerocket-result-name {color:$pink; font-family: $helv;}
 
   #storerocket-search{width:75%; @include center-block();}
-  .storerocket-query {margin-right:0; margin-top:-3px;}
+  #storerocket-widget .storerocket-filters-button,
+  .storerocket-search-field,
+  #storerocket-widget .storerocket-radius-button {
+    box-shadow: 0px 1px 4px rgba($black, .2) !important;
+  }
+
+  .storerocket-query {margin-right:0; margin-top:-3px; color:$tbrown !important;}
   #storerocket-widget .storerocket-radius-button {
     color: $tbrown; font-size:14px; border-radius: 0;
     background-color: $pink; color: $white;
