@@ -8,38 +8,27 @@ html {
 }
 
 
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url('HelveticaNeue.eot');
-    src: url('HelveticaNeue.eot?#iefix') format('embedded-opentype'),
-        url('HelveticaNeue.woff2') format('woff2'),
-        url('HelveticaNeue.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
-@font-face {
-    font-family: 'Helvetica Neue Mid';
-    src: url('HelveticaNeue-Light.eot');
-    src: url('HelveticaNeue-Light.eot?#iefix') format('embedded-opentype'),
-        url('HelveticaNeue-Light.woff2') format('woff2'),
-        url('HelveticaNeue-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
 // @font-face {
-//     font-family: 'Helvetica Neue Bold';
-//     src: url('HelveticaNeue-Medium.eot');
-//     src: url('HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
-//         url('HelveticaNeue-Medium.woff2') format('woff2'),
-//         url('HelveticaNeue-Medium.woff') format('woff');
-//     font-weight: 500;
+//     font-family: 'Helvetica Neue';
+//     src: url('HelveticaNeue.eot');
+//     src: url('HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+//         url('HelveticaNeue.woff2') format('woff2'),
+//         url('HelveticaNeue.woff') format('woff');
+//     font-weight: normal;
 //     font-style: normal;
 // }
 
+
+
+// @font-face {
+//     font-family: 'Helvetica Neue Mid';
+//     src: url('HelveticaNeue-Light.eot');
+//     src: url('HelveticaNeue-Light.eot?#iefix') format('embedded-opentype'),
+//         url('HelveticaNeue-Light.woff2') format('woff2'),
+//         url('HelveticaNeue-Light.woff') format('woff');
+//     font-weight: 300;
+//     font-style: normal;
+// }
 
 *,
 *::before,
@@ -109,11 +98,10 @@ body {
     &.brown {color: $brown;}
     &.strong {font-weight: bold;}
     &.semi {font-weight: $semi;}
-    b {font-family: $helv;}
   }
   p,li{font-weight: 300;}
   p{font-size: 17px;}
-  h1{font-size: 2rem; font-family:$helv;}
+  h1{font-size: 2rem;}
   h2{font-size: 1.75rem;}
 }
 .bmargin0 {margin-bottom: 0;}

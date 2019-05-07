@@ -73,8 +73,8 @@ hr{
 
 .clearfix.btn {@include sec-default(); margin-top:20px;}
 
-.woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3)); font-family:$helv;}
-.text-link{font-weight: $semi; color: $pink; font-family: $helv;
+.woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3)); }
+.text-link{font-weight: $semi; color: $pink; 
   &.blue{color: $compb;}
   &.und {text-decoration: underline; }
 }
@@ -655,7 +655,7 @@ hr{
     a {color: $tbrown;}
     .sm-mail {display: none;}
 
-    .cat {@include sec-default(); margin-bottom: 10px;font-family:$helv;
+    .cat {@include sec-default(); margin-bottom: 10px;
       font-size: 14px; line-height: 1.4em;
       &.name {font-weight: bold; border-bottom: 1px solid rgba($tbrown, .1); color:$pink; padding-bottom: 5px;}
       &.hours {margin-bottom: 0;}
@@ -813,7 +813,7 @@ hr{
   h1, h2{color:$black; }
   h2{margin-bottom: 0;font-weight:300; font-size: 1.2rem;}
   h1{margin-top: 0px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
-  h4,h3{font-size: 1.2rem; font-weight: bold; color:$pink; font-family:$helv; }
+  h4,h3{font-size: 1.2rem; font-weight: bold; color:$pink;  }
   h4{margin-bottom: 0; text-transform: uppercase; letter-spacing: .8px;}
   .text-link{ color: $tbrown;}
 
@@ -1133,7 +1133,7 @@ hr{
 
   .list-box{@include sec-default(); padding: 80px 0 60px;
     h4{font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin: 0px; color:$black;
-      font-family:$helv;
+      
     }
 
     .left,.sl-hlf{display: inline-block; float: left; width:40%; width:37%;}
@@ -1757,7 +1757,7 @@ hr{
 
     h3{color: $tbrown; font-weight: $semi; font-size: 15px;text-align: center;
       background-color: rgba($fa, .9); padding: 15px; width:100%; position: absolute; bottom:-20px;
-      font-family:$helv;
+      
     }
 
     .feat-img, .feat-content {display: inline-block; float: left; position: relative; z-index: 1;}
@@ -2093,7 +2093,7 @@ hr{
 }
 
 .estates, .reporters, .vendors {
-  label, select {font-family:$helv;}
+  label, select {}
   h1{margin-bottom: 0; color:$pink;}
   p {margin-top: 5px;}
   .full.top {
@@ -2120,7 +2120,7 @@ hr{
   hr{@include sec-default();}
   h3 {@include sec-default();margin-bottom: 15px; font-size: 1.1rem; font-weight: bold;
     text-transform: uppercase; letter-spacing: 1px; color:$pink; margin-left: -15px;
-    font-family:$helv;
+    
   }
 
   @include bp(tb) {
@@ -2195,7 +2195,7 @@ hr{
     .right{width:55%; float: right;
       fieldset{margin:0; padding:0;}
       .form-group {@include sec-default(); margin-bottom: 10px;}
-      label,select {font-size: 14px; font-family:$helv;}
+      label,select {font-size: 14px; }
       .form-group.grapevine, .form-group.state, .form-group.location{padding-bottom: 10px;}
 
       h4{letter-spacing: 1px; text-transform: uppercase; font-weight: bold; margin-bottom: 3px; font-family: $helv;}

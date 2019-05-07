@@ -101,9 +101,7 @@ br.tn {display: none;}
 
 	// fw
 	.col {@include sec-default(); position: relative;
-		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; font-size: 1.15rem; 
-			font-family: $helv;
-		}
+		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; font-size: 1.15rem; }
 
 		.full, .image-nrw, .image-box {margin-bottom: 80px; display: inline-block;float: left; width:45%;
 			&.two, &.four{float: right;}
@@ -300,7 +298,7 @@ br.tn {display: none;}
 				li{margin-bottom: 13px;}
 			}
 
-			p.sig{font-size: 18px;font-weight: 400; letter-spacing: .3px; color: $pink; font-family:$helv;}
+			p.sig{font-size: 18px;font-weight: 400; letter-spacing: .3px; color: $pink;}
 			p.reg{font-size: 16px; margin:5px 0 10px; }
 		}
 
@@ -651,7 +649,7 @@ br.tn {display: none;}
 		// .text {margin-top:3%;}
 		li.acc-faq {list-style-type: none;}
 		li::before{display: none;}
-		h4{font-size: 17px; margin-bottom: 0; text-transform: none; letter-spacing: 0; font-weight: 300; font-family: $helv2;}
+		h4{font-size: 17px; margin-bottom: 0; text-transform: none; letter-spacing: 0; font-weight: 300;}
 		.uk-accordion-content{border-top:1px solid rgba($tbrown,.1);border-bottom:1px solid rgba($tbrown,.1);
 		 	margin-top:10px; padding: 10px 0; width:90%; @include center-block();
 			p{font-weight: 300; font-size: 16px; }
