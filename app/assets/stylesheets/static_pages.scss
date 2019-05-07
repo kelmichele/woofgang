@@ -6,6 +6,7 @@
 @import "mixins";
 @import "variables";
 
+
 .admin-uk{padding:6px;background-color: $pink; color:$white; border:1px solid rgba($pink, .3); background-color:$pink;
   span {color:$white;}
 }
@@ -155,7 +156,6 @@ hr{
   }
 
   .nlay-intro {@include sec-default(); padding:65px 0;
-    h1{font-family: $helv;}
     &.franch{
       h4{font-weight: $semi;}
       .text{width:68%;}
@@ -186,7 +186,7 @@ hr{
 
     &.ff {
       h4, p{color:$white;@include tshadowl(rgba($black,.3)); font-weight: 400; margin:0;letter-spacing: .3px;}
-      h4{ margin-bottom: 10px; font-size: 1.2rem; font-family: $helv;}
+      h4{ margin-bottom: 10px; font-size: 1.2rem;}
 
       p{font-size: 17px;
         letter-spacing: .4px;
@@ -226,7 +226,7 @@ hr{
     .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; position: relative;
       margin-top: -40px;
       box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
-      h3{font-size: 1.35rem; font-family: $helv;}
+      h3{font-size: 1.35rem;}
     }
 
     .top {margin-bottom: 20px;}
@@ -595,9 +595,7 @@ hr{
   .full-search {@include sec-default(); padding: 0px 0 80px; background-color: $f9;}
   .search-sec{@include sec-default(); margin-bottom: 20px; text-align: center;
 
-    .searcher,.filter-box{display: inline-block; width:30%; float: none; box-shadow: 0px 1px 4px rgba($black, .2); margin-left: 3%; 
-      font-family: $helv;
-    }
+    .searcher,.filter-box{display: inline-block; width:30%; float: none; box-shadow: 0px 1px 4px rgba($black, .2); margin-left: 3%; }
 
     .form-control, select, .btn-outline-secondary.search {display: inline-block; float: left; height:44px; }
     .form-control {width:70%; border:0; padding-left: 15px;font-family: $body; margin-top: 0;}
@@ -2093,7 +2091,6 @@ hr{
 }
 
 .estates, .reporters, .vendors {
-  label, select {}
   h1{margin-bottom: 0; color:$pink;}
   p {margin-top: 5px;}
   .full.top {
@@ -2198,7 +2195,7 @@ hr{
       label,select {font-size: 14px; }
       .form-group.grapevine, .form-group.state, .form-group.location{padding-bottom: 10px;}
 
-      h4{letter-spacing: 1px; text-transform: uppercase; font-weight: bold; margin-bottom: 3px; font-family: $helv;}
+      h4{letter-spacing: 1px; text-transform: uppercase; font-weight: bold; margin-bottom: 3px;}
       p.print {margin: 0;}
       p.msg {font-size: 15px;}
       hr{margin-top: 14px;}
@@ -2297,6 +2294,5 @@ hr{
   span.disabled{color:#c7c7c7;}
   // active prev disabled
 }
-
 
 

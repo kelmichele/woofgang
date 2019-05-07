@@ -4,7 +4,7 @@
 	<% else %>
 	<title><%= @page_title  %> | Woof Gang Bakery</title>
 <% end %>
-<!-- <title><= @page_title  %> | Woof Gang Bakery</title> -->
+
 <%= Gon::Base.render_data %>
 
 <%= csrf_meta_tags %>
@@ -12,5 +12,7 @@
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 <% unless current_page?('/page') %>
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + Rails.application.credentials.google[:gmaps_key], :defer => "defer" %>
+<!-- <= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + Rails.application.credentials.google[:gmaps_key], :defer => "defer" %> -->
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + Rails.application.credentials.google[:gmaps_key], 'data-turbolinks-track': 'reload'  %>
 <% end %>
+

@@ -1,5 +1,52 @@
 # if Rails.env.production? end
 
+
+IF ADDING FONTS INTO APP:
+	STATIC_PAGES.SCSS---
+		// .woof-link, .text-link {font-family: $helv;}
+    // b {font-family: $helv;}
+
+		// TRY
+		// .home .page-body {
+		//   h1, h3, h4 {font-family: $helv;}
+		// }
+		// else
+		// .home .nlay-intro h1{font-family: $helv;}
+		// .home.bg-sec.ff h4{font-family: $helv;}
+		// .home .nlay-logos h3 {font-family: $helv;}
+
+		// .locations.index, .states.show {
+		  // .searcher,.filter-box{font-family: $helv;}
+		  // .location-bx .cat{font-family: $helv;}
+		// }
+		// .locations.show .cat {font-family: $helv;}
+		// .locations.show .title {font-family: $helv;}
+
+		// .services-layout .list-box h4 {font-family:$helv;}
+
+		//.posts.index, .blog .post-li h3 {font-family:$helv;}
+
+		//.contacts .cbody h4{font-family: $helv;}
+
+		// TRY
+		// label, select{font-family: $helv;}
+		//else
+		// .estates, .reporters, .vendors {font-family: $helv;
+			h3{font-family: $helv;}
+		}
+
+	
+	FRANCHISE_PAGES.SCSS ---
+		(might be more)
+		// .franchise-layout.fl2 .col h4{font-family: $helv;}
+		// .franchise-layout.fl1 .content-layout .full.fw p.sig{font-family: $helv;}
+
+	
+	HEAD_FOOT.SCSS ---
+		// .footer-level h5 {font-family:$helv;}
+
+
+
 FAKE Locations
 	new = Location.new(street_address_one: "13701 Perdido Key Dr", city: "Pensacola", state_id: 2, zip: "32507", phone: "1234567", latitude: 30.2964886, longitude: -87.4313131, store_name: "WGB Temporary", email_address: "temp@wgb.com", hours: "This is not a real store, created for testing", slug: "wgb-temporary", coming_soon: true)
 

@@ -84,14 +84,9 @@ body {
   @include bp(br) {
     border-top: 0;
   }
-  // background-color: $f8;
-  // padding:0 50px;
-  // .page-body {background-color: $f9;}
-
 
   // &.safari {-webkit-font-smoothing: antialiased;}
   h1, h2, h3, h4, h5, p, li, a {color: $black; line-height: 1.5em;font-family: $body;
-      // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     &.bmargin0 {margin-bottom: 0;}
     &.pop{font-family: $pop;}
     &.pink {color: $pink;}

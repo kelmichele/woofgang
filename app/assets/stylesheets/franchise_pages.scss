@@ -86,7 +86,6 @@ br.tn {display: none;}
 }
 
 
-
 /////
 .franchise-layout.fl2 {@include sec-default();padding-bottom: 80px;
 	.statement {@include sec-default(); padding: 80px 0;
@@ -101,7 +100,7 @@ br.tn {display: none;}
 
 	// fw
 	.col {@include sec-default(); position: relative;
-		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; font-size: 1.15rem; }
+		h4{font-weight: 500; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; font-size: 1.15rem; }	
 
 		.full, .image-nrw, .image-box {margin-bottom: 80px; display: inline-block;float: left; width:45%;
 			&.two, &.four{float: right;}
