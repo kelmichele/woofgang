@@ -73,8 +73,8 @@ hr{
 
 .clearfix.btn {@include sec-default(); margin-top:20px;}
 
-.woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3));}
-.text-link{font-weight: $semi; color: $pink;
+.woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3)); font-family:$helv;}
+.text-link{font-weight: $semi; color: $pink; font-family: $helv;
   &.blue{color: $compb;}
   &.und {text-decoration: underline; }
 }
@@ -155,6 +155,7 @@ hr{
   }
 
   .nlay-intro {@include sec-default(); padding:65px 0;
+    h1{font-family: $helv;}
     &.franch{
       h4{font-weight: $semi;}
       .text{width:68%;}
@@ -185,7 +186,7 @@ hr{
 
     &.ff {
       h4, p{color:$white;@include tshadowl(rgba($black,.3)); font-weight: 400; margin:0;letter-spacing: .3px;}
-      h4{ margin-bottom: 10px; font-size: 1.2rem;}
+      h4{ margin-bottom: 10px; font-size: 1.2rem; font-family: $helv;}
 
       p{font-size: 17px;
         letter-spacing: .4px;
@@ -197,12 +198,6 @@ hr{
       .images{
         text-align: right;max-height: 300px;
         .img1,.img2,.img3 {display: inline-block; float: none; width:32.8%; vertical-align: top;}
-
-        // .img1 {@include sec-bgimage('woof6.jpg'); height:300px;
-        //   .img-responsive{width:200px; @include center-block(); margin-top:60px;}
-        //   position: relative; z-index: 0;
-        //   &::before{@include before(); background-color: rgba($black,.45); }
-        // }
       }
     }
   }
@@ -231,7 +226,7 @@ hr{
     .text {width:80%; @include center-block(); padding: 20px 15px; background-color: $white; position: relative;
       margin-top: -40px;
       box-shadow: 0px -90px 10px rgba($black,.1); h3{margin: 0px 0; font-size: 1.5rem;}
-      h3{font-size: 1.35rem;}
+      h3{font-size: 1.35rem; font-family: $helv;}
     }
 
     .top {margin-bottom: 20px;}
@@ -600,7 +595,9 @@ hr{
   .full-search {@include sec-default(); padding: 0px 0 80px; background-color: $f9;}
   .search-sec{@include sec-default(); margin-bottom: 20px; text-align: center;
 
-    .searcher,.filter-box{display: inline-block; width:30%; float: none; box-shadow: 0px 1px 4px rgba($black, .2); margin-left: 3%;}
+    .searcher,.filter-box{display: inline-block; width:30%; float: none; box-shadow: 0px 1px 4px rgba($black, .2); margin-left: 3%; 
+      font-family: $helv;
+    }
 
     .form-control, select, .btn-outline-secondary.search {display: inline-block; float: left; height:44px; }
     .form-control {width:70%; border:0; padding-left: 15px;font-family: $body; margin-top: 0;}
@@ -658,7 +655,7 @@ hr{
     a {color: $tbrown;}
     .sm-mail {display: none;}
 
-    .cat {@include sec-default(); margin-bottom: 10px;
+    .cat {@include sec-default(); margin-bottom: 10px;font-family:$helv;
       font-size: 14px; line-height: 1.4em;
       &.name {font-weight: bold; border-bottom: 1px solid rgba($tbrown, .1); color:$pink; padding-bottom: 5px;}
       &.hours {margin-bottom: 0;}
@@ -816,7 +813,7 @@ hr{
   h1, h2{color:$black; }
   h2{margin-bottom: 0;font-weight:300; font-size: 1.2rem;}
   h1{margin-top: 0px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
-  h4,h3{font-size: 1.2rem; font-weight: bold; color:$pink; }
+  h4,h3{font-size: 1.2rem; font-weight: bold; color:$pink; font-family:$helv; }
   h4{margin-bottom: 0; text-transform: uppercase; letter-spacing: .8px;}
   .text-link{ color: $tbrown;}
 
@@ -1135,7 +1132,9 @@ hr{
   }
 
   .list-box{@include sec-default(); padding: 80px 0 60px;
-    h4{font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin: 0px; color:$black;}
+    h4{font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin: 0px; color:$black;
+      font-family:$helv;
+    }
 
     .left,.sl-hlf{display: inline-block; float: left; width:40%; width:37%;}
     .sl-hlf{width:62%; float: right;
@@ -1758,6 +1757,7 @@ hr{
 
     h3{color: $tbrown; font-weight: $semi; font-size: 15px;text-align: center;
       background-color: rgba($fa, .9); padding: 15px; width:100%; position: absolute; bottom:-20px;
+      font-family:$helv;
     }
 
     .feat-img, .feat-content {display: inline-block; float: left; position: relative; z-index: 1;}
@@ -2078,7 +2078,7 @@ hr{
   label {color: $black; font-weight: normal; font-size: 15px; letter-spacing: .2px;}
 
   input, textarea, select {border:0;color: $black; font-size: 14px; background-color: transparent;}
-  select {font-family: $body; color:$black; margin-bottom: 15px;}
+  select {font-family: $body; color:$black; margin-bottom: 15px; font-size:15px;}
 
 
   .form-group {border-bottom: 2px solid rgba($black,.1); margin-bottom:10px;
@@ -2093,6 +2093,7 @@ hr{
 }
 
 .estates, .reporters, .vendors {
+  label, select {font-family:$helv;}
   h1{margin-bottom: 0; color:$pink;}
   p {margin-top: 5px;}
   .full.top {
@@ -2119,6 +2120,7 @@ hr{
   hr{@include sec-default();}
   h3 {@include sec-default();margin-bottom: 15px; font-size: 1.1rem; font-weight: bold;
     text-transform: uppercase; letter-spacing: 1px; color:$pink; margin-left: -15px;
+    font-family:$helv;
   }
 
   @include bp(tb) {
@@ -2193,10 +2195,10 @@ hr{
     .right{width:55%; float: right;
       fieldset{margin:0; padding:0;}
       .form-group {@include sec-default(); margin-bottom: 10px;}
-      label,select {font-size: 14px;}
+      label,select {font-size: 14px; font-family:$helv;}
       .form-group.grapevine, .form-group.state, .form-group.location{padding-bottom: 10px;}
 
-      h4{letter-spacing: 1px; text-transform: uppercase; font-weight: bold; margin-bottom: 3px;}
+      h4{letter-spacing: 1px; text-transform: uppercase; font-weight: bold; margin-bottom: 3px; font-family: $helv;}
       p.print {margin: 0;}
       p.msg {font-size: 15px;}
       hr{margin-top: 14px;}
