@@ -111,7 +111,7 @@ class LocationsController < ApplicationController
 
 	def get_user_location
 	  ip_address = request.remote_ip
-  	ip_address = "192.96.192.142"
+  	# ip_address = "192.96.192.142"
   	# ip_address = Net::HTTP.get(URI("https://ipapi.co/ip/"))
     Pointa.get_pointa ip_address
   end
