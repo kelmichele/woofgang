@@ -1,6 +1,14 @@
 # if Rails.env.production? end
 
 
+STORE ROCKET KP EMBEDS:
+	<!-- <div id='storerocket-widget' style='width:100%;' data-storerocket-env='p' data-storerocket-id='2BrJqjZ8qE'><p style='text-align:center;font-size:13px;padding:10px;'>Store locator is loading from StoreRocket <a target='_blank' href='https://storerocket.io' style='font-size:13px;'>Store Locator Software</a>..</p></div><script>(function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.src='https://cdn.storerocket.io/js/widget-mb.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());</script> -->
+
+		<!-- <div id='storerocket-widget' style='width:100%;' data-storerocket-env='p' data-storerocket-id='2BrJqjZ8qE'><p style='text-align:center;font-size:13px;padding:10px;'>Store locator is loading from StoreRocket <a target='_blank' href='https://storerocket.io' style='font-size:13px;'>Store Locator Software</a>..</p></div><script>(function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.src='https://cdn.storerocket.io/js/widget.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());</script>
+		</div>
+		 -->
+
+
 IF ADDING FONTS INTO APP:
 	STATIC_PAGES.SCSS---
 		// .woof-link, .text-link {font-family: $helv;}
