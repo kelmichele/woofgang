@@ -38,10 +38,10 @@ class LocationsController < ApplicationController
 	    # Location.near([@user_lat, @user_lng], 60, select: "locations.*, tags.*").joins(:tags).paginate(:page => params[:page], :per_page => 9)
 
 	  else
-	  #   # neighbors.all.paginate(:page => params[:page], :per_page => 110)
+		  # neighbors.all.paginate(:page => params[:page], :per_page => 110)
 	    Location.near(crds, 100, :order => "distance")
 		end
-    @pagy, @locations = pagy(@locations, items: 9)
+    @pagy, @locations = pagy(@locations, items: 109)
 
 		@tags = Tag.find(9,1,2,3,0)
 
@@ -111,7 +111,7 @@ class LocationsController < ApplicationController
 
 	def get_user_location
 	  ip_address = request.remote_ip
-  	# ip_address = "192.96.192.142"
+  	ip_address = "192.96.192.142"
   	# ip_address = Net::HTTP.get(URI("https://ipapi.co/ip/"))
     Pointa.get_pointa ip_address
   end
