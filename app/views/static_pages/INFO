@@ -1,12 +1,8 @@
+STOCKIST IMPORT STOPS AT THE WOODLANDS. THE NEXT IMPORT SHOULD START WITH THORNTON.
+
+
 # if Rails.env.production? end
 
-
-STORE ROCKET KP EMBEDS:
-	<!-- <div id='storerocket-widget' style='width:100%;' data-storerocket-env='p' data-storerocket-id='2BrJqjZ8qE'><p style='text-align:center;font-size:13px;padding:10px;'>Store locator is loading from StoreRocket <a target='_blank' href='https://storerocket.io' style='font-size:13px;'>Store Locator Software</a>..</p></div><script>(function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.src='https://cdn.storerocket.io/js/widget-mb.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());</script> -->
-
-		<!-- <div id='storerocket-widget' style='width:100%;' data-storerocket-env='p' data-storerocket-id='2BrJqjZ8qE'><p style='text-align:center;font-size:13px;padding:10px;'>Store locator is loading from StoreRocket <a target='_blank' href='https://storerocket.io' style='font-size:13px;'>Store Locator Software</a>..</p></div><script>(function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.src='https://cdn.storerocket.io/js/widget.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());</script>
-		</div>
-		 -->
 
 
 IF ADDING FONTS INTO APP:
@@ -53,7 +49,19 @@ IF ADDING FONTS INTO APP:
 	HEAD_FOOT.SCSS ---
 		// .footer-level h5 {font-family:$helv;}
 
-
+LOCATION STATE COUNTS:
+	ct = Location.where(state_id: 1) -- 1
+	fl = Location.where(state_id: 2) -- 42
+	ga = Location.where(state_id: 3) -- 7
+	ks = Location.where(state_id: 4) -- 3
+	nc = Location.where(state_id: 5) -- 11
+	nj = Location.where(state_id: 6) -- 6
+	nv = Location.where(state_id: 7) -- 2
+	ny = Location.where(state_id: 8) -- 1
+	sc = Location.where(state_id: 9) -- 5
+	tn = Location.where(state_id: 10) -- 2
+	tx = Location.where(state_id: 11) -- 21
+	va = Location.where(state_id: 12) -- 3
 
 FAKE Locations
 	new = Location.new(street_address_one: "13701 Perdido Key Dr", city: "Pensacola", state_id: 2, zip: "32507", phone: "1234567", latitude: 30.2964886, longitude: -87.4313131, store_name: "WGB Temporary", email_address: "temp@wgb.com", hours: "This is not a real store, created for testing", slug: "wgb-temporary", coming_soon: true)
@@ -77,6 +85,41 @@ HELPFUL
 	"ORL: 192.96.192.142"
 	"NC: 174.110.241.123"
 	"GS: 173.20.21.212"
+
+
+LOCATIONS WITH ANOM. NAMES:
+	<!-- Landstar --> X
+	<!-- Lakeside Village --> X
+	<!-- Conway --> X
+	<!-- Thornton Park -->
+	<!-- Lake Nona -->
+	<!-- Downtown Winter Park --> --
+	<!-- Waterford Lakes --> --
+	<!-- Sumter  -->
+	<!-- South Tampa -->
+	<!-- St. Armands -->
+	<!-- Nocatee -->
+	<!-- Avondale --> --
+	<!-- Abacoa -->
+	<!-- Yamato --> √
+	~ Bal Harbour Square --
+	-- Starland
+	<!-- Bull Street -->
+	-- City Market
+	<!-- Saint Julian --> --
+	<!-- River Street -->
+	<!-- South Park --> --
+	<!-- Wakefield --> --
+	<!-- West U --> --
+	<!-- The Woodlands -->
+	<!-- Cedar Park --> √
+	<!-- Westlake --> -- X
+	<!-- Circle C --> -- √
+	<!-- Bee Cave  --> √
+	<!-- Stone Oak --> √
+
+
+
 
 
 LOCATION PAGE:
@@ -168,3 +211,9 @@ LOCATIONS EXTRAS
 	heroku config:set  REDISTOGO_URL=redis://redistogo:f60167df7479ead015249116b05ac2f4@spinyfin.redistogo.com:11064/
 	heroku config:set  REDIS_URL=redis://redistogo:f60167df7479ead015249116b05ac2f4@spinyfin.redistogo.com:11064/
 	unset.   get
+
+
+	Box: pk.eyJ1Ijo
+	ia3BhcnJpcyIsImEiOiJjanZ
+	mZjQ1aXEwYmZzM3l0aDloeXBmaHlmIn0.W7P-
+	rQHcELL4wogzYSKu9g

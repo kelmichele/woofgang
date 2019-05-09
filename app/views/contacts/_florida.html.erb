@@ -75,3 +75,46 @@ jQuery(document).ready(function(){
   });
 });
 </script>
+
+
+
+
+
+
+<!-- data-storerocket-filters='fill' -->
+<select id="locate_list" class="serviceFilter">
+  <option selected value="">Select a Service...</option>
+  <option value="Retail">Retail</option>
+  <option value="Grooming">Grooming</option>
+  <option value="Day Care & Pet Resort">DayCare</option>
+  <option value="Self-Service Grooming">SelfService</option>
+</select>
+
+
+<script>
+  jQuery(document).ready(function(){
+   jQuery('.serviceFilter').change(function(){
+      filterChosen = jQuery(this).val();
+
+      var mapWidge = document.getElementById('storerocket-widget');
+     
+      if (filterChosen == "Retail" ) {
+        // var num = "1013"
+        mapWidge.setAttribute('data-storerocket-filters', "1013");
+        console.log("1013");
+      } else if (filterChosen == "Grooming") {
+        // var num = "1014";
+        mapWidge.setAttribute('data-storerocket-filters', "1014");
+        console.log("1014");
+      } else if (filterChosen == "DayCare") {
+        // var num = "1015";
+        mapWidge.setAttribute('data-storerocket-filters', "1015");
+        console.log("1015");
+      } else if (filterChosen == "SelfService") {
+        // var num = "1014";
+        mapWidge.setAttribute('data-storerocket-filters', "1016");
+        console.log("1016");
+      } 
+    });
+  });
+</script>
