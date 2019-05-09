@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
+  helper_method :boss_admin
 
 	def index
 		pointa = get_user_location
@@ -39,7 +40,11 @@ class LocationsController < ApplicationController
 
 	  else
 		  # neighbors.all.paginate(:page => params[:page], :per_page => 110)
-	    Location.near(crds, 100, :order => "distance")
+		  if user_signed_in? && current_user = boss_admin
+		    Location.near(crds, 400, :order => "distance")
+		  else 
+		    Location.near(crds, 100, :order => "distance")
+		  end
 		end
     @pagy, @locations = pagy(@locations, items: 9)
 
@@ -125,5 +130,9 @@ class LocationsController < ApplicationController
       flash[:danger] = "Only admin users can perform that action"
       redirect_to locations_path
     end
+  end
+
+  def boss_admin
+  	@boss_admin ||= User.find_by(email: "kelli@hsdesignhouse.com")
   end
 end
