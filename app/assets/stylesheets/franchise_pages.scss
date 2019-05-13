@@ -121,7 +121,7 @@ br.tn {display: none;}
 			img{width:58%;}
 		}
 
-		.image-box {float:right;}
+		.image-box {float:right; margin-top: -40px;}
 	}
 
 	.banner-disc{@include sec-default(); padding: 20px 0;
@@ -150,6 +150,7 @@ br.tn {display: none;}
 			h4{font-size: 1.1rem;}
 			li {font-size: 15px;}
 			.full, .image-nrw, .image-box {margin-bottom: 50px;}
+			.image-box {margin-top: -20px;}
 		}
 
 		.banner-disc {text-align: center; margin-top: 10px;
@@ -174,11 +175,16 @@ br.tn {display: none;}
 			h4{font-size: 1rem;}
 			.full.one, .full.two, .full.three, .full.four{width:70%; @include center-block(); margin-bottom: 45px;}
 			.image-nrw {}
+			.image-box {margin-top: 0px; @include center-block(); width:80%;}
 		}
 	}
 
 	@include bp(oc) {
 		.statement {padding-top:10px;}
+	}
+
+	@include bp(sm) {
+		.col .image-box { width:90%;}
 	}
 }
 
@@ -576,7 +582,9 @@ br.tn {display: none;}
 
 .real-estate .franchise-layout.fl2 {
 	padding-bottom: 0;
-	.col {margin-bottom: 60px;
+	.statement{padding:50px 0;}
+	.col {margin-bottom: 0;
+		// margin-bottom: 60px;
 		.full {width:48%;
 			&.two{width:45%;}
 			// &.three {margin-top: 50px;}
@@ -587,11 +595,11 @@ br.tn {display: none;}
 		.image-nrw {height:340px; bottom:-80px;}
 	}
 
-	@media (min-width:1360px) {.col {margin-bottom: 80px;}}
+	// @media (min-width:1360px) {.col {margin-bottom: 80px;}}
 	@include bp(tb) {
-		.col {margin-bottom: 35px;
+		.col {
+			// margin-bottom: 35px;
 			.image-nrw {position: relative; bottom:0; float: right; height:auto; width:51%; margin-right: -2%;}
-			// .full.three {margin-top: 20px;}
 		}
 	}
 
