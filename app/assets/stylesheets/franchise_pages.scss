@@ -347,13 +347,26 @@ br.tn {display: none;}
 }
 
 .franchising .franchise-layout.fl1 {
+	// CURRENT: BEFORE CHANGES
+	// .landing-layout {
+	// 	.box {
+	// 		.text {margin-top: 20px;}
+	// 		.image {margin-right: 0; margin-left: -3%;}
+	// 		h3{ width:112%; padding-right: 10px; margin-left: -8%; }
+	// 	}
+	// }
+
 	.landing-layout {
-		.box {
-			.text {margin-top: 20px;}
-			.image {margin-right: 0; margin-left: -3%;}
-			h3{ width:112%; padding-right: 10px; margin-left: -8%; }
+		.box{
+			h3{ width:112%; padding-right: 10px;  margin-top: 50px;}
+			.text{width:52%;}
+			.image{width:50%;}
+			.img1 {width:83%;}
+			.img2 {width:85%;margin-top: -43%; margin-left: -53%}
 		}
+		.page-seal {bottom:110px;left: 17%;}
 	}
+	// 
 
 	.content-layout .full.fw.two{
 		.image {width:48%;}
@@ -371,15 +384,22 @@ br.tn {display: none;}
 	@include bp(tb) {
 		.landing-layout .box {
 			.med-def {width:85%;}
-			h3{ width:100%; padding-right: 0px; margin-left: 0; position: relative;}
+			// h3{ width:100%; padding-right: 0px; margin-left: 0; position: relative;}
 			br.xl.one {display: block;}
-			.text{margin-top: 10px;}
+			// .text{margin-top: 10px;}
 
-			.img1 {width:100%;}
-			.img2 {width:70%; margin-top: -22%; margin-left: -45%}
+			// .img1 {width:100%;}
+			// .img2 {width:70%; margin-top: -22%; margin-left: -45%}
+			// .image {width:52%; }
 
-			.image {width:52%; }
+			// 5/13
+			h3{ width:100%; padding-right: 0px;  margin-top: 40px;}
+			.text{width:52%; margin-left: 5%; width:48%;}
+			.image{width:42%; margin-right: 0; float: none;}
+			.img1 {width:90%;}
+			.img2 {width:100%;margin-top: -46%; margin-left: -67%}
 		}
+		.landing-layout .page-seal {bottom:105px;left: 10%;}
 
 		.content-layout{
 			.full.fw{
@@ -404,16 +424,29 @@ br.tn {display: none;}
 			.text {width:48%; margin-top: 35px;}
 
 			br.xl.one {display: none;}
-			h3 {font-size: 1rem;}
+			h3 {font-size: 1rem; margin-top: 0;}
+
+			.text{width:48%; margin-top: 60px;}
+			.image{width:32%; margin: 0 0 0 3%;}
+			.med2-def{width:800px;}
+			.img1{width:100%;}
 		}
+		.landing-layout .page-seal {position: relative;@include sec-default();bottom:0;left: auto; margin-top: 30px;}
+		.landing-layout .sealicon{width:175px; @include center-block();}
 	}
 
 	@include bp(tn) {
-		.landing-layout .box {
-			// padding:30px 0;
-			.med-def {width:90%;}
-			.image{width:43%;}
-			.text {width:55%; margin-top:15px;}
+		.landing-layout {padding-top:35px;
+			.box {
+				.med-def, .med2-def {width:90%;}
+				.image{width:43%;}
+				.text {width:55%; margin-top:15px;}
+
+				// cat photo
+				.image{display: none;}
+				.text{width:80%; @include center-block(); text-align: center; margin-top: 0;}
+			}
+			.page-seal {margin-top: 10px; width:160px; @include center-block();}
 		}
 
 		.content-layout {
