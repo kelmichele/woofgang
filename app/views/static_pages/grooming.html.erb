@@ -4,12 +4,14 @@
 <div class="services-layout groom">
 	<div class="serv-slider inline-show">
 		<div class="inside lg">
-			<div class="il-slideshow" uk-slideshow="autoplay: true; max-height: 600; autoplay-interval: 4000; animation: push">
+			<div class="il-slideshow uk-position-relative uk-visible-toggle uk-light" uk-slideshow="autoplay: true; max-height: 600; autoplay-interval: 4000; animation: push">
 				<div>
 			    <ul class="uk-slideshow-items">
 						<li><%= image_tag('husky-groom.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Grooming, husky after a haircut') %></li>
 						<li><%= image_tag('grooming-slide4.jpg', class: 'img-responsive uk-cover', alt: 'Woof Gang Grooming room') %></li>
 			    </ul>
+			    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> 
+			    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> 
 			  </div>
 			</div>
 

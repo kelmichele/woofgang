@@ -150,7 +150,8 @@ hr{
   .full-show{
     .uk-slideshow-items {max-height: 650px; overflow: hidden; max-height: 720px;}
     .abs-img{position: absolute; bottom: 0; width:45%; margin-bottom: -43px;}
-    .uk-slidenav {margin-top:10%;}
+    // .uk-slidenav {margin-top:10%;}
+    .uk-position-center-left,.uk-position-center-right {background-color: rgba($black,.3);}
 
     .seal {width:200px; position: absolute; right:15px; margin-top: -126px;}
   }
@@ -163,14 +164,14 @@ hr{
     }
   }
 
-  .bg-sec {@include sec-default(); padding:70px 0 0px; margin-top:0px;
-    margin-bottom: 120px; margin-bottom: 65px;
+  .bg-sec {@include sec-default(); padding:70px 0; margin-top:0px;
+    margin-bottom: 65px;
     position: relative; z-index: 0;
-    &::before {@include before();@include sec-bgimage('retail-slide4.jpg'); background-position: bottom left; width:60%;height:85%;}
-    &::after {@include before(); background-color: rgba($pink7, .94); width:60%;height:85%;}
+    &::before {@include before();@include sec-bgimage('franchising1.jpg'); background-position: center center; width:60%;}
+    &::after {@include before(); background-color: rgba($pink7, .94); width:60%;}
 
     .image,.images, .text {display: inline-block; float: right; width:50%;}
-    .text {width:39%; margin-left: 5%; padding: 30px 0 0 0; float: left;}
+    .text {width:39%; margin-left: 3.5%; padding: 30px 0 0 0; float: left;}
     .seal {@include center-block(); width:225px;
       .sealcon{width:200px; @include center-block(); position: absolute; bottom:-45px;}
     }
@@ -179,26 +180,26 @@ hr{
 
 
     // 12/20
-    padding-bottom: 70px; &::before, &::after {height: 100%;}
-    &::before{@include sec-bgimage('franchising1.jpg'); background-position: center center; }
-    .image,.images {width:54%; max-height: 248px; overflow: hidden;}
     .image {max-height: 100%;}
+    .images{width:54%; overflow: hidden; text-align: right; max-height: 300px;
+      .img1,.img2,.img3 {display: inline-block; float: none; vertical-align: top;width:32.8%;}
+    }
 
     &.ff {
+      .images{
+        height:300px;
+        background-image: url(image_path('landstarIg.jpg')), url(image_path('woodlandBones.jpg')), url(image_path('savIvy.jpg'));
+        background-position: bottom left, center top, right bottom;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-size:32.8%, 32.8%, 32.8%;
+      }
       h4, p{color:$white;@include tshadowl(rgba($black,.3)); font-weight: 400; margin:0;letter-spacing: .3px;}
       h4{ margin-bottom: 10px; font-size: 1.2rem;}
 
       p{font-size: 17px;
         letter-spacing: .4px;
       }
-      .text {margin-left: 3.5%;}
-    }
-
-    &.alt {
-      .images{
-        text-align: right;max-height: 300px;
-        .img1,.img2,.img3 {display: inline-block; float: none; width:32.8%; vertical-align: top;}
-      }
+      // .text {margin-left: 3.5%;}
     }
   }
 
@@ -326,7 +327,9 @@ hr{
       h4{font-size: 1.1rem;}
       p{font-size: 16px;}
       .text {width: 38%;}
-      .images {width:55%; }
+      .images {width:55%; 
+        background-position: bottom left, center bottom, right bottom;
+      }
     }
   }
 
@@ -351,12 +354,11 @@ hr{
       &::before {background-size: cover;}
       h4{font-size: 1rem;}
       .text {padding-top: 0px; width: 50%; margin-left: 6%}
-      .images {width:70%; margin-top: 40px;}
 
-      &.alt {
-        .images{max-height: 300px;
-          .img1,.img2,.img3 {width:31%;}
-        }
+      .images{width:70%; margin-top: 40px; max-height: 300px; 
+        .img1,.img2,.img3 {width:31%;}
+
+        width:67%;
       }
 
       .seal {@include sec-default();
@@ -403,6 +405,7 @@ hr{
       // .img2 {display: none;}
       h4{font-size: 16px;}
       p{font-size: 15px;}
+      .images{background-position: top left, top center, top right;height:257px;}
 
       .seal .sealcon{bottom:auto; margin-top:12px; margin-left: 0;}
     }
@@ -440,6 +443,7 @@ hr{
       .text {padding: 0px; width:72%; margin-left: 6%; margin-top: 0;}
       .image{width:70%; margin-top: 20px;}
       p{margin-bottom: 10px;}
+      .images{height:230px;}
 
       .seal .sealcon{width:185px;margin-top: 0px; bottom:60px; margin-left: -15px;}
     }
@@ -468,10 +472,10 @@ hr{
     .bg-sec.ff {margin-bottom: 0; padding-bottom: 25px;
       &::before, &::after {height:60%;width:100%;}
       .text {@include center-block(); width:80%;text-align: center;}
-      .images{@include center-block(); width:85%; text-align: center;}
-
-      &.alt .images{max-height: auto;
+      .images{@include center-block(); width:85%; text-align: center;
+        max-height: auto;
         .img1,.img2,.img3 {float: none;}
+        height:242px;
       }
      
       .seal .sealcon{position: relative;@include center-block();margin-top: 10px; bottom:auto; margin-bottom: 20px;}
@@ -1074,6 +1078,7 @@ hr{
     .il-slideshow, .title {display: inline-block; float: left; width: 75%;}
     .title {width:23%; float: right; padding: 120px 0 0;}
     h1{color:$brown; text-transform: uppercase; letter-spacing: .5px; font-size: 1.75rem;}
+    .uk-position-center-left,.uk-position-center-right {background-color: rgba($black,.2);}
 
     &::before{@include before(); height: 420px;background-color: $opink;}
     .il-slideshow {border:7px solid $white; }

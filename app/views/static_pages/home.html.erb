@@ -3,28 +3,16 @@
 <% @page_description = "Woof Gang Bakery is the leading specialty retailer of pet food, pet supplies and professional pet grooming in North America, with more than 110 locations across the U.S." %>
 
 <!-- 1296x720 -->
-
-<!-- <div class="full-show">
-	<div class="inside lg">
-		<div class="fw-slideshow" uk-slideshow="autoplay: true; animation: push">
-	    <ul class="uk-slideshow-items">
-				<li><%= image_tag('villages.jpg', class: 'img-responsive uk-cover') %></li>
-				<li><%= image_tag('henderson.jpg', class: 'img-responsive uk-cover') %></li>
-	    </ul>
-	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-	  </div>
-	</div>
-</div> -->
-
 <div class="full-show">
 	<div class="inside lg">
-		<div class="fw-slideshow" uk-slideshow="autoplay: true; autoplay-interval: 4000; animation: push">
-	    <ul class="uk-slideshow-items">
+		<div class="fw-slideshow uk-position-relative uk-visible-toggle uk-light" uk-slideshow="autoplay: true; autoplay-interval: 4000; animation: push">
+	    <ul class="uk-slideshow-items newSize">
 				<% @slides.each do |slide| %>
 					<li><%= image_tag(slide.image, class: 'img-responsive uk-position-bottom', alt: "#{slide.title}")%></li>
 				<% end %>
 	    </ul>
+	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> 
+	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> 
 	  </div>
 	</div>
 </div>
@@ -39,7 +27,7 @@
 	</div>
 </div>
 
-<div class="bg-sec ff alt">
+<div class="bg-sec ff">
 	<div class="text">
 			<div class="btext">
 				<h4>Our approach to franchising is very simple:</h4>
@@ -49,9 +37,9 @@
 	</div>
 
 	<div class="images four">
-		<%= image_tag('fi-counter2.jpg', class: 'img-responsive img3', alt: 'Dog at counter of Woof Gang Bakery store')%>
-		<%= image_tag('woof6.jpg', class: 'img-responsive img1', alt: 'Woof Gang Bakery homemade treats')%>
-		<%= image_tag('cg-smile.jpg', class: 'img-responsive img2', alt: 'Smiling dog at counter of Woof Gang Bakery store')%>
+		<!-- <%= image_tag('landstarIg.jpg', class: 'img-responsive img3', alt: 'Dog at counter of Woof Gang Bakery store')%>  -->
+		<!-- <%= image_tag('woodlandBones.jpg', class: 'img-responsive img1', alt: 'Woof Gang Bakery homemade treats')%>  -->
+		<!-- <%= image_tag('savIvy.jpg', class: 'img-responsive img2', alt: 'Smiling dog at counter of Woof Gang Bakery store')%>  -->
 	</div>
 </div>
 
@@ -103,7 +91,7 @@
 			<li><%= image_tag('ivory.jpg', class: 'img-responsive img3', alt: 'Ivory the dog')%></li>
 			<li><%= image_tag('sav1601.jpg', class: 'img-responsive img3', alt: 'Shaggy pup in a Woof Gang store')%></li>
 			<li><%= image_tag('group.jpg', class: 'img-responsive img3', alt: 'Three dogs smiling in the yard')%></li>
-			<li><%= image_tag('riggins.png', class: 'img-responsive img4', alt: 'Cute dog with Woof Gang Bakery treats')%></li>
+			<li><%= image_tag('gibson.jpg', class: 'img-responsive img4', alt: 'Cute dog with Woof Gang Bakery treats')%></li>
 			<li><%= image_tag('harley-bone.png', class: 'img-responsive img3', alt: 'Husky puppy sniffing Woof Gang homemade bone')%></li>
 			<li><%= image_tag('waco-vera.jpg', class: 'img-responsive img3', alt: 'Golden retriever with a Woof Gang Bakery shopping bag')%></li>
 			<li><%= image_tag('monty.jpg', class: 'img-responsive img3', alt: 'Monty the dog, in the yard')%></li>
