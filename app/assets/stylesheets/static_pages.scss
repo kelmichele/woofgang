@@ -496,6 +496,10 @@ hr{
     .bg-sec.ff .text {width:90%;}
 
   }
+
+  @include bp(sm) {
+    .bg-sec.ff .images {height:170px;}
+  }
 }
 
 
@@ -1196,6 +1200,7 @@ hr{
       p, h1,h2 {@include center-block(); width:85%; padding:0; border:0; }
       h1,h2{margin-top: 0;}
     }
+    .gallery-sec {padding:50px 0;}
   }
 
   @include bp(tn) {
@@ -1282,6 +1287,8 @@ hr{
         .sl1,.sl2{margin-bottom: 10px;}
       }
     }
+
+    .gallery-sec {padding:30px 0;}
   }
 
   @include bp(sm) {
@@ -1295,19 +1302,11 @@ hr{
 
 .retail .services-layout{
   .inline-show .title{width:21%;}
-  .statement{
-    // OG
-    // h1, h2 {width:37%;}
-    // p{width:59%;}
-
-    // with 2 paragraphs
-    // h1, h2 {width:29%;padding:50px 0px 60px 0;}
-    // p{width:74%; padding-left: 20px;margin: 5px -4% 5px 0;}
-
-    // new
+  .statement{padding-bottom:30px;
     h1, h2 {width:29%;padding-right: 10px;}
     p{width:69%;padding-left: 5px;}
   }
+  .gallery-sec.uniform{padding-top:40px;}
 
 
   // .statement{padding-bottom: 50px;}
@@ -1360,6 +1359,7 @@ hr{
 
   @include bp(oc) {
     .statement {padding-top: 5px;}
+    .gallery-sec.uniform{padding-top:20px;}
   }
 }
 
@@ -1374,6 +1374,13 @@ hr{
     h1 {width:30%;padding:30px 0px;}
     p{width:73%; padding-left: 20px;margin: 5px -4% 5px 0;}
   }
+
+
+  .gallery{@include sec-default(); text-align: center;
+    img{display: inline-block; float:none; margin:10px; height:350px;}
+  }
+
+
   @include bp(tb) {
     .statement{
       // h1, h2 {width:23%;}

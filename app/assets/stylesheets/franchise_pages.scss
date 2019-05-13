@@ -697,6 +697,13 @@ br.tn {display: none;}
 			.full.one, .full.two {@include sec-default();}
 		}
 	}
+
+	.image-row {@include sec-default(); margin-top:60px;text-align: center; overflow: hidden;
+		img{display: inline-block; float: none;vertical-align: top; width:21%;}
+	
+		@include bp(br) {margin-top: 20px;}
+		@include bp(oc) {margin-top: 0px;}
+	}
 }
 
 .candidates {
