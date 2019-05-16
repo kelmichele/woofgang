@@ -28,4 +28,8 @@ class StaticPagesController < ApplicationController
       format.csv { send_data @posts.to_csv }
     end
 	end
+
+	def page 
+		city = request.location.city
+	end
 end
