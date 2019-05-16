@@ -34,7 +34,6 @@
     &.med-def {width:90%;}
   }
 
-  // @media (min-width: 1024px){
   @include bp(xl) {
     &.svn {width:1015px;}
     &.med2-def{width: 940px;}
