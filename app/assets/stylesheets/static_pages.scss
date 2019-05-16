@@ -157,10 +157,13 @@ hr{
   }
 
   .nlay-intro {@include sec-default(); padding:65px 0;
-    &.franch{
-      h4{font-weight: $semi;}
-      .text{width:68%;}
-      .text {border-left: 5px solid rgba($pink,.9); padding-left:40px;}
+    &.with-seal{
+      .home-def{width:1100px;}
+      .text, .seal {display: inline-block; float: left; width: 76%;}
+      .seal {float:right; width:225px;
+        margin-top:2%;
+        .sealcon{width:200px; @include center-block(); }
+      }
     }
   }
 
@@ -331,6 +334,18 @@ hr{
         background-position: bottom left, center bottom, right bottom;
       }
     }
+
+    .nlay-intro {
+      &.with-seal{
+        .home-def{width:900px;}
+        h2{font-size: 1.3rem;}
+        .text {width: 75%;}
+        .seal { width:225px;
+          margin-top:3.5%;
+          .sealcon{width:200px;}
+        }
+      }
+    }
   }
 
   @include bp(tb) {
@@ -347,6 +362,16 @@ hr{
 
     .nlay-intro{padding:70px 0 55px;
       h2{font-size: 1.2rem;}
+
+      &.with-seal{
+        .home-def{width:85%;}
+        h2{font-size: 1.1rem;}
+        .text{width: 72%; margin-left:2%;}
+        .seal { width:22%;
+          margin-top:2%;
+          .sealcon{width:180px; float:right;}
+        }
+      }
     }
 
     .bg-sec.ff {margin-bottom: 0px;
@@ -393,6 +418,14 @@ hr{
     .home-def {width:82%;}
     .nlay-intro{padding:30px 0 25px;
       h2{font-size: 1.1rem;}
+
+      &.with-seal{padding:40px 0 35px;
+        h2{font-size: 1rem;}
+        .text{width: 73%; margin-left:0;}
+        .seal { width:26%; margin-right:-2%;
+          margin-top:3.5%;
+        }
+      }
     }
 
     .bg-sec.ff {padding: 40px 0;
@@ -436,6 +469,15 @@ hr{
 
     .nlay-intro {text-align: center;
       h1{font-size: 1rem;}
+
+      &.with-seal{
+        padding:30px 0 25px;
+        h2{font-size: 15px;}
+        .text,.seal{@include sec-default();}
+        .seal {margin-top:10px;
+          .sealcon{@include center-block(); width:170px;}
+        }
+      }
     }
 
     .bg-sec.ff {
@@ -2306,5 +2348,23 @@ hr{
   span.disabled{color:#c7c7c7;}
   // active prev disabled
 }
+
+
+
+.stockist-result.stockist-list-result {
+  font-size: 14px;
+  .stockist-result-distance-text{font-size: 14px;}
+  // .stockist-result-address{}
+  .stockist-result-addr-country{display: none;}
+
+  // .stockist-result-filters{}
+  // .stockist-result-details{}
+  .stockist-result-email {}
+  .stockist-result-website {}
+}
+
+
+
+
 
 
