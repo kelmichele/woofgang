@@ -14,5 +14,8 @@
 <% unless current_page?('/page') %>
 <!-- <= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + Rails.application.credentials.google[:gmaps_key], :defer => "defer" %> -->
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + Rails.application.credentials.google[:gmaps_key], 'data-turbolinks-track': 'reload'  %> 
+
+<% else %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + Rails.application.credentials.google[:gmaps2_key], :defer => "defer" %>
 <% end %>
 

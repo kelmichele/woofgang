@@ -2347,3 +2347,19 @@ hr{
   span.disabled{color:#c7c7c7;}
   // active prev disabled
 }
+
+
+.stockist-query-entry {width:50%; display: inline-block;}
+  .boundary-align.uk-panel.states {position: absolute; right: 10%;}
+  
+  .stockist-result.stockist-list-result {
+    font-size: 14px;
+    .stockist-result-distance-text{font-size: 14px;}
+    // .stockist-result-address{}
+    .stockist-result-addr-country{display: none;}
+
+    // .stockist-result-filters{}
+    // .stockist-result-details{}
+    .stockist-result-email {}
+    .stockist-result-website {}
+  }

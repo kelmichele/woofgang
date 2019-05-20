@@ -28,4 +28,9 @@ class StaticPagesController < ApplicationController
       format.csv { send_data @posts.to_csv }
     end
 	end
+
+	def page
+	  @states = State.all
+	end
+
 end
