@@ -2348,8 +2348,8 @@ hr{
   // active prev disabled
 }
 
-
-.stockist-query-entry {width:50%; display: inline-block;}
+.page{
+  .stockist-query-entry {width:50%; display: inline-block;}
   .boundary-align.uk-panel.states {position: absolute; right: 10%;}
   
   .stockist-result.stockist-list-result {
@@ -2363,3 +2363,4 @@ hr{
     .stockist-result-email {}
     .stockist-result-website {}
   }
+}
