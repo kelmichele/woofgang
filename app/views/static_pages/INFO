@@ -119,6 +119,38 @@ LOCATIONS WITH ANOM. NAMES:
 	<!-- Stone Oak --> √
 
 
+IF WE WANT TO USE PLUGIN (STOCKIST/STORE ROCKET) WITH STATES MAP:
+	_list:
+		<!-- change state pagy to at least 60 for this layout. -->
+		<div id="servFilters" class="withFilter" uk-filter="target: .js-filter">
+			<ul class="filterList">
+			  <!-- <li class="all uk-active" data-uk-filter-control="[data-tags*='all']">
+			  	<a href="#">All</a>
+			  </li> -->
+				<!-- <li uk-filter-control>All</li> -->
+			  <li class="retail" uk-filter-control="[data-tags*='retail']">
+			  	<!-- <label>Retail</label> -->
+			  	<a href="#"><input class="uk-checkbox" type="checkbox"><label>Retail</label></a>
+			  </li>
+			  
+			  <li class="grooming" uk-filter-control="[data-tags*='grooming']">
+			  	<input class="uk-checkbox" type="checkbox">Grooming
+			  	<!-- <a href="#"><input class="uk-checkbox" type="checkbox">Grooming</a> -->
+			  </li>
+			  
+			  <li class="self-service-grooming" uk-filter-control="[data-tags*='self-service-grooming']">
+			  	<a href="#"><input class="uk-checkbox" type="checkbox">Self-Service Grooming</a>
+			  </li>
+			  
+			  <li class="doggie-daycare" uk-filter-control="[data-tags*='doggie-daycare']">
+			  	<a href="#"><input class="uk-checkbox" type="checkbox">Day Care &amp; Pet Resort</a>
+			  </li>
+
+			  <li class="veterinary-clinic" uk-filter-control="[data-tags*='veterinary-clinic']">
+			  	<a href="#"><input class="uk-checkbox" type="checkbox">Wellness Clinic</a>
+			  </li>
+			</ul>
+
 
 
 

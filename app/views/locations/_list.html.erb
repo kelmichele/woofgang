@@ -78,8 +78,7 @@
 					<a href="<%= location.direct_link %>" target="_blank" class="woof-link dir">Directions </a>
 				</div>
 
-
-    		<% if user_signed_in? && current_user.admin? %>
+	  		<% if user_signed_in? && current_user.admin? %>
 					<% if location.longitude == nil %><div class="actions">**<small>Coordinates Missing**</small></div><% end %>
 				<% end %>
 			</div>

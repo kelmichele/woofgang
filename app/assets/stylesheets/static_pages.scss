@@ -1061,8 +1061,7 @@ hr{
 }
 
 
-
-
+// store rocket
 .page {
   .full-search {@include sec-default(); padding: 60px 0; background-color: $white;}
   #storerocket-widget .storerocket-result-website-link {
@@ -1108,6 +1107,107 @@ hr{
   }
   
   #storerocket-powered {display: none;}
+}
+
+// stockist
+.withFilter {
+  .js-filter {min-height:400px;}
+  .filterList li{display: inline-block; margin-right:20px;
+    font-weight: $semi; font-size: 15px; line-height: 2.5em;
+    input{width:13px; height:13px; margin-right:7px; border-radius: 2px;}
+
+    &.uk-active{border:1px solid $pink;
+      input[type="checkbox"] {}
+    }
+  }
+}
+
+.page{
+  .thisId, #myID{@include sec-default(); height:300px;}
+  .anotherClass{background-color: $black; color:$white;}
+  .boundary-align.uk-panel.states {position: absolute; right: 10%; width:25%;
+    .filter-uk {@include sec-default(); background-color: $white; color: $tbrown; cursor: pointer; padding: 10px 10px 10px 20px;
+        text-align: left; font-size: 14px; box-shadow: 0px 1px 4px rgba($black, .2);
+        position: relative;z-index: 0;
+        &::after{content: "";right: 0;position: absolute;bottom: 0;width: 100%;height:100%;z-index: -1;background-color: $pink; width:40px;}
+
+        span{float: right; margin-top: 2px; color:$white; }
+      }
+      .uk-dropdown{width:100%;text-align: left; margin-top: 0; border-top:1px solid rgba($tbrown, .1); padding:10px 12px; z-index: 10;}
+      .filter-tag{margin:5px 0;@include sec-default();
+        .tag-icon {width:22px; height:22px; margin-right: 6px;}
+        a{font-size: 15px;}
+      }
+  }
+  
+  #stockist-widget {
+    .stockist-query-entry {width:30%; display: inline-block; box-shadow: 0px 1px 4px rgba($black, .2); height:44px;
+      .stockist-search-field, .stockist-search-button {display: inline-block;}
+      .stockist-search-field {width:93.5%;height:44px; font-size:14px; border:0; color: $tbrown;}
+      .stockist-search-button {padding:0; width:1.3%; vertical-align: top;
+        button {margin-left:0;border-radius:0;height:44px;}
+        .stockist-icon {font-size:15px;}
+      }
+    }
+
+    //.stockist-search-filters .stockist-search-filter-checkboxes
+    .stockist-search-filter-checkbox { margin-right:20px;
+      label {line-height: 2.5em;}
+      input {width:20px; }
+    }
+
+    .stockist-horizontal {
+      .stockist-side-panel, .stockist-map {@include sec-default();}
+      .stockist-map {left:0; height:334px; width:100% !important;}
+      .stockist-side-panel{margin-top:350px;}
+    }
+  
+
+
+    .stockist-result-list {height:auto !important;
+      .stockist-result-distance {display: none;}
+      div {padding-left:0;}
+    }
+    // .stockist-result-list ul>li.stockist-selected {}
+    .stockist-result.stockist-list-result {
+      font-size: 14px;
+      line-height: 1.4em;
+      border-top:0; display: inline-block; float: left; 
+      width: 31%;
+      min-height: 315px;
+      margin:10px 1% 40px;
+      color:$tbrown; background-color: $white;
+      padding: 15px 20px 0px 20px;
+      box-shadow: 0px 4px 8px rgba($black, .1);
+
+      // if distance hidden:
+      width:29%;
+
+      .stockist-result-distance-text{font-size: 14px;}
+      .stockist-result-name, .stockist-result-details .stockist-result-phone{
+        border-bottom: 1px solid rgba($tbrown, .1); 
+        padding-bottom:4px; margin-bottom: 5px;
+      }
+      .stockist-result-address{margin-top:10px;}
+
+      .stockist-result-details .stockist-result-phone {margin-bottom:10px;
+        .stockist-feature-color{color: $tbrown;}
+      }
+
+      .stockist-result-directions-link {display: block !important;
+        a { border:1px solid rgba($pink,.6); @include tshadowl(rgba($black, .1)); font-weight: bold;
+          letter-spacing: .3px !important; font-size: 13.5px !important; padding:8px 30px; text-align: center; 
+        }
+      }
+
+      .stockist-result-addr-country{display: none;}
+      .stockist-result-email, .stockist-result-filters{display: none;}
+      // .stockist-result-website,
+
+      
+      // .stockist-result-details{}
+    }
+  }
 }
 
 //*********************************//
@@ -2346,21 +2446,4 @@ hr{
   span.active{font-weight: bold; text-decoration: underline;}
   span.disabled{color:#c7c7c7;}
   // active prev disabled
-}
-
-.page{
-  .stockist-query-entry {width:50%; display: inline-block;}
-  .boundary-align.uk-panel.states {position: absolute; right: 10%;}
-  
-  .stockist-result.stockist-list-result {
-    font-size: 14px;
-    .stockist-result-distance-text{font-size: 14px;}
-    // .stockist-result-address{}
-    .stockist-result-addr-country{display: none;}
-
-    // .stockist-result-filters{}
-    // .stockist-result-details{}
-    .stockist-result-email {}
-    .stockist-result-website {}
-  }
 }

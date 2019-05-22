@@ -84,6 +84,14 @@ class Location < ApplicationRecord
     tag_list.split(',')
   end
 
+  def tag_class
+    # if store_name.include? "Grooming"
+      tag_list.remove(",")
+    # end
+  end
+
+
+
   def soc_links
     [fb, insta, twitter, yelp, site].compact.join(" , ")
   end
