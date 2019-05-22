@@ -151,6 +151,9 @@ IF WE WANT TO USE PLUGIN (STOCKIST/STORE ROCKET) WITH STATES MAP:
 			  </li>
 			</ul>
 
+		--- this before for each ---
+		<ul class="js-filter">
+			<li class="location-bx" data-tags="<%= location.tag_class %>">
 
 
 
