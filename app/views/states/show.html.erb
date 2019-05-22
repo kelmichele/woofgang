@@ -1,10 +1,10 @@
-<% @page_title = @state.full_name %>
+<% @page_title = "Pet Grooming in #{@state.full_name}" %>
 <% @page_description = "New Description" %>
 
 
 <div class="ipage-header">
 	<div class="inside narrow">
-		<h1>Locations in <%= @page_title %></h1>
+		<h1>Locations in <%= @state.full_name %></h1>
 		<h2>Use the map below to find a location near you.</h2>
 	</div>
 
