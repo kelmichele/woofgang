@@ -1080,12 +1080,16 @@ hr{
     width:1101px;
   }
   #storerocket-widget .storerocket-filters-button,
-  .storerocket-search-field,
+  // #storerocket-widget .storerocket-query,
+  #storerocket-widget .storerocket-query .storerocket-search-field,
   #storerocket-widget .storerocket-radius-button {
-    box-shadow: 0px 1px 4px rgba($black, .2) !important;
+    box-shadow: 0px 1px 4px rgba($black, .3) !important;
   }
 
-  .storerocket-query {margin-right:0; color:$tbrown !important; width:29%;}
+  #storerocket-widget .storerocket-query {margin-right:0; color:$tbrown !important; width:29%; border-top:1px solid rgba($black,.1);
+    .storerocket-search-icon {display: none;}
+    .storerocket-search-field {padding-left:11px;}
+  }
   #storerocket-widget .storerocket-radius-button {
     color: $tbrown; font-size:14px; border-radius: 0;
     background-color: $pink; color: $white;
@@ -1093,8 +1097,8 @@ hr{
     svg{fill:$white;}
   }
 
-  .storerocket-filters{margin-left:auto; float: right; width:320px;}
-  #storerocket-widget .storerocket-filters-button{@include sec-default();
+  .storerocket-filters{margin-left:auto; float: right; width:320px; }
+  #storerocket-widget .storerocket-filters-button{@include sec-default();border-top:1px solid rgba($black,.1);
     color: $tbrown; font-size:14px; padding-right:0;text-align:left;
     span{background-color: $pink; color:$white; padding: 1px 15px; float:right;}
     svg{fill:$white;}
@@ -1104,6 +1108,7 @@ hr{
   #storerocket-widget .storerocket-filters-button,
   #storerocket-widget .storerocket-filters-button span,
   #storerocket-widget .storerocket-query .storerocket-search-field,
+  #storerocket-widget .storerocket-query,
   #storerocket-widget .storerocket-radius-button {
     height:44px;
   }
@@ -1158,29 +1163,70 @@ hr{
   }
 
   @media (max-width:1100px) {
-    #storerocket-search{width:880px;}
+    #storerocket-search{width:900px;}
     .storerocket-filters,.boundary-align.uk-panel.states {width:247px;}
     .boundary-align.uk-panel.states {left:42%;}
   }
 
   @include bp(tb) {
     .full-search {padding: 30px 0 55px;}
+    #storerocket-search{width:97%;}
   }
 
   @include bp(br) {
-    #storerocket-search{height:auto; @include sec-default();}
+    #storerocket-search{@include sec-default(); height:auto; margin-bottom:30px;}
     .storerocket-search-form {display: block;}
-    // .storerocket-query,.storerocket-filters,.boundary-align.uk-panel.states {width:80%; @include center-block(); }
     
     .boundary-align.uk-panel.states {position: relative; left:auto; width:52%; @include center-block(); margin:0 auto 20px;}
-    .storerocket-query, #storerocket-widget .storerocket-radius {display:inline-block; float: left; vertical-align: top; }
-    .storerocket-query {width:45%; margin-left:24%;}
-    // #storerocket-widget .storerocket-radius {width: 5%;}
+    #storerocket-widget .storerocket-query, #storerocket-widget .storerocket-radius {display:inline-block; float: left; vertical-align: top; }
+    #storerocket-widget .storerocket-query {width:45%; margin-left:24%;}
 
     .storerocket-filters{@include sec-default(); margin: 20px 0;}
     #storerocket-widget .storerocket-filters-button{width:52%; @include center-block();}
 
     #storerocket-map-container{top:135px;}
+  }
+
+  @include bp(tn) {
+    .boundary-align.uk-panel.states, #storerocket-widget .storerocket-filters-button {z-index: 111;}
+    #storerocket-widget .storerocket-query {z-index: 110;}
+    .boundary-align.uk-panel.states {width:70%;}
+    #storerocket-widget .storerocket-query {width:60%; margin-left:15%;}
+    #storerocket-widget .storerocket-filters-button{width:70%;}
+
+    // .storerocket-result-list {height:auto;}
+    // #storerocket-panel {height:auto;}
+    // #storerocket-map-container {
+    //   display: block !important;
+    //   position: absolute !important;
+    //   width: 100% !important;
+    //   height: 300px !important;
+    //   margin: 0 !important;
+    //   padding: 0 !important;
+    //   z-index: 100;
+    //   left: inherit;
+    //   right: inherit;
+    //   top: inherit;
+    //   bottom: inherit;
+    // }
+
+    // #storerocket-map {
+    //   top: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   right: 0;
+    //   height: 100%;
+    //   width: 100%;
+    // }
+  }
+
+  @include bp(md) {
+    #storerocket-mobile-filters{display: none;}
+  }
+
+  @include bp(mb) {
+    .boundary-align.uk-panel.states,#storerocket-widget .storerocket-filters-button {width:85%;}
+    #storerocket-widget .storerocket-query {width:74%; margin-left:7.5%;}
   }
 }
 

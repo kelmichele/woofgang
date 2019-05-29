@@ -93,7 +93,9 @@ document.addEventListener("turbolinks:load", function() {
     lat: 35.941764,
     lng: -86.922942,
     zoom: 8
-    // styles: mapStyle
+    // zoomControl: false,
+    // panControl: false,
+    // streetViewControl: false
   });
 
   addMarkers();
