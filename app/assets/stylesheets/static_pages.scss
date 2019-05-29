@@ -1188,36 +1188,11 @@ hr{
   }
 
   @include bp(tn) {
-    .boundary-align.uk-panel.states, #storerocket-widget .storerocket-filters-button {z-index: 111;}
+    .boundary-align.uk-panel.states, #storerocket-widget .storerocket-filters-button,#storerocket-widget .storerocket-radius.storerocket-dropdown-open {z-index: 111;}
     #storerocket-widget .storerocket-query {z-index: 110;}
     .boundary-align.uk-panel.states {width:70%;}
     #storerocket-widget .storerocket-query {width:60%; margin-left:15%;}
     #storerocket-widget .storerocket-filters-button{width:70%;}
-
-    // .storerocket-result-list {height:auto;}
-    // #storerocket-panel {height:auto;}
-    // #storerocket-map-container {
-    //   display: block !important;
-    //   position: absolute !important;
-    //   width: 100% !important;
-    //   height: 300px !important;
-    //   margin: 0 !important;
-    //   padding: 0 !important;
-    //   z-index: 100;
-    //   left: inherit;
-    //   right: inherit;
-    //   top: inherit;
-    //   bottom: inherit;
-    // }
-
-    // #storerocket-map {
-    //   top: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   right: 0;
-    //   height: 100%;
-    //   width: 100%;
-    // }
   }
 
   @include bp(md) {
@@ -1227,6 +1202,16 @@ hr{
   @include bp(mb) {
     .boundary-align.uk-panel.states,#storerocket-widget .storerocket-filters-button {width:85%;}
     #storerocket-widget .storerocket-query {width:74%; margin-left:7.5%;}
+
+    #storerocket-widget .storerocket-query .storerocket-search-field {height:42px;}
+  }
+
+  @include bp(ph) {
+    .boundary-align.uk-panel.states,#storerocket-widget .storerocket-filters-button {width:90%;}
+    #storerocket-widget .storerocket-query {width:90%; @include center-block();}
+    #storerocket-widget .storerocket-radius {float:right; margin-right:5%;}
+
+    #storerocket-map-container{top:175px;}
   }
 }
 
