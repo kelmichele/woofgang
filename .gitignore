@@ -27,6 +27,8 @@
 /config/database.yml
 /config/secret_token.rb
 
+/app/views/sp scss before swap
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 

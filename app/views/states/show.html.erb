@@ -24,71 +24,64 @@
 </div>
 
 <div class="full-search">
-	<div class="full listings">
+	<div class="inside">
+		<div class="full-back">
+			<%= link_to locations_path, class: "back-link" do %>
+				<span uk-icon="icon: arrow-left"></span> Back to Locations Page
+			<% end %>
+		</div>
+	</div>
 
-		<div class="search-sec">
-			<div class="inside lg">
-				<div class="searcher">
-					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
-					  <%= f.text_field :near, class: "form-control", placeholder: "Search by city and state, or zip" %>
 
-					  <%= f.select(:proximity) do %>
-					    <% [['10 mi', '10'], ['20 mi', '20'], [ '30 mi', '30']].each do |c| -%>
-					      <%= content_tag(:option, c.first, value: c.last) %>
-					    <% end %>
-					  <% end %>
-
-					  <%= f.submit "", class: "btn btn-outline-secondary search" %>
-					<% end %>
+	<div class="full listings" uk-filter="target: .js-filter">
+		<div class="inside lg">
+			<div class="platform">
+				<div class="map">
+			    <%= tag.div nil, id: 'map' %>
 				</div>
 
-				<div class="boundary-align uk-panel filter-box states">
-    	    <div class="filter-uk">Search by State <span  uk-icon="icon: chevron-down;"></span></div>
-    	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
-    	    	<% @states.each do |state| %>
-    					<div class="filter-tag <%= state.full_name %>">
-    						<%= link_to "#{state.full_name}", state_path(state) %>
-    					</div>
-    				<% end %>
-        	</div>
-        </div>
+				<div class="loclist">
+					<div class="boundary-align uk-panel filter-box tags">
+				    <div class="filter-uk">Filter Locations by Service <span class="dd-btn" uk-icon="icon: chevron-down;"></span></div>
 
-		  	<div class="boundary-align uk-panel filter-box">
-			    <div class="filter-uk">Search by Service <span  uk-icon="icon: chevron-down;"></span></div>
-			    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
-			    	<div class="filter-tag">
-			    		<span class="tag-icon retail"></span>
-			    		<a href="/tags/retail">Retail</a>
-			    	</div>
+			    	<div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
+						  <ul class="filterList">
+							  <li class="filter-tag retail" uk-filter-control="[data-tags*='retail']">
+							  	<span class="tag-icon retail"></span>
+							  	Retail
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+							  
+							  <li class="filter-tag grooming" uk-filter-control="[data-tags*='grooming']">
+							  	<span class="tag-icon grooming"></span>
+							  	Grooming
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+							  
+							  <li class="filter-tag self-service-grooming" uk-filter-control="[data-tags*='self-service-grooming']">
+							  	<span class="tag-icon self-service-grooming"></span>
+							  	Self-Service Grooming
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+							  
+							  <li class="filter-tag doggie-daycare" uk-filter-control="[data-tags*='doggie-daycare']">
+							  	<span class="tag-icon doggie-daycare"></span>
+							  	Day Care &amp; Pet Resort
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
 
-						<div class="filter-tag">
-							<span class="tag-icon grooming"></span>
-							<a href="/tags/grooming">Grooming</a>
+							  <li class="filter-tag veterinary-clinic" uk-filter-control="[data-tags*='veterinary-clinic']">
+							  	<span class="tag-icon veterinary-clinic"></span>
+							  	Wellness Clinic
+							  	<span class="acticon" uk-icon="icon:check"></span>
+							  </li>
+							</ul>
 						</div>
-						<div class="filter-tag">
-							<span class="tag-icon self-service-grooming"></span>
-							<a href="/tags/self-service-grooming">Self-Service Grooming</a>
-						</div>
-						<div class="filter-tag">
-							<span class="tag-icon doggie-daycare"></span>
-							<a href="/tags/doggie-daycare">Day Care &amp; Pet Resort</a>
-						</div>
-						<div class="filter-tag">
-							<span class="tag-icon veterinary-clinic"></span>
-							<a href="/tags/veterinary-clinic">Wellness Clinic</a>
-						</div>
-		    	</div>
-		    </div>
-		  </div>
-		</div>
-
-		<div class="map">
-	    <%= tag.div nil, id: 'map' %>
-		</div>
-
-		<div class="loclist">
-			<div class="inside">
-				<%= render partial: "locations/list" %>
+			    </div>
+					<!-- <div class="inside"> -->
+						<%= render partial: "locations/list" %>
+					<!-- </div> -->
+				</div>
 			</div>
 		</div>
 

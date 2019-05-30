@@ -7,7 +7,11 @@ class LocationsController < ApplicationController
 	before_action :get_user_location
   helper_method :boss_admin
 
-	def index
+  def index
+		@states = State.all
+  end
+
+	def OLDindex
 		pointa = get_user_location
 		@user_lng = pointa["longitude"]
     @user_lat = pointa["latitude"]

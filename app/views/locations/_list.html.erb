@@ -1,89 +1,95 @@
-<%= tag.div id: "locations-list", data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } do %>
-	<table>
-		<% @locations.each do |location| %>
-			<div class="location-bx">
-				<%= link_to location_path(location) do %>
-					<div class="cat name">
-						<%= location.ntitle %>
-						<% if location.coming_soon?  %>
-							(Coming Soon)
+	<%= tag.div id: "locations-list", data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } do %>
+		<table>
+
+			<ul class="js-filter">
+				<% @locations.each do |location| %>
+					<li class="location-bx" data-tags="<%= location.tag_class %>">
+						<%= link_to location_path(location) do %>
+							<div class="cat name">
+								<%= location.ntitle %>
+								<% if location.coming_soon?  %>
+									(Coming Soon)
+								<% end %>
+							</div>
 						<% end %>
-					</div>
+
+						<div class="cat address">
+							<%= location.street_address_one.strip %>
+							<% if location.street_address_two && location.street_address_two.size > 1 %>
+								<br><span class="addr"><%= location.street_address_two %></span>
+							<% end %>
+
+							<br><%= location.city.strip %>, <%= location.state.full_name %> <%= location.zip %>
+						</div>
+
+						<div class="cat phone"><a href="tel:<%= location.phone %>"><%= number_to_phone(location.phone, delimiter: '-') %></a></div>
+
+						<div class="cat email">
+							<a href="mailto:<%= location.email_address %>"><span uk-icon="icon: mail;"></span></a>
+
+							<% if location.fb && location.fb.size > 1 %>
+								<a href="https://www.facebook.com<%= location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
+							<% end %>
+
+							<% if location.insta && location.insta.size > 1 %>
+								<a href="https://www.instagram.com<%= location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
+							<% end %>
+
+							<% if location.twitter && location.twitter.size > 1 %>
+								<a href="https://twitter.com<%= location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
+							<% end %>
+						</div>
+
+						<div class="cat tags">
+							<span>Store Services:</span><br>
+							<% if location.tags.count > 0 %>
+								<% if location.tag_ids.include? 9 %>
+									<button class="tag-icon retail" uk-tooltip="Retail">
+										<span class="tag-img"></span>
+									</button>
+								<% end %>
+
+								<% if location.tag_ids.include? 1 %>
+									<button class="tag-icon grooming" uk-tooltip="Grooming">
+										<span class="tag-img"></span>
+									</button>
+								<% end %>
+
+								<% if location.tag_ids.include? 2 %>
+									<button class="tag-icon self-service-grooming" uk-tooltip="Self Service Grooming">
+										<span class="tag-img"></span>
+									</button>
+								<% end %>
+
+								<% if location.tag_ids.include? 3 %>
+									<button class="tag-icon doggie-daycare" uk-tooltip="Doggie Daycare">
+										<span class="tag-img"></span>
+									</button>
+								<% end %>
+
+								<% if location.tag_ids.include? 0 %>
+									<button class="tag-icon veterinary-clinic" uk-tooltip="Veterinary Clinic">
+										<span class="tag-img"></span>
+									</button>
+								<% end %>
+							<% end %>
+						</div>
+
+						<div class="btn-row">
+							<%= link_to "Store Details", location_path(location), class: 'woof-link' %>
+							<a href="<%= location.direct_link %>" target="_blank" class="woof-link dir">Directions </a>
+						</div>
+
+		    		<% if user_signed_in? && current_user.admin? %>
+							<% if location.longitude == nil %><div class="actions">**<small>Coordinates Missing**</small></div><% end %>
+						<% end %>
+					</li>
 				<% end %>
+		
+			</ul>
 
-				<div class="cat address">
-					<%= location.street_address_one.strip %>
-					<% if location.street_address_two && location.street_address_two.size > 1 %>
-						<br><span class="addr"><%= location.street_address_two %></span>
-					<% end %>
 
-					<br><%= location.city.strip %>, <%= location.state.name %> <%= location.zip %>
-				</div>
-
-				<div class="cat phone"><a href="tel:<%= location.phone %>"><%= number_to_phone(location.phone, delimiter: '-') %></a></div>
-
-				<div class="cat email">
-					<a href="mailto:<%= location.email_address %>"><span uk-icon="icon: mail;"></span></a>
-
-					<% if location.fb && location.fb.size > 1 %>
-						<a href="https://www.facebook.com<%= location.fb %>" target="_blank"><span class="linkcon" uk-icon="icon: facebook;"></span></a>
-					<% end %>
-
-					<% if location.insta && location.insta.size > 1 %>
-						<a href="https://www.instagram.com<%= location.insta %>" target="_blank"><span class="linkcon" uk-icon="icon: instagram;"></span></a>
-					<% end %>
-
-					<% if location.twitter && location.twitter.size > 1 %>
-						<a href="https://twitter.com<%= location.twitter %>" target="_blank"><span class="linkcon" uk-icon="icon: twitter;"></span></a>
-					<% end %>
-				</div>
-
-				<div class="cat tags">
-					<span>Store Services:</span><br>
-					<% if location.tags.count > 0 %>
-						<% if location.tag_ids.include? 9 %>
-							<button class="tag-icon retail" uk-tooltip="Retail">
-								<span class="tag-img"></span>
-							</button>
-						<% end %>
-
-						<% if location.tag_ids.include? 1 %>
-							<button class="tag-icon grooming" uk-tooltip="Grooming">
-								<span class="tag-img"></span>
-							</button>
-						<% end %>
-
-						<% if location.tag_ids.include? 2 %>
-							<button class="tag-icon self-service-grooming" uk-tooltip="Self Service Grooming">
-								<span class="tag-img"></span>
-							</button>
-						<% end %>
-
-						<% if location.tag_ids.include? 3 %>
-							<button class="tag-icon doggie-daycare" uk-tooltip="Doggie Daycare">
-								<span class="tag-img"></span>
-							</button>
-						<% end %>
-
-						<% if location.tag_ids.include? 0 %>
-							<button class="tag-icon veterinary-clinic" uk-tooltip="Veterinary Clinic">
-								<span class="tag-img"></span>
-							</button>
-						<% end %>
-					<% end %>
-				</div>
-
-				<div class="btn-row">
-					<%= link_to "Store Details", location_path(location), class: 'woof-link' %>
-					<a href="<%= location.direct_link %>" target="_blank" class="woof-link dir">Directions </a>
-				</div>
-
-    		<% if user_signed_in? && current_user.admin? %>
-					<% if location.longitude == nil %><div class="actions">**<small>Coordinates Missing**</small></div><% end %>
-				<% end %>
-			</div>
-		<% end %>
-	</table>
-<% end %>
-	<%== pagy_nav(@pagy) %>
-<!-- <= will_paginate @locations, remote: true %> -->
+		</table>
+	<% end %>
+		<%== pagy_nav(@pagy) %>
+	<!-- <= will_paginate @locations, remote: true %> -->
