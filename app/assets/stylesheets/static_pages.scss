@@ -1022,7 +1022,7 @@ hr{
     width:1101px;
   }
   #storerocket-widget .storerocket-filters-button,
-  #storerocket-widget .storerocket-query .storerocket-search-field,
+  #storerocket-widget .storerocket-query,
   #storerocket-widget .storerocket-radius-button {
     box-shadow: 0px 1px 4px rgba($black, .3) !important;
   }
@@ -1141,7 +1141,7 @@ hr{
   }
 
   @media only screen and (max-width: 823px) {
-    
+
   }
 
 
