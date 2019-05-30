@@ -999,10 +999,6 @@ hr{
   }
 }
 
-#storerocket-widget ::placeholder {
-      color: $tbrown;
-      opacity: 1; /* Firefox */
-  }
 // store rocket
 .page, .locations.index {
   #storerocket-widget{ background:transparent; border:0; font-family: $helv; }
@@ -1071,13 +1067,14 @@ hr{
   
   #storerocket-powered {display: none;}
 
-  .storerocket-popup-fields {@include sec-default();
+  .gm-style{font-family:$helv;}
+  .storerocket-popup-fields {@include sec-default(); 
     .storerocket-popup-field{display: inline-block; margin-right:10px;}
     .storerocket-popup-field-name{display: none;}
     span {color: $tbrown;}
   }
   .storerocket-popup-phone,.storerocket-popup-email {@include sec-default(); margin-bottom:10px;}
-  .storerocket-popup-email{display: none;}
+  .storerocket-popup-email,.storerocket-popup-hours{display: none;}
 
 
   .boundary-align.uk-panel.states {
@@ -1138,10 +1135,6 @@ hr{
     .boundary-align.uk-panel.states {width:70%;}
     #storerocket-widget .storerocket-query {width:60%; margin-left:15%;}
     #storerocket-widget .storerocket-filters-button{width:70%;}
-  }
-
-  @media only screen and (max-width: 823px) {
-
   }
 
 
@@ -1220,6 +1213,16 @@ hr{
       &.uk-active span.acticon{display: inline-block; }
     }
   }
+
+
+  .gm-style-iw.gm-style-iw-c {max-height: 384px;}
+  .gm-style-iw-d {overflow: scroll; max-width: 636px; max-height: 366px;}
+  .gm-style-iw p {font-weight: 300; font-size:12px !important;}
+  .gm-style-iw h4 {font-weight: 600; font-size:15px; line-height: 24px; margin-bottom: 0;}
+  .gm-style-iw p.tel {margin-bottom:15px;
+    a {color:$pink; }
+  }
+
 
   @include bp(tb) {
     .location-bx {width:100%;}

@@ -11,13 +11,23 @@ window.addMarkers = function addMarkers() {
   map.removeMarkers();
 
   locations.forEach(function(location) {
+    if (location.street_address_two) {
+      str_two = ', ' + location.street_address_two + ','
+    } else {
+      str_two = ''
+    } 
+
+    var name = location.store_name;
+    display_title = name.includes("Grooming") ? name.replace("Woof Gang Bakery & Grooming", "") : name.replace("Woof Gang Bakery", "");
+
     if (location.latitude && location.longitude) {
       var marker = map.addMarker({
         lat: location.latitude,
         lng: location.longitude,
         title: location.address,
         infoWindow: {
-          content: '<p>' + location.street_address_one + '<br>' + location.city + ', ' + location.og_state + ' ' + location.zip + '</p><p>' + '<a href="tel:' + location.phone + '">' + location.phone +
+          content: '<h4>' + display_title + '</h4>' +
+          '<p>' + location.street_address_one + str_two  + ' ' + location.city + ', ' + location.og_state + ' ' + location.zip + '</p><p class="tel">' + '<a href="tel:' + location.phone + '">' + location.phone +
           '</a></p> <p><a class="woof-link" href="https://www.google.com/maps/dir//' +
           location.street_address_one + '+' + location.city + '+' + location.state + '+' + location.zip + '" target="_blank">Get Directions</a></p>'
         }
