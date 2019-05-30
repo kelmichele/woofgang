@@ -703,11 +703,8 @@ hr{
     }
     .woof-link {display: inline-block; width:auto; padding:6px 10px; text-align: center; font-size: 13.5px; color:$white;
       margin:0 0 5px; float: none; background-color: rgba($pink, .9); width:55%;
-      letter-spacing: .2px;border:1px solid rgba($pink,.6);font-weight: $semi;
-      &.dir {background-color: #3d0a00; float: right; width:44%;
-         background-color:$white; color: $pink; @include tshadowl(rgba($black, .1)); font-weight: bold;
-
-      }
+      letter-spacing: .2px;border:1px solid rgba($pink,.6);font-weight: $semi;  @include tshadowl(rgba($black, .1)); 
+      &.dir {background-color: #3d0a00; float: right; width:44%;background-color:$white; color: $pink;font-weight: bold;}
     }
 
     // KP IF BUTTONS LOOK MISMATCHED, BUILD FROM THIS.
@@ -1180,7 +1177,7 @@ hr{
     .cat.address br {display: none;}
     .cat.tags,.cat.email,.cat.phone{display: none;}
     .btn-row{position: relative; left:0; width:100%; margin-top:5px;}
-    .woof-link{width:auto;padding:6px 20px; text-shadow:none; font-weight:600;}
+    .woof-link{width:auto;padding:6px 20px; font-weight:600;}
     .woof-link.dir{display: none;}
   }
 
@@ -1217,10 +1214,14 @@ hr{
 
   .gm-style-iw.gm-style-iw-c {max-height: 384px;}
   .gm-style-iw-d {overflow: scroll; max-width: 636px; max-height: 366px;}
-  .gm-style-iw p {font-weight: 300; font-size:12px !important;}
-  .gm-style-iw h4 {font-weight: 600; font-size:15px; line-height: 24px; margin-bottom: 0;}
-  .gm-style-iw p.tel {margin-bottom:15px;
-    a {color:$pink; }
+  .gm-style-iw {
+    p {font-weight: 300; font-size:12px !important;}
+    h4 {font-weight: 600; font-size:15px; line-height: 24px; margin-bottom: 0;}
+    p.tel {margin-bottom:15px;
+      a {color:$pink; }
+    }
+    .woof-link {display: inline-block; width:auto; font-size:13px; padding: 4px 10px;}
+    .woof-link.two{margin-left:15px;}
   }
 
 
@@ -1246,6 +1247,13 @@ hr{
 
   @include bp(mb) {
     .loclist .filter-box {width:85%;}
+  }
+
+  @include bp(oc) {
+    .gm-style-iw {
+      .woof-link {display: block;}
+      .woof-link.two{margin:10px 0;}
+    }
   }
 
   @include bp(sm) {

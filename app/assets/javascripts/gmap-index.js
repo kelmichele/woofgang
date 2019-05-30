@@ -28,8 +28,8 @@ window.addMarkers = function addMarkers() {
         infoWindow: {
           content: '<h4>' + display_title + '</h4>' +
           '<p>' + location.street_address_one + str_two  + ' ' + location.city + ', ' + location.og_state + ' ' + location.zip + '</p><p class="tel">' + '<a href="tel:' + location.phone + '">' + location.phone +
-          '</a></p> <p><a class="woof-link" href="https://www.google.com/maps/dir//' +
-          location.street_address_one + '+' + location.city + '+' + location.state + '+' + location.zip + '" target="_blank">Get Directions</a></p>'
+          '</a></p> <a class="woof-link" href="https://www.google.com/maps/dir//' + location.street_address_one + '+' + location.city + '+' + location.og_state + '+' + location.zip + '" target="_blank">Get Directions</a>' +
+          '<a class="woof-link two" href="/locations/' + location.slug + '">Store Details</a>'
         }
       });
     }
