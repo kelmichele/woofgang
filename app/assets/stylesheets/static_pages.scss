@@ -1071,7 +1071,7 @@ hr{
     span {color: $tbrown;}
   }
   .storerocket-popup-phone,.storerocket-popup-email {@include sec-default(); margin-bottom:10px;}
-  .storerocket-popup-email,.storerocket-popup-hours{display: none;}
+  .storerocket-popup-email{display: none;}
 
 
   .boundary-align.uk-panel.states {
