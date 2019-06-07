@@ -1032,7 +1032,7 @@ hr{
 
   #storerocket-widget .storerocket-query {margin-right:0; color:$tbrown !important; width:29%; border-top:1px solid rgba($black,.1);
     // .storerocket-search-icon {display: none;}
-    .storerocket-search-icon {}
+    .storerocket-search-icon:hover {cursor: pointer;}
     .storerocket-search-field {padding-left:11px; border-radius:0; height:42px; padding-left:35px;}
   }
   #storerocket-widget .storerocket-radius-button {
