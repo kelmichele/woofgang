@@ -1031,8 +1031,9 @@ hr{
   }
 
   #storerocket-widget .storerocket-query {margin-right:0; color:$tbrown !important; width:29%; border-top:1px solid rgba($black,.1);
-    .storerocket-search-icon {display: none;}
-    .storerocket-search-field {padding-left:11px; border-radius:0; height:42px;}
+    // .storerocket-search-icon {display: none;}
+    .storerocket-search-icon {}
+    .storerocket-search-field {padding-left:11px; border-radius:0; height:42px; padding-left:35px;}
   }
   #storerocket-widget .storerocket-radius-button {
     color: $tbrown; font-size:14px; border-radius: 0;
@@ -1150,10 +1151,13 @@ hr{
 
   @include bp(ph) {
     .boundary-align.uk-panel.states,#storerocket-widget .storerocket-filters-button {width:90%;}
-    #storerocket-widget .storerocket-query {width:90%; @include center-block();}
-    #storerocket-widget .storerocket-radius {float:right; margin-right:5%;}
+    // #storerocket-widget .storerocket-query {width:90%; @include center-block();}
+    // #storerocket-widget .storerocket-radius {float:right; margin-right:5%;}
 
     #storerocket-map-container{top:175px;}
+
+    #storerocket-widget .storerocket-query {width:75%; float:none; margin-left:5.5%;}
+    #storerocket-widget .storerocket-radius {float:none;}
   }
 }
 
