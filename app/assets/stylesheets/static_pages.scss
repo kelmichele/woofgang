@@ -1159,6 +1159,11 @@ hr{
     #storerocket-widget .storerocket-query {width:75%; float:none; margin-left:5.5%;}
     #storerocket-widget .storerocket-radius {float:none;}
   }
+
+  @include bp(sm) {
+    #storerocket-widget .storerocket-query {width:90%; @include center-block();}
+    #storerocket-widget .storerocket-radius {float:right; margin-right:5%;}
+  }
 }
 
 // states-show with rocket
