@@ -1,5 +1,32 @@
 STOCKIST IMPORT STOPS AT THE WOODLANDS. THE NEXT IMPORT SHOULD START WITH THORNTON.
 
+IF YOU WANT TO DO A BLOG'S RECENT POSTS WITH BG IMAGES LIKE THE INDEX PAGE:
+	.rtitle { @include sec-default(); font-size: 15px; color:$tbrown;}
+  .image{background-color:$white; background-size:cover; background-repeat:no-repeat; background-position: center center;
+    height:250px;
+  }
+    
+	<% recent.each do |recent| %>
+		<style type="text/css">
+			.rpost.rpost-<%= recent.id %> .image {
+				<% if recent.image.attached? %>
+					background-image: url(<%= rails_blob_url(recent.image) %>);
+					<% else %>
+					background-image: url(/assets/blog-recent.png);
+				<% end %>
+			}
+		</style>
+
+		<%= link_to recent.slug, class: "rpost rpost-#{recent.id}" do %>
+		  <div class="image"></div>
+		  <div class="rtitle">
+				<%= recent.title %>
+			</div>
+		<% end %>
+	<% end %>
+
+
+
 
 # if Rails.env.production? end
 

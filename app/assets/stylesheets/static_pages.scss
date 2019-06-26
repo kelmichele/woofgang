@@ -2086,14 +2086,37 @@ hr{
   .recent-posts {@include sec-default(); padding: 40px 0; background-color: $f9;
     h3{border-bottom: 1px solid rgba($tbrown, .1); padding-bottom: 4px; font-size: 1.3rem; font-weight: $semi;}
 
-    .rpost {display: inline-block; float: left;
-      width:30%; margin: 0 1.5% 20px;
-      &:nth-child(2) { margin-right:2%;}
-      &:nth-child(3) {float: right; margin-left: 0;}
+    // .rpost {display: inline-block; float: left;
+    //   width:30%; margin: 0 1.5% 20px;
+    //   &:nth-child(2) { margin-right:2%;}
+    //   &:nth-child(3) {float: right; margin-left: 0;}
+    // }
+    // .rtitle, .image { @include sec-default(); font-size: 15px; color:$tbrown;}
+    // .rtitle{margin-top: 15px; text-align: center;}
+    // .image { height:250px; overflow: hidden;}
+
+    
+
+    // 6/26KP anything commented out in recent-posts above was a setting before this change
+    // this is for background images in recents
+    // .rtitle { @include sec-default(); font-size: 15px; color:$tbrown;}
+    // .image{background-color:$white; background-size:cover; background-repeat:no-repeat; background-position: center center;
+    //   height:250px;
+    // }
+
+    // this is for current style
+    text-align:center;
+    h3{text-align: left;}
+    .rpost {display: inline-block; float: none; vertical-align: top;
+      width:31%; margin: 0 0 20px 1.5%;
+      // &:nth-child(2) { margin-right:2%;}
+      // &:nth-child(3) {float: right; margin-left: 0;}
     }
     .rtitle, .image { @include sec-default(); font-size: 15px; color:$tbrown;}
-    .rtitle{margin-top: 15px; text-align: center;}
-    .image { height:250px; overflow: hidden;}
+    .rtitle{margin-top: 15px;}
+    .image { background-color:$white;
+      img{height:200px; @include center-block();}
+    }
   }
 
   @include bp(su) {
@@ -2101,9 +2124,10 @@ hr{
       &::before {height:340px;}
     }
 
-    .recent-posts {
-      .inside{width:70%;}
-    }
+    // 626 KP
+    // .recent-posts {
+    //   .inside{width:70%;}
+    // }
   }
 
   @media (max-width:1200px) {
@@ -2139,8 +2163,14 @@ hr{
 
     .recent-posts { padding: 25px 0;
       h3{font-size: 1.2rem; }
-      .image {height:auto; overflow: visible;
-        img{height:200px;@include center-block(); }
+      // 626 KP
+      // .image {height:auto; overflow: visible;
+      //   img{height:200px;@include center-block(); }
+      // }
+      
+      .rpost {
+        width:40%; margin: 10px 2%;
+        &:nth-child(3) {display:none;}
       }
     }
   }
@@ -2157,12 +2187,13 @@ hr{
 
     .recent-posts { padding: 20px 0;
       h3{font-size: 1.1rem; }
-      .rpost {
-        width:47%; margin: 10px 0;
-        &:nth-child(2) { float:right; margin-right: 0;}
-        &:nth-child(3) {display:none;}
-      }
-      .image img{height:150px;}
+      // 626 KP
+        .rpost {
+          width:47%; margin: 10px 0;
+          &:nth-child(2) { float:right;}
+          .rtitle{margin-bottom: 20px;}
+        }
+        .image img{height:150px;}
     }
   }
 
@@ -2178,6 +2209,12 @@ hr{
 
   @include bp(ph) {
     .full-post .title .inside.med2 {width:90%;}
+
+    .recent-posts .rpost {
+      width:320px;@include center-block(); margin-bottom:30px;
+      &:nth-child(2) { float:none;}
+    }
+    .image img{height:auto; }
   }
 }
 
