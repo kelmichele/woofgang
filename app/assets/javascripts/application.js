@@ -16,4 +16,5 @@
 //= require activestorage
 //= require turbolinks
 //= require trix
+//= require trix_attachments
 //= require_tree .

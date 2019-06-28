@@ -87,4 +87,7 @@ Rails.application.routes.draw do
   end
   get '/posts/new', to: 'posts#new', as: 'new_post'
 
+  resources :images, only: [:create]
+
+
 end
