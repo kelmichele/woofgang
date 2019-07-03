@@ -2080,6 +2080,7 @@ hr{
       }
 
       p.date{font-size: 14px; color: #666; margin:0px;}
+      img{@include center-block();}
     }
   }
 
