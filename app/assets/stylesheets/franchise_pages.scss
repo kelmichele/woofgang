@@ -545,13 +545,32 @@ br.tn {display: none;}
 		}
 	}
 
+	@include bp(br) {
+		
+		// REG BR .page-seal {position: relative;@include sec-default();bottom:0;left: auto; margin-top: 30px;}
+		// FRNCHS tb then BR
+		// .landing-layout .page-seal {bottom:105px;left: 10%;}
+		// .landing-layout .page-seal {bottom:0px;left: -21%; margin-top: -180px}
+		
+		.landing-layout {
+			.box {padding:0;
+				.text{width:85%; @include center-block();text-align: center;}
+				.image{width:60%;@include center-block();}
+			}
+
+			.page-seal {margin-top:-120px;}
+			.sealicon{float:left; margin-left:11%;}
+		}
+	}
+
 	@include bp(tn) {
 		.landing-layout {
-			// padding:25px 0 15px;
 			.box{padding:0;
 				.text{width:85%; @include center-block();text-align: center;}
 				.image {display: none;}
 			}
+			.page-seal {margin-top:0px;}
+			.sealicon{width:160px; @include center-block();}
 		}
 
 		.content-layout{
