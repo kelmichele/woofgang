@@ -47,7 +47,7 @@ class Post < ApplicationRecord
 	end
 
 	def self.to_csv(options = {})
-	  desired_columns = ["id", "title", "content", "url", "date"]
+	  desired_columns = ["id", "title", "content", "url", "date", "slug"]
 	  CSV.generate(options) do |csv|
 	    csv << desired_columns
 	    all.each do |post|

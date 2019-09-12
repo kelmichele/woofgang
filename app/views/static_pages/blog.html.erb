@@ -8,6 +8,8 @@
 	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
 	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
   			<%= link_to "Create New Post", new_post_path, class: 'woof-link' %>
+  			<div class="clearfix"></div><br>
+  			<%= link_to "Download CSV", posts_path(format: "csv"), class: 'woof-link dl' %>
       </div>
 		<% end %>
 	</div>
