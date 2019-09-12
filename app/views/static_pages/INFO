@@ -1,3 +1,18 @@
+ORIGINAL EXPORT CODE - LOC.RB -- replaced it with the version supporting tags
+	def self.to_csv(options = {})
+	  # slug, og_state
+	  desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state_id", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude", "coming_soon"]
+	  CSV.generate(options) do |csv|
+	    csv << desired_columns
+	    all.each do |location|
+	      csv << location.attributes.values_at(*desired_columns)
+	    end
+	  end
+	end
+
+
+
+
 STOCKIST IMPORT STOPS AT THE WOODLANDS. THE NEXT IMPORT SHOULD START WITH THORNTON.
 
 IF YOU WANT TO DO A BLOG'S RECENT POSTS WITH BG IMAGES LIKE THE INDEX PAGE:

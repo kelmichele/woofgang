@@ -112,12 +112,16 @@ class Location < ApplicationRecord
   end
 
   def self.to_csv(options = {})
-    # desired_columns = ["store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state", "zip", "hours", "latitude", "longitude"]
-    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state_id", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude"]
+    # slug, og_state
+    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state_id", "og_state", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude", "coming_soon", "slug", "tags"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |location|
-        csv << location.attributes.values_at(*desired_columns)
+        tags = ""
+        location.tags.each do |tag|
+          tags << tag.name + ","
+        end
+        csv << [location.id, location.store_name, location.email_address, location.phone, location.street_address_one, location.street_address_two, location.city, location.state_id, location.og_state, location.zip, location.fb, location.insta, location.twitter, location.yelp, location.site, location.hours, location.latitude, location.longitude, location.coming_soon, location.slug || " ", tags]
       end
     end
   end

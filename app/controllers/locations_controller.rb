@@ -9,6 +9,13 @@ class LocationsController < ApplicationController
 
   def index
 		@states = State.all
+		
+		# kp 9/12
+		@locations = Location.all
+		respond_to do |format|
+		  format.html
+		  format.csv { send_data @locations.to_csv, filename: "woof-locations.csv" }
+		end
   end
 
 	def import
