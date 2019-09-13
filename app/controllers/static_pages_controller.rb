@@ -31,7 +31,11 @@ class StaticPagesController < ApplicationController
 	end
 
 	def page
-	  @states = State.all
+		@candidates = Candidate.all
+		respond_to do |format|
+		  format.html
+		  format.csv { send_data @candidates.to_csv, filename: "wgb-franchise-candidates.csv" }
+		end
 	end
 
 end

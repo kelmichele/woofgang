@@ -55,6 +55,10 @@ Rails.application.routes.draw do
 
   get 'tags/:tag', to: 'locations#index', as: :tag
 
+
+  get '/candidates', to: 'static_pages#page', as: 'candidates'
+
+
   resources :states
 
   resources :locations do

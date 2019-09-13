@@ -3,28 +3,19 @@
 
 <div class="ipage-header">
 	<div class="inside narrow">
-		<h1><%= @page_title %></h1>
-		<h2>Use the map below to find a location near you.</h2>
+		<h1>Resource Page</h1>
 	</div>
 </div>
 
 
-<div class="full-search">
-	<div class="inside lg">
+<div style="padding:40px 0;" class="full">
+	<div class="inside">
+		<% if user_signed_in? && current_user.admin? %>
 		
-		<div class="boundary-align uk-panel filter-box states">
-	    <div class="filter-uk">Search by State <span  uk-icon="icon: chevron-down;"></span></div>
-	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .filter-uk;">
-	    	<% @states.each do |state| %>
-					<div class="filter-tag <%= state.full_name %>">
-						<%= link_to "#{state.full_name}", state_path(state) %>
-					</div>
-				<% end %>
-    	</div>
-    </div>
+			<h3>Candidates:</h3>
+			<%= link_to "Download CSV", candidates_path(format: "csv"), class: 'woof-link dl' %>
 
-		<!-- Rocket Google -->
-		<div id='storerocket-widget' style='width:100%;' data-storerocket-env='p' data-storerocket-id='7OdJEZD8WE'><p style='text-align:center;font-size:13px;padding:10px;'>Store locator is loading from StoreRocket <a target='_blank' href='https://storerocket.io' style='font-size:13px;'>Store Locator Software</a>..</p></div><script>(function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.src='https://cdn.storerocket.io/js/widget.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());</script>
+		<% end %>
 	</div>
 </div>
 
