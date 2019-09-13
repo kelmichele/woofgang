@@ -54,10 +54,4 @@
 			</div>
 		</div>
 	</div>
-
-	<% if user_signed_in? && current_user.admin? %>
-			<h3>Vendor Inquiries:</h3>
-			<%= link_to "Download CSV", vendors_path(format: "csv"), class: 'woof-link dl' %>
-
-		<% end %>
 </div>

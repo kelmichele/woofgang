@@ -11,12 +11,9 @@
 <div style="padding:40px 0;" class="full">
 	<div class="inside">
 		<% if user_signed_in? && current_user.admin? %>
-		
-			<!-- <h3>Franchise Candidates:</h3> -->
-			<!-- <= link_to "Download CSV", candidates_path(format: "csv"), class: 'woof-link dl' %> -->
 
 			<h3>Press Inquiries:</h3>
-			<%= link_to "Download CSV", reporters_path(format: "csv"), class: 'woof-link dl' %>
+			<%= link_to "Download CSV", estates_path(format: "csv"), class: 'woof-link dl' %>
 
 		<% end %>
 	</div>

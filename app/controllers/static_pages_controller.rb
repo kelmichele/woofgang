@@ -16,11 +16,6 @@ class StaticPagesController < ApplicationController
 	end
 
 	def retail
-		@vendors = Vendor.all
-		respond_to do |format|
-		  format.html
-		  format.csv { send_data @vendors.to_csv, filename: "wgb-vendor-inquiries.csv" }
-		end
 	end
 
 	def self_service_grooming
@@ -36,17 +31,12 @@ class StaticPagesController < ApplicationController
 	end
 
 	def page
-		# @candidates = Candidate.all
-		# respond_to do |format|
-		#   format.html
-		#   format.csv { send_data @candidates.to_csv, filename: "wgb-franchise-candidates.csv" }
-		# end
-
-		@reporters = Reporter.all
+		@estates = Estate.all
 		respond_to do |format|
 		  format.html
-		  format.csv { send_data @reporters.to_csv, filename: "wgb-press-inquiries.csv" }
+		  format.csv { send_data @estates.to_csv, filename: "wgb-real-estate-submissions.csv" }
 		end
+
 	end
 
 end

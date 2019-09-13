@@ -15,13 +15,13 @@ class Vendor < ApplicationRecord
 	validates :msrp, presence: true
 
 	
-	def self.to_csv(options = {})
-    desired_columns = ["id", "name", "email", "phone", "address", "company", "website", "category", "product", "big_box", "order_min", "wholesale_price", "source", "shipping", "msrp", "created_at"]
-    CSV.generate(options) do |csv|
-      csv << desired_columns
-      all.each do |reporter|
-        csv << reporter.attributes.values_at(*desired_columns)
-      end
-    end
-  end
+	# def self.to_csv(options = {})
+ #    desired_columns = ["id", "name", "email", "phone", "address", "company", "website", "category", "product", "big_box", "order_min", "wholesale_price", "source", "shipping", "msrp", "created_at"]
+ #    CSV.generate(options) do |csv|
+ #      csv << desired_columns
+ #      all.each do |reporter|
+ #        csv << reporter.attributes.values_at(*desired_columns)
+ #      end
+ #    end
+ #  end
 end
