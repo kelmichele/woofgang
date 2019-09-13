@@ -31,11 +31,11 @@ class StaticPagesController < ApplicationController
 	end
 
 	def page
-		@estates = Estate.all
-		respond_to do |format|
-		  format.html
-		  format.csv { send_data @estates.to_csv, filename: "wgb-real-estate-submissions.csv" }
-		end
+		# @estates = Estate.all
+		# respond_to do |format|
+		#   format.html
+		#   format.csv { send_data @estates.to_csv, filename: "wgb-real-estate-submissions.csv" }
+		# end
 
 	end
 

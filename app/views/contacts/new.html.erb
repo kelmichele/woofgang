@@ -12,10 +12,6 @@
 		</div>
 	</div>
 
-		<% if user_signed_in? && current_user.admin? %>
-		<%= link_to "Download CSV", contacts_path(format: "csv"), class: 'woof-link dl' %>
-		<% end %>
-
 	<div class="cbody">
 		<div class="inside med2-def">
 			<div class="left">

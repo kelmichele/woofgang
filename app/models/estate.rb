@@ -22,15 +22,13 @@ class Estate < ApplicationRecord
   # validates :grapevine, presence: true
 
 
-
-
-  def self.to_csv(options = {})
-    desired_columns = ["id","first_name", "last_name", "company", "address", "city", "state", "zip", "email", "phone", "est_address", "landlord", "est_city", "est_county", "est_state", "est_zip", "est_develop", "est_footage", "est_type", "est_timeframe", "created_at"]
-    CSV.generate(options) do |csv|
-      csv << desired_columns
-      all.each do |estate|
-        csv << estate.attributes.values_at(*desired_columns)
-      end
-    end
-  end
+  # def self.to_csv(options = {})
+  #   desired_columns = ["id","first_name", "last_name", "company", "address", "city", "state", "zip", "email", "phone", "est_address", "landlord", "est_city", "est_county", "est_state", "est_zip", "est_develop", "est_footage", "est_type", "est_timeframe", "created_at"]
+  #   CSV.generate(options) do |csv|
+  #     csv << desired_columns
+  #     all.each do |estate|
+  #       csv << estate.attributes.values_at(*desired_columns)
+  #     end
+  #   end
+  # end
 end
