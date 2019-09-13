@@ -18,11 +18,11 @@ class Candidate < ApplicationRecord
 
 
   def self.to_csv(options = {})
-    desired_columns = ["id", "name", "email", "phone", "address", "city", "state", "zip", "experience", "background", "preferred_state", "preferred_city", "cash", "time_frame", "terms"]
+    desired_columns = ["id", "name", "email", "phone", "address", "city", "state", "zip", "experience", "background", "preferred_state", "preferred_city", "cash", "time_frame", "terms", "created_at"]
     CSV.generate(options) do |csv|
       csv << desired_columns
-      all.each do |post|
-        csv << post.attributes.values_at(*desired_columns)
+      all.each do |candidate|
+        csv << candidate.attributes.values_at(*desired_columns)
       end
     end
   end

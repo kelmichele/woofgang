@@ -57,6 +57,7 @@ Rails.application.routes.draw do
 
 
   get '/candidates', to: 'static_pages#page', as: 'candidates'
+  get '/reporters', to: 'static_pages#page', as: 'reporters'
 
 
   resources :states

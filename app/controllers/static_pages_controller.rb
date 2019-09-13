@@ -36,6 +36,12 @@ class StaticPagesController < ApplicationController
 		  format.html
 		  format.csv { send_data @candidates.to_csv, filename: "wgb-franchise-candidates.csv" }
 		end
+
+		# @reporters = Reporter.all
+		# respond_to do |format|
+		#   format.html
+		#   format.csv { send_data @reporters.to_csv, filename: "wgb-press-inquiries.csv" }
+		# end
 	end
 
 end
