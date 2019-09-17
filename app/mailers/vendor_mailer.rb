@@ -5,9 +5,8 @@ class VendorMailer < ApplicationMailer
 	def new_vendor(vendor)
 	  @vendor = vendor
 
-	  
-    # mail(to: "sam@woofgangbakery.com", subject: "Product Submission") do |format|
-    mail(to: "kelli@hsdesignhouse.com", subject: "Product Submission") do |format|
+	  # kelli@hsdesignhouse.com
+    mail(to: "sam@woofgangbakery.com", subject: "Product Submission") do |format|
   	  format.html
   	  format.text
     end
