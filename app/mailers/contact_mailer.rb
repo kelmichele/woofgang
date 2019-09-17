@@ -5,8 +5,9 @@ class ContactMailer < ApplicationMailer
 	def new_contact(contact)
 	  @contact = contact
 
-	  # kelli@hsdesignhouse.com
-	  mail(to: "join@woofgangbakery.com", subject: "Inquiry from Website") do |format|
+	  
+	  # mail(to: "join@woofgangbakery.com", subject: "Inquiry from Website") do |format|
+	  mail(to: "kelli@hsdesignhouse.com", subject: "Inquiry from Website") do |format|
 		  format.html
 		  format.text
 	  end

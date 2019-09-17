@@ -5,8 +5,8 @@ class CandidateMailer < ApplicationMailer
 	def new_candidate(candidate)
 	  @candidate = candidate
 
-	  # kelli@hsdesignhouse.com
-    mail(to: "franchise@woofgangbakery.com", subject: "Franchise Inquiry") do |format|
+	  mail(to: kelli@hsdesignhouse.com, subject: "Franchise Inquiry") do |format|
+    # mail(to: "franchise@woofgangbakery.com", subject: "Franchise Inquiry") do |format|
   	  format.html
   	  format.text
     end
