@@ -393,6 +393,13 @@ br.tn {display: none;}
 		}
 	}
 
+	@media (max-width: 1100px) {
+		.content-layout .full.fw.one{
+			.text{width:53%;}
+			.image{margin-left: 0;}
+		}
+	}
+
 	@include bp(tb) {
 		.landing-layout .box {
 			.med-def {width:85%;}
@@ -523,6 +530,57 @@ br.tn {display: none;}
 			.full.fw.two .inside.med-def{width:90%;}
 		}
 	}
+
+
+	//**** KP 10/8 ****//
+	.content-layout .full.fw.one {
+		position: relative;
+		.cl-seal{
+			position: absolute; z-index: 0;
+			bottom:40px; right:150px;
+			.sealicon {width:200px;}
+		}
+		ul{z-index: 1; position: relative;}
+
+		@media (max-width: 1300px) {
+			.cl-seal{right:100px;}
+		}
+
+		@media (max-width: 1200px) {
+			.cl-seal{right:60px;
+				.sealicon {width:185px;}
+			}
+		}
+
+		@media (max-width: 1100px) {
+			.cl-seal{right:50px;}
+		}
+
+		@include bp(tb) {
+			.cl-seal{right:50px; bottom:0px;
+				.sealicon {width:175px;}
+			}
+		}
+
+		@include bp(nn) {
+			.cl-seal{right:20px;}
+		}
+
+		@include bp(tn) {
+			.cl-seal .sealicon {width:160px;}
+		}
+
+		@include bp(md) {
+			.cl-seal {right:15%;}
+		}
+
+		@include bp(ph) {
+			.cl-seal {position: relative; text-align: center; right:auto; @include sec-default();margin-top: 20px;bottom:-15px;
+				.sealicon{@include center-block();}
+			}
+		}
+	}
+	//**** KP 10/8 ****//
 }
 
 .training-support .franchise-layout.fl1 {
