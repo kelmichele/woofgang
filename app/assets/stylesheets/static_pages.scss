@@ -1184,10 +1184,12 @@ hr{
     min-height:auto;margin:10px 0; padding:15px 15px 5px 15px;
     .cat{font-weight: 300;}
     .cat.address br {display: none;}
-    .cat.tags,.cat.email,.cat.phone{display: none;}
+    .cat.tags,.cat.email{display: none;}
     .btn-row{position: relative; left:0; width:100%; margin-top:5px;}
     .woof-link{width:auto;padding:6px 20px; font-weight:600;}
     .woof-link.dir{display: none;}
+
+    .cat.phone a {font-size:12px; color: #444; font-weight: 300; opacity: .9;}
   }
 
   .loclist, .map {display: inline-block; float: left;}
