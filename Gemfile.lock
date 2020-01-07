@@ -165,7 +165,8 @@ GEM
     pdfkit (0.8.4.1)
     pg (1.2.1)
     public_suffix (4.0.3)
-    puma (3.12.2)
+    puma (4.3.1)
+      nio4r (~> 2.0)
     rack (2.0.8)
     rack-rewrite (1.5.1)
     rack-test (1.1.0)
@@ -286,7 +287,7 @@ DEPENDENCIES
   pagy (~> 2.1, >= 2.1.5)
   pdfkit
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 4.3)
   rack-rewrite
   rails (~> 5.2.1)
   redis (~> 4.0, >= 4.0.2)
