@@ -11,7 +11,7 @@
 <%= action_cable_meta_tag %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<% unless current_page?('/page') or current_page?('/locations') %>
+<% unless current_page?('/self-service-locations') or current_page?('/locations') %>
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + Rails.application.credentials.google[:gmaps_key], 'data-turbolinks-track': 'reload'  %> 
 
 <% else %>

@@ -552,7 +552,7 @@ hr{
 //*********************************//
 //*********** locations ***********//
 //*********************************//
-.locations, .states, .shops, .page {
+.locations, .states, .shops, .service-location {
   .admin-uk{position:absolute; left: 80%; margin-top: -70px;}
   h1{margin-bottom: 0px; text-transform: uppercase; letter-spacing: 1px; font-size: 1.8rem;}
   h2{margin-top:6px; font-size:1.25rem; line-height: 1.1em;}
@@ -997,7 +997,7 @@ hr{
 }
 
 // store rocket
-.page, .locations.index {
+.locations.index, .service-location {
   #storerocket-widget{ background:transparent; border:0; font-family: $helv; }
   .full-search {@include sec-default(); padding: 55px 0; background-color: $f9;}
   #storerocket-widget .storerocket-result-website-link {
@@ -1270,6 +1270,11 @@ hr{
   @include bp(sm) {
     .loclist .filter-box {width:95%;}
   }
+}
+
+.service-location{
+  .full-search{padding-top:0;}
+  .storerocket-search-form{display: none;}
 }
 
 //*********************************//

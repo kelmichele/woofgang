@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get 'vet-clinic', to: 'static_pages#vet-clinic'
   get 'retail', to: 'static_pages#retail'
 
+  get 'self-service-locations', to: 'static_pages#self-service-locations'
+  
   get 'franchising', to: 'franchise_pages#franchising'
   get 'training-support', to: 'franchise_pages#training-support'
   get 'real-estate', to: 'franchise_pages#real-estate'

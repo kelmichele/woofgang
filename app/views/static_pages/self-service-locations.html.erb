@@ -1,0 +1,19 @@
+<% @page_title = "Self-Service Grooming Locations" %>
+<% @page_description = "Woof Gang Bakery has over 110 locations in the U.S. Use our map to find a location near you." %>
+
+<div class="service-location">
+	<div class="ipage-header">
+		<div class="inside narrow-def">
+			<h1>Self-Service Grooming Locations</h1>
+			<h2>Use the map below to view our self-service grooming locations in your area,<br> 
+				<%= link_to "or click here to view all locations.", locations_path, class: "back-link text-link"%> </h2>
+		</div>
+	</div>
+
+	<div class="full-search">
+		<div class="inside lg">
+			<!-- Rocket Google -->
+			<div id='storerocket-widget' style='width:100%;' data-storerocket-filters='1055' data-storerocket-env='p' data-storerocket-id='7OdJEZD8WE'><p style='text-align:center;font-size:13px;padding:10px;'>Store locator is loading from StoreRocket <a target='_blank' href='https://storerocket.io' style='font-size:13px;'>Store Locator Widget</a>..</p></div><script>(function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.src='https://cdn.storerocket.io/js/widget.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());</script>
+		</div>
+	</div>
+</div>
