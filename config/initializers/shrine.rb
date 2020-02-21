@@ -25,7 +25,7 @@ require 'shrine'
 	  cache: Shrine::Storage::S3.new(prefix: "cache", upload_options: { acl: "public-read" }, **s3_options),
 	  store: Shrine::Storage::S3.new(prefix: "store", upload_options: { acl: "public-read" }, **s3_options)
 	}
-	Shrine.plugin :default_url_options, cache: { public: true }, store: { public: true }
+	Shrine.plugin :url_options, cache: { public: true }, store: { public: true }
 # end
 
 Shrine.plugin :activerecord
