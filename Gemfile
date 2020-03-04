@@ -30,8 +30,8 @@ gem 'trix-rails', require: 'trix'
 gem 'pagy', '~> 2.1', '>= 2.1.5'
 gem 'shrine'
 
-gem 'pdfkit'
-gem 'wkhtmltopdf-binary'
+# gem 'pdfkit'
+# gem 'wkhtmltopdf-binary'
 
 gem 'gon'
 gem 'jquery-ui-rails'
