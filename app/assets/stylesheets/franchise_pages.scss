@@ -8,6 +8,9 @@ br.tn {display: none;}
 	br.xl {display: none;}
 	br.tb {display: block;}
 }
+@include bp(br) {
+	br.xlb {display: none;}
+}
 @include bp(tn) {
 	br.tn {display: block;}
 }
