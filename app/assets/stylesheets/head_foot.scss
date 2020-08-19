@@ -243,4 +243,17 @@
 }
 
 
+//*********************************//
+//*********** disclaimer ***********//
+//*********************************//
+.disclaimer-pg{@include sec-default();text-align: center;margin-top:30px;display:none;
+	.dpg-inner{max-width:950px; @include center-block();}
+	p{font-size:12px; margin:0 0 10px;}
 
+	@include bp(tb) {.dpg-inner{width:90%;}}
+	@include bp(br) {.dpg-inner{width:95%;}}
+	@include bp(oc) {.dpg-inner{width:98%;}}
+}
+.franchise_pages.faq,.candidates.new {
+	.disclaimer-pg{display: block;}
+}
