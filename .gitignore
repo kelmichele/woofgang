@@ -28,6 +28,7 @@
 /config/secret_token.rb
 
 /app/views/sp scss before swap
+pdfkit_example.pdf
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
