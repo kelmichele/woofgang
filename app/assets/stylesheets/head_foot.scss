@@ -254,6 +254,6 @@
 	@include bp(br) {.dpg-inner{width:95%;}}
 	@include bp(oc) {.dpg-inner{width:98%;}}
 }
-.franchise_pages.faq,.candidates.new {
+.franchise_pages.faq, .candidates.new, .franchise_pages.approval-process {
 	.disclaimer-pg{display: block;}
 }
