@@ -21,6 +21,14 @@ class Location < ApplicationRecord
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
+  include Rails.application.routes.url_helpers
+  def img_info
+    if image.attached?
+      image_url = rails_blob_path(image, only_path: true)
+    else 
+      ""
+    end
+  end
 
   def update_og_state
     self.og_state = self.state.name
@@ -113,7 +121,7 @@ class Location < ApplicationRecord
 
   def self.to_csv(options = {})
     # slug, og_state
-    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state_id", "og_state", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude", "coming_soon", "slug", "tags"]
+    desired_columns = ["id", "store_name", "email_address", "phone", "street_address_one", "street_address_two", "city", "state_id", "og_state", "zip", "fb", "insta", "twitter", "yelp", "site", "hours", "latitude", "longitude", "coming_soon", "slug", "tags", "image"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |location|
@@ -121,7 +129,7 @@ class Location < ApplicationRecord
         location.tags.each do |tag|
           tags << tag.name + ","
         end
-        csv << [location.id, location.store_name, location.email_address, location.phone, location.street_address_one, location.street_address_two, location.city, location.state_id, location.og_state, location.zip, location.fb, location.insta, location.twitter, location.yelp, location.site, location.hours, location.latitude, location.longitude, location.coming_soon, location.slug || " ", tags]
+        csv << [location.id, location.store_name, location.email_address, location.phone, location.street_address_one, location.street_address_two, location.city, location.state_id, location.og_state, location.zip, location.fb, location.insta, location.twitter, location.yelp, location.site, location.hours, location.latitude, location.longitude, location.coming_soon, location.slug || " ", tags, location.img_info]
       end
     end
   end

@@ -11,11 +11,11 @@ class LocationsController < ApplicationController
 		@states = State.all
 		
 		# kp 9/12 -- uncomment for csv
-		# @locations = Location.all
-		# respond_to do |format|
-		#   format.html
-		#   format.csv { send_data @locations.to_csv, filename: "woof-locations.csv" }
-		# end
+		@locations = Location.all
+		respond_to do |format|
+		  format.html
+		  format.csv { send_data @locations.to_csv, filename: "woof-locations.csv" }
+		end
   end
 
 	def import
