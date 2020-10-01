@@ -30,6 +30,8 @@
 /app/views/sp scss before swap
 pdfkit_example.pdf
 /INFO
+.ruby-gemset.10.01.2020-12:38:08
+.ruby-version.10.01.2020-12:38:08
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
