@@ -1300,7 +1300,7 @@ hr{
     width:200px; height: 200px; right:21%;
     @include sec-bgimage('seals/seal5.png');
   }
-  &.groom .seal {background-image: url(image_path('seals/seal11.png'));}
+  // &.groom .seal {background-image: url(image_path('seals/seal11.png'));}
   &.daycare .seal {background-image: url(image_path('seals/seal7.png')); }
   &.ss-groom .seal {background-image: url(image_path('seals/seal8.png'));}
 
@@ -1571,17 +1571,16 @@ hr{
 }
 
 .grooming .services-layout {
-  .statement{
-    // h1, h2 {width:25%;}
-    // p{width:70%;}
+  .seal-row{@include sec-default(); text-align:center; padding-top:20px;
+    .inside{display:flex; align-items:middle; justify-content:center;}
+    .il-seal {display:inline-flex; width:200px; margin:0 2%;}
+  }
 
-    // with 2 paragraphs
-    // h1 {width:25%;padding:30px 0px;}
-    // p{width:78%; padding-left: 20px;margin: 5px -4% 5px 0;}
+
+  .statement{padding-top:50px;
     h1 {width:30%;padding:30px 0px;}
     p{width:73%; padding-left: 20px;margin: 5px -4% 5px 0;}
   }
-
 
   .gallery{@include sec-default(); text-align: center;
     img{display: inline-block; float:none; margin:10px; height:350px;}
@@ -1589,16 +1588,21 @@ hr{
 
 
   @include bp(tb) {
-    .statement{
-      // h1, h2 {width:23%;}
-      // p{width:77%;}
+    .seal-row{padding-top:0px;
+      .il-seal {width:180px; margin:15px 2% 0;}
+    }
 
+    .statement{padding-top:30px;
       h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:22%;}
       p{border-left: 0;width:77%; font-size: 16px; padding-left: 15px; margin-right: 0;}
     }
   }
 
   @include bp(br) {
+    .seal-row{
+      .il-seal {width:150px; margin:15px 2% 0;}
+    }
+
     .statement {
       p, h1,h2 {@include center-block(); width:88%; padding:0; border:0; }
     }
@@ -1611,7 +1615,7 @@ hr{
   }
 
   @include bp(oc) {
-    .statement {padding-top:10px;}
+    .statement {padding-top:20px;}
   }
 }
 
