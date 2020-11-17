@@ -1298,11 +1298,14 @@ hr{
 
   .seal {position: absolute; z-index: 2; bottom:-67px;
     width:200px; height: 200px; right:21%;
-    @include sec-bgimage('seals/seal5.png');
   }
-  // &.groom .seal {background-image: url(image_path('seals/seal11.png'));}
-  &.daycare .seal {background-image: url(image_path('seals/seal7.png')); }
-  &.ss-groom .seal {background-image: url(image_path('seals/seal8.png'));}
+  &.daycare .seal {@include sec-bgimage('seals/seal7.png');}
+  &.ss-groom .seal {@include sec-bgimage('seals/seal8.png');}
+
+
+  .seal-row{@include sec-default(); text-align:center; padding-top:20px;
+    .il-seal {display:inline-block; width:200px; margin:0 2%;}
+  }
 
   .statement {@include sec-default(); padding:80px 0;
     p, h1,h2 {display: inline-block; float: left; width:34%; }
@@ -1378,7 +1381,7 @@ hr{
   }
 
   @include bp(tb) {
-    .inline-show { padding-top:40px;
+    .inline-show {padding-top:40px;
       .il-slideshow, .title { width: 75%;}
       .title {width:26%; margin-right: -3%;}
 
@@ -1386,6 +1389,10 @@ hr{
     }
 
     .seal {width:180px; height:180px; bottom: -60px; right: 19%;}
+
+    .seal-row{padding-top:0px;
+      .il-seal {width:180px; margin:15px 2% 0;}
+    }
 
     .statement {padding:50px 0 35px;
       h1,h2{font-size: 1.4rem; width:30%; border-right:0; margin-top:7px;}
@@ -1401,6 +1408,10 @@ hr{
   @include bp(br) {
     .inline-show {
       &::before{ height: 80%;}
+    }
+
+    .seal-row{
+      .il-seal {width:150px; margin:15px 2% 0;}
     }
 
     .statement {padding:50px 0 35px; text-align: center;
@@ -1474,15 +1485,19 @@ hr{
     .inline-show {margin-bottom: 0;}
     .statement{padding:20px 0 25px;}
 
-    &.groom, &.daycare, &.ss-groom, &.retail {
+    &.daycare, &.ss-groom {
       .seal {position: relative; z-index: 0; left:0; margin-top:20px; bottom: 0px;
         @include sec-default(); background-image: none; height:auto;
-        .sicon {width:150px; height: 150px; @include center-block(); @include sec-bgimage('seals/seal4.png');}
+        .sicon {width:150px; height: 150px; @include center-block();}
       }
     }
-    &.groom .seal .sicon{background-image: url(image_path('seals/seal11.png'));}
-    &.daycare .seal .sicon{background-image: url(image_path('seals/seal7.png'));}
-    &.ss-groom .seal .sicon{background-image: url(image_path('seals/seal8.png'));}
+    &.daycare .seal .sicon{@include sec-bgimage('seals/seal7.png');}
+    &.ss-groom .seal .sicon{@include sec-bgimage('seals/seal8.png');}
+
+    .seal-row {margin-top:10px;
+      .inside.med2-def{width:95%;}
+      .il-seal {margin:10px 1% 0;}
+    }
 
     .list-box{padding: 25px 0;
       .med2-def{width:90%;}
@@ -1509,7 +1524,7 @@ hr{
 
 .retail .services-layout{
   .inline-show .title{width:21%;}
-  .statement{padding-bottom:30px;
+  .statement{padding-top:50px; padding-bottom:30px;
     h1, h2 {width:29%;padding-right: 10px;}
     p{width:69%;padding-left: 5px;}
   }
@@ -1529,7 +1544,7 @@ hr{
       .title{width:25%; margin-right: -2%;}
     }
 
-    .statement {
+    .statement {padding-top:40px;
       br.xl {display: block;}
       // OG
       // h1,h2{ width:30%; padding-right: 0;}
@@ -1545,7 +1560,7 @@ hr{
   }
 
   @include bp(br) {
-    .statement{
+    .statement{padding-top:20px;
       p, h1,h2 {width:90%; border:none; @include center-block(); padding:0; margin:10px auto;}
       br.xl {display: none;}
     }
@@ -1571,12 +1586,6 @@ hr{
 }
 
 .grooming .services-layout {
-  .seal-row{@include sec-default(); text-align:center; padding-top:20px;
-    .inside{display:flex; align-items:middle; justify-content:center;}
-    .il-seal {display:inline-flex; width:200px; margin:0 2%;}
-  }
-
-
   .statement{padding-top:50px;
     h1 {width:30%;padding:30px 0px;}
     p{width:73%; padding-left: 20px;margin: 5px -4% 5px 0;}
@@ -1588,10 +1597,6 @@ hr{
 
 
   @include bp(tb) {
-    .seal-row{padding-top:0px;
-      .il-seal {width:180px; margin:15px 2% 0;}
-    }
-
     .statement{padding-top:30px;
       h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:22%;}
       p{border-left: 0;width:77%; font-size: 16px; padding-left: 15px; margin-right: 0;}
@@ -1599,10 +1604,6 @@ hr{
   }
 
   @include bp(br) {
-    .seal-row{
-      .il-seal {width:150px; margin:15px 2% 0;}
-    }
-
     .statement {
       p, h1,h2 {@include center-block(); width:88%; padding:0; border:0; }
     }
