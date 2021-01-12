@@ -1525,13 +1525,12 @@ hr{
 .retail .services-layout{
   .inline-show .title{width:21%;}
   .statement{padding-top:50px; padding-bottom:30px;
-    h1, h2 {width:29%;padding-right: 10px;}
-    p{width:69%;padding-left: 5px;}
+    h1, h2 {width:37%;padding-right:0; border-right:0; margin-top:40px;}
+    p{width:62%; padding-left:20px;border-left: 1px solid rgba($black,.15);}
   }
+
   .gallery-sec.uniform{padding-top:40px;}
 
-
-  // .statement{padding-bottom: 50px;}
   .retail-awards{@include sec-default(); padding-bottom: 70px;
     .uk-slider-items li {
       img{width:205px;@include center-block();}
@@ -1545,17 +1544,6 @@ hr{
     }
 
     .statement {padding-top:40px;
-      br.xl {display: block;}
-      // OG
-      // h1,h2{ width:30%; padding-right: 0;}
-      // p{width:68%; padding-left: 3.5%}
-
-      // 2 p'graphs
-      // h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:26%; padding:30px 15px 30px 0;}
-      // p{border-left: 0;width:77%; font-size: 16px; padding-left: 10px;}
-
-      h1, h2 {width:24%;padding-right: 0px;}
-      p{width:74%;padding-left: 20px;}
     }
   }
 
@@ -1643,7 +1631,7 @@ hr{
     position: relative;z-index: 0;
     &::before{@include before(); width:1px; left: 49.5%; height:60%; top:20%; background-color: rgba($black, .1);}
     p,h2,h1 {@include sec-default(); border:none;}
-    .text {display: inline-block; width: 45%; float: left;}
+    .text {display: inline-block; width: 46%; float: left;}
     .text.two {float: right;}
   }
 
@@ -1832,6 +1820,11 @@ hr{
     .title {width:26%;padding: 120px 0 0; margin-right: -3%;}
   }
 
+  .statement {
+    h1,h2{width:35%;}// padding-right:0px;border:0;}
+    p {width:62%;}// border-left: 1px solid rgba($black,.15);padding-left:20px;}
+  }
+
   .list-box{
     h4{font-size: 1.15rem;}
   }
@@ -1840,6 +1833,14 @@ hr{
     .inline-show {
       .il-slideshow{width: 72%;}
       .title {width:30%;padding: 120px 0 0; margin-right: -4%;}
+    }
+  }
+
+  @include bp(br) {
+
+    .statement{
+      p, h1,h2 {@include sec-default();border:none; padding:0; margin:10px 0;}
+      br {display: none;}
     }
   }
 
