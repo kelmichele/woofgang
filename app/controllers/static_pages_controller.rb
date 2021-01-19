@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
 	def self_service_grooming
 	end
 
-	def vet_clinic
+	def wellness
 	end
 
 	def blog
