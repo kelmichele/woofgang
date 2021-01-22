@@ -1716,9 +1716,9 @@ hr{
   }
 
   .statement {
-    h4, ul {display: inline-block; float: left; width:34%;}
-    h4{margin-top:45px; color:$pink;}
-    ul {width:66%; float: right; border-left: 1px solid rgba($black, .1); padding-left: 45px; margin-right: -2%;}
+    h4, ul {display: inline-block; float: left; }
+    h4{width:35%;margin-top:45px; color:$pink;}
+    ul {width:65%; float: right; border-left: 1px solid rgba($black, .1); padding-left: 45px; margin-right: -2%;}
 
     li {float: left;
       width:28%;
