@@ -6,7 +6,7 @@ class EstateMailer < ApplicationMailer
 	  @estate = estate
 
 	  #kelli@hsdesignhouse.com
-	  mail(to: "cara@clocktowerrealty.net,josh@woofgangbakery.com", subject: "Real Estate Submission") do |format|
+	  mail(to: "rwesner@woofgangbakery.com", subject: "Real Estate Submission") do |format|
   	  format.html
   	  format.text
     end
