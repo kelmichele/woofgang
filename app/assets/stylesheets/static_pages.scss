@@ -1480,7 +1480,7 @@ hr{
 
     .seal {bottom:25px; right:5px;}
     &.retail .seal {bottom: 65px;}
-    &.daycare .seal {bottom:140px;}
+    &.daycare .seal {bottom:170px;}
 
     .statement p{@include sec-default();}
 
@@ -1622,8 +1622,9 @@ hr{
 .doggie-daycare .services-layout {
   .inline-show {
     &::before{height:450px;}
-    .title {padding-top:50px; width:25%;}
-    .srv-logo{margin-top:50px;
+    .title {padding-top:50px; margin-right:-1%;}
+    .srv-logo{margin-top:30px; 
+      &.resort{width:85%; @include center-block();}
     }
   }
   .statement { text-align: center;
@@ -1649,7 +1650,7 @@ hr{
   @include bp(tb) {
     .inline-show{
       &::before{height:360px;}
-      .title {padding-top:30px; width:28%;}
+      .title {padding-top:40px; margin-right:-3%;}
     }
 
     .statement.alt-lay {
@@ -1664,7 +1665,7 @@ hr{
   @include bp(tn) {
     .inline-show{
       &::before{height:280px;}
-      .title {padding-top:0px; width:30%; margin-left: -2%;}
+      .title {padding-top:5px; width:30%; margin-left: -2%;}
     }
 
     .statement.alt-lay {
@@ -1675,15 +1676,15 @@ hr{
   }
 
   @include bp(pl) {
-    .inline-show{
+    .inline-show{margin-bottom: 0;
       &::before{height:300px;}
-      .title{@include sec-default(); text-align: center;}
-      .srv-logo.daycare, .srv-logo.resort {@include center-block(); width:300px; margin:40px auto 0px;}
-      .srv-logo.resort {margin-top: 25px;}
-      // .srv-logo.daycare, .srv-logo.resort {display: inline-block; float: none; width:40%; margin:10px 3%;}
+      .title{@include sec-default(); text-align: center; margin:0;}
+      .srv-logo.daycare, .srv-logo.resort {@include center-block();}
+      .srv-logo.resort {width:275px; margin-top: 0px;}
+      .srv-logo.daycare{width:310px; margin-top:20px;}
     }
 
-    .statement.alt-lay {padding:10px 0;
+    .statement.alt-lay {padding:0px 0 10px;
       &::before{display: none;}
       .text, .text.two {width: 75%; @include center-block(); text-align: center;}
       h2{margin-top: 20px;}
@@ -1704,6 +1705,8 @@ hr{
   @include bp(sm) {
     .inline-show{
       &::before{height:180px;}
+      .srv-logo.resort {width:260px;}
+      .srv-logo.daycare{width:285px;}
     }
 
     .statement.alt-lay {
@@ -1713,11 +1716,23 @@ hr{
 }
 
 .services-layout.vet {
-  .inline-show {
-    &::before{height:390px;}
-    .il-slideshow {width:72%; max-height: 100%;}
-    .title {margin-right: -5%; width:30%; }
+  //KPKP TODAY 
+  .inline-show {text-align:center;
+    &::before{height:410px;}
+    .insidekp{ @include center-block();width:65%;}
+    .il-slideshow, .title{float:none; vertical-align: top;}
+    .il-slideshow {width:67%; max-width:696px; margin-right:1%;}
+    .title {width:30%; margin-left:1%; padding-top:115px;}
   }
+
+
+  // OG OG OG
+  // .inline-show {
+  //   &::before{height:390px;}
+  //   .il-slideshow {width:72%; max-height: 100%;
+  //   }
+  //   .title {margin-right: -5%; width:30%;}
+  // }
 
   .statement {
     h4, ul {display: inline-block; float: left; }
@@ -1750,11 +1765,18 @@ hr{
 
   @include bp(tb) {
     .inline-show {
-      .inside.med{width:85%;}
-      &::before{height:300px;}
-      .il-slideshow {width:70%; }
-      .title {margin-right: -5%; width:31%; }
+      .insidekp{width:85%;}
+      // &::before{height:300px;}
+      .il-slideshow {float:left; margin:0;}
+      .title {float:right; margin:0;}
     }
+
+    // .inline-show {
+    //   .inside.med{width:85%;}
+    //   &::before{height:300px;}
+    //   .il-slideshow {width:70%; }
+    //   .title {margin-right: -5%; width:31%; }
+    // }
 
     .statement {
       h4, ul {width:25%;}
@@ -1783,8 +1805,6 @@ hr{
       }
     }
 
-
-
     .list-box.alt {
       h4 {font-size: 1.1rem;}
       p {margin-bottom: 12px; font-size: 15px;}
@@ -1795,20 +1815,27 @@ hr{
   @include bp(tn) {
     .inline-show {
       &::before{height:230px;}
-      .il-slideshow {margin-left: 0; }
-      .title {width:33%; padding-top: 60px;}
+      .title {padding-top: 60px;}
     }
+
+    // .inline-show {
+    //   &::before{height:230px;}
+    //   .il-slideshow {margin-left: 0; }
+    //   .title {width:33%; padding-top: 60px;}
+    // }
   }
 
   @include bp(pl) {
     .inline-show {
       &::before{height:250px;}
+      .insidekp{width:75%;}
       .il-slideshow {@include sec-default(); margin:0 0 20px 0;}
       .title{@include center-block(); width: 260px;padding:0;}
     }
   }
 
   @include bp(oc) {
+    .inline-show .title{width: 230px;}
     .statement {
       h4 {font-size: 1rem;}
       ul{@include sec-default();}
