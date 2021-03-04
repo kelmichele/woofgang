@@ -27,6 +27,9 @@
 /config/database.yml
 /config/secret_token.rb
 
+/app/assets/images/seals/RMVseal4.png
+/app/assets/images/seals/RMVseal8.png
+
 /app/views/sp scss before swap
 pdfkit_example.pdf
 /INFO

@@ -1311,7 +1311,7 @@ hr{
     width:200px; height: 200px; right:21%;
   }
   &.daycare .seal {@include sec-bgimage('seals/seal7.png');}
-  &.ss-groom .seal {@include sec-bgimage('seals/seal8.png');}
+  &.ss-groom .seal {@include sec-bgimage('seals/fast2019.png');}
 
 
   .seal-row{@include sec-default(); text-align:center; padding-top:20px;
@@ -1503,7 +1503,7 @@ hr{
       }
     }
     &.daycare .seal .sicon{@include sec-bgimage('seals/seal7.png');}
-    &.ss-groom .seal .sicon{@include sec-bgimage('seals/seal8.png');}
+    &.ss-groom .seal .sicon{@include sec-bgimage('seals/fast2019.png');}
 
     .seal-row {margin-top:10px;
       .inside.med2-def{width:95%;}
