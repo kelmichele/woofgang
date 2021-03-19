@@ -1725,27 +1725,22 @@ hr{
     .title {width:30%; margin-left:1%; padding-top:115px;}
   }
 
-
-  // OG OG OG
-  // .inline-show {
-  //   &::before{height:390px;}
-  //   .il-slideshow {width:72%; max-height: 100%;
-  //   }
-  //   .title {margin-right: -5%; width:30%;}
-  // }
-
   .statement {
-    h4, ul {display: inline-block; float: left; }
-    h4{width:35%;margin-top:45px; color:$pink;}
-    ul {width:65%; float: right; border-left: 1px solid rgba($black, .1); padding-left: 45px; margin-right: -2%;}
+    .inside.mod{width:800px;}
+    h4, ul {display: inline-block; float: left;}
+    h4{width:25%;margin-top:25px; color:$pink;}
+    ul {width:72%; float: right; border-left: 1px solid rgba($black, .1); padding-left: 45px;}
 
-    li {float: left;
-      width:28%;
-      font-size: 16px;
-      margin:0 1% 10px;
-      list-style-type: disc;
-      &.right {float: right; width:39%; margin-right: 0;}
+    li {float: left;font-size: 16px;list-style-type: disc;margin-bottom:10px;min-width:26%;
+      &.right {float: right; width:60%;}
     }
+  }
+
+  .statement.first{padding-bottom:0;}
+  .statement.alt{
+    h4{margin-top: 0;}
+    p {width:72%; float: right; border-left: 1px solid rgba($black, .1); padding-left: 30px;}
+
   }
 
   .list-box{
@@ -1766,26 +1761,10 @@ hr{
   @include bp(tb) {
     .inline-show {
       .insidekp{width:85%;}
-      // &::before{height:300px;}
       .il-slideshow {float:left; margin:0;}
       .title {float:right; margin:0;}
     }
-
-    // .inline-show {
-    //   .inside.med{width:85%;}
-    //   &::before{height:300px;}
-    //   .il-slideshow {width:70%; }
-    //   .title {margin-right: -5%; width:31%; }
-    // }
-
-    .statement {
-      h4, ul {width:25%;}
-      h4{margin-top:35px;}
-      ul {width:75%;}
-      li {font-size: 15px;}
-    }
-
-    
+ 
     .list-box.alt {margin-top:0; padding:40px 0 30px;
       h4 {font-size: 1.15rem;}
       .sl1 {width:90%; @include center-block();}
@@ -1795,14 +1774,17 @@ hr{
   }
 
   @include bp(br) {
-    .statement {padding-top:0px;
-      h4 {font-size: 1.15rem;@include sec-default(); text-align:center;}
-      ul {width:500px; @include center-block();border-left: 0; text-align:left}
-      li {float: left;font-size:15px;
-        width:45%; margin:0 0 10px;
-        &.right{margin-right:0;}
-        &.right, &.sm-right {float: right; width:50%;}
-      }
+    .statement {padding-top:0px;text-align: center;
+      .inside.mod{width:90%;}
+      h4 {font-size: 1.15rem;@include sec-default(); text-align:center;margin:20px 0 7px;}
+      h4 br{display: none;}
+      ul {@include sec-default();border-left: 0;padding:0;}
+      li,li.right {font-size:15px;width:100%;float:none;list-style-type: none;margin-bottom: 5px;}
+    }
+
+    .statement.alt{
+      h4{margin-top:30px;}
+      p{font-size:15px;width:80%;@include center-block(); border:0; text-align: center;padding:0;}
     }
 
     .list-box.alt {
@@ -1817,12 +1799,6 @@ hr{
       &::before{height:230px;}
       .title {padding-top: 60px;}
     }
-
-    // .inline-show {
-    //   &::before{height:230px;}
-    //   .il-slideshow {margin-left: 0; }
-    //   .title {width:33%; padding-top: 60px;}
-    // }
   }
 
   @include bp(pl) {
@@ -1832,16 +1808,16 @@ hr{
       .il-slideshow {@include sec-default(); margin:0 0 20px 0;}
       .title{@include center-block(); width: 260px;padding:0;}
     }
+
+    .statement.alt{
+      h4{margin-top:30px;}
+      p{width:100%;}
+    }
   }
 
   @include bp(oc) {
     .inline-show .title{width: 230px;}
-    .statement {
-      h4 {font-size: 1rem;}
-      ul{@include sec-default();}
-      li, li.right, li.sm-right {width:100%; float: left;
-      }
-    }
+    .statement h4 {font-size: 1rem;}
   }
 }
 
