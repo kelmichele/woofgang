@@ -29,7 +29,7 @@
 	&.centered {background-color: $white;padding-bottom: 0px;
 		.uk-navbar-container.inside{width:90%;background-color: $white}
 		.nb-logo{@include sec-default(); text-align: center;padding:0px; width:40%; @include center-block(); margin-bottom: 25px;}
-		.logo {width:300px; @include center-block();}
+		.logo {max-width:430px; @include center-block();}
 
 		.uk-navbar-nav{@include sec-default(); text-align: center; padding:10px 0 10px; border-top:1px solid $f2;
 			border-bottom:1px inset rgba($f2, .9);
@@ -69,19 +69,13 @@
 	.uk-sub-nav li{padding-left: 15px;}
 }
 
-@include bp(dt) {}
-
-@include bp(tb) {
-	.inline-header {}
-}
-
 @include bp(br) {
-// @include bp(tb) {
 	.inline-header.centered {
 		padding: 70px 0 25px; position: relative !important;
 		.uk-navbar-nav {display: none;}
 		.navbar-center{@include sec-default();}
-		.nb-logo {margin-bottom: 0;}
+		.nb-logo {@include sec-default();margin-bottom: 0;}
+		.logo {max-width:380px;}
 
 		&.uk-navbar-sticky.uk-sticky-fixed {
 			padding-top: 65px;
@@ -105,21 +99,13 @@
 	}
 }
 
-@include bp(tn) {
-	.inline-header {}
-}
-
-@include bp(mb) {
-	.inline-header {}
+@media (max-width: 767px) {
+	.inline-header.centered .logo {max-width:330px;}
 }
 
 @include bp(ph) {
-	.inline-header.centered {
-		.nb-logo{@include sec-default();}
-		.logo {width:230px;}
-	}
-
 	.above {padding: 5px 15px;}
+	.inline-header.centered .logo {max-width:300px;}
 }
 
 //*********************************//
