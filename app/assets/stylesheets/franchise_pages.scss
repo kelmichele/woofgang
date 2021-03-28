@@ -29,7 +29,6 @@ br.tn {display: none;}
 
   .feat {@include center-block();}
   .seal {position: absolute; z-index: 2;
-  	// width:220px; height: 220px; left:7%; margin-top:-130px;
   	width:200px; height: 200px; left:7.8%; margin-top:-115px;
   	@include sec-bgimage('seals/top9-2020.png');
   }
@@ -64,7 +63,6 @@ br.tn {display: none;}
 		.text {padding-bottom: 15px;}
 		.seal {position: relative; z-index: 0; left:0; margin-top:0px;
 			@include sec-default(); background-image: none; height:auto;
-			// width:150px; height: 150px; @include center-block();
 			.sicon {width:150px; height: 150px; @include center-block(); @include sec-bgimage('seals/top9-2020.png');}
 		}
 	}
@@ -78,13 +76,17 @@ br.tn {display: none;}
 .approval-process .franchise-head.v2 .seal{background-image: url(image_path('seals/seal-new.png'));}
 .franchising .franchise-head.v2 .seal{background-image: url(image_path('seals/seal9.png'));}
 .training-support .franchise-head.v2 .seal{background-image: url(image_path('seals/seal10.png'));}
+@include bp(nn) {
+	.franchising .franchise-head.v2 .seal {background-image: none;position: relative; z-index: 0; left:0; margin-top:0px;@include sec-default(); height:auto;
+		.sicon {width:150px; height: 150px; @include center-block();@include sec-bgimage('seals/seal9.png');}
+	}
+}
 @include bp(oc) {
 	.real-estate .franchise-head.v2 .seal, .candidates .franchise-head.v2 .seal, .approval-process .franchise-head.v2 .seal, 
-	.franchising .franchise-head.v2 .seal, .training-support .franchise-head.v2 .seal {background-image: none;}
+	.training-support .franchise-head.v2 .seal {background-image: none;}
 	.real-estate .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal2.png'));}
 	.candidates .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal2019.png'));}
 	.approval-process .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal-new.png'));}
-	.franchising .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal9.png'));}
 	.training-support .franchise-head.v2 .seal .sicon{background-image: url(image_path('seals/seal10.png'));}
 }
 
@@ -355,15 +357,6 @@ br.tn {display: none;}
 }
 
 .franchising .franchise-layout.fl1 {
-	// CURRENT: BEFORE CHANGES
-	// .landing-layout {
-	// 	.box {
-	// 		.text {margin-top: 20px;}
-	// 		.image {margin-right: 0; margin-left: -3%;}
-	// 		h3{ width:112%; padding-right: 10px; margin-left: -8%; }
-	// 	}
-	// }
-
 	.content-layout .full.fw.two{
 		.image {width:48%;}
 	}
@@ -406,14 +399,7 @@ br.tn {display: none;}
 	@include bp(tb) {
 		.landing-layout .box {
 			.med-def {width:85%;}
-			// h3{ width:100%; padding-right: 0px; margin-left: 0; position: relative;}
 			br.xl.one {display: block;}
-			// .text{margin-top: 10px;}
-
-			// .img1 {width:100%;}
-			// .img2 {width:70%; margin-top: -22%; margin-left: -45%}
-			// .image {width:52%; }
-
 			// 5/13
 			h3{ width:100%; padding-right: 0px;  margin-top: 40px;}
 			.text{width:52%; margin-left: 5%; width:48%;}
@@ -425,12 +411,6 @@ br.tn {display: none;}
 
 		.content-layout{
 			.full.fw{
-				// before 5/13
-				// &.one {
-				// 	.image{width:48%;}
-				// 	.text{width: 48%;}
-				// }
-
 				&.two {padding-top: 10px;
 					.inside.med-def{width:75%;}
 					.image {display: none;}
@@ -531,6 +511,7 @@ br.tn {display: none;}
 		.content-layout {
 			.full.fw.one .text {width:95%;}
 			.full.fw.two .inside.med-def{width:90%;}
+			.full.fw.two br.xl.and {display: block;}
 		}
 	}
 
