@@ -16,7 +16,6 @@
 
 	<% if user_signed_in? && current_user.admin? %>
 		<div class="admin-side">
-			<!-- <= render 'actions' %> -->
 	    <button class="admin-uk wl-uk uk-float-right" type="button"><span  uk-icon="icon: settings;"></span></button>
 	    <div uk-dropdown="mode: click; pos: bottom-right; boundary: .wl-uk;">
       	<div class="admin-btns">
@@ -37,12 +36,10 @@
 			</div>
 
 			<div class="post-content">
-				<!-- <p><%= @post.this_post %></p> -->
 				<% if @post.date %>
 					<p class="date"><%= @post.date.strftime("%m/%d/%Y")  %></p>
 				<% end %>
 				<%= simple_format(@post.content) %>
-				<!-- html_safe -->
 			</div>
 		</div>
 	</div>
@@ -60,7 +57,6 @@
 				<% end %>
 
 				<div class="rtitle">
-					<!-- <%= truncate(recent.title, length:150) %>  -->
 					<%= recent.title %>
 				</div>
 

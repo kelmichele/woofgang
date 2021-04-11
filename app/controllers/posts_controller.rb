@@ -65,7 +65,7 @@ class PostsController < ApplicationController
   end
 
   def recent
-  	recent = Post.last(3)
+  	recent = Post.first(3)
   end
 
   def require_admin
