@@ -6,7 +6,7 @@ class VendorMailer < ApplicationMailer
 	  @vendor = vendor
 
 	  # kelli@hsdesignhouse.com
-    mail(to: "sam@woofgangbakery.com", subject: "Product Submission") do |format|
+    mail(to: "products@woofgangbakery.com", subject: "Product Submission") do |format|
   	  format.html
   	  format.text
     end
