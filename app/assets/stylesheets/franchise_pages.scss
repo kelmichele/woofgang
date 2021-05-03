@@ -569,7 +569,9 @@ br.tn {display: none;}
 
 .training-support .franchise-layout.fl1 {
 	.landing-layout .box{
-		h3{width:108%; width:120%; margin-left: -10%; }
+		h3{width:108%; width:120%; margin-left: -10%; position: relative;}
+		.body-seal {position: relative;@include sec-default();}
+		.body-seal .sealicon{width:200px;@include center-block();}
 	}
 
 	.content-layout .full.fw p.sig{margin-bottom: 5px;}
@@ -584,6 +586,7 @@ br.tn {display: none;}
 
 			.text{width:45%;}
 			.image {width:52%;}
+		  .body-seal .sealicon{width:160px;}
 		}
 	}
 
@@ -599,9 +602,8 @@ br.tn {display: none;}
 				.text{width:85%; @include center-block();text-align: center;}
 				.image{width:60%;@include center-block();}
 			}
-
-			.page-seal {margin-top:-120px;}
-			.sealicon{float:left; margin-left:11%;}
+		
+			.body-seal{margin-bottom:20px;}
 		}
 	}
 
