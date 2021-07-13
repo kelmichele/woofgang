@@ -26,6 +26,11 @@ class Location < ApplicationRecord
     self.og_state = self.state.name
   end
 
+  def should_generate_new_friendly_id?
+    store_name_changed?
+    # self.store_name_changed? = self.store_name
+  end
+
   def ntitle
     if store_name.include? "Grooming"
       store_name.remove("Woof Gang Bakery & Grooming")
