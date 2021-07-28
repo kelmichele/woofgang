@@ -2,7 +2,7 @@ class State < ApplicationRecord
 	extend FriendlyId
   friendly_id :full_name, use: :slugged
 
-	has_many :locations, -> { order(store_name: :desc) }
+	has_many :locations, -> { order(city: :asc) }
 
 	validates :name, presence: true
 	validates :full_name, presence: true
