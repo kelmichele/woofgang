@@ -17,6 +17,7 @@ class Location < ApplicationRecord
   # validates :email_address, presence: true
 
   before_save :update_og_state
+  before_save :update_nickname
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
@@ -29,6 +30,14 @@ class Location < ApplicationRecord
   def should_generate_new_friendly_id?
     store_name_changed?
     # self.store_name_changed? = self.store_name
+  end
+
+  def update_nickname
+    if self.store_name.include? "Grooming"
+      self.nickname = self.store_name.remove("Woof Gang Bakery & Grooming")
+    else
+      self.nickname = self.store_name.remove("Woof Gang Bakery")
+    end
   end
 
   def ntitle

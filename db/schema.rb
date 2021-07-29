@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_191000) do
+ActiveRecord::Schema.define(version: 2021_07_29_172318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_191000) do
     t.string "yelp"
     t.integer "state_id"
     t.boolean "coming_soon"
+    t.string "nickname"
     t.index ["city"], name: "index_locations_on_city"
     t.index ["og_state"], name: "index_locations_on_og_state"
     t.index ["state_id"], name: "index_locations_on_state_id"
