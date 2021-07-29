@@ -34,9 +34,9 @@ class Location < ApplicationRecord
 
   def update_nickname
     if self.store_name.include? "Grooming"
-      self.nickname = self.store_name.remove("Woof Gang Bakery & Grooming")
+      self.nickname = self.store_name.remove("Woof Gang Bakery & Grooming ")
     else
-      self.nickname = self.store_name.remove("Woof Gang Bakery")
+      self.nickname = self.store_name.remove("Woof Gang Bakery ")
     end
   end
 
