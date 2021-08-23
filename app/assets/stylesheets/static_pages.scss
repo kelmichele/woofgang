@@ -1594,6 +1594,21 @@ hr{
     img{display: inline-block; float:none; margin:10px; height:350px;}
   }
 
+  .gallery-sec.customGroom{
+    .gs-item{display:inline-block;float:left;margin-bottom:11px;
+      &.mid{margin-left:1%;}
+      &.right{float:right;}
+      &.r2{max-width:49.5%;}
+      &.r3{max-width:32.65%;}
+      &.r4{max-width:24.2%;}
+      &.rSq3{max-width:33%;}
+      &.rLg{max-width:61%;}
+      &.rMd{max-width:38%;}
+
+      &.i1, &.i2{max-height:532px;}
+    }
+  }
+
 
   @include bp(tb) {
     .statement{padding-top:30px;
@@ -1616,6 +1631,11 @@ hr{
 
   @include bp(oc) {
     .statement {padding-top:20px;}
+
+
+    .gallery-sec.customGroom .med2{width:90%;
+    // .gs-item .r4{max-width:24.2%;}
+  }
   }
 }
 
