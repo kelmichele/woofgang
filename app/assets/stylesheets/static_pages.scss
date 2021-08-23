@@ -1615,6 +1615,12 @@ hr{
       h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:22%;}
       p{border-left: 0;width:77%; font-size: 16px; padding-left: 15px; margin-right: 0;}
     }
+
+    .gallery-sec.customGroom {
+      .med2{width:90%;}
+      .gs-item{margin-bottom:6px;}
+    }
+
   }
 
   @include bp(br) {
@@ -1627,15 +1633,12 @@ hr{
     .statement {
       p, h1,h2 {width:95%;}
     }
+
+    .gallery-sec.customGroom .gs-item{margin-bottom:4px;}
   }
 
   @include bp(oc) {
     .statement {padding-top:20px;}
-
-
-    .gallery-sec.customGroom .med2{width:90%;
-    // .gs-item .r4{max-width:24.2%;}
-  }
   }
 }
 
