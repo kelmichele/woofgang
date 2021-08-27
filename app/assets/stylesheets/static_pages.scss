@@ -1549,6 +1549,11 @@ hr{
     .uk-slider-nav.uk-dotnav{display: none;}
   }
 
+  p.sr-instr{display:none;}
+  .seal-row {
+    .il-seal {margin-left:1%;margin-right:1%;}
+  }
+
   @include bp(tb) {
     .inline-show {
       .title{width:25%; margin-right: -2%;}
@@ -1565,9 +1570,7 @@ hr{
     }
   }
 
-  @include bp(pl) {
-    .inline-show .title{@include center-block(); width:240px;}
-  }
+  @include bp(pl) {.inline-show .title{@include center-block(); width:240px;}}
 
 
   @include bp(tn) {
@@ -1578,9 +1581,27 @@ hr{
     }
   }
 
+  @media (max-width:767px){
+    .seal-row{width:100%;
+      .med-def{width:100%;float:left;}
+      .il-seal{margin-top:0;}
+    }
+  }
+  
+  @media (max-width:669px){
+  // @include bp(mb) {
+    p.sr-instr{@include sec-default();margin:10px 0 7px;font-size:15px;text-align:center;}
+    .seal-row{overflow:hidden;overflow-x:scroll;padding-bottom:7px;
+      .med-def{width:700px;}
+      .il-seal {margin-left:2%;}
+    }
+  }
+
   @include bp(oc) {
     .statement {padding-top: 5px;}
     .gallery-sec.uniform{padding-top:20px;}
+    
+    p.sr-instr{margin:20px 0 0;}
   }
 }
 
