@@ -1606,6 +1606,11 @@ hr{
 }
 
 .grooming .services-layout {
+  // 1195x600
+  .il-slideshow li.moveup img{top:65%;transform: translate(-50%,-70%);}
+  // .il-slideshow li{border-bottom: 1px solid $black;}
+
+
   .statement{padding-top:50px;
     h1 {width:30%;padding:30px 0px;}
     p{width:73%; padding-left: 20px;margin: 5px -4% 5px 0;}
@@ -1648,6 +1653,8 @@ hr{
     .statement {
       p, h1,h2 {@include center-block(); width:88%; padding:0; border:0; }
     }
+
+    .il-slideshow li.moveup img{top:66%;}
   }
 
   @include bp(md) {
