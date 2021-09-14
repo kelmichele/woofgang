@@ -232,14 +232,19 @@
 //*********************************//
 //*********** disclaimer ***********//
 //*********************************//
-.disclaimer-pg{@include sec-default();text-align: center;margin-top:30px;display:none;
-	.dpg-inner{max-width:950px; @include center-block();}
-	p{font-size:12px; margin:0 0 10px;}
+	.dpg-inner{width:95%; @include center-block();}
+.disclaimer-pg{@include sec-default();display:none;//margin-top:30px;
+	border-top: $border;margin:10px 0;padding-top:20px;
+	p,a{font-size:12px;}
+	p{margin:0 0 10px;}
+	a{font-weight:400;}
+	p b{font-weight:600;}
 
 	@include bp(tb) {.dpg-inner{width:90%;}}
 	@include bp(br) {.dpg-inner{width:95%;}}
 	@include bp(oc) {.dpg-inner{width:98%;}}
 }
-.franchise_pages.faq, .candidates.new, .franchise_pages.approval-process {
+// .franchise_pages.faq, .candidates.new, .franchise_pages.approval-process {
+.franchise_pages, .candidates.new{
 	.disclaimer-pg{display: block;}
 }
