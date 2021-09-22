@@ -6,7 +6,7 @@ class CandidateMailer < ApplicationMailer
 	  @candidate = candidate
 
 	  # kelli@hsdesignhouse.com
-    mail(to: "franchise@woofgangbakery.com", subject: "Franchise Inquiry") do |format|
+    mail(to: "franchise@woofgangbakery.com,fsleadparser617@franchisesoftemails.com", subject: "Franchise Inquiry") do |format|
   	  format.html
   	  format.text
     end
