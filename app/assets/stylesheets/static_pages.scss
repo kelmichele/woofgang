@@ -1608,8 +1608,12 @@ hr{
 .grooming .services-layout {
   // 1195x600
   .il-slideshow li.moveup img{top:65%;transform: translate(-50%,-70%);}
-  // .il-slideshow li{border-bottom: 1px solid $black;}
-
+  
+  p.sr-instr{display:none;}
+  .seal-row {
+    .inside{width:90%;}
+    .il-seal{margin-left:1%;margin-right:1%;}
+  }
 
   .statement{padding-top:50px;
     h1 {width:30%;padding:30px 0px;}
@@ -1665,7 +1669,23 @@ hr{
     .gallery-sec.customGroom .gs-item{margin-bottom:4px;}
   }
 
+  @media (max-width:767px){
+    .seal-row{width:100%;
+      .inside{width:100%;float:left;}
+      .il-seal{margin-top:0;}
+    }
+  }
+
+  @media (max-width:669px){
+    p.sr-instr{@include sec-default();margin:10px 0 7px;font-size:15px;text-align:center;}
+    .seal-row{overflow:hidden;overflow-x:scroll;padding-bottom:7px;
+      .inside{width:700px;}
+      .il-seal {margin-left:2%;}
+    }
+  }
+
   @include bp(oc) {
+    p.sr-instr{margin:20px 0 0;}
     .statement {padding-top:20px;}
   }
 }
