@@ -1611,8 +1611,8 @@ hr{
   
   p.sr-instr{display:none;}
   .seal-row {
-    .inside{width:90%;}
-    .il-seal{margin-left:1%;margin-right:1%;}
+    // .inside{width:90%;}
+    .il-seal{margin-left:.5%;margin-right:.5%;}
   }
 
   .statement{padding-top:50px;
@@ -1639,7 +1639,7 @@ hr{
     }
   }
 
-
+  @media (max-width:1140px){.seal-row .il-seal{width:180px;}}
   @include bp(tb) {
     .statement{padding-top:30px;
       h1 {border-right: 1px solid rgba($black,.1);padding-right: 15px; width:22%;}
@@ -1650,15 +1650,25 @@ hr{
       .med2{width:90%;}
       .gs-item{margin-bottom:6px;}
     }
-
   }
 
   @include bp(br) {
     .statement {
       p, h1,h2 {@include center-block(); width:88%; padding:0; border:0; }
     }
-
     .il-slideshow li.moveup img{top:66%;}
+
+    .seal-row{margin-top:5px;
+      .il-seal{width:150px;}
+    }
+  }
+
+  @include bp(tn) {
+    p.sr-instr{@include sec-default();margin:10px 0 7px;font-size:15px;text-align:center;}
+    .seal-row{overflow:hidden;overflow-x:scroll;padding-bottom:7px;
+      .sealWrap{width:850px;float:left;}
+      .il-seal{margin:0 0 0 2%;float:left;}
+    }
   }
 
   @include bp(md) {
@@ -1667,21 +1677,6 @@ hr{
     }
 
     .gallery-sec.customGroom .gs-item{margin-bottom:4px;}
-  }
-
-  @media (max-width:767px){
-    .seal-row{width:100%;
-      .inside{width:100%;float:left;}
-      .il-seal{margin-top:0;}
-    }
-  }
-
-  @media (max-width:669px){
-    p.sr-instr{@include sec-default();margin:10px 0 7px;font-size:15px;text-align:center;}
-    .seal-row{overflow:hidden;overflow-x:scroll;padding-bottom:7px;
-      .inside{width:700px;}
-      .il-seal {margin-left:2%;}
-    }
   }
 
   @include bp(oc) {
