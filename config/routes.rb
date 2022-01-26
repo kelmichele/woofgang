@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
 
-  get 'page', to: 'static_pages#page'
+  # get 'page', to: 'static_pages#page'
   get 'blog', to: 'static_pages#blog'
   get 'home-alt', to: 'static_pages#home-alt'
   get 'services', to: 'static_pages#services'

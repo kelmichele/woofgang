@@ -1007,7 +1007,7 @@ hr{
 // store rocket
 .locations.index, .service-location {
   #storerocket-widget{ background:transparent; border:0; font-family: $helv; }
-  .full-search {@include sec-default(); padding: 55px 0; background-color: $f9;}
+  .full-search {@include sec-default(); padding: 30px 0 30px; background-color: $f9;}
   #storerocket-widget .storerocket-result-website-link {
     font-size:13.5px; border-radius:0; letter-spacing: .2px;
     @include tshadowl(rgba($black, .1));padding:6px 20px;
