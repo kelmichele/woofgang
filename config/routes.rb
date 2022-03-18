@@ -62,10 +62,10 @@ Rails.application.routes.draw do
 
   resources :states
 
-  get 'kptest', to: 'static_pages#kptest'
-  get '/locations/:location', to: 'locations#index', as: 'find-a-location'
-  get '/shops/:shop', to: 'static_pages#kptest'
-  get '/shops', to: 'static_pages#kptest'
+  # get 'kptest', to: 'static_pages#kptest'
+  # get '/locations/:location', to: 'locations#index', as: 'find-a-location'
+  get '/shops/:shop', to: 'locations#index'
+  get '/shops', to: 'locations#index'
 
 
   resources :locations do

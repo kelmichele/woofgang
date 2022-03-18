@@ -1,7 +1,8 @@
 # require 'pointa'
 
 class LocationsController < ApplicationController
-	before_action :set_location, only: [:edit, :show, :update, :destroy]
+	# before_action :set_location, only: [:edit, :show, :update, :destroy]
+	before_action :set_location, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 	# before_action :get_user_location
@@ -24,6 +25,7 @@ class LocationsController < ApplicationController
 	end
 
 	def show
+		redirect_to locations_path
 	end
 
 	def new
