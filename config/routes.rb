@@ -62,6 +62,10 @@ Rails.application.routes.draw do
 
   resources :states
 
+  get 'kptest', to: 'static_pages#kptest'
+  get '/locations/:location', to: 'locations#index', as: 'find-a-location'
+
+
   resources :locations do
     collection do
       post :import
