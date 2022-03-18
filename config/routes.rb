@@ -64,15 +64,11 @@ Rails.application.routes.draw do
 
   get 'kptest', to: 'static_pages#kptest'
   get '/locations/:location', to: 'locations#index', as: 'find-a-location'
+  get '/shops/:shop', to: 'static_pages#kptest'
+  get '/shops', to: 'static_pages#kptest'
 
 
   resources :locations do
-    collection do
-      post :import
-    end
-  end
-
-  resources :shops do
     collection do
       post :import
     end

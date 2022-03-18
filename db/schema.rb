@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_29_172318) do
+ActiveRecord::Schema.define(version: 2022_03_18_132511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,34 +169,6 @@ ActiveRecord::Schema.define(version: 2021_07_29_172318) do
     t.string "honey"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "shops", force: :cascade do |t|
-    t.string "store_name"
-    t.string "street_address_one"
-    t.string "street_address_two"
-    t.string "city"
-    t.integer "state_id"
-    t.string "og_state"
-    t.string "zip"
-    t.string "phone"
-    t.string "email_address"
-    t.string "hours"
-    t.string "slug"
-    t.string "fb"
-    t.string "twitter"
-    t.string "insta"
-    t.string "site"
-    t.string "image"
-    t.string "yelp"
-    t.float "latitude"
-    t.float "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["city"], name: "index_shops_on_city"
-    t.index ["og_state"], name: "index_shops_on_og_state"
-    t.index ["state_id"], name: "index_shops_on_state_id"
-    t.index ["zip"], name: "index_shops_on_zip"
   end
 
   create_table "slides", force: :cascade do |t|
