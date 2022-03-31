@@ -9,10 +9,11 @@ class StatesController < ApplicationController
 	end
 
 	def show
-		@state_locations = @state.locations.all
-		@states = State.all
+		redirect_to locations_path
+		# @state_locations = @state.locations.all
+		# @states = State.all
 
-		@locations =  @state_locations
+		# @locations =  @state_locations
 		# .paginate(:page => params[:page], :per_page => 40)
     # @pagy, @locations = pagy(@state_locations.all, items: 109)
 	end
