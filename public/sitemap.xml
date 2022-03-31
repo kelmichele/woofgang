@@ -4,7 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
@@ -96,91 +95,6 @@
   <loc>https://woofgangbakery.com/real-estate-submissions</loc>
   <lastmod>2019-01-21T17:19:06+00:00</lastmod>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/tags/retail</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/tags/grooming</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/tags/self-service-grooming</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/tags/doggie-daycare</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/tags/veterinary-clinic</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/connecticut</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/florida</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/georgia</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/kansas</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/north-carolina</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/new-jersey</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/nevada</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/new-york</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/south-carolina</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/tennesse</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/texas</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/virginia</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://woofgangbakery.com/raleighmidtown</loc>
@@ -276,56 +190,6 @@
   <loc>https://woofgangbakery.com/blog?page=7</loc>
   <lastmod>2019-01-21T17:19:06+00:00</lastmod>
   <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/florida?page=1</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/florida?page=2</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/florida?page=3</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/florida?page=4</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/florida?page=5</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/north-carolina?page=1</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/north-carolina?page=2</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/texas?page=1</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/texas?page=2</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://woofgangbakery.com/states/texas?page=3</loc>
-  <lastmod>2019-01-21T17:19:06+00:00</lastmod>
-  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://woofgangbakery.com/woof-gang-bakery-your-neighborhood-pet-store-grows-in-palm-beach-county-with-four-new-stores</loc>
