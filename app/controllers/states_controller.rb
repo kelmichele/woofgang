@@ -6,7 +6,8 @@ class StatesController < ApplicationController
 
 
 	def index
-		@states = State.all
+		redirect_to locations_path
+		# @states = State.all
 	end
 
 	def show
