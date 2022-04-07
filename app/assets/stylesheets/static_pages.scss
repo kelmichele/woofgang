@@ -3,6 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Century Gothic
 
+// ***** TO ADD 5 SEALS ******
+// .seal-row .il-seal{margin-left:.5%;margin-right:.5%;}
+// @media (max-width:1140px){.seal-row .il-seal{width:180px;}}
+// @include bp(br){
+//   .seal-row{margin-top:5px;
+//     .il-seal{width:150px;}
+//   }
+// }
+// @include bp(tn) {
+//   p.sr-instr{@include sec-default();margin:10px 0 7px;font-size:15px;text-align:center;}
+//   .seal-row{overflow:hidden;overflow-x:scroll;padding-bottom:7px;
+//     .sealWrap{width:850px;float:left;}
+//     .il-seal{margin:0 0 0 2%;float:left;}
+//   }
+// }
+
+
 @import "mixins";
 @import "variables";
 
@@ -1307,7 +1324,7 @@ hr{
   .seal {position: absolute; z-index: 2; bottom:-67px;
     width:200px; height: 200px; right:21%;
   }
-  &.daycare .seal {@include sec-bgimage('seals/seal7.png');}
+  &.daycare .seal {@include sec-bgimage('seals/bestPBgroom.png');}
   &.ss-groom .seal {@include sec-bgimage('seals/fast2019.png');}
 
 
@@ -1499,7 +1516,7 @@ hr{
         .sicon {width:150px; height: 150px; @include center-block();}
       }
     }
-    &.daycare .seal .sicon{@include sec-bgimage('seals/seal7.png');}
+    &.daycare .seal .sicon{@include sec-bgimage('seals/bestPBgroom.png');}
     &.ss-groom .seal .sicon{@include sec-bgimage('seals/fast2019.png');}
 
     .seal-row {margin-top:10px;
@@ -1547,14 +1564,12 @@ hr{
   }
 
   p.sr-instr{display:none;}
-  .seal-row {
-    .il-seal {margin-left:1%;margin-right:1%;}
-  }
+  .seal-row .il-seal{margin-left:.5%;margin-right:.5%;}
 
+
+  @media (max-width:1140px){.seal-row .il-seal{width:180px;}}
   @include bp(tb) {
-    .inline-show {
-      .title{width:25%; margin-right: -2%;}
-    }
+    .inline-show .title{width:25%; margin-right: -2%;}
 
     .statement {padding-top:40px;
     }
@@ -1564,6 +1579,10 @@ hr{
     .statement{padding-top:20px;
       p, h1,h2 {width:90%; border:none; @include center-block(); padding:0; margin:10px auto;}
       br.xl {display: none;}
+    }
+
+    .seal-row{margin-top:5px;
+      .il-seal{width:150px;}
     }
   }
 
@@ -1576,41 +1595,26 @@ hr{
       h1,h2,p {@include sec-default();}
       p{margin:5px auto;}
     }
-  }
 
-  @media (max-width:767px){
-    .seal-row{width:100%;
-      .med-def{width:100%;float:left;}
-      .il-seal{margin-top:0;}
-    }
-  }
-  
-  @media (max-width:669px){
-  // @include bp(mb) {
     p.sr-instr{@include sec-default();margin:10px 0 7px;font-size:15px;text-align:center;}
     .seal-row{overflow:hidden;overflow-x:scroll;padding-bottom:7px;
-      .med-def{width:700px;}
-      .il-seal {margin-left:2%;}
+      .sealWrap{width:850px;float:left;}
+      .il-seal{margin:0 0 0 2%;float:left;}
     }
   }
 
   @include bp(oc) {
     .statement {padding-top: 5px;}
-    .gallery-sec.uniform{padding-top:20px;}
-    
     p.sr-instr{margin:20px 0 0;}
+    .gallery-sec.uniform{padding-top:20px;}
   }
 }
 
 .grooming .services-layout {
-  // 1195x600
   .il-slideshow li.moveup img{top:65%;transform: translate(-50%,-70%);}
   
   p.sr-instr{display:none;}
-  .seal-row {
-    // .inside{width:90%;}
-    .il-seal{margin-left:.5%;margin-right:.5%;}
-  }
+  .seal-row .il-seal{margin-left:.5%;margin-right:.5%;}
 
   .statement{padding-top:50px;
     h1 {width:30%;padding:30px 0px;}
