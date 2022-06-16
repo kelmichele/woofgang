@@ -6,7 +6,7 @@ class ReporterMailer < ApplicationMailer
 	  @reporter = reporter
 
 	  # kelli@hsdesignhouse.com
-	  mail(to: "cara@woofgangbakery.com", subject: "Media Inquiry") do |format|
+	  mail(to: "morgan@woofgangbakery.com", subject: "Media Inquiry") do |format|
   	  format.html
   	  format.text
     end
