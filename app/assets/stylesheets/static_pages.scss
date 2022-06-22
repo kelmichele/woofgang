@@ -95,6 +95,7 @@ hr{
 }
 
 .clearfix.btn {@include sec-default(); margin-top:20px;}
+.aria-hidden{display:none;}
 
 .woof-link {@include link(30%, $white); background-color: $pink; @include tshadowl(rgba($black, .3)); }
 .text-link{font-weight: $semi; color: $pink; 
@@ -2473,6 +2474,25 @@ hr{
   .form-group.category br{line-height: 2.2em;}
   p.print{margin-top: 0;}
   fieldset {margin: 0px; padding-bottom: 0;}
+
+
+  @include bp(br) {
+    .intro-text{width:40%;}
+    .form-side{width:55%;padding:20px 0 0;}
+  }
+
+  @include bp(md) {
+    .intro-text{width:40%;}
+    .form-side{width:59%;}
+  }
+
+  @include bp(og) {
+    .full-sec{margin-left:0;}
+    .intro-text{display:none;}
+    .form-side{width:90%;@include center-block();padding-top:0;}
+  }
+
+  @include bp(sm) {.form-side{width:95%;}}
 }
 
 .reporters{
@@ -2491,9 +2511,38 @@ hr{
   }
 
   @include bp(tb) {
-    .form-side {padding-left: 2%;}
-    .form-group {@include sec-default(); }
+    .form-side {width:52%;padding:10px 0 0;}
+    .form-group {@include sec-default();}
   }
+  @include bp(tn) {
+    .intro-text{width:38%;}
+    .form-side {width:62%;}
+  }
+
+  @include bp(og) {
+    .full-sec{margin-left:0;}
+    .intro-text{display:none;}
+    .form-side {width:90%;@include center-block();}
+  }
+  @include bp(sm) {.form-side{width:95%;}}
+}
+
+.estates{
+  @include bp(tb) {
+    .full-sec{margin-left:0;}
+    .intro-text{padding-left:0;}
+    .form-side{width:52%;padding:10px 0 0;}
+  }
+  @include bp(tn) {
+    .intro-text{width:43%;}
+    .form-side {width:57%;}
+  }
+
+  @include bp(og) {
+    .intro-text{display:none;}
+    .form-side {width:90%;@include center-block();}
+  }
+  @include bp(sm) {.form-side{width:95%;}}
 }
 
 
