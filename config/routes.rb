@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'wellness', to: 'static_pages#wellness'
   get 'retail', to: 'static_pages#retail'
 
+  get 'locations', to: 'static_pages#locations'
   get 'self-service-locations', to: 'static_pages#self-service-locations'
   
   get 'franchising', to: 'franchise_pages#franchising'
@@ -31,6 +32,8 @@ Rails.application.routes.draw do
   get 'franchise-steps', to: 'franchise_pages#franchise-steps'
   get 'approval-process', to: 'franchise_pages#approval-process'
   get 'faq', to: 'franchise_pages#faq'
+  get 'test-page', to: 'franchise_pages#test-page'
+
 
   get '/fb', to: 'social#fb'
   get '/insta', to: 'social#insta'
@@ -68,11 +71,11 @@ Rails.application.routes.draw do
   get '/shops', to: 'locations#index'
 
 
-  resources :locations do
-    collection do
-      post :import
-    end
-  end
+  # resources :locations do
+  #   collection do
+  #     post :import
+  #   end
+  # end
 
   resources :slides do
     collection do

@@ -1,0 +1,111 @@
+<% @page_title = "Test Page" %>
+<% @page_description = "" %>
+
+<div class="ctaHeader" id="image-wrap" uk-grid>
+	<div class="image">
+		<div class="btmImg fullinimage"  uk-sticky="bottom: #image-wrap;offset:0;">
+			<%= image_tag('treat-wall.jpg', class: 'img-responsive img-fw', alt: 'XXX') %>
+			<%= image_tag('treat-wallXl.jpg', class: 'img-responsive img-xl', alt: 'XXX') %>
+		</div>
+	</div>
+
+	<div class="formBoxX formBoxF">
+		<h1>Become a<br> Woof Gang Bakery &amp; Grooming<br> Franchisee</h1>
+    <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
+    <iframe class="airtable-embed airtable-dynamic-height" src="https://airtable.com/embed/shreOjiuCPaOTn8n2?backgroundColor=blue" frameborder="0" onmousewheel="" XXwidth="100%" XXheight="1996" style="background:transparent;border-radius:0;"></iframe>
+  </div>
+</div>
+
+<!-- <div class="ctaHeader franch">
+	<div class="formBox"> -->
+    <!-- <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script> -->
+    <!-- <iframe class="airtable-embed airtable-dynamic-height" src="https://airtable.com/embed/shreOjiuCPaOTn8n2?backgroundColor=blue" frameborder="0" onmousewheel="" width="100%" height="1996" style="background: transparent;"></iframe> -->
+  <!-- </div>
+</div> -->
+
+
+
+
+
+<!-- <div class="franchise-head v2 seal-stack">
+	<div class="inside med">
+		<%= image_tag('franchising-header.jpg', class: 'img-responsive feat', alt: 'Woof Gang Bakery store owners with pets') %>
+
+		<div class="text">
+			<h2>Become a Woof Gang Bakery &amp; Grooming Franchisee</h2>
+			<h1><%= @page_title %></h1>
+		</div>
+		<div class="seal"><div class="sicon"></div></div>
+	</div>
+</div> -->
+
+<div class="franchise-layout fl1">
+	<div class="landing-layout plus-seal">
+		<div class="box one">
+			<div class="inside med2-def">
+				<div class="text">
+					<h3>A remarkably high demand exists for the products and services offered by Woof Gang Bakery &amp; Grooming.
+						According to the American Pet Products Association, <span>there are 85 million pet households in the U.S. and annual pet care spending is estimated to exceed $109 billion in 2021.</span>
+					</h3>
+				</div>
+
+				<div class="image">
+					<%= image_tag('sav-olive.jpg', class: 'img-responsive img1', alt: 'Woof Gang Bakery, leash section in store') %>
+					<%= image_tag('doodle.jpg', class: 'img-responsive img2', alt: 'Black dog at Woof Gang Bakery grand opening') %>
+				</div>
+				<div class="page-seal"><%= image_tag('seals/seal1.png', class: 'sealicon') %></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-layout">
+		<div class="full one fw">
+			<div class="inside med2-def">
+				<div class="image">
+					<%= image_tag('san-ant.jpg', class: 'img-responsive photo-img', alt: 'Great dane, relaxing in a Woof Gang Bakery store.') %>
+				</div>
+
+				<div class="text">
+					<p class="sig">Woof Gang Bakery &amp; Grooming is an innovative concept seeking franchisees who meet the following criteria:</p>
+
+					<ul class="lt xsmall">
+						<li>A passion for people and pets</li>
+						<li>Enjoy a fast paced and dynamic environment</li>
+						<li>Possess natural customer service skills</li>
+						<li>A willingness to follow training and operational standards</li>
+						<li>Have a genuine desire to fulfill a community need</li>
+						<li>Operate a store in your own neighborhood</li>
+						<li>Commitment to ethical business practices</li>
+						<li>$500,000 net worth / $150,000 liquidity</li>
+					</ul>
+
+					<div class="clearfix"></div><br>
+					<%= link_to 'Request Franchise Information', franchise_inquiries_path, class: 'woof-link' %>
+					<div class="cl-seal"><%= image_tag('seals/seal-best.png', class: 'sealicon') %></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="full two fw">
+			<div class="inside med-def">
+				<div class="text">
+					<p class="sig">Interested in Purchasing an Existing<br class="xl and"> Woof Gang Bakery &amp; Grooming?</p>
+					<p class="reg">The purchase of an existing franchise can offer distinct advantages<br class="xl"> over a startup franchise operation:</p>
+					<ul class="small ltr">
+						<li>The current revenue stream of an existing franchise has value and provides an advantage versus a brand-new franchise.</li>
+						<li>A new franchisee can bring fresh enthusiasm and creativity that may translate into additional sales.</li>
+						<li>An existing franchise is already equipped, staffed, and in operation.</li>
+						<li>Buying an existing franchise can save time and may save money.</li>
+						<li>For those seeking a franchise in a particular geographic area, a franchise resale may be the best option in cases where new franchise territories are limited.</li>
+					</ul>
+					<p class="reg"><b>We are happy to let you know of any stores that are currently for sale.</b></p>
+				</div>
+
+				<div class="image">
+					<%= image_tag('fleming.jpg', class: 'img-responsive', alt: 'Woof Gang Bakery Fleming Island location, exterior photo') %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
