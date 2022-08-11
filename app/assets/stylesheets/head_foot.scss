@@ -1,66 +1,59 @@
 @import "variables";
 @import "mixins";
 
-.uk-navbar-nav {}
-.uk-navbar-nav>li>a{ padding:0; min-height:auto; }
-.navbar-center{@include sec-default(); background-color: $white;}
-// display:block !important;
-
+.uk-navbar-nav>li>a{padding:0;min-height:auto;}
+.navbar-center{@include sec-default();background-color:$white;}
 //*********************************//
 //********** header inline *********//
 //*********************************//
-.inline-header {@include sec-default();background-color: $white; padding-bottom: 10px;
-	li {display: inline-block; float: none; margin: 1% 0 0px 3%;
-		a { color:$brown;font-weight: $semi;
-			text-transform: none;font-size: 15px;
-		}
+.inline-header{@include sec-default();background-color:$white;text-align:center;padding:15px 0;
+	.navWrap.inside{width:90%;max-width:1300px;}
+	
+	.ilLogo,.ilNav,.ilSocial{display:inline-block;}
+	.ilLogo{width:21%;max-width:250px;float:left;}
+	.ilNav{width:68%;text-align:center;margin-top:15px;}
+	.ilSocial{width:11%;max-width:130px;float:right;margin-top:13px;}
+
+	.ilNav li{display:inline-block;float:none;margin:0 2% 0;
+		a{color:$brown;font-weight:$semi;font-size:16px;font-family:$pop;text-transform:uppercase;letter-spacing:.6px;}
 	}
 
-	.uk-navbar-dropdown{ padding: 10px 5px 15px 10px; margin-top: 15px;
-		width:250px;
-		background-color: $f9;
-		.uk-nav.uk-navbar-dropdown-nav {text-align: left;
-			li {@include sec-default();
-				a{font-weight: normal;text-transform: none; font-size: 15px; letter-spacing: .2px;}
+	.uk-navbar-dropdown{padding:10px 5px 15px 10px;margin-top:15px;width:250px;background-color:$f9;
+		.uk-nav.uk-navbar-dropdown-nav{text-align:left;z-index:99999;
+			li{@include sec-default();
+				a{font-weight:normal;text-transform:none;font-size:15px;letter-spacing:.2px;}
 			}
 		}
 	}
 
-	&.centered {background-color: $white;padding-bottom: 0px;
-		.uk-navbar-container.inside{width:90%;background-color: $white}
-		.nb-logo{@include sec-default(); text-align: center;padding:0px; width:40%; @include center-block(); margin-bottom: 25px;}
-		.logo {max-width:430px; @include center-block();}
-
-		.uk-navbar-nav{@include sec-default(); text-align: center; padding:10px 0 10px; border-top:1px solid $f2;
-			border-bottom:1px inset rgba($f2, .9);
-		}
-
-		.uk-navbar-nav li{margin: 0 0 0px 4%;
-			a {font-size: 16px; font-family: $pop; text-transform: uppercase; letter-spacing: .6px;}
-		}
+	.ilSocial{padding-left:0;text-align:right;
+		li{display:inline-block;float:none;margin:0 5px;width:16px;height:16px;}
+		a{color:$brown;}
 	}
 
-	.full.navstick{background-color: $white;
-		&.uk-sticky-fixed {box-shadow: 0px 1px 1px rgba($black, .1);}
+	.navstick.uk-sticky-fixed{background-color:$white;box-shadow:0px 1px 1px rgba($black, .1);
+		.ilLogo{width:170px;margin:7px 0;}
+	}	
+}
+
+
+.above{@include center-block();width:90%;background-color:$white;padding:5px 0px 0;
+	a,span{color:$brown;}
+
+	display: none;
+
+	.contact,.social{display:inline-block;float:left;color:$white;width:50%;
+		a{font-size:14px;}
+	}
+	.social{padding-left:0;float:right;text-align:right;margin-top:-2px;
+		li{display:inline-block;float:none;margin:0 5px;width:16px;height:16px;}
 	}
 }
 
-.above {@include center-block(); width:90%;background-color: $white; padding: 10px 0px 0;
-	a, span {color:$brown;}
-}
-.contact,.social{display:inline-block; float: left; color:$white; width:50%;
-	a {font-size: 14px;}
-}
 
-.social {padding-left: 0; float:right; text-align: right; margin-top: -2px;
-	li {display:inline-block; float:none; margin: 0 .7%; width: 16px; height: 16px;}
-}
-
-
-
-.mobile-nav {display: none;}
-.uk-nav-header{border-bottom: 1px solid rgba($tbrown, .1); font-weight: bold; margin-bottom: 10px}
-.uk-offcanvas-bar.mobile {background: $fa; padding: 30px 10px 10px 30px;
+.mobile-nav {display:none;}
+.uk-nav-header{border-bottom:1px solid rgba($tbrown, .1);font-weight:bold;margin-bottom:10px}
+.uk-offcanvas-bar.mobile{background:$fa;padding:30px 10px 10px 30px;
 	hr{@include sec-default();border-top: 1px solid rgba($tbrown, .1);}
 	.uk-offcanvas-close.uk-close {color: $tbrown; top:10px;}
 	.uk-nav, .uk-sub-nav{
@@ -69,18 +62,29 @@
 	.uk-sub-nav li{padding-left: 15px;}
 }
 
-@include bp(br) {
-	.inline-header.centered {
-		padding: 70px 0 25px; position: relative !important;
-		.uk-navbar-nav {display: none;}
-		.navbar-center{@include sec-default();}
-		.nb-logo {@include sec-default();margin-bottom: 0;}
-		.logo {max-width:380px;}
 
-		&.uk-navbar-sticky.uk-sticky-fixed {
-			padding-top: 65px;
-			.logo {width:300px;}
+@media (max-width:1200px){
+	.inline-header{
+		.ilLogo{width:23%;}
+		.ilNav{width:70%;}
+		.ilSocial{width:7%;}
+
+		.ilNav li{margin-left:11px;margin-right:11px;}
+
+		.ilSocial{max-width:60px;margin-top:0px;
+			a{color:$brown;}
 		}
+	}
+}
+
+// @include bp(br) {
+@media (max-width:1024px){
+	.inline-header{padding:60px 0 15px;position:relative !important;
+		.ilNav,.ilSocial{display:none;}
+		.ilLogo{@include sec-default();max-width:100%;}
+		.logo{max-width:220px;@include center-block();}
+
+		.navstick.uk-sticky-fixed .ilLogo{display:none;}
 	}
 
 	.above{@include sec-default();background-color: $pink; padding: 7px 30px 5px;
@@ -99,13 +103,9 @@
 	}
 }
 
-@media (max-width: 767px) {
-	.inline-header.centered .logo {max-width:330px;}
-}
-
 @include bp(ph) {
-	.above {padding: 5px 15px;}
-	.inline-header.centered .logo {max-width:300px;}
+	.above{padding:5px 15px;}
+	.inline-header .logo{max-width:200px;}
 }
 
 //*********************************//

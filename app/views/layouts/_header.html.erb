@@ -16,16 +16,15 @@
   </div>
 </div>
 
-<header class="inline-header centered">
+<!--<= controller_name %> <= action_name %>< if controller_name == "candidates" or controller_name == "franchise_pages" && action_name != "franchising" %> altv< end %> -->
+<header class="inline-header headerStack">
   <nav class="uk-navbar-container" uk-navbar>
     <div class="navbar-center">
-      <div class="nb-logo">
-        <%= link_to(image_tag('wgb-logo.png', class: 'navbar-item logo', alt: 'Woof Gang Bakery company logo'), root_path )%>
-      </div>
-
       <div class="full navstick"  uk-sticky="sel-target: .inline-header; cls-active: uk-navbar-sticky">
-        <div class="inside">
-          <ul class="uk-navbar-nav">
+        <div class="inside navWrap">
+          <div class="nb-logo ilLogo"><%= link_to(image_tag('wgbgLogo.png', class: 'navbar-item logo', alt: 'Woof Gang Bakery company logo'), root_path )%></div>
+
+          <ul class="uk-navbar-nav ilNav">
             <li><%= link_to "Home", root_path %></li>
 
             <li>
@@ -42,7 +41,6 @@
               </div>
             </li>
 
-            <!-- <li><= link_to "Locations", locations_path, data-turbolinks="false" %></li> -->
             <li><a href="/locations" data-turbolinks="false">Locations</a></li>
             <li>
               <a href="#">Services</a>
@@ -59,11 +57,15 @@
 
             <li><%= link_to "Blog", blog_path %></li>
 
-            <li><%= link_to "Contact Us", contact_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+          </ul>
+
+
+          <ul class="social ilSocial">
+            <%= render 'shared/social' %>
           </ul>
         </div>
       </div>
-
     </div>
   </nav>
 </header>
