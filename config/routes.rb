@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'franchise-steps', to: 'franchise_pages#franchise-steps'
   get 'approval-process', to: 'franchise_pages#approval-process'
   get 'faq', to: 'franchise_pages#faq'
-  get 'test-page', to: 'franchise_pages#test-page'
+  # get 'test-page', to: 'franchise_pages#test-page'
 
 
   get '/fb', to: 'social#fb'
