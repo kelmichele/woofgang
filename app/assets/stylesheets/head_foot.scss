@@ -87,17 +87,15 @@
 		.navstick.uk-sticky-fixed .ilLogo{display:none;}
 	}
 
-	.above{@include sec-default();background-color: $pink; padding: 7px 30px 5px;
-		position: fixed; z-index: 999; box-shadow: 0px 2px 2px rgba($black, .1);
-
-		.contact, .social, .mobile-nav {display:inline-block;width: 30%; margin-top:3px;}
-		.contact a {font-size: 13px;}
-		.social { float:none; text-align: center; margin-left: 6%; margin-top: 2px;
-			li{width:15px; height:15px;}
+	.above{@include sec-default();background-color:$pink;padding:7px 30px 5px;position:fixed;z-index:999;box-shadow:0px 2px 2px rgba($black, .1);
+		.contact, .social, .mobile-nav {display:inline-block;width:30%;margin-top:3px;}
+		.contact a{font-size:13px;}
+		.social{float:none;text-align:center;margin-left:5%;margin-top:2px;
+			li{width:15px;height:15px;}
 		}
-		.mobile-nav { display: inline-block; float: right; margin-top: 0;
-			.uk-button {padding: 5px 7px; float: right; line-height: 1em; }
-			span {color:$white; }
+		.mobile-nav{max-width:40px;display:inline-block;float:right;margin-top:0;
+			.uk-button{padding:5px 7px;float:right;line-height:1em;}
+			span{color:$white;}
 		}
 		a, span{color:$white;}
 	}
@@ -106,6 +104,16 @@
 @include bp(ph) {
 	.above{padding:5px 15px;}
 	.inline-header .logo{max-width:200px;}
+}
+
+@include bp(sm) {
+	.above{
+		.contact{display:none;}
+		.social{float:left;margin-left:0;width:auto;text-align:left;
+			li:first-child{margin-left:0;}
+		}
+
+	}
 }
 
 //*********************************//
