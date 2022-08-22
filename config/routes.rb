@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'grooming', to: 'static_pages#grooming'
   get 'self-service-grooming', to: 'static_pages#self-service-grooming'
   get 'doggie-daycare', to: 'static_pages#doggie-daycare'
-  get 'wellness', to: 'static_pages#wellness'
+  get 'wellness', to: 'static_pages#retail'
   get 'retail', to: 'static_pages#retail'
 
   get 'locations', to: 'static_pages#locations'
