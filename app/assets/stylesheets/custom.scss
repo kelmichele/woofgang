@@ -81,9 +81,8 @@ body {
   font-family: $body;
   @include sec-default();
 
-  @include bp(br) {
-    border-top: 0;
-  }
+  // @include bp(tb) {
+  @media (max-width:1100px){border-top: 0;}
 
   // &.safari {-webkit-font-smoothing: antialiased;}
   h1, h2, h3, h4, h5, p, li, a {color: $black; line-height: 1.5em;font-family: $body;

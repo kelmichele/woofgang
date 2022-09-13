@@ -27,20 +27,6 @@
           <ul class="uk-navbar-nav ilNav">
             <li><%= link_to "Home", root_path %></li>
 
-            <li>
-              <%= link_to "Franchising", franchising_path %>
-              <div class="uk-navbar-dropdown">
-                <ul class="uk-nav uk-navbar-dropdown-nav">
-                  <li><%= link_to "Franchising", franchising_path %></li>
-                  <li><%= link_to "Training & Support", training_support_path %></li>
-                  <li><%= link_to "Approval Process", approval_process_path %></li>
-                  <li><%= link_to "Real Estate", real_estate_path %></li>
-                  <li><%= link_to "Franchise FAQs", faq_path %></li>
-                  <li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
-                </ul>
-              </div>
-            </li>
-
             <li><a href="/locations" data-turbolinks="false">Locations</a></li>
             <li>
               <a href="#">Services</a>
@@ -57,6 +43,7 @@
             <li><%= link_to "Blog", blog_path %></li>
 
             <li><%= link_to "Contact", contact_path %></li>
+            <li class="navBtn"><%= link_to "Franchising", franchising_path, target: "_blank" %></li>
           </ul>
 
 

@@ -1,12 +1,8 @@
 <% @ft_franch = capture do %>
-  <ul class="ft-list franch">
-  	<li><%= link_to "Franchising", franchising_path %></li>
-  	<li><%= link_to "Training & Support", training_support_path %></li>
-  	<li><%= link_to "Approval Process", approval_process_path %></li>
-  	<li><%= link_to "Real Estate", real_estate_path %></li>
-  	<li><%= link_to "Franchise FAQs", faq_path %></li>
-  	<li><%= link_to "Franchise Inquiries", franchise_inquiries_path %></li>
-  </ul>
+  	<p class="tmargin0">We are North America’s leader in professional pet grooming, with more than 200 locations open or under development. 
+	  	<%= link_to "Click here", franchising_path, target: "_blank", class: 'flink' %> to learn more about becoming a Woof Gang Bakery franchisee.
+  	</p>
+
 	<div class="ft-badge"><%= image_tag('IFA.png', class: 'badge', alt: 'International Franchise Association Member') %></div>
 <% end %>
 
