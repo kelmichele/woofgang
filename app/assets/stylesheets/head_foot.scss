@@ -160,8 +160,6 @@
 		}
 		.text-link{@include sec-default();margin:6px 0 0; font-size: 14px; font-weight: $semi; }
 		&.fb4 .text-link{color:$pink;}
-
-		.flink{font-weight:bold;color:$pink;}
 	}
 
 	h5{ margin-bottom: 0;}
@@ -169,6 +167,7 @@
 	li, a, p{font-size: 15px;}
 	p span {font-weight: bold;}
 	li{margin-bottom: 5px;}
+	.flink{font-weight:bold;color:$pink;}
 
 	.btm {@include sec-default(); border-top: $border; padding:15px 0 8px; margin-top:15px;
 		.copy, .hs {display: inline-block; float:left; width: 45%;}
