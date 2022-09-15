@@ -1,6 +1,6 @@
 class FranchisePagesController < ApplicationController
   def franchising
-    redirect_to('https://owna.woofgangbakery.com/', target: '_blank')
+    redirect_to('https://franchise.woofgangbakery.com/', target: '_blank')
   end
 
   def franchise_opportunity
