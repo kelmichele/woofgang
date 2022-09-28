@@ -2644,7 +2644,8 @@ hr{
         .woof-link {width:55%; @include center-block();}
       }
       .right {
-        p.msg {margin-top: 30px;}
+        .tnSpace{@include sec-default();margin-top:20px;}
+        p{margin:0;}
         .form-group {text-align: left;}
       }
     }
