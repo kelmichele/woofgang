@@ -48,8 +48,10 @@ Rails.application.routes.draw do
   get '/pin', to: 'social#pin'
   get '/in', to: 'social#in'
 
-  get '/franchise-inquiries', to: 'candidates#new', as: 'franchise-inquiries'
-  post '/franchise-inquiries', to: 'candidates#create'
+  
+  get '/franchise-inquiries', to: 'franchise_pages#franchising'
+  # get '/franchise-inquiries', to: 'candidates#new', as: 'franchise-inquiries'
+  # post '/franchise-inquiries', to: 'candidates#create'
 
   get '/vendor', to: 'vendors#new', as: 'vendor'
   post '/vendor', to: 'vendors#create'
