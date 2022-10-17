@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   # get 'page', to: 'static_pages#page'
   get 'blog', to: 'static_pages#blog'
   get 'home-alt', to: 'static_pages#home-alt'
-  get 'services', to: 'static_pages#services'
+  get 'services', to: 'static_pages#retail'
   get 'grooming', to: 'static_pages#grooming'
-  get 'self-service-grooming', to: 'static_pages#self-service-grooming'
-  get 'doggie-daycare', to: 'static_pages#doggie-daycare'
+  get 'self-service-grooming', to: 'static_pages#grooming'
+  get 'doggie-daycare', to: 'static_pages#retail'
   get 'wellness', to: 'static_pages#retail'
   get 'retail', to: 'static_pages#retail'
 

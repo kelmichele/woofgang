@@ -1950,6 +1950,26 @@ hr{
 }
 
 
+
+.grooming,.retail{
+  .services-layout .inline-show h1{line-height:1em;font-size:40px;letter-spacing:5px;font-weight:bold;}
+  .services-layout .inline-show h1 span{font-size:20px;font-weight:normal;}
+
+
+  @media (max-width:1200px) {
+    .services-layout .inline-show h1{letter-spacing:3px;}
+  }
+  @media (max-width:1023px) {
+    .services-layout .inline-show h1{letter-spacing:1px;font-size:35px;}
+    .services-layout .inline-show h1 span{font-size:18px;}
+  }
+  @media (max-width:737px) {
+    .services-layout .inline-show h1{text-align:center;font-size:30px;}
+    .services-layout .inline-show h1 span{font-size:16px;}
+  }
+}
+
+
 //*********************************//
 //*********** users ***********//
 //*********************************//
